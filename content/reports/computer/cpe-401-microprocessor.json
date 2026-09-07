@@ -1,0 +1,27 @@
+{
+  "id": "cpe-401-microprocessor",
+  "code": "CPE 401",
+  "title": "Microprocessor Interfacing & Programming",
+  "department": "computer",
+  "level": "400",
+  "session": "2023/2024",
+  "verified": true,
+  "content": {
+    "objective": "To interface an 8255 Programmable Peripheral Interface (PPI) with an 8086 microprocessor kit to control an 8-bit LED traffic light sequence.",
+    "apparatus": [
+      "8086 Microprocessor Trainer Kit",
+      "8255 PPI Interface Card",
+      "Logic state indicator board",
+      "Flat ribbon connector cables",
+      "5V DC Regulated Power Supply"
+    ],
+    "theory": "The 8255 is a general-purpose programmable I/O device designed for use with Intel microprocessors. It consists of three 8-bit bidirectional I/O ports (Port A, Port B, Port C) configured through an internal Control Word Register.",
+    "procedure": [
+      "Connect the 8255 PPI interface board to the 8086 trainer kit bus.",
+      "Initialize Port A as output by writing the control word 80H to the control register at address 06H.",
+      "Write an assembly program in MASM to output binary sequence 00000001B to 10000000B with a 500ms delay subroutine.",
+      "Execute the program and verify the sequential blinking of LEDs on Port A."
+    ],
+    "conclusion": "The 8255 PPI was successfully configured in Mode 0. The output latch correctly maintained steady logic states between clock cycles."
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — MyEla</title>
+
+    <!-- Material Symbols & Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+</head>
+
+<body id="dashboard">
+
+    <!-- Admin Navigation Header -->
+    <header class="admin-header">
+        <div class="container admin-nav-container">
+            
+            <div class="admin-brand">
+                <span class="material-symbols-outlined brand-icon">experiment</span>
+                <span class="brand-text">MyEla<span>.Admin</span></span>
+            </div>
+
+            <div class="admin-user-bar">
+                <div class="admin-id-pill">
+                    <span class="material-symbols-outlined user-icon">account_circle</span>
+                    <span id="adminEmail" class="admin-email-text">admin@uniben.edu</span>
+                </div>
+
+                <a href="index.html" class="btn btn-outline admin-view-btn" target="_blank">
+                    <span class="material-symbols-outlined">visibility</span>
+                    <span>View Site</span>
+                </a>
+
+                <button id="logoutButton" class="btn btn-logout" title="Log out of session">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Logout</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Dashboard Workspace -->
+    <main class="dashboard-main">
+        <div class="container">
+            
+            <!-- Primary Action Banner (Takes you directly to updaterepo.html) -->
+            <section class="action-banner">
+                <div class="banner-text">
+                    <span class="badge-tag-gold">Repository Operations</span>
+                    <h1 class="banner-title">Report & Ledger Management</h1>
+                    <p class="banner-description">
+                        Compile new lab experimental protocols, append JSON records, or update existing coursework data.
+                    </p>
+                </div>
+
+                <div class="banner-cta">
+                    <a href="updaterepo.html" class="btn btn-gold btn-hero-action">
+                        <span class="material-symbols-outlined">upload_file</span>
+                        <span>Update Repository</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Department Directory Overview -->
+            <section class="admin-section">
+                <header class="section-title-row">
+                    <div>
+                        <h2 class="section-heading">Active Department Modules</h2>
+                        <p class="section-subheading">Directories configured in <code>content/reports/</code></p>
+                    </div>
+                    <a href="updaterepo.html" class="btn btn-primary btn-sm">
+                        <span class="material-symbols-outlined">add</span>
+                        <span>Add Report to Dept</span>
+                    </a>
+                </header>
+
+                <div class="dept-grid">
+                    <article class="ui-card dept-card">
+                        <div class="ui-card-icon">
+                            <span class="material-symbols-outlined">memory</span>
+                        </div>
+                        <h3 class="dept-title">Computer Engineering</h3>
+                        <p class="dept-path"><code>content/reports/computer/</code></p>
+                    </article>
+
+                    <article class="ui-card dept-card">
+                        <div class="ui-card-icon">
+                            <span class="material-symbols-outlined">bolt</span>
+                        </div>
+                        <h3 class="dept-title">Electrical & Electronics</h3>
+                        <p class="dept-path"><code>content/reports/electrical/</code></p>
+                    </article>
+
+                    <article class="ui-card dept-card">
+                        <div class="ui-card-icon">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                        </div>
+                        <h3 class="dept-title">Mechanical Engineering</h3>
+                        <p class="dept-path"><code>content/reports/mechanical/</code></p>
+                    </article>
+
+                    <article class="ui-card dept-card">
+                        <div class="ui-card-icon">
+                            <span class="material-symbols-outlined">smart_toy</span>
+                        </div>
+                        <h3 class="dept-title">Mechatronics Engineering</h3>
+                        <p class="dept-path"><code>content/reports/mechatronics/</code></p>
+                    </article>
+
+                    <article class="ui-card dept-card">
+                        <div class="ui-card-icon">
+                            <span class="material-symbols-outlined">factory</span>
+                        </div>
+                        <h3 class="dept-title">Production Engineering</h3>
+                        <p class="dept-path"><code>content/reports/production/</code></p>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <span class="material-symbols-outlined">experiment</span>
+                    <span>MyEla</span>
+                </div>
+                <p>&copy; 2026 MyEla Institutional Systems &bull; Admin Console</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="../public/index.html">Live Archive</a></li>
+                <li><a href="updaterepo.html">Update Repo</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Protected Authentication Script -->
+    <script src="admin.js"></script>
+</body>
+
+</html>

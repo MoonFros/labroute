@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Access a verified repository of laboratory reports, experimental data, and engineering archives." />
+    <title>LabRoute — Uniben Lab Report Repository</title>
+
+    <!-- Favicon & Theme Color -->
+    <link rel="icon" href="assets/other_images/labroute_favicon.png" type="image/x-icon" />
+
+    <!-- Fonts & Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Modular Stylesheets -->
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+
+     <!-- Google verify -->
+    <meta name="google-site-verification" content="U9YRdp63k-xupGELBZuZDJoKdtsbxKpJnwG99bDGRbQ" />
+    
+    <!-- Vercel Web Analytics --> 
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+
+<body data-page="home">
+    <!-- Injected automatically by layout.js -->
+    <header id="site-header"></header>
+    
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <span class="badge-institutional">University Repository</span>
+
+                <h1 class="hero-title">
+                    Lab Report Repository &amp;<br>Engineering Archive
+                </h1>
+
+                <p class="hero-subtitle">
+                    Access a comprehensive archive of verified lab reports, experimental data, and technical
+                    documentation for engineering students.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#Reports" class="btn btn-gold">
+                        Browse Report Archive
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. About Section -->
+        <section class="about-section" id="About">
+            <div class="container about-grid">
+                <div class="about-image-wrapper">
+                    <img src="assets/gallery/group3.jpeg" alt="Engineering students in lab coats"
+                        class="about-img" loading="lazy" />
+                </div>
+
+                <div class="about-content">
+                    <span class="badge-tag">Academic Heritage</span>
+                    <h2 class="section-title">Built by Engineers, For Future Engineers</h2>
+                    <p class="about-text">
+                        LabRoute bridges the gap between complex laboratory coursework and academic excellence.
+                        We maintain a verified standard for apparatus documentation, mathematical derivations,
+                        and data analysis to guide students across all engineering disciplines.
+                    </p>
+                    <a href="about.html" class="btn btn-outline">
+                        <span>Learn More About the Archive</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Robust Reports Search Section (Ready for JSON Integration) -->
+        <section class="reports-section" id="Reports">
+            <div class="container">
+                <header class="section-header">
+                    <span class="badge-tag">Document Ledger</span>
+                    <h2 class="section-title">Verified Laboratory Reports</h2>
+                    <p class="section-subtitle">
+                        Filter through verified reports across departments, levels, and academic sessions.
+                    </p>
+                </header>
+
+                <!-- Robust Search & Filter Toolbar -->
+                <div class="search-panel">
+                    <div class="search-main-bar">
+                        <span class="material-symbols-outlined search-icon-input">search</span>
+                        <input type="text" class="search-input-field" id="reportSearchInput"
+                            placeholder="Search by experiment title, experiment code (e.g. AM231)" />
+                    </div>
+
+                    <!-- Multi-select Filter Bar -->
+                    <div class="filters-row">
+                        <div class="filter-group">
+                            <label for="deptFilter" class="filter-label">Department</label>
+                            <select id="deptFilter" class="custom-select">
+                                <option value="all">All Departments</option>
+                                <option value="chemical">Chemical Engineering</option>
+                                <option value="civil">Civil Engineering</option>
+                                <option value="electrical">Electrical / Electronics</option>
+                                <option value="mechanical">Mechanical Engineering</option>
+                                <option value="mechatronics">Mechatronics Engineering</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="levelFilter" class="filter-label">Level</label>
+                            <select id="levelFilter" class="custom-select">
+                                <option value="all">All Levels</option>
+                                <option value="200">200 Level</option>
+                                <option value="300">300 Level</option>
+                                <option value="400">400 Level</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="sortFilter" class="filter-label">Sort Order</label>
+                            <select id="sortFilter" class="custom-select">
+                                <option value="recent">Most Recent</option>
+                                <option value="code">Course Code (A-Z)</option>
+                                <option value="rating">Highest Verified</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Quick Topic Chips -->
+                    <div class="quick-tags">
+                        <span class="tags-label">Common Topics:</span>
+                        <button class="filter-chip active">All</button>
+                        <button class="filter-chip">#Thermodynamics</button>
+                        <button class="filter-chip">#FluidMechanics</button>
+                        <button class="filter-chip">#CircuitAnalysis</button>
+                        <button class="filter-chip">#TensileTesting</button>
+                        <button class="filter-chip">#FractionalDistillation</button>
+                    </div>
+                </div>
+
+                <!-- Sample Report Ledger Cards (UI preview ready to be populated by JSON) -->
+                <div class="reports-ledger-grid" id="reportsGrid">
+                    <!-- Dynamically injected by app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Phone-Portrait Lab Gallery -->
+        <section class="gallery-section" id="Gallery">
+            <div class="container">
+                <header class="section-header">
+                    <span class="badge-tag">Laboratory Life</span>
+                    <h2 class="section-title">Moments from the Benches</h2>
+                    <p class="section-subtitle">
+                        Glimpses of actual experimental setups, apparatus calibration, and collaborative engineering.
+                    </p>
+                </header>
+
+                <div class="gallery-masonry" id="galleryMasonryGrid">
+                    <!-- Dynamically injected by app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Donate / Dev Support Section -->
+        <section class="donate-section" id="Donate">
+            <div class="container">
+                <div class="donate-card">
+                    <div class="donate-content">
+                        <span class="badge-tag-gold">Sustain the Archive</span>
+                        <h2 class="donate-title">Support the devs</h2>
+                        <p class="donate-desc">
+                            LabRoute is maintained independently as a free reference repository for engineering
+                            students.
+                            Your contributions support server infrastructure, document scanning, and technical review
+                            processes.
+                        </p>
+                    </div>
+                    <div class="donate-action-box">
+                        <a href="donate.html" class="btn btn-gold">
+                            <span>Make a Contribution</span>
+                            <span class="material-symbols-outlined">volunteer_activism</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Suggest an Experiment / Report Section -->
+        <section class="suggest-section" id="Suggest">
+            <div class="container">
+                <div class="suggest-box">
+                    <header class="section-header">
+                        <span class="badge-tag">Community Suggestions</span>
+                        <h2 class="section-title">Suggest an Experiment to Archive</h2>
+                        <p class="section-subtitle">
+                            Can't find a report for your lab course? Request it or submit a verified draft for review.
+                        </p>
+                    </header>
+
+<!-- Wrapper that contains both the form and the overlay -->
+<div class="form-wrapper" style="position: relative;">
+    
+    <form class="suggest-form" id="suggestForm"
+          action="https://formspree.io/f/xvkoraeq"
+          method="POST">
+
+        <!-- The existing hidden inputs -->
+        <input type="hidden" name="_redirect" value="">
+        <input type="hidden" name="_subject" value="New Lab Suggestion">
+
+        <div class="form-grid">
+            <div class="form-field">
+                <label for="courseCode" class="form-label">Course Code &amp; Title</label>
+                <input type="text" id="courseCode" name="courseCode" class="input-control"
+                    placeholder="e.g. CVE 312 — Soil Mechanics" required />
+            </div>
+
+            <div class="form-field">
+                <label for="deptSelect" class="form-label">Department</label>
+                <select id="deptSelect" name="department" class="input-control" required>
+                    <option value="" disabled selected>Select Department</option>
+                    <option value="EEE">Electrical &amp; Electronics</option>
+                    <option value="MEE">Mechanical Engineering</option>
+                    <option value="PRE">Production Engineering</option>
+                    <option value="CPE">Computer Engineering</option>
+                    <option value="MME">Mechatronics Engineering</option>
+                </select>
+            </div>
+
+            <div class="form-field full-width">
+                <label for="experimentDetails" class="form-label">Experiment Outline / Notes</label>
+                <textarea id="experimentDetails" name="details" class="input-control textarea-control" rows="3"
+                    placeholder="Briefly describe the experiment or objective..."></textarea>
+            </div>
+        </div>
+
+        <div class="form-submit-wrapper">
+            <button type="submit" class="btn btn-primary">
+                <span>Submit Request</span>
+                <span class="material-symbols-outlined">send</span>
+            </button>
+        </div>
+    </form>
+
+    <!-- ✅ THE OVERLAY -->
+    <div id="successOverlay" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(4px); border-radius: 12px; align-items: center; justify-content: center; flex-direction: column; padding: 20px; text-align: center; z-index: 10; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+        <span style="font-size: 48px; margin-bottom: 10px;">✅</span>
+        <h3 style="margin: 0 0 8px 0; color: #1a1a1a;">Thank You! 🎉</h3>
+        <p style="margin: 0; color: #555;">Your request has been queued for verification. We'll get back to you soon!</p>
+        <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 24px; border: none; background: #007bff; color: white; border-radius: 8px; cursor: pointer; font-weight: 600;">
+            Submit Another
+        </button>
+    </div>
+
+</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Injected automatically by layout.js -->
+    <footer id="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="js/layout.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('suggestForm');
+        const overlay = document.getElementById('successOverlay');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Stop the page from reloading
+
+            // Get the form data
+            const formData = new FormData(form);
+
+            try {
+                // Send data to Formspree using fetch
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Tells Formspree to return JSON
+                    }
+                });
+
+                if (response.ok) {
+                    // ✅ Success: Hide the form fields and show only the overlay
+                    // Hide the form's content 
+                    form.style.display = 'none'; 
+                    overlay.style.display = 'flex'; // Show the overlay
+                } else {
+                    // ❌ Error: Show a simple alert 
+                    alert('Oops! Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection.');
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

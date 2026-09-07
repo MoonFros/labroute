@@ -1,0 +1,26 @@
+{
+  "id": "mec-321-thermodynamics",
+  "code": "MEC 321",
+  "title": "Thermodynamics of Gas Turbines & Heat Cycles",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2022/2023",
+  "verified": true,
+  "content": {
+    "objective": "To evaluate the thermal efficiency and specific fuel consumption of a small-scale Brayton cycle gas turbine under variable load conditions.",
+    "apparatus": [
+      "Educational Gas Turbine Unit (Two-shaft)",
+      "Digital Data Acquisition Interface",
+      "K-Type Thermocouple Probes",
+      "Digital Tachometer & Fuel Flow Meter"
+    ],
+    "theory": "The ideal Brayton cycle consists of isentropic compression in the compressor, isobaric heat addition in the combustion chamber, isentropic expansion in the turbine, and isobaric heat rejection.",
+    "procedure": [
+      "Perform pre-run oil pressure and fuel line checks on the turbine bench.",
+      "Start the gas turbine and allow the exhaust gas temperature (EGT) to stabilize at idle.",
+      "Gradually increase electrical dynamometer load from 0.5 kW to 2.5 kW in 0.5 kW steps.",
+      "Record compressor inlet/outlet pressures, turbine inlet temperature, and mass flow rate of fuel."
+    ],
+    "conclusion": "Thermal efficiency increased with higher pressure ratios, reaching a peak of 18.7% at maximum rated turbine shaft output."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "pre-412-cnc-machining",
+  "code": "PRE 412",
+  "title": "G-Code Optimization for CNC Milling Operations",
+  "department": "production",
+  "level": "400",
+  "verified": true,
+  "content": {
+    "objective": "To program, simulate, and machine an aluminum 6061 slot-and-pocket profile using optimized G-code and carbide end-mills.",
+    "apparatus": [
+      "3-Axis Vertical CNC Machining Center",
+      "6mm 4-Flute Solid Carbide End-mill",
+      "Aluminum 6061 Stock (100mm x 80mm x 20mm)",
+      "Digital Vernier Height Gauge & Micrometer",
+      "CNC Controller Console (Fanuc-compatible)"
+    ],
+    "theory": "Subtractive CNC milling relies on precise feeds (F) and spindle speeds (S) derived from cutting velocity formulas: Vc = (π * D * N) / 1000 to maximize tool life and achieve surface finish Ra < 1.6 µm.",
+    "procedure": [
+      "Clamp stock securely in the precision milling vice and perform edge-finding to set G54 work coordinate zero.",
+      "Program roughing pockets using circular interpolation (G02/G03) with 1.5mm step-down passes.",
+      "Apply finish contouring pass using cutter radius compensation (G41).",
+      "Execute the machining program with flood coolant and measure final dimensions."
+    ],
+    "conclusion": "Dimensional accuracy on pocket depth was within ±0.025mm of design specifications with zero chatter marks."
+  }
+}

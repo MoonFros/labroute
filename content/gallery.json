@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gal-1",
+    "image": "assets/gallery/group1.jpeg",
+    "tall": false
+  },
+  {
+    "id": "gal-2",
+    "image": "assets/gallery/group2.jpeg",
+    "tall": true
+  },
+  {
+    "id": "gal-3",
+    "image": "assets/gallery/group3.jpeg",
+    "tall": true
+  },
+  {
+    "id": "gal-4",
+    "image": "assets/gallery/image1.jpeg",
+    "tall": true
+  },
+  {
+    "id": "gal-5",
+    "image": "assets/gallery/images2.jpeg",
+    "tall": true
+  },
+  {
+    "id": "gal-6",
+    "image": "assets/gallery/auditorium.jpeg",
+    "tall": true
+  },
+  {
+    "id": "gal-7",
+    "image": "assets/gallery/Auditorium.jpg",
+    "tall": true
+  },
+  {
+    "id": "gal-8",
+    "image": "assets/gallery/drone_shot_maingate.jpeg",
+    "tall": true
+  }
+]

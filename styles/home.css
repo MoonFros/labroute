@@ -1,0 +1,588 @@
+/* 1. Hero & Explore Sections */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 0 90px;
+  background:
+    linear-gradient(180deg, var(--hero-overlay) 0%, rgba(0, 33, 71, 0.85) 60%),
+    url('../assets/other_images/University_of_Benin_Main_Gate.jpg') center/cover no-repeat;
+  color: var(--text-inverse);
+}
+
+.hero-content {
+  max-width: 860px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin: 1.5rem 0;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-inverse-muted);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.explore-section {
+  padding: 5rem 0 4rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.feature-desc {
+  font-size: 0.938rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* 2. About Section */
+.about-section {
+  padding: 6rem 0;
+  background-color: var(--surface-tint);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 1.25rem 0 2rem;
+}
+
+/* 3. Robust Reports Search Section */
+.reports-section {
+  padding: 6rem 0;
+}
+
+.search-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+}
+
+.search-main-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-icon-input {
+  color: var(--primary);
+}
+
+.search-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+}
+
+.filters-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.custom-select {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.custom-select:focus {
+  border-color: var(--border-focus);
+}
+
+.quick-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.tags-label {
+  font-size: 0.813rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.filter-chip {
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.813rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+
+/* Ledger Preview Cards */
+.reports-ledger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ledger-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.ledger-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-focus);
+}
+
+.ledger-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.course-pill {
+  font-family: var(--font-mono);
+  font-size: 0.813rem;
+  font-weight: 600;
+  background: var(--surface-tint);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--primary-light);
+}
+
+.status-indicator .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.ledger-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.ledger-meta {
+  font-size: 0.813rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.ledger-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.ledger-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   4. GALLERY: BENTO GRID (Desktop) & SWIPE CARDS (Mobile)
+   ========================================================================== */
+.gallery-section {
+  padding: 6rem 0;
+  background-color: var(--surface);
+  overflow: hidden;
+}
+
+/* --- DESKTOP: Bento / Masonry Cluster (>768px) --- */
+.gallery-masonry {
+  column-count: 4;
+  column-gap: 1.25rem;
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-card {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+}
+
+.gallery-card.tall {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-card.standard {
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-card.square {
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-card:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+/* Desktop Hover Overlay */
+.gallery-caption {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 33, 71, 0.85);
+  color: var(--text-inverse);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.gallery-card:hover .gallery-caption {
+  opacity: 1;
+}
+
+.gallery-caption h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.gallery-caption p {
+  font-size: 0.813rem;
+  color: var(--text-inverse-muted);
+}
+
+/* 5. Donate Section */
+.donate-section {
+  padding: 6rem 0;
+}
+
+.donate-card {
+  background: var(--primary-dark);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 3.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.donate-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-inverse);
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.donate-desc {
+  font-size: 1rem;
+  color: var(--text-inverse-muted);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* 6. Suggest Section */
+.suggest-section {
+  padding: 5rem 0 7rem;
+  background-color: var(--surface);
+}
+
+.suggest-box {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.suggest-form {
+  margin-top: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field.full-width {
+  grid-column: span 2;
+}
+
+.form-label {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+}
+
+.input-control {
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.938rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.input-control:focus {
+  border-color: var(--border-focus);
+}
+
+.textarea-control {
+  resize: vertical;
+}
+
+.form-submit-wrapper {
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT
+   ========================================================================== */
+@media (max-width: 1024px) {
+
+  .features-grid,
+  .reports-ledger-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .donate-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section,
+  .reports-section,
+  .donate-section,
+  .suggest-section {
+    padding: 2rem 0;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .features-grid,
+  .reports-ledger-grid,
+  .filters-row,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full-width {
+    grid-column: span 1;
+  }
+
+  .suggest-box {
+    padding: 1.75rem;
+  }
+
+  .donate-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .gallery-section {
+    padding: 4rem 0 5rem;
+  }
+
+  .gallery-masonry {
+    display: flex;
+    flex-direction: row;
+    column-count: unset; 
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.25rem;
+    padding: 1rem 1.5rem 2rem;
+    margin: 0 -1.5rem; 
+    scrollbar-width: 4px; 
+  }
+
+  .gallery-masonry::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-card {
+    flex: 0 0 78vw;  
+    max-width: 320px;
+    height: 420px;
+    aspect-ratio: unset; 
+    margin-bottom: 0;
+    scroll-snap-align: center;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Since touch screens don't have mouse hover, anchor caption at bottom */
+  .gallery-caption {
+    inset: auto 0 0 0;
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 33, 71, 0.92) 100%);
+    padding: 3rem 1.25rem 1.25rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .gallery-caption h4 {
+    font-size: 1.05rem;
+  }
+
+  .gallery-caption p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet intermediary (3 columns) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .gallery-masonry {
+    column-count: 3;
+  }
+}

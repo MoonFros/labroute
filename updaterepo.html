@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Structured laboratory report archival protocol for MyEla repository.">
+    <title>Submit Report Ledger — MyEla</title>
+
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <!-- Modular Stylesheets -->
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/updaterepo.css">
+</head>
+
+<body class="ledger-form-body">
+
+    <!-- Universal Header (Injected by layout.js) -->
+    <header id="site-header"></header>
+
+    <main class="ledger-page-main">
+        <div class="container-form">
+
+            <!-- Page Title Header -->
+            <header class="page-intro-header">
+                <h1 class="page-main-title">SUBMIT REPORT LEDGER</h1>
+                <p class="page-main-desc">
+                    Complete the structured documentation protocol for academic archival. Fields marked with an asterisk (<span class="req-star">*</span>) are required for institutional verification.
+                </p>
+            </header>
+
+            <form id="reportLedgerForm" class="ledger-submission-form">
+
+                <!-- ======================================================= -->
+                <!-- SECTION 01: METADATA IDENTIFICATION                     -->
+                <!-- ======================================================= -->
+                <section class="form-card" id="section-metadata">
+                    <div class="form-card-header">
+                        <span class="card-step-num">01</span>
+                        <h2 class="card-step-title">Metadata</h2>
+                    </div>
+
+                    <div class="form-card-body">
+                        <div class="grid-2-col">
+                            <!-- Course Code -->
+                            <div class="form-field">
+                                <label for="courseCode" class="field-label">COURSE CODE <span class="req-star">*</span></label>
+                                <input type="text" id="courseCode" name="courseCode" class="input-text" placeholder="e.g. CHE 311" required />
+                            </div>
+
+                            <!-- Experiment Title -->
+                            <div class="form-field">
+                                <label for="experimentTitle" class="field-label">EXPERIMENT TITLE <span class="req-star">*</span></label>
+                                <input type="text" id="experimentTitle" name="experimentTitle" class="input-text" placeholder="e.g. Determination of Friction Factor in Pipes" required />
+                            </div>
+                        </div>
+
+                        <div class="grid-3-col">
+                            <!-- Department -->
+                            <div class="form-field">
+                                <label for="department" class="field-label">DEPARTMENT <span class="req-star">*</span></label>
+                                <div class="select-wrapper">
+                                    <select id="department" name="department" class="input-select" required>
+                                        <option value="chemical">Chemical Engineering</option>
+                                        <option value="civil">Civil Engineering</option>
+                                        <option value="computer">Computer Engineering</option>
+                                        <option value="electrical">Electrical &amp; Electronics</option>
+                                        <option value="mechanical">Mechanical Engineering</option>
+                                        <option value="mechatronics">Mechatronics Engineering</option>
+                                        <option value="production">Production Engineering</option>
+                                    </select>
+                                    <span class="material-symbols-outlined select-arrow">expand_more</span>
+                                </div>
+                            </div>
+
+                            <!-- Academic Level -->
+                            <div class="form-field">
+                                <label for="academicLevel" class="field-label">LEVEL <span class="req-star">*</span></label>
+                                <div class="select-wrapper">
+                                    <select id="academicLevel" name="academicLevel" class="input-select" required>
+                                        <option value="200">200 Level</option>
+                                        <option value="300" selected>300 Level</option>
+                                        <option value="400">400 Level</option>
+                                        <option value="500">500 Level</option>
+                                    </select>
+                                    <span class="material-symbols-outlined select-arrow">expand_more</span>
+                                </div>
+                            </div>
+
+                            <!-- Verification Radio Status -->
+                            <div class="form-field">
+                                <label class="field-label">VERIFICATION STATUS <span class="req-star">*</span></label>
+                                <div class="radio-status-group">
+                                    <label class="radio-status-card">
+                                        <input type="radio" name="verified" value="true" checked />
+                                        <div class="radio-custom-box">
+                                            <span class="material-symbols-outlined status-icon-verified">verified</span>
+                                            <span>Verified</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-status-card">
+                                        <input type="radio" name="verified" value="false" />
+                                        <div class="radio-custom-box">
+                                            <span class="material-symbols-outlined status-icon-draft">pending</span>
+                                            <span>Draft</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Topic Tags Input -->
+                        <div class="form-field">
+                            <label class="field-label">TOPIC TAGS</label>
+                            <div class="tag-input-container" id="topicTagsContainer">
+                                <input type="text" id="topicTagInput" list="predefinedTags" class="tag-bare-input" placeholder="Type tag and press Enter or Comma..." />
+                            </div>
+                            <datalist id="predefinedTags">
+                                <option value="#FluidMechanics"></option>
+                                <option value="#Thermodynamics"></option>
+                                <option value="#CircuitAnalysis"></option>
+                                <option value="#TensileTesting"></option>
+                                <option value="#Microprocessors"></option>
+                                <option value="#EmbeddedSystems"></option>
+                                <option value="#Automation"></option>
+                                <option value="#Machining"></option>
+                            </datalist>
+                            <span class="field-hint">Press enter or comma to separate tags. Suggestions appear as you type.</span>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ======================================================= -->
+                <!-- SECTION 02: AIM, OBJECTIVES & APPARATUS                 -->
+                <!-- ======================================================= -->
+                <section class="form-card" id="section-aim-objectives">
+                    <div class="form-card-header">
+                        <span class="card-step-num">02</span>
+                        <h2 class="card-step-title">Aim, Objectives &amp; Apparatus</h2>
+                    </div>
+
+                    <div class="form-card-body">
+                        <!-- Aim (Single Statement) -->
+                        <div class="form-field">
+                            <label for="aimText" class="field-label">AIM <span class="req-star">*</span></label>
+                            <textarea id="aimText" name="aim" class="input-textarea" rows="2" placeholder="To investigate the relationship between friction factor and Reynolds number for fluid flow in a circular pipe." required></textarea>
+                        </div>
+
+                        <!-- Objectives Dynamic List (With MS Word Paste Support) -->
+                        <div class="form-field">
+                            <label class="field-label">OBJECTIVES <span class="req-star">*</span></label>
+                            <div class="dynamic-row-list" id="objectivesList">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                            <div class="list-action-bar">
+                                <button type="button" class="btn-add-action" id="addObjectiveBtn">
+                                    <span class="material-symbols-outlined">add_circle</span>
+                                    <span>Add Objective</span>
+                                </button>
+                                <span class="paste-tip">Tip: Paste a whole numbered list from Word into any row.</span>
+                            </div>
+                        </div>
+
+                        <!-- Apparatus List Tag Box (With MS Word Paste Support) -->
+                        <div class="form-field">
+                            <label class="field-label">APPARATUS <span class="req-star">*</span></label>
+                            <div class="tag-input-container" id="apparatusContainer">
+                                <input type="text" id="apparatusInput" class="tag-bare-input" placeholder="Type apparatus and press Enter, or paste list from Word..." />
+                            </div>
+                            <span class="field-hint">Paste full lists from Word (comma or line separated) to auto-create tags.</span>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ======================================================= -->
+                <!-- SECTION 03: THEORY & SETUP                              -->
+                <!-- ======================================================= -->
+                <section class="form-card" id="section-theory">
+                    <div class="form-card-header">
+                        <span class="card-step-num">03</span>
+                        <h2 class="card-step-title">Theory &amp; Setup</h2>
+                    </div>
+
+                    <div class="form-card-body">
+                        <!-- Theory -->
+                        <div class="form-field">
+                            <label for="theoryText" class="field-label">THEORY <span class="req-star">*</span></label>
+                            <textarea id="theoryText" name="theory" class="input-textarea" rows="4" placeholder="Detail the governing physical equations and theoretical framework..." required></textarea>
+                        </div>
+
+                        <!-- Setup Diagram Dropzone -->
+                        <div class="form-field">
+                            <label class="field-label">SETUP DIAGRAM</label>
+                            <div class="file-dropzone" id="diagramDropzone">
+                                <input type="file" id="diagramFileInput" class="file-hidden-input" accept="image/png, image/jpeg, image/svg+xml" />
+                                <span class="material-symbols-outlined dropzone-icon">cloud_upload</span>
+                                <p class="dropzone-text">Drag &amp; drop an image here, or <span class="browse-link">browse</span></p>
+                                <span class="dropzone-subtext" id="diagramFileName">Supports JPG, PNG, SVG (Max 5MB)</span>
+                            </div>
+                            <input type="text" id="diagramCaption" name="diagramCaption" class="input-text caption-input" placeholder="Enter caption for the diagram (e.g. Figure 1.1: Experimental Rig Layout)..." />
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ======================================================= -->
+                <!-- SECTION 04: METHODOLOGY & PRECAUTIONS                   -->
+                <!-- ======================================================= -->
+                <section class="form-card" id="section-methodology">
+                    <div class="form-card-header">
+                        <span class="card-step-num">04</span>
+                        <h2 class="card-step-title">Methodology &amp; Precautions</h2>
+                    </div>
+
+                    <div class="form-card-body">
+                        <!-- Procedure Steps List -->
+                        <div class="form-field">
+                            <label class="field-label">PROCEDURE <span class="req-star">*</span></label>
+                            <div class="dynamic-row-list" id="procedureList">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                            <div class="list-action-bar">
+                                <button type="button" class="btn-add-action" id="addProcedureBtn">
+                                    <span class="material-symbols-outlined">add_circle</span>
+                                    <span>Add Step</span>
+                                </button>
+                                <span class="paste-tip">Tip: Paste complete procedure steps from Word.</span>
+                            </div>
+                        </div>
+
+                        <!-- Precautions List -->
+                        <div class="form-field">
+                            <label class="field-label">PRECAUTIONS</label>
+                            <div class="dynamic-row-list" id="precautionsList">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                            <div class="list-action-bar">
+                                <button type="button" class="btn-add-action" id="addPrecautionBtn">
+                                    <span class="material-symbols-outlined">add_circle</span>
+                                    <span>Add Precaution</span>
+                                </button>
+                                <span class="paste-tip">Tip: Paste bulleted precautions from Word.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ======================================================= -->
+                <!-- SECTION 05: EMPIRICAL DATA & CURVES                     -->
+                <!-- ======================================================= -->
+                <section class="form-card" id="section-data-curves">
+                    <div class="form-card-header">
+                        <span class="card-step-num">05</span>
+                        <h2 class="card-step-title">Empirical Data &amp; Curves</h2>
+                    </div>
+
+                    <div class="form-card-body">
+                        <!-- Dynamic Table of Values Builder -->
+                        <div class="form-field">
+                            <div class="field-label-split">
+                                <label class="field-label">TABLE OF VALUES <span class="req-star">*</span></label>
+                                <button type="button" class="btn-table-control" id="addColumnBtn">
+                                    <span class="material-symbols-outlined">view_column</span>
+                                    <span>Add Column</span>
+                                </button>
+                            </div>
+
+                            <input type="text" id="tableTitleInput" class="input-text" placeholder="Table Title (e.g. Table 1: Pressure drop across pipe sections)" style="margin-bottom: 0.5rem;" />
+
+                            <div class="table-builder-wrapper">
+                                <table class="ledger-table-input" id="valuesTable">
+                                    <thead>
+                                        <tr id="tableHeaderRow">
+                                            <!-- Headers populated dynamically -->
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        <!-- Rows populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button type="button" class="btn-add-action" id="addRowBtn">
+                                <span class="material-symbols-outlined">add</span>
+                                <span>Add Row</span>
+                            </button>
+                        </div>
+
+                        <!-- Experimental Graph Dropzone -->
+                        <div class="form-field">
+                            <label class="field-label">EXPERIMENTAL GRAPH</label>
+                            <div class="file-dropzone" id="graphDropzone">
+                                <input type="file" id="graphFileInput" class="file-hidden-input" accept="image/png, image/jpeg, application/pdf" />
+                                <span class="material-symbols-outlined dropzone-icon">show_chart</span>
+                                <p class="dropzone-text">Upload plotted curve (e.g. Friction Factor vs. Reynolds Number)</p>
+                                <span class="dropzone-subtext" id="graphFileName">Supports JPG, PNG, PDF</span>
+                            </div>
+                            <input type="text" id="graphCaption" name="graphCaption" class="input-text caption-input" placeholder="Enter caption for the graph (e.g. Graph 1: Friction Factor vs Reynolds Number)..." />
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ======================================================= -->
+                <!-- SECTION 06: ANALYSIS & Q&A                              -->
+                <!-- ======================================================= -->
+                <section class="form-card" id="section-analysis">
+                    <div class="form-card-header">
+                        <span class="card-step-num">06</span>
+                        <h2 class="card-step-title">Analysis &amp; Q&amp;A</h2>
+                    </div>
+
+                    <div class="form-card-body">
+                        <!-- Discussion -->
+                        <div class="form-field">
+                            <label for="discussionText" class="field-label">DISCUSSION <span class="req-star">*</span></label>
+                            <textarea id="discussionText" name="discussion" class="input-textarea" rows="3" placeholder="Interpret the experimental results, discuss error percentages, and evaluate theoretical adherence..." required></textarea>
+                        </div>
+
+                        <!-- Conclusion -->
+                        <div class="form-field">
+                            <label for="conclusionText" class="field-label">CONCLUSION <span class="req-star">*</span></label>
+                            <textarea id="conclusionText" name="conclusion" class="input-textarea" rows="3" placeholder="Summarize findings and validation with respect to the initial aim..." required></textarea>
+                        </div>
+
+                        <!-- Lab Manual Questions List -->
+                        <div class="form-field">
+                            <label class="field-label">LAB MANUAL QUESTIONS</label>
+                            <div class="qa-cards-list" id="qaList">
+                                <!-- Q&A cards populated dynamically -->
+                            </div>
+                            <button type="button" class="btn-add-action" id="addQaBtn">
+                                <span class="material-symbols-outlined">add_circle</span>
+                                <span>Add Q&amp;A Pair</span>
+                            </button>
+                        </div>
+
+                        <!-- Key Learnings -->
+                        <div class="form-field">
+                            <label class="field-label">KEY LEARNINGS</label>
+                            <div class="dynamic-row-list" id="learningsList">
+                                <!-- Populated dynamically -->
+                            </div>
+                            <div class="list-action-bar">
+                                <button type="button" class="btn-add-action" id="addLearningBtn">
+                                    <span class="material-symbols-outlined">add_circle</span>
+                                    <span>Add Learning</span>
+                                </button>
+                                <span class="paste-tip">Tip: Paste bulleted takeaways from Word.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- ======================================================= -->
+                <!-- BOTTOM ACTION BAR                                       -->
+                <!-- ======================================================= -->
+                <footer class="form-submit-footer">
+                    <div class="footer-actions-container">
+                        <button type="button" class="btn-action-draft" id="saveDraftBtn">
+                            <span class="material-symbols-outlined">save</span>
+                            <span>Save Draft</span>
+                        </button>
+                        <button type="submit" class="btn-action-submit" id="submitArchiveBtn">
+                            <span>Submit to Archive</span>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </footer>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Layout Injector & Form Controller Script -->
+    <script src="/js/layout.js"></script>
+    <script src="/js/updaterepo.js"></script>
+</body>
+
+</html>

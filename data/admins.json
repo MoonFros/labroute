@@ -1,0 +1,20 @@
+{
+    "admins": [
+        {
+            "email": "etini7809@gmail.com",
+            "passwordCrypt": "426f512414ec69630cb7d7ffeba0ce75821001ac6b9e6c8e96d1a9b12df933da"
+        },
+        {
+            "email": "osakioyaaika525@gmail.com",
+            "passwordCrypt": "bfa288e16faaf1284f9eb84c5aa449c3ca34a10e9676e3907eb6b50bb978a948"
+        },
+        {
+            "email": "nnutechnologies@gmail.com",
+            "passwordCrypt": "e5826ab683390fcad8143c376e82ac2fefe0179d21b41e2951ba77c2bee42005"
+        },
+        {
+            "email": "caoboh2006@gmail.com",
+            "passwordCrypt": "346f412fa74510d6c0b6943273acdba944c0e630d0bcbec8f8cba0e7e08063d9"
+        }
+    ]
+}

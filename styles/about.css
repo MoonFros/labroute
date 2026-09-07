@@ -1,0 +1,333 @@
+.about-page-main {
+  /* padding-top: 140px;  */
+  padding-bottom: 6rem;
+  background-color: var(--surface);
+}
+
+/* 1. Editorial Intro Section */
+.editorial-intro {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+/* Sticky Sidebar */
+.editorial-sidebar {
+  position: relative;
+}
+
+.sidebar-links {
+  position: sticky;
+  top: 140px; 
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.938rem;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.editorial-content {
+  padding-top: 140px;
+}
+/* Editorial Typography */
+.editorial-title {
+  font-family: var(--font-sans); 
+  font-size: clamp(2.5rem, 6vw, 4\rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+.editorial-text {
+  max-width: 720px;
+}
+
+.editorial-text p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* 2. Banner Image */
+.editorial-banner {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 6rem;
+}
+
+.editorial-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(20%); 
+}
+
+/* 3. Quote Section */
+.quote-section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.quote-block {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.quote-author {
+  font-size: 0.938rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.quote-mark {
+  position: absolute;
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  color: var(--primary);
+  opacity: 0.15;
+  line-height: 0;
+}
+
+.quote-mark.open {
+  top: 1rem;
+  left: -2rem;
+}
+
+.quote-mark.close {
+  bottom: 0;
+  right: 0;
+}
+
+.quote-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* 4. Team Section */
+.team-section {
+  padding-top: 140px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Staggered Portrait Cluster */
+.team-images-cluster {
+  position: relative;
+  height: 700px; /* Fixed height to allow absolute positioning inside */
+}
+
+/* Card Container */
+.team-card {
+  position: absolute;
+  background-color: #eee;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  margin: 0;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  z-index: 10 !important;
+}
+
+/* Image Base */
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.team-card:hover .team-img {
+  transform: scale(1.05);
+}
+
+/* Hover Name Caption */
+.team-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 1.25rem 1.25rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 33, 71, 0.95) 100%);
+  color: var(--text-inverse);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+  pointer-events: none; 
+}
+
+.team-card:hover .team-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-caption h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+
+.team-caption p {
+  font-size: 0.75rem;
+  color: var(--text-inverse-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Exact Sizing and Positioning for the 4 Cards */
+.team-card.img-1 {
+  width: 55%;
+  aspect-ratio: 4/5;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.team-card.img-2 {
+  width: 45%;
+  aspect-ratio: 1/1;
+  top: 15%;
+  right: 0;
+  z-index: 1;
+}
+
+.team-card.img-3 {
+  width: 45%;
+  aspect-ratio: 1/1;
+  top: 48%;
+  left: 5%;
+  z-index: 3;
+}
+
+.team-card.img-4 {
+  width: 55%;
+  aspect-ratio: 4/5;
+  bottom: 0;
+  right: 5%;
+  z-index: 4;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-number {
+  font-family: var(--font-mono);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .editorial-intro,
+  .quote-section,
+  .team-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .editorial-sidebar {
+    display: none; /* Hide sidebar on tablet/mobile to save space */
+  }
+
+  .editorial-banner {
+    height: 400px;
+  }
+
+  .team-images-cluster {
+    height: 500px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page-main {
+    padding-top: 100px;
+  }
+  
+  .editorial-title {
+    font-size: 3rem;
+  }
+  
+  .quote-text {
+    font-size: 1.75rem;
+  }
+
+  .team-images-cluster {
+    height: 400px;
+  }
+}

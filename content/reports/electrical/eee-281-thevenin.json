@@ -1,0 +1,27 @@
+{
+  "id": "eee-281-thevenin",
+  "code": "EEE 281",
+  "title": "Verification of Thevenin's & Norton's Theorems",
+  "department": "electrical",
+  "level": "200",
+  "session": "2023/2024",
+  "verified": true,
+  "content": {
+    "objective": "To experimentally verify Thevenin's and Norton's equivalent circuit representations across varying resistive load terminals.",
+    "apparatus": [
+      "Dual DC Regulated Power Supply (0-30V)",
+      "Digital Multimeter (DMM)",
+      "Precision Resistor Decade Box",
+      "Breadboard and jumper wires",
+      "Fixed resistors (100Ω, 220Ω, 470Ω, 1kΩ)"
+    ],
+    "theory": "Thevenin's theorem states that any linear active network with voltage sources and resistances can be replaced across its output terminals by an equivalent independent voltage source Vth in series with an equivalent resistance Rth.",
+    "procedure": [
+      "Construct the dual-loop bridge circuit on the breadboard.",
+      "Disconnect the load resistor RL and measure open-circuit voltage Voc (Vth) across terminals A-B using the DMM.",
+      "Deactivate independent voltage sources (short-circuit them) and measure equivalent resistance Rth.",
+      "Re-insert load resistors RL = 100Ω, 220Ω, 470Ω and record load current IL."
+    ],
+    "conclusion": "Calculated load currents from Thevenin equivalent parameters matched measured bench values within an error margin of 1.4%."
+  }
+}

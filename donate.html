@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support the developers maintaining the LabRoute engineering repository." />
+  <title>Support the Devs — LabRoute</title>
+
+  <!-- Material Symbols & Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/donate.css" />
+
+   <!-- Vercel Web Analytics --> 
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+
+<body data-page="donate">
+
+  <!-- Injected automatically by layout.js -->
+  <header id="site-header"></header>
+
+  <main class="donate-page-main">
+    <section class="container">
+      
+      <div class="donate-grid">
+        <!-- Left Column: The Impact -->
+        <div class="donate-context">
+          <span class="badge-tag-gold">Sustain the Archive</span>
+          <h1 class="donate-headline">Empower The Architects.</h1>
+          <p class="donate-intro">
+            LabRoute is built by students, for students. We don't run ads <b>(unless it's a developer's product)</b> or charge subscription fees. Your contribution directly funds the infrastructure keeping this repository lightning-fast and universally accessible.
+          </p>
+          
+          <ul class="impact-list">
+            <li>
+              <span class="material-symbols-outlined">dns</span>
+              <div>
+                <strong>Server & Database Costs</strong>
+                <p>Scaling to support thousands of concurrent search queries.</p>
+              </div>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">document_scanner</span>
+              <div>
+                <strong>Document Processing</strong>
+                <p>Funding the digitization and verification of legacy physical reports.</p>
+              </div>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">local_cafe</span>
+              <div>
+                <strong>Developer Fuel</strong>
+                <p>Coffee and late-night sustenance for our open-source maintainers.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column: The Widget -->
+        <div class="donate-widget-container">
+          <div class="ui-card donate-widget">
+            <h3 class="widget-title">Make a Contribution</h3>
+            
+            <form id="donationForm" class="donation-form">
+              <!-- Amount Selector -->
+              <div class="form-group">
+                <label class="form-label">Select Amount (₦)</label>
+                <div class="amount-grid" id="amountGrid">
+                  <button type="button" class="amount-btn" data-val="1000">₦1,000</button>
+                  <button type="button" class="amount-btn active" data-val="2500">₦2,500</button>
+                  <button type="button" class="amount-btn" data-val="5000">₦5,000</button>
+                  <button type="button" class="amount-btn" data-val="custom">Custom</button>
+                </div>
+              </div>
+
+              <!-- Hidden Custom Amount Input -->
+              <div class="form-group custom-amount-group" id="customAmountGroup" style="display: none;">
+                <label for="customAmount" class="form-label">Enter Custom Amount (₦)</label>
+                <input type="number" id="customAmount" class="input-control" placeholder="e.g. 10000" min="500" />
+              </div>
+
+              <!-- Donor Details -->
+              <div class="form-group">
+                <label for="donorName" class="form-label">Name (Optional)</label>
+                <input type="text" id="donorName" class="input-control" placeholder="Anonymous Scholar" />
+              </div>
+
+              <div class="form-group">
+                <label for="donorEmail" class="form-label">Email Address</label>
+                <input type="email" id="donorEmail" class="input-control" placeholder="student@uniben.edu" required />
+              </div>
+
+              <button type="submit" class="btn btn-gold btn-full-width" id="payButton">
+                <span>Proceed to Pay</span>
+                <span class="material-symbols-outlined">lock</span>
+              </button>
+            </form>
+
+            <div class="secure-badge">
+              <span class="material-symbols-outlined">verified_user</span>
+              <span>Secure encrypted transaction via Paystack / Flutterwave</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Injected automatically by layout.js -->
+  <footer id="site-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/layout.js"></script>
+  <script src="js/donate.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "cpe-401-microprocessor",
+    "code": "CPE 401",
+    "title": "Microprocessor Interfacing & Programming",
+    "department": "computer",
+    "level": "400",
+    "session": "2023/2024",
+    "tags": ["Microprocessors", "EmbeddedSystems"],
+    "file": "computer/cpe-401-microprocessor.json",
+    "verified": true
+  },
+  {
+    "id": "eee-281-thevenin",
+    "code": "EEE 281",
+    "title": "Verification of Thevenin's & Norton's Theorems",
+    "department": "electrical",
+    "level": "200",
+    "session": "2023/2024",
+    "tags": ["CircuitAnalysis"],
+    "file": "electrical/eee-281-thevenin.json",
+    "verified": true
+  },
+  {
+    "id": "mec-321-thermodynamics",
+    "code": "MEC 321",
+    "title": "Thermodynamics of Gas Turbines & Heat Cycles",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2022/2023",
+    "tags": ["Thermodynamics", "HeatTransfer"],
+    "file": "mechanical/mec-321-thermodynamics.json",
+    "verified": true
+  },
+  {
+    "id": "mct-311-plc-automation",
+    "code": "MCT 311",
+    "title": "PLC Ladder Logic for Pneumatic Actuators",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2023/2024",
+    "tags": ["Automation", "Robotics", "PLC"],
+    "file": "mechatronics/mct-311-plc-automation.json",
+    "verified": true
+  },
+  {
+    "id": "pre-412-cnc-machining",
+    "code": "PRE 412",
+    "title": "G-Code Optimization for CNC Milling Operations",
+    "department": "production",
+    "level": "400",
+    "session": "2023/2024",
+    "tags": ["Manufacturing", "CNC", "Machining"],
+    "file": "production/pre-412-cnc-machining.json",
+    "verified": true
+  }
+]

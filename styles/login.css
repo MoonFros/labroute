@@ -1,0 +1,308 @@
+/* ==========================================================================
+   MODERN SPLIT-CARD DARK LOGIN STYLES
+   ========================================================================== */
+
+/* Full Viewport Canvas */
+.auth-viewport {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface);
+  padding: 100px 1.5rem 4rem;
+}
+
+/* Master Floating Card */
+.auth-card {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  min-height: 580px;
+  background: var(--surface-card);
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  overflow: hidden;
+}
+
+/* --- LEFT SIDE: Form Section (~56% width) --- */
+.auth-left {
+  flex: 1 1 56%;
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+/* Card Top Navigation */
+.auth-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.brand-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--on-surface);
+}
+
+.brand-name span {
+  color: var(--accent);
+}
+
+/* Headings */
+.auth-heading-group {
+  margin-bottom: 2rem;
+}
+
+.auth-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #7b8293;
+  text-transform: uppercase;
+}
+
+.auth-title {
+  font-family: var(--font-sans);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 0.35rem;
+}
+
+.auth-title .accent-dot {
+  color: var(--accent);
+}
+
+.auth-subtext {
+  font-size: 0.875rem;
+  color: #7b8293;
+}
+
+.auth-subtext a {
+  color: var(--accent);
+  font-weight: 500;
+  transition: opacity var(--transition-fast);
+}
+
+.auth-subtext a:hover {
+  opacity: 0.8;
+}
+
+/* Form & Inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Stacked Pill Input Container */
+.field-pill {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.65rem 1.25rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.field-pill:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.field-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #7b8293;
+  margin-bottom: 0.15rem;
+  text-transform: capitalize;
+}
+
+.field-input {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+  width: 90%;
+}
+
+.field-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Field Icons */
+.field-icon,
+.field-toggle-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555c6e;
+  font-size: 18px;
+}
+
+.field-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.field-toggle-btn:hover {
+  color: #ffffff;
+}
+
+/* Action Buttons (Pill Format) */
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-pill {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.938rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-pill:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background: var(--primary-dark);
+  color: var(--text-inverse);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-darker);
+  color: var(--text-main);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--primary-dark);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Status Alert */
+.auth-alert {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.813rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.auth-alert.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.auth-alert.success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #6ee7b7;
+}
+
+/* --- RIGHT SIDE: Visual Mask & Backdrop (~44% width) --- */
+.auth-visual {
+  flex: 1 1 44%;
+  position: relative;
+  background: url('../assets/other_images/group_pic4.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 2.5rem;
+}
+
+/* Organic Gradient Blend Mask */
+.visual-gradient-mask {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, #141721 0%, rgba(20, 23, 33, 0.55) 50%, rgba(20, 23, 33, 0.1) 100%),
+    linear-gradient(180deg, rgba(20, 23, 33, 0.3) 0%, rgba(20, 23, 33, 0.85) 100%);
+}
+
+.visual-watermark {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   RESPONSIVE (Mobile Screen Fallback)
+   ========================================================================== */
+@media (max-width: 860px) {
+  .auth-card {
+    flex-direction: column;
+    max-width: 480px;
+    border-radius: 24px;
+  }
+
+  .auth-visual {
+    display: none; /* Hide right panel on mobile to keep focus pure */
+  }
+
+  .auth-left {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .auth-title {
+    font-size: 1.85rem;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mct-311-plc-automation",
+  "code": "MCT 311",
+  "title": "PLC Ladder Logic for Pneumatic Actuators",
+  "department": "mechatronics",
+  "level": "300",
+  "verified": true,
+  "content": {
+    "objective": "To design, simulate, and deploy an automated pick-and-place ladder logic sequence using a Siemens S7-1200 PLC and double-acting pneumatic cylinders.",
+    "apparatus": [
+      "Siemens S7-1200 PLC Trainer",
+      "Double-acting pneumatic cylinders with magnetic reed sensors",
+      "5/2-Way Solenoid directional control valves",
+      "Air compressor (6 bar working pressure)",
+      "TIA Portal V17 Software Suite"
+    ],
+    "theory": "Electro-pneumatic automation utilizes discrete 24V DC signals from PLC output relays to actuate solenoid coils, shifting spool valves that direct pressurized air to cylinder chambers.",
+    "procedure": [
+      "Wire the magnetic cylinder limit switches (A0, A1, B0, B1) to PLC digital inputs %I0.0 through %I0.3.",
+      "Connect 5/2 solenoid coils to PLC digital outputs %Q0.0 through %Q0.3.",
+      "Write a cascaded ladder program in TIA Portal implementing the motion sequence A+ B+ A- B-.",
+      "Download logic to CPU and verify emergency-stop interlocking functionality."
+    ],
+    "conclusion": "The ladder sequence executed cleanly with zero positional overlap. Cycle repeat time averaged 3.2 seconds without pressure drops."
+  }
+}
