@@ -60,18 +60,18 @@ const Layout = {
       <div class="container footer-container">
         <div class="footer-left">
           <a href="index.html" class="brand-logo" aria-label="LabRoute Home">
-          <span class="material-symbols-outlined">experiment</span>
-          <span>LabRoute</span>
-        </a>
-          <p>&copy; ${currentYear} LabRoute Institutional Repository. All Rights Reserved.</p>
+            <span class="material-symbols-outlined">experiment</span>
+            <span>LabRoute</span>
+          </a>
+          
         </div>
 
         <ul class="footer-links">
           <li><a href="#ethics">Research Ethics</a></li>
-          <li><a href="#licensing">Institutional Licensing</a></li>
           <li><a href="#privacy">Privacy Policy</a></li>
-          <li><a href="#governance">Data Governance</a></li>
         </ul>
+
+        <p>&copy; ${currentYear} LabRoute Institutional Repository. All Rights Reserved.</p>
       </div>
     `;
     },

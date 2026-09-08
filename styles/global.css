@@ -344,6 +344,7 @@ a {
 ::placeholder {
   color: var(--text-main);
   font-size: 0.875rem;
+  text-wrap: ellipsis;
 }
 
 .search-icon {
@@ -407,6 +408,7 @@ a {
 }
 
 .site-footer {
+  width: 100%;
   background-color: var(--primary-dark);
   border-top: 1px solid var(--glass-border);
   padding: 2.5rem 0;
