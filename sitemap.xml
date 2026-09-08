@@ -11,18 +11,18 @@
 
   <!-- Secondary Page -->
   <url>
-    <loc>https://https://labroute.vercel.app/about.html</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://labroute.vercel.app/about.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Additional Page -->
   <url>
-    <loc>https://https://labroute.vercel.app/report.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://labroute.vercel.app/report.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
 
 </urlset>
