@@ -258,7 +258,7 @@
 .auth-visual {
   flex: 1 1 44%;
   position: relative;
-  background: url('../assets/other_images/group_pic4.jpeg') center/cover no-repeat;
+  background: url('../assets/other_images/group_pic4.jpeg') 42% center/cover no-repeat;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
