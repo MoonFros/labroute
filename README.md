@@ -1,5 +1,5 @@
 # ELA-Website # 
-A website for uniben ela
+A website for uniben ELA
 
 Umoh Etini - Team Lead and Report Author (Tee Hee 😁)
 
