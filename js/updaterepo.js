@@ -1,6 +1,9 @@
 /**
  * MyEla - Report Ledger Submission Controller
- * Handles Word paste parsing, tag pills, dynamic tables, and JSON generation.
+ * Handles Word paste parsing, tag pills, dynamic tables, JSON generation,
+ * and producing two downloadable files on submit:
+ *   1. <id>.json      -> full report, to be placed in content/reports/<department>/
+ *   2. <id>-meta.json -> single metadata object, to be pasted into content/reports/index.json
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const topicInput = document.getElementById('topicTagInput');
 
     function renderTopicTags() {
-        // Clear existing chips, keep the input element
         topicContainer.querySelectorAll('.tag-chip').forEach(el => el.remove());
 
         topicTags.forEach((tag, idx) => {
@@ -83,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (apparatusInput) {
-        // Paste handler for apparatus
         apparatusInput.addEventListener('paste', (e) => {
             e.preventDefault();
             const text = (e.clipboardData || window.clipboardData).getData('text');
@@ -139,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <button type="button" class="btn-icon-danger" title="Remove row"><span class="material-symbols-outlined">delete</span></button>
     `;
 
-        // Smart Paste on row input
         const input = row.querySelector('.list-input');
         input.addEventListener('paste', (e) => {
             const text = (e.clipboardData || window.clipboardData).getData('text');
@@ -153,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Delete row handler
         row.querySelector('.btn-icon-danger').addEventListener('click', () => {
             row.remove();
             if (isNumbered) reindexRows(containerId);
@@ -170,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Bind Add Buttons
     document.getElementById('addObjectiveBtn')?.addEventListener('click', () => createListRow('objectivesList', '', true, false));
     document.getElementById('addProcedureBtn')?.addEventListener('click', () => createListRow('procedureList', '', true, false));
     document.getElementById('addPrecautionBtn')?.addEventListener('click', () => createListRow('precautionsList', '', false, true));
@@ -224,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.getElementById('tableBody');
 
     function renderTable() {
-        // 1. Render Headers
         tableHeaderRow.innerHTML = '';
         tableHeaders.forEach((headerText, colIdx) => {
             const th = document.createElement('th');
@@ -238,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         tableHeaderRow.innerHTML += `<th class="th-action"></th>`;
 
-        // 2. Render Rows
         tableBody.innerHTML = '';
         tableRows.forEach((row, rowIdx) => {
             const tr = document.createElement('tr');
@@ -250,7 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Column / Row Table Event Handlers
     document.getElementById('addColumnBtn')?.addEventListener('click', () => {
         tableHeaders.push(`Var ${tableHeaders.length + 1}`);
         tableRows.forEach(row => row.push(''));
@@ -333,11 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderApparatusTags();
     renderTable();
 
-    // Populate Default List Rows
     createListRow('objectivesList', '', true);
-
     createListRow('procedureList', '', true);
-
     createListRow('precautionsList', '', false, true);
     createListRow('learningsList', '', false, false);
 
@@ -346,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createListRow('learningsList', '', false, false);
 
     // =========================================================================
-    // 8. JSON COMPILATION & SUBMISSION
+    // 8. JSON COMPILATION
     // =========================================================================
     function extractFormData() {
         const code = document.getElementById('courseCode').value.trim();
@@ -360,7 +352,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/(^-|-$)/g, '');
 
-        // Extract objectives, procedures, precautions, learnings
         const getValues = (containerId) => {
             const arr = [];
             document.querySelectorAll(`#${containerId} .list-input`).forEach(input => {
@@ -370,7 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return arr;
         };
 
-        // Extract Q&A
         const questions = [];
         document.querySelectorAll('#qaList .qa-item-card').forEach(card => {
             const q = card.querySelector('.qa-question-input')?.value.trim();
@@ -382,7 +372,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const graphCaption = document.getElementById('graphCaption').value.trim();
         const tableTitle = document.getElementById('tableTitleInput').value.trim() || 'Table 1: Experimental Measurements';
 
-        // Structured Report JSON
+        // Match the JSON's image src paths to the actual uploaded file extensions
+        const diagramFile = document.getElementById('diagramFileInput').files[0] || null;
+        const graphFile = document.getElementById('graphFileInput').files[0] || null;
+        const diagramExt = diagramFile ? diagramFile.name.split('.').pop() : 'png';
+        const graphExt = graphFile ? graphFile.name.split('.').pop() : 'png';
+
+        // Full report object — this is what gets written to content/reports/<department>/<id>.json
         return {
             id: cleanId || 'report-ledger',
             code: code,
@@ -399,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 apparatus: [...apparatusTags],
                 theory: {
                     text: document.getElementById('theoryText').value.trim(),
-                    diagrams: diagramCaption ? [{ src: `assets/lab_images/${cleanId}_diagram.png`, caption: diagramCaption }] : []
+                    diagrams: (diagramFile || diagramCaption) ? [{ src: `assets/lab_images/${cleanId}_diagram.${diagramExt}`, caption: diagramCaption }] : []
                 },
                 tables: [
                     {
@@ -408,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         rows: tableRows.map(row => [...row])
                     }
                 ],
-                graphs: graphCaption ? [{ title: graphCaption, src: `assets/lab_images/${cleanId}_graph.png`, caption: graphCaption }] : [],
+                graphs: (graphFile || graphCaption) ? [{ title: graphCaption, src: `assets/lab_images/${cleanId}_graph.${graphExt}`, caption: graphCaption }] : [],
                 procedure: getValues('procedureList'),
                 precautions: getValues('precautionsList'),
                 discussion: document.getElementById('discussionText').value.trim(),
@@ -419,33 +415,118 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // 9. Save Draft (Local Storage)
+    // Builds the trimmed metadata object — exactly the fields used in index.json,
+    // nothing from the "content" section.
+    function extractMetadata(reportJSON) {
+        return {
+            id: reportJSON.id,
+            code: reportJSON.code,
+            title: reportJSON.title,
+            department: reportJSON.department,
+            level: reportJSON.level,
+            session: reportJSON.session,
+            tags: reportJSON.tags,
+            file: reportJSON.file,
+            verified: reportJSON.verified
+        };
+    }
+
+    // =========================================================================
+    // 9. SAVE DRAFT (Local Storage — unchanged)
+    // =========================================================================
     document.getElementById('saveDraftBtn')?.addEventListener('click', () => {
         const data = extractFormData();
         localStorage.setItem('myela_report_draft', JSON.stringify(data));
         alert('Draft saved locally in your browser!');
     });
 
-    // 10. Submit to Archive (Downloads the JSON File directly)
+    // =========================================================================
+    // 10. SUBMIT TO ARCHIVE — downloads report + metadata as two separate files
+    // =========================================================================
+
+    // Generic helper: triggers a browser download of any Blob/File under a given filename
+    function downloadFile(filename, blob) {
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = filename;
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    // Wraps downloadFile for plain JS objects that need to be serialized to JSON first
+    function downloadJSON(filename, dataObj) {
+        const jsonString = JSON.stringify(dataObj, null, 2);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        downloadFile(filename, blob);
+    }
+
     const form = document.getElementById('reportLedgerForm');
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const reportJSON = extractFormData();
-        const jsonString = JSON.stringify(reportJSON, null, 2);
 
-        // Auto-trigger file download for the developer / admin to place in content/reports/
-        const blob = new Blob([jsonString], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const downloadAnchor = document.createElement('a');
-        downloadAnchor.href = url;
-        downloadAnchor.download = `${reportJSON.id}.json`;
-        document.body.appendChild(downloadAnchor);
-        downloadAnchor.click();
-        downloadAnchor.remove();
-        URL.revokeObjectURL(url);
+        if (!reportJSON.code || !reportJSON.title) {
+            alert('Please fill in Course Code and Experiment Title before submitting.');
+            return;
+        }
 
-        alert(`Success! Generated "${reportJSON.id}.json".\n\nPlace this file into: content/reports/${reportJSON.department}/`);
+        const metadata = extractMetadata(reportJSON);
+        const reportFilename = `${reportJSON.id}.json`;
+        const metaFilename = `${reportJSON.id}-meta.json`;
+
+        const diagramFile = document.getElementById('diagramFileInput').files[0] || null;
+        const graphFile = document.getElementById('graphFileInput').files[0] || null;
+
+        // Build the queue of downloads to fire, each 250ms apart so browsers
+        // don't silently block downloads triggered back-to-back in one click.
+        const downloadQueue = [
+            () => downloadJSON(reportFilename, reportJSON),
+            () => downloadJSON(metaFilename, metadata)
+        ];
+
+        let diagramFilename = null;
+        if (diagramFile) {
+            diagramFilename = `${reportJSON.id}_diagram.${diagramFile.name.split('.').pop()}`;
+            downloadQueue.push(() => downloadFile(diagramFilename, diagramFile));
+        }
+
+        let graphFilename = null;
+        if (graphFile) {
+            graphFilename = `${reportJSON.id}_graph.${graphFile.name.split('.').pop()}`;
+            downloadQueue.push(() => downloadFile(graphFilename, graphFile));
+        }
+
+        downloadQueue.forEach((triggerDownload, i) => setTimeout(triggerDownload, i * 250));
+
+        setTimeout(() => {
+            let message =
+                `Downloaded ${downloadQueue.length} file(s):\n\n` +
+                `1) ${reportFilename}\n` +
+                `   → move this into: content/reports/${reportJSON.department}/\n\n` +
+                `2) ${metaFilename}\n` +
+                `   → open it, copy the object, and paste it into the array in: content/reports/index.json\n`;
+
+            let step = 3;
+            if (diagramFilename) {
+                message += `\n${step}) ${diagramFilename}\n   → move this into: assets/lab_images/\n`;
+                step++;
+            }
+            if (graphFilename) {
+                message += `\n${step}) ${graphFilename}\n   → move this into: assets/lab_images/\n`;
+                step++;
+            }
+
+            message +=
+                `\nThen commit and push all changes to Git.\n\n` +
+                `(If your browser asks permission to allow multiple downloads, click Allow.)`;
+
+            alert(message);
+        }, downloadQueue.length * 250);
     });
 
 });
