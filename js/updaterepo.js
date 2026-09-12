@@ -385,13 +385,12 @@ document.addEventListener('DOMContentLoaded', () => {
             title: title,
             department: department,
             level: level,
-            session: "2023/2024",
             tags: [...topicTags],
             verified: verified,
             file: `${department}/${cleanId}.json`,
             content: {
                 aim: document.getElementById('aimText').value.trim(),
-                objectives: getValues('objectivesList'),
+                objective: getValues('objectivesList'),
                 apparatus: [...apparatusTags],
                 theory: {
                     text: document.getElementById('theoryText').value.trim(),
@@ -424,7 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title: reportJSON.title,
             department: reportJSON.department,
             level: reportJSON.level,
-            session: reportJSON.session,
             tags: reportJSON.tags,
             file: reportJSON.file,
             verified: reportJSON.verified

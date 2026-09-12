@@ -63,6 +63,7 @@
         <div class="donate-widget-container">
           <div class="ui-card donate-widget">
             <h3 class="widget-title">Make a Contribution</h3>
+            <h4>Account Number - XXXXXXX Moniepoint Business - Name of account</h4>
             
             <form id="donationForm" class="donation-form">
               <!-- Amount Selector -->
@@ -91,6 +92,11 @@
               <div class="form-group">
                 <label for="donorEmail" class="form-label">Email Address</label>
                 <input type="email" id="donorEmail" class="input-control" placeholder="student@uniben.edu" required />
+              </div>
+
+              <div class="form-group">
+                <label for="donorReceipt" class="form-label">Transaction Receipt (Image or PDF)</label>
+                <input type="file" accept="image/jpeg, image/png, application/pdf" id="donorReceipt" class="input-control" required />
               </div>
 
               <button type="submit" class="btn btn-gold btn-full-width" id="payButton">
