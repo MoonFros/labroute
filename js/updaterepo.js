@@ -1,6 +1,7 @@
 /**
- * MyEla - Report Ledger Submission Controller
- * Handles Word paste parsing, tag pills, dynamic tables, and JSON generation.
+ * Labroute - Report Ledger Submission Controller (Fixed & Synchronized)
+ * Handles Word paste parsing, tag pills, dynamic tables, multi-diagram uploads,
+ * and producing downloadable files for the static archive.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -121,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
     function createListRow(containerId, value = '', isNumbered = true, isBullet = false) {
         const container = document.getElementById(containerId);
+        if (!container) return;
+
         const row = document.createElement('div');
         row.className = 'list-item-row';
 
@@ -134,10 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         row.innerHTML = `
-      ${prefixHTML}
-      <input type="text" class="input-text list-input" value="${value.replace(/"/g, '&quot;')}" placeholder="Enter details..." />
-      <button type="button" class="btn-icon-danger" title="Remove row"><span class="material-symbols-outlined">delete</span></button>
-    `;
+            ${prefixHTML}
+            <input type="text" class="input-text list-input" value="${value.replace(/"/g, '&quot;')}" placeholder="Enter details..." />
+            <button type="button" class="btn-icon-danger" title="Remove row"><span class="material-symbols-outlined">delete</span></button>
+        `;
 
         // Smart Paste on row input
         const input = row.querySelector('.list-input');
@@ -164,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function reindexRows(containerId) {
         const container = document.getElementById(containerId);
+        if (!container) return;
         container.querySelectorAll('.list-item-row').forEach((row, i) => {
             const numSpan = row.querySelector('.row-num');
             if (numSpan) numSpan.textContent = `${i + 1}.`;
@@ -182,20 +186,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const qaList = document.getElementById('qaList');
 
     function addQaCard(q = '', a = '') {
+        if (!qaList) return;
         const card = document.createElement('div');
         card.className = 'qa-item-card';
         const count = qaList.children.length + 1;
 
         card.innerHTML = `
-      <div class="qa-card-top">
-          <label class="qa-title-label">QUESTION ${count}</label>
-          <button type="button" class="btn-icon-danger" title="Delete Question"><span class="material-symbols-outlined">delete</span></button>
-      </div>
-      <input type="text" class="input-text qa-question-input" value="${q.replace(/"/g, '&quot;')}" placeholder="Enter question..." />
-      
-      <label class="qa-ans-label">ANSWER</label>
-      <textarea class="input-textarea qa-answer-input" rows="2" placeholder="Type answer here...">${a}</textarea>
-    `;
+            <div class="qa-card-top">
+                <label class="qa-title-label">QUESTION ${count}</label>
+                <button type="button" class="btn-icon-danger" title="Delete Question"><span class="material-symbols-outlined">delete</span></button>
+            </div>
+            <input type="text" class="input-text qa-question-input" value="${q.replace(/"/g, '&quot;')}" placeholder="Enter question..." />
+            
+            <label class="qa-ans-label">ANSWER</label>
+            <textarea class="input-textarea qa-answer-input" rows="2" placeholder="Type answer here...">${a}</textarea>
+        `;
 
         card.querySelector('.btn-icon-danger').addEventListener('click', () => {
             card.remove();
@@ -206,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function reindexQaCards() {
+        if (!qaList) return;
         qaList.querySelectorAll('.qa-item-card').forEach((card, i) => {
             const label = card.querySelector('.qa-title-label');
             if (label) label.textContent = `QUESTION ${i + 1}`;
@@ -218,22 +224,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. DYNAMIC TABLE OF VALUES BUILDER
     // =========================================================================
     let tableHeaders = ["Parameter 1", "Parameter 2", "Parameter 3"];
-    let tableRows = [[1, 2, 3]];
+    let tableRows = [['', '', '']];
 
     const tableHeaderRow = document.getElementById('tableHeaderRow');
     const tableBody = document.getElementById('tableBody');
 
     function renderTable() {
-        // 1. Render Headers
+        if (!tableHeaderRow || !tableBody) return;
+
         tableHeaderRow.innerHTML = '';
         tableHeaders.forEach((headerText, colIdx) => {
             const th = document.createElement('th');
             th.innerHTML = `
-        <div class="header-cell-wrapper">
-          <input type="text" class="th-input" value="${headerText}" data-col="${colIdx}" />
-          ${tableHeaders.length > 1 ? `<button type="button" class="btn-col-del" data-col="${colIdx}" title="Delete Column"><span class="material-symbols-outlined">close</span></button>` : ''}
-        </div>
-      `;
+                <div class="header-cell-wrapper">
+                  <input type="text" class="th-input" value="${headerText}" data-col="${colIdx}" />
+                  ${tableHeaders.length > 1 ? `<button type="button" class="btn-col-del" data-col="${colIdx}" title="Delete Column"><span class="material-symbols-outlined">close</span></button>` : ''}
+                </div>
+            `;
             tableHeaderRow.appendChild(th);
         });
         tableHeaderRow.innerHTML += `<th class="th-action"></th>`;
@@ -264,14 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTable();
     });
 
-    tableHeaderRow.addEventListener('input', (e) => {
+    tableHeaderRow?.addEventListener('input', (e) => {
         if (e.target.classList.contains('th-input')) {
             const col = e.target.getAttribute('data-col');
             tableHeaders[col] = e.target.value;
         }
     });
 
-    tableHeaderRow.addEventListener('click', (e) => {
+    tableHeaderRow?.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn-col-del');
         if (btn) {
             const col = parseInt(btn.getAttribute('data-col'), 10);
@@ -281,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    tableBody.addEventListener('input', (e) => {
+    tableBody?.addEventListener('input', (e) => {
         if (e.target.classList.contains('cell-input')) {
             const row = e.target.getAttribute('data-row');
             const col = e.target.getAttribute('data-col');
@@ -289,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    tableBody.addEventListener('click', (e) => {
+    tableBody?.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn-row-del');
         if (btn) {
             const row = parseInt(btn.getAttribute('data-row'), 10);
@@ -299,14 +306,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // =========================================================================
-    // 6. FILE UPLOAD VISUAL FEEDBACK
+    // 6. SETUP DIAGRAMS & GRAPH UPLOAD CONTROLLER
     // =========================================================================
-    function bindDropzone(dropzoneId, inputId, labelId) {
+    
+    // Dynamic Diagram Cards Handler
+    const diagramsList = document.getElementById('diagramsUploadList');
+    const addDiagramBtn = document.getElementById('addDiagramBtn');
+
+    function bindDiagramCardEvents(card) {
+        const input = card.querySelector('.diagram-file-input');
+        const label = card.querySelector('.filename-label');
+        const dropzone = card.querySelector('.file-dropzone');
+
+        if (input && label && dropzone) {
+            input.addEventListener('change', () => {
+                if (input.files && input.files[0]) {
+                    label.textContent = `Attached: ${input.files[0].name} (${(input.files[0].size / 1024).toFixed(1)} KB)`;
+                    label.style.color = '#10b981';
+                }
+            });
+
+            ['dragover', 'dragenter'].forEach(evt => dropzone.addEventListener(evt, () => dropzone.classList.add('dragover')));
+            ['dragleave', 'drop'].forEach(evt => dropzone.addEventListener(evt, () => dropzone.classList.remove('dragover')));
+        }
+    }
+
+    // Bind initial diagram card
+    diagramsList?.querySelectorAll('.upload-item-card').forEach(bindDiagramCardEvents);
+
+    // Add another diagram card
+    addDiagramBtn?.addEventListener('click', () => {
+        const cardCount = diagramsList.children.length + 1;
+        const newCard = document.createElement('div');
+        newCard.className = 'upload-item-card';
+        newCard.style.marginTop = '1rem';
+        newCard.innerHTML = `
+            <div class="file-dropzone">
+                <input type="file" class="file-hidden-input diagram-file-input" accept="image/png, image/jpeg, image/svg+xml" />
+                <span class="material-symbols-outlined dropzone-icon">cloud_upload</span>
+                <p class="dropzone-text">Upload Setup Diagram ${cardCount}</p>
+                <span class="dropzone-subtext filename-label">Supports JPG, PNG, SVG</span>
+            </div>
+            <input type="text" class="input-text caption-input diagram-caption-input" placeholder="Caption (e.g. Figure 1.${cardCount}: Schematic layout)..." />
+        `;
+        diagramsList.appendChild(newCard);
+        bindDiagramCardEvents(newCard);
+    });
+
+    // Single Graph Dropzone Binder
+    function bindSingleDropzone(dropzoneId, inputId, labelId) {
         const dropzone = document.getElementById(dropzoneId);
         const input = document.getElementById(inputId);
         const label = document.getElementById(labelId);
 
-        if (!input) return;
+        if (!input || !dropzone || !label) return;
 
         input.addEventListener('change', () => {
             if (input.files && input.files[0]) {
@@ -315,16 +368,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        ['dragover', 'dragenter'].forEach(eventName => {
-            dropzone.addEventListener(eventName, () => dropzone.classList.add('dragover'), false);
-        });
-        ['dragleave', 'drop'].forEach(eventName => {
-            dropzone.addEventListener(eventName, () => dropzone.classList.remove('dragover'), false);
-        });
+        ['dragover', 'dragenter'].forEach(evt => dropzone.addEventListener(evt, () => dropzone.classList.add('dragover')));
+        ['dragleave', 'drop'].forEach(evt => dropzone.addEventListener(evt, () => dropzone.classList.remove('dragover')));
     }
 
-    bindDropzone('diagramDropzone', 'diagramFileInput', 'diagramFileName');
-    bindDropzone('graphDropzone', 'graphFileInput', 'graphFileName');
+    bindSingleDropzone('graphDropzone', 'graphFileInput', 'graphFileName');
 
     // =========================================================================
     // 7. INITIALIZE DEFAULT FORM STATE
@@ -343,16 +391,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addQaCard('', '');
 
-    createListRow('learningsList', '', false, false);
-
     // =========================================================================
     // 8. JSON COMPILATION & SUBMISSION
     // =========================================================================
     function extractFormData() {
-        const code = document.getElementById('courseCode').value.trim();
-        const title = document.getElementById('experimentTitle').value.trim();
-        const department = document.getElementById('department').value;
-        const level = document.getElementById('academicLevel').value;
+        const code = document.getElementById('courseCode')?.value.trim() || '';
+        const title = document.getElementById('experimentTitle')?.value.trim() || '';
+        const department = document.getElementById('department')?.value || 'general';
+        const level = document.getElementById('academicLevel')?.value || '100';
         const verified = document.querySelector('input[name="verified"]:checked')?.value === 'true';
 
         const cleanId = (code + '-' + title)
@@ -378,28 +424,49 @@ document.addEventListener('DOMContentLoaded', () => {
             if (q || a) questions.push({ question: q, answer: a });
         });
 
-        const diagramCaption = document.getElementById('diagramCaption').value.trim();
-        const graphCaption = document.getElementById('graphCaption').value.trim();
-        const tableTitle = document.getElementById('tableTitleInput').value.trim() || 'Table 1: Experimental Measurements';
+        // Extract All Dynamic Diagrams
+        const diagrams = [];
+        document.querySelectorAll('#diagramsUploadList .upload-item-card').forEach((card, i) => {
+            const file = card.querySelector('.diagram-file-input')?.files[0];
+            const caption = card.querySelector('.diagram-caption-input')?.value.trim();
+            if (file || caption) {
+                const ext = file ? file.name.split('.').pop() : 'png';
+                diagrams.push({
+                    src: `assets/lab_images/${cleanId}_diagram_${i + 1}.${ext}`,
+                    caption: caption || `Figure 1.${i + 1}`
+                });
+            }
+        });
 
-        // Structured Report JSON
+        // Extract Graph
+        const graphFile = document.getElementById('graphFileInput')?.files[0] || null;
+        const graphCaption = document.getElementById('graphCaption')?.value.trim() || '';
+        const graphExt = graphFile ? graphFile.name.split('.').pop() : 'png';
+        const graphs = (graphFile || graphCaption) ? [{
+            title: graphCaption || 'Experimental Graph',
+            src: `assets/lab_images/${cleanId}_graph.${graphExt}`,
+            caption: graphCaption
+        }] : [];
+
+        const tableTitle = document.getElementById('tableTitleInput')?.value.trim() || 'Table 1: Experimental Measurements';
+
         return {
             id: cleanId || 'report-ledger',
             code: code,
             title: title,
             department: department,
             level: level,
-            session: "2023/2024",
+            session: "2025/2026",
             tags: [...topicTags],
             verified: verified,
             file: `${department}/${cleanId}.json`,
             content: {
-                aim: document.getElementById('aimText').value.trim(),
+                aim: document.getElementById('aimText')?.value.trim() || '',
                 objectives: getValues('objectivesList'),
                 apparatus: [...apparatusTags],
                 theory: {
-                    text: document.getElementById('theoryText').value.trim(),
-                    diagrams: diagramCaption ? [{ src: `assets/lab_images/${cleanId}_diagram.png`, caption: diagramCaption }] : []
+                    text: document.getElementById('theoryText')?.value.trim() || '',
+                    diagrams: diagrams
                 },
                 tables: [
                     {
@@ -408,44 +475,115 @@ document.addEventListener('DOMContentLoaded', () => {
                         rows: tableRows.map(row => [...row])
                     }
                 ],
-                graphs: graphCaption ? [{ title: graphCaption, src: `assets/lab_images/${cleanId}_graph.png`, caption: graphCaption }] : [],
+                graphs: graphs,
                 procedure: getValues('procedureList'),
                 precautions: getValues('precautionsList'),
-                discussion: document.getElementById('discussionText').value.trim(),
-                conclusion: document.getElementById('conclusionText').value.trim(),
+                discussion: document.getElementById('discussionText')?.value.trim() || '',
+                conclusion: document.getElementById('conclusionText')?.value.trim() || '',
                 questions: questions,
                 learnings: getValues('learningsList')
             }
         };
     }
 
-    // 9. Save Draft (Local Storage)
+    function extractMetadata(reportJSON) {
+        return {
+            id: reportJSON.id,
+            code: reportJSON.code,
+            title: reportJSON.title,
+            department: reportJSON.department,
+            level: reportJSON.level,
+            session: reportJSON.session,
+            tags: reportJSON.tags,
+            file: reportJSON.file,
+            verified: reportJSON.verified
+        };
+    }
+
+    // =========================================================================
+    // 9. SAVE DRAFT (Local Storage)
+    // =========================================================================
     document.getElementById('saveDraftBtn')?.addEventListener('click', () => {
         const data = extractFormData();
-        localStorage.setItem('myela_report_draft', JSON.stringify(data));
+        localStorage.setItem('Labroute_report_draft', JSON.stringify(data));
         alert('Draft saved locally in your browser!');
     });
 
-    // 10. Submit to Archive (Downloads the JSON File directly)
+    // =========================================================================
+    // 10. SUBMIT TO ARCHIVE (Download Pipeline)
+    // =========================================================================
+    function downloadFile(filename, blob) {
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = filename;
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    function downloadJSON(filename, dataObj) {
+        const jsonString = JSON.stringify(dataObj, null, 2);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        downloadFile(filename, blob);
+    }
+
     const form = document.getElementById('reportLedgerForm');
-    form.addEventListener('submit', (e) => {
+
+    form?.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const reportJSON = extractFormData();
-        const jsonString = JSON.stringify(reportJSON, null, 2);
 
-        // Auto-trigger file download for the developer / admin to place in content/reports/
-        const blob = new Blob([jsonString], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const downloadAnchor = document.createElement('a');
-        downloadAnchor.href = url;
-        downloadAnchor.download = `${reportJSON.id}.json`;
-        document.body.appendChild(downloadAnchor);
-        downloadAnchor.click();
-        downloadAnchor.remove();
-        URL.revokeObjectURL(url);
+        if (!reportJSON.code || !reportJSON.title) {
+            alert('Please fill in Course Code and Experiment Title before submitting.');
+            return;
+        }
 
-        alert(`Success! Generated "${reportJSON.id}.json".\n\nPlace this file into: content/reports/${reportJSON.department}/`);
+        const metadata = extractMetadata(reportJSON);
+        const reportFilename = `${reportJSON.id}.json`;
+        const metaFilename = `${reportJSON.id}-meta.json`;
+
+        const graphFile = document.getElementById('graphFileInput')?.files[0] || null;
+
+        // Build the download queue
+        const downloadQueue = [
+            () => downloadJSON(reportFilename, reportJSON),
+            () => downloadJSON(metaFilename, metadata)
+        ];
+
+        // Queue all attached diagram images
+        const downloadedImages = [];
+        document.querySelectorAll('#diagramsUploadList .upload-item-card').forEach((card, i) => {
+            const diagFile = card.querySelector('.diagram-file-input')?.files[0];
+            if (diagFile) {
+                const filename = `${reportJSON.id}_diagram_${i + 1}.${diagFile.name.split('.').pop()}`;
+                downloadedImages.push(filename);
+                downloadQueue.push(() => downloadFile(filename, diagFile));
+            }
+        });
+
+        // Queue attached graph image
+        if (graphFile) {
+            const graphFilename = `${reportJSON.id}_graph.${graphFile.name.split('.').pop()}`;
+            downloadedImages.push(graphFilename);
+            downloadQueue.push(() => downloadFile(graphFilename, graphFile));
+        }
+
+        downloadQueue.forEach((triggerDownload, i) => setTimeout(triggerDownload, i * 250));
+
+        setTimeout(() => {
+            let msg = `Downloaded ${downloadQueue.length} file(s):\n\n` +
+                      `1) ${reportFilename} → move into: content/reports/${reportJSON.department}/\n` +
+                      `2) ${metaFilename} → copy and paste into: content/reports/index.json\n`;
+
+            if (downloadedImages.length) {
+                msg += `\nImages:\n` + downloadedImages.map(img => `• ${img} → move into: assets/lab_images/`).join('\n');
+            }
+
+            alert(msg);
+        }, downloadQueue.length * 250);
     });
 
 });

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="View verified engineering laboratory reports on LabRoute." />
-  <title>Lab Report — LabRoute</title>
+  <meta name="description" content="View verified engineering laboratory reports on Labroute." />
+  <title>Lab Report — Labroute</title>
 
   <!-- Material Symbols & Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -12,9 +12,6 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/global.css" />
   <link rel="stylesheet" href="styles/report.css" />
-
-   <!-- Vercel Web Analytics --> 
-    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 
 <body data-page="reports">
@@ -24,13 +21,13 @@
 
   <main class="report-page-main" id="reportContainer">
     
-    <!-- 1. Loading State (Shown by default) -->
+    <!-- 1. Loading State -->
     <div id="loadingState" class="state-container">
       <span class="material-symbols-outlined spinning-icon">sync</span>
       <h2>Fetching Ledger Data...</h2>
     </div>
 
-    <!-- 2. Empty / Search State (Hidden by default) -->
+    <!-- 2. Empty / Search State -->
     <div id="emptyState" class="state-container hidden">
       <span class="material-symbols-outlined state-icon">find_in_page</span>
       <h2 id="emptyTitle">No Report Selected</h2>
@@ -49,19 +46,24 @@
       </a>
     </div>
 
-    <!-- 3. Full Report State (Hidden by default) -->
+    <!-- 3. Full Report State -->
     <div id="reportState" class="report-grid hidden">
-      <!-- Sticky Sidebar -->
+      
+      <!-- Sticky Sidebar Table of Contents -->
       <aside class="report-sidebar">
         <div class="sidebar-content">
           <h4 class="sidebar-title">Table of Contents</h4>
           <ul class="toc-list" id="tocList">
-            <li><a href="#objective" class="toc-link">Objective</a></li>
-            <li><a href="#apparatus" class="toc-link">Apparatus</a></li>
-            <li><a href="#theory" class="toc-link">Theory</a></li>
-            <li><a href="#procedure" class="toc-link">Procedure</a></li>
-            <li><a href="#conclusion" class="toc-link">Conclusion</a></li>
+            <li><a href="#sec-aim" class="toc-link">Aim &amp; Objectives</a></li>
+            <li><a href="#sec-apparatus" class="toc-link">Apparatus</a></li>
+            <li><a href="#sec-theory" class="toc-link">Theory &amp; Setup</a></li>
+            <li><a href="#sec-methodology" class="toc-link">Methodology &amp; Safety</a></li>
+            <li><a href="#sec-data" class="toc-link">Data &amp; Curves</a></li>
+            <li><a href="#sec-analysis" class="toc-link">Analysis &amp; Conclusion</a></li>
+            <li id="tocLinkQa"><a href="#sec-qa" class="toc-link">Lab Manual Q&amp;A</a></li>
+            <li id="tocLinkLearnings"><a href="#sec-learnings" class="toc-link">Key Learnings</a></li>
           </ul>
+
           <div class="sidebar-actions">
             <button class="btn btn-outline btn-full-width" onclick="window.print()">
               <span class="material-symbols-outlined">print</span>
@@ -75,43 +77,95 @@
         </div>
       </aside>
 
-      <!-- Main Reader -->
+      <!-- Main Reader Article -->
       <article class="report-article">
         <header class="report-header">
-          <span id="reportCode" class="badge-tag"></span>
-          <span id="reportVerified" class="badge-tag-gold hidden" style="margin-left: 0.5rem;">Verified Ledger</span>
+          <div class="header-badge-row">
+            <span id="reportCode" class="badge-tag"></span>
+            <span id="reportVerified" class="badge-tag-gold hidden">Verified Ledger</span>
+          </div>
           <h1 id="reportTitle"></h1>
           <div class="report-meta-row">
             <span><strong>Department:</strong> <span id="reportDept"></span></span>
             <span><strong>Level:</strong> <span id="reportLevel"></span></span>
+            <span><strong>Session:</strong> <span id="reportSession"></span></span>
           </div>
         </header>
 
         <div class="report-body">
-          <section id="objective" class="scroll-section">
-            <h2>1. Objective</h2>
-            <p id="reportObjective"></p>
+          
+          <!-- 01. Aim & Objectives -->
+          <section id="sec-aim" class="scroll-section">
+            <h2>1. Aim &amp; Objectives</h2>
+            <div class="aim-box">
+              <strong>Aim:</strong>
+              <p id="reportAim"></p>
+            </div>
+            <h3 class="subsection-title">Specific Objectives:</h3>
+            <ul id="reportObjectives" class="styled-list"></ul>
           </section>
-          <section id="apparatus" class="scroll-section">
-            <h2>2. Apparatus</h2>
-            <ul id="reportApparatus"></ul>
+
+          <!-- 02. Apparatus -->
+          <section id="sec-apparatus" class="scroll-section">
+            <h2>2. Apparatus &amp; Equipment</h2>
+            <ul id="reportApparatus" class="apparatus-pills"></ul>
           </section>
-          <section id="theory" class="scroll-section">
-            <h2>3. Theory</h2>
-            <p id="reportTheory"></p>
+
+          <!-- 03. Theory & Setup Diagrams -->
+          <section id="sec-theory" class="scroll-section">
+            <h2>3. Theoretical Principles &amp; Setup</h2>
+            <div id="reportTheory" class="theory-content"></div>
+            <div id="reportDiagrams" class="diagrams-container"></div>
           </section>
-          <section id="procedure" class="scroll-section">
-            <h2>4. Procedure</h2>
-            <ol id="reportProcedure"></ol>
+
+          <!-- 04. Methodology & Precautions -->
+          <section id="sec-methodology" class="scroll-section">
+            <h2>4. Methodology &amp; Precautions</h2>
+            <h3 class="subsection-title">Step-by-Step Procedure:</h3>
+            <ol id="reportProcedure" class="procedure-list"></ol>
+            
+            <div id="precautionsWrapper">
+              <h3 class="subsection-title">Experimental Precautions:</h3>
+              <ul id="reportPrecautions" class="precautions-list"></ul>
+            </div>
           </section>
-          <section id="conclusion" class="scroll-section">
-            <h2>5. Conclusion</h2>
-            <p id="reportConclusion"></p>
+
+          <!-- 05. Empirical Data & Curves -->
+          <section id="sec-data" class="scroll-section">
+            <h2>5. Empirical Data &amp; Experimental Curves</h2>
+            <div id="reportTables" class="tables-render-container"></div>
+            <div id="reportGraphs" class="graphs-render-container"></div>
           </section>
+
+          <!-- 06. Discussion & Conclusion -->
+          <section id="sec-analysis" class="scroll-section">
+            <h2>6. Analysis &amp; Conclusion</h2>
+            <div class="analysis-block">
+              <h3 class="subsection-title">Discussion &amp; Error Analysis:</h3>
+              <p id="reportDiscussion"></p>
+            </div>
+            <div class="analysis-block">
+              <h3 class="subsection-title">Conclusion:</h3>
+              <p id="reportConclusion"></p>
+            </div>
+          </section>
+
+          <!-- 07. Lab Manual Q&A -->
+          <section id="sec-qa" class="scroll-section">
+            <h2>7. Post-Lab Questions &amp; Answers</h2>
+            <div id="reportQaList" class="qa-render-list"></div>
+          </section>
+
+          <!-- 08. Key Learnings -->
+          <section id="sec-learnings" class="scroll-section">
+            <h2>8. Key Learnings &amp; Takeaways</h2>
+            <ul id="reportLearnings" class="learnings-render-list"></ul>
+          </section>
+
         </div>
       </article>
-    </div>
 
+    </div>
   </main>
   
   <!-- Injected automatically by layout.js -->

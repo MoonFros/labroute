@@ -1,0 +1,98 @@
+{
+  "id": "mct-312-dc-motor-pid-control",
+  "code": "MCT 312",
+  "title": "Closed-Loop PID Speed & Position Control of a DC Servomotor",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": ["Mechatronics", "ControlSystems", "PIDController", "Servomotors", "Encoders"],
+  "verified": true,
+  "file": "mechatronics/mct-312-dc-motor-pid-control.json",
+  "content": {
+    "aim": "To design, simulate, and experimentally tune a Proportional-Integral-Derivative (PID) controller for angular velocity tracking and steady-state error elimination in a permanent magnet DC servomotor.",
+    
+    "objectives": [
+      "To obtain the open-loop transfer function and electromechanical time constants of the DC servomotor.",
+      "To implement quadrature encoder signal decoding using microcontroller external interrupt channels.",
+      "To apply the Ziegler-Nichols tuning method to evaluate rise time, settling time, and percentage overshoot under variable mechanical loads."
+    ],
+
+    "apparatus": [
+      "Permanent Magnet DC Servomotor with built-in 500 PPR optical incremental encoder",
+      "STM32F401RE ARM Cortex-M4 Microcontroller Development Board",
+      "VNH5019 Dual H-Bridge Motor Driver Module (30A, 24V)",
+      "Digital Storage Oscilloscope (100MHz, 2-Channel)",
+      "Regulated DC Benchtop Power Supply (0-30V, 5A)",
+      "Magnetic hysteresis friction brake load attachment",
+      "MATLAB/Simulink Real-Time Data Acquisition Interface"
+    ],
+
+    "theory": {
+      "text": "A permanent magnet DC motor behaves as an electromechanical transducer whose armature dynamics are governed by Kirchhoff's voltage law and Newton's second law of rotational motion. The continuous-time PID control law computes an actuation voltage u(t) = Kp * e(t) + Ki * ∫e(τ)dτ + Kd * (de(t)/dt). The proportional term accelerates transient response, the integral term eliminates steady-state offsets caused by friction, and the derivative term provides phase lead damping against transient oscillations.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/mct-312-dc-motor-pid-control_diagram.png",
+          "caption": "Figure 1.1: Closed-loop electro-mechanical block diagram of the PID microcontroller servomotor control loop."
+        }
+      ]
+    },
+
+    "procedure": [
+      "Wire the STM32 timer encoder interface pins (TIM3_CH1 and TIM3_CH2) to the quadrature optical encoder outputs A and B.",
+      "Connect the PWM output pin (TIM1_CH1 at 20 kHz) and direction GPIO pins to the VNH5019 H-bridge motor driver.",
+      "Supply the driver with 12.0V DC and verify open-loop rotational speed characteristics by stepping PWM duty cycles from 10% to 90%.",
+      "Flash the digital PID control algorithm configured with a 1.0 ms sampling loop (Ts = 0.001s).",
+      "Set Ki = 0 and Kd = 0, then gradually increase proportional gain Kp until continuous, sustained oscillations (ultimate gain Ku) are observed on the oscilloscope.",
+      "Record the critical oscillation period (Tu) and calculate Ziegler-Nichols parameters for P, PI, and PID modes.",
+      "Apply a step velocity reference from 0 to 1200 RPM and record step response data into the real-time telemetry buffer."
+    ],
+
+    "precautions": [
+      "Ensure a common ground connection is established between the microcontroller logic and the 12V high-current motor power supply to prevent ground-loop voltage spikes.",
+      "Implement a derivative low-pass filter (cutoff frequency N = 100) to prevent high-frequency encoder quantization noise from saturating the H-bridge.",
+      "Never exceed the rated stall current limit (3.2A) for more than 5 seconds during locked-rotor torque testing."
+    ],
+
+    "tables": [
+      {
+        "title": "Table 1: Transient Response & Stability Metrics Across Controller Tuning Configurations",
+        "headers": ["Controller Type", "Kp Gain", "Ki (s⁻¹)", "Kd (s)", "Rise Time tr (ms)", "Settling Time ts (ms)", "Peak Overshoot (%)", "Steady-State Error e_ss (RPM)"],
+        "rows": [
+          ["Open-Loop", "—", "—", "—", "145.0", "320.0", "0.0", "48.5"],
+          ["Proportional (P)", "2.40", "0.00", "0.00", "42.0", "185.0", "28.4", "18.2"],
+          ["PI Controller", "2.16", "4.80", "0.00", "48.5", "210.0", "16.8", "0.0"],
+          ["PID Controller", "2.88", "9.60", "0.18", "31.2", "88.0", "6.4", "0.0"],
+          ["PID (Fine-Tuned)", "3.10", "11.20", "0.22", "26.5", "64.0", "3.2", "0.0"]
+        ]
+      }
+    ],
+
+    "graphs": [
+      {
+        "title": "Graph 1: Step Response Comparison (Reference = 1200 RPM)",
+        "src": "assets/lab_images/mct-312-dc-motor-pid-control_graph.png",
+        "caption": "Figure 1.2: Angular velocity tracking curves illustrating elimination of steady-state error with PID fine-tuning."
+      }
+    ],
+
+    "discussion": "The open-loop DC motor exhibited substantial steady-state velocity sag (48.5 RPM offset) when mechanical friction was applied to the rotor. Implementing pure proportional control reduced the rise time to 42.0 ms but introduced 28.4% peak overshoot and failed to remove steady-state error entirely. The addition of the integral accumulator successfully drove the steady-state tracking error to zero, while the derivative damping term suppressed oscillatory ringing, reducing settling time from 210.0 ms down to 64.0 ms.",
+
+    "conclusion": "The closed-loop PID controller was successfully deployed and tuned on the ARM Cortex-M4 platform. The fine-tuned parameters (Kp = 3.10, Ki = 11.20, Kd = 0.22) achieved optimal damping with a rapid rise time of 26.5 ms and zero steady-state tracking error under rated load.",
+
+    "questions": [
+      {
+        "question": "What is 'integral windup' in PID speed control, and how is it mitigated?",
+        "answer": "Integral windup occurs when large step setpoint errors cause the integral accumulator to sum excessively while the motor driver output is already saturated at 100% duty cycle. It is mitigated using anti-windup clamping algorithms (clamping the integral sum whenever actuator limits are reached)."
+      },
+      {
+        "question": "Why is quadrature decoding preferred over single-channel tachometer sensing?",
+        "answer": "Quadrature decoding uses two 90-degree phase-shifted channels (A and B), which allows the microcontroller to instantly detect bidirectional rotation (clockwise vs counter-clockwise) and quadruple the effective positional resolution via 4X edge counting."
+      }
+    ],
+
+    "learnings": [
+      "Mastered low-level hardware timer configuration for optical quadrature encoder decoding on ARM microcontrollers.",
+      "Gained practical experience in real-time discrete PID implementation and anti-aliasing filter design for electro-mechanical actuators."
+    ]
+  }
+}

@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Structured laboratory report archival protocol for MyEla repository.">
-    <title>Submit Report Ledger — MyEla</title>
+    <meta name="description" content="Structured laboratory report archival protocol for Labroute repository.">
+    <title>Submit Report Ledger — Labroute</title>
 
     <!-- Google Fonts & Material Symbols -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <!-- Modular Stylesheets -->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/updaterepo.css">
@@ -27,7 +28,8 @@
             <header class="page-intro-header">
                 <h1 class="page-main-title">SUBMIT REPORT LEDGER</h1>
                 <p class="page-main-desc">
-                    Complete the structured documentation protocol for academic archival. Fields marked with an asterisk (<span class="req-star">*</span>) are required for institutional verification.
+                    Complete the structured documentation protocol for academic archival. Fields marked with an asterisk
+                    (<span class="req-star">*</span>) are required for institutional verification.
                 </p>
             </header>
 
@@ -46,21 +48,26 @@
                         <div class="grid-2-col">
                             <!-- Course Code -->
                             <div class="form-field">
-                                <label for="courseCode" class="field-label">COURSE CODE <span class="req-star">*</span></label>
-                                <input type="text" id="courseCode" name="courseCode" class="input-text" placeholder="e.g. CHE 311" required />
+                                <label for="courseCode" class="field-label">COURSE CODE <span
+                                        class="req-star">*</span></label>
+                                <input type="text" id="courseCode" name="courseCode" class="input-text"
+                                    placeholder="e.g. CHE 311" required />
                             </div>
 
                             <!-- Experiment Title -->
                             <div class="form-field">
-                                <label for="experimentTitle" class="field-label">EXPERIMENT TITLE <span class="req-star">*</span></label>
-                                <input type="text" id="experimentTitle" name="experimentTitle" class="input-text" placeholder="e.g. Determination of Friction Factor in Pipes" required />
+                                <label for="experimentTitle" class="field-label">EXPERIMENT TITLE <span
+                                        class="req-star">*</span></label>
+                                <input type="text" id="experimentTitle" name="experimentTitle" class="input-text"
+                                    placeholder="e.g. Determination of Friction Factor in Pipes" required />
                             </div>
                         </div>
 
                         <div class="grid-3-col">
                             <!-- Department -->
                             <div class="form-field">
-                                <label for="department" class="field-label">DEPARTMENT <span class="req-star">*</span></label>
+                                <label for="department" class="field-label">DEPARTMENT <span
+                                        class="req-star">*</span></label>
                                 <div class="select-wrapper">
                                     <select id="department" name="department" class="input-select" required>
                                         <option value="chemical">Chemical Engineering</option>
@@ -77,7 +84,8 @@
 
                             <!-- Academic Level -->
                             <div class="form-field">
-                                <label for="academicLevel" class="field-label">LEVEL <span class="req-star">*</span></label>
+                                <label for="academicLevel" class="field-label">LEVEL <span
+                                        class="req-star">*</span></label>
                                 <div class="select-wrapper">
                                     <select id="academicLevel" name="academicLevel" class="input-select" required>
                                         <option value="200">200 Level</option>
@@ -115,7 +123,8 @@
                         <div class="form-field">
                             <label class="field-label">TOPIC TAGS</label>
                             <div class="tag-input-container" id="topicTagsContainer">
-                                <input type="text" id="topicTagInput" list="predefinedTags" class="tag-bare-input" placeholder="Type tag and press Enter or Comma..." />
+                                <input type="text" id="topicTagInput" list="predefinedTags" class="tag-bare-input"
+                                    placeholder="Type tag and press Enter or Comma..." />
                             </div>
                             <datalist id="predefinedTags">
                                 <option value="#FluidMechanics"></option>
@@ -127,7 +136,8 @@
                                 <option value="#Automation"></option>
                                 <option value="#Machining"></option>
                             </datalist>
-                            <span class="field-hint">Press enter or comma to separate tags. Suggestions appear as you type.</span>
+                            <span class="field-hint">Press enter or comma to separate tags. Suggestions appear as you
+                                type.</span>
                         </div>
                     </div>
                 </section>
@@ -146,7 +156,9 @@
                         <!-- Aim (Single Statement) -->
                         <div class="form-field">
                             <label for="aimText" class="field-label">AIM <span class="req-star">*</span></label>
-                            <textarea id="aimText" name="aim" class="input-textarea" rows="2" placeholder="To investigate the relationship between friction factor and Reynolds number for fluid flow in a circular pipe." required></textarea>
+                            <textarea id="aimText" name="aim" class="input-textarea" rows="2"
+                                placeholder="To investigate the relationship between friction factor and Reynolds number for fluid flow in a circular pipe."
+                                required></textarea>
                         </div>
 
                         <!-- Objectives Dynamic List (With MS Word Paste Support) -->
@@ -168,9 +180,11 @@
                         <div class="form-field">
                             <label class="field-label">APPARATUS <span class="req-star">*</span></label>
                             <div class="tag-input-container" id="apparatusContainer">
-                                <input type="text" id="apparatusInput" class="tag-bare-input" placeholder="Type apparatus and press Enter, or paste list from Word..." />
+                                <input type="text" id="apparatusInput" class="tag-bare-input"
+                                    placeholder="Type apparatus and press Enter, or paste list from Word..." />
                             </div>
-                            <span class="field-hint">Paste full lists from Word (comma or line separated) to auto-create tags.</span>
+                            <span class="field-hint">Paste full lists from Word (comma or line separated) to auto-create
+                                tags.</span>
                         </div>
                     </div>
                 </section>
@@ -189,19 +203,32 @@
                         <!-- Theory -->
                         <div class="form-field">
                             <label for="theoryText" class="field-label">THEORY <span class="req-star">*</span></label>
-                            <textarea id="theoryText" name="theory" class="input-textarea" rows="4" placeholder="Detail the governing physical equations and theoretical framework..." required></textarea>
+                            <textarea id="theoryText" name="theory" class="input-textarea" rows="4"
+                                placeholder="Detail the governing physical equations and theoretical framework..."
+                                required></textarea>
                         </div>
 
                         <!-- Setup Diagram Dropzone -->
                         <div class="form-field">
-                            <label class="field-label">SETUP DIAGRAM</label>
-                            <div class="file-dropzone" id="diagramDropzone">
-                                <input type="file" id="diagramFileInput" class="file-hidden-input" accept="image/png, image/jpeg, image/svg+xml" />
-                                <span class="material-symbols-outlined dropzone-icon">cloud_upload</span>
-                                <p class="dropzone-text">Drag &amp; drop an image here, or <span class="browse-link">browse</span></p>
-                                <span class="dropzone-subtext" id="diagramFileName">Supports JPG, PNG, SVG (Max 5MB)</span>
+                            <label class="field-label">SETUP DIAGRAMS</label>
+                            <div id="diagramsUploadList" class="dynamic-upload-list">
+                                <!-- Diagram 1 -->
+                                <div class="upload-item-card">
+                                    <div class="file-dropzone">
+                                        <input type="file" class="file-hidden-input diagram-file-input"
+                                            accept="image/png, image/jpeg, image/svg+xml" />
+                                        <span class="material-symbols-outlined dropzone-icon">cloud_upload</span>
+                                        <p class="dropzone-text">Upload Setup Diagram</p>
+                                        <span class="dropzone-subtext filename-label">Supports JPG, PNG, SVG</span>
+                                    </div>
+                                    <input type="text" class="input-text caption-input diagram-caption-input"
+                                        placeholder="Caption (e.g. Figure 1.1: Schematic layout)..." />
+                                </div>
                             </div>
-                            <input type="text" id="diagramCaption" name="diagramCaption" class="input-text caption-input" placeholder="Enter caption for the diagram (e.g. Figure 1.1: Experimental Rig Layout)..." />
+                            <button type="button" class="btn-add-action" id="addDiagramBtn">
+                                <span class="material-symbols-outlined">add_photo_alternate</span>
+                                <span>Add Another Diagram</span>
+                            </button>
                         </div>
                     </div>
                 </section>
@@ -270,7 +297,9 @@
                                 </button>
                             </div>
 
-                            <input type="text" id="tableTitleInput" class="input-text" placeholder="Table Title (e.g. Table 1: Pressure drop across pipe sections)" style="margin-bottom: 0.5rem;" />
+                            <input type="text" id="tableTitleInput" class="input-text"
+                                placeholder="Table Title (e.g. Table 1: Pressure drop across pipe sections)"
+                                style="margin-bottom: 0.5rem;" />
 
                             <div class="table-builder-wrapper">
                                 <table class="ledger-table-input" id="valuesTable">
@@ -294,12 +323,15 @@
                         <div class="form-field">
                             <label class="field-label">EXPERIMENTAL GRAPH</label>
                             <div class="file-dropzone" id="graphDropzone">
-                                <input type="file" id="graphFileInput" class="file-hidden-input" accept="image/png, image/jpeg, application/pdf" />
+                                <input type="file" id="graphFileInput" class="file-hidden-input"
+                                    accept="image/png, image/jpeg, application/pdf" />
                                 <span class="material-symbols-outlined dropzone-icon">show_chart</span>
-                                <p class="dropzone-text">Upload plotted curve (e.g. Friction Factor vs. Reynolds Number)</p>
+                                <p class="dropzone-text">Upload plotted curve (e.g. Friction Factor vs. Reynolds Number)
+                                </p>
                                 <span class="dropzone-subtext" id="graphFileName">Supports JPG, PNG, PDF</span>
                             </div>
-                            <input type="text" id="graphCaption" name="graphCaption" class="input-text caption-input" placeholder="Enter caption for the graph (e.g. Graph 1: Friction Factor vs Reynolds Number)..." />
+                            <input type="text" id="graphCaption" name="graphCaption" class="input-text caption-input"
+                                placeholder="Enter caption for the graph (e.g. Graph 1: Friction Factor vs Reynolds Number)..." />
                         </div>
                     </div>
                 </section>
@@ -317,14 +349,20 @@
                     <div class="form-card-body">
                         <!-- Discussion -->
                         <div class="form-field">
-                            <label for="discussionText" class="field-label">DISCUSSION <span class="req-star">*</span></label>
-                            <textarea id="discussionText" name="discussion" class="input-textarea" rows="3" placeholder="Interpret the experimental results, discuss error percentages, and evaluate theoretical adherence..." required></textarea>
+                            <label for="discussionText" class="field-label">DISCUSSION <span
+                                    class="req-star">*</span></label>
+                            <textarea id="discussionText" name="discussion" class="input-textarea" rows="3"
+                                placeholder="Interpret the experimental results, discuss error percentages, and evaluate theoretical adherence..."
+                                required></textarea>
                         </div>
 
                         <!-- Conclusion -->
                         <div class="form-field">
-                            <label for="conclusionText" class="field-label">CONCLUSION <span class="req-star">*</span></label>
-                            <textarea id="conclusionText" name="conclusion" class="input-textarea" rows="3" placeholder="Summarize findings and validation with respect to the initial aim..." required></textarea>
+                            <label for="conclusionText" class="field-label">CONCLUSION <span
+                                    class="req-star">*</span></label>
+                            <textarea id="conclusionText" name="conclusion" class="input-textarea" rows="3"
+                                placeholder="Summarize findings and validation with respect to the initial aim..."
+                                required></textarea>
                         </div>
 
                         <!-- Lab Manual Questions List -->
