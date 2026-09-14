@@ -52,6 +52,11 @@ async function fetchReport(id) {
     populateReportUI(reportData);
     switchState('reportState');
 
+    // Report text is inserted after MathJax's first page scan, so explicitly
+    // typeset the newly loaded JSON. Raw TeX remains visible if MathJax is
+    // unavailable rather than making the report unusable.
+    await window.LabrouteMath?.typeset(document.getElementById('reportState'));
+
   } catch (error) {
     console.error(error);
     showEmptyState("Report Not Found", "The experiment ledger you are looking for might have been moved or does not exist.");
@@ -115,10 +120,18 @@ function populateReportUI(data) {
     if (diag.src) {
       const fig = document.createElement('figure');
       fig.className = 'report-figure';
-      fig.innerHTML = `
-        <img src="${diag.src}" alt="${diag.caption || 'Setup Diagram'}" loading="lazy" />
-        ${diag.caption ? `<figcaption>${diag.caption}</figcaption>` : ''}
-      `;
+
+      const image = document.createElement('img');
+      image.src = diag.src;
+      image.alt = diag.caption || 'Setup Diagram';
+      image.loading = 'lazy';
+      fig.appendChild(image);
+
+      if (diag.caption) {
+        const caption = document.createElement('figcaption');
+        caption.textContent = diag.caption;
+        fig.appendChild(caption);
+      }
       diagramsContainer.appendChild(fig);
     }
   });
@@ -158,25 +171,50 @@ function populateReportUI(data) {
   tables.forEach(tableObj => {
     const wrapper = document.createElement('div');
     wrapper.className = 'table-render-card';
+
     if (tableObj.title) {
-      wrapper.innerHTML += `<h4 class="table-card-title">${tableObj.title}</h4>`;
+      const title = document.createElement('h4');
+      title.className = 'table-card-title';
+      title.textContent = tableObj.title;
+      wrapper.appendChild(title);
     }
+
+    const scrollWrapper = document.createElement('div');
+    scrollWrapper.className = 'table-responsive-scroll';
     const tableEl = document.createElement('table');
     tableEl.className = 'rendered-data-table';
-    
-    // Headers
-    if (tableObj.headers && tableObj.headers.length) {
+
+    // Create text nodes instead of interpolating JSON into HTML. This keeps
+    // TeX source intact until MathJax reads it and prevents report data from
+    // being interpreted as markup.
+    if (Array.isArray(tableObj.headers) && tableObj.headers.length) {
       const thead = document.createElement('thead');
-      thead.innerHTML = `<tr>${tableObj.headers.map(h => `<th>${h}</th>`).join('')}</tr>`;
+      const headerRow = document.createElement('tr');
+      tableObj.headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = String(header ?? '');
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
       tableEl.appendChild(thead);
     }
-    // Rows
-    if (tableObj.rows && tableObj.rows.length) {
+
+    if (Array.isArray(tableObj.rows) && tableObj.rows.length) {
       const tbody = document.createElement('tbody');
-      tbody.innerHTML = tableObj.rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('');
+      tableObj.rows.forEach(row => {
+        const tr = document.createElement('tr');
+        (Array.isArray(row) ? row : []).forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = String(cell ?? '');
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
       tableEl.appendChild(tbody);
     }
-    wrapper.appendChild(tableEl);
+
+    scrollWrapper.appendChild(tableEl);
+    wrapper.appendChild(scrollWrapper);
     tablesContainer.appendChild(wrapper);
   });
 
@@ -188,10 +226,18 @@ function populateReportUI(data) {
     if (g.src) {
       const fig = document.createElement('figure');
       fig.className = 'report-figure';
-      fig.innerHTML = `
-        <img src="${g.src}" alt="${g.title || 'Experimental Graph'}" loading="lazy" />
-        ${g.caption || g.title ? `<figcaption>${g.caption || g.title}</figcaption>` : ''}
-      `;
+
+      const image = document.createElement('img');
+      image.src = g.src;
+      image.alt = g.title || 'Experimental Graph';
+      image.loading = 'lazy';
+      fig.appendChild(image);
+
+      if (g.caption || g.title) {
+        const caption = document.createElement('figcaption');
+        caption.textContent = g.caption || g.title;
+        fig.appendChild(caption);
+      }
       graphsContainer.appendChild(fig);
     }
   });
@@ -210,10 +256,20 @@ function populateReportUI(data) {
     questions.forEach((qa, idx) => {
       const card = document.createElement('div');
       card.className = 'qa-display-card';
-      card.innerHTML = `
-        <div class="qa-q"><strong>Q${idx + 1}:</strong> ${qa.question}</div>
-        <div class="qa-a"><strong>Ans:</strong> ${qa.answer}</div>
-      `;
+
+      const question = document.createElement('div');
+      question.className = 'qa-q';
+      const questionLabel = document.createElement('strong');
+      questionLabel.textContent = `Q${idx + 1}:`;
+      question.append(questionLabel, document.createTextNode(` ${qa.question || ''}`));
+
+      const answer = document.createElement('div');
+      answer.className = 'qa-a';
+      const answerLabel = document.createElement('strong');
+      answerLabel.textContent = 'Ans:';
+      answer.append(answerLabel, document.createTextNode(` ${qa.answer || ''}`));
+
+      card.append(question, answer);
       qaContainer.appendChild(card);
     });
   } else {
