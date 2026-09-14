@@ -121,8 +121,7 @@
   "file": "mechatronics/mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation.json",
   "verified": true
 }
-]
-{
+  {
   "id": "eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis",
   "code": "EEE 301",
   "title": "Bipolar Transistor Characteristics & DC Operating Point Analysis",
@@ -140,4 +139,6 @@
   "file": "electrical/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis.json",
   "verified": true
 }
+]
+
 
