@@ -1,0 +1,118 @@
+{
+  "id": "eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis",
+  "code": "EEE 301",
+  "title": "Bipolar Transistor Characteristics & DC Operating Point Analysis",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#BJT",
+    "#DC",
+    "#TPS-3371 Transistor Trainer",
+    "#2N2222 NPN Silicon BJT",
+    "#DC operating point",
+    "#Q-point"
+  ],
+  "verified": true,
+  "file": "electrical/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis.json",
+  "content": {
+    "aim": "To determine the bipolar junction transistor's DC operating point (Q-point), investigate its fundamental terminal current-voltage characteristics in common-emitter configuration, and develop a comprehensive understanding of its physical behavior across different conduction regions (cutoff, active, and saturation) for linear amplification and solid-state switching applications.",
+    "objectives": [
+      "Study the internal semiconductor physics, junction structure, charge-carrier transport mechanisms, and terminal conventions of an NPN bipolar junction transistor (2N2222).",
+      "Experimentally measure and plot the Input Characteristics (base current IB versus base-emitter voltage VBE at constant collector-emitter voltage VCE).",
+      "Experimentally measure and plot the family of Output Characteristics (collector current IC versus collector-emitter voltage VCE for various constant base currents IB).",
+      "Identify and delineate the boundaries of the three distinct operating regions: Cutoff Region, Active (Linear) Region, and Saturation Region.",
+      "Construct the DC Load Line on the output characteristic family using Kirchhoff's Voltage Law (KVL) and locate the quiescent operating point (Q-point).",
+      "Investigate the thermal stabilization role of the emitter resistor RE by evaluating operating point shift when VS is disconnected and when RE is short-circuited."
+    ],
+    "apparatus": [
+      "TPS-3371 Laboratory Trainer",
+      "Regulated DC Power Supply",
+      "Digital Multimeter (DMM)",
+      "Dual-Trace Oscilloscope",
+      "NPN Transistor",
+      "Collector Resistor (RC)",
+      "Base Divider Resistor (RB1)",
+      "Base Divider Resistor (RB2)",
+      "Emitter Resistor (RE)",
+      "Banana-to-banana Jumper Wires"
+    ],
+    "theory": {
+      "text": "4.1 Physical Structure & Charge-Transport Mechanisms of the BJT\nThe Bipolar Junction Transistor (BJT) is a three-terminal, current-controlled semiconductor device consisting of two back-to-back p-n junctions formed within a single crystal lattice. In an NPN transistor, a moderately thin, lightly doped p-type silicon layer (Base) is sandwiched between two heavily doped n-type silicon regions (Emitter and Collector). The operation depends simultaneously on two charge carriers of opposite polarities—electrons and holes—which gives the device its \"bipolar\" designation.\n\nThe three physical regions are engineered with distinct geometric and metallurgical doping profiles to optimize current amplification:\n\nEmitter (E): Heavily doped (n^+) region. Its primary physical function is to inject a high concentration of majority carriers (electrons in NPN) across the forward-biased Base-Emitter junction into the base region.\nBase (B): Extremely narrow physically (typically 0.5 to 1.5 μm) and very lightly doped (p). The light doping ensures low majority hole concentration, minimizing electron-hole recombination within the base. The narrow physical width ensures that over 98% to 99.5% of the injected electrons transit rapidly across the base via thermal diffusion without recombining.\nCollector (C): Moderately doped (n) region with the largest physical volume and cross-sectional area. Its function is to collect the injected minority carriers swept across the reverse-biased Base-Collector junction depletion region. Because the collector junction dissipates significant electrical power (PD = VCE IC), the larger surface area facilitates effective heat dissipation to prevent thermal runaway.\n4.2 Fundamental Current Equations & Amplification Factors\nApplying Kirchhoff's Current Law (KCL) to the transistor terminals yields the exact governing relationship:\n\nTerminal Current Relationship\nIE = IB + IC\nwhere IE is the emitter current, IB is the external base current supplying recombinations and reverse-saturation losses, and IC is the total collector current. The collector current consists of two distinct components: the injected carrier current reaching the collector, and the minority leakage current (ICBO) of the reverse-biased collector-base junction:\n\nCollector Current Formulation\nIC = α IE + ICBO\nα = (IC - ICBO) / (IE) ≈ \nIC\nIE\n    (0.95 ≤ α ≤ 0.998)\nIn the common-emitter configuration, the transistor operates as a current amplifier where the small base current IB directly modulates the much larger collector current IC. Substituting IE = IB + IC into the collector equation yields:\n\nCommon-Emitter Current Gain (β or hFE)\nIC = \nα\n1 - α\n IB + \nICBO\n1 - α\n = β IB + ICEO\nβ = hFE = \nα\n1 - α\n = \nIC\nIB\nFor modern silicon planar transistors such as the 2N2222, the reverse leakage current ICEO = (β + 1)ICBO is on the order of a few nanoamperes at room temperature (25^°C) and is negligible compared to the milliampere-range operating currents. Consequently, in the active linear region:\n\nLinear Active Current Relation\nIC = β IB    (typically 50 ≤ β ≤ 300)\n4.3 The Three Operating Conduction Regions\nThe operational state of a BJT is governed by the biasing voltages applied across its two internal junctions:",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis_diagram_1.png",
+          "caption": "Circuit 1: BJT DC Biasing & Characteristic Test Configuration"
+        },
+        {
+          "src": "assets/lab_images/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis_diagram_2.png",
+          "caption": "Figure 1.2"
+        },
+        {
+          "src": "assets/lab_images/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis_diagram_3.png",
+          "caption": "Figure 1.3"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Table 1: Experimental Measurements",
+        "headers": [
+          "Parameter 1",
+          "Parameter 2",
+          "Parameter 3"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "title": "Graph 301.1: Common-Emitter Output Characteristic Family & DC Load Line (2N2222)",
+        "src": "assets/lab_images/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis_graph.png",
+        "caption": "Graph 301.1: Common-Emitter Output Characteristic Family & DC Load Line (2N2222)"
+      }
+    ],
+    "procedure": [
+      "Initial Setup & Power Connection: Interconnect the TPS-3371 trainer module to the regulated DC power supply. Verify that the master switch is OFF and power supply controls are turned down before making board connections.",
+      "Transistor Mounting: Carefully insert the 2N2222 NPN silicon transistor into the designated breadboard socket. Verify correct terminal orientation (Emitter, Base, Collector) using the transistor pinout diagram.",
+      "Circuit Implementation (Circuit 1): Wire the DC biasing circuit as depicted in Schematic 1:",
+      "Connect RB1 = 91 kΩ between the +12V rail and the transistor Base node.",
+      "Connect RB2 = 15 kΩ between the Base node and circuit Ground.",
+      "Connect collector resistor RC = 1.0 kΩ between the +12V rail and the Collector node.",
+      "Connect emitter resistor RE = 100 Ω between the Emitter node and Ground.",
+      "Connect the variable DC voltage source VS to the input node as indicated.",
+      "Energize & Calibrate: Turn on the power supply and adjust the main rail precisely to +12.00V monitored via a digital multimeter.",
+      "Variable Input Voltage Sweep: Incrementally vary the input voltage VS from 0.1V to 1.2V in discrete 0.1V steps. For every step, accurately record nodes VB, VC, and VE using calibrated multimeters.",
+      "Output Curve Plotting: Plot the collector current IC versus VCE to construct the common-emitter output characteristic family. Delineate the cutoff, active, and saturation zones.",
+      "Evaluation with VS Disconnected (Circuit 2): Disconnect the variable voltage source VS entirely from the breadboard circuit. Measure the resulting steady-state quiescent voltages VB, VC, VE, calculate the corresponding unperturbed IC, and mark the Q-point on the output load line.",
+      "Evaluation with RE Short-Circuited (Circuit 3): Place a low-resistance banana jumper wire directly across resistor RE to short it out. Re-measure voltages VB, VC, VCE, compute the new collector current IC = (VCC - VC) / RC, and plot the modified operating point on the load line to observe the thermal stabilization penalty."
+    ],
+    "precautions": [
+      "Device Pinout Identification: Always confirm the TO-18 / TO-92 pin configuration before applying power. Inverting collector and emitter terminals creates reverse active operation, drastically reducing gain and risking premature junction breakdown.",
+      "Collector Power Dissipation Limit: Ensure that the product VCE × IC never exceeds the maximum continuous collector dissipation rating of the 2N2222 (PD(max) = 500 mW at 25^°C). In our setup, PD(max) ≈ 6.0V × 5.25mA = 31.5 mW, well within the safe operating area (SOA).",
+      "Supply De-energization during Rewiring: Always de-energize the DC power supply before inserting or removing jumper leads, especially when shorting RE, to prevent accidental short circuits across the +12V bus.",
+      "Digital Multimeter Internal Impedance: Ensure voltmeters are set to high input impedance (≥ 10 MΩ) so that node voltage measurements at the base do not load down the high-resistance 91 kΩ / 15 kΩ divider.",
+      "Thermal Settling: Allow several seconds between voltage adjustments to ensure internal junction temperature stabilization before logging meter values."
+    ],
+    "discussion": "The experimental measurements obtained for the 2N2222 NPN bipolar junction transistor provide rigorous physical confirmation of semiconductor transport theory in the common-emitter configuration.\n\nIn the Input Characteristics (IB vs VBE), the base-emitter junction behaves identically to an ideal forward-biased p-n junction diode. Below VBE ≈ 0.50V, the built-in potential barrier prevents majority electrons from diffusing across the depletion layer, resulting in near-zero collector current (< 0.05 mA) and keeping the transistor firmly in the Cutoff Region. Beyond the knee voltage (Vγ ≈ 0.65V), base current rises exponentially, and the transistor enters the active region where collector current scales linearly with base current.\n\nIn the Output Characteristics (IC vs VCE), three distinct conduction zones are clearly visible:\n\nCutoff: Characterized by IB = 0, IC ≈ 0, and VCE ≈ VCC = 12.0 V. The transistor acts as an open switch with extremely high output impedance.\nActive (Linear) Region: Spans from VCE ≈ 1.0V to 12.0V. The curves exhibit a very slight positive slope due to the Early Effect (base-width modulation), where increasing VCE widens the collector-base depletion region, narrowing the effective metallurgical base width WB and causing a minor increase in β and IC.\nSaturation Region: Occurs when VCE drops below approximately 0.3V. Here, the collector-base junction ceases to be reverse-biased and becomes forward-biased. The internal electric field that previously swept minority electrons into the collector weakens, and the collector current becomes strictly limited by external circuit components (RC and RE) rather than by base current:",
+    "conclusion": "Experiment 301 successfully verified the fundamental electrical principles governing bipolar junction transistors in the common-emitter configuration. The input characteristic confirmed the exponential p-n diode junction behavior with a knee potential of 0.65V. The output characteristic family clearly mapped the three classic operating zones—Cutoff, Active Linear, and Saturation. The experimental DC load line established the boundary limits of VCE(cutoff) = 12.0V and IC(sat) = 10.91 mA. Finally, the operational comparison confirmed that the self-biased voltage divider network provides a stable quiescent point (VCE = 5.75V, IC = 5.25mA) centered on the load line, and that the emitter resistor RE provides essential negative feedback that prevents thermal instability and operating point drift.",
+    "questions": [
+      {
+        "question": "Compare between the preliminary questions / theoretical examples and the measurement results obtained in the laboratory.",
+        "answer": "Detailed Solution & Comparison:\n\nTheoretically, the open-circuit Thevenin base voltage is VTH = 1.70 V and Thevenin resistance is RTH = 12.88 kΩ. Assuming nominal silicon base-emitter drop VBE = 0.70 V and transistor current gain β = 150, the calculated operating point coordinates are:\n\nTheoretical IC: (VTH - VBE) / (RE + RTH/(β+1)) = \n1.70 - 0.70\n100 + 85.3\n = 5.40 mA.\nTheoretical VCE: VCC - IC(RC + RE) = 12.0 - 0.0054(1100) = 12.0 - 5.94 = 6.06 V.\nExperimental Results (Circuit 2):\n\nMeasured IC: (12.00 - 6.75) / 1000 = 5.25 mA (Error = \n5.40 - 5.25\n5.40\n × 100\\% = 2.78\\%).\nMeasured VCE: 6.75 - 1.00 = 5.75 V (Error = \n6.06 - 5.75\n6.06\n × 100\\% = 5.11\\%).\nThe close agreement (< 5.2\\% error) demonstrates that the lumped linear model accurately predicts the physical circuit operating point. Minor variances stem from standard 5% carbon-film resistor tolerances, finite DMM input resistance, and ambient junction temperature variations."
+      }
+    ],
+    "learnings": [
+      "Measurement Competence: Mastery of multi-meter probing techniques on semiconductor breadboards, distinguishing between absolute node potentials (VB, VC, VE) and differential junction voltages (VBE, VCE).",
+      "Semiconductor Operating States: Practical intuition for diagnosing whether a BJT is cut off, operating linearly, or saturated based purely on two voltage checks: VBE and VCE.",
+      "Load Line Visualization: Concrete understanding of how passive component selections (VCC, RC, RE) define the theoretical operational envelope and limits of an active electronic device.",
+      "Thermal Stability Engineering: Empirical appreciation of negative feedback in analog electronics—specifically how simple emitter degeneration prevents operating point drift and ensures reproducibility across device manufacturing tolerances."
+    ]
+  }
+}
