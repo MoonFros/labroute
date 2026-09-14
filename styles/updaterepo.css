@@ -216,6 +216,11 @@
   line-height: 1.6;
 }
 
+::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
 /* Select Wrapper */
 .select-wrapper {
   position: relative;

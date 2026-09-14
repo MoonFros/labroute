@@ -1,0 +1,62 @@
+{
+  "id": "am-221-the-pendulum",
+  "code": "Am 221",
+  "title": "The pendulum",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2023/2024",
+  "tags": [
+    "#oscillations",
+    "#time"
+  ],
+  "verified": false,
+  "file": "mechanical/am-221-the-pendulum.json",
+  "content": {
+    "aim": "To determine the number of oscillations a pendulum can perform in a given time frame",
+    "objectives": [
+      "To determine the number of oscillations a pendulum can perform in a given time frame"
+    ],
+    "apparatus": [
+      "pendulumn bob",
+      "string",
+      "stand",
+      "stop watch"
+    ],
+    "theory": {
+      "text": "a pendulum swings to and fro in a repeated manner and then we calculate the amount of times it does that in a given time frame eg. 20secs",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Temperature",
+        "headers": [
+          "Parameter 1",
+          "Parameter 2",
+          "Parameter 3"
+        ],
+        "rows": [
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Get a bob of 20g weight",
+      "Tie a string of 20cm to it",
+      "suspend the bob using the string on a vertical frame",
+      "allow the bob to ocillate freely"
+    ],
+    "precautions": [
+      "ensure the timing is accurate",
+      "make sure the path on ocillation is unobstructed"
+    ],
+    "discussion": "thakjgaskgbafsjv bkjsdfh",
+    "conclusion": "The pendulum oscillated about 20 times in 20 seconds",
+    "questions": [],
+    "learnings": []
+  }
+}

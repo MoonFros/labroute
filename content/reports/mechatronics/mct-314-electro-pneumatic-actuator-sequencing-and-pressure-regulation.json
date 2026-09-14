@@ -1,0 +1,72 @@
+{
+  "id": "mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation",
+  "code": "MCT 314",
+  "title": "Electro-Pneumatic Actuator Sequencing and Pressure Regulation",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2023/2024",
+  "tags": [
+    "#Pneumatics"
+  ],
+  "verified": true,
+  "file": "mechatronics/mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation.json",
+  "content": {
+    "aim": "To design, wire, and evaluate a multi-cylinder electro-pneumatic automated sequence (A+ B+ A- B-) utilizing 5/2-way directional control valves with magnetic proximity sensor feedback.",
+    "objectives": [
+      "To analyze the operating principles, force output, and flow-pressure dynamics of double-acting pneumatic cylinders.",
+      "To implement relay-based electrical interlocking circuits to eliminate pneumatic signal overlap.",
+      "To measure actuation stroke times under varying system pressures (2 to 6 bar) and exhaust throttle settings."
+    ],
+    "apparatus": [
+      "Pneumatic training test bench with slotted profile plate",
+      "Double-acting pneumatic cylinders with magnetic pistons",
+      "Magnetic reed proximity limit sensors",
+      "V DC industrial relay module and push-button station",
+      "One-way flow control throttle valves (meter-out)",
+      "Air service unit (Filter-Regulator-Lubricator FRL unit) with pressure gauge",
+      "mm polyurethane pneumatic tubing and optical tachometer"
+    ],
+    "theory": {
+      "text": "Pneumatic automation utilizes compressed air as a fluid power transmission medium to achieve rapid linear and rotary mechanical actuation. In double-acting cylinders, pressurized air applied to the advance port generates an extension force F = P × A_piston, while the retraction force is reduced by the piston rod cross-sectional area F_retract = P × (A_piston - A_rod). Electro-pneumatic control interfaces 24V DC low-voltage electrical signals with high-pressure pneumatic lines using solenoid-actuated spool valves. This hybrid architecture eliminates signal delay over long distances, isolates high pneumatic forces from operator controls, and enables seamless integration with microcontrollers and industrial automation controllers.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation_diagram.png",
+          "caption": "image for te report"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Table 1: Experimental Measurements",
+        "headers": [
+          "Var 2"
+        ],
+        "rows": []
+      }
+    ],
+    "graphs": [
+      {
+        "title": "robot arm",
+        "src": "assets/lab_images/mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation_graph.jpeg",
+        "caption": "robot arm"
+      }
+    ],
+    "procedure": [
+      "Connect the air service unit to the main compressor line and adjust the pressure regulator to 4.0 bar.",
+      "Mount the two double-acting cylinders (Cylinder A and Cylinder B) horizontally on the slotted profile plate.",
+      "Fit magnetic reed sensors at the retracted (A0, B0) and extended (A1, B1) limit positions of both cylinders.",
+      "Pipe the pneumatic lines between the 5/2-way double-solenoid valves and the cylinder ports using 4mm tubing.",
+      "Wire the 24V DC relay control circuit according to the cascaded sequence logic: Start button triggers A+, A1 triggers B+, B1 triggers A-, and A0 triggers B-.",
+      "Measure the extension and retraction times for both cylinders across supply pressures from 2.0 bar to 6.0 bar in 1.0 bar increments."
+    ],
+    "precautions": [
+      "Always exhaust residual compressed air from the manifold before disconnecting pneumatic push-in fittings.",
+      "Ensure all magnetic proximity sensors are securely fastened to avoid signal chatter caused by cylinder end-stop impact vibrations.",
+      "Keep hands completely clear of cylinder stroke paths during continuous cycling tests."
+    ],
+    "discussion": "The experimental results demonstrate an inverse non-linear relationship between supply pressure and total cycle completion time. As the system pressure increased from 2.0 to 6.0 bar, the extension time of Cylinder A decreased from 0.85s to 0.31s due to the higher volumetric flow rate through the 5/2 valve orifices. The meter-out flow control valves effectively eliminated piston stick-slip behavior during low-pressure strokes, ensuring smooth velocity transitions throughout the cascaded sequence. Minor timing discrepancies between cylinders A and B were attributed to differential tubing lengths causing slight pressure line drops.",
+    "conclusion": "The electro-pneumatic cascaded motion sequence A+ B+ A- B- was successfully constructed and validated. Signal overlap was completely eliminated using electrical relay interlocking, achieving a minimum repeat cycle duration of 1.28 seconds at 6.0 bar rated operating pressure.",
+    "questions": [],
+    "learnings": []
+  }
+}

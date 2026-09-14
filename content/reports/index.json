@@ -6,7 +6,10 @@
     "department": "computer",
     "level": "400",
     "session": "2023/2024",
-    "tags": ["Microprocessors", "EmbeddedSystems"],
+    "tags": [
+      "Microprocessors",
+      "EmbeddedSystems"
+    ],
     "file": "computer/cpe-401-microprocessor.json",
     "verified": true
   },
@@ -17,7 +20,9 @@
     "department": "electrical",
     "level": "200",
     "session": "2023/2024",
-    "tags": ["CircuitAnalysis"],
+    "tags": [
+      "CircuitAnalysis"
+    ],
     "file": "electrical/eee-281-thevenin.json",
     "verified": true
   },
@@ -28,7 +33,10 @@
     "department": "mechanical",
     "level": "300",
     "session": "2022/2023",
-    "tags": ["Thermodynamics", "HeatTransfer"],
+    "tags": [
+      "Thermodynamics",
+      "HeatTransfer"
+    ],
     "file": "mechanical/mec-321-thermodynamics.json",
     "verified": true
   },
@@ -39,7 +47,11 @@
     "department": "mechatronics",
     "level": "300",
     "session": "2023/2024",
-    "tags": ["Automation", "Robotics", "PLC"],
+    "tags": [
+      "Automation",
+      "Robotics",
+      "PLC"
+    ],
     "file": "mechatronics/mct-311-plc-automation.json",
     "verified": true
   },
@@ -50,8 +62,63 @@
     "department": "production",
     "level": "400",
     "session": "2023/2024",
-    "tags": ["Manufacturing", "CNC", "Machining"],
+    "tags": [
+      "Manufacturing",
+      "CNC",
+      "Machining"
+    ],
     "file": "production/pre-412-cnc-machining.json",
     "verified": true
-  }
+  },
+  {
+    "id": "am222-test-of-pendulum",
+    "code": "am222",
+    "title": "Test of pendulum",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2023/2024",
+    "tags": [
+      "#mechanical"
+    ],
+    "file": "mechanical/am222-test-of-pendulum.json",
+    "verified": true
+  },
+  {
+    "id": "am-221-the-pendulum",
+    "code": "Am 221",
+    "title": "The pendulum",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2023/2024",
+    "tags": [
+      "#oscillations",
+      "#time"
+    ],
+    "file": "mechanical/am-221-the-pendulum.json",
+    "verified": false
+  },
+  {
+    "id": "mct-312-dc-motor-pid-control",
+    "code": "MCT 312",
+    "title": "Closed-Loop PID Speed & Position Control of a DC Servomotor",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": ["Mechatronics", "ControlSystems", "PIDController", "Servomotors", "Encoders"],
+    "file": "mechatronics/mct-312-dc-motor-pid-control.json",
+    "verified": true
+  },
+{
+  "id": "mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation",
+  "code": "MCT 314",
+  "title": "Electro-Pneumatic Actuator Sequencing and Pressure Regulation",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2023/2024",
+  "tags": [
+    "#Pneumatics"
+  ],
+  "file": "mechatronics/mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation.json",
+  "verified": true
+}
 ]

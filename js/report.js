@@ -1,5 +1,5 @@
 /**
- * ELAborate - Single Report Viewer (Strict DOM Manipulation)
+ * Labroute - Single Report Viewer Logic (Synchronized Schema Engine)
  */
 
 let allReportsMeta = [];
@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const reportId = urlParams.get('id');
 
-  // Bind the copy link button
+  // Copy URL Link
   document.getElementById('copyLinkBtn')?.addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href).then(() => alert("Report link copied!"));
+    navigator.clipboard.writeText(window.location.href).then(() => alert("Report link copied to clipboard!"));
   });
 
   if (!reportId) {
-    showEmptyState("No Report Selected", "Please enter a search term below or return to the archive to find a specific ledger.");
+    showEmptyState("No Report Selected", "Please select a specific lab report from the repository or search below.");
     return;
   }
 
@@ -30,12 +30,12 @@ function switchState(stateToShow) {
   document.getElementById(stateToShow).classList.remove('hidden');
 }
 
-// --- FETCH & POPULATE REPORT ---
+// --- FETCH & RESOLVE REPORT ---
 async function fetchReport(id) {
   try {
-    // 1. Fetch metadata index to find the exact subfolder path
     let filePath = `content/reports/${id}.json`;
 
+    // Check index.json to find subfolder file path (e.g. chemical/che-311.json)
     const indexRes = await fetch('content/reports/index.json');
     if (indexRes.ok) {
       const indexData = await indexRes.json();
@@ -45,7 +45,6 @@ async function fetchReport(id) {
       }
     }
 
-    // 2. Fetch the actual report JSON
     const response = await fetch(filePath);
     if (!response.ok) throw new Error('Report not found');
 
@@ -59,32 +58,42 @@ async function fetchReport(id) {
   }
 }
 
+// --- POPULATE THE REPORT UI ---
 function populateReportUI(data) {
-  document.title = `${data.code || 'Lab'} Report — ELAborate`;
-  
-  // Safely grab content
+  document.title = `${data.code || 'Lab'} Report — Labroute`;
   const content = data.content || {};
-  const apparatusList = content.apparatus || [];
-  const procedureList = content.procedure || [];
 
-  // Populate Header
+  // 1. Header Metadata
   document.getElementById('reportCode').textContent = data.code || 'UNKNOWN';
   document.getElementById('reportTitle').textContent = data.title || 'Untitled Document';
   document.getElementById('reportDept').textContent = (data.department || 'N/A').toUpperCase();
   document.getElementById('reportLevel').textContent = `${data.level || 'N/A'}L`;
+  document.getElementById('reportSession').textContent = data.session || '2023/2024';
   
   if (data.verified) {
     document.getElementById('reportVerified').classList.remove('hidden');
   }
 
-  // Populate Body Paragraphs
-  document.getElementById('reportObjective').textContent = content.objective || 'No objective provided.';
-  document.getElementById('reportTheory').textContent = content.theory || 'No theory provided.';
-  document.getElementById('reportConclusion').textContent = content.conclusion || 'No conclusion provided.';
+  // 2. Aim & Objectives
+  document.getElementById('reportAim').textContent = content.aim || 'No formal aim statement provided.';
+  
+  const objectivesEl = document.getElementById('reportObjectives');
+  objectivesEl.innerHTML = '';
+  const objectives = Array.isArray(content.objectives) ? content.objectives : (content.objective ? [content.objective] : []);
+  if (objectives.length) {
+    objectives.forEach(obj => {
+      const li = document.createElement('li');
+      li.textContent = obj;
+      objectivesEl.appendChild(li);
+    });
+  } else {
+    objectivesEl.innerHTML = '<li>General laboratory investigation.</li>';
+  }
 
-  // Populate Lists (Apparatus)
+  // 3. Apparatus (Pills)
   const apparatusEl = document.getElementById('reportApparatus');
-  apparatusEl.innerHTML = ''; // clear loading state safely
+  apparatusEl.innerHTML = '';
+  const apparatusList = Array.isArray(content.apparatus) ? content.apparatus : [];
   if (apparatusList.length) {
     apparatusList.forEach(item => {
       const li = document.createElement('li');
@@ -92,12 +101,32 @@ function populateReportUI(data) {
       apparatusEl.appendChild(li);
     });
   } else {
-    apparatusEl.innerHTML = '<li>Not specified</li>';
+    apparatusEl.innerHTML = '<li>Standard Laboratory Equipment</li>';
   }
 
-  // Populate Lists (Procedure)
+  // 4. Theory & Diagrams
+  const theoryText = typeof content.theory === 'object' ? (content.theory.text || '') : (content.theory || '');
+  document.getElementById('reportTheory').textContent = theoryText || 'No theoretical description provided.';
+
+  const diagramsContainer = document.getElementById('reportDiagrams');
+  diagramsContainer.innerHTML = '';
+  const diagrams = (content.theory && Array.isArray(content.theory.diagrams)) ? content.theory.diagrams : [];
+  diagrams.forEach(diag => {
+    if (diag.src) {
+      const fig = document.createElement('figure');
+      fig.className = 'report-figure';
+      fig.innerHTML = `
+        <img src="${diag.src}" alt="${diag.caption || 'Setup Diagram'}" loading="lazy" />
+        ${diag.caption ? `<figcaption>${diag.caption}</figcaption>` : ''}
+      `;
+      diagramsContainer.appendChild(fig);
+    }
+  });
+
+  // 5. Methodology & Precautions
   const procedureEl = document.getElementById('reportProcedure');
-  procedureEl.innerHTML = ''; 
+  procedureEl.innerHTML = '';
+  const procedureList = Array.isArray(content.procedure) ? content.procedure : [];
   if (procedureList.length) {
     procedureList.forEach(step => {
       const li = document.createElement('li');
@@ -105,25 +134,125 @@ function populateReportUI(data) {
       procedureEl.appendChild(li);
     });
   } else {
-    procedureEl.innerHTML = '<li>Not specified</li>';
+    procedureEl.innerHTML = '<li>Refer to laboratory experimental manual.</li>';
+  }
+
+  const precautionsEl = document.getElementById('reportPrecautions');
+  precautionsEl.innerHTML = '';
+  const precautionsList = Array.isArray(content.precautions) ? content.precautions : [];
+  if (precautionsList.length) {
+    document.getElementById('precautionsWrapper').classList.remove('hidden');
+    precautionsList.forEach(prec => {
+      const li = document.createElement('li');
+      li.textContent = prec;
+      precautionsEl.appendChild(li);
+    });
+  } else {
+    document.getElementById('precautionsWrapper').classList.add('hidden');
+  }
+
+  // 6. Empirical Data (Tables)
+  const tablesContainer = document.getElementById('reportTables');
+  tablesContainer.innerHTML = '';
+  const tables = Array.isArray(content.tables) ? content.tables : [];
+  tables.forEach(tableObj => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-render-card';
+    if (tableObj.title) {
+      wrapper.innerHTML += `<h4 class="table-card-title">${tableObj.title}</h4>`;
+    }
+    const tableEl = document.createElement('table');
+    tableEl.className = 'rendered-data-table';
+    
+    // Headers
+    if (tableObj.headers && tableObj.headers.length) {
+      const thead = document.createElement('thead');
+      thead.innerHTML = `<tr>${tableObj.headers.map(h => `<th>${h}</th>`).join('')}</tr>`;
+      tableEl.appendChild(thead);
+    }
+    // Rows
+    if (tableObj.rows && tableObj.rows.length) {
+      const tbody = document.createElement('tbody');
+      tbody.innerHTML = tableObj.rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('');
+      tableEl.appendChild(tbody);
+    }
+    wrapper.appendChild(tableEl);
+    tablesContainer.appendChild(wrapper);
+  });
+
+  // Graphs
+  const graphsContainer = document.getElementById('reportGraphs');
+  graphsContainer.innerHTML = '';
+  const graphs = Array.isArray(content.graphs) ? content.graphs : [];
+  graphs.forEach(g => {
+    if (g.src) {
+      const fig = document.createElement('figure');
+      fig.className = 'report-figure';
+      fig.innerHTML = `
+        <img src="${g.src}" alt="${g.title || 'Experimental Graph'}" loading="lazy" />
+        ${g.caption || g.title ? `<figcaption>${g.caption || g.title}</figcaption>` : ''}
+      `;
+      graphsContainer.appendChild(fig);
+    }
+  });
+
+  // 7. Discussion & Conclusion
+  document.getElementById('reportDiscussion').textContent = content.discussion || 'No discussion submitted.';
+  document.getElementById('reportConclusion').textContent = content.conclusion || 'No conclusion submitted.';
+
+  // 8. Lab Manual Q&A
+  const qaContainer = document.getElementById('reportQaList');
+  qaContainer.innerHTML = '';
+  const questions = Array.isArray(content.questions) ? content.questions : [];
+  if (questions.length) {
+    document.getElementById('sec-qa').classList.remove('hidden');
+    document.getElementById('tocLinkQa')?.classList.remove('hidden');
+    questions.forEach((qa, idx) => {
+      const card = document.createElement('div');
+      card.className = 'qa-display-card';
+      card.innerHTML = `
+        <div class="qa-q"><strong>Q${idx + 1}:</strong> ${qa.question}</div>
+        <div class="qa-a"><strong>Ans:</strong> ${qa.answer}</div>
+      `;
+      qaContainer.appendChild(card);
+    });
+  } else {
+    document.getElementById('sec-qa').classList.add('hidden');
+    document.getElementById('tocLinkQa')?.classList.add('hidden');
+  }
+
+  // 9. Key Learnings
+  const learningsEl = document.getElementById('reportLearnings');
+  learningsEl.innerHTML = '';
+  const learnings = Array.isArray(content.learnings) ? content.learnings : [];
+  if (learnings.length) {
+    document.getElementById('sec-learnings').classList.remove('hidden');
+    document.getElementById('tocLinkLearnings')?.classList.remove('hidden');
+    learnings.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      learningsEl.appendChild(li);
+    });
+  } else {
+    document.getElementById('sec-learnings').classList.add('hidden');
+    document.getElementById('tocLinkLearnings')?.classList.add('hidden');
   }
 
   initScrollSpy();
 }
 
-// --- POPULATE EMPTY STATE & SEARCH ---
+// --- POPULATE EMPTY STATE & INLINE SEARCH ---
 async function showEmptyState(title, message) {
   document.getElementById('emptyTitle').textContent = title;
   document.getElementById('emptyMessage').textContent = message;
   switchState('emptyState');
 
-  // Load search metadata in background
   if (!allReportsMeta.length) {
     try {
       const res = await fetch('content/reports/index.json');
       if (res.ok) allReportsMeta = await res.json();
     } catch (e) {
-      console.error("Failed to load search metadata", e);
+      console.error("Failed to load metadata", e);
     }
   }
 
@@ -132,7 +261,7 @@ async function showEmptyState(title, message) {
 
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase().trim();
-    resultsContainer.innerHTML = ''; // Clear results safely
+    resultsContainer.innerHTML = '';
     
     if (!query) return;
 
@@ -150,11 +279,9 @@ async function showEmptyState(title, message) {
     }
 
     filtered.forEach(r => {
-      // Build minimal card via DOM elements to prevent XSS
       const a = document.createElement('a');
       a.href = `report.html?id=${r.id}`;
       a.className = 'minimal-card';
-      
       a.innerHTML = `
         <div class="minimal-card-left">
           <span class="minimal-code">${r.code}</span>
@@ -167,9 +294,9 @@ async function showEmptyState(title, message) {
   });
 }
 
-// --- SCROLL SPY LOGIC ---
+// --- SCROLLSPY ---
 function initScrollSpy() {
-  const sections = document.querySelectorAll('.scroll-section');
+  const sections = document.querySelectorAll('.scroll-section:not(.hidden)');
   const navLinks = document.querySelectorAll('.toc-link');
   
   const observer = new IntersectionObserver((entries) => {

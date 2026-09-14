@@ -1,0 +1,54 @@
+{
+  "id": "am222-test-of-pendulum",
+  "code": "am222",
+  "title": "Test of pendulum",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2023/2024",
+  "tags": [
+    "#mechanical"
+  ],
+  "verified": true,
+  "file": "mechanical/am222-test-of-pendulum.json",
+  "content": {
+    "aim": "To verify the movement of the pendulum.",
+    "objectives": [
+      "To verify the movement of the pendulum."
+    ],
+    "apparatus": [
+      "To verify the movement of the pendulum."
+    ],
+    "theory": {
+      "text": "To verify the movement of the pendulum.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Experimental Measurements",
+        "headers": [
+          "Parameter 1",
+          "Parameter 2",
+          "Parameter 3"
+        ],
+        "rows": [
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "To verify the movement of the pendulum."
+    ],
+    "precautions": [
+      "To verify the movement of the pendulum."
+    ],
+    "discussion": "To verify the movement of the pendulum.",
+    "conclusion": "To verify the movement of the pendulum.",
+    "questions": [],
+    "learnings": []
+  }
+}
