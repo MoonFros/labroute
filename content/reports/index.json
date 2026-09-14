@@ -121,4 +121,23 @@
   "file": "mechatronics/mct-314-electro-pneumatic-actuator-sequencing-and-pressure-regulation.json",
   "verified": true
 }
+{
+  "id": "eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis",
+  "code": "EEE 301",
+  "title": "Bipolar Transistor Characteristics & DC Operating Point Analysis",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#BJT",
+    "#DC",
+    "#TPS-3371 Transistor Trainer",
+    "#2N2222 NPN Silicon BJT",
+    "#DC operating point",
+    "#Q-point"
+  ],
+  "file": "electrical/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis.json",
+  "verified": true
+}
 ]
+
