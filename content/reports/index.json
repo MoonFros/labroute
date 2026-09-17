@@ -170,7 +170,8 @@
     "tags": [
       "#AmplitudeModulation",
       "#Communications",
-      "#SignalProcessing"
+      "#SignalProcessing",
+      "#PowerEfficiency"
     ],
     "file": "electrical/eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency.json",
     "verified": true
@@ -185,7 +186,8 @@
     "tags": [
       "#FrequencyModulation",
       "#Communications",
-      "#VCO"
+      "#VCO",
+      "#Bandwidth"
     ],
     "file": "electrical/eee-304-frequency-modulation-vco-characterization-deviation-bandwidth-analysis.json",
     "verified": true
@@ -200,7 +202,8 @@
     "tags": [
       "#PowerFactor",
       "#ACCircuits",
-      "#PhasorAnalysis"
+      "#PhasorAnalysis",
+      "#ReactivePower"
     ],
     "file": "electrical/eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis.json",
     "verified": true
@@ -215,7 +218,8 @@
     "tags": [
       "#SynchronousMotor",
       "#ThreePhase",
-      "#PowerFactor"
+      "#PowerFactor",
+      "#ElectricMachines"
     ],
     "file": "electrical/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics.json",
     "verified": true
@@ -230,7 +234,8 @@
     "tags": [
       "#InductionMotor",
       "#ThreePhase",
-      "#CircleDiagram"
+      "#CircleDiagram",
+      "#ElectricMachines"
     ],
     "file": "electrical/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance.json",
     "verified": true
@@ -245,7 +250,8 @@
     "tags": [
       "#Transformer",
       "#Efficiency",
-      "#VoltageRegulation"
+      "#VoltageRegulation",
+      "#ElectricMachines"
     ],
     "file": "electrical/eee-308-power-transformer-equivalent-circuit-efficiency-voltage-regulation.json",
     "verified": true
