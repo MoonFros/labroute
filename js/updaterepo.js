@@ -40,7 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
         topicTags.forEach((tag, idx) => {
             const chip = document.createElement('span');
             chip.className = 'tag-chip';
-            chip.innerHTML = `${tag} <button type="button" class="tag-remove" data-idx="${idx}">&times;</button>`;
+            chip.appendChild(document.createTextNode(`${tag} `));
+
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.className = 'tag-remove';
+            removeButton.dataset.idx = idx;
+            removeButton.textContent = '×';
+            chip.appendChild(removeButton);
+
             topicContainer.insertBefore(chip, topicInput);
         });
     }
@@ -78,7 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
         apparatusTags.forEach((item, idx) => {
             const chip = document.createElement('span');
             chip.className = 'tag-chip';
-            chip.innerHTML = `${item} <button type="button" class="tag-remove" data-app-idx="${idx}">&times;</button>`;
+            chip.appendChild(document.createTextNode(`${item} `));
+
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.className = 'tag-remove';
+            removeButton.dataset.appIdx = idx;
+            removeButton.textContent = '×';
+            chip.appendChild(removeButton);
+
             apparatusContainer.insertBefore(chip, apparatusInput);
         });
     }
@@ -138,12 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         row.innerHTML = `
             ${prefixHTML}
-            <input type="text" class="input-text list-input" value="${value.replace(/"/g, '&quot;')}" placeholder="Enter details..." />
+            <input type="text" class="input-text list-input" placeholder="Enter details..." />
             <button type="button" class="btn-icon-danger" title="Remove row"><span class="material-symbols-outlined">delete</span></button>
         `;
 
-        // Smart Paste on row input
+        // Assign through the DOM instead of an HTML attribute so TeX characters
+        // such as &, <, and backslashes are preserved exactly.
         const input = row.querySelector('.list-input');
+        input.value = value;
         input.addEventListener('paste', (e) => {
             const text = (e.clipboardData || window.clipboardData).getData('text');
             const lines = parseWordList(text);
@@ -196,11 +214,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label class="qa-title-label">QUESTION ${count}</label>
                 <button type="button" class="btn-icon-danger" title="Delete Question"><span class="material-symbols-outlined">delete</span></button>
             </div>
-            <input type="text" class="input-text qa-question-input" value="${q.replace(/"/g, '&quot;')}" placeholder="Enter question..." />
+            <input type="text" class="input-text qa-question-input" placeholder="Enter question..." />
             
             <label class="qa-ans-label">ANSWER</label>
-            <textarea class="input-textarea qa-answer-input" rows="2" placeholder="Type answer here...">${a}</textarea>
+            <textarea class="input-textarea qa-answer-input" rows="2" placeholder="Type answer here..."></textarea>
         `;
+        card.querySelector('.qa-question-input').value = q;
+        card.querySelector('.qa-answer-input').value = a;
 
         card.querySelector('.btn-icon-danger').addEventListener('click', () => {
             card.remove();
@@ -237,10 +257,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const th = document.createElement('th');
             th.innerHTML = `
                 <div class="header-cell-wrapper">
-                  <input type="text" class="th-input" value="${headerText}" data-col="${colIdx}" />
+                  <input type="text" class="th-input" data-col="${colIdx}" />
                   ${tableHeaders.length > 1 ? `<button type="button" class="btn-col-del" data-col="${colIdx}" title="Delete Column"><span class="material-symbols-outlined">close</span></button>` : ''}
                 </div>
             `;
+            th.querySelector('.th-input').value = headerText;
             tableHeaderRow.appendChild(th);
         });
         tableHeaderRow.innerHTML += `<th class="th-action"></th>`;
@@ -250,9 +271,19 @@ document.addEventListener('DOMContentLoaded', () => {
         tableRows.forEach((row, rowIdx) => {
             const tr = document.createElement('tr');
             row.forEach((cellVal, colIdx) => {
-                tr.innerHTML += `<td><input type="text" class="cell-input" value="${cellVal}" data-row="${rowIdx}" data-col="${colIdx}" /></td>`;
+                const td = document.createElement('td');
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'cell-input';
+                input.dataset.row = rowIdx;
+                input.dataset.col = colIdx;
+                input.value = cellVal;
+                td.appendChild(input);
+                tr.appendChild(td);
             });
-            tr.innerHTML += `<td><button type="button" class="btn-row-del" data-row="${rowIdx}" title="Delete Row"><span class="material-symbols-outlined">delete</span></button></td>`;
+            const actionCell = document.createElement('td');
+            actionCell.innerHTML = `<button type="button" class="btn-row-del" data-row="${rowIdx}" title="Delete Row"><span class="material-symbols-outlined">delete</span></button>`;
+            tr.appendChild(actionCell);
             tableBody.appendChild(tr);
         });
     }
@@ -375,7 +406,34 @@ document.addEventListener('DOMContentLoaded', () => {
     bindSingleDropzone('graphDropzone', 'graphFileInput', 'graphFileName');
 
     // =========================================================================
-    // 7. INITIALIZE DEFAULT FORM STATE
+    // 7. LIVE LATEX PREVIEW
+    // =========================================================================
+    function setupTheoryFormulaPreview() {
+        const theoryInput = document.getElementById('theoryText');
+        const preview = document.getElementById('theoryFormulaPreview');
+        if (!theoryInput || !preview) return;
+
+        let previewTimer;
+        const updatePreview = () => {
+            // Use textContent so TeX is previewed as data, never as author HTML.
+            preview.textContent = theoryInput.value || 'Your theory and formulas will appear here.';
+            window.LabrouteMath?.typeset(preview);
+        };
+
+        theoryInput.addEventListener('input', () => {
+            window.clearTimeout(previewTimer);
+            previewTimer = window.setTimeout(updatePreview, 200);
+        });
+
+        updatePreview();
+        // The first update can occur before the deferred MathJax file is ready.
+        window.addEventListener('load', updatePreview, { once: true });
+    }
+
+    setupTheoryFormulaPreview();
+
+    // =========================================================================
+    // 8. INITIALIZE DEFAULT FORM STATE
     // =========================================================================
     renderTopicTags();
     renderApparatusTags();
@@ -392,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addQaCard('', '');
 
     // =========================================================================
-    // 8. JSON COMPILATION & SUBMISSION
+    // 9. JSON COMPILATION & SUBMISSION
     // =========================================================================
     function extractFormData() {
         const code = document.getElementById('courseCode')?.value.trim() || '';
@@ -410,8 +468,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const getValues = (containerId) => {
             const arr = [];
             document.querySelectorAll(`#${containerId} .list-input`).forEach(input => {
-                const val = input.value.trim();
-                if (val) arr.push(val);
+                const val = input.value;
+                if (val.trim()) arr.push(val);
             });
             return arr;
         };
@@ -419,9 +477,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Extract Q&A
         const questions = [];
         document.querySelectorAll('#qaList .qa-item-card').forEach(card => {
-            const q = card.querySelector('.qa-question-input')?.value.trim();
-            const a = card.querySelector('.qa-answer-input')?.value.trim();
-            if (q || a) questions.push({ question: q, answer: a });
+            const q = card.querySelector('.qa-question-input')?.value || '';
+            const a = card.querySelector('.qa-answer-input')?.value || '';
+            if (q.trim() || a.trim()) questions.push({ question: q, answer: a });
         });
 
         // Extract All Dynamic Diagrams
@@ -449,6 +507,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }] : [];
 
         const tableTitle = document.getElementById('tableTitleInput')?.value.trim() || 'Table 1: Experimental Measurements';
+        // TeX stays in these strings exactly as authored. JSON.stringify will
+        // escape backslashes for valid JSON and JSON.parse restores them when
+        // report.html loads the file.
+        const getRichText = (id) => document.getElementById(id)?.value || '';
 
         return {
             id: cleanId || 'report-ledger',
@@ -461,11 +523,11 @@ document.addEventListener('DOMContentLoaded', () => {
             verified: verified,
             file: `${department}/${cleanId}.json`,
             content: {
-                aim: document.getElementById('aimText')?.value.trim() || '',
+                aim: getRichText('aimText'),
                 objectives: getValues('objectivesList'),
                 apparatus: [...apparatusTags],
                 theory: {
-                    text: document.getElementById('theoryText')?.value.trim() || '',
+                    text: getRichText('theoryText'),
                     diagrams: diagrams
                 },
                 tables: [
@@ -478,8 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 graphs: graphs,
                 procedure: getValues('procedureList'),
                 precautions: getValues('precautionsList'),
-                discussion: document.getElementById('discussionText')?.value.trim() || '',
-                conclusion: document.getElementById('conclusionText')?.value.trim() || '',
+                discussion: getRichText('discussionText'),
+                conclusion: getRichText('conclusionText'),
                 questions: questions,
                 learnings: getValues('learningsList')
             }
@@ -501,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================================================
-    // 9. SAVE DRAFT (Local Storage)
+    // 10. SAVE DRAFT (Local Storage)
     // =========================================================================
     document.getElementById('saveDraftBtn')?.addEventListener('click', () => {
         const data = extractFormData();
@@ -510,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // =========================================================================
-    // 10. SUBMIT TO ARCHIVE (Download Pipeline)
+    // 11. SUBMIT TO ARCHIVE (Download Pipeline)
     // =========================================================================
     function downloadFile(filename, blob) {
         const url = URL.createObjectURL(blob);

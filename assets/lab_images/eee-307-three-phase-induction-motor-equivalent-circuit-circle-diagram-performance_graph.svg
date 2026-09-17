@@ -1,0 +1,81 @@
+<svg class="svg-chart" viewbox="0 0 850 480" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <defs>
+                            <pattern id="grid307" width="50" height="35" patternunits="userSpaceOnUse">
+                                <path d="M 50 0 L 0 0 0 35" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect x="70" y="40" width="730" height="350" fill="url(#grid307)"/>
+
+                        
+                        
+                        <rect x="70" y="40" width="73" height="350" fill="#dcfce7" opacity="0.4"/>
+                        <text x="106" y="65" font-size="11" fill="#15803d" font-weight="700" text-anchor="middle" transform="rotate(-90 106 65)">NORMAL MOTORING ZONE (s &lt; 0.1)</text>
+
+                        
+                        <rect x="435" y="40" width="365" height="350" fill="#fee2e2" opacity="0.3"/>
+                        <text x="617" y="70" font-size="12" fill="#b91c1c" font-weight="700" text-anchor="middle">UNSTABLE / ACCELERATING REGION (dT/ds &lt; 0)</text>
+
+                        
+                        <line x1="70" y1="40" x2="70" y2="390" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="70" y1="390" x2="800" y2="390" stroke="#1e293b" stroke-width="2"/>
+
+                        
+                        
+                        <text x="70" y="412" font-size="12" fill="#475569" text-anchor="middle">0.0 (Ns=3000)</text>
+                        <text x="143" y="412" font-size="12" fill="#475569" text-anchor="middle">0.1</text>
+                        <text x="216" y="412" font-size="12" fill="#475569" text-anchor="middle">0.2</text>
+                        <text x="289" y="412" font-size="12" fill="#475569" text-anchor="middle">0.3</text>
+                        <text x="362" y="412" font-size="12" fill="#475569" text-anchor="middle">0.4</text>
+                        <text x="435" y="412" font-size="12" fill="#b91c1c" font-weight="700" text-anchor="middle">0.5 (s_max)</text>
+                        <text x="508" y="412" font-size="12" fill="#475569" text-anchor="middle">0.6</text>
+                        <text x="581" y="412" font-size="12" fill="#475569" text-anchor="middle">0.7</text>
+                        <text x="654" y="412" font-size="12" fill="#475569" text-anchor="middle">0.8</text>
+                        <text x="727" y="412" font-size="12" fill="#475569" text-anchor="middle">0.9</text>
+                        <text x="800" y="412" font-size="12" fill="#475569" font-weight="700" text-anchor="middle">1.0 (Start/0 rpm)</text>
+                        <text x="435" y="445" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle">Rotor Slip, s (Dimensionless) [Synchronous Speed → Standstill]</text>
+
+                        
+                        
+                        <text x="60" y="394" font-size="12" fill="#475569" text-anchor="end">0.0</text>
+                        <text x="60" y="324" font-size="12" fill="#475569" text-anchor="end">4.0</text>
+                        <text x="60" y="254" font-size="12" fill="#475569" text-anchor="end">8.0</text>
+                        <text x="60" y="184" font-size="12" fill="#475569" text-anchor="end">12.0</text>
+                        <text x="60" y="114" font-size="12" fill="#475569" text-anchor="end">16.0</text>
+                        <text x="60" y="44" font-size="12" fill="#475569" font-weight="700" text-anchor="end">20.0</text>
+                        <text x="25" y="215" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle" transform="rotate(-90 25 215)">Developed Torque, T (N·m)</text>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <path d="M 70 390 Q 85 327, 98 274 T 128 183 Q 180 114, 289 79 T 412 72 Q 500 75, 581 124 T 800 181" fill="none" stroke="#2563eb" stroke-width="3.5"/>
+
+                        
+                        <circle cx="98" cy="274" r="7" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="412" cy="72" r="7" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="800" cy="181" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="2"/>
+
+                        
+                        <line x1="98" y1="274" x2="98" y2="390" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <rect x="110" y="255" width="200" height="38" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+                        <text x="210" y="271" font-size="11" fill="#15803d" font-weight="800" text-anchor="middle">Rated Full-Load Point:</text>
+                        <text x="210" y="285" font-size="10" fill="#334155" text-anchor="middle">s = 0.038, T = 6.62 N·m (P = 2 kW)</text>
+
+                        
+                        <line x1="412" y1="72" x2="412" y2="390" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <rect x="425" y="55" width="230" height="38" rx="4" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+                        <text x="540" y="71" font-size="11" fill="#b91c1c" font-weight="800" text-anchor="middle">Breakdown Maximum Torque:</text>
+                        <text x="540" y="85" font-size="10" fill="#334155" text-anchor="middle">T_max = 18.15 N·m at s = 0.468</text>
+
+                        
+                        <rect x="650" y="160" width="145" height="34" rx="4" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+                        <text x="722" y="175" font-size="10" fill="#c2410c" font-weight="700" text-anchor="middle">Starting Torque (s = 1.0):</text>
+                        <text x="722" y="187" font-size="9" fill="#475569" text-anchor="middle">T_start = 11.95 N·m</text>
+                    </svg>

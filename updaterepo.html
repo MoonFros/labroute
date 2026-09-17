@@ -14,6 +14,10 @@
     <!-- Modular Stylesheets -->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/updaterepo.css">
+
+    <!-- Math rendering: load the local configuration before MathJax itself. -->
+    <script src="/js/math.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body class="ledger-form-body">
@@ -204,8 +208,18 @@
                         <div class="form-field">
                             <label for="theoryText" class="field-label">THEORY <span class="req-star">*</span></label>
                             <textarea id="theoryText" name="theory" class="input-textarea" rows="4"
-                                placeholder="Detail the governing physical equations and theoretical framework..."
+                                placeholder="Detail the governing physical equations and theoretical framework. Example: The Reynolds number is \(Re = \frac{\rho V D}{\mu}\)."
                                 required></textarea>
+                            <span class="field-hint formula-entry-hint">
+                                Write TeX directly in any report text field: use <code>\( E = mc^2 \)</code> for inline maths and
+                                <code>\[ F = ma \]</code> (or <code>$$ F = ma $$</code>) for a displayed formula. Existing bare
+                                <code>\frac{a}{b}</code>, <code>/frac{a}{b}</code>, and <code>/{frac}{a}{b}</code> entries are also read.
+                                The TeX source is kept in the downloaded JSON; seeing <code>\\</code> there represents one backslash after the JSON is read.
+                            </span>
+                            <div class="formula-preview" aria-live="polite" aria-label="Theory formula preview">
+                                <span class="formula-preview-label">Formula preview</span>
+                                <div id="theoryFormulaPreview" class="formula-preview-content">Your theory and formulas will appear here.</div>
+                            </div>
                         </div>
 
                         <!-- Setup Diagram Dropzone -->

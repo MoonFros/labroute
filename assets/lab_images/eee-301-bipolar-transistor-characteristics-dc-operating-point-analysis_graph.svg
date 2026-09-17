@@ -1,0 +1,100 @@
+<svg class="svg-chart" viewbox="0 0 850 480" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <defs>
+                            <pattern id="grid301" width="50" height="40" patternunits="userSpaceOnUse">
+                                <path d="M 50 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect x="70" y="40" width="720" height="360" fill="url(#grid301)"/>
+
+                        
+                        
+                        <rect x="70" y="40" width="60" height="360" fill="#fef3c7" opacity="0.4"/>
+                        <text x="100" y="70" font-size="11" fill="#b45309" font-weight="700" text-anchor="middle" transform="rotate(-90 100 70)">SATURATION REGION</text>
+
+                        
+                        <rect x="70" y="388" width="720" height="12" fill="#fee2e2" opacity="0.5"/>
+                        <text x="500" y="398" font-size="11" fill="#b91c1c" font-weight="700">CUTOFF REGION (IB = 0)</text>
+
+                        
+                        <text x="450" y="75" font-size="13" fill="#1e40af" font-weight="700" text-anchor="middle">ACTIVE (LINEAR) REGION — AMPLIFICATION ZONE</text>
+
+                        
+                        <line x1="70" y1="40" x2="70" y2="400" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="70" y1="400" x2="790" y2="400" stroke="#1e293b" stroke-width="2"/>
+
+                        
+                        
+                        <text x="70" y="420" font-size="12" fill="#475569" text-anchor="middle">0</text>
+                        <text x="130" y="420" font-size="12" fill="#475569" text-anchor="middle">1.0</text>
+                        <text x="190" y="420" font-size="12" fill="#475569" text-anchor="middle">2.0</text>
+                        <text x="310" y="420" font-size="12" fill="#475569" text-anchor="middle">4.0</text>
+                        <text x="430" y="420" font-size="12" fill="#475569" text-anchor="middle">6.0</text>
+                        <text x="550" y="420" font-size="12" fill="#475569" text-anchor="middle">8.0</text>
+                        <text x="670" y="420" font-size="12" fill="#475569" text-anchor="middle">10.0</text>
+                        <text x="790" y="420" font-size="12" fill="#475569" text-anchor="middle">12.0</text>
+                        <text x="430" y="450" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle">Collector-Emitter Voltage, V_CE (Volts)</text>
+
+                        
+                        
+                        <text x="60" y="404" font-size="12" fill="#475569" text-anchor="end">0</text>
+                        <text x="60" y="344" font-size="12" fill="#475569" text-anchor="end">2.0</text>
+                        <text x="60" y="284" font-size="12" fill="#475569" text-anchor="end">4.0</text>
+                        <text x="60" y="224" font-size="12" fill="#475569" text-anchor="end">6.0</text>
+                        <text x="60" y="164" font-size="12" fill="#475569" text-anchor="end">8.0</text>
+                        <text x="60" y="104" font-size="12" fill="#475569" text-anchor="end">10.0</text>
+                        <text x="60" y="44" font-size="12" fill="#475569" text-anchor="end">12.0</text>
+                        <text x="25" y="220" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle" transform="rotate(-90 25 220)">Collector Current, I_C (mA)</text>
+
+                        
+                        
+                        <path d="M 70 400 C 90 350, 110 348, 130 347 L 790 338" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+                        <text x="795" y="338" font-size="11" fill="#1d4ed8" font-weight="600">I_B = 10 µA</text>
+
+                        
+                        <path d="M 70 400 C 90 305, 110 295, 130 293 L 790 280" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+                        <text x="795" y="280" font-size="11" fill="#1d4ed8" font-weight="600">I_B = 20 µA</text>
+
+                        
+                        <path d="M 70 400 C 90 255, 110 244, 130 242 L 790 225" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+                        <text x="795" y="225" font-size="11" fill="#1d4ed8" font-weight="700">I_B = 30 µA (Q-Curve)</text>
+
+                        
+                        <path d="M 70 400 C 90 205, 110 190, 130 188 L 790 168" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+                        <text x="795" y="168" font-size="11" fill="#1d4ed8" font-weight="600">I_B = 40 µA</text>
+
+                        
+                        <path d="M 70 400 C 90 155, 110 138, 130 135 L 790 112" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+                        <text x="795" y="112" font-size="11" fill="#1d4ed8" font-weight="600">I_B = 50 µA</text>
+
+                        
+                        <path d="M 70 400 C 90 105, 110 88, 130 84 L 790 58" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+                        <text x="795" y="58" font-size="11" fill="#1d4ed8" font-weight="600">I_B = 60 µA</text>
+
+                        
+                        
+                        
+                        <line x1="70" y1="73" x2="790" y2="400" stroke="#dc2626" stroke-width="3" stroke-dasharray="6,4"/>
+                        <text x="75" y="65" font-size="12" fill="#b91c1c" font-weight="800">Saturation Limit (10.91 mA)</text>
+                        <text x="740" y="385" font-size="12" fill="#b91c1c" font-weight="800">Cutoff Limit (12.0 V)</text>
+
+                        
+                        
+                        
+                        <circle cx="415" cy="242.5" r="7" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+                        <line x1="415" y1="242.5" x2="415" y2="400" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <line x1="70" y1="242.5" x2="415" y2="242.5" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+                        
+                        <rect x="425" y="215" width="220" height="42" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+                        <text x="435" y="232" font-size="12" fill="#15803d" font-weight="800">Quiescent Point (Q):</text>
+                        <text x="435" y="248" font-size="11" fill="#334155">V_CE = 5.75 V,  I_C = 5.25 mA</text>
+
+                        
+                        
+                        
+                        <circle cx="217" cy="113.5" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="2"/>
+                        <rect x="225" y="95" width="185" height="34" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.2"/>
+                        <text x="232" y="110" font-size="11" fill="#c2410c" font-weight="700">R_E Shorted Shift (Circuit 3):</text>
+                        <text x="232" y="123" font-size="10" fill="#431407">V_CE = 2.45V, I_C = 9.55mA</text>
+                    </svg>

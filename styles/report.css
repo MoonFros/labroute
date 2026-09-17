@@ -330,6 +330,29 @@
   margin-bottom: 1.25rem;
 }
 
+/* Text is read from JSON, so preserve author paragraph breaks around TeX. */
+.math-content,
+.theory-content,
+.analysis-block p,
+.qa-display-card,
+#reportProcedure li,
+#reportObjectives li,
+#reportLearnings li,
+.rendered-data-table th,
+.rendered-data-table td {
+  white-space: pre-line;
+}
+
+/* Keep long displayed equations readable on small screens rather than clipping them. */
+.report-article mjx-container[display="true"],
+.formula-preview-content mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 0.35rem 0;
+}
+
 /* Apparatus List (Pill Tag Styling) */
 #reportApparatus {
   list-style: none;

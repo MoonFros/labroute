@@ -143,6 +143,58 @@
   margin-top: 0.15rem;
 }
 
+.formula-entry-hint {
+  line-height: 1.6;
+}
+
+.formula-entry-hint code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-style: normal;
+  color: var(--primary);
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.08rem 0.25rem;
+  white-space: nowrap;
+}
+
+.formula-preview {
+  margin-top: 0.35rem;
+  padding: 0.85rem 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-tint);
+}
+
+.formula-preview-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.formula-preview-content {
+  min-height: 1.5rem;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.formula-preview-content mjx-container[display="true"] {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35rem 0;
+}
+
 /* 4. Verification Radio Group */
 .radio-status-group {
   display: flex;

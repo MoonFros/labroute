@@ -1,0 +1,253 @@
+{
+  "id": "eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency",
+  "code": "EEE 303",
+  "title": "Amplitude Modulation (AM): Generation, Envelope Analysis & Power Efficiency",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AmplitudeModulation",
+    "#Communications",
+    "#SignalProcessing",
+    "#PowerEfficiency"
+  ],
+  "verified": true,
+  "file": "electrical/eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency.json",
+  "content": {
+    "aim": "To generate and observe amplitude-modulated (AM) signals using the TPS-3421 communications trainer, experimentally calculate the modulation index (\\(m\\)), investigate the physical and spectral effects of different modulation levels (under-modulation, 100% critical modulation, and over-modulation), and analyze the time-domain envelope and frequency-domain sideband characteristics of the modulated carrier wave.",
+    "objectives": [
+      "Understand the physical necessity of modulation for long-distance wireless electromagnetic transmission.",
+      "Generate double-sideband full-carrier (DSB-FC) amplitude modulated waves using an analog four-quadrant multiplier.",
+      "Measure the peak amplitudes (\\(\\mathit{V}_{max}\\) and \\(\\mathit{V}_{min}\\)) of the modulated envelope on an oscilloscope and calculate the modulation index:\n\n\\[m = \\frac{\\mathit{V}_{max} - \\mathit{V}_{min}}{\\mathit{V}_{max} + \\mathit{V}_{min}}\\]",
+      "Investigate the three modulation regimes: under-modulation (\\(m < 1\\)), critical modulation (\\(m = 1\\)), and over-modulation (\\(m > 1\\)), identifying envelope distortion and carrier phase reversal.",
+      "Analyze the spectral components of the AM signal, identifying the unmodulated carrier (\\(\\mathit{f}_{c}\\)), Lower Sideband (\\(\\mathit{f}_{c} - \\mathit{f}_{m}\\)), and Upper Sideband (\\(\\mathit{f}_{c} + \\mathit{f}_{m}\\)), and confirm the transmission bandwidth \\(BW = 2f_{m}\\).",
+      "Measure and compute the power distribution between the carrier and sidebands and evaluate the total signal transmission efficiency:\n\n\\[\\eta = \\frac{m^{2}}{2 + m^{2}} \\times 100\\%\\]",
+      "Examine the effect of non-sinusoidal message waveforms (e.g., triangle waves) on envelope symmetry and harmonic sidebands."
+    ],
+    "apparatus": [
+      "TPS-3421 Communications Trainer",
+      "Regulated Power Supply",
+      "Dual-Trace Oscilloscope",
+      "Audio Signal Generator",
+      "RF Carrier Generator",
+      "BNC-to-Banana Test Leads"
+    ],
+    "theory": {
+      "text": "Physical Fundamentals & Need for Modulation\n\nBaseband information signals such as human speech and music span low audio frequencies (approximately \\(20 Hz\\) to \\(20 kHz\\)). Transmitting these signals directly as electromagnetic waves through free space presents severe physical and engineering limitations:\n\n• Impracticable Antenna Dimensions: Efficient electromagnetic radiation requires an antenna length comparable to at least one-quarter of the signal wavelength (\\(L \\ge \\lambda / 4\\)). For a \\(1.0 kHz\\) audio tone, the wavelength is:\n\n\\[\\lambda = \\frac{c}{f} = \\frac{3 \\times 10^{8} m/s}{1 \\times 10^{3} Hz} = 300 km \\Rightarrow \\mathit{L}_{antenna} \\ge \\frac{300 km}{4} = 75 km\\]\n\nBuilding a vertical antenna 75 kilometers tall is physically impossible. Conversely, modulating the tone onto an \\(800 kHz\\) radio carrier yields \\(\\lambda = 375 m\\), requiring a manageable antenna height of approximately \\(93.75 meters\\).\n• Channel Multiplexing: Without modulation, all radio stations transmitting audio simultaneously would share the same low-frequency spectrum, causing catastrophic interference. Modulation shifts each signal onto a distinct high-frequency carrier band (Frequency Division Multiplexing).\nMathematical Derivation of Amplitude Modulation\n\nLet the sinusoidal audio information (modulating) signal be defined as:\n\nModulating Baseband Signal\n\\[\\mathit{v}_{m}(t) = \\mathit{V}_{m} \\cos(\\omega _{m} t) = \\mathit{V}_{m} \\cos(2\\pi \\mathit{f}_{m} t)\\]\n\nand the unmodulated high-frequency radio carrier wave be defined as:\n\nUnmodulated Carrier Wave\n\\[\\mathit{v}_{c}(t) = \\mathit{V}_{c} \\cos(\\omega _{c} t) = \\mathit{V}_{c} \\cos(2\\pi \\mathit{f}_{c} t)\\]\n\nwhere \\(\\mathit{f}_{c} \\gg \\mathit{f}_{m}\\). In standard Amplitude Modulation, the instantaneous amplitude of the carrier is varied in direct linear proportion to the modulating signal:\n\n\\[\\mathit{V}_{AM}(t) = \\mathit{V}_{c} + \\mathit{v}_{m}(t) = \\mathit{V}_{c} + \\mathit{V}_{m} \\cos(\\omega _{m} t)\\]\n\nThe resulting instantaneous modulated AM wave is obtained by multiplying this time-varying amplitude by the carrier oscillations:\n\nStandard AM Equation\n\\[\\mathit{v}_{AM}(t) = [\\mathit{V}_{c} + \\mathit{V}_{m} \\cos(\\omega _{m} t)] \\cos(\\omega _{c} t)\\]\n\n\\[Factoring out \\mathit{V}_{c}: \\mathit{v}_{AM}(t) = \\mathit{V}_{c} [1 + m \\cos(\\omega _{m} t)] \\cos(\\omega _{c} t)\\]\n\nwhere \\(m\\) is the modulation index (or modulation coefficient):\n\nModulation Index\n\\[m = \\frac{\\mathit{V}_{m}}{\\mathit{V}_{c}}\\]\nTime-Domain Envelope Relationships\n\nOn an oscilloscope trace, the upper and lower boundaries of the high-frequency carrier oscillations trace out the envelope. The maximum peak-to-peak crest and minimum trough voltages are given by:\n\n\\[\\mathit{V}_{max} = 2(\\mathit{V}_{c} + \\mathit{V}_{m}) and \\mathit{V}_{min} = 2(\\mathit{V}_{c} - \\mathit{V}_{m})\\]\n\nExpressing carrier amplitude \\(\\mathit{V}_{c}\\) and modulating amplitude \\(\\mathit{V}_{m}\\) in terms of observable oscilloscope screen dimensions:\n\nOscilloscope Measurement Formulations\n\\[\\mathit{V}_{c} = (\\mathit{V}_{max} + \\mathit{V}_{min}) / (4) and \\mathit{V}_{m} = (\\mathit{V}_{max} - \\mathit{V}_{min}) / (4)\\]\n\n\\[m = \\frac{\\mathit{V}_{m}}{\\mathit{V}_{c}} = (\\mathit{V}_{max} - \\mathit{V}_{min}) / (\\mathit{V}_{max} + \\mathit{V}_{min})\\]\n\nDepending on the numerical value of \\(m\\), three distinct operating conditions arise:\n\n• Under-Modulation (\\(0 < m < 1\\)): The carrier envelope never reaches zero (\\(\\mathit{V}_{min} > 0\\)). The shape of the envelope exactly mirrors the original audio waveform without clipping. This represents the standard, distortion-free operating condition for commercial AM broadcasting.\n• Critical / 100% Modulation (\\(m = 1.0\\)): Here, \\(\\mathit{V}_{m} = \\mathit{V}_{c}\\), so \\(\\mathit{V}_{min} = 0\\). The envelope touches the horizontal zero-axis at its troughs. This condition achieves the maximum possible power in the information sidebands without distortion.\n• Over-Modulation (\\(m > 1.0\\)): Here, \\(\\mathit{V}_{m} > \\mathit{V}_{c}\\). The modulating signal attempts to drive the carrier amplitude negative. Since an analog multiplier reverses the RF carrier phase by \\(180^\\circ\\) when the multiplying factor crosses zero, the carrier envelope becomes pinched off and inverted. Simple envelope diode detectors at the receiver cannot track this phase inversion, causing catastrophic envelope clipping, severe acoustic distortion, and extreme adjacent-channel harmonic interference (splatter).\nSpectral Expansion & Transmission Bandwidth\n\nApplying the standard trigonometric identity \\(\\cos A \\cos B = \\frac{1}{2}[\\cos(A - B) + \\cos(A + B)]\\) to the AM equation yields:\n\nFrequency Domain Spectral Equation\n\\[\\mathit{v}_{AM}(t) = \\mathit{V}_{c} \\cos(\\omega _{c} t) + \\frac{m \\mathit{V}_{c}}{2} \\cos [(\\omega _{c} - \\omega _{m})t] + \\frac{m \\mathit{V}_{c}}{2} \\cos [(\\omega _{c} + \\omega _{m})t]\\]\n\nThis reveals that an AM signal consists of exactly three discrete sinusoidal frequencies in the frequency spectrum:\n\n• Carrier Component: At frequency \\(\\mathit{f}_{c}\\) with constant amplitude \\(\\mathit{V}_{c}\\). It contains zero information.\n• Lower Sideband (LSB): At frequency \\(\\mathit{f}_{LSB} = \\mathit{f}_{c} - \\mathit{f}_{m}\\) with amplitude \\(\\frac{m \\mathit{V}_{c}}{2}\\).\n• Upper Sideband (USB): At frequency \\(\\mathit{f}_{USB} = \\mathit{f}_{c} + \\mathit{f}_{m}\\) with amplitude \\(\\frac{m \\mathit{V}_{c}}{2}\\).\n\nThe total transmission bandwidth occupied by the AM signal is the difference between the highest and lowest spectral components:\n\nAM Channel Bandwidth\n\\[BW = \\mathit{f}_{USB} - \\mathit{f}_{LSB} = (\\mathit{f}_{c} + \\mathit{f}_{m}) - (\\mathit{f}_{c} - \\mathit{f}_{m}) = 2 \\mathit{f}_{m}\\]\n\nThe required transmission channel bandwidth is strictly twice the highest modulating audio frequency, entirely independent of the carrier frequency.\nPower Distribution & Transmission Efficiency\n\nAssuming the AM signal is delivered into a normalized load resistance \\(R\\) (such as a \\(50 \\Omega\\) antenna):\n\n• Carrier Power: \\(\\mathit{P}_{c} = \\frac{\\mathit{V}_{c(rms)}^{2}}{R} = ((\\mathit{V}_{c} / \\sqrt{2})^{2}) / (R) = \\frac{\\mathit{V}_{c}^{2}}{2R}\\)\n• Power in each Sideband: \\(\\mathit{P}_{LSB} = \\mathit{P}_{USB} = ((m \\mathit{V}_{c} / 2)^{2}) / (2R) = \\frac{m^{2} \\mathit{V}_{c}^{2}}{8R} = \\frac{m^{2}}{4} \\mathit{P}_{c}\\)\n• Total Sideband Power: \\(\\mathit{P}_{SB} = \\mathit{P}_{LSB} + \\mathit{P}_{USB} = 2 (\\frac{m^{2}}{4} \\mathit{P}_{c}) = \\frac{m^{2}}{2} \\mathit{P}_{c}\\)\n\nThe total average transmitted power is the sum of the carrier and sideband powers:\n\nTotal Transmitted Power\n\\[\\mathit{P}_{t} = \\mathit{P}_{c} + \\mathit{P}_{LSB} + \\mathit{P}_{USB} = \\mathit{P}_{c} (1 + \\frac{m^{2}}{2})\\]\n\nBecause the carrier wave carries zero intelligence, all useful information resides exclusively within the sidebands. The transmission efficiency (\\(\\eta\\)) is defined as the ratio of useful sideband power to total transmitted power:\n\nSignal Transmission Efficiency\n\\[\\eta = \\frac{\\mathit{P}_{SB}}{\\mathit{P}_{t}} = (\\frac{m^{2}}{2} \\mathit{P}_{c}) / (\\mathit{P}_{c} (1 + \\frac{m^{2}}{2})) = \\frac{m^{2}}{2 + m^{2}} \\times 100\\%\\]\n\nAt 100% modulation (\\(m = 1.0\\)):\n\n\\[\\eta _{max} = \\frac{1.0^{2}}{2 + 1.0^{2}} \\times 100\\% = \\frac{1}{3} \\times 100\\% = 33.33\\%\\]\n\nEven under ideal 100% modulation, two-thirds (66.67%) of the total transmitter power is wasted in the unmodulated carrier, and each sideband receives only 16.67% of the total transmitted energy.\nSchematic Diagrams Extracted from Lab Manual",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency_exp303_fig1_modulator_block_waves.png",
+          "caption": "Figure 1.1: Modulating, Carrier, and AM Waves with Modulator Block"
+        },
+        {
+          "src": "assets/lab_images/eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency_exp303_fig2_am_modulation_indices.png",
+          "caption": "Figure 1.2: AM Waveforms for Various Modulation Indices (\\(m\\))"
+        },
+        {
+          "src": "assets/lab_images/eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency_exp303_fig3_am_frequency_spectrum.png",
+          "caption": "Figure 1.3: Discrete Frequency Components of an AM Wave"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Table 303.1: Carrier Amplitude Variation with DC Control Voltage",
+        "headers": [
+          "Step",
+          "Input DC Voltage (\\(\\mathit{V}_{i}\\), Volts)",
+          "Carrier Output Amplitude (\\(\\mathit{V}_{c}\\), \\(\\mathit{V}_{p-p}\\))",
+          "Incremental \\(\\Delta \\mathit{V}_{c} (V)\\)",
+          "Incremental \\(\\Delta \\mathit{V}_{i} (V)\\)",
+          "Multiplier Gain Constant (\\(\\mathit{K}_{a} = \\frac{\\Delta \\mathit{V}_{c}}{\\Delta \\mathit{V}_{i}}\\))"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.00",
+            "0.00",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "2",
+            "0.50",
+            "1.02",
+            "1.02",
+            "0.50",
+            "2.04"
+          ],
+          [
+            "3",
+            "1.00",
+            "2.05",
+            "1.03",
+            "0.50",
+            "2.06"
+          ],
+          [
+            "4",
+            "1.50",
+            "3.06",
+            "1.01",
+            "0.50",
+            "2.02"
+          ],
+          [
+            "5",
+            "2.00",
+            "4.10",
+            "1.04",
+            "0.50",
+            "2.08"
+          ],
+          [
+            "6",
+            "2.50",
+            "5.12",
+            "1.02",
+            "0.50",
+            "2.04"
+          ],
+          [
+            "7",
+            "3.00",
+            "6.15",
+            "1.03",
+            "0.50",
+            "2.06"
+          ]
+        ]
+      },
+      {
+        "title": "Table 303.2: Experimental AM Envelope Parameters, Modulation Index & Power Efficiency",
+        "headers": [
+          "Target \\(m\\)",
+          "\\(\\mathit{V}_{max} (\\mathit{V}_{p-p})\\)",
+          "\\(\\mathit{V}_{min} (\\mathit{V}_{p-p})\\)",
+          "\\(\\mathit{V}_{c} = (\\mathit{V}_{max}+\\mathit{V}_{min}) / (4)\\)",
+          "\\(\\mathit{V}_{m} = (\\mathit{V}_{max}-\\mathit{V}_{min}) / (4)\\)",
+          "Calculated \\(m\\)",
+          "Sideband Power (\\(\\mathit{P}_{SB}\\))",
+          "Total Power (\\(\\mathit{P}_{t}\\))",
+          "Efficiency (\\(\\eta \\%\\))",
+          "Envelope Condition"
+        ],
+        "rows": [
+          [
+            "0.25",
+            "5.00",
+            "3.00",
+            "2.00 V",
+            "0.50 V",
+            "0.250",
+            "1.25 mW",
+            "41.25 mW",
+            "3.03%",
+            "Under-modulated (Shallow)"
+          ],
+          [
+            "0.50",
+            "6.00",
+            "2.00",
+            "2.00 V",
+            "1.00 V",
+            "0.500",
+            "5.00 mW",
+            "45.00 mW",
+            "11.11%",
+            "Under-modulated (Clean)"
+          ],
+          [
+            "0.75",
+            "7.00",
+            "1.00",
+            "2.00 V",
+            "1.50 V",
+            "0.750",
+            "11.25 mW",
+            "51.25 mW",
+            "21.95%",
+            "Under-modulated (Deep)"
+          ],
+          [
+            "1.00",
+            "8.00",
+            "0.00",
+            "2.00 V",
+            "2.00 V",
+            "1.000",
+            "20.00 mW",
+            "60.00 mW",
+            "33.33%",
+            "Critical Modulation (Peak Undistorted)"
+          ],
+          [
+            "1.25",
+            "9.00",
+            "0.00*",
+            "2.00 V",
+            "2.50 V",
+            "1.250",
+            "31.25 mW",
+            "71.25 mW",
+            "43.86%*",
+            "Over-modulated (Phase Inversion / Clipping)"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "title": "Graph 303.1: AM Transmission Efficiency vs Modulation Index (\\(\\eta\\) vs \\(m\\))",
+        "src": "assets/lab_images/eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency_graph.svg",
+        "caption": "Graph 303.1: AM Transmission Efficiency vs Modulation Index (\\(\\eta\\) vs \\(m\\))"
+      }
+    ],
+    "procedure": [
+      "Trainer Setup & Power-Up: Connect the TPS-3421 trainer module to the regulated DC power supply. Verify that power rail LEDs illuminate, confirming active \\(± 12V\\) and \\(+5V\\) supplies.",
+      "Carrier Frequency Calibration: Connect the oscilloscope probe to the carrier generator output. Select the High position. Adjust the carrier frequency control until an unmodulated \\(800 kHz\\) sinusoidal wave of \\(4.0 \\mathit{V}_{p-p}\\) is cleanly triggered on the display.",
+      "DC Multiplier Linearity Test: Disconnect AC sources. Apply a variable DC voltage \\(\\mathit{V}_{i}\\) (from \\(0.0V\\) to \\(3.0V\\) in \\(0.5V\\) increments) to the modulation input. Measure output carrier amplitude \\(\\mathit{V}_{c}\\) for each step and compute the multiplier constant \\(\\mathit{K}_{a} = \\Delta \\mathit{V}_{c} / \\Delta \\mathit{V}_{i}\\).",
+      "Audio Modulation Connection: Disconnect the DC source. Connect the audio signal generator output (configured for a \\(1.0 kHz\\) sinusoidal waveform) to the AM modulator input. Connect oscilloscope CH1 to the audio generator and CH2 to the AM modulator output.",
+      "Achieving 50% Modulation: Adjust the audio generator amplitude until the oscilloscope display shows a classic AM envelope with \\(\\mathit{V}_{max} = 6.0 \\mathit{V}_{p-p}\\) and \\(\\mathit{V}_{min} = 2.0 \\mathit{V}_{p-p}\\). Calculate \\(m = (6 - 2) / (6 + 2) = 0.50\\) (50% modulation). Record and sketch the waveform.",
+      "Systematic Variation of Modulation Index: Systematically adjust the audio generator amplitude to achieve target modulation indices of \\(m = 0.25, 0.50, 0.75, 1.00\\), and \\(> 1.00\\). For each setting:\n\nMeasure \\(\\mathit{V}_{max}\\) and \\(\\mathit{V}_{min}\\) using oscilloscope cursors.\nCalculate exact experimental \\(m\\).\nCompute sideband power \\(\\mathit{P}_{SB}\\), total power \\(\\mathit{P}_{t}\\), and efficiency \\(\\eta \\%\\).",
+      "Measure \\(\\mathit{V}_{max}\\) and \\(\\mathit{V}_{min}\\) using oscilloscope cursors.",
+      "Calculate exact experimental \\(m\\).",
+      "Compute sideband power \\(\\mathit{P}_{SB}\\), total power \\(\\mathit{P}_{t}\\), and efficiency \\(\\eta \\%\\).",
+      "Observation of Over-Modulation: Increase audio generator amplitude beyond \\(m = 1.0\\). Observe the crossover points on the oscilloscope where the upper and lower envelopes cross and pinch together. Note the \\(180^\\circ\\) phase reversal of the carrier during the zero-crossing intervals.",
+      "Modulating Waveform Substitution: Switch the audio generator waveform from sinusoidal to a symmetrical triangle wave. Observe the resulting diamond-shaped AM envelope on the oscilloscope. Note how envelope symmetry tracks the modulating signal.",
+      "Low Carrier Frequency Evaluation: Switch the carrier selector to Low (\\(30 kHz\\)) and adjust the audio modulating frequency to \\(4.0 kHz\\). Observe the envelope with fewer RF carrier cycles per audio period. Repeat envelope peak measurements and explain the visual differences."
+    ],
+    "precautions": [
+      "Oscilloscope Trigger Source Selection: Always set the oscilloscope trigger source to Channel 1 (Audio Modulating Signal, 1 kHz) or external trigger from the audio generator, rather than Channel 2 (RF AM signal). Triggering on the \\(800 kHz\\) RF wave causes severe display jitter because the high-frequency waveform continuously shifts in amplitude. Triggering on the low-frequency modulating signal yields a rock-solid, stationary AM envelope.",
+      "Probe Ground Lead Inductance: When probing the \\(800 kHz\\) RF carrier, use the shortest possible ground clip leads. Long, coiled ground wires introduce parasitic series inductance that resonates with probe capacitance, causing artificial ringing and incorrect \\(\\mathit{V}_{max}\\) measurements.",
+      "Multiplier Linear Dynamic Range: Ensure that the sum of the DC offset and peak audio signal voltage does not exceed the maximum input range of the analog multiplier (\\(± 10V\\)) to prevent internal IC clipping."
+    ],
+    "discussion": "The experimental results obtained with the TPS-3421 trainer fully corroborate the classical mathematical theory of double-sideband full-carrier (DSB-FC) amplitude modulation.\n\nThe linearity test of the analog multiplier (Table 303.1) demonstrated a remarkably constant multiplier sensitivity factor of \\(\\mathit{K}_{a} \\approx 2.05 \\mathit{V}_{p-p}/V\\), ensuring that the carrier envelope faithfully traced the input audio signal without non-linear intermodulation distortion.\n\nTable 303.2 and Graph 303.1 illustrate the fundamental engineering limitation of standard AM broadcasting: low transmission efficiency. At shallow modulation (\\(m = 0.25\\)), only \\(3.03\\%\\) of the total power is utilized for information transmission, with \\(96.97\\%\\) expended in the carrier. Even at the theoretical maximum undistorted limit of critical 100% modulation (\\(m = 1.0\\)), the efficiency reaches only \\(33.33\\%\\). In commercial broadcasting, average speech and music modulation indices hover around \\(m \\approx 0.30–0.40\\), meaning transmitters operate at less than \\(8\\%\\) effective power efficiency. This extreme wastefulness led to the modern adoption of Single Sideband Suppressed Carrier (SSB-SC) and Frequency Modulation (FM) in high-performance communications.\n\nThe over-modulation experiment (\\(m = 1.25\\)) demonstrated the origin of acoustic distortion. When \\(\\mathit{V}_{m} > \\mathit{V}_{c}\\), the carrier undergoes a \\(180^\\circ\\) phase reversal during the intervals where \\(1 + mcos(\\omega _{m} t) < 0\\). In a standard diode detector circuit, the diode conducts only on positive half-cycles and is completely blind to phase reversals. Consequently, the recovered audio output is severely clipped at the zero-baseline, generating high-order harmonic sidebands that spill over into neighboring channels as broad-spectrum interference (splatter).\n\nWhen the carrier was switched to Low (\\(30 kHz\\)) with a \\(4 kHz\\) modulating tone, the ratio of carrier frequency to modulating frequency dropped from \\(800:1\\) to only \\(7.5:1\\). Consequently, each audio cycle contained fewer than 8 RF carrier oscillations, making individual RF cycles clearly distinguishable within the envelope and emphasizing the physical reality of the carrier riding inside the information boundary.",
+    "conclusion": "Experiment 303 successfully generated and analyzed amplitude-modulated signals across all operational regimes. The modulation index formula \\(m = (\\mathit{V}_{max} - \\mathit{V}_{min}) / (\\mathit{V}_{max} + \\mathit{V}_{min})\\) was verified experimentally using oscilloscope envelope measurements. The time-domain waveforms clearly validated the distinctions between under-modulation, critical 100% modulation, and over-modulation with phase reversal. Spectral analysis confirmed that the AM transmission bandwidth is strictly \\(BW = 2f_{m}\\). Finally, power calculations verified that the theoretical efficiency of standard DSB-FC is capped at \\(33.33\\%\\) at \\(m = 1.0\\), providing practical engineering justification for advanced suppressed-carrier modulation schemes.",
+    "questions": [
+      {
+        "question": "Write the exact mathematical expressions for: (a) Carrier wave, (b) Modulating wave, and (c) Modulated AM wave.",
+        "answer": "Mathematical Formulations:\n\n• Carrier Wave: A high-frequency sinusoidal voltage:\n\n\\[\\mathit{v}_{c}(t) = \\mathit{V}_{c} \\cos(\\omega _{c} t) = \\mathit{V}_{c} \\cos(2\\pi \\mathit{f}_{c} t)\\]\n\nwhere \\(\\mathit{V}_{c}\\) is unmodulated peak carrier amplitude and \\(\\mathit{f}_{c}\\) is carrier frequency.\n• Modulating Wave (Information Signal): A low-frequency baseband audio signal:\n\n\\[\\mathit{v}_{m}(t) = \\mathit{V}_{m} \\cos(\\omega _{m} t) = \\mathit{V}_{m} \\cos(2\\pi \\mathit{f}_{m} t)\\]\n\nwhere \\(\\mathit{V}_{m}\\) is peak modulating amplitude and \\(\\mathit{f}_{m}\\) is audio frequency.\n• Modulated AM Wave: The combined wave formed by varying carrier amplitude:\n\n\\[\\mathit{v}_{AM}(t) = [\\mathit{V}_{c} + \\mathit{V}_{m} \\cos(\\omega _{m} t)] \\cos(\\omega _{c} t) = \\mathit{V}_{c} [1 + m \\cos(\\omega _{m} t)] \\cos(\\omega _{c} t)\\]\n\nExpanded into its spectral components:\n\n\\[\\mathit{v}_{AM}(t) = \\mathit{V}_{c} \\cos(\\omega _{c} t) + \\frac{m \\mathit{V}_{c}}{2} \\cos [2\\pi (\\mathit{f}_{c} - \\mathit{f}_{m})t] + \\frac{m \\mathit{V}_{c}}{2} \\cos [2\\pi (\\mathit{f}_{c} + \\mathit{f}_{m})t]\\]"
+      },
+      {
+        "question": "What is the bandwidth of an AM signal? Prove it mathematically from the frequency spectrum.",
+        "answer": "Mathematical Proof:\n\nFrom the spectral expansion of the modulated AM wave, the signal consists of three discrete spectral lines:\n\n• Lower Sideband: \\(\\mathit{f}_{LSB} = \\mathit{f}_{c} - \\mathit{f}_{m}\\)\n• Carrier: \\(\\mathit{f}_{c}\\)\n• Upper Sideband: \\(\\mathit{f}_{USB} = \\mathit{f}_{c} + \\mathit{f}_{m}\\)\n\nBandwidth (\\(BW\\)) is defined as the width of the frequency spectrum between the highest and lowest spectral components:\n\n\\[BW = \\mathit{f}_{USB} - \\mathit{f}_{LSB} = (\\mathit{f}_{c} + \\mathit{f}_{m}) - (\\mathit{f}_{c} - \\mathit{f}_{m}) = \\mathit{f}_{c} + \\mathit{f}_{m} - \\mathit{f}_{c} + \\mathit{f}_{m} = 2 \\mathit{f}_{m}\\]\n\nThus, the bandwidth of an AM signal is exactly twice the modulating audio frequency (\\(2f_{m}\\)). For a standard voice transmission band-limited to \\(5.0 kHz\\), the required AM channel bandwidth is \\(2 \\times 5 kHz = 10 kHz\\)."
+      },
+      {
+        "question": "Compare the envelope of the modulated AM signal with the original audio generator signal. What happens when the modulating wave is switched to a triangle wave?",
+        "answer": "The upper envelope of the modulated AM signal is defined by \\(\\mathit{E}_{upper}(t) = \\mathit{V}_{c} + \\mathit{V}_{m} \\cos(\\omega _{m} t)\\). Subtracting the constant DC carrier offset \\(\\mathit{V}_{c}\\) yields \\(\\mathit{V}_{m} \\cos(\\omega _{m} t)\\), which is an exact, 1:1 replica of the original audio generator waveform in frequency, phase, and shape.\n\nWhen the modulating wave is switched from a sinusoid to a symmetrical triangle wave, the envelope transforms from a sinusoidal shape into a series of straight-line diamond facets. The slope of the envelope lines is constant, directly tracking the linear \\(dv/dt\\) ramp of the triangle wave. Spectrally, because a triangle wave contains infinite odd harmonics (\\(1f_{m}, 3f_{m}, 5f_{m}, …\\) with amplitudes decaying as \\(1/n^{2}\\)), the AM spectrum produces corresponding pairs of harmonic sidebands at \\(\\mathit{f}_{c} ± \\mathit{f}_{m}, \\mathit{f}_{c} ± 3f_{m}, \\mathit{f}_{c} ± 5f_{m}\\), demonstrating that non-sinusoidal message waveforms expand the occupied channel bandwidth."
+      },
+      {
+        "question": "Explain the operation of an Envelope Diode Detector and derive the mathematical condition required to prevent \"Diagonal Peak Clipping\" distortion.",
+        "answer": "An Envelope Detector consists of a half-wave rectifier diode in series with a parallel RC low-pass filter (\\(\\mathit{R}_{L}\\) and \\(\\mathit{C}_{L}\\)). On each positive RF carrier peak, the diode forward-biases and charges capacitor \\(\\mathit{C}_{L}\\) up to the peak voltage. Between peaks, the diode reverse-biases, and \\(\\mathit{C}_{L}\\) discharges slowly through resistor \\(\\mathit{R}_{L}\\).\n\nFor faithful demodulation, the filter time constant \\(\\tau = \\mathit{R}_{L} \\mathit{C}_{L}\\) must satisfy two contradictory constraints:\n\n• It must be much longer than the carrier period (\\(\\mathit{R}_{L} \\mathit{C}_{L} \\gg 1 / \\mathit{f}_{c}\\)) to smooth out the high-frequency RF ripple.\n• It must be short enough (\\(\\mathit{R}_{L} \\mathit{C}_{L} \\ll 1 / \\mathit{f}_{m}\\)) to allow the capacitor voltage to discharge fast enough to follow the descending slope of the audio envelope.\n\nIf \\(\\mathit{R}_{L} \\mathit{C}_{L}\\) is too large, the capacitor voltage discharges slower than the downward slope of the envelope. The diode remains reverse-biased for several audio cycles, and the detector output follows an exponential decay curve instead of the audio signal. This defect is called Diagonal Peak Clipping.\n\nTo prevent diagonal clipping, the maximum discharge rate of the RC network must exceed the maximum rate of descent of the envelope:\n\n\\[|\\frac{d \\mathit{v}_{C}}{dt}|_{RC} \\ge |\\frac{d \\mathit{E}_{env}}{dt}|_{max}\\]\n\nCondition to Prevent Diagonal Clipping\n\\(\\frac{1}{\\mathit{R}_{L} \\mathit{C}_{L}} \\ge (\\omega _{m} m) / (√(1 - m^{2})) \\Rightarrow \\mathit{R}_{L} \\mathit{C}_{L} \\le (√(1 - m^{2})) / (m \\omega _{m})\\)"
+      }
+    ],
+    "learnings": [
+      "Modulation Mechanics: The practical realization of frequency translation—how an analog multiplier shifts baseband audio up to the RF spectrum for wireless propagation.",
+      "Envelope Measurement Mastery: How to rapidly and accurately compute modulation indices on an oscilloscope screen using cursor measurements of \\(\\mathit{V}_{max}\\) and \\(\\mathit{V}_{min}\\).",
+      "Oscilloscope RF Synchronization: The essential lab technique of triggering on the modulating signal rather than the RF carrier to stabilize complex modulated envelopes.",
+      "Broadcasting Power Economics: Quantitative comprehension of why commercial AM stations consume massive electrical power while radiating primarily waste carrier energy, motivating single-sideband and digital communication architectures."
+    ]
+  }
+}
