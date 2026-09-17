@@ -212,8 +212,9 @@
                                 required></textarea>
                             <span class="field-hint formula-entry-hint">
                                 Write TeX directly in any report text field: use <code>\( E = mc^2 \)</code> for inline maths and
-                                <code>\[ F = ma \]</code> (or <code>$$ F = ma $$</code>) for a displayed formula. The TeX source is
-                                kept in the downloaded JSON; seeing <code>\\</code> there represents one backslash after the JSON is read.
+                                <code>\[ F = ma \]</code> (or <code>$$ F = ma $$</code>) for a displayed formula. Existing bare
+                                <code>\frac{a}{b}</code>, <code>/frac{a}{b}</code>, and <code>/{frac}{a}{b}</code> entries are also read.
+                                The TeX source is kept in the downloaded JSON; seeing <code>\\</code> there represents one backslash after the JSON is read.
                             </span>
                             <div class="formula-preview" aria-live="polite" aria-label="Theory formula preview">
                                 <span class="formula-preview-label">Formula preview</span>
