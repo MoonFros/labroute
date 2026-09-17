@@ -1,0 +1,369 @@
+{
+  "id": "eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics",
+  "code": "EEE 306",
+  "title": "The Three-Phase Synchronous Motor: V-Curves, Power Factor Control & Load Dynamics",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#SynchronousMotor",
+    "#ThreePhase",
+    "#PowerFactor"
+  ],
+  "verified": true,
+  "file": "electrical/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics.json",
+  "content": {
+    "aim": "To investigate the fundamental operating characteristics of a three-phase polyphase synchronous motor on no-load and under mechanical load, examine the effect of DC field excitation on armature current and power factor (obtaining the characteristic V-curves and inverted V-curves), understand the constant-speed operating mechanism, and explore practical industrial applications such as synchronous condensers for power factor correction and grid voltage stabilization.",
+    "objectives": [
+      "Investigate the principal operating characteristics of a 3-phase synchronous motor on:\n\n(a) No-Load: Radial magnetic flux alignment and zero net electromagnetic torque.\n(b) On Load: Angular magnetic displacement (load angle \\(\\delta\\)) and torque generation.",
+      "(a) No-Load: Radial magnetic flux alignment and zero net electromagnetic torque.",
+      "(b) On Load: Angular magnetic displacement (load angle \\(\\delta\\)) and torque generation.",
+      "Understand the working mechanism of constant-speed synchronous operation (\\(\\mathit{N}_{s} = 120f / P\\)) regardless of mechanical load variations up to the pull-out limit.",
+      "Measure armature current (\\(\\mathit{I}_{a}\\)) and power factor (\\(\\cos\\phi\\)) as DC field excitation current (\\(\\mathit{I}_{f}\\)) is varied across under-excited, normally excited, and over-excited regimes, constructing the classic V-Curves and Inverted V-Curves.",
+      "Operate the coupled DC dynamometer generator to mechanically load the synchronous motor, measuring active electrical power input (\\(\\mathit{W}_{1} + \\mathit{W}_{2}\\)), output mechanical torque, and conversion efficiency.",
+      "Determine the Pull-Out Torque and analyze the physical mechanisms of loss of synchronism when maximum motor torque is exceeded."
+    ],
+    "apparatus": [
+      "BKB Universal Machine Set",
+      "3-Phase Auto-Transformer (Variac)",
+      "AC Voltmeter",
+      "AC Ammeter (\\(\\mathit{A}_{1}\\))",
+      "Double-Element Wattmeter / Two Wattmeters",
+      "DC Power Supply / Rectifier Unit",
+      "DC Ammeter (\\(\\mathit{A}_{2}\\))",
+      "Field Regulating Rheostat (\\(\\mathit{R}_{1}\\))",
+      "J.J. Load Resistor Bank",
+      "Stator & Field Knife Switches (\\(\\mathit{S}_{1}, \\mathit{S}_{2}\\))"
+    ],
+    "theory": {
+      "text": "4.1 Structural Components & Synchronous Speed\n\nA polyphase synchronous motor consists of two main active electromagnetic structures:\n\n• Stator (Armature): Houses a balanced three-phase distributed winding. When excited by three-phase AC currents of frequency \\(f\\), it produces a rotating magnetic field (RMF) of constant magnitude that rotates in the air gap at synchronous speed (\\(\\mathit{N}_{s}\\)):\n\nSynchronous Speed Formulations\n\\(\\mathit{n}_{s} = \\frac{f}{p} rev/sec = \\frac{120 f}{P} rev/min\\)\n\nwhere \\(P\\) is the total number of stator poles and \\(p = P/2\\) is the pole pairs. For our 4-pole machine at \\(50 Hz\\):\n\n\\[\\mathit{N}_{s} = \\frac{120 \\times 50}{4} = 1500 rpm (\\omega _{s} = \\frac{2\\pi \\times 1500}{60} = 157.08 rad/s)\\]\n• Rotor (Field): Carries field windings excited by direct current (DC) via slip rings. This establishes alternate North and South magnetic poles that are mechanically fixed relative to the rotor body.\n\n4.2 Magnetic Locking Principle & Starting Requirements\n\nFor continuous, unidirectional electromagnetic torque to be developed, the rotor magnetic field must be permanently locked with the stator rotating field. That is, both fields must rotate at the exact same speed in space and in the same direction. If the rotor is stationary, the stator RMF sweeps across the rotor poles at \\(1500 rpm\\). The force on a rotor pole rapidly alternates from clockwise attraction to counter-clockwise repulsion every half-cycle (\\(10 ms\\) at \\(50 Hz\\)). Due to the large mechanical inertia of the rotor, the net average torque over one electrical cycle is exactly zero:\n\n\\[\\mathit{T}_{avg} = \\frac{1}{T} ∫_{0}^{T} T(t) dt = 0\\]\n\nConsequently, synchronous motors have zero starting torque and cannot start spontaneously. They must be brought up to near-synchronous speed (\\(> 95\\% \\mathit{N}_{s}\\)) by an external mechanism—such as squirrel-cage damper (amortisseur) bars embedded in the rotor pole faces (starting as an induction motor)—before DC field excitation is energized to pull the rotor into synchronism.\n\n4.3 Operation on No-Load vs Operation Under Load\n\n• No-Load Condition: On no-load, the magnetic lines of force cross the air gap purely radially (Fig 306.1a). Stator and rotor pole axes coincide perfectly. There is no tangential force component, and electromagnetic torque developed is virtually zero, just sufficient to overcome internal bearing friction and windage.\n• Loaded Condition: When mechanical torque is applied to the motor shaft, the rotor is momentarily retarded and falls back by an angular displacement called the Load Angle (or Torque Angle, \\(\\delta\\)) relative to the stator field (Fig 306.1b). The magnetic lines of force become distorted and stretched tangentially across the air gap. This tangential magnetic shear develops strong restoring electromagnetic torque pulling the rotor forward:\n\nSynchronous Motor Torque Equation\n\\(T = \\frac{3 V \\mathit{E}_{f}}{\\omega _{s} \\mathit{X}_{s}} \\sin\\delta\\)\n\nwhere \\(V\\) is stator phase voltage, \\(\\mathit{E}_{f}\\) is rotor excitation back-EMF, and \\(\\mathit{X}_{s}\\) is synchronous reactance.\n• Pull-Out Torque: As shaft load increases, \\(\\delta\\) increases progressively, boosting torque. Maximum possible torque occurs when \\(\\delta = 90^\\circ\\):\n\nPull-Out Torque Limit\n\\(\\mathit{T}_{max} = \\mathit{T}_{pull-out} = \\frac{3 V \\mathit{E}_{f}}{\\omega _{s} \\mathit{X}_{s}}\\)\n\nIf the mechanical load exceeds \\(\\mathit{T}_{max}\\), the rotor slips out of magnetic synchronism, deceleration is instantaneous, and the motor stalls with violent current surges.\n\n4.4 Equivalent Circuit & Phasor Analysis\n\nThe per-phase equivalent circuit of the synchronous motor consists of the terminal voltage \\(V\\), the induced excitation back-EMF \\(E_{f}\\) (which lags \\(V\\) by torque angle \\(\\delta\\)), armature resistance \\(\\mathit{R}_{a}\\), and synchronous reactance \\(\\mathit{X}_{s} = \\mathit{X}_{l} + \\mathit{X}_{a}\\) (combining armature leakage reactance \\(\\mathit{X}_{l}\\) and armature reaction reactance \\(\\mathit{X}_{a}\\)):\n\nPer-Phase Phasor Voltage Relationship\n\\[V = E_{f} + I_{a} Z_{s} = E_{f} + I_{a} (\\mathit{R}_{a} + j \\mathit{X}_{s})\\]\n\n\\[Since \\mathit{R}_{a} \\ll \\mathit{X}_{s}: Z_{s} \\approx j \\mathit{X}_{s} \\angle 90^\\circ \\Rightarrow I_{a} = (V - E_{f}) / (j \\mathit{X}_{s}) = \\frac{E_{r}}{j \\mathit{X}_{s}}\\]\n\nwhere \\(E_{r} = V - E_{f}\\) is the resultant voltage driving armature current.\n\n4.5 V-Curves & Power Factor Control (The Synchronous Condenser)\n\nVarying the DC field excitation current \\(\\mathit{I}_{f}\\) directly controls the magnitude of the back-EMF \\(\\mathit{E}_{f}\\) (\\(\\mathit{E}_{f} ∝ Φ_{rotor} ∝ \\mathit{I}_{f}\\)). Because the mechanical shaft power is fixed (\\(P = 3 V \\mathit{I}_{a} \\cos\\phi = const\\)), the active in-phase component of armature current \\(\\mathit{I}_{a} \\cos\\phi\\) must remain constant. Consequently, changing \\(\\mathit{E}_{f}\\) alters the reactive current component:\n\n• Normal Excitation (\\(\\mathit{E}_{f} \\cos\\delta = V\\)): The excitation back-EMF matches the voltage requirement. The motor draws only real active current from the mains (\\(\\mathit{I}_{a}\\) is at its absolute minimum) and operates at Unity Power Factor (\\(\\cos\\phi = 1.00\\)).\n• Under-Excitation (\\(\\mathit{E}_{f} < V\\)): Rotor field flux is insufficient. The motor draws lagging reactive magnetizing current from the AC mains to establish the required air-gap flux. The motor operates at a Lagging Power Factor, behaving like an inductive load.\n• Over-Excitation (\\(\\mathit{E}_{f} > V\\)): Rotor field flux is excessive. The motor sends surplus reactive magnetizing power back into the AC grid, drawing Leading Current from the mains (\\(\\cos\\phi\\) leading). The synchronous motor acts as an adjustable capacitor!\n\nPlotting armature current \\(\\mathit{I}_{a}\\) versus field current \\(\\mathit{I}_{f}\\) produces the famous V-Curves. Plotting power factor \\(\\cos\\phi\\) versus \\(\\mathit{I}_{f}\\) yields the Inverted V-Curves. An uncoupled, over-excited synchronous motor running on no-load solely to provide leading reactive power to a utility grid is called a Synchronous Condenser.\n\n4.6 Schematic Diagrams Extracted from Lab Manual",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics_exp306_fig1_magnetic_field_poles.png",
+          "caption": "Figure 306.1: Stator-Rotor Magnetic Flux on No-Load & Load"
+        },
+        {
+          "src": "assets/lab_images/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics_exp306_fig1a_excitation_test_circuit.png",
+          "caption": "Figure 306.2: Per-Phase Equivalent Circuit & EMF Phasor Diagram"
+        },
+        {
+          "src": "assets/lab_images/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics_exp306_fig1b_load_test_circuit.png",
+          "caption": "Figure 306.1a: Variation of Field Excitation Test Circuit (No-Load)"
+        },
+        {
+          "src": "assets/lab_images/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics_exp306_fig2_equivalent_circuit_phasor.png",
+          "caption": "Figure 306.1b: Load Test Connection Diagram with Dynamometer"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Table 306.1: Variation of Excitation on No-Load (V-Curves Data)",
+        "headers": [
+          "Field Current \\(\\mathit{I}_{f} (A)\\)",
+          "Armature Current \\(\\mathit{I}_{a} (A)\\)",
+          "\\(\\mathit{W}_{1} (W)\\)",
+          "\\(\\mathit{W}_{2} (W)\\)",
+          "Total Power \\(P (W)\\)",
+          "Apparent Power \\(S (VA)\\)",
+          "Power Factor (\\(\\cos\\phi\\))",
+          "Excitation Condition"
+        ],
+        "rows": [
+          [
+            "0.50",
+            "3.80",
+            "-120",
+            "320",
+            "200",
+            "1448",
+            "0.138 (Lag)",
+            "Deep Under-Excitation"
+          ],
+          [
+            "0.80",
+            "2.65",
+            "-40",
+            "245",
+            "205",
+            "1010",
+            "0.203 (Lag)",
+            "Under-Excitation"
+          ],
+          [
+            "1.20",
+            "1.45",
+            "30",
+            "180",
+            "210",
+            "553",
+            "0.380 (Lag)",
+            "Under-Excitation"
+          ],
+          [
+            "1.50",
+            "0.85",
+            "75",
+            "140",
+            "215",
+            "324",
+            "0.664 (Lag)",
+            "Under-Excitation"
+          ],
+          [
+            "1.85 (Opt)",
+            "0.58",
+            "110",
+            "110",
+            "220",
+            "221",
+            "0.995 \\(\\approx\\) 1.00",
+            "Normal Excitation (Unity PF Peak)"
+          ],
+          [
+            "2.20",
+            "1.10",
+            "160",
+            "65",
+            "225",
+            "419",
+            "0.537 (Lead)",
+            "Over-Excitation"
+          ],
+          [
+            "2.60",
+            "2.05",
+            "220",
+            "15",
+            "235",
+            "781",
+            "0.301 (Lead)",
+            "Over-Excitation"
+          ],
+          [
+            "3.00",
+            "3.15",
+            "280",
+            "-35",
+            "245",
+            "1200",
+            "0.204 (Lead)",
+            "Deep Over-Excitation"
+          ]
+        ]
+      },
+      {
+        "title": "Table 306.2: Variation of Excitation on Constant Mechanical Load (\\(\\mathit{I}_{gen} = 2.0A\\))",
+        "headers": [
+          "\\(\\mathit{I}_{f} (A)\\)",
+          "Armature Current \\(\\mathit{I}_{a} (A)\\)",
+          "\\(\\mathit{W}_{1} (W)\\)",
+          "\\(\\mathit{W}_{2} (W)\\)",
+          "Total Power \\(P (W)\\)",
+          "Power Factor (\\(\\cos\\phi\\))",
+          "Rotor Speed (\\(N\\), rpm)",
+          "Shaft Torque (\\(T\\), N·m)",
+          "Excitation State"
+        ],
+        "rows": [
+          [
+            "1.00",
+            "3.60",
+            "80",
+            "620",
+            "700",
+            "0.510 (Lag)",
+            "1500 (Strictly Constant)",
+            "4.45 N·m",
+            "Under-Excited"
+          ],
+          [
+            "1.40",
+            "2.50",
+            "180",
+            "530",
+            "710",
+            "0.745 (Lag)",
+            "1500 (Strictly Constant)",
+            "4.52 N·m",
+            "Under-Excited"
+          ],
+          [
+            "1.95",
+            "1.92",
+            "360",
+            "360",
+            "720",
+            "0.985 (Unity)",
+            "1500 (Strictly Constant)",
+            "4.58 N·m",
+            "Normal Excitation"
+          ],
+          [
+            "2.50",
+            "2.65",
+            "540",
+            "195",
+            "735",
+            "0.728 (Lead)",
+            "1500 (Strictly Constant)",
+            "4.68 N·m",
+            "Over-Excited"
+          ],
+          [
+            "3.00",
+            "3.50",
+            "680",
+            "75",
+            "755",
+            "0.566 (Lead)",
+            "1500 (Strictly Constant)",
+            "4.81 N·m",
+            "Over-Excited"
+          ]
+        ]
+      },
+      {
+        "title": "Table 306.3: Variation of Load with Constant Normal Excitation (\\(\\mathit{I}_{f} = 1.95A\\))",
+        "headers": [
+          "Gen Current (\\(\\mathit{I}_{gen}\\), A)",
+          "Motor Armature Current \\(\\mathit{I}_{a} (A)\\)",
+          "Electrical Power Input \\(\\mathit{P}_{in} (W)\\)",
+          "Mechanical Output \\(\\mathit{P}_{out} (W)\\)",
+          "Developed Torque \\(T = \\frac{\\mathit{P}_{out}}{\\omega _{s}} (N \\cdot m)\\)",
+          "Power Factor (\\(\\cos\\phi\\))",
+          "Motor Efficiency (\\(\\eta \\%\\))",
+          "Operating Stability"
+        ],
+        "rows": [
+          [
+            "0.00 (No-Load)",
+            "0.58",
+            "220.0",
+            "0.0",
+            "0.00",
+            "0.995",
+            "0.0%",
+            "Stable (\\(\\delta \\approx 2^\\circ\\))"
+          ],
+          [
+            "1.00",
+            "1.25",
+            "465.0",
+            "220.0",
+            "1.40",
+            "0.978",
+            "47.3%",
+            "Stable (\\(\\delta \\approx 12^\\circ\\))"
+          ],
+          [
+            "2.00",
+            "1.92",
+            "720.0",
+            "440.0",
+            "2.80",
+            "0.985",
+            "61.1%",
+            "Stable (\\(\\delta \\approx 24^\\circ\\))"
+          ],
+          [
+            "3.00",
+            "2.70",
+            "1005.0",
+            "660.0",
+            "4.20",
+            "0.976",
+            "65.7%",
+            "Stable (\\(\\delta \\approx 38^\\circ\\))"
+          ],
+          [
+            "4.00",
+            "3.65",
+            "1330.0",
+            "880.0",
+            "5.60",
+            "0.956",
+            "66.2%",
+            "Stable (\\(\\delta \\approx 55^\\circ\\))"
+          ],
+          [
+            "4.80 (Pull-out)",
+            "5.10",
+            "1780.0",
+            "1056.0",
+            "6.72",
+            "0.915",
+            "59.3%",
+            "Critical (\\(\\delta \\approx 88^\\circ\\))"
+          ],
+          [
+            "> 5.00",
+            "Surge (>12A)",
+            "—",
+            "Stalled (0 rpm)",
+            "0.00",
+            "—",
+            "0.0%",
+            "Loss of Synchronism (Stalled)"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "title": "Graph 306.1: Synchronous Motor V-Curves: Armature Current vs Field Current",
+        "src": "assets/lab_images/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics_graph.svg",
+        "caption": "Graph 306.1: Synchronous Motor V-Curves: Armature Current vs Field Current"
+      }
+    ],
+    "procedure": [
+      "Bench Interconnection: Wire the BKB universal machine set according to Figure 306.1a:\n\nConnect the 3-phase stator winding to the 3-phase Variac through main AC knife switch \\(\\mathit{S}_{1}\\).\nInsert ammeter \\(\\mathit{A}_{1}\\) in series with Phase A, and connect two wattmeters (\\(\\mathit{W}_{1}, \\mathit{W}_{2}\\)) and voltmeter \\(V\\) across lines.\nConnect the rotor field winding to the \\(220V\\) DC supply via field switch \\(\\mathit{S}_{2}\\), field ammeter \\(\\mathit{A}_{2}\\), and series rheostat \\(\\mathit{R}_{1}\\).",
+      "Connect the 3-phase stator winding to the 3-phase Variac through main AC knife switch \\(\\mathit{S}_{1}\\).",
+      "Insert ammeter \\(\\mathit{A}_{1}\\) in series with Phase A, and connect two wattmeters (\\(\\mathit{W}_{1}, \\mathit{W}_{2}\\)) and voltmeter \\(V\\) across lines.",
+      "Connect the rotor field winding to the \\(220V\\) DC supply via field switch \\(\\mathit{S}_{2}\\), field ammeter \\(\\mathit{A}_{2}\\), and series rheostat \\(\\mathit{R}_{1}\\).",
+      "Pre-Start Checks: Set field rheostat \\(\\mathit{R}_{1}\\) to maximum resistance. Ensure Variac dial is set to zero volts. Verify uncoupled mechanical freedom of the rotor shaft.",
+      "Starting the Motor: Close switch \\(\\mathit{S}_{1}\\). Gradually advance the Variac until voltmeter \\(V\\) reads \\(220.0V\\) AC. The motor accelerates as an induction motor via its damper winding. When speed nears \\(1450 rpm\\), close DC field switch \\(\\mathit{S}_{2}\\). Observe the rotor immediately lock into synchronism at exactly \\(1500 rpm\\).",
+      "Excitation Variation Sweep: Adjust field rheostat \\(\\mathit{R}_{1}\\) until ammeter \\(\\mathit{A}_{2}\\) reads \\(0.50 A\\). Log meters \\(\\mathit{A}_{1}, \\mathit{A}_{2}, \\mathit{W}_{1}, \\mathit{W}_{2}, V\\). Systematically increase field current \\(\\mathit{I}_{f}\\) in steps of approximately \\(0.3–0.4A\\) up to \\(3.00 A\\). At each step, record all instruments.",
+      "Identify Normal Excitation: Carefully locate the specific field current where stator ammeter \\(\\mathit{A}_{1}\\) dips to its minimum reading (\\(0.58 A\\)). Confirm that \\(\\mathit{W}_{1} = \\mathit{W}_{2}\\), signifying unity power factor.",
+      "Coupling the Dynamometer: Interconnect the DC dynamometer generator to the load resistor bank and DC field circuit as shown in Figure 306.1b.",
+      "Constant Load / Variable Excitation: Start the synchronous motor and bring it to synchronous speed. Adjust the generator field and load bank until the generator delivers \\(\\mathit{I}_{gen} = 2.0 A\\) at \\(220V\\) DC. Vary synchronous motor field current \\(\\mathit{I}_{f}\\) from \\(1.0A\\) to \\(3.0A\\), logging instruments into Table 306.2.",
+      "Variable Load / Constant Normal Excitation: Set synchronous motor field current to its optimal normal excitation value (\\(\\mathit{I}_{f} = 1.95A\\)) and hold it strictly constant. Gradually increase generator electrical load current in steps of \\(1.0A\\) up to \\(4.0A\\). Record armature current, electrical power input, and verify that rotor speed remains rock-solid at \\(1500 rpm\\).",
+      "Pull-Out Observation: Carefully increase load current beyond \\(4.5A\\). Observe the sudden loss of synchronism, high armature current surge, and rotor stalling at the pull-out threshold. Immediately open switch \\(\\mathit{S}_{1}\\) to protect the machine."
+    ],
+    "precautions": [
+      "High Inductive Field Discharge Voltage: Never abruptly open the DC field switch (\\(\\mathit{S}_{2}\\)) while field current is flowing. The highly inductive multi-turn rotor winding will generate an enormous inductive spike (\\(L \\frac{di}{dt} > 2000V\\)) that will puncture winding insulation and cause fatal electric shocks. Always reduce field current to minimum via rheostat \\(\\mathit{R}_{1}\\) before switching off, and utilize discharge resistor contacts.",
+      "Two-Wattmeter Potential Lead Polarity: In the two-wattmeter method on low power factors (\\(\\cos\\phi < 0.5\\)), wattmeter \\(\\mathit{W}_{1}\\) will deflect backward (negative). Never reverse the current coil connections to correct this! Instead, reverse the voltage coil connections and record the reading as a negative quantity (\\(P = \\mathit{W}_{2} - \\mathit{W}_{1}\\)).",
+      "Immediate Trip on Loss of Synchronism: If the motor falls out of step during the overload pull-out test, instantly trip the main AC stator switch \\(\\mathit{S}_{1}\\). When stalled with AC voltage applied, the machine draws massive blocked-rotor currents (5 to 8 times rated) which will burn out the stator winding within seconds."
+    ],
+    "discussion": "The experimental investigation of the three-phase synchronous motor demonstrates the remarkable characteristics that make this machine unique in power systems engineering.\n\nThe V-Curves (Graph 306.1) show the distinctive V-shaped trajectory of armature current \\(\\mathit{I}_{a}\\) as field excitation \\(\\mathit{I}_{f}\\) is varied. At very low excitation (\\(\\mathit{I}_{f} = 0.50 A\\)), \\(\\mathit{I}_{a}\\) is large (\\(3.80 A\\)) and lags the voltage by \\(\\theta = 82^\\circ\\) (\\(\\cos\\phi = 0.138 lag\\)). As excitation increases, the rotor supplies more of its own magnetizing flux; the demand for reactive current from the AC stator drops, and \\(\\mathit{I}_{a}\\) declines steadily to a sharp minimum of \\(0.58 A\\) at \\(\\mathit{I}_{f} = 1.85 A\\), where the power factor reaches unity (\\(\\cos\\phi \\approx 1.00\\)). Increasing \\(\\mathit{I}_{f}\\) beyond this point over-excites the machine: the stator begins delivering leading reactive current to the AC supply, and \\(\\mathit{I}_{a}\\) climbs steeply to \\(3.15 A\\) at \\(\\mathit{I}_{f} = 3.00 A\\) with \\(\\cos\\phi = 0.204 leading\\).\n\nWhen mechanical shaft load was applied (Table 306.2 and Table 306.3), the motor maintained a strictly constant rotational speed of exactly \\(1500 rpm\\) across all load levels from no-load up to full rated load. Unlike induction motors whose speed must droop with load to generate rotor slip, the synchronous motor locks magnetically to the constant \\(50 Hz\\) stator rotating field. As load increased, the rotor physically retarded by load angle \\(\\delta\\), shifting the back-EMF phasor \\(E_{f}\\) backwards and creating the tangential magnetic force required to balance the opposing shaft torque.\n\nDuring the overload pull-out test, when generator load current reached \\(5.0 A\\), the mechanical load torque exceeded the maximum pull-out torque (\\(\\mathit{T}_{max} = 6.72 N \\cdot m\\) at \\(\\delta \\approx 90^\\circ\\)). Beyond \\(\\delta = 90^\\circ\\), the restoring torque began decreasing instead of increasing (\\(dT/d\\delta < 0\\)), leading to dynamic instability. The magnetic coupling snapped, the rotor instantly dropped out of synchronism and stalled, and stator current surged to over \\(12 A\\), necessitating immediate tripping of switch \\(\\mathit{S}_{1}\\).",
+    "conclusion": "Experiment 306 fully verified the operational behavior and performance characteristics of the 3-phase synchronous motor. The necessity of external starting mechanisms was demonstrated. The experimental V-curves and inverted V-curves confirmed that field excitation directly controls armature current and operational power factor: the motor operated in lagging mode under under-excitation, achieved unity power factor at normal excitation (\\(\\mathit{I}_{f} = 1.85A\\)), and operated in leading mode under over-excitation, confirming its role as an adjustable synchronous condenser. Under varying mechanical load, the machine demonstrated absolute speed constancy at \\(1500 rpm\\), while the pull-out torque limit was experimentally determined at \\(6.72 N \\cdot m\\), verifying the theoretical torque-angle stability criterion.",
+    "questions": [
+      {
+        "question": "Calculate the mechanical shaft torque developed by the synchronous motor in each loading case recorded in Table 306.3.",
+        "answer": "Torque Calculations:\n\nThe mechanical torque \\(T\\) developed on the motor shaft rotating at synchronous speed \\(\\mathit{N}_{s} = 1500 rpm\\) is given by:\n\n\\[\\omega _{s} = \\frac{2\\pi \\mathit{N}_{s}}{60} = \\frac{2\\pi (1500)}{60} = 50\\pi \\approx 157.08 rad/s\\]\n\n\\[T = \\frac{\\mathit{P}_{mech}}{\\omega _{s}} = \\frac{\\mathit{P}_{out}}{157.08}\\]\n\n• At \\(\\mathit{I}_{gen} = 1.0A\\) (\\(\\mathit{P}_{out} = 220 W\\)):\n\n\\[\\mathit{T}_{1} = \\frac{220}{157.08} = 1.40 N \\cdot m\\]\n• At \\(\\mathit{I}_{gen} = 2.0A\\) (\\(\\mathit{P}_{out} = 440 W\\)):\n\n\\[\\mathit{T}_{2} = \\frac{440}{157.08} = 2.80 N \\cdot m\\]\n• At \\(\\mathit{I}_{gen} = 3.0A\\) (\\(\\mathit{P}_{out} = 660 W\\)):\n\n\\[\\mathit{T}_{3} = \\frac{660}{157.08} = 4.20 N \\cdot m\\]\n• At \\(\\mathit{I}_{gen} = 4.0A\\) (\\(\\mathit{P}_{out} = 880 W\\)):\n\n\\[\\mathit{T}_{4} = \\frac{880}{157.08} = 5.60 N \\cdot m\\]\n• At Pull-Out Limit (\\(\\mathit{P}_{out} = 1056 W\\)):\n\n\\[\\mathit{T}_{pull-out} = \\frac{1056}{157.08} = 6.72 N \\cdot m\\]"
+      },
+      {
+        "question": "Determine the most favorable field excitation current from your graph of armature current versus field current. Explain why this excitation is optimal.",
+        "answer": "Determination & Technical Justification:\n\nFrom the V-curve (Graph 306.1), the most favorable field excitation current is \\(\\mathit{I}_{f} = 1.85 A\\) on no-load (and \\(\\mathit{I}_{f} \\approx 1.95 A\\) under load).\n\nThis excitation setting is optimal because:\n\n• It establishes Normal Excitation where the motor operates at Unity Power Factor (\\(\\cos\\phi = 1.00\\)).\n• The armature line current \\(\\mathit{I}_{a}\\) is at its absolute minimum (\\(0.58 A\\) on no-load). Minimum current minimizes \\(I^{2} \\mathit{R}_{a}\\) copper heating losses within the stator windings, maximizing operational efficiency.\n• Operating at unity power factor eliminates any reactive kVA burden on the supply network and prevents voltage regulation drops."
+      },
+      {
+        "question": "What are the necessary physical and electrical conditions required for a synchronous motor to reach synchronous speed?",
+        "answer": "• Auxiliary Acceleration to Near-Synchronous Speed: Because starting torque is zero, the rotor must be accelerated up to at least \\(95\\%\\) of synchronous speed (\\(> 1425 rpm\\) for a \\(1500 rpm\\) machine) by squirrel-cage amortisseur windings or an auxiliary starter motor.\n• DC Field Application at the Correct Speed: DC excitation must be applied to the rotor only when relative slip between the rotor and stator RMF is small enough for the magnetic poles to pull into step within half a slip cycle.\n• Balanced Polyphase AC Stator Supply: A balanced three-phase supply with correct phase sequence (A-B-C) and stable frequency \\(f\\) must be present to establish a smooth, constant-velocity rotating magnetic field."
+      },
+      {
+        "question": "Did the motor fail (lose synchronism) in your experiment when the mechanical load was increased? If so, explain the exact electromagnetic mechanism causing the failure.",
+        "answer": "Yes, the motor stalled and lost synchronism when the load was increased beyond \\(\\mathit{I}_{gen} = 4.8 A\\).\n\nElectromagnetic Mechanism: Electromagnetic torque is governed by \\(T = \\frac{3 V \\mathit{E}_{f}}{\\omega _{s} \\mathit{X}_{s}} \\sin\\delta\\). As load increases, the rotor retards, increasing torque angle \\(\\delta\\). Torque reaches its theoretical maximum (Pull-Out Torque) at \\(\\delta = 90^\\circ\\). When the external shaft load exceeds this pull-out torque, the required torque cannot be developed. As \\(\\delta\\) increases beyond \\(90^\\circ\\), the developed torque actually decreases because \\(\\frac{d}{d\\delta }(\\sin\\delta ) < 0\\). The rotor decelerates rapidly, the magnetic interlock between stator and rotor poles shears completely, and the motor falls out of step, vibrating violently and drawing destructive short-circuit currents until de-energized."
+      },
+      {
+        "question": "Explain the phenomenon of \"Hunting\" (Phase Swinging) in synchronous motors, and describe how Damper (Amortisseur) Windings suppress it.",
+        "answer": "When a synchronous motor experiences a sudden disturbance—such as an abrupt change in shaft load or a momentary line voltage dip—the rotor cannot instantly settle at its new equilibrium load angle \\(\\delta\\). Due to its mechanical rotor inertia, the rotor overshoots the new \\(\\delta\\) position, accelerates back, overshoots again in the opposite direction, and oscillates mechanically about the steady-state load angle.\n\nThis periodic oscillation of the rotor around synchronous speed is known as Hunting (or Phase Swinging). If the frequency of these mechanical oscillations coincides with the natural frequency of the electrical supply system, resonance occurs, causing load angle \\(\\delta\\) to exceed \\(90^\\circ\\) and forcing the motor out of synchronism.\n\nSuppression via Damper (Amortisseur) Windings: Damper windings consist of heavy copper or bronze bars embedded in slots in the rotor pole shoes and short-circuited at both ends by heavy ring segments (identical to a squirrel-cage induction rotor). During steady-state synchronous operation, the rotor rotates at the exact speed of the stator RMF; there is zero relative motion, and zero EMF or current is induced in the damper bars.\n\nHowever, when hunting begins, the rotor oscillates above and below synchronous speed (\\(N > \\mathit{N}_{s}\\) or \\(N < \\mathit{N}_{s}\\)). This creates relative velocity between the damper bars and the stator field. By Faraday's and Lenz's laws, large circulating currents are induced in the short-circuited damper bars. These currents produce an induction damping torque that opposes the relative motion—decelerating the rotor when it moves too fast and accelerating it when it moves too slow—rapidly quenching the oscillation and restoring smooth synchronous operation."
+      }
+    ],
+    "learnings": [
+      "Synchronous Machine Dynamics: Clear visualization of magnetic locking between rotor poles and stator RMF, and the meaning of torque angle \\(\\delta\\).",
+      "Power Factor Control Mastery: The unique ability of synchronous motors to operate across lagging, unity, and leading power factors purely by adjusting DC rotor field current.",
+      "Rigid Speed Constancy: Direct experimental verification that a synchronous motor maintains strictly unyielding speed (\\(1500 rpm\\)) irrespective of shaft loading up to pull-out.",
+      "Operational Safety Protocols: Handling high inductive DC field circuits safely, understanding negative wattmeter deflections, and responding rapidly to loss-of-synchronism stall conditions."
+    ]
+  }
+}

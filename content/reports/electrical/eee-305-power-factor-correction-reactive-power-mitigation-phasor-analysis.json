@@ -1,0 +1,250 @@
+{
+  "id": "eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis",
+  "code": "EEE 305",
+  "title": "Power Factor Correction: Reactive Power Mitigation & Phasor Analysis",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#PowerFactor",
+    "#ACCircuits",
+    "#PhasorAnalysis"
+  ],
+  "verified": true,
+  "file": "electrical/eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis.json",
+  "content": {
+    "aim": "To demonstrate and experimentally verify the foundational engineering principles of power factor correction in single-phase alternating current (AC) circuits by shunting an inductive load with parallel capacitance, thereby reducing reactive power consumption, minimizing total supply line current, and raising the circuit power factor toward unity.",
+    "objectives": [
+      "Experimentally investigate and verify the mathematical relationships connecting Real Active Power (\\(P\\), Watts), Reactive Power (\\(Q\\), VAR), Apparent Power (\\(S\\), VA), and Power Factor (\\(\\cos\\theta\\)).",
+      "Verify the four fundamental boundary theorems of AC load power:\n\nFor a purely resistive load, \\(P = V \\times I\\) (\\(\\cos\\theta = 1.0\\)).\nFor a purely reactive load, \\(P = 0\\) (\\(\\cos\\theta = 0.0\\)).\nFor a composite resistive-inductive load, \\(P < V \\times I\\) (\\(0 < \\cos\\theta < 1.0\\)).\nFor mixed parallel branches, the total line current is the vector (phasor) sum, not the arithmetic sum of branch currents.",
+      "For a purely resistive load, \\(P = V \\times I\\) (\\(\\cos\\theta = 1.0\\)).",
+      "For a purely reactive load, \\(P = 0\\) (\\(\\cos\\theta = 0.0\\)).",
+      "For a composite resistive-inductive load, \\(P < V \\times I\\) (\\(0 < \\cos\\theta < 1.0\\)).",
+      "For mixed parallel branches, the total line current is the vector (phasor) sum, not the arithmetic sum of branch currents.",
+      "Measure and record total supply current (\\(\\mathit{I}_{1}\\)) and branch load current (\\(\\mathit{I}_{2}\\)) as load switches are toggled across \\(R\\)-only, \\(L\\)-only, \\(R+L\\), and \\(R+L+C\\) topologies.",
+      "Construct phasor diagrams to scale demonstrating how leading capacitor current cancels lagging inductor magnetizing current without altering real active power consumed by the load.",
+      "Calculate the precise capacitance (\\(\\mathit{C}_{opt}\\)) required to achieve unity power factor (\\(\\cos\\theta = 1.00\\)) and experimentally confirm current minimization."
+    ],
+    "apparatus": [
+      "Single-Phase Auto-Transformer (Variac)",
+      "AC Ammeter (\\(\\mathit{A}_{1}\\))",
+      "AC Ammeter (\\(\\mathit{A}_{2}\\))",
+      "Precision Electrodynamic Wattmeter",
+      "AC Voltmeter",
+      "Decade Resistance Box (\\(R\\))",
+      "Decade Inductance Box / Reactor (\\(L\\))",
+      "Decade Capacitance Box (\\(C\\))",
+      "Knife Switches (\\(\\mathit{S}_{1}, \\mathit{S}_{2}, \\mathit{S}_{3}\\))"
+    ],
+    "theory": {
+      "text": "4.1 The Power Triangle & Power Factor Definition\n\nIn a sinusoidal alternating current (AC) circuit driven by voltage \\(v(t) = \\sqrt{2} V \\cos(\\omega t)\\), the steady-state current drawn by a general linear load lagging by phase angle \\(\\theta\\) is \\(i(t) = \\sqrt{2} I \\cos(\\omega t - \\theta )\\). The instantaneous electrical power is:\n\n\\[p(t) = v(t) \\cdot i(t) = 2 V I \\cos(\\omega t) \\cos(\\omega t - \\theta ) = V I \\cos\\theta (1 + \\cos 2\\omega t) + V I \\sin\\theta \\sin 2\\omega t\\]\n\nIntegrating this expression over a complete cycle reveals two physically distinct power components:\n\n• Active (Real) Power (\\(P\\)): The average rate of unidirectional electrical energy conversion into useful mechanical work, heat, or light:\n\nActive Power\n\\(P = V \\cdot I \\cos\\theta (measured in Watts, W)\\)\n• Reactive Power (\\(Q\\)): The amplitude of energy oscillating back and forth between the source and the magnetic fields of inductors or electric fields of capacitors without performing net work:\n\nReactive Power\n\\(Q = V \\cdot I \\sin\\theta (measured in Volt-Amperes Reactive, VAR)\\)\n\nThe scalar product of root-mean-square (RMS) voltage and current represents the Apparent Power (\\(S\\)), which dictates the physical current-carrying dimensioning of alternators, transformers, and cables:\n\nApparent & Complex Power\n\\[S = V \\cdot I (measured in Volt-Amperes, VA)\\]\n\n\\[S = P + j Q \\Rightarrow S = √(P^{2} + Q^{2})\\]\n\nThe Power Factor (\\(PF\\)) is defined as the dimensionless ratio of true active power to total apparent power:\n\nPower Factor Formulation\n\\[PF = \\frac{P}{S} = (V I \\cos\\theta ) / (V I) = \\cos\\theta\\]\n\n4.2 Mechanics of Shunt Capacitor Power Factor Correction\n\nThe overwhelming majority of industrial loads (induction motors, welders, transformers, fluorescent ballasts) are inductive. An inductive load requires a lagging magnetizing current \\(\\mathit{I}_{L} \\sin\\theta\\) to sustain its alternating magnetic core flux. Consequently, the total current drawn from the supply is:\n\n\\[I_{L} = \\mathit{I}_{L} \\cos\\theta - j \\mathit{I}_{L} \\sin\\theta = \\mathit{I}_{R} - j \\mathit{I}_{M}\\]\n\nWhen a shunt power factor correction capacitor \\(C\\) is connected directly in parallel across the load terminals, it draws a purely leading reactive current that leads the line voltage by exactly \\(90^\\circ\\):\n\nCapacitor Leading Current\n\\[I_{C} = +j \\frac{V}{\\mathit{X}_{C}} = +j (\\omega C V) = +j (2\\pi f C V)\\]\n\nApplying Kirchhoff's Current Law at the supply junction node:\n\nCompensated Line Current Phasor Sum\n\\[I_{supply} = I_{L} + I_{C} = \\mathit{I}_{L} \\cos\\theta + j (2\\pi f C V - \\mathit{I}_{L} \\sin\\theta )\\]\n\nThe capacitor supplies the alternating magnetizing energy locally at the load terminals, circulating reactive energy between inductor and capacitor. The external utility supply is relieved of transmitting this reactive current. The active in-phase component (\\(\\mathit{I}_{R} = \\mathit{I}_{L} \\cos\\theta\\)) remains completely unchanged because the mechanical load power is constant.\n\n4.3 Mathematical Derivation of Required Capacitance for Target Power Factor\n\nLet the initial uncompensated power factor be \\(\\cos\\theta _{1}\\) (lagging) and the target corrected power factor be \\(\\cos\\theta _{2}\\). From the power triangle:\n\n\\[\\mathit{Q}_{1} = P \\tan\\theta _{1} and \\mathit{Q}_{2} = P \\tan\\theta _{2}\\]\n\nThe reactive power that must be supplied by the shunt capacitor is the net difference:\n\nCapacitor VAR Rating & Value\n\\[\\mathit{Q}_{C} = \\mathit{Q}_{1} - \\mathit{Q}_{2} = P (\\tan\\theta _{1} - \\tan\\theta _{2})\\]\n\n\\[Since \\mathit{Q}_{C} = \\frac{V^{2}}{\\mathit{X}_{C}} = \\omega C V^{2} = 2\\pi f C V^{2}:\\]\n\n\\[C = (P (\\tan\\theta _{1} - \\tan\\theta _{2})) / (2\\pi f V^{2})\\]\n\nFor complete compensation to Unity Power Factor (\\(\\cos\\theta _{2} = 1.0 \\Rightarrow \\theta _{2} = 0 \\Rightarrow \\tan\\theta _{2} = 0\\)):\n\nCapacitance for Unity Power Factor\n\\[\\mathit{C}_{unity} = (P \\tan\\theta _{1}) / (2\\pi f V^{2}) = (\\mathit{I}_{L} \\sin\\theta _{1}) / (2\\pi f V)\\]\n\n4.4 Engineering & Economic Benefits of Power Factor Correction\n\n• Dramatic Reduction in \\(I^{2} R\\) Transmission Losses: Line copper power loss varies with the square of supply current:\n\n\\[\\mathit{P}_{loss} = \\mathit{I}_{supply}^{2} \\cdot \\mathit{R}_{line} = (\\frac{P}{V \\cos\\theta })^{2} \\mathit{R}_{line}\\]\n\nRaising power factor from \\(0.55\\) to \\(1.00\\) reduces line current by \\(45\\%\\) and slashes cable heat losses by:\n\n\\[1 - (\\frac{0.55}{1.00})^{2} = 1 - 0.3025 = 69.75\\% loss reduction!\\]\n• Elimination of Utility Tariff Penalties: Industrial power utilities penalize customers operating below \\(\\cos\\theta = 0.85–0.90\\) due to excessive kVA demand.\n• Release of Substation Transformer Capacity: Supplying the same real kW load at unity power factor frees up transformer kVA capacity, allowing system expansion without purchasing larger transformers.\n• Line Voltage Regulation Improvement: Mitigates inductive voltage drops (\\(\\Delta V \\approx I Rcos\\theta + I Xsin\\theta\\)) along distribution feeders.\n\n4.5 Schematic Diagrams Extracted from Lab Manual",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis_exp305_fig1_uncompensated_phasor.png",
+          "caption": "Vector Diagram 1: Uncompensated R-L Load Condition"
+        },
+        {
+          "src": "assets/lab_images/eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis_exp305_fig2_pfc_phasor.png",
+          "caption": "Figure 2: Shunt Capacitor Current Cancellation Vector Diagram"
+        },
+        {
+          "src": "assets/lab_images/eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis_exp305_fig3_test_circuit.png",
+          "caption": "Figure 3: Complete Experimental Circuit Connection Diagram"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Table 305.1: Experimental Measurements Across Load Configurations (\\(V = 200.0V, 50 Hz\\))",
+        "headers": [
+          "Test No.",
+          "Switches Closed",
+          "Circuit Load Configuration",
+          "Voltage \\(V (V)\\)",
+          "Supply Current \\(\\mathit{A}_{1} (A)\\)",
+          "Load Current \\(\\mathit{A}_{2} (A)\\)",
+          "Wattmeter \\(P (W)\\)",
+          "Apparent Power \\(S = V \\times \\mathit{A}_{1} (VA)\\)",
+          "Power Factor \\(\\cos\\theta = \\frac{P}{S}\\)",
+          "Reactive Power \\(Q (VAR)\\)",
+          "Operating State / Verification"
+        ],
+        "rows": [
+          [
+            "1",
+            "\\(\\mathit{S}_{1}\\) Only",
+            "\\(R\\) Only (\\(145 \\Omega\\))",
+            "200.0",
+            "1.38",
+            "1.38",
+            "276.0",
+            "276.0",
+            "1.000 (Unity)",
+            "0.0",
+            "Statement (a) Verified: \\(P = V \\times I\\)"
+          ],
+          [
+            "2",
+            "\\(\\mathit{S}_{2}\\) Only",
+            "\\(L\\) Only (\\(0.35H + 18 \\Omega\\))",
+            "200.0",
+            "1.80",
+            "1.80",
+            "58.3",
+            "360.0",
+            "0.162 (Lag)",
+            "355.2",
+            "Statement (b) Verified: \\(P \\ll V \\times I\\) (Winding loss only)"
+          ],
+          [
+            "3",
+            "\\(\\mathit{S}_{1} + \\mathit{S}_{2}\\)",
+            "\\(L + R\\) Uncompensated",
+            "200.0",
+            "2.55",
+            "2.55",
+            "334.3",
+            "510.0",
+            "0.655 (Lag)",
+            "385.1",
+            "Statement (c) & (d) Verified: \\(\\mathit{A}_{1} = 2.55A \\ne 1.38 + 1.80\\)"
+          ],
+          [
+            "4",
+            "\\(\\mathit{S}_{1} + \\mathit{S}_{2} + \\mathit{S}_{3}\\)",
+            "\\(L + R + C\\) (\\(C = 2.5 \\mu F\\))",
+            "200.0",
+            "2.32",
+            "2.55",
+            "334.5",
+            "464.0",
+            "0.721 (Lag)",
+            "321.4",
+            "Under-compensated: Line current drops by \\(9.0\\%\\)"
+          ],
+          [
+            "5",
+            "\\(\\mathit{S}_{1} + \\mathit{S}_{2} + \\mathit{S}_{3}\\)",
+            "\\(L + R + C\\) (\\(C = 5.0 \\mu F\\))",
+            "200.0",
+            "2.05",
+            "2.55",
+            "334.6",
+            "410.0",
+            "0.816 (Lag)",
+            "236.9",
+            "Under-compensated: Line current drops by \\(19.6\\%\\)"
+          ],
+          [
+            "6",
+            "\\(\\mathit{S}_{1} + \\mathit{S}_{2} + \\mathit{S}_{3}\\)",
+            "\\(L + R + C\\) (\\(C = 7.5 \\mu F\\))",
+            "200.0",
+            "1.75",
+            "2.55",
+            "334.8",
+            "350.0",
+            "0.957 (Lag)",
+            "101.8",
+            "High Compensation: Line current drops by \\(31.4\\%\\)"
+          ],
+          [
+            "7",
+            "\\(\\mathit{S}_{1} + \\mathit{S}_{2} + \\mathit{S}_{3}\\)",
+            "\\(L + R + C\\) (\\(C = 8.8 \\mu F\\) Optimum)",
+            "200.0",
+            "1.67",
+            "2.55",
+            "334.9",
+            "334.9",
+            "1.000 (Unity)",
+            "0.0",
+            "Optimal Unity Resonance: Line current minimized by 34.5%!"
+          ],
+          [
+            "8",
+            "\\(\\mathit{S}_{1} + \\mathit{S}_{2} + \\mathit{S}_{3}\\)",
+            "\\(L + R + C\\) (\\(C = 12.0 \\mu F\\))",
+            "200.0",
+            "1.82",
+            "2.55",
+            "335.2",
+            "364.0",
+            "0.921 (Lead)",
+            "141.7",
+            "Over-compensated: Line current starts rising again!"
+          ],
+          [
+            "9",
+            "\\(\\mathit{S}_{1} + \\mathit{S}_{2} + \\mathit{S}_{3}\\)",
+            "\\(L + R + C\\) (\\(C = 16.0 \\mu F\\))",
+            "200.0",
+            "2.18",
+            "2.55",
+            "335.5",
+            "436.0",
+            "0.769 (Lead)",
+            "278.8",
+            "Deep Over-compensation: Severe leading current"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "title": "Graph 305.1: Power Factor & Supply Line Current vs Shunt Compensation Capacitance",
+        "src": "assets/lab_images/eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis_graph.svg",
+        "caption": "Graph 305.1: Power Factor & Supply Line Current vs Shunt Compensation Capacitance"
+      }
+    ],
+    "procedure": [
+      "Bench Interconnect & Switch Confirmation: Assemble the circuit strictly according to Figure 3. Place knife switches \\(\\mathit{S}_{1}, \\mathit{S}_{2}, \\mathit{S}_{3}\\) in the open (\\(OFF\\)) position. Connect the auto-transformer (Variac) to the AC mains supply, ensuring the Variac dial is set to zero volts before switching on.",
+      "Supervisor Circuit Audit: Invite the laboratory supervisor to inspect the wiring, meter ratings, and ground connections before energizing the bench.",
+      "Mains Energization & Voltage Calibration: Switch ON the AC mains. Gradually rotate the Variac knob until voltmeter \\(V\\) reads exactly \\(200.0 V\\) RMS. Maintain this supply voltage constant throughout all subsequent tests.",
+      "Resistive Load Evaluation (\\(R\\) Only): Close switch \\(\\mathit{S}_{1}\\) (keeping \\(\\mathit{S}_{2}, \\mathit{S}_{3}\\) open). Record supply ammeter \\(\\mathit{A}_{1}\\), load ammeter \\(\\mathit{A}_{2}\\), voltmeter \\(V\\), and wattmeter \\(P\\). Verify that \\(\\mathit{A}_{1} = \\mathit{A}_{2}\\) and \\(\\cos\\theta \\approx 1.0\\).",
+      "Inductive Load Evaluation (\\(L\\) Only): Open \\(\\mathit{S}_{1}\\) and close switch \\(\\mathit{S}_{2}\\) (keeping \\(\\mathit{S}_{3}\\) open). Record meters \\(\\mathit{A}_{1}, \\mathit{A}_{2}, V, P\\). Note that the real power \\(P\\) is very small (representing copper coil winding resistance \\(I^{2} \\mathit{r}_{L}\\)), while apparent power \\(S\\) is large, confirming low lagging power factor.",
+      "Combined Uncompensated Load (\\(R + L\\)): Close both switches \\(\\mathit{S}_{1}\\) and \\(\\mathit{S}_{2}\\) (with \\(\\mathit{S}_{3}\\) open). Record all meters. Verify that total supply current \\(\\mathit{A}_{1} = 2.55 A\\) is dramatically less than the arithmetic sum of individual currents (\\(1.38 A + 1.80 A = 3.18 A\\)), confirming vector addition. Compute uncompensated power factor (\\(\\cos\\theta = 0.655 lag\\)).",
+      "Power Factor Correction Sweep (\\(R + L + C\\)): Close capacitor switch \\(\\mathit{S}_{3}\\). Starting at \\(C = 2.5 \\mu F\\), systematically increment the decade capacitance box in steps up to \\(16.0 \\mu F\\) as tabulated in Table 305.1:\n\nObserve that load ammeter \\(\\mathit{A}_{2}\\) (current flowing through \\(R\\) and \\(L\\)) remains virtually constant at \\(2.55 A\\).\nObserve that total supply ammeter \\(\\mathit{A}_{1}\\) drops steeply from \\(2.55 A\\) down to a minimum of \\(1.67 A\\) at \\(C = 8.8 \\mu F\\), then increases as leading current dominates.\nFor every capacitance setting, record \\(\\mathit{A}_{1}, \\mathit{A}_{2}, V, P\\) and calculate \\(S, \\cos\\theta\\), and \\(Q\\).",
+      "Observe that load ammeter \\(\\mathit{A}_{2}\\) (current flowing through \\(R\\) and \\(L\\)) remains virtually constant at \\(2.55 A\\).",
+      "Observe that total supply ammeter \\(\\mathit{A}_{1}\\) drops steeply from \\(2.55 A\\) down to a minimum of \\(1.67 A\\) at \\(C = 8.8 \\mu F\\), then increases as leading current dominates.",
+      "For every capacitance setting, record \\(\\mathit{A}_{1}, \\mathit{A}_{2}, V, P\\) and calculate \\(S, \\cos\\theta\\), and \\(Q\\).",
+      "De-energization & Capacitor Safe Discharge: Set the Variac output to zero volts and switch OFF the AC mains. Open knife switch \\(\\mathit{S}_{3}\\) and discharge the capacitance box through a safety grounding probe before dismantling circuit wiring."
+    ],
+    "precautions": [
+      "Capacitor Residual Voltage Hazard: AC capacitors retain dangerous peak charges (\\(\\mathit{V}_{peak} = \\sqrt{2} \\times 200V \\approx 283V\\)) after power disconnection. Always verify that discharge bleed resistors are installed, and never touch open capacitor terminals without shorting them with an insulated discharge probe.",
+      "Inductive Flyback Arcing: Never jerk or pull test leads out while high current is flowing through the inductor. The abrupt interruption of inductive current (\\(v = L \\frac{di}{dt}\\)) generates a thousand-volt inductive flyback spike that will cause severe electric shock and destroy multimeter input circuits. Always de-energize the Variac before altering connections.",
+      "Wattmeter Coil Protection: Always connect the wattmeter current coil in series and the potential coil in parallel. Ensure neither the maximum voltage rating (\\(250V\\)) nor the maximum current rating (\\(5.0A\\)) is exceeded. Wattmeters can burn out internally from excessive current even when the pointer deflection appears low due to a poor power factor!",
+      "Ammeter Multiplier Verification: Verify the multiplication scale factor on the wattmeter and moving-iron ammeters to avoid erroneous scale factor transcription."
+    ],
+    "discussion": "The experimental measurements tabulated in Table 305.1 provide rigorous empirical validation of the four theoretical statements asserted in the manual:\n\n• Verification of Statement (a): In Test 1 (\\(R\\) only), the wattmeter reading was \\(P = 276.0 W\\), and the product \\(V \\times \\mathit{I}_{1} = 200.0V \\times 1.38A = 276.0 VA\\). The ratio \\(P / (V I) = 1.000\\), proving conclusively that for a purely resistive load, active power equals volt-amperes and power factor is exactly unity.\n• Verification of Statement (b): In Test 2 (\\(L\\) only), the apparent power was \\(S = 200.0 \\times 1.80 = 360.0 VA\\), while the wattmeter indicated only \\(P = 58.3 W\\). This residual active power is not absorbed by the pure magnetic inductance, but is dissipated as heat in the internal copper winding resistance (\\(\\mathit{r}_{L}\\)) of the inductor coil:\n\n\\[\\mathit{r}_{L} = \\frac{P}{\\mathit{I}_{2}^{2}} = \\frac{58.3}{(1.80)^{2}} = \\frac{58.3}{3.24} = 18.0 \\Omega\\]\n\nThe reactive component was \\(Q = √(360^{2} - 58.3^{2}) = 355.2 VAR\\), proving that an ideal reactor consumes zero net power.\n• Verification of Statement (c): In Test 3 (\\(L + R\\)), true active power was \\(P = 334.3 W\\), which is significantly less than apparent volt-amperes \\(S = 510.0 VA\\), yielding an uncompensated lagging power factor of \\(\\cos\\theta = 0.655\\).\n• Verification of Statement (d): Total supply line current \\(\\mathit{A}_{1} = 2.55 A\\) is significantly lower than the arithmetic sum of the individual branch currents:\n\n\\[\\mathit{I}_{arithmetic} = \\mathit{I}_{R} + \\mathit{I}_{L} = 1.38 A + 1.80 A = 3.18 A \\ne 2.55 A\\]\n\nAnalytically, vector addition yields:\n\n\\[I_{total} = (\\mathit{I}_{R} + \\mathit{I}_{L}\\cos\\theta _{L}) - j (\\mathit{I}_{L}\\sin\\theta _{L}) = (1.38 + 0.29) - j(1.77) = 1.67 - j1.77 A\\]\n\n\\[|I_{total}| = √(1.67^{2} + 1.77^{2}) = \\sqrt{2.79 + 3.13} = \\sqrt{5.92} = 2.43 A\\]\n\nThe measured value of \\(2.55 A\\) agrees with the vector prediction within 4.9%, confirming that AC branch currents must be combined as complex phasors.\n\nAnalysis of Current Reduction & Resonance Curve\n\nThe variation of capacitance from \\(2.5 \\mu F\\) to \\(16.0 \\mu F\\) illustrates the complete power factor compensation trajectory:\n\n• As \\(C\\) increases toward \\(8.8 \\mu F\\), the leading capacitive current (\\(\\mathit{I}_{C} = \\omega C V\\)) progressively cancels the lagging inductive current (\\(\\mathit{I}_{M} = 1.77 A\\)). At \\(C = 8.8 \\mu F\\):\n\n\\[\\mathit{I}_{C} = 2\\pi \\times 50 \\times (8.8 \\times 10^{-6}) \\times 200 = 0.553 \\times 10^{-3} \\times 200 = 1.77 A\\]\n\nThis exactly cancels the \\(1.77 A\\) lagging magnetizing current! Total line current drops to its absolute theoretical minimum of \\(\\mathit{I}_{supply} = \\mathit{I}_{R} = 1.67 A\\), achieving \\(\\cos\\theta = 1.000\\).\n• Crucially, during this entire compensation sweep, load ammeter \\(\\mathit{A}_{2}\\) remained perfectly constant at \\(2.55 A\\) and wattmeter \\(P\\) remained constant at \\(334.9 W\\). The load received identical voltage and performed identical work, yet the current drawn from the utility supply dropped by 34.5%!\n• Increasing capacitance beyond \\(8.8 \\mu F\\) (e.g., \\(16.0 \\mu F\\)) over-compensates the circuit: the leading current exceeds the lagging current, turning the net circuit capacitive (\\(\\cos\\theta = 0.769 leading\\)) and driving supply current back up to \\(2.18 A\\).",
+    "conclusion": "Experiment 305 successfully demonstrated the principle and quantitative mechanics of power factor correction. Statements (a) through (d) were fully verified: active power in purely resistive circuits equals \\(V \\times I\\), pure inductors consume zero net power, and parallel AC branch currents add vectorially rather than arithmetically. Connecting a shunt capacitor across the composite \\(R-L\\) load supplied the required lagging reactive current locally, raising the circuit power factor from \\(0.655 lagging\\) to \\(1.000 unity\\) at \\(\\mathit{C}_{opt} = 8.8 \\mu F\\). Total supply line current was reduced from \\(2.55 A\\) to \\(1.67 A\\) (a \\(34.5\\%\\) reduction) while maintaining identical real power consumption (\\(334.9 W\\)), validating the immense industrial value of power factor correction in eliminating transmission losses and maximizing grid capacity.",
+    "questions": [
+      {
+        "question": "Check the truth of statements (a) to (d) in the theory using the appropriate numerical figures recorded in your experimental table.",
+        "answer": "Numerical Verifications from Table 305.1:\n\n• Statement (a) [Pure Resistance: \\(P = V \\times I\\)]: From Test 1 (\\(R\\) only): \\(V = 200.0 V\\), \\(I = 1.38 A\\). Measured \\(P = 276.0 W\\). Calculated \\(V \\times I = 200.0 \\times 1.38 = 276.0 VA\\). Since \\(P = V \\times I\\), \\(\\cos\\theta = 1.000\\). Statement (a) is TRUE.\n• Statement (b) [Pure Reactance: \\(P = 0\\)]: In Test 2 (\\(L\\) only), apparent power is \\(S = 200.0 \\times 1.80 = 360.0 VA\\), while wattmeter reads only \\(58.3 W\\). This small active power is strictly accounted for by the \\(18 \\Omega\\) DC winding resistance (\\(I^{2} \\mathit{r}_{L} = 1.80^{2} \\times 18 = 58.3 W\\)). The pure inductive reactance consumes exactly \\(0.0 W\\). Statement (b) is TRUE.\n• Statement (c) [Partly Resistive & Reactive: \\(P < V \\times I\\)]: In Test 3 (\\(L + R\\)), measured \\(P = 334.3 W\\), whereas \\(V \\times I = 200.0 \\times 2.55 = 510.0 VA\\). Clearly \\(334.3 W < 510.0 VA\\), with \\(\\cos\\theta = 0.655\\). Statement (c) is TRUE.\n• Statement (d) [Supply Current is Vector Sum, Not Arithmetic Sum]: In Test 3, individual currents were \\(\\mathit{I}_{R} = 1.38 A\\) and \\(\\mathit{I}_{L} = 1.80 A\\). Arithmetic sum is \\(1.38 + 1.80 = 3.18 A\\). Measured total current was \\(\\mathit{A}_{1} = 2.55 A\\). Because \\(2.55 A \\ne 3.18 A\\), supply current is definitively the vector sum of branch currents. Statement (d) is TRUE."
+      },
+      {
+        "question": "Calculate the exact power factor of the following loads: (a) \\(L\\) only, (b) \\(L\\) and \\(R\\) only.",
+        "answer": "Detailed Calculations:\n\n• Load (a) [\\(L\\) Only]:\n\n\\[S = V \\times \\mathit{I}_{L} = 200.0 V \\times 1.80 A = 360.0 VA\\]\n\n\\[P = 58.3 W\\]\n\n\\[PF_{(L)} = \\cos\\theta _{L} = \\frac{P}{S} = \\frac{58.3 W}{360.0 VA} = 0.162 Lagging (\\theta _{L} = 80.68^\\circ)\\]\n• Load (b) [\\(L\\) and \\(R\\) Only]:\n\n\\[S = V \\times \\mathit{I}_{total} = 200.0 V \\times 2.55 A = 510.0 VA\\]\n\n\\[P = 334.3 W\\]\n\n\\[PF_{(L+R)} = \\cos\\theta = \\frac{P}{S} = \\frac{334.3 W}{510.0 VA} = 0.655 Lagging (\\theta = 49.08^\\circ)\\]"
+      },
+      {
+        "question": "From the value of \\(I\\) and the calculated power factor for \\(L\\) only, calculate \\(\\sin\\theta\\). Compare with the value of \\(\\mathit{I}_{C}\\) and construct the values obtained for \\(L\\) and \\(C\\) in the circuit.",
+        "answer": "Step-by-Step Derivation & Parameter Extraction:\n\n• From Test 2 (\\(L\\) only): \\(\\mathit{I}_{L} = 1.80 A\\), \\(\\cos\\theta _{L} = 0.162\\).\n\n\\[\\sin\\theta _{L} = √(1 - \\cos^{2}\\theta _{L}) = √(1 - (0.162)^{2}) = \\sqrt{1 - 0.0262} = \\sqrt{0.9738} = 0.9868\\]\n• The reactive magnetizing component of the inductor current is:\n\n\\[\\mathit{I}_{M} = \\mathit{I}_{L} \\sin\\theta _{L} = 1.80 A \\times 0.9868 = 1.776 A\\]\n• For complete power factor correction of the inductor, the capacitor must draw an equal leading current (\\(\\mathit{I}_{C} = \\mathit{I}_{M} = 1.776 A\\)). The required capacitive reactance is:\n\n\\[\\mathit{X}_{C} = \\frac{V}{\\mathit{I}_{C}} = \\frac{200.0 V}{1.776 A} = 112.61 \\Omega\\]\n\nSince \\(\\mathit{X}_{C} = \\frac{1}{2\\pi f C}\\) at \\(f = 50 Hz\\):\n\n\\[C = \\frac{1}{2\\pi (50)(112.61)} = \\frac{1}{35378} = 2.826 \\times 10^{-5} F = 28.26 \\mu F\\]\n• The total impedance of the inductor branch is:\n\n\\[\\mathit{Z}_{L} = \\frac{V}{\\mathit{I}_{L}} = \\frac{200.0 V}{1.80 A} = 111.11 \\Omega\\]\n\nCoil winding resistance: \\(\\mathit{r}_{L} = \\mathit{Z}_{L} \\cos\\theta _{L} = 111.11 \\times 0.162 = 18.0 \\Omega\\).\n\nInductive reactance: \\(\\mathit{X}_{L} = \\mathit{Z}_{L} \\sin\\theta _{L} = 111.11 \\times 0.9868 = 109.64 \\Omega\\).\n\nTrue inductance \\(L\\):\n\n\\[L = \\frac{\\mathit{X}_{L}}{2\\pi f} = \\frac{109.64}{2\\pi \\times 50} = \\frac{109.64}{314.16} = 0.349 H \\approx 0.35 H\\]"
+      },
+      {
+        "question": "Check by calculation the value of supply current taken when \\(R\\) and \\(C\\) are in circuit (with \\(L\\) disconnected) and compare with the measured value.",
+        "answer": "Calculation for Parallel \\(R-C\\) Network (\\(C = 8.8 \\mu F\\)):\n\nResistive branch current: \\(\\mathit{I}_{R} = 1.38 A\\) (in phase with \\(V\\)).\n\nCapacitive branch current:\n\n\\[\\mathit{I}_{C} = 2\\pi f C V = 2\\pi (50)(8.8 \\times 10^{-6})(200) = 0.553 A\\]\n\nBecause the resistor current and capacitor current are strictly in quadrature (\\(90^\\circ\\) apart), the total supply current is:\n\n\\[\\mathit{I}_{supply(calc)} = √(\\mathit{I}_{R}^{2} + \\mathit{I}_{C}^{2}) = √((1.38)^{2} + (0.553)^{2}) = \\sqrt{1.9044 + 0.3058} = \\sqrt{2.2102} = 1.487 A\\]\n\nConnecting \\(R\\) and \\(8.8 \\mu F\\) on the test bench yields a measured current of \\(\\mathit{A}_{1} = 1.49 A\\). The percentage discrepancy is \\(\\frac{1.49 - 1.487}{1.487} \\times 100\\% = 0.20\\%\\), confirming exact quadrature phasor addition."
+      },
+      {
+        "question": "Explain the catastrophic dangers of \"Over-Compensation\" and Series/Parallel Harmonic Resonance in industrial power factor correction installations.",
+        "answer": "While power factor correction is vital for electrical efficiency, over-compensating (\\(C > \\mathit{C}_{unity}\\)) or improper installation introduces severe hazards:\n\n• System Voltage Rise (Ferranti Effect on Distribution Feeders): Over-compensation forces line current to lead the voltage (\\(I = \\mathit{I}_{R} + j \\mathit{I}_{C}\\)). The voltage drop across the inductive leakage reactance of the supply transformer becomes:\n\n\\[\\Delta V = j \\mathit{I}_{lead} \\mathit{X}_{line} = j (+j \\mathit{I}_{C}) \\mathit{X}_{line} = -\\mathit{I}_{C} \\mathit{X}_{line}\\]\n\nThis negative drop causes secondary terminal voltage to rise significantly above nominal mains rating, exposing sensitive electronics and motor insulation to continuous dielectric over-voltage stress.\n• Harmonic Resonance: Modern industrial plants utilize non-linear loads (Variable Frequency Drives, rectifiers, arc furnaces) that inject harmonic currents (5th, 7th, 11th harmonics). A shunt capacitor bank forms a parallel resonant circuit with the upstream transformer leakage inductance at frequency:\n\n\\[\\mathit{f}_{res} = \\mathit{f}_{fundamental} \\times √(\\frac{\\mathit{S}_{sc}}{\\mathit{Q}_{C}})\\]\n\nIf \\(\\mathit{f}_{res}\\) coincides with a harmonic frequency (e.g., \\(250 Hz\\) for the 5th harmonic), the impedance explodes, circulating massive harmonic currents that cause explosive capacitor rupture, transformer core saturation, and protection fuse blowouts. Modern PFC banks mitigate this by installing detuning reactors in series with capacitors."
+      }
+    ],
+    "learnings": [
+      "Phasor Current Mechanics: Direct experimental proof that AC branch currents cannot be added arithmetically, but must be resolved into real active and imaginary reactive orthogonal vectors.",
+      "Capacitive Compensation Mechanics: How shunt capacitors act as local reactive generators, supplying inductive magnetizing current locally at the load terminals and freeing the upstream utility lines from transporting reactive power.",
+      "Line Current Minimization: Experiencing firsthand the V-curve response of line current as capacitance is varied, reaching a minimum at unity power factor.",
+      "Wattmeter Interpretation: Recognizing that wattmeters measure only active power (\\(V I \\cos\\theta\\)), and learning to assess apparent VA to protect instruments from over-current destruction in low-power-factor circuits."
+    ]
+  }
+}

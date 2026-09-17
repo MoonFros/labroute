@@ -137,9 +137,117 @@
     "tags": [
       "#Solid State Electronics",
       "#BJT",
-      "#DC"
+      "#DC",
+      "#Semiconductors",
+      "#CircuitAnalysis"
     ],
     "file": "electrical/eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis.json",
+    "verified": true
+  },
+  {
+    "id": "eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response",
+    "code": "EEE 302",
+    "title": "The Bipolar Transistor Amplifier: Small-Signal Analysis & Frequency Response",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#BJT",
+      "#Amplifiers",
+      "#FrequencyResponse",
+      "#AnalogElectronics"
+    ],
+    "file": "electrical/eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response.json",
+    "verified": true
+  },
+  {
+    "id": "eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency",
+    "code": "EEE 303",
+    "title": "Amplitude Modulation (AM): Generation, Envelope Analysis & Power Efficiency",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AmplitudeModulation",
+      "#Communications",
+      "#SignalProcessing"
+    ],
+    "file": "electrical/eee-303-amplitude-modulation-generation-envelope-analysis-power-efficiency.json",
+    "verified": true
+  },
+  {
+    "id": "eee-304-frequency-modulation-vco-characterization-deviation-bandwidth-analysis",
+    "code": "EEE 304",
+    "title": "Frequency Modulation (FM): VCO Characterization, Deviation & Bandwidth Analysis",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FrequencyModulation",
+      "#Communications",
+      "#VCO"
+    ],
+    "file": "electrical/eee-304-frequency-modulation-vco-characterization-deviation-bandwidth-analysis.json",
+    "verified": true
+  },
+  {
+    "id": "eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis",
+    "code": "EEE 305",
+    "title": "Power Factor Correction: Reactive Power Mitigation & Phasor Analysis",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#PowerFactor",
+      "#ACCircuits",
+      "#PhasorAnalysis"
+    ],
+    "file": "electrical/eee-305-power-factor-correction-reactive-power-mitigation-phasor-analysis.json",
+    "verified": true
+  },
+  {
+    "id": "eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics",
+    "code": "EEE 306",
+    "title": "The Three-Phase Synchronous Motor: V-Curves, Power Factor Control & Load Dynamics",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#SynchronousMotor",
+      "#ThreePhase",
+      "#PowerFactor"
+    ],
+    "file": "electrical/eee-306-three-phase-synchronous-motor-v-curves-power-factor-control-load-dynamics.json",
+    "verified": true
+  },
+  {
+    "id": "eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance",
+    "code": "EEE 307",
+    "title": "The Three-Phase Induction Motor: Equivalent Circuit, Circle Diagram & Performance",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#InductionMotor",
+      "#ThreePhase",
+      "#CircleDiagram"
+    ],
+    "file": "electrical/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance.json",
+    "verified": true
+  },
+  {
+    "id": "eee-308-power-transformer-equivalent-circuit-efficiency-voltage-regulation",
+    "code": "EEE 308",
+    "title": "The Power Transformer: Equivalent Circuit, Efficiency & Voltage Regulation",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Transformer",
+      "#Efficiency",
+      "#VoltageRegulation"
+    ],
+    "file": "electrical/eee-308-power-transformer-equivalent-circuit-efficiency-voltage-regulation.json",
     "verified": true
   }
 ]

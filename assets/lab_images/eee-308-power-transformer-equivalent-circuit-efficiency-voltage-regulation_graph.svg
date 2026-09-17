@@ -1,0 +1,75 @@
+<svg class="svg-chart" viewbox="0 0 850 480" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <defs>
+                            <pattern id="grid308" width="50" height="35" patternunits="userSpaceOnUse">
+                                <path d="M 50 0 L 0 0 0 35" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect x="70" y="40" width="730" height="350" fill="url(#grid308)"/>
+
+                        
+                        <line x1="444" y1="40" x2="444" y2="390" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4"/>
+                        <text x="444" y="32" font-size="12" fill="#15803d" font-weight="800" text-anchor="middle">PEAK EFFICIENCY POINT: I_2 = 7.17 A (P_cu = P_core = 18.5 W)</text>
+
+                        
+                        <line x1="70" y1="40" x2="70" y2="390" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="70" y1="390" x2="800" y2="390" stroke="#1e293b" stroke-width="2"/>
+
+                        
+                        
+                        <text x="70" y="412" font-size="12" fill="#475569" text-anchor="middle">0.0 (NL)</text>
+                        <text x="174" y="412" font-size="12" fill="#475569" text-anchor="middle">2.0</text>
+                        <text x="279" y="412" font-size="12" fill="#475569" text-anchor="middle">4.0</text>
+                        <text x="383" y="412" font-size="12" fill="#475569" text-anchor="middle">6.0</text>
+                        <text x="444" y="412" font-size="12" fill="#15803d" font-weight="800" text-anchor="middle">7.17 (Max η)</text>
+                        <text x="487" y="412" font-size="12" fill="#475569" text-anchor="middle">8.0</text>
+                        <text x="591" y="412" font-size="12" fill="#475569" text-anchor="middle">10.0</text>
+                        <text x="639" y="412" font-size="12" fill="#b91c1c" font-weight="700" text-anchor="middle">10.91 (FL)</text>
+                        <text x="696" y="412" font-size="12" fill="#475569" text-anchor="middle">12.0</text>
+                        <text x="800" y="412" font-size="12" fill="#475569" text-anchor="middle">14.0</text>
+                        <text x="435" y="445" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle">Secondary Load Current, I_2 (Amperes)</text>
+
+                        
+                        
+                        <text x="60" y="394" font-size="12" fill="#475569" text-anchor="end">85.0%</text>
+                        <text x="60" y="347" font-size="12" fill="#475569" text-anchor="end">87.0%</text>
+                        <text x="60" y="301" font-size="12" fill="#475569" text-anchor="end">89.0%</text>
+                        <text x="60" y="254" font-size="12" fill="#475569" text-anchor="end">91.0%</text>
+                        <text x="60" y="207" font-size="12" fill="#475569" text-anchor="end">93.0%</text>
+                        <text x="60" y="161" font-size="12" fill="#475569" text-anchor="end">95.0%</text>
+                        <text x="60" y="114" font-size="12" fill="#475569" text-anchor="end">97.0%</text>
+                        <text x="60" y="44" font-size="12" fill="#475569" font-weight="700" text-anchor="end">100.0%</text>
+                        <text x="25" y="215" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle" transform="rotate(-90 25 215)">Transformer Efficiency, η (%)</text>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        <path d="M 70 390 Q 120 280, 212 194 T 354 148 Q 400 144, 444 145 Q 520 145, 639 153 T 781 166" fill="none" stroke="#2563eb" stroke-width="3.5"/>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        <path d="M 70 390 Q 120 310, 212 229 T 354 174 Q 400 169, 444 169 Q 520 170, 639 180 T 781 195" fill="none" stroke="#dc2626" stroke-width="3.5" stroke-dasharray="6,4"/>
+
+                        
+                        <circle cx="212" cy="194" r="5" fill="#1d4ed8"/>
+                        <circle cx="354" cy="148" r="5" fill="#1d4ed8"/>
+                        <circle cx="444" cy="145" r="8" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="639" cy="153" r="6" fill="#1d4ed8"/>
+
+                        
+                        <rect x="460" y="115" width="225" height="38" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+                        <text x="572" y="131" font-size="11" fill="#15803d" font-weight="800" text-anchor="middle">Maximum Efficiency: 95.52%</text>
+                        <text x="572" y="145" font-size="10" fill="#334155" text-anchor="middle">I_2 = 7.17 A, P_cu = P_core = 18.5 W</text>
+
+                        
+                        <rect x="655" y="170" width="135" height="34" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+                        <text x="722" y="185" font-size="10" fill="#1d4ed8" font-weight="700" text-anchor="middle">Full-Load η = 95.14%</text>
+                        <text x="722" y="197" font-size="9" fill="#475569" text-anchor="middle">I_2 = 10.91 A (1.2 kVA)</text>
+                    </svg>

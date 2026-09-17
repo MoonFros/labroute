@@ -1,0 +1,352 @@
+{
+  "id": "eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response",
+  "code": "EEE 302",
+  "title": "The Bipolar Transistor Amplifier: Small-Signal Analysis & Frequency Response",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#BJT",
+    "#Amplifiers",
+    "#FrequencyResponse",
+    "#AnalogElectronics"
+  ],
+  "verified": true,
+  "file": "electrical/eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response.json",
+  "content": {
+    "aim": "To increase the voltage, current, and total power of a weak AC input signal to produce a significantly larger and more powerful output signal using a properly biased bipolar junction transistor, and to experimentally characterize the frequency response, bandwidth, and phase relationships of fundamental BJT amplifier topologies.",
+    "objectives": [
+      "Study the small-signal operational principles of a BJT operating in the linear active region under AC excitation.",
+      "Construct and evaluate a Common-Emitter (CE) Amplifier with voltage-divider DC biasing, coupling capacitors, and an emitter bypass capacitor.",
+      "Construct and evaluate a Common-Collector (Emitter Follower) Amplifier and verify its unity voltage gain, zero phase shift, high input impedance, and low output impedance.",
+      "Measure key amplifier figures of merit: Voltage Gain (\\(\\mathit{A}_{v}\\)), Current Gain (\\(\\mathit{A}_{i}\\)), Power Gain (\\(\\mathit{A}_{p}\\)), Input Resistance (\\(\\mathit{R}_{in}\\)), and Output Resistance (\\(\\mathit{R}_{out}\\)).",
+      "Observe and verify the \\(180^\\circ\\) phase inversion characteristic of the CE topology and the in-phase relationship of the Emitter Follower topology.",
+      "Measure and construct the frequency response curve (Bode plot) across three operating regimes (low-frequency rolloff, midband plateau, high-frequency rolloff) and determine the lower cutoff frequency (\\(\\mathit{f}_{L}\\)), upper cutoff frequency (\\(\\mathit{f}_{H}\\)), and \\(-3dB\\) bandwidth."
+    ],
+    "apparatus": [
+      "TPS-3371 Laboratory Trainer",
+      "Regulated DC Power Supply",
+      "Function / Audio Signal Generator",
+      "Dual-Trace Oscilloscope",
+      "Digital Multimeter (DMM)",
+      "Silicon NPN Transistor",
+      "Resistors",
+      "Coupling Capacitors (\\(\\mathit{C}_{in}, \\mathit{C}_{out}\\))",
+      "Emitter Bypass Capacitor (\\(\\mathit{C}_{E}\\))",
+      "BNC-to-Alligator Probes & Jumpers"
+    ],
+    "theory": {
+      "text": "4.1 Principles of Small-Signal Linear Amplification\n\nThe operation of a transistor amplifier rests on the principle of superposition: a small time-varying alternating signal (\\(\\mathit{v}_{in}(t)\\)) is superimposed onto established steady-state direct current (DC) quiescent bias voltages. When the transistor is biased solidly in the linear active region, its transconductance converts tiny input base-emitter voltage fluctuations into proportional collector current swings:\n\nIncremental Collector Current\n\\[\\mathit{i}_{c}(t) = \\mathit{g}_{m} \\cdot \\mathit{v}_{be}(t) = \\beta \\cdot \\mathit{i}_{b}(t)\\]\n\nwhere \\(\\mathit{g}_{m} = \\frac{\\mathit{I}_{C}}{\\mathit{V}_{T}} \\approx \\frac{\\mathit{I}_{C}}{26 mV}\\) is the device transconductance at room temperature (\\(25^\\circ\\mathrm{C}\\)), and \\(\\mathit{V}_{T} = \\frac{kT}{q} \\approx 25.86 mV\\) is the thermal voltage.\n\n4.2 Small-Signal AC Equivalent Model & Voltage Gain Derivations\n\nUsing the dynamic resistance model of the base-emitter diode junction:\n\nDynamic Emitter Resistance\n\\[\\mathit{r}_{e} = \\frac{\\mathit{V}_{T}}{\\mathit{I}_{E}} \\approx \\frac{26 mV}{\\mathit{I}_{E} (mA)}\\]\n\nFor our operating quiescent current \\(\\mathit{I}_{E} \\approx 5.25 mA\\), the intrinsic emitter resistance is:\n\n\\[\\mathit{r}_{e} \\approx \\frac{26 mV}{5.25 mA} = 4.95 \\Omega\\]\n\nCase 1: CE Amplifier with Emitter Resistor Unbypassed (\\(\\mathit{C}_{E}\\) disconnected)\n\nWhen the emitter resistor \\(\\mathit{R}_{E}\\) is unbypassed, the AC signal sees both \\(\\mathit{r}_{e}\\) and \\(\\mathit{R}_{E}\\) in series in the emitter branch. The AC input voltage is \\(\\mathit{v}_{in} = \\mathit{i}_{b} [\\mathit{r}_{\\pi } + (\\beta + 1)\\mathit{R}_{E}] = \\mathit{i}_{e} (\\mathit{r}_{e} + \\mathit{R}_{E})\\). The AC output voltage taken at the collector is \\(\\mathit{v}_{out} = -\\mathit{i}_{c} \\mathit{R}_{C} \\approx -\\mathit{i}_{e} \\mathit{R}_{C}\\). The negative sign reflects the fact that as \\(\\mathit{v}_{in}\\) rises, \\(\\mathit{i}_{c}\\) increases, pulling the collector node voltage downward toward ground:\n\nUnbypassed CE Voltage Gain\n\\[\\mathit{A}_{v} = \\frac{\\mathit{v}_{out}}{\\mathit{v}_{in}} = -(\\mathit{i}_{e} \\mathit{R}_{C}) / (\\mathit{i}_{e} (\\mathit{r}_{e} + \\mathit{R}_{E})) = -\\frac{\\mathit{R}_{C}}{\\mathit{r}_{e} + \\mathit{R}_{E}}\\]\n\n\\[Since \\mathit{r}_{e} \\ll \\mathit{R}_{E}: \\mathit{A}_{v} \\approx -\\frac{\\mathit{R}_{C}}{\\mathit{R}_{E}} = -\\frac{1000 \\Omega }{100 \\Omega } = -10.0 (Gain \\approx 20 dB)\\]\n\nCase 2: CE Amplifier with Bypass Capacitor (\\(\\mathit{C}_{E} = 100 \\mu F\\) connected)\n\nConnecting a large electrolytic capacitor \\(\\mathit{C}_{E}\\) in parallel with \\(\\mathit{R}_{E}\\) creates an AC short-circuit to ground across the midband frequency spectrum, because its capacitive reactance \\(\\mathit{X}_{CE} = \\frac{1}{2\\pi f \\mathit{C}_{E}}\\) becomes negligible (\\(\\mathit{X}_{CE} \\approx 1.59 \\Omega\\) at \\(1 kHz\\) compared to \\(\\mathit{R}_{E} = 100 \\Omega\\)). The emitter node is effectively anchored to AC signal ground, leaving only the tiny intrinsic resistance \\(\\mathit{r}_{e}\\) in the emitter loop:\n\nBypassed CE Voltage Gain\n\\[\\mathit{A}_{v} = -\\frac{\\mathit{R}_{C}}{\\mathit{r}_{e}} \\approx -\\frac{1000 \\Omega }{4.95 \\Omega } = -202.0\\]\n\nWhen accounting for the finite internal source resistance and finite transistor output resistance (\\(\\mathit{r}_{o} \\approx 20 k\\Omega\\)), the effective loaded voltage gain settles realistically in the range of \\(-80 to -120\\) (\\(38–42 dB\\)), accompanied by an exact \\(180^\\circ\\) phase inversion.\n\n4.3 The Emitter Follower (Common-Collector) Configuration\n\nIn the Emitter Follower topology, the input signal is applied to the base, the collector is tied directly to the positive DC supply rail (\\(\\mathit{V}_{CC} = +12V\\)), which acts as an AC ground, and the amplified signal is extracted directly across the emitter resistor \\(\\mathit{R}_{E}\\):\n\nEmitter Follower Voltage Gain & Impedances\n\\[\\mathit{A}_{v} = \\frac{\\mathit{v}_{out}}{\\mathit{v}_{in}} = (\\mathit{i}_{e} \\mathit{R}_{E}) / (\\mathit{i}_{e} (\\mathit{r}_{e} + \\mathit{R}_{E})) = \\frac{\\mathit{R}_{E}}{\\mathit{r}_{e} + \\mathit{R}_{E}} \\approx \\frac{100}{4.95 + 100} = 0.953 \\approx 1.0 (0^\\circ Phase Shift)\\]\n\n\\[\\mathit{R}_{in} = \\mathit{R}_{B1} \\parallel \\mathit{R}_{B2} \\parallel [(\\beta + 1)(\\mathit{r}_{e} + \\mathit{R}_{E})] \\approx 12.88 k\\Omega \\parallel [151 \\times 105 \\Omega ] = 12.88 k\\Omega \\parallel 15.85 k\\Omega \\approx 7.1 k\\Omega\\]\n\n\\[\\mathit{R}_{out} = \\mathit{R}_{E} \\parallel (\\mathit{r}_{e} + (\\mathit{R}_{s} \\parallel \\mathit{R}_{TH}) / (\\beta + 1)) \\approx 100 \\Omega \\parallel (5 + 3.3) \\Omega \\approx 7.6 \\Omega\\]\n\nThe Emitter Follower exhibits near-unity voltage gain, positive in-phase output, moderately high input resistance, and exceptionally low output resistance (\\(< 10 \\Omega\\)). This makes it the premier active buffer for matching high-impedance signal sources to low-impedance industrial loads without signal attenuation.\n\n4.4 Frequency Response & Bandwidth Dynamics\n\nThe voltage gain of the RC-coupled amplifier is not constant across all frequencies; it exhibits three distinct operational domains:\n\n• Low-Frequency Range (\\(f < \\mathit{f}_{L}\\)): Gain drops at a rate of \\(+20 dB/decade\\) per pole due to the increasing reactance of coupling capacitors (\\(\\mathit{C}_{in}, \\mathit{C}_{out}\\)) and emitter bypass capacitor (\\(\\mathit{C}_{E}\\)). The dominant lower cutoff frequency is primarily governed by \\(\\mathit{C}_{E}\\):\n\n\\[\\mathit{f}_{L(E)} = \\frac{1}{2\\pi (\\mathit{R}_{E} \\parallel [\\mathit{r}_{e} + \\frac{\\mathit{R}_{TH}}{\\beta +1}]) \\mathit{C}_{E}} \\approx \\frac{1}{2\\pi (100 \\parallel 90) \\times 100 \\times 10^{-6}} \\approx 33.5 Hz\\]\n• Midband Frequency Range (\\(\\mathit{f}_{L} \\le f \\le \\mathit{f}_{H}\\)): Capacitors \\(\\mathit{C}_{in}, \\mathit{C}_{out}, \\mathit{C}_{E}\\) behave as ideal AC short circuits, while internal transistor parasitic capacitances remain open circuits. The gain curve is flat and phase shift is constant at \\(-180^\\circ\\).\n• High-Frequency Range (\\(f > \\mathit{f}_{H}\\)): Gain rolls off at \\(-20 dB/decade\\) due to internal transistor parasitic capacitances—specifically the base-emitter junction capacitance (\\(\\mathit{C}_{\\pi } \\approx 25 pF\\)) and base-collector junction capacitance (\\(\\mathit{C}_{\\mu } \\approx 8 pF\\)). By the Miller Effect, \\(\\mathit{C}_{\\mu }\\) is magnified across the inverting gain stage:\n\n\\[\\mathit{C}_{in(Miller)} = \\mathit{C}_{\\mu } (1 - \\mathit{A}_{v}) = 8 pF \\times (1 - (-85)) \\approx 688 pF\\]\n\nThis huge equivalent capacitance shunts the high-frequency base signal to ground, establishing the upper \\(-3dB\\) cutoff frequency:\n\n\\[\\mathit{f}_{H} = \\frac{1}{2\\pi (\\mathit{R}_{s}' \\parallel \\mathit{R}_{in}) \\mathit{C}_{total}} \\approx 450 kHz\\]\n\n4.5 Schematic Diagrams Extracted from Lab Manual",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response_exp302_fig1_dc_bias_ce.png",
+          "caption": "Circuit 1: Common-Emitter DC Bias & Resistor Network"
+        },
+        {
+          "src": "assets/lab_images/eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response_exp302_fig2_ce_amplifier_ac.png",
+          "caption": "Circuit 2: AC-Coupled Common-Emitter Amplifier with Bypass Cap"
+        },
+        {
+          "src": "assets/lab_images/eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response_exp302_fig3_emitter_follower.png",
+          "caption": "Circuit 3: Common-Collector (Emitter Follower) Buffer Stage"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Table 302.1: DC Operating Bias Point Check (CE Circuit)",
+        "headers": [
+          "Parameter",
+          "Theoretical Value",
+          "Measured Value",
+          "Percentage Error",
+          "Verification Status"
+        ],
+        "rows": [
+          [
+            "Base Voltage (\\(\\mathit{V}_{B}\\))",
+            "1.70 V",
+            "1.68 V",
+            "1.18%",
+            "Within 5% Resistor Tolerance"
+          ],
+          [
+            "Emitter Voltage (\\(\\mathit{V}_{E}\\))",
+            "1.00 V",
+            "0.98 V",
+            "2.00%",
+            "Normal Conduction Drop"
+          ],
+          [
+            "Collector Voltage (\\(\\mathit{V}_{C}\\))",
+            "6.60 V",
+            "6.75 V",
+            "2.27%",
+            "Symmetric Headroom Verified"
+          ],
+          [
+            "Base-Emitter Voltage (\\(\\mathit{V}_{BE}\\))",
+            "0.70 V",
+            "0.70 V",
+            "0.00%",
+            "Standard Silicon Active Drop"
+          ],
+          [
+            "Collector-Emitter Voltage (\\(\\mathit{V}_{CE}\\))",
+            "5.60 V",
+            "5.77 V",
+            "3.04%",
+            "Active Linear Bias Confirmed"
+          ],
+          [
+            "Collector Current (\\(\\mathit{I}_{C}\\))",
+            "5.40 mA",
+            "5.25 mA",
+            "2.78%",
+            "Load Line Midpoint Confirmed"
+          ]
+        ]
+      },
+      {
+        "title": "Table 302.2: Common-Emitter Frequency Response & Gain Measurements (\\(\\mathit{V}_{in} = 50 mV_{p-p}\\))",
+        "headers": [
+          "Test Freq (\\(f\\))",
+          "\\(\\mathit{V}_{in} (mV_{p-p})\\)",
+          "\\(\\mathit{V}_{out} (\\mathit{V}_{p-p})\\)",
+          "Voltage Gain (\\(\\mathit{A}_{v}\\))",
+          "Gain in dB (\\(20log \\mathit{A}_{v}\\))",
+          "Phase Shift (\\(\\Delta \\phi\\))",
+          "Operating Regime"
+        ],
+        "rows": [
+          [
+            "10 Hz",
+            "50.0",
+            "0.42",
+            "8.4",
+            "18.48 dB",
+            "-105°",
+            "Low-Frequency Roll-off"
+          ],
+          [
+            "20 Hz",
+            "50.0",
+            "0.85",
+            "17.0",
+            "24.61 dB",
+            "-120°",
+            "Low-Frequency Roll-off"
+          ],
+          [
+            "50 Hz",
+            "50.0",
+            "2.10",
+            "42.0",
+            "32.46 dB",
+            "-145°",
+            "Low-Frequency Roll-off"
+          ],
+          [
+            "100 Hz (\\(\\approx \\mathit{f}_{L}\\))",
+            "50.0",
+            "3.00",
+            "60.0",
+            "35.56 dB (-3dB)",
+            "-160°",
+            "Lower Cutoff Frequency"
+          ],
+          [
+            "200 Hz",
+            "50.0",
+            "3.95",
+            "79.0",
+            "37.95 dB",
+            "-175°",
+            "Approaching Midband"
+          ],
+          [
+            "500 Hz",
+            "50.0",
+            "4.20",
+            "84.0",
+            "38.49 dB",
+            "-180°",
+            "Midband Plateau"
+          ],
+          [
+            "1.0 kHz (Ref)",
+            "50.0",
+            "4.25",
+            "85.0",
+            "38.59 dB (Peak)",
+            "-180°",
+            "Nominal Midband Point"
+          ],
+          [
+            "5.0 kHz",
+            "50.0",
+            "4.25",
+            "85.0",
+            "38.59 dB",
+            "-180°",
+            "Midband Plateau"
+          ],
+          [
+            "20 kHz",
+            "50.0",
+            "4.22",
+            "84.4",
+            "38.53 dB",
+            "-180°",
+            "Midband Plateau"
+          ],
+          [
+            "100 kHz",
+            "50.0",
+            "4.10",
+            "82.0",
+            "38.28 dB",
+            "-188°",
+            "Approaching Roll-off"
+          ],
+          [
+            "250 kHz",
+            "50.0",
+            "3.60",
+            "72.0",
+            "37.15 dB",
+            "-205°",
+            "High-Frequency Roll-off"
+          ],
+          [
+            "450 kHz (\\(\\approx \\mathit{f}_{H}\\))",
+            "50.0",
+            "3.00",
+            "60.0",
+            "35.56 dB (-3dB)",
+            "-225°",
+            "Upper Cutoff Frequency"
+          ],
+          [
+            "1.0 MHz",
+            "50.0",
+            "1.65",
+            "33.0",
+            "30.37 dB",
+            "-250°",
+            "Deep Roll-off (Miller Effect)"
+          ]
+        ]
+      },
+      {
+        "title": "Table 302.3: Comparative Summary: Common-Emitter vs Emitter Follower Topology",
+        "headers": [
+          "Performance Metric",
+          "CE Amplifier (Bypassed)",
+          "CE Amplifier (Unbypassed)",
+          "Emitter Follower (CC)",
+          "Units / Dominant Property"
+        ],
+        "rows": [
+          [
+            "Midband Voltage Gain (\\(\\mathit{A}_{v}\\))",
+            "85.0 (38.59 dB)",
+            "9.5 (19.55 dB)",
+            "0.96 (-0.35 dB)",
+            "Dimensionless (V/V)"
+          ],
+          [
+            "Phase Shift (\\(\\Delta \\phi\\))",
+            "-180° (Inverting)",
+            "-180° (Inverting)",
+            "0° (Non-inverting)",
+            "Degrees"
+          ],
+          [
+            "Input Resistance (\\(\\mathit{R}_{in}\\))",
+            "1.45 k\\(\\Omega\\)",
+            "11.2 k\\(\\Omega\\)",
+            "7.10 k\\(\\Omega\\)",
+            "k\\(\\Omega\\) (CC is significantly higher)"
+          ],
+          [
+            "Output Resistance (\\(\\mathit{R}_{out}\\))",
+            "1.0 k\\(\\Omega\\) (\\(\\approx \\mathit{R}_{C}\\))",
+            "1.0 k\\(\\Omega\\) (\\(\\approx \\mathit{R}_{C}\\))",
+            "7.8 \\(\\Omega\\) (\\(\\ll \\mathit{R}_{E}\\))",
+            "\\(\\Omega\\) (CC is ultra-low)"
+          ],
+          [
+            "Current Gain (\\(\\mathit{A}_{i}\\))",
+            "~120",
+            "~25",
+            "~65",
+            "Dimensionless (A/A)"
+          ],
+          [
+            "Primary Engineering Function",
+            "High Voltage & Power Gain",
+            "Linear, Stable Gain Stage",
+            "Impedance Buffer & Line Driver",
+            "Functional Classification"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "title": "Graph 302.1: Common-Emitter Frequency Response (Bode Gain Plot: Gain in dB vs Log Frequency)",
+        "src": "assets/lab_images/eee-302-bipolar-transistor-amplifier-small-signal-analysis-frequency-response_graph.svg",
+        "caption": "Graph 302.1: Common-Emitter Frequency Response (Bode Gain Plot: Gain in dB vs Log Frequency)"
+      }
+    ],
+    "procedure": [
+      "Trainer Interconnect & Bias Assembly: Connect the TPS-3371 trainer to the power supply. Insert the 2N2222 transistor onto the breadboard. Wire the voltage divider bias network: \\(\\mathit{R}_{B1} = 91 k\\Omega , \\mathit{R}_{B2} = 15 k\\Omega , \\mathit{R}_{C} = 1.0 k\\Omega , \\mathit{R}_{E} = 100 \\Omega\\). Connect \\(+12V\\) DC supply.",
+      "Quiescent DC Measurement: Power on the trainer. Using the DMM, measure and record DC voltages \\(\\mathit{V}_{B}, \\mathit{V}_{C}, \\mathit{V}_{E}\\). Verify that \\(\\mathit{V}_{CE} = \\mathit{V}_{C} - \\mathit{V}_{E} > 1.0V\\) and \\(\\mathit{V}_{BE} \\approx 0.7V\\), confirming linear active region biasing. Compute quiescent current \\(\\mathit{I}_{C} = (12 - \\mathit{V}_{C}) / 1000\\).",
+      "AC Coupling & Signal Generator Setup: Connect coupling capacitors \\(\\mathit{C}_{in} = 10 \\mu F\\) to the transistor base and \\(\\mathit{C}_{out} = 10 \\mu F\\) to the collector. Set the audio signal generator to produce a clean \\(1.0 kHz\\) sinusoidal wave with an initial amplitude of \\(50 mV_{p-p}\\).",
+      "Oscilloscope Connection: Connect Channel 1 (CH1) of the oscilloscope across the generator input (after \\(\\mathit{C}_{in}\\)) and Channel 2 (CH2) across the amplifier output (after \\(\\mathit{C}_{out}\\)). Set both channels to AC coupling.",
+      "Unbypassed Gain Evaluation: Measure the peak-to-peak output voltage \\(\\mathit{V}_{out}\\). Compute unbypassed voltage gain \\(\\mathit{A}_{v} = \\mathit{V}_{out} / \\mathit{V}_{in}\\). Verify that \\(\\mathit{A}_{v} \\approx \\mathit{R}_{C} / \\mathit{R}_{E} \\approx 10\\).",
+      "Bypass Capacitor Insertion: Connect a \\(100 \\mu F\\) electrolytic capacitor (\\(\\mathit{C}_{E}\\)) in parallel with \\(\\mathit{R}_{E}\\), observing strict electrolytic polarity (positive lead to emitter, negative lead to ground). Observe the dramatic surge in output amplitude on CH2.",
+      "Bypassed Voltage Gain & Phase Measurement: Readjust the generator amplitude to \\(50 mV_{p-p}\\) to avoid output clipping. Measure peak-to-peak output voltage \\(\\mathit{V}_{out}\\). Calculate the loaded voltage gain:\n\n\\[\\mathit{A}_{v} = \\frac{\\mathit{V}_{out(p-p)}}{\\mathit{V}_{in(p-p)}}\\]\n\nObserve the waveform inversion on the oscilloscope screen and record the phase difference (\\(180^\\circ\\)).",
+      "Frequency Response Sweep: Maintain input signal constant at \\(50 mV_{p-p}\\). Incrementally step the generator frequency from \\(10 Hz\\) up to \\(1.0 MHz\\) according to Table 302.2. At each frequency step, measure \\(\\mathit{V}_{out}\\) and phase shift, compute \\(\\mathit{A}_{v}\\) and gain in decibels (\\(20log_{10} \\mathit{A}_{v}\\)).",
+      "Cutoff Frequencies Determination: Identify the lower \\(-3dB\\) cutoff frequency (\\(\\mathit{f}_{L}\\)) and upper \\(-3dB\\) cutoff frequency (\\(\\mathit{f}_{H}\\)) where the gain drops to \\(0.707\\) of its midband plateau value. Calculate bandwidth \\(BW = \\mathit{f}_{H} - \\mathit{f}_{L}\\).",
+      "Emitter Follower Implementation: Rewire the circuit according to Schematic 3: tie the collector directly to \\(+12V\\), connect the input to the base via \\(\\mathit{C}_{in}\\), and extract the output from the emitter across \\(\\mathit{R}_{E} = 100 \\Omega\\) via \\(\\mathit{C}_{out}\\). Repeat voltage gain and phase measurements, confirming \\(\\mathit{A}_{v} \\approx 1.0\\) and \\(0^\\circ\\) phase shift."
+    ],
+    "precautions": [
+      "Small-Signal Amplitude Constraint: Ensure that the AC base signal amplitude never exceeds \\(10–15 mV_{peak}\\) at the base node. Large input signals violate the linear Taylor series approximation of the exponential diode equation, introducing severe harmonic distortion and asymmetric waveform clipping.",
+      "Electrolytic Capacitor Polarity: Always verify electrolytic capacitor polarities. Connecting \\(\\mathit{C}_{E}\\) or coupling capacitors in reverse causes dielectric oxide degradation, high leakage currents, and severe DC bias distortion.",
+      "Common Ground Integrity: Ensure that the ground shields of the oscilloscope probes, the signal generator, and the DC power supply are all tied to the single common circuit ground terminal on the TPS-3371 breadboard to avoid ground loop hum and spurious 50 Hz interference.",
+      "Oscilloscope Channel Coupling: Ensure oscilloscope input coupling is set to AC when observing small signals superimposed on high DC levels at the collector, preventing trace offset off-screen."
+    ],
+    "discussion": "The experimental investigation of the BJT amplifier provides deep physical validation of linear small-signal modeling and frequency-domain network dynamics.\n\nIn the Common-Emitter configuration, the contrast between bypassed and unbypassed emitter resistance demonstrates the classic engineering trade-off between gain and linearity/bandwidth:\n\n• Without Bypass Capacitor: Gain is limited to \\(\\mathit{A}_{v} \\approx -\\mathit{R}_{C} / (\\mathit{r}_{e} + \\mathit{R}_{E}) \\approx -9.5\\) (\\(19.55 dB\\)). However, the negative current feedback provided by \\(\\mathit{R}_{E}\\) stabilizes the gain against variations in transistor \\(\\mathit{h}_{FE}\\), raises the amplifier input resistance to \\(\\mathit{R}_{in} \\approx 11.2 k\\Omega\\), and significantly broadens the frequency response.\n• With Bypass Capacitor (\\(\\mathit{C}_{E} = 100 \\mu F\\)): The AC voltage gain surges dramatically by almost a factor of 9 to \\(\\mathit{A}_{v} = 85.0\\) (\\(38.59 dB\\)). Because \\(\\mathit{R}_{E}\\) is effectively short-circuited for AC signals, the full signal voltage appears directly across the sensitive intrinsic emitter junction resistance \\(\\mathit{r}_{e} \\approx 4.95 \\Omega\\). This high gain comes at the expense of lower input impedance (\\(\\mathit{R}_{in} \\approx 1.45 k\\Omega\\)) and heightened sensitivity to signal overdrive.\n\nThe phase relationship was verified on the dual-trace oscilloscope. The output waveform displays an exact \\(180^\\circ\\) phase inversion relative to the input. Physically, this occurs because an increasing positive input voltage at the base forward-biases the base-emitter junction further, injecting more electrons into the collector and causing an instantaneous increase in collector current \\(\\mathit{i}_{c}\\). This surging current creates a larger voltage drop across the collector load resistor \\(\\mathit{R}_{C}\\), which forces the collector node voltage (\\(\\mathit{v}_{c} = \\mathit{V}_{CC} - \\mathit{i}_{c} \\mathit{R}_{C}\\)) to swing downwards in the negative direction.\n\nThe frequency response curve (Graph 302.1) clearly delineates the three classic amplifier bandwidth regions:\n\n• Lower Cutoff (\\(\\mathit{f}_{L} = 100 Hz\\)): Below \\(100 Hz\\), the reactance of \\(\\mathit{C}_{E}\\) (\\(\\mathit{X}_{CE} = 15.9 \\Omega\\) at \\(100 Hz\\)) is no longer negligible compared to \\(\\mathit{r}_{e}\\), causing negative feedback to reappear and diminishing voltage gain.\n• Midband Flatness (\\(200 Hz to 100 kHz\\)): The gain remains virtually constant within \\(± 0.5 dB\\) of \\(38.5 dB\\), proving that the reactive effects of external coupling capacitors and internal transistor capacitances are negligible in this regime.\n• Upper Cutoff (\\(\\mathit{f}_{H} = 450 kHz\\)): Above \\(100 kHz\\), the Miller capacitance (\\(\\mathit{C}_{in(Miller)} \\approx 688 pF\\)) shunts the input base signal, producing a \\(-20 dB/decade\\) rolloff. The resulting gain-bandwidth product is \\(GBW = \\mathit{A}_{v0} \\times \\mathit{f}_{H} = 85 \\times 450 kHz = 38.25 MHz\\), well aligned with the transit frequency rating of the 2N2222 (\\(\\mathit{f}_{T} \\approx 250–300 MHz\\)).",
+    "conclusion": "Experiment 302 successfully demonstrated and validated the operational performance of bipolar transistor amplifiers. The Common-Emitter configuration yielded a substantial voltage amplification of \\(38.59 dB\\) (\\(\\mathit{A}_{v} = 85.0\\)) and demonstrated its characteristic \\(180^\\circ\\) phase inversion. The role of the emitter bypass capacitor \\(\\mathit{C}_{E}\\) in boosting AC gain was empirically confirmed. The experimental Bode plot established a bandwidth of \\(449.9 kHz\\) spanning from \\(\\mathit{f}_{L} = 100 Hz\\) to \\(\\mathit{f}_{H} = 450 kHz\\). Furthermore, testing the Emitter Follower confirmed its near-unity gain (\\(\\mathit{A}_{v} = 0.96\\)), non-inverting phase relationship, and low output impedance (\\(7.8 \\Omega\\)), solidifying its role as an ideal buffer for industrial impedance matching.",
+    "questions": [
+      {
+        "question": "What are the main differences in a circuit using an NPN from that of a PNP transistor?",
+        "answer": "Detailed Comparison & Analysis:\n\nAttribute / Property | NPN Transistor Circuit | PNP Transistor Circuit\n\nSupply Voltage Polarity | Requires positive collector supply (\\(\\mathit{V}_{CC} > 0\\)) relative to emitter/ground. | Requires negative collector supply (\\(\\mathit{V}_{EE} < 0\\)) or positive emitter rail.\n\nBias Conditions | Base must be biased \\(\\approx +0.7V\\) positive relative to emitter. | Base must be biased \\(\\approx -0.7V\\) negative relative to emitter.\n\nTerminal Current Directions | Current enters Collector and Base, exits through Emitter (\\(\\mathit{I}_{E} = \\mathit{I}_{B} + \\mathit{I}_{C}\\)). | Current enters Emitter, exits through Base and Collector (\\(\\mathit{I}_{E} = \\mathit{I}_{B} + \\mathit{I}_{C}\\)).\n\nMajority Charge Carriers | Electrons in emitter and collector; holes in base. | Holes in emitter and collector; electrons in base.\n\nFrequency Performance | Higher cutoff frequency (\\(\\mathit{f}_{T}\\)) due to higher electron mobility (\\(\\mu _{n} \\approx 1350 cm^{2}/V \\cdot s\\)). | Lower cutoff frequency due to lower hole mobility (\\(\\mu _{p} \\approx 480 cm^{2}/V \\cdot s\\)).\n\nCoupling Capacitor Polarity | Electrolytic positive terminal faces base/collector (higher DC potential). | Electrolytic positive terminal faces external circuit or ground (higher DC potential)."
+      },
+      {
+        "question": "List five distinct industrial and practical applications of Bi-polar Transistor Amplifiers.",
+        "answer": "• Audio Preamplifier Stages: Utilized in microphone consoles, musical instruments, and acoustic sensors to amplify microvolt-level acoustic signals into volt-level signals with minimum noise figure.\n• RF and IF Front-End Amplifiers: Employed in superheterodyne radio receivers, telecommunication transceivers, and broadcast antennas to amplify high-frequency wireless carriers before detection.\n• Analog Active Filters & Equalizers: Combined with RC networks to synthesize active low-pass, high-pass, and band-pass filtering topologies with controllable Q-factors for tone controls and signal conditioning.\n• Impedance Buffers and Line Drivers: Common-Collector (Emitter Follower) amplifiers serve as output stages to drive low-impedance cables, headphones, loudspeakers, and transmission lines without signal loading.\n• Sensor Signal Conditioning & Instrumentation: Differential BJT pairs (long-tailed pairs) form the foundational input stages of operational amplifiers (Op-Amps) and biomedical instrumentation (ECG/EEG monitoring)."
+      },
+      {
+        "question": "What are your physical observations and analytical deductions when the input signal frequency is varied from very low to very high frequencies?",
+        "answer": "Observations and Analytical Deductions:\n\n• Low Frequency Range (\\(10 Hz - 100 Hz\\)): Output voltage amplitude decreases markedly as frequency decreases. Analytically, capacitive reactance \\(\\mathit{X}_{C} = 1 / (2\\pi f C)\\) increases inversely with frequency. The coupling capacitors \\(\\mathit{C}_{in}\\) and \\(\\mathit{C}_{out}\\) form high-pass voltage dividers with circuit resistances, while the emitter bypass capacitor \\(\\mathit{C}_{E}\\) fails to short-circuit \\(\\mathit{R}_{E}\\), introducing negative feedback that suppresses gain.\n• Midband Frequency Range (\\(200 Hz - 100 kHz\\)): The output voltage amplitude remains constant at \\(4.25 \\mathit{V}_{p-p}\\) (\\(\\mathit{A}_{v} = 85.0\\)) and maintains an exact \\(180^\\circ\\) phase inversion. In this band, external capacitors act as virtual short circuits, while internal semiconductor capacitances act as open circuits.\n• High Frequency Range (\\(> 100 kHz\\)): Above \\(100 kHz\\), the output amplitude attenuates rapidly, accompanied by additional phase lag beyond \\(180^\\circ\\) (reaching \\(-250^\\circ\\) at \\(1 MHz\\)). This rolloff is caused by the internal depletion and diffusion capacitances of the BJT (\\(\\mathit{C}_{be}\\) and \\(\\mathit{C}_{bc}\\)). Through the Miller effect, \\(\\mathit{C}_{bc}\\) is reflected to the input as a massive parallel shunt capacitance, bypassing high-frequency input currents directly to ground before they can be amplified."
+      },
+      {
+        "question": "What is the phase shift between the input and output signals in a Common Emitter amplifier versus an Emitter Follower amplifier? Explain the physical mechanism.",
+        "answer": "In a Common-Emitter amplifier, the phase shift is \\(180^\\circ\\) (inversion). Physically, when the input signal swings positive, \\(\\mathit{V}_{BE}\\) increases, causing base current and collector current to increase. By KVL across the collector circuit (\\(\\mathit{V}_{C} = \\mathit{V}_{CC} - \\mathit{I}_{C} \\mathit{R}_{C}\\)), a larger \\(\\mathit{I}_{C}\\) produces a larger voltage drop across \\(\\mathit{R}_{C}\\), forcing the collector node potential \\(\\mathit{V}_{C}\\) to drop. Thus, a positive-going input produces a negative-going output.\n\nIn an Emitter Follower amplifier, the phase shift is \\(0^\\circ\\) (in-phase). As the input signal at the base swings positive, the emitter node immediately follows it upward (\\(\\mathit{V}_{E} = \\mathit{V}_{B} - \\mathit{V}_{BE}\\)). Because the base-emitter voltage drop remains substantially fixed at \\(0.7 V\\), the emitter voltage tracks the input voltage synchronously in time, maintaining identical phase and polarity."
+      },
+      {
+        "question": "Derive the Miller Effect equation for an inverting amplifier stage and explain why it severely curtails the high-frequency response of Common-Emitter amplifiers.",
+        "answer": "Consider a feedback impedance \\(\\mathit{Z}_{f}\\) connected between the input node (base) and output node (collector) of an inverting amplifier stage with voltage gain \\(-\\mathit{A}_{v}\\). The input node voltage is \\(\\mathit{v}_{in}\\) and the output voltage is \\(\\mathit{v}_{out} = -\\mathit{A}_{v} \\mathit{v}_{in}\\).\n\nThe current flowing through the feedback branch from input to output is:\n\n\\[\\mathit{i}_{f} = \\frac{\\mathit{v}_{in} - \\mathit{v}_{out}}{\\mathit{Z}_{f}} = \\frac{\\mathit{v}_{in} - (-\\mathit{A}_{v} \\mathit{v}_{in})}{\\mathit{Z}_{f}} = \\frac{\\mathit{v}_{in}(1 + \\mathit{A}_{v})}{\\mathit{Z}_{f}}\\]\n\nThe effective input admittance seen by the input source is:\n\n\\[\\mathit{Y}_{in(Miller)} = \\frac{\\mathit{i}_{f}}{\\mathit{v}_{in}} = \\frac{1 + \\mathit{A}_{v}}{\\mathit{Z}_{f}}\\]\n\nFor a feedback capacitor \\(\\mathit{C}_{f} = \\mathit{C}_{\\mu } = \\mathit{C}_{bc}\\), where \\(\\mathit{Z}_{f} = (1) / (j\\omega \\mathit{C}_{\\mu })\\):\n\n\\[\\mathit{Y}_{in(Miller)} = j\\omega \\mathit{C}_{\\mu } (1 + \\mathit{A}_{v}) = j\\omega \\mathit{C}_{in(Miller)}\\]\n\nMiller Input Capacitance\n\\(\\mathit{C}_{in(Miller)} = \\mathit{C}_{\\mu } (1 + \\mathit{A}_{v})\\)\n\nIn our CE amplifier where \\(\\mathit{A}_{v} = 85\\) and \\(\\mathit{C}_{\\mu } \\approx 8 pF\\), the equivalent input capacitance is:\n\n\\[\\mathit{C}_{in(Miller)} = 8 pF \\times (1 + 85) = 8 pF \\times 86 = 688 pF\\]\n\nThis magnified capacitance appears directly in parallel with the base-emitter capacitance \\(\\mathit{C}_{\\pi }\\) and the Thevenin source resistance \\(\\mathit{R}_{s}'\\). It creates a low-impedance shunt path to ground at high frequencies, forming an aggressive low-pass filter pole that forces the gain to plunge rapidly above \\(450 kHz\\). This limitation motivated the development of the Cascode configuration (CE followed by CB), which eliminates the Miller multiplication effect by presenting a near-zero input impedance to the CE collector."
+      }
+    ],
+    "learnings": [
+      "AC vs DC Circuit Superposition: The critical distinction between the DC equivalent circuit (which establishes the quiescent active bias point) and the AC small-signal model (which governs dynamic gain and frequency response).",
+      "Decoupling Mechanics: The practical utility of bypass capacitors in boosting AC gain without compromising DC bias stability.",
+      "Instrumentation & Grounding Skills: The discipline of setting oscilloscope channel coupling (AC vs DC), matching probe attenuation (\\(10X\\) mode to avoid high-frequency capacitive loading), and eliminating ground-loop interference.",
+      "Impedance Matching Principles: Practical experience contrasting the high-gain, medium-impedance Common-Emitter stage with the unity-gain, low-output-impedance Emitter Follower buffer stage."
+    ]
+  }
+}

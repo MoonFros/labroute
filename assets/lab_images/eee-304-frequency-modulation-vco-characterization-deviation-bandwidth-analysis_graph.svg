@@ -1,0 +1,73 @@
+<svg class="svg-chart" viewbox="0 0 850 480" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <defs>
+                            <pattern id="grid304" width="60" height="35" patternunits="userSpaceOnUse">
+                                <path d="M 60 0 L 0 0 0 35" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect x="70" y="40" width="730" height="350" fill="url(#grid304)"/>
+
+                        
+                        <line x1="70" y1="215" x2="800" y2="215" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+                        
+                        <line x1="435" y1="40" x2="435" y2="390" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+                        
+                        <line x1="70" y1="40" x2="70" y2="390" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="70" y1="390" x2="800" y2="390" stroke="#1e293b" stroke-width="2"/>
+
+                        
+                        
+                        <text x="70" y="412" font-size="12" fill="#475569" text-anchor="middle">-5.0</text>
+                        <text x="143" y="412" font-size="12" fill="#475569" text-anchor="middle">-4.0</text>
+                        <text x="216" y="412" font-size="12" fill="#475569" text-anchor="middle">-3.0</text>
+                        <text x="289" y="412" font-size="12" fill="#475569" text-anchor="middle">-2.0</text>
+                        <text x="362" y="412" font-size="12" fill="#475569" text-anchor="middle">-1.0</text>
+                        <text x="435" y="412" font-size="12" fill="#475569" font-weight="700" text-anchor="middle">0.0</text>
+                        <text x="508" y="412" font-size="12" fill="#475569" text-anchor="middle">+1.0</text>
+                        <text x="581" y="412" font-size="12" fill="#475569" text-anchor="middle">+2.0</text>
+                        <text x="654" y="412" font-size="12" fill="#475569" text-anchor="middle">+3.0</text>
+                        <text x="727" y="412" font-size="12" fill="#475569" text-anchor="middle">+4.0</text>
+                        <text x="800" y="412" font-size="12" fill="#475569" text-anchor="middle">+5.0</text>
+                        <text x="435" y="445" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle">VCO DC Control Voltage, V_i (Volts)</text>
+
+                        
+                        
+                        <text x="60" y="394" font-size="12" fill="#475569" text-anchor="end">300 kHz</text>
+                        <text x="60" y="336" font-size="12" fill="#475569" text-anchor="end">350 kHz</text>
+                        <text x="60" y="278" font-size="12" fill="#475569" text-anchor="end">400 kHz</text>
+                        <text x="60" y="219" font-size="12" fill="#475569" font-weight="700" text-anchor="end">450 kHz</text>
+                        <text x="60" y="161" font-size="12" fill="#475569" text-anchor="end">500 kHz</text>
+                        <text x="60" y="103" font-size="12" fill="#475569" text-anchor="end">550 kHz</text>
+                        <text x="60" y="45" font-size="12" fill="#475569" text-anchor="end">600 kHz</text>
+                        <text x="25" y="215" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle" transform="rotate(-90 25 215)">VCO Output Frequency, f_out (kHz)</text>
+
+                        
+                        
+                        
+                        <line x1="70" y1="357" x2="800" y2="62" stroke="#2563eb" stroke-width="3.5"/>
+
+                        
+                        <circle cx="70" cy="357" r="5" fill="#1d4ed8"/>
+                        <circle cx="143" cy="327" r="5" fill="#1d4ed8"/>
+                        <circle cx="216" cy="297" r="5" fill="#1d4ed8"/>
+                        <circle cx="289" cy="268" r="5" fill="#1d4ed8"/>
+                        <circle cx="362" cy="238" r="5" fill="#1d4ed8"/>
+                        <circle cx="435" cy="209" r="7" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="508" cy="180" r="5" fill="#1d4ed8"/>
+                        <circle cx="581" cy="150" r="5" fill="#1d4ed8"/>
+                        <circle cx="654" cy="121" r="5" fill="#1d4ed8"/>
+                        <circle cx="727" cy="91" r="5" fill="#1d4ed8"/>
+                        <circle cx="800" cy="62" r="5" fill="#1d4ed8"/>
+
+                        
+                        <rect x="450" y="190" width="210" height="38" rx="4" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+                        <text x="460" y="206" font-size="11" fill="#b91c1c" font-weight="800">Resting Carrier Point:</text>
+                        <text x="460" y="220" font-size="10" fill="#334155">V_i = 0.0 V,  f_c = 455.0 kHz</text>
+
+                        
+                        <rect x="120" y="90" width="220" height="42" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                        <text x="230" y="108" font-size="12" fill="#1e40af" font-weight="800" text-anchor="middle">Slope K_f = 25.21 kHz/V</text>
+                        <text x="230" y="122" font-size="10" fill="#475569" text-anchor="middle">Linearity R² = 0.9998 (Highly Linear)</text>
+                    </svg>

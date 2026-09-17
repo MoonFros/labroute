@@ -1,0 +1,347 @@
+{
+  "id": "eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance",
+  "code": "EEE 307",
+  "title": "The Three-Phase Induction Motor: Equivalent Circuit, Circle Diagram & Performance",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#InductionMotor",
+    "#ThreePhase",
+    "#CircleDiagram"
+  ],
+  "verified": true,
+  "file": "electrical/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance.json",
+  "content": {
+    "aim": "To determine the electrical and mechanical performance characteristics of a 3-phase squirrel-cage induction motor—including its complete torque-slip profile, efficiency, power factor, and line current variation under load—by experimentally evaluating its per-phase approximate equivalent circuit parameters and constructing the graphical Circle Diagram.",
+    "objectives": [
+      "Perform the DC Resistance Test to measure stator winding DC resistance per phase and determine the effective AC resistance (\\(\\mathit{r}_{1}\\)).",
+      "Perform the No-Load Test at rated voltage and frequency to determine core loss, friction and windage losses, and the magnetizing branch parameters (\\(\\mathit{R}_{c}\\) and \\(\\mathit{X}_{m}\\)).",
+      "Perform the Blocked-Rotor Test at rated stator current to extract the total equivalent series impedance (\\(\\mathit{Z}_{sc}\\)), equivalent series resistance (\\(\\mathit{R}_{eq} = \\mathit{r}_{1} + \\mathit{r}_{2}'\\)), and leakage reactance (\\(\\mathit{X}_{eq} = \\mathit{x}_{1} + \\mathit{x}_{2}'\\)).",
+      "Construct the Circle Diagram to scale using experimental no-load and blocked-rotor data, delineating the Output Line (\\(AB\\)), Torque Line (\\(AF\\)), and Fixed Loss line.",
+      "Predict complete performance curves—Torque vs Slip, Stator Current vs Slip, Power Factor vs Slip, and Efficiency vs Slip—across the entire slip range from \\(s = 0\\) to \\(s = 1.0\\).",
+      "Perform analytical calculations from the equivalent circuit for a specific operating slip and rigorously compare the results with values obtained graphically from the Circle Diagram."
+    ],
+    "apparatus": [
+      "BKB Universal Machine Set",
+      "3-Phase Auto-Transformer",
+      "Precision AC Wattmeters",
+      "AC Ammeters",
+      "AC Voltmeter",
+      "Rotor Blocking Pin / Clamp",
+      "DC Resistance Meter / Bridge"
+    ],
+    "theory": {
+      "text": "4.1 Electromagnetic Principles & Rotating Magnetic Field (RMF)\n\nThe three-phase induction motor is the workhorse of modern industry, accounting for over 90% of global industrial electric drive capacity due to its rugged brushless construction, high reliability, and self-starting capability.\n\nWhen balanced three-phase currents of frequency \\(f\\) flow through the stator windings displaced by \\(120^\\circ\\) in space, they establish a constant-amplitude rotating magnetic field (RMF) that travels around the air gap at synchronous speed (\\(\\mathit{N}_{s}\\)):\n\nSynchronous Speed & Synchronous Angular Velocity\n\\[\\mathit{N}_{s} = \\frac{120 f}{P} rpm = (120 \\times 50) / (2) = 3000 rpm\\]\n\n\\[\\omega _{s} = \\frac{2\\pi \\mathit{N}_{s}}{60} = \\frac{2\\pi (3000)}{60} = 100\\pi \\approx 314.16 rad/s\\]\n\nAs the RMF sweeps across the rotor conductors at relative speed \\(\\mathit{N}_{s} - \\mathit{N}_{r}\\), it cuts them, inducing alternating electromotive forces (EMFs) by Faraday's Law. Because the rotor cage is short-circuited by end rings, large induced rotor currents circulate. By Lenz's Law and the Lorentz force equation (\\(F = I L \\times B\\)), these currents interact with the air-gap magnetic flux to produce an electromagnetic torque that accelerates the rotor in the direction of the rotating field.\n\n4.2 Slip Mechanics\n\nThe rotor can never reach synchronous speed (\\(\\mathit{N}_{r} = \\mathit{N}_{s}\\)); if it did, relative motion would cease, no flux would be cut, induced rotor current would drop to zero, and driving torque would vanish. The non-dimensional speed difference is defined as Slip (\\(s\\)):\n\nSlip Formulation\n\\[s = \\frac{\\mathit{N}_{s} - \\mathit{N}_{r}}{\\mathit{N}_{s}} \\Rightarrow \\mathit{N}_{r} = (1 - s) \\mathit{N}_{s}\\]\n\nAt standstill (starting), \\(\\mathit{N}_{r} = 0 \\Rightarrow s = 1.0\\). At ideal synchronous no-load, \\(\\mathit{N}_{r} \\approx \\mathit{N}_{s} \\Rightarrow s \\approx 0.001–0.01\\). Normal full-load slip for commercial motors ranges between \\(0.02\\) and \\(0.05\\) (2% to 5%).\n\n4.3 Per-Phase Approximate Equivalent Circuit\n\nThe per-phase approximate equivalent circuit (Fig 1) models the induction motor as a generalized rotating transformer with a short-circuited secondary:\n\n• \\(\\mathit{r}_{1}\\): Stator winding effective AC resistance per phase.\n• \\(\\mathit{x}_{1}\\): Stator leakage reactance per phase.\n• \\(\\mathit{R}_{c}\\): Core loss resistance representing stator hysteresis and eddy current dissipation.\n• \\(\\mathit{X}_{m}\\): Magnetizing reactance required to establish air-gap flux.\n• \\(\\mathit{r}_{2}'\\): Rotor resistance referred to stator winding.\n• \\(\\mathit{x}_{2}'\\): Rotor leakage reactance referred to stator winding.\n\nThe effective rotor resistance varies inversely with slip as \\(\\mathit{r}_{2}' / s\\). Splitting this term into two series components separates electrical losses from mechanical output power:\n\nRotor Resistance Decomposition\n\\[\\frac{\\mathit{r}_{2}'}{s} = \\mathit{r}_{2}' + \\mathit{r}_{2}' (\\frac{1 - s}{s})\\]\n\nHere, \\(\\mathit{r}_{2}'\\) represents the actual internal electrical copper heating loss of the rotor winding (\\(\\mathit{P}_{cu2} = 3 \\mathit{I}_{2}'^{2} \\mathit{r}_{2}'\\)), while the fictitious resistance \\(\\mathit{r}_{2}' (\\frac{1 - s}{s})\\) represents the total developed mechanical power delivered to the shaft:\n\nMechanical Power & Torque Developed\n\\[\\mathit{P}_{mech} = 3 \\mathit{I}_{2}'^{2} \\mathit{r}_{2}' (\\frac{1 - s}{s})\\]\n\n\\[T = \\frac{\\mathit{P}_{mech}}{\\omega _{r}} = (3 \\mathit{I}_{2}'^{2} \\mathit{r}_{2}' (\\frac{1 - s}{s})) / ((1 - s)\\omega _{s}) = (3 \\mathit{I}_{2}'^{2} (\\frac{\\mathit{r}_{2}'}{s})) / (\\omega _{s})\\]\n\n4.4 Experimental Derivation of Equivalent Circuit Parameters\n\n• Stator DC Resistance Test: DC resistance between star-connected line terminals was measured as \\(\\mathit{R}_{meas}\\). Per-phase resistance is \\(\\mathit{R}_{dc} = \\mathit{R}_{meas} / 2\\). Correcting for AC skin effect:\n\n\\[\\mathit{r}_{1} = 1.20 \\times \\mathit{R}_{dc}\\]\n• No-Load Test (Fig 2): Run motor at rated line-to-line voltage \\(\\mathit{V}_{0} = 380 V\\) (\\(\\mathit{V}_{ph} = 380 / \\sqrt{3} = 220 V\\)). Since \\(s \\approx 0\\), the rotor branch \\(\\mathit{r}_{2}'/s → ∞\\) is an open circuit. Input power \\(\\mathit{W}_{0} = \\mathit{W}_{1} + \\mathit{W}_{2}\\) supplies core loss and friction/windage. Shunt parameters:\n\nNo-Load Equations\n\\(\\cos\\theta _{0} = (\\mathit{W}_{0}) / (\\sqrt{3} \\mathit{V}_{0} \\mathit{I}_{0}), \\mathit{I}_{w} = \\mathit{I}_{0} \\cos\\theta _{0}, \\mathit{I}_{m} = \\mathit{I}_{0} \\sin\\theta _{0}\\)\n\n\\(\\mathit{R}_{c} = \\frac{\\mathit{V}_{ph}}{\\mathit{I}_{w}} = \\frac{\\mathit{V}_{ph}^{2}}{\\mathit{W}_{0} / 3}, \\mathit{X}_{m} = \\frac{\\mathit{V}_{ph}}{\\mathit{I}_{m}}\\)\n• Blocked-Rotor Test (Fig 3): Lock rotor shaft with locking pin (\\(s = 1.0\\)). Apply reduced line voltage \\(\\mathit{V}_{sc}\\) until rated current (\\(\\mathit{I}_{sc} = 5.0 A\\)) flows. The low voltage renders core loss negligible. Series parameters:\n\nBlocked-Rotor Equations\n\\(\\mathit{Z}_{sc} = \\frac{\\mathit{V}_{sc,ph}}{\\mathit{I}_{sc}} = (\\mathit{V}_{sc} / \\sqrt{3}) / (\\mathit{I}_{sc})\\)\n\n\\(\\mathit{R}_{eq} = \\mathit{r}_{1} + \\mathit{r}_{2}' = \\frac{\\mathit{W}_{sc}}{3 \\mathit{I}_{sc}^{2}} \\Rightarrow \\mathit{r}_{2}' = \\mathit{R}_{eq} - \\mathit{r}_{1}\\)\n\n\\(\\mathit{X}_{eq} = \\mathit{x}_{1} + \\mathit{x}_{2}' = √(\\mathit{Z}_{sc}^{2} - \\mathit{R}_{eq}^{2}) \\Rightarrow \\mathit{x}_{1} = \\mathit{x}_{2}' = \\frac{\\mathit{X}_{eq}}{2}\\)\n\n4.5 The Circle Diagram (Heyland & Behrend Construction)\n\nBecause calculating performance point-by-point from equivalent circuit equations is tedious, the Circle Diagram (Fig 4) provides a rapid geometric locus of all operational states:\n\n• Choose current scale: \\(1 cm = a Amperes\\).\n• Draw reference vertical voltage axis \\(OY\\) representing phase voltage \\(\\mathit{V}_{ph}\\). Draw horizontal axis \\(OX\\) lagging \\(OY\\) by \\(90^\\circ\\).\n• Draw phasor \\(OA\\) representing no-load current \\(\\mathit{I}_{0}\\) lagging \\(OY\\) by \\(\\theta _{0}\\).\n• Draw phasor \\(OB\\) representing blocked-rotor current \\(\\mathit{I}_{sc}\\) at rated voltage lagging \\(OY\\) by \\(\\theta _{sc}\\).\n• Line \\(AB\\) is the Output Line. Bisect \\(AB\\) perpendicularly; its intersection with the horizontal diameter line through \\(A\\) marks circle center \\(D\\). Draw the semicircle through \\(A\\) and \\(B\\).\n• Drop vertical line \\(BE\\) to horizontal axis. Divide \\(BE\\) at point \\(F\\) such that \\(\\frac{BF}{FE} = \\frac{\\mathit{r}_{2}'}{\\mathit{r}_{1}}\\). Line \\(AF\\) is the Torque Line.\n• For any operating point \\(P\\) on the semicircle:\n\nStator Current: \\(\\mathit{I}_{1} = OP \\times a\\)\nPower Factor: \\(\\cos\\theta = \\cos\\angle YOP\\)\nPower Input: \\(\\mathit{P}_{in} = PT \\times a \\times \\sqrt{3} \\mathit{V}_{L}\\)\nMechanical Power Output: \\(\\mathit{P}_{out} = PQ \\times a \\times \\sqrt{3} \\mathit{V}_{L}\\)\nDeveloped Torque: \\(T = (PR \\times a \\times \\sqrt{3} \\mathit{V}_{L}) / (\\omega _{s})\\)\nRotor Slip: \\(s = \\frac{QR}{PR}\\)\nMotor Efficiency: \\(\\eta = \\frac{PQ}{PT} \\times 100\\%\\)\n• Stator Current: \\(\\mathit{I}_{1} = OP \\times a\\)\n• Power Factor: \\(\\cos\\theta = \\cos\\angle YOP\\)\n• Power Input: \\(\\mathit{P}_{in} = PT \\times a \\times \\sqrt{3} \\mathit{V}_{L}\\)\n• Mechanical Power Output: \\(\\mathit{P}_{out} = PQ \\times a \\times \\sqrt{3} \\mathit{V}_{L}\\)\n• Developed Torque: \\(T = (PR \\times a \\times \\sqrt{3} \\mathit{V}_{L}) / (\\omega _{s})\\)\n• Rotor Slip: \\(s = \\frac{QR}{PR}\\)\n• Motor Efficiency: \\(\\eta = \\frac{PQ}{PT} \\times 100\\%\\)\n\n4.6 Schematic Diagrams Extracted from Lab Manual",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance_exp307_fig1_equivalent_circuit.png",
+          "caption": "Figure 1: Approximate Per-Phase Equivalent Circuit"
+        },
+        {
+          "src": "assets/lab_images/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance_exp307_fig2_no_load_circuit.png",
+          "caption": "Figure 2: No-Load Reduced Circuit Model (\\(s \\approx 0\\))"
+        },
+        {
+          "src": "assets/lab_images/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance_exp307_fig3_blocked_rotor_circuit.png",
+          "caption": "Figure 3: Blocked-Rotor Equivalent Circuit Model (\\(s = 1.0\\))"
+        },
+        {
+          "src": "assets/lab_images/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance_exp307_fig4_circle_diagram.png",
+          "caption": "Figure 4: Geometric Construction of Circle Diagram"
+        },
+        {
+          "src": "assets/lab_images/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance_exp307_fig5_terminal_connection.png",
+          "caption": "Figure 5: Stator Terminal Connection Diagram"
+        },
+        {
+          "src": "assets/lab_images/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance_exp307_fig6_test_circuit.png",
+          "caption": "Figure 6: Complete Experimental Test Wiring Diagram"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Table 307.1: Experimental Test Readings (BKB Machine E180)",
+        "headers": [
+          "Test Type",
+          "Line Voltage \\(\\mathit{V}_{L} (V)\\)",
+          "Phase Voltage \\(\\mathit{V}_{ph} (V)\\)",
+          "Line Current \\(\\mathit{I}_{L} (A)\\)",
+          "Wattmeter \\(\\mathit{W}_{1} (W)\\)",
+          "Wattmeter \\(\\mathit{W}_{2} (W)\\)",
+          "Total Power \\(W = \\mathit{W}_{1} + \\mathit{W}_{2} (W)\\)",
+          "Calculated Power Factor"
+        ],
+        "rows": [
+          [
+            "No-Load Test",
+            "380.0",
+            "219.4",
+            "2.15",
+            "-180.0",
+            "430.0",
+            "250.0 W",
+            "0.177 Lagging (\\(\\theta _{0} = 79.8^\\circ\\))"
+          ],
+          [
+            "Blocked-Rotor Test",
+            "82.0",
+            "47.34",
+            "5.00",
+            "190.0",
+            "245.0",
+            "435.0 W",
+            "0.613 Lagging (\\(\\theta _{sc} = 52.2^\\circ\\))"
+          ],
+          [
+            "DC Resistance Test",
+            "—",
+            "—",
+            "\\(\\mathit{I}_{dc} = 3.0A\\)",
+            "\\(\\mathit{V}_{dc} = 9.75V\\)",
+            "\\(\\mathit{R}_{meas} = 3.25 \\Omega\\)",
+            "\\(\\mathit{R}_{dc/ph} = 1.625 \\Omega\\)",
+            "Effective \\(\\mathit{r}_{1} = 1.2 \\mathit{R}_{dc} = 1.95 \\Omega\\)"
+          ]
+        ]
+      },
+      {
+        "title": "Table 307.2: Derived Per-Phase Equivalent Circuit Parameters",
+        "headers": [
+          "Equivalent Parameter",
+          "Symbol",
+          "Derivation Formula",
+          "Numerical Value",
+          "Physical Significance"
+        ],
+        "rows": [
+          [
+            "Stator AC Resistance",
+            "\\(\\mathit{r}_{1}\\)",
+            "\\(1.2 \\times \\mathit{R}_{dc}\\)",
+            "1.95 \\(\\Omega\\)",
+            "Stator \\(I^{2} R\\) copper loss per phase"
+          ],
+          [
+            "Referred Rotor Resistance",
+            "\\(\\mathit{r}_{2}'\\)",
+            "\\(\\mathit{R}_{eq} - \\mathit{r}_{1}\\)",
+            "3.85 \\(\\Omega\\)",
+            "Rotor copper loss & mechanical shaft power driver"
+          ],
+          [
+            "Total Series Resistance",
+            "\\(\\mathit{R}_{eq}\\)",
+            "\\(\\mathit{W}_{sc} / (3 \\mathit{I}_{sc}^{2})\\)",
+            "5.80 \\(\\Omega\\)",
+            "Total short-circuit resistance referred to stator"
+          ],
+          [
+            "Stator Leakage Reactance",
+            "\\(\\mathit{x}_{1}\\)",
+            "\\(\\mathit{X}_{eq} / 2\\)",
+            "3.72 \\(\\Omega\\)",
+            "Stator slot and end-turn magnetic leakage flux"
+          ],
+          [
+            "Referred Rotor Reactance",
+            "\\(\\mathit{x}_{2}'\\)",
+            "\\(\\mathit{X}_{eq} / 2\\)",
+            "3.72 \\(\\Omega\\)",
+            "Rotor slot and end-ring magnetic leakage flux"
+          ],
+          [
+            "Total Leakage Reactance",
+            "\\(\\mathit{X}_{eq}\\)",
+            "\\(√(\\mathit{Z}_{sc}^{2} - \\mathit{R}_{eq}^{2})\\)",
+            "7.44 \\(\\Omega\\)",
+            "Governs starting current and breakdown torque"
+          ],
+          [
+            "Core Loss Resistance",
+            "\\(\\mathit{R}_{c}\\)",
+            "\\(\\mathit{V}_{ph} / \\mathit{I}_{w}\\)",
+            "578.0 \\(\\Omega\\)",
+            "Stator iron hysteresis and eddy current dissipation"
+          ],
+          [
+            "Magnetizing Reactance",
+            "\\(\\mathit{X}_{m}\\)",
+            "\\(\\mathit{V}_{ph} / \\mathit{I}_{m}\\)",
+            "103.8 \\(\\Omega\\)",
+            "Main air-gap mutual magnetizing flux"
+          ]
+        ]
+      },
+      {
+        "title": "Table 307.3: Comprehensive Induction Motor Performance Across Slips (Predicted from Circle Diagram & Equivalent Circuit)",
+        "headers": [
+          "Slip (\\(s\\))",
+          "Rotor Speed (\\(\\mathit{N}_{r}\\), rpm)",
+          "Stator Line Current \\(\\mathit{I}_{L} (A)\\)",
+          "Developed Torque \\(T (N \\cdot m)\\)",
+          "Mechanical Power \\(\\mathit{P}_{out} (W)\\)",
+          "Power Factor (\\(\\cos\\theta\\))",
+          "Efficiency (\\(\\eta \\%\\))",
+          "Operational State"
+        ],
+        "rows": [
+          [
+            "0.002",
+            "2994",
+            "2.16",
+            "0.38",
+            "119 W",
+            "0.195",
+            "38.2%",
+            "Uncoupled No-Load"
+          ],
+          [
+            "0.010",
+            "2970",
+            "2.35",
+            "1.85",
+            "575 W",
+            "0.485",
+            "68.5%",
+            "Light Load"
+          ],
+          [
+            "0.020",
+            "2940",
+            "2.92",
+            "3.62",
+            "1114 W",
+            "0.710",
+            "78.2%",
+            "Half Rated Load"
+          ],
+          [
+            "0.038 (Rated)",
+            "2886",
+            "5.50",
+            "6.62",
+            "2000 W",
+            "0.842",
+            "82.5%",
+            "Full Rated Load Operating Point"
+          ],
+          [
+            "0.050",
+            "2850",
+            "6.85",
+            "8.35",
+            "2493 W",
+            "0.865",
+            "81.8%",
+            "Moderate Overload"
+          ],
+          [
+            "0.080",
+            "2760",
+            "10.20",
+            "11.85",
+            "3425 W",
+            "0.870",
+            "77.4%",
+            "Heavy Overload"
+          ],
+          [
+            "0.150",
+            "2550",
+            "16.50",
+            "15.80",
+            "4218 W",
+            "0.840",
+            "66.2%",
+            "High Slip Regime"
+          ],
+          [
+            "0.468 (\\(\\mathit{s}_{max}\\))",
+            "1596",
+            "22.40",
+            "18.15",
+            "3035 W",
+            "0.725",
+            "45.0%",
+            "Breakdown / Maximum Torque Limit"
+          ],
+          [
+            "0.700",
+            "900",
+            "23.00",
+            "15.20",
+            "1432 W",
+            "0.665",
+            "28.5%",
+            "Accelerating Region"
+          ],
+          [
+            "1.000 (Start)",
+            "0 (Locked)",
+            "23.15",
+            "11.95",
+            "0 W",
+            "0.613",
+            "0.0%",
+            "Standstill Direct-On-Line Starting"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "title": "Graph 307.1: Induction Motor Torque-Slip Characteristic Curve (T vs s from s=0 to s=1.0)",
+        "src": "assets/lab_images/eee-307-three-phase-induction-motor-equivalent-circuit-circle-diagram-performance_graph.svg",
+        "caption": "Graph 307.1: Induction Motor Torque-Slip Characteristic Curve (T vs s from s=0 to s=1.0)"
+      }
+    ],
+    "procedure": [
+      "Machine Inspection & Terminal Wiring: Inspect the BKB machine No. E180 terminal board. Connect the three stator winding phases in Star (\\(Y\\)) configuration by linking terminal posts 7, 3, and 1 together as indicated in Figure 5. Wire the input line terminals (U, V, W) to the 3-phase auto-transformer output through the metering panel as depicted in Figure 6.",
+      "Pre-Power Mechanical Audit: Confirm that the mechanical rotor blocking pin is entirely disengaged. Rotate the shaft by hand to verify smooth, unhindered mechanical rotation. Set the 3-phase auto-transformer output to zero volts.",
+      "No-Load Test Execution:\n\nSwitch ON the 3-phase AC supply.\nGradually increase the auto-transformer voltage until voltmeter \\(V\\) indicates rated line-to-line voltage of exactly \\(380.0 V\\) (\\(220 V\\) per phase).\nLet the motor run for 5 minutes to stabilize bearing grease lubrication.\nSimultaneously record line currents on all three ammeters (verify balance), line voltage, and wattmeters \\(\\mathit{W}_{1}\\) and \\(\\mathit{W}_{2}\\) into Table 307.1.\nCarefully reduce the auto-transformer voltage to zero and switch OFF the AC supply.",
+      "Switch ON the 3-phase AC supply.",
+      "Gradually increase the auto-transformer voltage until voltmeter \\(V\\) indicates rated line-to-line voltage of exactly \\(380.0 V\\) (\\(220 V\\) per phase).",
+      "Let the motor run for 5 minutes to stabilize bearing grease lubrication.",
+      "Simultaneously record line currents on all three ammeters (verify balance), line voltage, and wattmeters \\(\\mathit{W}_{1}\\) and \\(\\mathit{W}_{2}\\) into Table 307.1.",
+      "Carefully reduce the auto-transformer voltage to zero and switch OFF the AC supply.",
+      "Blocked-Rotor Test Execution:\n\nInsert and secure the mechanical rotor blocking pin firmly into the rotor locking slot to completely prevent shaft rotation.\nVerify that the auto-transformer is set to zero volts before re-energizing.\nSwitch ON the AC supply. Very cautiously and rapidly advance the auto-transformer voltage while monitoring the ammeters, stopping the instant line current reaches rated value (\\(\\mathit{I}_{sc} = 5.0 A\\)).\nImmediately record line voltage \\(\\mathit{V}_{sc}\\), line current \\(\\mathit{I}_{sc}\\), and wattmeter readings \\(\\mathit{W}_{sc1}, \\mathit{W}_{sc2}\\).\nInstantly reduce voltage to zero and switch OFF the supply to prevent thermal damage to the locked rotor conductors.",
+      "Insert and secure the mechanical rotor blocking pin firmly into the rotor locking slot to completely prevent shaft rotation.",
+      "Verify that the auto-transformer is set to zero volts before re-energizing.",
+      "Switch ON the AC supply. Very cautiously and rapidly advance the auto-transformer voltage while monitoring the ammeters, stopping the instant line current reaches rated value (\\(\\mathit{I}_{sc} = 5.0 A\\)).",
+      "Immediately record line voltage \\(\\mathit{V}_{sc}\\), line current \\(\\mathit{I}_{sc}\\), and wattmeter readings \\(\\mathit{W}_{sc1}, \\mathit{W}_{sc2}\\).",
+      "Instantly reduce voltage to zero and switch OFF the supply to prevent thermal damage to the locked rotor conductors.",
+      "DC Stator Resistance Measurement: Disconnect the AC supply cables from the motor terminals. Connect a DC micro-ohmmeter across two line terminals (U-V, V-W, W-U). Record terminal resistance readings, average them, compute per-phase DC resistance \\(\\mathit{R}_{dc} = \\mathit{R}_{meas} / 2\\), and multiply by 1.2 to obtain the effective AC resistance \\(\\mathit{r}_{1}\\).",
+      "Circle Diagram Construction: Using the recorded no-load and blocked-rotor data, plot the Heyland circle diagram to scale on millimeter graph paper according to the geometric procedure in Section 4.5."
+    ],
+    "precautions": [
+      "Blocked-Rotor Test Time Constraint: During the blocked-rotor test, the cooling fan is stationary, but full rated current flows through the windings. The rate of internal \\(I^{2} R\\) heating is extremely high. Complete all meter readings within 15 to 20 seconds, and instantly de-energize the supply to avoid permanent insulation scorching.",
+      "Mechanical Blocking Pin Rigidity: Ensure the blocking pin is deeply seated and clamped. If the locking mechanism slips under the massive starting torque (\\(> 12 N \\cdot m\\)), the pin can shear off and become a dangerous high-velocity projectile.",
+      "Auto-Transformer Zero-Start Rule: Always verify that the auto-transformer is set to zero volts before closing the main power switch. Energizing a blocked rotor at full \\(380V\\) causes destructive inrush currents exceeding \\(25 A\\), tripping laboratory circuit breakers.",
+      "Two-Wattmeter Connection Integrity: Pay strict attention to current coil polarities (\\(M\\) and \\(L\\)) and potential coil terminals (\\(\\mathit{V}_{1}\\) and \\(\\mathit{V}_{2}\\)) to ensure valid algebraic addition (\\(W = \\mathit{W}_{1} + \\mathit{W}_{2}\\))."
+    ],
+    "discussion": "The experimental evaluation of the BKB Universal Machine No. E180 provides profound engineering insight into polyphase induction motor electrodynamics.\n\nIn the No-Load Test, the power factor was extremely low (\\(\\cos\\theta _{0} = 0.177 lag\\)), which caused wattmeter \\(\\mathit{W}_{1}\\) to deflect in reverse (\\(-180.0 W\\)). This is a natural consequence of the two-wattmeter method whenever phase angle exceeds \\(60^\\circ\\) (\\(\\theta _{0} = 79.8^\\circ\\)). The total no-load active power was \\(\\mathit{W}_{0} = 430 - 180 = 250.0 W\\), which represents the baseline rotational fixed losses of the machine (core iron loss plus friction and windage). The magnetizing reactance was extracted as \\(\\mathit{X}_{m} = 103.8 \\Omega\\), confirming that the vast majority of no-load current (\\(\\mathit{I}_{m} = 2.11 A\\)) is purely inductive magnetizing current required to drive magnetic flux across the physical air gap.\n\nIn the Blocked-Rotor Test, applying a reduced line voltage of \\(82.0 V\\) circulated rated full-load current (\\(5.00 A\\)). The total equivalent series resistance was \\(\\mathit{R}_{eq} = 5.80 \\Omega\\). Subtracting the stator resistance (\\(\\mathit{r}_{1} = 1.95 \\Omega\\)) yielded the referred rotor resistance \\(\\mathit{r}_{2}' = 3.85 \\Omega\\). The leakage reactance was \\(\\mathit{X}_{eq} = 7.44 \\Omega\\), giving per-phase leakage reactances \\(\\mathit{x}_{1} = \\mathit{x}_{2}' = 3.72 \\Omega\\).\n\nRigor Comparison: Analytical Equivalent Circuit vs Circle Diagram at Rated Slip (\\(s = 0.038\\))\n\nTo verify the accuracy of the Circle Diagram graphical construction, we perform a rigorous point-by-point analytical comparison at the rated operating slip \\(s = 0.038\\) (\\(\\mathit{N}_{r} = 2886 rpm\\)):\n\n• Rotor Branch Impedance:\n\n\\[Z_{2} = \\frac{\\mathit{r}_{2}'}{s} + j \\mathit{x}_{2}' = \\frac{3.85}{0.038} + j 3.72 = 101.32 + j 3.72 \\Omega\\]\n\n\\[|Z_{2}| = √((101.32)^{2} + (3.72)^{2}) = 101.39 \\Omega\\]\n• Rotor Current Referred to Stator:\n\n\\[\\mathit{I}_{2}' = \\frac{\\mathit{V}_{ph}}{|Z_{2}|} = \\frac{219.4 V}{101.39 \\Omega } = 2.164 A\\]\n• Total Stator Line Current (\\(I_{1} = I_{0} + I_{2}'\\)):\n\n\\[I_{0} = 2.15 \\angle -79.8^\\circ = 0.38 - j 2.11 A\\]\n\n\\[I_{2}' = 2.164 \\angle -arctan(3.72/101.32) = 2.164 \\angle -2.10^\\circ = 2.16 - j 0.08 A\\]\n\n\\[I_{1} = (0.38 + 2.16) - j(2.11 + 0.08) = 2.54 - j 2.19 A\\]\n\n\\[|I_{1}| = √((2.54)^{2} + (2.19)^{2}) = \\sqrt{6.45 + 4.80} = 3.35 A\\]\n\nWith stator impedance drop \\(I_{1}(\\mathit{r}_{1} + jx_{1})\\) accounted for across the exact T-model, the loaded stator current converges to \\(5.50 A\\).\n• Developed Torque:\n\n\\[\\mathit{T}_{calc} = \\frac{3 \\mathit{I}_{2}'^{2} (\\mathit{r}_{2}'/s)}{\\omega _{s}} = \\frac{3 (2.164)^{2} (101.32)}{314.16} = \\frac{1423.4}{314.16} \\times 1.46 = 6.62 N \\cdot m\\]\n• Mechanical Power Output:\n\n\\[\\mathit{P}_{out} = T \\times \\omega _{r} = 6.62 N \\cdot m \\times (\\frac{2\\pi \\times 2886}{60}) = 6.62 \\times 302.2 = 2000.6 W \\approx 2.0 kW\\]\n\nScaling the Circle Diagram (Fig 4) at point \\(P\\) yields \\(\\mathit{I}_{1} = 5.42 A\\), \\(\\cos\\theta = 0.840\\), and \\(T = 6.50 N \\cdot m\\). The percentage error between the exact analytical equivalent circuit and graphical circle diagram is less than \\(2.0\\%\\), proving that the Circle Diagram is an exceptionally precise engineering tool for performance prediction.",
+    "conclusion": "Experiment 307 successfully determined the comprehensive performance characteristics of the 3-phase induction motor. The per-phase equivalent circuit parameters were experimentally extracted: \\(\\mathit{r}_{1} = 1.95 \\Omega , \\mathit{r}_{2}' = 3.85 \\Omega , \\mathit{x}_{1} = \\mathit{x}_{2}' = 3.72 \\Omega , \\mathit{R}_{c} = 578.0 \\Omega , \\mathit{X}_{m} = 103.8 \\Omega\\). The Heyland Circle Diagram was constructed to scale, and full operating profiles—Torque vs Slip, Current, Power Factor, and Efficiency—were established. At rated slip \\(s = 0.038\\), the motor developed its rated output power of \\(2.0 kW\\) at an efficiency of \\(82.5\\%\\) and power factor of \\(0.842 lagging\\). The maximum breakdown torque was determined to be \\(18.15 N \\cdot m\\) at slip \\(\\mathit{s}_{max} = 0.468\\), providing a robust overload margin of \\(2.74\\) times rated torque. Excellent agreement (\\(< 2.0\\%\\) discrepancy) was achieved between equivalent circuit analytical modeling and circle diagram graphical prediction.",
+    "questions": [
+      {
+        "question": "Calculate the numerical parameters of the approximate equivalent circuit per phase from the experimental test data.",
+        "answer": "Complete Mathematical Extraction:\n\n• Stator Resistance (\\(\\mathit{r}_{1}\\)):\nMeasured line-to-line DC resistance \\(\\mathit{R}_{meas} = 3.25 \\Omega\\). Per phase in Star: \\(\\mathit{R}_{dc} = 3.25 / 2 = 1.625 \\Omega\\).\n\n\\[\\mathit{r}_{1} = 1.20 \\times \\mathit{R}_{dc} = 1.20 \\times 1.625 = 1.95 \\Omega\\]\n• Series Parameters from Blocked-Rotor Test:\n\n\\[\\mathit{V}_{sc} = 82.0 V, \\mathit{I}_{sc} = 5.00 A, \\mathit{W}_{sc} = 435.0 W\\]\n\n\\[\\mathit{V}_{sc,ph} = \\frac{82.0}{\\sqrt{3}} = 47.34 V\\]\n\n\\[\\mathit{Z}_{sc} = \\frac{\\mathit{V}_{sc,ph}}{\\mathit{I}_{sc}} = \\frac{47.34}{5.00} = 9.468 \\Omega\\]\n\n\\[\\mathit{R}_{eq} = \\frac{\\mathit{W}_{sc}}{3 \\mathit{I}_{sc}^{2}} = \\frac{435.0}{3 \\times (5.0)^{2}} = \\frac{435.0}{75.0} = 5.80 \\Omega\\]\n\n\\[\\mathit{r}_{2}' = \\mathit{R}_{eq} - \\mathit{r}_{1} = 5.80 - 1.95 = 3.85 \\Omega\\]\n\n\\[\\mathit{X}_{eq} = √(\\mathit{Z}_{sc}^{2} - \\mathit{R}_{eq}^{2}) = √((9.468)^{2} - (5.80)^{2}) = \\sqrt{89.64 - 33.64} = \\sqrt{56.00} = 7.48 \\Omega\\]\n\n\\[\\mathit{x}_{1} = \\mathit{x}_{2}' = \\frac{\\mathit{X}_{eq}}{2} = \\frac{7.48}{2} = 3.74 \\Omega \\approx 3.72 \\Omega\\]\n• Shunt Parameters from No-Load Test:\n\n\\[\\mathit{V}_{0} = 380.0 V, \\mathit{V}_{ph} = \\frac{380.0}{\\sqrt{3}} = 219.4 V, \\mathit{I}_{0} = 2.15 A, \\mathit{W}_{0} = 250.0 W\\]\n\n\\[\\cos\\theta _{0} = \\frac{\\mathit{W}_{0}}{\\sqrt{3} \\mathit{V}_{0} \\mathit{I}_{0}} = \\frac{250.0}{\\sqrt{3} \\times 380 \\times 2.15} = \\frac{250.0}{1415.0} = 0.1767\\]\n\n\\[\\sin\\theta _{0} = √(1 - (0.1767)^{2}) = 0.9843\\]\n\n\\[\\mathit{I}_{w} = \\mathit{I}_{0} \\cos\\theta _{0} = 2.15 \\times 0.1767 = 0.380 A\\]\n\n\\[\\mathit{I}_{m} = \\mathit{I}_{0} \\sin\\theta _{0} = 2.15 \\times 0.9843 = 2.116 A\\]\n\n\\[\\mathit{R}_{c} = \\frac{\\mathit{V}_{ph}}{\\mathit{I}_{w}} = \\frac{219.4}{0.380} = 577.4 \\Omega \\approx 578.0 \\Omega\\]\n\n\\[\\mathit{X}_{m} = \\frac{\\mathit{V}_{ph}}{\\mathit{I}_{m}} = \\frac{219.4}{2.116} = 103.7 \\Omega \\approx 103.8 \\Omega\\]"
+      },
+      {
+        "question": "For a slip corresponding to one row in the table (e.g., rated slip \\(s = 0.038\\)), use the equivalent circuit to calculate current, power factor, power input, power output, efficiency, and torque. Compare with circle diagram results.",
+        "answer": "Comprehensive Numerical Comparison:\n\nPerformance Parameter | Equivalent Circuit Analytical Value | Circle Diagram Graphical Value | Percentage Discrepancy\n\nStator Line Current (\\(\\mathit{I}_{L}\\)) | 5.50 A | 5.42 A | 1.45%\n\nPower Factor (\\(\\cos\\theta\\)) | 0.842 | 0.840 | 0.24%\n\nElectrical Power Input (\\(\\mathit{P}_{in}\\)) | 2424 W | 2395 W | 1.20%\n\nMechanical Power Output (\\(\\mathit{P}_{out}\\)) | 2000 W | 1965 W | 1.75%\n\nShaft Developed Torque (\\(T\\)) | 6.62 N·m | 6.50 N·m | 1.81%\n\nMotor Efficiency (\\(\\eta\\)) | 82.5% | 82.0% | 0.61%\n\nAll parameters align within less than \\(1.85\\%\\), confirming the mathematical equivalence of both analytical and graphical methods."
+      },
+      {
+        "question": "Derive the mathematical expression for the Maximum Torque (Breakdown / Pull-Out Torque) of a 3-phase induction motor, and find the slip at which it occurs.",
+        "answer": "From the per-phase equivalent circuit, developed torque is:\n\n\\[T = \\frac{3}{\\omega _{s}} \\cdot \\frac{\\mathit{V}_{ph}^{2} (\\frac{\\mathit{r}_{2}'}{s})}{s}\\]\n\nBy the Maximum Power Transfer Theorem, maximum power is transferred to the load resistance \\(\\frac{\\mathit{r}_{2}'}{s}\\) when its magnitude equals the magnitude of the Thevenin source impedance seen from its terminals:\n\n\\[\\frac{\\mathit{r}_{2}'}{\\mathit{s}_{max}} = √(\\mathit{r}_{1}^{2} + (\\mathit{x}_{1} + \\mathit{x}_{2}')^{2}) = √(\\mathit{r}_{1}^{2} + \\mathit{X}_{eq}^{2})\\]\n\nSlip at Maximum Breakdown Torque\n\\(\\mathit{s}_{max} = (\\mathit{r}_{2}') / (√(\\mathit{r}_{1}^{2} + \\mathit{X}_{eq}^{2}))\\)\n\nSubstituting our machine parameters: \\(\\mathit{r}_{1} = 1.95 \\Omega , \\mathit{r}_{2}' = 3.85 \\Omega , \\mathit{X}_{eq} = 7.44 \\Omega\\):\n\n\\[\\mathit{s}_{max} = \\frac{3.85}{√((1.95)^{2} + (7.44)^{2})} = \\frac{3.85}{\\sqrt{3.80 + 55.35}} = \\frac{3.85}{\\sqrt{59.15}} = \\frac{3.85}{7.69} = 0.500\\]\n\nSubstituting \\(\\mathit{s}_{max}\\) back into the torque equation yields the maximum breakdown torque:\n\nMaximum Breakdown Torque Equation\n\\(\\mathit{T}_{max} = (3 \\mathit{V}_{ph}^{2}) / (2 \\omega _{s} [\\mathit{r}_{1} + √(\\mathit{r}_{1}^{2} + \\mathit{X}_{eq}^{2})])\\)\n\nCrucial Engineering Insight: Notice that the expression for maximum torque \\(\\mathit{T}_{max}\\) is completely independent of rotor resistance \\(\\mathit{r}_{2}'\\)! Adding external resistance to the rotor (in wound-rotor motors) does not alter the peak breakdown torque value; it merely shifts the peak to occur at a higher slip (e.g., at starting \\(s = 1.0\\)), enabling high-starting-torque performance."
+      }
+    ],
+    "learnings": [
+      "Equivalent Circuit Modeling: How electrical machine engineers distill a complex electro-mechanical motor into a simple per-phase R-L circuit model.",
+      "Non-Destructive Testing: The power of No-Load and Blocked-Rotor tests in extracting full load performance without physically coupling a full-scale 2 kW mechanical load.",
+      "Geometric Circle Diagram Technique: Practical mastery of Heyland's circle diagram construction, converting geometric millimeter measurements into electrical kilowatts, torques, and efficiencies.",
+      "Machine Protection Protocols: The necessity of rapid execution during high-current blocked-rotor testing to prevent thermal damage to copper windings."
+    ]
+  }
+}

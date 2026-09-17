@@ -1,0 +1,90 @@
+<svg class="svg-chart" viewbox="0 0 850 480" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <defs>
+                            <pattern id="grid302" width="60" height="35" patternunits="userSpaceOnUse">
+                                <path d="M 60 0 L 0 0 0 35" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect x="70" y="40" width="730" height="350" fill="url(#grid302)"/>
+
+                        
+                        
+                        <rect x="216" y="40" width="446" height="350" fill="#dcfce7" opacity="0.35"/>
+                        <text x="439" y="70" font-size="13" fill="#15803d" font-weight="700" text-anchor="middle">MIDBAND PASSBAND: BW = 449.9 kHz (Av = 38.59 dB)</text>
+
+                        
+                        <line x1="70" y1="40" x2="70" y2="390" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="70" y1="390" x2="800" y2="390" stroke="#1e293b" stroke-width="2"/>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <text x="70" y="412" font-size="12" fill="#475569" text-anchor="middle">10 Hz</text>
+                        <text x="216" y="412" font-size="12" fill="#475569" text-anchor="middle">100 Hz</text>
+                        <text x="362" y="412" font-size="12" fill="#475569" text-anchor="middle">1.0 kHz</text>
+                        <text x="508" y="412" font-size="12" fill="#475569" text-anchor="middle">10 kHz</text>
+                        <text x="654" y="412" font-size="12" fill="#475569" text-anchor="middle">100 kHz</text>
+                        <text x="800" y="412" font-size="12" fill="#475569" text-anchor="middle">1.0 MHz</text>
+                        <text x="435" y="445" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle">Input Signal Frequency, f (Logarithmic Scale)</text>
+
+                        
+                        
+                        <text x="60" y="394" font-size="12" fill="#475569" text-anchor="end">15 dB</text>
+                        <text x="60" y="336" font-size="12" fill="#475569" text-anchor="end">20 dB</text>
+                        <text x="60" y="278" font-size="12" fill="#475569" text-anchor="end">25 dB</text>
+                        <text x="60" y="219" font-size="12" fill="#475569" text-anchor="end">30 dB</text>
+                        <text x="60" y="161" font-size="12" fill="#475569" text-anchor="end">35 dB</text>
+                        <text x="60" y="103" font-size="12" fill="#475569" text-anchor="end">40 dB</text>
+                        <text x="60" y="45" font-size="12" fill="#475569" text-anchor="end">45 dB</text>
+                        <text x="25" y="215" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle" transform="rotate(-90 25 215)">Voltage Gain, Av (dB)</text>
+
+                        
+                        
+                        <line x1="70" y1="150" x2="800" y2="150" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+                        <text x="795" y="143" font-size="11" fill="#b91c1c" font-weight="700" text-anchor="end">-3 dB Threshold (35.59 dB)</text>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <path d="M 70 349 Q 114 278, 172 186 T 216 150 Q 260 122, 362 115 L 508 115 Q 610 116, 654 118 T 712 131 T 749 150 Q 775 175, 800 211" fill="none" stroke="#2563eb" stroke-width="3.5"/>
+
+                        
+                        <circle cx="70" cy="349" r="4.5" fill="#1d4ed8"/>
+                        <circle cx="114" cy="278" r="4.5" fill="#1d4ed8"/>
+                        <circle cx="172" cy="186" r="4.5" fill="#1d4ed8"/>
+                        <circle cx="216" cy="150" r="6" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="362" cy="115" r="5" fill="#16a34a"/>
+                        <circle cx="508" cy="115" r="5" fill="#16a34a"/>
+                        <circle cx="654" cy="118" r="4.5" fill="#1d4ed8"/>
+                        <circle cx="712" cy="131" r="4.5" fill="#1d4ed8"/>
+                        <circle cx="749" cy="150" r="6" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="800" cy="211" r="4.5" fill="#1d4ed8"/>
+
+                        
+                        <line x1="216" y1="150" x2="216" y2="390" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <rect x="150" y="180" width="115" height="34" rx="4" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+                        <text x="207" y="195" font-size="11" fill="#b91c1c" font-weight="700" text-anchor="middle">f_L = 100 Hz</text>
+                        <text x="207" y="208" font-size="10" fill="#475569" text-anchor="middle">Gain = 35.56 dB</text>
+
+                        
+                        <line x1="749" y1="150" x2="749" y2="390" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <rect x="685" y="180" width="120" height="34" rx="4" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+                        <text x="745" y="195" font-size="11" fill="#b91c1c" font-weight="700" text-anchor="middle">f_H = 450 kHz</text>
+                        <text x="745" y="208" font-size="10" fill="#475569" text-anchor="middle">Gain = 35.56 dB</text>
+                    </svg>

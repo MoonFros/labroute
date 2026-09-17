@@ -1,0 +1,86 @@
+<svg class="svg-chart" viewbox="0 0 850 480" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <defs>
+                            <pattern id="grid306" width="50" height="35" patternunits="userSpaceOnUse">
+                                <path d="M 50 0 L 0 0 0 35" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect x="70" y="40" width="730" height="350" fill="url(#grid306)"/>
+
+                        
+                        
+                        <rect x="70" y="40" width="386" height="350" fill="#eff6ff" opacity="0.3"/>
+                        <text x="260" y="70" font-size="11" fill="#1e40af" font-weight="700" text-anchor="middle">UNDER-EXCITED REGIME (LAGGING PF)</text>
+
+                        <rect x="456" y="40" width="344" height="350" fill="#fef3c7" opacity="0.3"/>
+                        <text x="628" y="70" font-size="11" fill="#b45309" font-weight="700" text-anchor="middle">OVER-EXCITED REGIME (LEADING PF / SYNCH CONDENSER)</text>
+
+                        
+                        <line x1="70" y1="40" x2="70" y2="390" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="70" y1="390" x2="800" y2="390" stroke="#1e293b" stroke-width="2"/>
+
+                        
+                        
+                        <text x="70" y="412" font-size="12" fill="#475569" text-anchor="middle">0.0</text>
+                        <text x="174" y="412" font-size="12" fill="#475569" text-anchor="middle">0.5</text>
+                        <text x="279" y="412" font-size="12" fill="#475569" text-anchor="middle">1.0</text>
+                        <text x="383" y="412" font-size="12" fill="#475569" text-anchor="middle">1.5</text>
+                        <text x="456" y="412" font-size="12" fill="#15803d" font-weight="800" text-anchor="middle">1.85 (Opt)</text>
+                        <text x="487" y="412" font-size="12" fill="#475569" text-anchor="middle">2.0</text>
+                        <text x="591" y="412" font-size="12" fill="#475569" text-anchor="middle">2.5</text>
+                        <text x="696" y="412" font-size="12" fill="#475569" text-anchor="middle">3.0</text>
+                        <text x="800" y="412" font-size="12" fill="#475569" text-anchor="middle">3.5</text>
+                        <text x="435" y="445" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle">DC Field Excitation Current, I_f (Amperes)</text>
+
+                        
+                        
+                        <text x="60" y="394" font-size="12" fill="#475569" text-anchor="end">0.0 A</text>
+                        <text x="60" y="324" font-size="12" fill="#475569" text-anchor="end">1.0 A</text>
+                        <text x="60" y="254" font-size="12" fill="#475569" text-anchor="end">2.0 A</text>
+                        <text x="60" y="184" font-size="12" fill="#475569" text-anchor="end">3.0 A</text>
+                        <text x="60" y="114" font-size="12" fill="#475569" text-anchor="end">4.0 A</text>
+                        <text x="60" y="44" font-size="12" fill="#475569" text-anchor="end">5.0 A</text>
+                        <text x="25" y="215" font-size="14" fill="#0f172a" font-weight="700" text-anchor="middle" transform="rotate(-90 25 215)">Stator Armature Current, I_a (Amperes)</text>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <path d="M 174 124 Q 237 205, 320 289 T 383 331 Q 420 348, 456 349 Q 490 348, 529 313 T 612 247 T 696 170" fill="none" stroke="#2563eb" stroke-width="3.5"/>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        <path d="M 279 138 Q 362 215, 477 256 Q 591 205, 696 145" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-dasharray="6,4"/>
+
+                        
+                        
+                        <line x1="440" y1="380" x2="500" y2="150" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="4,4"/>
+                        <text x="510" y="165" font-size="11" fill="#15803d" font-weight="800">Unity Power Factor Locus</text>
+
+                        
+                        <circle cx="456" cy="349" r="7" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="477" cy="256" r="7" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+
+                        
+                        <circle cx="174" cy="124" r="5" fill="#1d4ed8"/>
+                        <circle cx="237" cy="205" r="5" fill="#1d4ed8"/>
+                        <circle cx="320" cy="289" r="5" fill="#1d4ed8"/>
+                        <circle cx="383" cy="331" r="5" fill="#1d4ed8"/>
+                        <circle cx="529" cy="313" r="5" fill="#1d4ed8"/>
+                        <circle cx="612" cy="247" r="5" fill="#1d4ed8"/>
+                        <circle cx="696" cy="170" r="5" fill="#1d4ed8"/>
+
+                        
+                        <rect x="330" y="300" width="120" height="34" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+                        <text x="390" y="315" font-size="10" fill="#15803d" font-weight="700" text-anchor="middle">No-Load Min: 0.58A</text>
+                        <text x="390" y="327" font-size="9" fill="#475569" text-anchor="middle">I_f = 1.85 A (cos φ = 1.0)</text>
+                    </svg>
