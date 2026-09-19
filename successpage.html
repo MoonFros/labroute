@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | LabRoute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Space Grotesk"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-base: #0a0f0d;
+            --accent-emerald: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.15);
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Dynamic Ambient Glow */
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(10, 15, 13, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+            animation: pulseGlow 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+        }
+
+        /* SVG Checkmark Drawing Animations */
+        .svg-circle {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            stroke-width: 2;
+            stroke: #10b981;
+            fill: none;
+            animation: drawCircle 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .svg-check {
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            stroke-width: 2.5;
+            stroke: #34d399;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: drawCheck 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+        }
+
+        @keyframes drawCircle {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Smooth reveal animation for content */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Subtle interactive button style */
+        .btn-sleek {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-sleek:hover {
+            border-color: rgba(52, 211, 153, 0.4);
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, rgba(10, 15, 13, 0.2) 100%);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+            transform: translateY(-1px);
+        }
+
+        #bgCanvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center p-6 relative">
+
+    <!-- Subtle interactive particle canvas -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Background Ambient Light -->
+    <div class="ambient-glow"></div>
+
+    <!-- Header Navigation -->
+    <header class="w-full max-w-2xl flex justify-between items-center relative z-10 py-4 reveal-up">
+        <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center font-heading font-semibold text-emerald-400 text-sm">
+                L
+            </div>
+            <span class="font-heading font-medium tracking-tight text-slate-200 text-sm">LabRoute</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            Contribution Received
+        </div>
+    </header>
+
+    <!-- Main Success Content Container -->
+    <main class="w-full max-w-md my-auto relative z-10 text-center py-12">
+        
+        <!-- Animated SVG Checkmark -->
+        <div class="w-24 h-24 mx-auto mb-8 relative flex items-center justify-center reveal-up">
+            <div class="absolute inset-0 bg-emerald-500/10 rounded-full blur-xl animate-pulse"></div>
+            <svg class="w-full h-full relative z-10" viewBox="0 0 100 100">
+                <circle class="svg-circle" cx="50" cy="50" r="45" />
+                <path class="svg-check" d="M30 52 L43 65 L70 38" />
+            </svg>
+        </div>
+
+        <!-- Sleek Headline & Gratitude Statement -->
+        <div class="space-y-4">
+            <h1 class="reveal-up delay-1 text-3xl sm:text-4xl font-heading font-semibold tracking-tight text-white">
+                Thank you for supporting LabRoute.
+            </h1>
+            <p class="reveal-up delay-2 text-slate-400 text-sm sm:text-base leading-relaxed font-light max-w-sm mx-auto">
+                Your generosity empowers open scientific discovery and helps us build freer research infrastructure worldwide.
+            </p>
+        </div>
+
+        <!-- Primary CTA -->
+        <div class="mt-10 reveal-up delay-3">
+            <a href="#" class="btn-sleek inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-semibold text-slate-200 tracking-wide uppercase transition-all">
+                <span>Return to LabRoute</span>
+                <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-2xl text-center relative z-10 py-4 reveal-up delay-3">
+        <p class="text-[11px] text-slate-600 font-light">
+            LabRoute Foundation &mdash; Advancing Open Science
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('bgCanvas');
+            const ctx = canvas.getContext('2d');
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            // Gentle ambient floating dust particles
+            const particles = Array.from({ length: 25 }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: Math.random() * 1.2 + 0.5,
+                alpha: Math.random() * 0.4 + 0.1,
+                vx: (Math.random() - 0.5) * 0.2,
+                vy: -Math.random() * 0.3 - 0.1
+            }));
+
+            function render() {
+                ctx.clearRect(0, 0, width, height);
+
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.y < 0) {
+                        p.y = height;
+                        p.x = Math.random() * width;
+                    }
+                    if (p.x < 0) p.x = width;
+                    if (p.x > width) p.x = 0;
+
+                    ctx.save();
+                    ctx.globalAlpha = p.alpha;
+                    ctx.fillStyle = '#34d399';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                });
+
+                requestAnimationFrame(render);
+            }
+
+            render();
+        });
+    </script>
+</body>
+</html>
