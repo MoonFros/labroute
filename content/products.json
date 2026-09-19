@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gpac",
+    "name": "GPAC",
+    "tagline": "Grade Point Average Calculator & Target Planner",
+    "description": "A streamlined GPA/CGPA computational engine calibrated for university grading scales. Simulate course loads, compute target grades, and track academic trajectories with zero hassle.",
+    "category": "Academic Utility",
+    "developer": "Agbonze Leonard",
+    "icon": "calculate",
+    "tags": ["#CGPA", "#GradePlanner", "#StudentTool"],
+    "link": "https://gpac.example.com",
+    "status": "Live Production"
+  },
+  {
+    "id": "knowmentor",
+    "name": "KnowMentor",
+    "tagline": "Peer Mentorship & Engineering Knowledge Exchange",
+    "description": "Connect with top-performing senior students and study peers for 1-on-1 technical coursework walkthroughs, exam prep, and engineering project reviews.",
+    "category": "Peer Learning",
+    "developer": "Umoh Etini",
+    "icon": "school",
+    "tags": ["#Mentorship", "#PeerStudy", "#Collaboration"],
+    "link": "https://knowmentor.example.com",
+    "status": "Live Production"
+  },
+  {
+    "id": "circuit-pulse",
+    "name": "ResistoPulse",
+    "tagline": "Component Decoding & Impedance Toolkit",
+    "description": "Instant 4/5-band resistor color code decoder, RLC resonance calculator, and filter design tool built for laboratory benchwork and circuit simulations.",
+    "category": "Hardware Tool",
+    "developer": "Aika Osakioya",
+    "icon": "electric_bolt",
+    "tags": ["#Electronics", "#Hardware", "#BenchTools"],
+    "link": "https://resistopulse.example.com",
+    "status": "Beta"
+  }
+]

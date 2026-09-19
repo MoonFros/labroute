@@ -55,6 +55,89 @@
 }
 
 /* ==========================================================================
+   ACADEMIC PRESTIGE — DARK THEME PALETTE TOKENS
+   ========================================================================== */
+[data-theme="dark"] {
+  /* Core Palette (Inverted for Dark Surface Legibility) */
+  --primary: #8cb5ff;             /* Celestial Blue for readable headings & titles */
+  --primary-light: #adc8ff;       /* Soft Ice Blue for hover accents */
+  --primary-dark: #07090f;        /* Deepest peripheral background */
+  --on-primary: #001944;          /* Navy text on blue action buttons */
+
+  --accent: #f5cb4a;             /* Luminous Heritage Gold */
+  --accent-hover: #ffe07a;       /* Bright gold glow on hover */
+  --on-accent: #11141c;          /* Deep midnight text on gold buttons */
+
+  /* Surfaces & Backgrounds (Midnight Sapphire) */
+  --surface: #0a0d14;            /* Main canvas background */
+  --surface-card: #121622;       /* Elevated cards & containers */
+  --surface-tint: #1a2030;       /* Badges, icon boxes & input containers */
+
+  /* Text Colors */
+  --text-main: #f0f3fa;          /* Crisp high-contrast body text */
+  --text-muted: #9aa3b8;         /* Subtitles & metadata */
+  --text-inverse: #ffffff;
+  --text-inverse-muted: rgba(255, 255, 255, 0.72);
+
+  /* Outlines, Borders & Overlays */
+  --border: #232a3d;             /* Subtle dark dividers */
+  --border-focus: #8cb5ff;       /* Active input focus ring */
+  --glass-bg: rgba(10, 13, 20, 0.75);
+  --glass-bg-scrolled: rgba(10, 13, 20, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --hero-overlay: rgba(8, 10, 16, 0.88);
+
+  /* Elevation Shadows (Deeper ambient glow for dark mode) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* ==========================================================================
+   DARK THEME COMPONENT OVERRIDES (Form Inputs, Tables & Dropzones)
+   ========================================================================== */
+[data-theme="dark"] input:not([type="radio"]):not([type="checkbox"]),
+[data-theme="dark"] select,
+[data-theme="dark"] textarea,
+[data-theme="dark"] .input-text,
+[data-theme="dark"] .input-select,
+[data-theme="dark"] .input-textarea,
+[data-theme="dark"] .cell-input {
+  background-color: var(--surface-tint) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.6;
+}
+
+[data-theme="dark"] .tag-input-container,
+[data-theme="dark"] .table-builder-wrapper {
+  background-color: var(--surface-card) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme="dark"] .rendered-data-table thead {
+  background-color: var(--surface-tint) !important;
+  border-bottom: 2px solid var(--border) !important;
+}
+
+[data-theme="dark"] .rendered-data-table th {
+  color: var(--primary) !important;
+}
+
+[data-theme="dark"] .rendered-data-table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+[data-theme="dark"] .rendered-data-table tbody tr:hover {
+  background-color: rgba(140, 181, 255, 0.06) !important;
+}
+
+/* ==========================================================================
    RESET & GLOBAL BASE
    ========================================================================== */
 *,
@@ -84,7 +167,7 @@ a {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -339,6 +422,26 @@ a {
   font-size: 0.89rem;
   outline: none;
   width: 180px;
+}
+
+.input-search-nav::placeholder{
+  color: var(--text-inverse-muted);
+}
+
+.search-btn-icon {
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-inverse-muted);
+  transition: color var(--transition-fast);
+}
+
+.search-btn-icon:hover {
+  color: var(--accent);
 }
 
 ::placeholder {
