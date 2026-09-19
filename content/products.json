@@ -14,13 +14,13 @@
   {
     "id": "knowmentor",
     "name": "KnowMentor",
-    "tagline": "Peer Mentorship & Engineering Knowledge Exchange",
-    "description": "Connect with top-performing senior students and study peers for 1-on-1 technical coursework walkthroughs, exam prep, and engineering project reviews.",
-    "category": "Peer Learning",
+    "tagline": "Learn smarter. Understand better.",
+    "description": "KnowMentor is an AI-powered study helper that makes learning easier with clear explanations, interactive quizzes, and smart study tools, all designed to help students understand, practice, and learn at their own pace.",
+    "category": "AI Study",
     "developer": "Umoh Etini",
     "icon": "school",
-    "tags": ["#Mentorship", "#PeerStudy", "#Collaboration"],
-    "link": "https://knowmentor.example.com",
+    "tags": ["#AIStudy", "#StudyTools", "#ExamPrep"],
+    "link": "https://knowmentor-project.vercel.app",
     "status": "Live Production"
   },
   {
