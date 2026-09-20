@@ -49,21 +49,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Call open-ended payment processor
-    processPayment({
+    const donationDetails = {
       amount: selectedAmount,
       name: name,
       email: email
-    });
+    };
+    processPayment(donationDetails, ['email', 'amount']);
   });
 
 });
+
+function splitName(fullName) {
+  const parts = fullName.trim().split(/\s+/);
+  const first = parts[0];
+  const last = parts.length > 1 ? parts.slice(1).join(' ') : first; // fallback if only one word given
+  return { first, last };
+}
 
 /**
  * OPEN-ENDED PAYMENT FUNCTION
  * Hook your Paystack, Flutterwave, or Stripe JS SDK here.
  */
-function processPayment(donationDetails) {
+function processPayment(donationDetails, lockedFields = []) {
   console.log("Initializing payment with data:", donationDetails);
+
+  // PRE-FILLING GATEWAY INFORMATION
+  const { first, last } = splitName(donationDetails.name);
+
+  const params = new URLSearchParams({
+    first_name: first,
+    last_name: last,
+    email: donationDetails.email,
+    amount: donationDetails.amount
+  });
+
+  if (lockedFields.length) {
+    params.set('readonly', lockedFields.join(','));
+  }
   
   // MOCK UI STATE CHANGE (Change button text while loading)
   const payBtn = document.getElementById('payButton');
@@ -75,30 +97,13 @@ function processPayment(donationDetails) {
   // Simulate API delay, replace this setTimeout with your actual Gateway initialization
   setTimeout(() => {
     alert(`Thank you, ${donationDetails.name}! Preparing redirect to secure checkout for ₦${donationDetails.amount}...`);
+
+    window.location.href = `https://paystack.shop/pay/labroute?${params.toString()}`
     
     // Reset button
     payBtn.innerHTML = originalHtml;
     payBtn.style.opacity = '1';
     payBtn.disabled = false;
-    
-    /* 
-    ==================================================
-    Example Paystack Implementation:
-    ==================================================
-    let handler = PaystackPop.setup({
-      key: 'pk_test_xxxxxxxxxx',
-      email: donationDetails.email,
-      amount: donationDetails.amount * 100, // Paystack expects kobo
-      currency: "NGN",
-      callback: function(response) {
-        alert('Payment complete! Reference: ' + response.reference);
-      },
-      onClose: function() {
-        alert('Transaction was not completed, window closed.');
-      }
-    });
-    handler.openIframe();
-    */
 
-  }, 1000);
+  }, 1500);
 }
