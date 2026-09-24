@@ -34,5 +34,17 @@
     "tags": ["#Electronics", "#Hardware", "#BenchTools"],
     "link": "https://resistopulse.example.com",
     "status": "Beta"
+  },
+    {
+    "id": "droplink",
+    "name": "Droplink",
+    "tagline": "Drop it. Link it. Share it.",
+    "description": "Share files and text instantly with a unique, secure link that anyone can use to access your data.",
+    "category": "Utilities / Web Utilities",
+    "developer": "Umoh Etini",
+    "icon": "electric_bolt",
+    "tags": ["#File transfer", "#Web share", "#Clipboard share online"],
+    "link": "https://droplink-91ku.onrender.com",
+    "status": "Live Production"
   }
 ]
