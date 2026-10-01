@@ -1,0 +1,91 @@
+{
+  "id": "ms-201-practical-2-production-of-a-metal-door-hinge-using-a-centre-lathe",
+  "code": "MS 201 P2",
+  "title": "Production of a Metal Door Hinge Using a Centre Lathe",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Lathe",
+    "#Turning",
+    "#MetalFabrication"
+  ],
+  "verified": true,
+  "file": "production/ms-201-practical-2-production-of-a-metal-door-hinge-using-a-centre-lathe.json",
+  "content": {
+    "aim": "To produce a metal door hinge shaft (pin) using a centre lathe machine.",
+    "objectives": [
+      "To perform centring, facing, plain turning, chamfering and drilling on the lathe.",
+      "To produce the hinge shaft to the required dimensions.",
+      "To apply the safety precautions of lathe operation."
+    ],
+    "apparatus": [
+      "Mild steel bar of suitable diameter.",
+      "Centre lathe, three-jaw chuck, H.S.S. turning tool, centre drill and drill bit in the tailstock.",
+      "Vernier calliper, steel rule, chuck key."
+    ],
+    "theory": {
+      "text": "A door hinge consists of two leaves with knuckles joined by a pin (shaft) that passes through the knuckles, on which the leaves rotate. The pin must be round, straight and of uniform diameter so that the hinge turns smoothly, and it often has a chamfered end so that it enters the knuckles easily. The pin or shaft is a simple but typical turned component, because it requires only straight turning, facing, chamfering and, if required, drilling. The sequence of operations is centring, facing, plain turning, chamfering and drilling. Centring is done by marking and drilling a small centre hole, using a centre drill held in the tailstock chuck, so that the end of the work is supported by the dead centre and the work does not whip. Facing squares the ends and sets the length. Plain turning, with the tool fed parallel to the axis, reduces the bar to the required diameter, and a finishing cut with a lower feed gives a smooth finish. Chamfering bevels the ends and removes sharp edges. Drilling, when needed, is done with the drill held in the tailstock spindle and fed by the tailstock hand wheel. Turning speed is determined by the formula N = 1000V/(pi x D), where V is the cutting speed for the material and tool (m/min) and D is the diameter in mm, so that a smaller diameter needs a higher rpm for the same cutting speed.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ms-201-practical-2-production-of-a-metal-door-hinge-using-a-centre-lathe_fig1_facing-operation.jpeg",
+          "caption": "Figure 1: Facing operation (Lab Manual, p. 82)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-practical-2-production-of-a-metal-door-hinge-using-a-centre-lathe_fig2_straight-turning.jpeg",
+          "caption": "Figure 2: Straight turning (Lab Manual, p. 82)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-practical-2-production-of-a-metal-door-hinge-using-a-centre-lathe_fig3_holding-work-between-centres.jpeg",
+          "caption": "Figure 3: Holding work between centres (Lab Manual, p. 79)."
+        }
+      ]
+    },
+    "procedure": [
+      "The mild steel bar was held in the three-jaw chuck with enough overhang.",
+      "The tool was set at centre height and a facing cut was made at the free end.",
+      "A centre hole was drilled in the end using the centre drill held in the tailstock.",
+      "The work was turned along its length to the required diameter by plain turning, taking roughing and then finishing cuts.",
+      "The ends of the shaft were chamfered.",
+      "The work was reversed in the chuck, faced to the required length and chamfered.",
+      "Drilling was done where required, using the tailstock.",
+      "Dimensions were checked with the vernier calliper."
+    ],
+    "precautions": [
+      "Hold the work rigidly in the chuck and do not leave the chuck key in it.",
+      "Set the tool at centre height and secure it firmly.",
+      "Do not touch the rotating work or remove chips by hand.",
+      "Use cutting fluid and clear chips often.",
+      "Wear safety glasses and keep sleeves and hair away from the machine."
+    ],
+    "discussion": "The door hinge pin is a simple part, but it brought together several basic lathe operations in one job. We found that a sharp tool, correct speed and light finishing cuts produced a smooth, round surface, while taking too heavy a cut caused chatter and a rough finish. Centring the end of the bar and supporting it with the tailstock prevented the bar from bending away from the tool. Checking the diameter at several points along the length was important, because taper can arise if the tailstock or tool post is out of alignment. Chamfering the ends was a small step, but it made the finished pin easy to fit into the hinge knuckle and safer to handle.",
+    "conclusion": "The hinge shaft was produced on a centre lathe by centring, facing, plain turning, chamfering and drilling. The practical consolidated our ability to do basic lathe operations to specified dimensions while following safety precautions.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the shaft.",
+        "answer": "The shaft is a plain cylinder of the specified diameter and length with chamfered ends (see the straight-turning figure)."
+      },
+      {
+        "question": "Using simple sketches, enumerate the operational steps involved in the production of the shaft.",
+        "answer": "Centring, facing, plain turning, chamfering, drilling."
+      },
+      {
+        "question": "List the functions of the lathe machine.",
+        "answer": "Turning, facing, grooving, knurling, thread cutting, taper turning, drilling, boring."
+      },
+      {
+        "question": "Describe face and straight turning.",
+        "answer": "Facing: the tool is fed perpendicular to the axis to produce a flat end face. Straight turning: the tool is fed parallel to the axis to produce a cylindrical surface."
+      },
+      {
+        "question": "List the safety precautions observed during the work.",
+        "answer": "See the precautions above."
+      }
+    ],
+    "learnings": [
+      "How the basic lathe operations combine to make a shaft.",
+      "The relationship between spindle speed, cutting speed and diameter.",
+      "Why work should be supported by a centre in the tailstock."
+    ]
+  }
+}

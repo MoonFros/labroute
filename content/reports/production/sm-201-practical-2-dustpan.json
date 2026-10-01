@@ -1,0 +1,79 @@
+{
+  "id": "sm-201-practical-2-dustpan",
+  "code": "SM 201 P2",
+  "title": "Dustpan",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#SheetMetalWork",
+    "#PatternDevelopment",
+    "#Fabrication"
+  ],
+  "verified": true,
+  "file": "production/sm-201-practical-2-dustpan.json",
+  "content": {
+    "aim": "To produce a dustpan from G.P. sheet, from working drawing and development to the finished article.",
+    "objectives": [
+      "To draw the 2D and 3D views and the development of a dustpan.",
+      "To mark, cut, bend and join the sheet to form the dustpan.",
+      "To compare the dustpan with the simple tray and understand the effect of the tapered side."
+    ],
+    "apparatus": [
+      "G.P. sheet, 28 gauge.",
+      "Paper, pencil, steel rule, scriber and marking pen.",
+      "Dot punch, hand snip, mallet and flatter, stake.",
+      "Soldering iron, solder and flux."
+    ],
+    "theory": {
+      "text": "A dustpan is similar to the tray in its construction, except that it has a shallow body with a sloping (tapered) front lip and a raised back, so that dust can be swept onto it easily. It consists of a base, two sides and a back. The sides are not rectangles but taper from a low front to a higher back, so their development is a trapezoid. The slanting edge must be drawn in true length because the vertical height of the side is not the same as the length of the sloping edge. A handle is usually attached at the back, riveted or soldered. The dustpan is formed by the same sequence as the tray: the development is drawn, the base is constructed, then the two sides, then the ends. A 5 mm allowance is provided on the side face for joining the corners by seaming, the points are notched to prevent bulging on seaming, and the sheet is bent, formed and soldered. The front edge is generally hemmed or kept low so that dust can slide on. The design of a dustpan shows the practical use of sheet metal development in domestic products. It also shows that more than a single development method may be needed when edges are inclined; the sides are developed using the parallel-line method, but their true lengths are obtained from projection.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/sm-201-practical-2-dustpan_fig1_development-of-a-dustpan-base.jpeg",
+          "caption": "Figure 1: Development of a dustpan: base, tapered sides, lip and back (redrawn for clarity from Lab Manual, p. 41)."
+        }
+      ]
+    },
+    "procedure": [
+      "2D and 3D sketches were drawn to scale.",
+      "The development was drawn, considering all lines in true length.",
+      "The base of the dustpan was constructed, then the two sides and the two ends.",
+      "A 5 mm allowance was set on the side face for seaming.",
+      "The corners were notched to prevent bulging on seaming.",
+      "The development was cut from paper and fixed on the G.P. sheet with a sticker.",
+      "Two points were punched on each bending line, and the boundary lines were marked.",
+      "The paper was removed, the punch points were joined with a scriber, and the sheet was sheared along the boundary using the hand snip.",
+      "The sheet was flattened with a mallet on a flatter.",
+      "The seaming lines were bent first, then the remaining lines, to form the shape.",
+      "The surface was finished on a stake, the joints were soldered, and the dustpan was cleaned."
+    ],
+    "precautions": [
+      "Take care with sharp edges and burrs after shearing.",
+      "Do not over-stretch the sheet when hammering.",
+      "Check the dimensions of the development before cutting.",
+      "Use the soldering iron and flux carefully.",
+      "Wear gloves and safety glasses."
+    ],
+    "discussion": "The dustpan was a little more demanding than the tray because the sides are tapered, and their slanting edges had to be set out in true length. If we had used the plan length, the finished sides would have been too short and the joints would not have met properly. The difference between plan view and true length is an important concept in sheet metal development. The low front lip and the sloping sides also made the bending order important. We found that bending the seaming line first prevented distortion. The solder must be applied sparingly, to give a neat joint without leaving lumps that would hinder the dust from sliding into the pan.",
+    "conclusion": "A dustpan was developed, cut, formed and soldered from G.P. sheet. The exercise reinforced the principles of development in true length, notching, seaming and soldering, and showed how the tray technique can be adapted to a different product.",
+    "questions": [
+      {
+        "question": "Produce the working drawing and development of the dustpan.",
+        "answer": "See the development above and the 2D/3D drawings in the manual (p. 41)."
+      },
+      {
+        "question": "Using simple sketches, state the sequence of operations.",
+        "answer": "Sketch, develop, cut pattern, mark sheet, punch, shear, flatten, bend, form, solder, finish."
+      },
+      {
+        "question": "State the safety precautions.",
+        "answer": "See above."
+      }
+    ],
+    "learnings": [
+      "How to develop an article with tapered sides using true lengths.",
+      "Why the order of bending matters.",
+      "How to adapt a basic technique to a new product."
+    ]
+  }
+}

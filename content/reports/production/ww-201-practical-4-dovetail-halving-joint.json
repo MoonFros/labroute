@@ -1,0 +1,76 @@
+{
+  "id": "ww-201-practical-4-dovetail-halving-joint",
+  "code": "WW 201 P4",
+  "title": "Dovetail Halving Joint",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Woodwork",
+    "#Joinery",
+    "#DovetailJoint"
+  ],
+  "verified": true,
+  "file": "production/ww-201-practical-4-dovetail-halving-joint.json",
+  "content": {
+    "aim": "To make a dovetail halving joint, a joint that keys the two wood members together and fits better than a simple tee halving joint.",
+    "objectives": [
+      "To mark out a dovetail pin and socket using a dovetail marker, try square and marking gauge.",
+      "To cut the dovetail with a dovetail saw and to remove waste with chisels.",
+      "To fit and adjust the joint to give a flush surface."
+    ],
+    "apparatus": [
+      "Two pieces of Afara, 300 x 60 x 42 mm.",
+      "Pencil, measuring tape, try square, dovetail marker, marking gauge.",
+      "Dovetail saw, chisel, mallet, paring chisel and jack plane."
+    ],
+    "theory": {
+      "text": "The dovetail halving joint is a way of making a halving joint in which the pin is shaped like a dovetail (a wedge that widens towards its end). The two wood members therefore key together properly, which means that the joint cannot be pulled apart in the direction of its length. This gives a better fit than the ordinary tee halving joint, and it serves the same purpose. The joint is used where tension is likely to try to pull the members apart, in frames, in table rails and in cabinet work. The pin has sloping sides, usually in a ratio between 1 in 6 and 1 in 8, drawn with the dovetail marker, so the pin is wider at its end than at its neck. The socket is cut to the same shape in the other member. The depth is half of the thickness, as in the tee halving joint. In the dimensions of the manual the pin is 150 mm wide at the widest part and the pieces are 50 mm wide with 12 mm for the depth recess. The socket is cut first, because it is easier to mark the pin from the socket than the socket from the pin. The pin outline is then transferred from the socket to the other member by a pencil or a scriber, and the pin is cut to fit. Surplus wood is scooped out with chisels and the pin is trimmed with a paring chisel. Any fine adjustment is made by removing small amounts of wood from the pin, since the joint must fit tightly without the use of excessive force. At the end the joint should lie flush on the surface, and the surface is levelled with the plane.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ww-201-practical-4-dovetail-halving-joint_fig1_dovetail-halving-joint-with-its.jpeg",
+          "caption": "Figure 1: Dovetail halving joint with its pin and socket and main dimensions (Lab Manual, p. 34)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-practical-4-dovetail-halving-joint_fig2_chisels-used-to-scoop-out.jpeg",
+          "caption": "Figure 2: Chisels used to scoop out waste and to pare the pin (Lab Manual, p. 27)."
+        }
+      ]
+    },
+    "procedure": [
+      "The two pieces were marked out, one for the socket and the other for the dovetail pin.",
+      "The try square was used to transfer the marks to the edges.",
+      "The socket was cut first using the dovetail saw.",
+      "The waste was scooped out and the socket cleaned up with chisels.",
+      "The pin and the dovetail were cut.",
+      "The pin was cleaned, including the waste portion, using the paring chisel.",
+      "The joint was fixed and adjusted by removing unwanted parts.",
+      "The joint was fitted to make a flush surface, and the jack plane was used to level it.",
+      "The joint was tested for squareness."
+    ],
+    "precautions": [
+      "Cut on the waste side of the lines and never cut beyond the gauge lines.",
+      "Use sharp chisels and keep both hands behind the cutting edge.",
+      "Clamp the work during chiselling.",
+      "Trim the pin in small cuts rather than forcing the joint together.",
+      "Wear safety glasses and keep your bench clear of tools."
+    ],
+    "discussion": "The dovetail halving joint was more difficult than the tee halving joint because the sloping sides had to be marked and cut accurately. Where the angle was slightly off, the pin did not seat properly and a gap appeared. The best method was to cut the socket first and then mark the pin from it, which meant that any small error in the socket was copied into the pin and the two still fitted. The joint also demonstrated the benefit of the dovetail shape. Once assembled, the joint could not be pulled apart lengthwise, unlike the simple tee halving joint. Paring with a sharp chisel was the most useful technique for the final fit because it removes only a very thin layer at a time.",
+    "conclusion": "A dovetail halving joint was produced and tested. The exercise showed the value of careful marking and of fitting the pin to the socket, and it demonstrated that this joint is stronger and tighter than a tee halving joint.",
+    "questions": [
+      {
+        "question": "Show a working drawing of the dovetail halving joint.",
+        "answer": "The drawing shows two members with a dovetail pin of 150 mm and the socket with 12 mm depth recess (see the figure)."
+      },
+      {
+        "question": "State the uses of each tool used.",
+        "answer": "Dovetail marker: marking the dovetail slope. Dovetail saw: fine cutting. Chisel and mallet: removing waste. Paring chisel: trimming the pin. Jack plane: levelling the surface. Marking gauge: marking depth."
+      }
+    ],
+    "learnings": [
+      "How a dovetail locks two members mechanically.",
+      "How to cut a socket first and mark the pin from it.",
+      "How to use a paring chisel for fine fitting."
+    ]
+  }
+}

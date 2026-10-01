@@ -1,0 +1,133 @@
+{
+  "id": "em-201-study-of-workshop-measuring-and-marking-instruments",
+  "code": "EM 201",
+  "title": "Study of Workshop Measuring and Marking Instruments (Linear Measuring Devices)",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Metrology",
+    "#MeasuringInstruments",
+    "#WorkshopPractice"
+  ],
+  "verified": true,
+  "file": "production/em-201-study-of-workshop-measuring-and-marking-instruments.json",
+  "content": {
+    "aim": "To study the various linear measuring devices used in the workshop, and to learn how to choose a suitable instrument according to the job and the precision required.",
+    "objectives": [
+      "To become familiar with the different types of linear measuring instruments.",
+      "To select a suitable measuring device according to the job and the accuracy required.",
+      "To learn how to read the vernier scale and the micrometer scale correctly."
+    ],
+    "apparatus": [
+      "Steel rule (150, 300, 500 and 1000 mm).",
+      "Outside and inside spring callipers, divider and telescopic gauge.",
+      "Depth gauge.",
+      "Vernier calliper and vernier height gauge.",
+      "Outside micrometer (and samples of inside, screw-thread, V-anvil, blade, groove and digital micrometers for demonstration).",
+      "Sample work pieces of known dimensions."
+    ],
+    "theory": {
+      "text": "Linear measurement covers the measurement of lengths, diameters, heights and thickness. The basic principle of mechanical linear measurement is comparison with standard dimensions on a suitably engraved instrument. Linear measuring instruments are categorised by accuracy into two groups: non-precision instruments, which measure to the line graduations of a rule, and precision instruments, which use a vernier or screw principle to measure to a fraction of a millimetre. There are also electrical measuring devices, which are mainly transducers that convert displacement into a measurable voltage or current, such as strain gauges, linear variable differential transformers (LVDT) and potentiometers.\n\nNon-precision instruments\n\nNon-precision instruments are limited to the measurement of parts to a visible line graduation on the instrument. They are used where high accuracy is not required. Steel rule. This is the simplest and most common measuring instrument. It works by comparing an unknown length with one that has been previously calibrated, so the rule must be graduated uniformly throughout its length. Rules are made in 150, 300, 500 and 1000 mm lengths and may be of folding type so that they can be kept in a pocket. The accuracy obtained depends on the quality of the rule and on the skill of the user in estimating part of a millimetre, which usually limits the reading to about 0.5 mm. Callipers. Callipers are used to measure parts that cannot be measured directly with a scale. They consist of two legs hinged at the top; the ends of the legs span the part to be inspected, and this span is then transferred to a scale. Callipers are of two types, the spring type and the firm-joint type. In the spring type the two legs are attached with a spring, and the setting is adjusted by a knurled nut running on a finely threaded screw. The spring keeps the legs rigid at all points of the adjustment. Spring callipers are of two forms. The outside spring calliper measures outside dimensions such as the diameter of a shaft, and its legs are bowed inwards. The inside spring calliper measures inside dimensions such as the diameter of a hole or the distance between shoulders, and its legs are bent outwards. In both cases accuracy depends on the user's sense of feel, and a steel rule must be used with them to obtain a reading. Divider. A divider is similar in construction to a calliper except that both legs are straight with sharp hardened points at the ends. It is used for scribing arcs and circles and for general layout work. Its nominal size is the distance from the fulcrum roller centre to the end of a leg, and it is available in sizes such as 100, 200 and 300 mm. Telescopic gauge. This is used to measure the internal diameter of a hole during machining. It consists of a handle and two plungers, one telescoping into the other, under spring tension. The plungers are compressed and locked, the plunger end is inserted into the hole and allowed to expand to the opposite edges, then locked again, withdrawn, and measured with an outside micrometer. Depth gauge. This is used to measure the depth of blind holes, grooves, slots and the heights of shoulders. It is essentially a narrow steel rule clamped to a head that sits at right angles to the rule.\n\nPrecision instruments\n\nVernier calliper. The vernier calliper gives an accuracy of 0.1 mm down to 0.01 mm. The main scale carries the fixed graduations and one of the two measuring jaws, while a sliding head carries a vernier scale and the other jaw. The sliding head can be locked on the main scale by a knurled screw and moved finely by a fine-adjustment screw. The lower jaws measure external dimensions, the upper jaws measure internal dimensions, and the rectangular rod at the end measures depth. To take a reading, the main-scale reading up to the zero of the vernier scale is noted. Then the vernier division which coincides exactly with a main-scale division is found, and this number multiplied by the vernier constant (least count) gives the vernier reading, which is added to the main-scale reading. The least count is the difference between one main-scale division and one vernier-scale division. As worked in the sample questions, a vernier with 25 divisions spanning 12 mm, on a main scale with 24 divisions per 12 mm, gives a main-scale division of 12/24 = 0.5 mm, a vernier division of 12/25 = 0.48 mm and therefore a least count of 0.5 - 0.48 = 0.02 mm. Vernier height gauge. It uses the same principle as the vernier calliper and is mainly used to measure height. It has a heavy base block, a graduated beam, a sliding jaw assembly and a removable clamp, and a scriber can replace the measuring jaw so that lines can be scribed at a given height above a surface plate. Micrometer. The micrometer is one of the most widely used precision instruments, used mainly for external dimensions such as the diameter of shafts and the thickness of parts, to an accuracy of 0.01 mm. Its parts are the frame, anvil and spindle, screwed spindle, graduated sleeve or barrel, thimble, ratchet or friction stop, and spindle clamp. The spindle has a thread of 0.5 mm pitch, so one complete turn of the thimble advances the spindle by 0.5 mm. The thimble has 50 equal divisions around its circumference, so one thimble division corresponds to 0.5/50 = 0.01 mm, which is the least count. The ratchet slips when the pressure on the screw exceeds a set amount, ensuring uniform pressure and preventing distortion of the work or the instrument. To read a micrometer we note (1) the number of whole millimetres visible above the reference line, (2) whether a half-millimetre graduation below the line is visible, and (3) the thimble division in line with the reference line, multiplied by 0.01 mm. For example, 8 divisions above the line (8.00 mm), 1 division below the line (0.50 mm) and 28 thimble divisions (0.28 mm) give 8.78 mm. If the micrometer does not read zero when closed, the zero error must be applied as a correction.\n\nSpecial types of micrometer\n\nThe inside micrometer calliper has jaws with hardened and ground contact surfaces and no U-shaped frame, and it is used for small internal dimensions. The inside micrometer, for internal measurement, is used for holes over 50 mm in diameter and has a measuring unit with extension rods of 13, 25, 50, 100, 150, 200 and 600 mm. The screw-thread micrometer has a pointed spindle and a double V-anvil to contact the thread flanks. The V-anvil micrometer, with a 60 degree V, is used for checking out-of-roundness of centreless-ground parts and fluted tools such as taps and reamers. The blade-type micrometer has a non-rotating spindle and is used for narrow grooves and keyways. The groove micrometer measures grooves and shoulders inside a bore. The bench micrometer is a high-precision micrometer with an anvil retractor. The digital micrometer gives a direct reading up to 0.001 mm and has push-button zero reset and hold functions.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig1_steel-rule-graduated-in-centimetre.jpeg",
+          "caption": "Figure 1: Steel rule graduated in centimetre and inch scales (Departmental Lab Manual, p. 11)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig2_outside-spring-calliper-showing-leg.jpeg",
+          "caption": "Figure 2: Outside spring calliper showing leg, spring, adjusting screw and knurled nut (Lab Manual, p. 12)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig3_inside-spring-calliper.jpeg",
+          "caption": "Figure 3: Inside spring calliper (Lab Manual, p. 12)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig4_a-pair-of-dividers.jpeg",
+          "caption": "Figure 4: A pair of dividers (Lab Manual, p. 13)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig5_telescopic-gauge-used-to-measure.jpeg",
+          "caption": "Figure 5: Telescopic gauge used to measure the internal diameter of a hole (Lab Manual, p. 13)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig6_depth-gauge.jpeg",
+          "caption": "Figure 6: Depth gauge (Lab Manual, p. 14)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig7_vernier-calliper-measuring-the-diameter.jpeg",
+          "caption": "Figure 7: Vernier calliper measuring the diameter of a round bar (Lab Manual, p. 14)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig8_vernier-height-gauge-with-its.jpeg",
+          "caption": "Figure 8: Vernier height gauge with its parts labelled (Lab Manual, p. 15)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig9_outside-micrometer-anvil-spindle-barrel.jpeg",
+          "caption": "Figure 9: Outside micrometer: anvil, spindle, barrel, thimble, ratchet and frame (Lab Manual, p. 16)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig10_screw-thread-micrometer-calliper.jpeg",
+          "caption": "Figure 10: Screw-thread micrometer calliper (Lab Manual, p. 18)."
+        },
+        {
+          "src": "assets/lab_images/em-201-study-of-workshop-measuring-and-marking-instruments_fig11_digital-micrometer.jpeg",
+          "caption": "Figure 11: Digital micrometer (Lab Manual, p. 19)."
+        }
+      ]
+    },
+    "procedure": [
+      "Non-precision measurement",
+      "A sample work piece of unknown length was selected, and the steel rule was placed along its edge with the zero graduation exactly at one end; the reading at the other end was recorded.",
+      "For the outside diameter of a round bar, the outside spring calliper was set by turning the knurled nut until the legs just touched the work gently. The setting was then transferred to the steel rule and read.",
+      "For a hole, the inside spring calliper was set to touch the walls lightly, then read against the steel rule. The telescopic gauge was also locked in the hole and measured with a micrometer.",
+      "The depth of a blind hole or slot was measured with the depth gauge by seating the head on the surface and extending the rule to the bottom. Vernier calliper",
+      "The jaws were closed, and the instrument was checked for zero error.",
+      "The work piece was placed between the jaws and the fine adjustment screw turned until the jaws fitted snugly. The lock screw was tightened.",
+      "The main-scale reading just before the vernier zero was noted, then the vernier division coinciding with a main-scale division was found. The reading is main scale reading + (coinciding division x least count). Micrometer",
+      "The measuring faces were cleaned and the micrometer was closed using the ratchet to check zero error.",
+      "The work was placed between the anvil and spindle, and the thimble turned using only the ratchet until it clicked.",
+      "The sleeve reading (mm and half-mm) was added to the thimble reading (thimble division x 0.01 mm), and the zero error corrected for.",
+      "The various types of micrometer and the vernier height gauge were examined, and their special uses were noted."
+    ],
+    "precautions": [
+      "Clean the measuring faces and the work piece before measuring.",
+      "Always check for zero error before taking readings.",
+      "Do not force the callipers or the vernier; use gentle, uniform pressure.",
+      "Use the ratchet when closing the micrometer to prevent over-tightening.",
+      "Read the scale with the eye directly in line to avoid parallax error.",
+      "Do not measure moving or hot work, and never use the instruments as hammers or levers.",
+      "Store precision instruments with their faces slightly apart in their cases."
+    ],
+    "discussion": "The experiment showed that the choice of instrument must follow the accuracy that the job demands. The steel rule is fast and convenient but only reliable to about half a millimetre, so it is suitable for rough layout and general lengths. When the same bar was measured with a vernier calliper, the reading carried a precision of 0.02 mm, and with the micrometer, 0.01 mm. The difference between these readings, for the same object, illustrates why precision work such as fits and shafts requires precision instruments. Spring callipers do not give a reading by themselves; they only transfer the dimension to a rule. This means that their accuracy is limited by both the feel of the user and the reading of the rule. They are, however, very useful for checking diameters on a lathe and for comparing a part with a mating part. The telescopic gauge solves a problem that the calliper cannot, which is measuring the diameter of a bore from inside, but it too depends on a micrometer for its final reading. Common sources of error that we identified include zero error, parallax when reading the vernier, uneven pressure on the work (which the micrometer ratchet is designed to prevent), dirt on the faces and temperature differences. A good practice is to take more than one reading and to check the instrument against a known standard.",
+    "conclusion": "The workshop linear measuring instruments were studied and used. Non-precision instruments (steel rule, callipers, divider, telescopic and depth gauges) are quick and suit general work, while precision instruments (vernier calliper, vernier height gauge and micrometers) provide an accuracy of 0.02 mm down to 0.01 mm or better. A suitable instrument must be selected according to the precision required, and care must be taken to read it correctly.",
+    "questions": [
+      {
+        "question": "Describe the different types of calliper for measuring linear dimensions.",
+        "answer": "Callipers are of the spring type and the firm-joint type. The spring type includes the outside calliper (for outside diameters and thickness), the inside calliper (for hole diameters and internal distances), and the divider and odd-leg (hermaphrodite) calliper used for scribing. The vernier calliper is a precision calliper with a main scale and a vernier scale that measures external, internal and depth dimensions."
+      },
+      {
+        "question": "A vernier scale consists of 25 divisions on 12 mm spacing and the main scale has 24 divisions on 12 mm. What is the least count?",
+        "answer": "One main-scale division = 12/24 = 0.5 mm. One vernier division = 12/25 = 0.48 mm. Least count = 0.5 - 0.48 = 0.02 mm."
+      },
+      {
+        "question": "Describe different types of micrometers for measuring linear dimensions.",
+        "answer": "The outside micrometer (external dimensions), inside micrometer calliper and inside micrometer (internal dimensions), screw-thread micrometer, V-anvil micrometer (out-of-roundness), blade-type micrometer (narrow grooves and keyways), groove micrometer, bench micrometer and digital micrometer (direct reading to 0.001 mm)."
+      },
+      {
+        "question": "What is the degree of accuracy of a steel rule and a vernier calliper?",
+        "answer": "A steel rule can be read to about 0.5 mm (half a millimetre) depending on the skill of the user, while a vernier calliper reads to 0.1 mm, 0.05 mm or 0.02 mm depending on the vernier scale, and up to 0.01 mm for finer designs."
+      },
+      {
+        "question": "Select the most appropriate linear measuring tool for a given job.",
+        "answer": "Rough lengths: steel rule. Outside diameters for comparison: outside spring calliper. Bore diameters: inside calliper or telescopic gauge. Slot depth: depth gauge. Accurate diameters, lengths and depths: vernier calliper. High precision shaft diameter: micrometer. Heights and scribing: vernier height gauge."
+      }
+    ],
+    "learnings": [
+      "How to read a steel rule, a vernier calliper and a micrometer, and how to compute the least count.",
+      "That non-precision instruments are for quick, general work and precision instruments are for close tolerances.",
+      "That zero error, parallax and uneven pressure are the main sources of error.",
+      "How to choose the right instrument for each type of measurement."
+    ]
+  }
+}

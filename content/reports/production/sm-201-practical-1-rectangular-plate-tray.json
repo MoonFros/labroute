@@ -1,0 +1,88 @@
+{
+  "id": "sm-201-practical-1-rectangular-plate-tray",
+  "code": "SM 201 P1",
+  "title": "Rectangular Plate (Tray)",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#SheetMetalWork",
+    "#PatternDevelopment",
+    "#Bending"
+  ],
+  "verified": true,
+  "file": "production/sm-201-practical-1-rectangular-plate-tray.json",
+  "content": {
+    "aim": "To produce a rectangular tray from G.P. sheet, from working drawing, development and pattern to the finished soldered article.",
+    "objectives": [
+      "To draw the 2D and 3D views and the full-scale development of the tray.",
+      "To mark, cut, bend and seam a sheet metal tray.",
+      "To solder the joint and finish the surface."
+    ],
+    "apparatus": [
+      "G.P. (galvanised plain) sheet 28 gauge.",
+      "Paper, pencil, scale and paper-cutting scissors.",
+      "Steel rule, scriber, marking pen, dot or prick punch.",
+      "Hand snips, mallet, flatter, stake, soldering iron, solder and flux."
+    ],
+    "theory": {
+      "text": "A tray is a typical example of an article developed by the parallel-line method. The base is a rectangle, and the four sides are rectangles that are folded up at 90 degrees from the edges of the base. Because the sides are perpendicular to the base, every line in the development appears in its true length, which makes the development simple. The sides and ends are attached to the base at the bend lines, and extra strips (allowances) are added to the free edges so that the corners can be joined by seaming and soldering. The manual stipulates a 5 mm extra allowance on the side faces to be used for joining the corners by seaming. At the corners the metal would overlap and bulge if bent as it is, so the corner points are notched (a small piece removed) to prevent bulging. Bending is done along the seaming line first and then along the remaining lines. The seams are then soldered, using a low-melting-point alloy that flows between the surfaces by capillary action once the metal and flux are hot enough, and finally the surface is finished. The development, made on paper first, serves as a template. It is cut out, fixed on the sheet with a sticker, and the bend lines are transferred by punching two points on each bending line, because a punched dot is more permanent than a pencil line. The boundary lines are then marked in with a marker pen and sheared.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/sm-201-practical-1-rectangular-plate-tray_fig1_development-of-the-rectangular-tray.jpeg",
+          "caption": "Figure 1: Development of the rectangular tray: a central base with four folded sides and 5 mm seaming allowances (redrawn for clarity from Lab Manual, p. 40)."
+        }
+      ]
+    },
+    "procedure": [
+      "2D and 3D sketches were drawn to scale.",
+      "The development was drawn, taking all lines in true length.",
+      "The base of the tray was constructed, followed by the two sides and the two ends.",
+      "A 5 mm extra allowance was set on the side faces for joining the corners by seaming.",
+      "The points were notched to prevent bulging on seaming.",
+      "The development shape was cut out along the lines using paper-cutting scissors.",
+      "The development was placed and fixed on the G.P. sheet using a sticker.",
+      "Two points were punched on each bending line.",
+      "The boundary line was marked with a marking pen.",
+      "The paper development was removed, and the two punch points were joined using a scriber or marking pen.",
+      "The boundary lines were sheared using the hand snip.",
+      "The sheet was flattened using a mallet on a flatter.",
+      "The seaming line was bent first, followed by the remaining lines, to get the desired shape by forming.",
+      "The surface was finished, keeping the work on a stake to shape it.",
+      "The joint was soldered.",
+      "Finally, the surface was cleaned and finished to complete the tray."
+    ],
+    "precautions": [
+      "Wear gloves when handling the cut sheet and remove burrs from the edges.",
+      "Mark carefully, as errors cannot be corrected after the sheet is cut.",
+      "Bend the seaming line first to avoid distorting the other bends.",
+      "Do not hammer too hard, since the sheet is thin and can stretch or crack.",
+      "Handle the hot soldering iron with care, and work in a ventilated place."
+    ],
+    "discussion": "The tray was a good introduction to sheet metal because every line in its development is in true length. The principal difficulty was bending accurately along the bend lines. When the bend lines were punched clearly and the sheet was bent over a straight edge or stake, the sides came up square. Where the lines were not clear, the bend wandered and the sides did not close neatly. The 5 mm seaming allowance and the corner notches both proved their worth. Without notching, the metal at the corners bunched up and prevented the sides from closing. With the notches cut, the corners met neatly and the soldering produced a tidy seam. Soldering required clean metal and flux, because otherwise the solder would not flow.",
+    "conclusion": "A rectangular tray was produced from G.P. sheet following the sequence of development, marking, cutting, bending, seaming and soldering. The objective was achieved, and we learned the importance of correct development, true lengths, allowances and notching.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the tray.",
+        "answer": "The tray is drawn in plan, front view and a 3D view, all dimensions in mm (see the 2D/3D drawing in the manual, p. 40)."
+      },
+      {
+        "question": "Produce the development of the tray.",
+        "answer": "See the diagram above: a base with the sides and ends attached on the bend lines, and a 5 mm seam allowance."
+      },
+      {
+        "question": "Using simple sketches, state the operational sequence of how the tray was produced.",
+        "answer": "Sketch and develop, cut pattern, fix on sheet, punch bend lines, mark, shear, flatten, bend, form, solder, finish (see procedure)."
+      },
+      {
+        "question": "State the safety precautions you observed.",
+        "answer": "See the precautions above."
+      }
+    ],
+    "learnings": [
+      "How to develop a tray by the parallel-line method.",
+      "Why notching and seaming allowances are required.",
+      "How to bend, form and solder a sheet metal joint."
+    ]
+  }
+}

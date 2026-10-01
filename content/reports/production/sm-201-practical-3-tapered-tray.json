@@ -1,0 +1,79 @@
+{
+  "id": "sm-201-practical-3-tapered-tray",
+  "code": "SM 201 P3",
+  "title": "Tapered Tray",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#SheetMetalWork",
+    "#PatternDevelopment",
+    "#Fabrication"
+  ],
+  "verified": true,
+  "file": "production/sm-201-practical-3-tapered-tray.json",
+  "content": {
+    "aim": "To produce a tapered tray from G.P. sheet, in which the sides flare outwards from the base.",
+    "objectives": [
+      "To draw the working drawing and the development of a tapered tray.",
+      "To determine the true lengths of the slanting sides and ends.",
+      "To cut, bend, seam and solder the sheet to form the tray."
+    ],
+    "apparatus": [
+      "G.P. sheet, 28 gauge.",
+      "Paper, pencil, scale, scriber and marking pen.",
+      "Dot punch, hand snip, mallet and flatter, stake.",
+      "Soldering iron, solder and flux."
+    ],
+    "theory": {
+      "text": "A tapered tray is a tray whose sides flare outwards from the base, so the top opening is larger than the base. It is typical of many household and industrial articles such as bowls, trays, hoppers and chutes. Its sides are trapezoids, and each side is inclined to the base at an angle larger than 90 degrees. Because the sides are inclined, the true length of the slant edges cannot be taken directly from the plan or the elevation. The true length is found by projecting the inclined edge into a plane in which it appears in its real length, or by calculation using Pythagoras' theorem from the vertical height and the horizontal run of the slant edge. This is the reason why the manual repeatedly insists that the development must be drawn with all lines in true length. The development is made by the parallel-line (or by an approximate triangulation) method. The base is drawn in the middle, and the sloping sides and ends are attached to the edges of the base at the bend lines. At the corners, adjacent sides meet at angles that are slightly different from 90 degrees, so the corner flaps and notches have to be drawn carefully. Seaming allowance of 5 mm is provided on the side faces, and the corners are notched to prevent bulging. After cutting, bending starts from the seaming line and then the other bend lines are bent to give the desired shape by forming. The tray is finished on a stake, soldered at the joints, and cleaned.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/sm-201-practical-3-tapered-tray_fig1_development-of-a-tapered-tray.jpeg",
+          "caption": "Figure 1: Development of a tapered tray: the sides and ends are trapezoids attached to the base and flare outwards (redrawn for clarity from Lab Manual, p. 42)."
+        }
+      ]
+    },
+    "procedure": [
+      "2D and 3D sketches were drawn to scale.",
+      "The development was drawn with all lines in true length.",
+      "The base was constructed, then the two sloping sides and the two sloping ends.",
+      "A 5 mm seam allowance was set on the side faces to join the corners.",
+      "The points were notched to prevent bulging.",
+      "The development was cut out with paper-cutting scissors and fixed on the G.P. sheet with a sticker.",
+      "Two points were punched on each bend line, and the boundary line was marked.",
+      "The paper development was removed, and the punch points were joined by a scriber.",
+      "The boundary lines were sheared with the hand snip, and the sheet was flattened with a mallet on a flatter.",
+      "The seaming line was bent first, followed by the other lines, to get the desired shape.",
+      "The surface was finished on the stake, the joint was soldered, and the tray was cleaned and completed."
+    ],
+    "precautions": [
+      "Wear gloves and avoid contact with sharp edges.",
+      "Check the true lengths before cutting.",
+      "Make small, even hammer blows when forming.",
+      "Notch the corners carefully, and do not cut beyond the notch lines.",
+      "Ventilate the area when soldering."
+    ],
+    "discussion": "The tapered tray was the most challenging of the three trays. The slanted sides meant that the corners of the development did not meet at right angles, and a small error in the true length of the edges caused the adjacent sides to be of different lengths so that the seams did not line up. By working out the true lengths before cutting, we avoided this error. The tapered tray also showed the value of the stake. The flared shape could be formed gradually by hammering the sheet over the stake, and this gave a smooth finish. Once soldered, the tray was rigid, even though the sheet itself was thin, which shows how forming and seaming add stiffness to thin metal.",
+    "conclusion": "A tapered tray was produced from G.P. sheet. The experiment showed how true lengths and notching are applied to articles with inclined sides, and it consolidated our skills of cutting, bending, seaming and soldering.",
+    "questions": [
+      {
+        "question": "Produce the working drawing and the development of the tapered tray.",
+        "answer": "See the diagram above and the 2D/3D drawings in the manual (p. 42)."
+      },
+      {
+        "question": "State the operational sequence using simple sketches.",
+        "answer": "Sketch, find true lengths, develop, cut the pattern, mark the sheet, punch, shear, flatten, bend, form, solder, finish."
+      },
+      {
+        "question": "State the safety precautions you observed.",
+        "answer": "See above."
+      }
+    ],
+    "learnings": [
+      "How to find the true length of an inclined edge.",
+      "How the shape of the development changes for a tapered article.",
+      "How to form a flared shape on a stake."
+    ]
+  }
+}

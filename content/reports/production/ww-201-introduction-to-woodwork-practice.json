@@ -1,0 +1,129 @@
+{
+  "id": "ww-201-introduction-to-woodwork-practice",
+  "code": "WW 201",
+  "title": "Introduction to Woodwork Practice",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Woodwork",
+    "#HandTools",
+    "#Timber"
+  ],
+  "verified": true,
+  "file": "production/ww-201-introduction-to-woodwork-practice.json",
+  "content": {
+    "aim": "To study the materials, tools and basic operations used in the wood workshop, and to learn how timber is marked, cut and planed.",
+    "objectives": [
+      "To know the materials used in the woodwork shop.",
+      "To become familiar with the tools used in woodwork.",
+      "To know how to cut wood.",
+      "To know how to plane wood."
+    ],
+    "apparatus": [
+      "Timber (Afara) in the form of boards and scantlings.",
+      "Marking and measuring tools: steel rule, steel tape, try square, marking gauge, marking knife, bevel square.",
+      "Holding tools: work bench, bench vice, C-clamp, bar clamp.",
+      "Cutting tools: hand saws, tenon saw, bow saw and chisels.",
+      "Planing tools: wooden and metal jack planes, rasp.",
+      "Striking and boring tools: mallet, claw hammer, bradawl, brace and bit, hand drill."
+    ],
+    "theory": {
+      "text": "Carpentry is the process of shaping timber using hand tools. The products include doors and windows, furniture, building construction work and the patterns used for moulding in foundries. Carpentry mainly involves joining wooden pieces together and finishing the surfaces after shaping them, and for this reason the word joining is often used for carpentry. A student of woodwork must therefore know about timber and other carpentry materials, the tools, the operations and the methods of making common joints.\n\nMaterials used in carpentry\n\nThe basic materials are timber and plywood. The auxiliary materials include nails, screws, adhesives, paints and varnishes. Timber is the name given to wood obtained from exogenous (outward-growing) trees. Such a tree grows outwards from the centre by adding concentric layers of fresh wood each year, called annual rings. After full growth the trees are felled and sawn into rectangular sections of various sizes for engineering use. The common shapes and sizes of timber on the market are: log (the trunk of the tree freed of its branches); balk (a log roughly sawn to a square section); deal (width about 225 mm and thickness up to 100 mm); plank (width above 275 mm and thickness 50 to 150 mm); board (thickness below 50 mm and width above 125 mm); batten (width below 175 mm and thickness 30 to 50 mm); and scantlings (assorted pieces of non-standard sizes).\n\nClassification of wood\n\nTimber for commercial use is divided into softwood and hardwood. Softwood is light in weight and light in colour; annual rings are distinct but medullary rays are not visible, and the sap wood is not distinct from the heart wood. Softwoods cannot resist stresses developed across their fibres and are therefore not well suited to woodworking. Hardwood has compact, thin annual rings and its medullary rays are usually visible. It is nearly equally strong along and across the fibres, which makes it the preferred material for woodworking. The cross-section of a tree trunk shows the pith or medulla at the centre, the medullary rays, the annual rings, the heart wood, the sap wood and the bark.\n\nTools for woodworking\n\nThe principal hand tools of a carpentry workshop are classified as marking and measuring tools, cutting tools, planing tools, boring tools, striking tools and holding tools. Marking and measuring tools. Steel rules (30 cm and 60 cm) and flexible measuring rules are used for dimensions. The straight edge and square is a flat strip of wood or metal with straight, parallel edges. The steel tape is used for long dimensions, such as marking on boards and checking overall dimensions. The marking gauge consists of a wooden stem sliding in a stock; the stem carries a steel point, and the stock can be fixed at any position with a thumb screw. It is used to mark lines parallel to an edge. The mortise gauge has two points so that both sides of a mortise can be marked together. The try square has a rectangular steel blade (150 to 300 mm) fixed rigidly to a cast iron stock, and it is used to mark and check right angles. The marking knife (scriber) turns pencil lines into deep scratch lines on the surface. The bevel square is an adjustable try square used to mark and measure angles between 0 and 180 degrees. Holding tools. The work bench is a strong table of hard wood, about 50 to 80 cm in length and 90 cm in width (for the carpenter's type described), at which two to four carpenters can work. The carpenter's bench vice has one fixed jaw and one movable jaw operated by a screw and handle, and its jaws are lined with hard wood so that the work is not damaged. The C-clamp is used to hold short pieces together, for example after gluing, and is available in sizes from 70 to 800 mm. The bar or T-cramp has a steel bar with a threaded spindle and an adjustable shoe and is used to hold glued pieces tightly or to hold unglued pieces in an assembled position. Cutting tools. Saws cut by a reciprocating motion of the toothed edge relative to the work. In a push-type saw the cut occurs during the forward stroke. The hand saw (rip saw and cross-cut saw) is used for straight cuts; its blade is 25 to 40 cm long and 6 to 10 cm wide, with 3 to 5 teeth per cm. The tenon (back) saw has a parallel blade with a stiffened back, with 5 to 8 teeth per cm, and is used for fine, accurate joint work. Other saws are the compass saw, key-hole saw, cross-cut saw and bow saw. Chisels are used to cut and shave wood. The firmer chisel is the most general-purpose chisel, with a flat blade of 15 to 50 mm width. The dovetail chisel has bevelled edges and is used for fine work and corners. The mortise chisel has a thick blade for heavy, deep cuts. Planing tools. A plane smooths timber surfaces. The wooden jack plane is the most commonly used plane; its main part is a wooden block called the sole, in which a steel blade with a knife edge is held at about 45 degrees to the sole by a wooden wedge. The metal jack plane serves the same purpose, but its cast iron body is machined and ground to give smoother operation and a better finish, and it has an adjusting lever and a lever cap. Boring tools. The bradawl bores small holes to start a screw or a nail. The carpenter's brace rotates auger bits and twist drills, often with a ratchet device. The auger bit is the most common tool for making holes in wood; its lead screw guides it into the wood and its helical flutes carry the chips out. The hand drill is used for small holes and has a chuck turned by a gear and pinion arrangement. The gimlet has cutting edges like a twist drill and is used for large holes with hand pressure. Striking tools. The mallet is a wooden-headed hammer used to strike chisels without damaging their handles. The claw hammer has a steel head, with a flat face to drive nails and a claw to extract them. The pincer is used to pull out small nails and pins. The screwdriver drives wood screws, and its size is given by the length of the blade. The wood rasp is a finishing tool with sharp cutting teeth that is used to smooth surfaces and remove sharp edges.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig1_cross-section-of-a-tree-trunk.jpeg",
+          "caption": "Figure 1: Cross-section of a tree trunk showing pith, medullary rays, annual rings, heart wood, sap wood and bark (Lab Manual, p. 22)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig2_measuring-steel-tape.jpeg",
+          "caption": "Figure 2: Measuring steel tape (Lab Manual, p. 23)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig3_marking-gauge.jpeg",
+          "caption": "Figure 3: Marking gauge (Lab Manual, p. 23)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig4_work-bench-with-bench-hook.jpeg",
+          "caption": "Figure 4: Work bench with bench hook, bench stop and vice (Lab Manual, p. 25)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig5_c-clamp.jpeg",
+          "caption": "Figure 5: C-clamp (Lab Manual, p. 25)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig6_bar-or-t-cramp.jpeg",
+          "caption": "Figure 6: Bar or T-cramp (Lab Manual, p. 26)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig7_types-of-saw.jpeg",
+          "caption": "Figure 7: Types of saw (Lab Manual, p. 26)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig8_types-of-chisel.jpeg",
+          "caption": "Figure 8: Types of chisel (Lab Manual, p. 27)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig9_wooden-jack-plane-sectional-view.jpeg",
+          "caption": "Figure 9: Wooden jack plane (sectional view) (Lab Manual, p. 27)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig10_iron-jack-plane-sectional-view.jpeg",
+          "caption": "Figure 10: Iron jack plane (sectional view) (Lab Manual, p. 28)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig11_hand-drill.jpeg",
+          "caption": "Figure 11: Hand drill (Lab Manual, p. 28)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig12_mallet.jpeg",
+          "caption": "Figure 12: Mallet (Lab Manual, p. 29)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig13_claw-hammer.jpeg",
+          "caption": "Figure 13: Claw hammer (Lab Manual, p. 29)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-introduction-to-woodwork-practice_fig14_wood-rasp.jpeg",
+          "caption": "Figure 14: Wood rasp (Lab Manual, p. 30)."
+        }
+      ]
+    },
+    "procedure": [
+      "We were introduced to timber, its classification (softwood and hardwood) and the standard shapes and sizes available.",
+      "The marking and measuring tools were demonstrated: steel rule, tape, try square, marking gauge, marking knife and bevel square.",
+      "We practised holding a piece of timber securely on the work bench using the bench vice, C-clamp and bar clamp.",
+      "A demonstration of cutting with the rip saw, cross-cut saw and tenon saw was given on a piece of timber.",
+      "We observed the use of the chisel and mallet and the jack plane for smoothing a surface.",
+      "Boring tools (bradawl, brace and bit, hand drill) and striking tools were demonstrated."
+    ],
+    "precautions": [
+      "Always secure the work before cutting or chiselling, and keep both hands behind the cutting edge.",
+      "Keep cutting tools sharp, because blunt tools slip and cause injury.",
+      "Carry chisels and saws with the blade pointing downward, and never leave tools on the edge of the bench.",
+      "Do not use a metal hammer to strike a chisel handle; use a mallet.",
+      "Wear safety glasses and keep the floor free of shavings and sawdust."
+    ],
+    "discussion": "The introduction to woodwork showed us that the quality of a wooden product depends on three things: the right material, the right tool and the right method. Hardwoods, such as Afara used in our practicals, are preferred because they are strong in both directions and take a good finish. Softwood is lighter but weaker across the grain. The range of tools might look confusing at first, but each has a clear purpose, and they are grouped logically: marking tools define what is to be done, holding tools secure the work, cutting and planing tools remove material, and striking tools assemble the parts. A rule of good woodwork is to mark accurately, since an error in marking cannot be corrected by sawing. The sharpness of the tool and the correct setting of the plane blade determine how clean the surface will be.",
+    "conclusion": "The materials, tools and basic operations of the woodwork shop were studied. We learned the shapes and sizes of timber, the difference between softwood and hardwood, and the purpose of the marking, holding, cutting, planing, boring and striking tools, which prepares us for the practical joints that follow.",
+    "questions": [
+      {
+        "question": "Mention the types of tools used in the woodwork shop.",
+        "answer": "Marking and measuring tools, cutting tools, planing tools, boring tools, striking tools and holding tools."
+      },
+      {
+        "question": "Differentiate between softwood and hardwood.",
+        "answer": "Softwood is light in weight and colour with indistinct sap and heart wood, and it is weak across its fibres, so it is not suitable for woodworking. Hardwood has compact annual rings, visible medullary rays and strength both along and across the fibres."
+      },
+      {
+        "question": "What is a batten, a plank and a board?",
+        "answer": "A batten is timber below 175 mm wide and 30 to 50 mm thick. A plank is wider than 275 mm and 50 to 150 mm thick. A board is below 50 mm thick and above 125 mm wide."
+      }
+    ],
+    "learnings": [
+      "The standard forms of timber and the difference between softwood and hardwood.",
+      "The names, parts and uses of the main woodworking tools.",
+      "That accurate marking is the foundation of accurate joints."
+    ]
+  }
+}

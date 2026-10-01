@@ -1,0 +1,114 @@
+{
+  "id": "bf-201-introduction-to-the-fitting-shop-bench-work",
+  "code": "BF 201",
+  "title": "Introduction to the Fitting Shop (Bench Work)",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Fitting",
+    "#BenchWork",
+    "#HandTools"
+  ],
+  "verified": true,
+  "file": "production/bf-201-introduction-to-the-fitting-shop-bench-work.json",
+  "content": {
+    "aim": "To study the tools used in the fitting shop, the methods of marking out, cutting and filing metal, and the preparation needed to produce a square fit.",
+    "objectives": [
+      "To know the tools used in the fitting shop.",
+      "To know how to mark out.",
+      "To know the methods of filing.",
+      "To produce a square fit."
+    ],
+    "apparatus": [
+      "Work bench and bench vice, V-block, angle plate and surface plate.",
+      "Steel rule, callipers, try square, scriber, surface gauge, vernier height gauge, dot and centre punches.",
+      "Hacksaw frame and blades, files (flat, hand, square, round, half-round, triangular, knife-edge).",
+      "Ball pein hammer."
+    ],
+    "theory": {
+      "text": "The term fitting is related to the assembly of parts, after bringing their dimensions or shapes to the required size or form, in order to secure the necessary fit. The operations required for this are usually carried out on a work bench, hence the term bench work is also added to the name fitting. Bench work and fitting play an important role in engineering. In today's industries most of the work is done by automatic machines that produce jobs with good accuracy, but some hand operations, called fitting, are still required to complete the job. The person who works in the fitting shop is called a fitter. Fitting tools are grouped into work-holding or clamping tools, measuring and marking tools, cutting tools, striking tools, drilling tools and threading tools.\n\nWork-holding and clamping tools\n\nThe work bench is a strong, heavy and rigid table of hard wood, about 150 to 180 cm long, nearly 90 cm wide and 76 to 84 cm high. The bench vice is fixed firmly to the bench with nuts and bolts. It has a cast iron body, two jaws with hardened carbon steel plates that are knurled for gripping, a square-threaded main screw and a handle; one jaw is fixed and the other slides. The V-block has V-grooves to hold round work longitudinally, and a clamp with a screw applies the holding pressure.\n\nMeasuring tools\n\nThe steel rule is made of stainless steel in lengths from half a foot to two feet and marked in inches or millimetres. Callipers measure inside and outside diameters. Outside callipers measure outside dimensions and inside callipers measure inside dimensions; the spring calliper has a spring to apply pressure and a nut to lock any desired position. The hermaphrodite (jenny or odd-leg) calliper has one leg bent inwards at the tip and the other straight and pointed, and it is used to scribe lines parallel to straight edges. The vernier calliper measures the outer dimension of round and flat components, the inner size of holes and bores, and with its blade the depth of slots, with a reading accuracy of 0.02 mm (or 0.001 in).\n\nMarking tools\n\nThe surface plate is made of cast iron or graphite and has a very smooth, planed upper face. It is used to test the flatness of surfaces and in scribing work, and it must be protected with a cover when not in use. The angle plate is a cast iron L-shaped block with two planed faces at right angles, with slots to take clamps and bolts to hold the work. It is never hammered to tighten the nuts. The scriber is made of high carbon steel with a hardened point, and the surface gauge carries a scriber on a stand to mark lines at a given height. Punches are made of high carbon or high speed steel with one end sharpened and the other struck by the hammer. The dot punch (60 degree point) marks dotted lines and the centre punch (90 degree point) marks the centre of a hole before drilling. The try square checks squareness of two surfaces and is also used to mark right angles and to measure straightness; it should never be used as a hammer. The vernier height gauge is similar to a large vernier calliper but has a heavy base so that it stands upright on the surface plate and carries a scriber on its jaw.\n\nMethod of marking\n\nMarking means setting out the dimensions with the help of a working drawing, or transferring them directly from a similar part. First the surface to be marked is coated with a paste of chalk or red lead and allowed to dry, so the lines will show up. Then the work is held in a holding device suitable for its shape (surface plate for flat work, V-block with a clamp for round work, angle plate otherwise). Lines at right angles are scribed using the surface gauge, and lines in the other direction by turning the work through 90 degrees. The centre of a round bar can be found using an odd-leg calliper or a surface gauge. Circles and arcs are marked using a divider. Finally, the lines are made permanent by dotting along them with the dot punch and a light hammer so that they remain visible during machining.\n\nCutting tools: the hacksaw\n\nThe hacksaw cuts rods, bars, pipes and flats. It consists of a mild steel frame (fixed or adjustable), a handle and a blade of high carbon steel or high speed steel held by a flange nut. The teeth are set in a zig-zag fashion so that the cut is wider than the blade and the blade does not bind. The teeth of the blade cut in the forward direction, so the pressure is applied forward only. Blades are classified by pitch as coarse (8 to 14 teeth per inch), medium (16 to 20 teeth per inch) and fine (24 to 32 teeth per inch). Thick material takes a coarse blade, and thin sheets and tubes take a fine blade so that at least two or three teeth are in contact with the work at all times.\n\nFiles\n\nFiles are multi-point cutting tools used to remove material by rubbing them on the metal. They differ in length (4, 6, 8, 12 inches), grade, cut and shape. By grade, files are: rough (about 20 teeth per inch), bastard (30), second cut (40), smooth (50) and dead smooth (100). Rough and bastard files remove a lot of metal, but leave a rough surface, whereas smooth and dead smooth files remove little metal and give a fine finish. By the number of cuts, files are single cut (parallel rows of teeth at 60 degrees), double cut (a second row of teeth cut in the opposite direction, which removes material faster) and rasp cut (separate pointed teeth). By shape, they are flat, hand, square, round (or rat-tail), half-round, triangular, knife-edge, diamond and needle files. A flat file is double cut on its faces and single cut on its edges. A hand file has one safe (uncut) edge for filing a right-angled corner. A square file is used for square holes and slots, a triangular file for square corners and sharpening saws, a round file for opening out holes and producing round corners, a half-round file for curved surfaces, and the knife-edge file for sharp corners of grooves and slots.\n\nMethods of filing\n\nCross-filing is used to remove the maximum amount of metal in the shortest possible time. The file is held horizontally throughout the stroke (long, slow and steady) with pressure only on the forward stroke. Draw filing is used to remove file marks and for finishing; the file is gripped close to the work between two hands and drawn across the work, using a fine cut file with a flat face.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig1_fitters-work-bench-with-a.jpeg",
+          "caption": "Figure 1: Fitter's work bench with a bench vice (Lab Manual, p. 44)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig2_bench-vice-pictorial-and-sectional.jpeg",
+          "caption": "Figure 2: Bench vice: pictorial and sectional view (Lab Manual, p. 45)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig3_surface-plate.jpeg",
+          "caption": "Figure 3: Surface plate (Lab Manual, p. 46)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig4_angle-plate.jpeg",
+          "caption": "Figure 4: Angle plate (Lab Manual, p. 47)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig5_scribers-and-surface-gauge.jpeg",
+          "caption": "Figure 5: Scribers and surface gauge (Lab Manual, p. 47)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig6_dot-punch-60-degrees-and.jpeg",
+          "caption": "Figure 6: Dot punch (60 degrees) and centre punch (90 degrees) (Lab Manual, p. 47)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig7_try-square.jpeg",
+          "caption": "Figure 7: Try square (Lab Manual, p. 48)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig8_hand-hacksaws-fixed-frame-and.jpeg",
+          "caption": "Figure 8: Hand hacksaws: fixed frame and adjustable frame (Lab Manual, p. 49)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig9_nomenclature-of-a-file.jpeg",
+          "caption": "Figure 9: Nomenclature of a file (Lab Manual, p. 50)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig10_cross-sectional-shapes-of-files.jpeg",
+          "caption": "Figure 10: Cross-sectional shapes of files (Lab Manual, p. 51)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-introduction-to-the-fitting-shop-bench-work_fig11_cross-filing.jpeg",
+          "caption": "Figure 11: Cross filing (Lab Manual, p. 52)."
+        }
+      ]
+    },
+    "procedure": [
+      "The tools of the fitting shop were introduced and their uses explained.",
+      "The bench vice, surface plate, angle plate, V-block and surface gauge were examined.",
+      "The marking procedure was demonstrated on a flat piece: chalk coating, setting up, scribing, dotting with the punch.",
+      "The hacksaw blade was fitted with the teeth pointing forward, and a cut was made on a flat piece.",
+      "Cross filing and draw filing were demonstrated, and the different files were identified."
+    ],
+    "precautions": [
+      "Fix the work firmly in the vice with the line to be cut close to the jaws.",
+      "Never use a file without a handle, and never use a file as a hammer.",
+      "Use the correct blade pitch and make sure the teeth point forward.",
+      "Keep the try square, surface plate and gauges clean and do not hammer on them.",
+      "Wear safety glasses and keep the bench free of filings."
+    ],
+    "discussion": "The fitting shop is a place where accuracy is built by hand. We observed that each tool has a specific role: marking tools define the job, the vice holds it, the saw removes bulk metal, and files produce the final shape and finish. The progression from rough to smooth files demonstrated that metal can be removed quickly with a coarse file but a good surface requires a fine file and draw filing. We also noted that marking depends strongly on the preparation of the surface. A chalk-coated surface shows a scribed line clearly, and a dotted line survives while filing and cutting. Parallax and wrong readings of the rule or gauge were identified as common sources of error.",
+    "conclusion": "The tools, marking methods, hacksawing and filing methods of the fitting shop were studied. We now understand how to prepare and hold a work piece, how to mark it out, and how to remove metal by sawing and filing to obtain the required fit.",
+    "questions": [
+      {
+        "question": "What are the classifications of fitting tools?",
+        "answer": "Work-holding tools, measuring and marking tools, cutting tools, striking tools, drilling tools and threading tools."
+      },
+      {
+        "question": "Name the grades of files.",
+        "answer": "Rough, bastard, second cut, smooth and dead smooth."
+      },
+      {
+        "question": "State the two methods of filing.",
+        "answer": "Cross filing (for fast removal of metal) and draw filing (for finishing)."
+      }
+    ],
+    "learnings": [
+      "The names and functions of fitting shop tools.",
+      "The correct method for marking out a work piece and for dotting the lines.",
+      "The types, grades and shapes of files, and how to select a hacksaw blade."
+    ]
+  }
+}

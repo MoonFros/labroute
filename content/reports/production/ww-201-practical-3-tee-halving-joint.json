@@ -1,0 +1,79 @@
+{
+  "id": "ww-201-practical-3-tee-halving-joint",
+  "code": "WW 201 P3",
+  "title": "Tee Halving Joint",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Woodwork",
+    "#Joinery",
+    "#WoodJoints"
+  ],
+  "verified": true,
+  "file": "production/ww-201-practical-3-tee-halving-joint.json",
+  "content": {
+    "aim": "To make a tee halving joint from two pieces of timber using marking, cutting and shaping tools.",
+    "objectives": [
+      "To mark out a socket and a pin accurately using a marking gauge, try square and pencil.",
+      "To cut the joint with the tenon saw and to remove waste using a chisel and mallet.",
+      "To fit the two members together so that the joint is tight and square."
+    ],
+    "apparatus": [
+      "Two pieces of Afara, 300 x 60 x 42 mm.",
+      "Pencil, measuring tape, try square, marking gauge.",
+      "Tenon saw, chisel, mallet and rasp."
+    ],
+    "theory": {
+      "text": "A halving joint is a joint in which each of the two members is cut away to half its thickness, so that the two pieces fit together and are flush on both faces. The tee halving joint is a joint in which the end of one member meets the other at right angles, somewhere along its length, forming a T-shape. It is useful for making table legs, door frames and roof carcassing, where a quick and reasonably strong right-angled connection is needed. One member is cut with a socket (a recess, sometimes called a housing) at the position where the other member joins. The other member is cut with a corresponding pin (the end of the member reduced to half thickness) which fits into the socket. The recess has a depth equal to half the thickness of the timber, which is marked with the marking gauge, so that when the joint is assembled the surfaces are flush. The sequence is: marking out with marking tools, cutting with the tenon saw down to the gauge line, removing the waste with a chisel and mallet, cleaning up the bottom of the socket, and shaping with the rasp. The joint is then assembled by applying light blows from the mallet and tested for squareness with the try square. A good halving joint fits tightly without gaps, and it is usually fixed with glue, screws or nails.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ww-201-practical-3-tee-halving-joint_fig1_tee-halving-joint-showing-the.jpeg",
+          "caption": "Figure 1: Tee halving joint showing the socket on one member and the pin on the other (Lab Manual, p. 33)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-practical-3-tee-halving-joint_fig2_chisels-used-to-remove-the.jpeg",
+          "caption": "Figure 2: Chisels used to remove the waste (Lab Manual, p. 27)."
+        }
+      ]
+    },
+    "procedure": [
+      "The pieces were marked out, one for the socket and the other for the pin, using the tape, marking gauge, pencil and try square.",
+      "The marking lines were cut as specified using the tenon saw, stopping at the gauge line.",
+      "The waste was removed using the chisel and mallet.",
+      "The bottom of the socket was cleaned using the rasp.",
+      "The pin was cut to size to fit the socket.",
+      "The joint was fixed by applying light blows with the mallet.",
+      "When properly fitted, the joint was tested for squareness using the try square."
+    ],
+    "precautions": [
+      "Cut on the waste side of the marked lines.",
+      "Cut only to the gauge line so that the depth of the recess is correct.",
+      "Always chisel away from the body and clamp the work down.",
+      "Do not strike a chisel with a hammer; use a mallet.",
+      "Do not force the joint together; trim the pin gradually until a snug fit is reached."
+    ],
+    "discussion": "The tee halving joint looked simple, but it demanded accuracy. If the depth of the socket was too shallow, the surfaces of the two pieces would stand proud of each other after assembly, and if it was too deep there would be a gap. The marking gauge was essential in getting the correct depth on both pieces. The quality of the fit was also dependent on cutting exactly to the lines, because it is much easier to remove a little more wood than to put it back. We found that the chisel gave good results when taken in thin layers and when the bevel faced the correct direction, while heavy cuts split the wood along the grain. When the pin was trimmed in small steps the final joint fitted firmly and was square when tested.",
+    "conclusion": "A tee halving joint was successfully produced from two pieces of timber. The exercise strengthened our skills in marking, sawing, chiselling and fitting, and showed that accuracy in marking is the key to a well-fitting joint.",
+    "questions": [
+      {
+        "question": "Show a working drawing of the tee halving joint.",
+        "answer": "The drawing shows two members, 300 x 60 x 42 mm, with the socket on one equal to half the thickness and the matching pin on the other (see the figure)."
+      },
+      {
+        "question": "State the uses of each tool used.",
+        "answer": "Tenon saw: cutting down to the gauge line. Chisel and mallet: removing waste. Rasp: cleaning the bottom of the socket. Try square: testing squareness. Marking gauge: marking depth."
+      },
+      {
+        "question": "List the new things you have learnt.",
+        "answer": "See the section below."
+      }
+    ],
+    "learnings": [
+      "The structure of a halving joint and where the tee halving joint is used.",
+      "How to use a marking gauge to set the depth of a recess.",
+      "How to remove waste with a chisel and mallet.",
+      "How to test a joint for squareness."
+    ]
+  }
+}

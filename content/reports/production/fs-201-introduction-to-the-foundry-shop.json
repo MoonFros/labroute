@@ -1,0 +1,109 @@
+{
+  "id": "fs-201-introduction-to-the-foundry-shop",
+  "code": "FS 201",
+  "title": "Introduction to the Foundry Shop",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Foundry",
+    "#Casting",
+    "#Moulding"
+  ],
+  "verified": true,
+  "file": "production/fs-201-introduction-to-the-foundry-shop.json",
+  "content": {
+    "aim": "To study the processes and materials of the foundry shop, including patterns, moulding sand and the hand tools used in mould making.",
+    "objectives": [
+      "To understand what patterns are.",
+      "To know what moulding sands are.",
+      "To become familiar with the tools and materials used in the foundry shop.",
+      "To produce a simple cast."
+    ],
+    "apparatus": [
+      "Patterns (solid or single-piece), moulding sand, parting sand, facing sand, backing sand.",
+      "Moulding boxes (cope and drag), moulding board and bottom board.",
+      "Hand tools: riddle, shovel, rammers, strike-off bar, sprue pin, trowels, lifter, vent wire, slick, swab, gate cutter, bellows and draw spike."
+    ],
+    "theory": {
+      "text": "A foundry is a factory that produces metal castings from ferrous or non-ferrous alloys. Metals are turned into parts by melting the metal into a liquid, pouring it into a mould, and removing the metal from the mould after it has solidified. The most common metal alloys processed are aluminium and cast iron, but other metals such as steel, magnesium, copper, tin and zinc can also be processed.\n\nPatterns\n\nA pattern is a model or replica of the object to be cast. It is embedded in moulding sand and suitable ramming of moulding sand is done around the pattern. The pattern is then withdrawn, leaving a cavity (the mould) in the sand. The common pattern materials are wood, metal, plastic, plaster and wax or mercury. Wood is the most common material because it is cheap and easy to shape. Patterns are made larger than the casting to allow for shrinkage of the metal on cooling, and have tapered sides (draft) so that they can be withdrawn without damaging the mould. Types of pattern include: single-piece (solid) pattern, two-piece (split) pattern, cope and drag pattern, three-piece or multi-piece pattern, loose piece pattern, match plate pattern, follow board pattern, gated pattern, sweep pattern, skeleton pattern and segmental pattern. The single-piece pattern is made of one piece without joints, partings or loose pieces and is the simplest form. A two-piece or split pattern is split into two parts, joined by dowel pins, when a solid pattern is difficult to withdraw from the mould cavity.\n\nMoulding sand\n\nMoulding sands come from the beds of seas, rivers, lakes, granular elements of rocks and deserts. They may be natural or synthetic. Natural sands contain enough binder. Synthetic sand is made artificially using basic sand constituents (silica sand, 88 to 92 %), binder (6 to 12 %), water or moisture (3 to 6 %) and other additives in proper proportions. Binders may be inorganic (clays such as kaolinite, ball clay, fire clay, limonite, fuller's earth and bentonite, as well as sodium silicate and Portland cement) or organic (dextrin, molasses, cereal binders, linseed oil, resins, phenol formaldehyde, urea formaldehyde). The bentonite variety of clay is the most common, though clay alone cannot develop bonds without the presence of moisture. Additives improve properties of the sand. Coal dust produces a reducing atmosphere during casting; corn flour increases collapsibility; dextrin increases dry strength; sea coal fills the pores among sand grains; wood flour prevents grains from making contact with one another; and silica flour increases hot strength and finish. Kinds of moulding sand are: green sand (a freshly prepared mixture of silica sand with 18 to 30 % clay and 6 to 8 % water), dry sand (green sand dried or baked in an oven), loam sand (a mixture of sand and clay with water to a thin plastic paste), facing sand (next to the pattern surface), backing sand (floor sand that fills the flask), parting sand (without binder, to prevent sticking), and core sand (silica sand mixed with oil binders). Properties required in moulding sand are: refractoriness (the ability to withstand high temperature without fusing), permeability (porosity that allows gases to escape), cohesiveness (the ability of sand grains to stick to each other), green strength, dry strength, flowability or plasticity, adhesiveness (the ability to stick to the moulding box) and collapsibility (the ability to collapse after the metal solidifies so that it can contract freely).\n\nHand tools\n\nThe riddle is a screen with a standard wire mesh in a circular wooden frame, used to clean the sand of foreign material and to break up lumps. The shovel is used to mix, temper and move sand. Rammers pack the sand in the moulding box uniformly around the pattern. The strike-off bar is a flat bar used to scrape the excess sand from the top of the box after ramming. The sprue pin is a tapered rod of wood or iron pushed into the cope to form the passage through which molten metal is poured. Trowels finish flat surfaces and corners in a mould. The lifter repairs the mould and removes loose sand from it. The vent wire is a thin steel rod with a pointed end used to make small vent holes in the sand so that gases and steam can escape. The slick repairs and finishes the mould surfaces and edges after the pattern is withdrawn. The swab is a small hemp-fibre brush used to moisten the edges of the sand mould around the pattern before it is withdrawn. The gate cutter is used to cut runners and gates linking the sprue to the mould cavity. The bellows blow loose sand away from the mould cavity. The draw spike is a tapered steel rod with a loop and a sharp end screwed into the pattern for withdrawing it.\n\nThe moulding box\n\nThe moulding box or flask is a wood or metal frame made of two parts, the cope (upper half) and the drag (lower half), held in alignment by pins and lugs.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig1_single-piece-solid-pattern-and-two-piece.jpeg",
+          "caption": "Figure 1: Single-piece (solid) pattern and two-piece (split) pattern with dowel holes (Lab Manual, p. 91)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig2_hand-riddle.jpeg",
+          "caption": "Figure 2: Hand riddle (Lab Manual, p. 94)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig3_rammers.jpeg",
+          "caption": "Figure 3: Rammers (Lab Manual, p. 94)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig4_trowels.jpeg",
+          "caption": "Figure 4: Trowels (Lab Manual, p. 95)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig5_lifter.jpeg",
+          "caption": "Figure 5: Lifter (Lab Manual, p. 95)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig6_vent-wire.jpeg",
+          "caption": "Figure 6: Vent wire (Lab Manual, p. 95)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig7_swab.jpeg",
+          "caption": "Figure 7: Swab (Lab Manual, p. 96)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig8_bellows.jpeg",
+          "caption": "Figure 8: Bellows (Lab Manual, p. 96)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig9_sprue-pin.jpeg",
+          "caption": "Figure 9: Sprue pin (Lab Manual, p. 97)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-introduction-to-the-foundry-shop_fig10_moulding-box-cope-and-drag.jpeg",
+          "caption": "Figure 10: Moulding box: cope and drag with dowel pins for alignment (Lab Manual, p. 97)."
+        }
+      ]
+    },
+    "procedure": [
+      "The foundry shop was introduced and the process of casting was explained.",
+      "Different patterns and pattern materials were examined, and the types of pattern were discussed.",
+      "The types and properties of moulding sand were explained, and the sand was prepared by riddling and mixing.",
+      "The hand tools of the foundry were identified and their uses described.",
+      "A moulding box was examined, and the cope and drag were identified."
+    ],
+    "precautions": [
+      "Wear safety glasses, gloves, closed shoes and overalls.",
+      "Keep the floor free of sand and tools to prevent tripping.",
+      "Never pour molten metal into a damp mould, because steam can cause an explosion.",
+      "Keep the area around the pouring point clear of people and combustible materials.",
+      "Handle patterns and tools carefully, and return them to their places after use."
+    ],
+    "discussion": "The foundry shop shows that casting begins long before any metal is melted. The quality of the casting depends on the pattern, the mould and especially the sand. A sand with poor permeability traps gas and produces blow holes, and one with poor refractoriness fuses with the metal and gives a rough surface. The sand also needs enough strength to retain its shape, but must collapse after solidification so that the metal can contract without cracking. The hand tools may look simple, but each one has a particular purpose that affects the final casting: the rammer controls the density of the sand, the vent wire opens escape paths for gases, and the swab and slick prepare and repair the mould surface. Correct use of these tools gives a clean mould cavity with sharp edges.",
+    "conclusion": "The patterns, moulding sand and hand tools of the foundry shop were studied. We learned the types of pattern, the types and properties of moulding sand, and the use of the foundry hand tools, which provides the basis for making a sand mould and a casting.",
+    "questions": [
+      {
+        "question": "What is a pattern?",
+        "answer": "A model or replica of the object to be cast, used to form the cavity in the mould."
+      },
+      {
+        "question": "List the materials used for making patterns.",
+        "answer": "Wood, metal, plastic, plaster, wax and mercury."
+      },
+      {
+        "question": "List the properties of moulding sand.",
+        "answer": "Refractoriness, permeability, cohesiveness, green strength, dry strength, flowability, adhesiveness and collapsibility."
+      }
+    ],
+    "learnings": [
+      "What a pattern is and the types of pattern in use.",
+      "The composition, types and properties of moulding sand.",
+      "The names and uses of foundry hand tools."
+    ]
+  }
+}

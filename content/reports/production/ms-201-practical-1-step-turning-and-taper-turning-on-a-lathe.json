@@ -1,0 +1,102 @@
+{
+  "id": "ms-201-practical-1-step-turning-and-taper-turning-on-a-lathe",
+  "code": "MS 201 P1",
+  "title": "Step Turning and Taper Turning on a Lathe",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Lathe",
+    "#StepTurning",
+    "#TaperTurning"
+  ],
+  "verified": true,
+  "file": "production/ms-201-practical-1-step-turning-and-taper-turning-on-a-lathe.json",
+  "content": {
+    "aim": "To perform step turning and taper turning operations on a given work piece.",
+    "objectives": [
+      "To perform centring, facing, plain turning and chamfering.",
+      "To produce steps of different diameters on a bar, and a groove.",
+      "To produce a taper using the compound rest method and to calculate the swivel angle."
+    ],
+    "apparatus": [
+      "Mild steel rod, 25 mm diameter and 100 mm long.",
+      "Vernier calliper, steel rule, spanner, chuck spanner and H.S.S. single-point cutting tool.",
+      "Lathe specification: length of bed 1390 mm, width of bed 200 mm, height of centres 165 mm, admit between centres 700 mm, lead screw pitch 4 TPI, motor 1 h.p."
+    ],
+    "theory": {
+      "text": "A lathe removes undesired material from a rotating work piece in the form of chips with the help of a tool which is traversed across the work and can be fed to a depth in the work. The tool material should be harder than the work piece, and the tool is held securely and rigidly on the machine. The tool may be given linear motion in any direction. The lathe is used principally to produce cylindrical surfaces and plane surfaces at right angles to the axis of rotation, and it can also produce tapers and bellows. A lathe, basically, consists of a bed to provide support, a headstock, a cross-slide to traverse the tool, and a tool post mounted on the cross-slide. The spindle is driven by a motor through a gear box to obtain a range of speeds. The carriage moves over the bed guideways parallel to the work piece and the cross-slide provides transverse motion. A feed shaft and a lead screw are also provided to power the carriage and for cutting threads respectively. Sequence of operations: centring, facing, plain turning, chamfering, step turning, grooving and taper turning. Facing is done from the centre outwards, producing a flat end. Plain turning reduces the diameter. Step turning produces shoulders of different diameters, with the tool moved parallel to the axis. Chamfering bevels the corner. Grooving cuts a narrow V-shaped groove using a V-cutting tool and parting tool. The taper is produced by the compound rest method. The compound rest is graduated in degrees and may be swivelled to the half angle of the taper. The angle of taper is calculated from tan(alpha) = (D - d) / 2l, where D is the larger diameter, d is the smaller diameter, l is the length of the taper and alpha is the half taper angle. The tool is then fed by hand using the compound slide handwheel, so the length of the taper is limited by the travel of the compound slide. Example (from the dimensions in the manual): for a taper that reduces from 18 mm to 12 mm over 25 mm, tan(alpha) = (18 - 12) / (2 x 25) = 0.12, giving alpha of about 6.8 degrees. The compound slide is therefore set at about 6.8 degrees from the lathe axis.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ms-201-practical-1-step-turning-and-taper-turning-on-a-lathe_fig1_step-turning-and-taper-turning.jpeg",
+          "caption": "Figure 1: Step turning and taper turning drawing with dimensions in mm (Lab Manual, p. 87)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-practical-1-step-turning-and-taper-turning-on-a-lathe_fig2_straight-turning.jpeg",
+          "caption": "Figure 2: Straight turning (Lab Manual, p. 82)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-practical-1-step-turning-and-taper-turning-on-a-lathe_fig3_grooving.jpeg",
+          "caption": "Figure 3: Grooving (Lab Manual, p. 83)."
+        }
+      ]
+    },
+    "procedure": [
+      "The work piece was fixed in a three-jaw chuck with sufficient overhang.",
+      "The machine was adjusted to run the job at the required cutting speed.",
+      "The cutting tool was fixed in the tool post such that the centring operation was performed so that the axis of the job coincides with the lathe axis.",
+      "The feed and depth of cut were given to the cutting tool.",
+      "Facing was performed from the centre of the job towards the outside, or from the circumference towards the centre.",
+      "Plain turning was performed until the diameter of the work piece reduced to 23 mm.",
+      "The dimensions were checked using vernier callipers.",
+      "Chamfering was done on the 23 mm diameter surface.",
+      "The work piece was reversed in the chuck and the facing operation was performed to reduce the length of the work piece to the required dimension.",
+      "Plain turning was again performed until the diameter of the work piece reduced to 18 mm.",
+      "Using a V-cutting tool, the grooving operation was performed according to the given dimensions and the groove was finished using the parting tool.",
+      "The compound slide was swivelled to the required angle and the taper turning operation was performed by rotating the compound slide wheel. The angle can be calculated using tan(alpha) = (D - d)/2l.",
+      "Finally, the dimensions were checked using vernier callipers."
+    ],
+    "precautions": [
+      "The work piece should be held rigidly in the chuck before operating the machine.",
+      "The tool should be properly ground, fixed at the correct height and properly secured, and the work should also be firmly secured.",
+      "Before operating the machine, check whether the job and tool are firmly secured in devices or not.",
+      "Optimum machining conditions should be maintained.",
+      "Chips should not be allowed to wind around a revolving job and should be cleared as often as possible.",
+      "Apply cutting fluids to the tool and work piece properly."
+    ],
+    "discussion": "The practical showed that a good turned part is the result of preparation as much as cutting. Setting the tool exactly on centre height was necessary for a clean facing operation, because a tool above or below centre leaves a small pip at the centre of the face. Checking the diameters with the vernier calliper after each cut prevented us from turning undersize, since metal removed cannot be restored. During step turning, the shoulders were kept square by feeding the tool only to the marked length and then withdrawing it along the face. The chamfers on the shoulders improved the appearance and removed sharp edges. For the taper, the compound rest had to be set accurately to the calculated half angle, and the tool had to be fed slowly and steadily by hand to give a smooth surface. Cutting fluid improved the surface finish and reduced tool wear. Continuous chips were a hazard, and they were cleared with a hook when the machine had stopped.",
+    "conclusion": "Step turning and taper turning operations were performed on the mild steel rod using a centre lathe. The required steps, chamfer, groove and taper were produced and checked with a vernier calliper, and the objective of the practical was achieved.",
+    "questions": [
+      {
+        "question": "Produce the working drawing in the figure.",
+        "answer": "See the drawing above: a 25 mm bar stepped down to 23 mm and 18 mm diameters and tapered at the end, with lengths of 35, 25, 15 and 25 mm."
+      },
+      {
+        "question": "Using simple sketches, enumerate the operational steps.",
+        "answer": "Centring, facing, plain turning, chamfering, step turning, grooving, taper turning, then checking the dimensions (see procedure)."
+      },
+      {
+        "question": "List the functions of the lathe machine.",
+        "answer": "Turning, facing, chamfering, grooving, knurling, taper turning, thread cutting, drilling, reaming and boring."
+      },
+      {
+        "question": "List the functions of five accessories and attachments used with the lathe.",
+        "answer": "Three-jaw chuck: holds round work and centres it automatically. Four-jaw chuck: holds irregular work. Face plate: holds large or irregular work with bolts and clamps. Centres: hold work between the headstock and tailstock. Steady rest: supports long slender work."
+      },
+      {
+        "question": "Using simple sketches, describe step turning and taper turning.",
+        "answer": "Step turning: the tool is moved parallel to the lathe axis to reduce several diameters on the same bar and form shoulders. Taper turning: the compound rest is swivelled to the half-taper angle and the tool is fed along the angled slide."
+      },
+      {
+        "question": "List the safety precautions observed during the work.",
+        "answer": "See the precautions above."
+      }
+    ],
+    "learnings": [
+      "How to set a lathe tool on centre height and to take measured cuts.",
+      "How to calculate the compound rest angle from tan(alpha) = (D - d)/2l.",
+      "How to produce steps, a chamfer and a groove on a bar.",
+      "The need for checking dimensions at every stage."
+    ]
+  }
+}

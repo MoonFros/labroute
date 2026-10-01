@@ -1,0 +1,107 @@
+{
+  "id": "fs-201-practical-1-mould-for-a-solid-pattern",
+  "code": "FS 201 P1",
+  "title": "Mould for a Solid Pattern",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Foundry",
+    "#SandMoulding",
+    "#Casting"
+  ],
+  "verified": true,
+  "file": "production/fs-201-practical-1-mould-for-a-solid-pattern.json",
+  "content": {
+    "aim": "To prepare a sand mould using the given single-piece (solid) pattern.",
+    "objectives": [
+      "To prepare moulding sand and to ram a drag and cope around a solid pattern.",
+      "To make the sprue, riser, runner and vent holes in the mould.",
+      "To withdraw the pattern and prepare the mould cavity ready for pouring."
+    ],
+    "apparatus": [
+      "Raw materials: moulding sand, parting sand, facing sand, backing sand, single-piece solid pattern, bottom board, moulding boxes.",
+      "Tools: moulding board, drag and cope boxes, rammer, strike-off bar, bellows, riser and sprue pins, gate cutter, vent rod, draw spike and wire brush."
+    ],
+    "theory": {
+      "text": "Making a sand mould is the process of building a cavity in sand, in the shape of the casting wanted. The solid pattern is placed in the drag (lower half of the moulding box) and sand is rammed round it. The cope (upper half) is then placed on top with sprue and riser pins, and rammed. The two halves are separated, the pattern is removed, and the halves are put back together with the cavity between them. Molten metal is poured through the sprue, flows down through the runner and gate into the cavity, and the riser feeds metal to make up for shrinkage as the casting solidifies. Parting sand, which has no binder or moisture, is sprinkled on the pattern and the joint surface so that the cope and drag do not stick, and so the pattern can be withdrawn cleanly. Facing sand, which has fine grains and a high refractoriness, is placed against the pattern to give a good surface finish. Backing sand is used to fill the remainder of the box. The sand must be rammed enough to hold its shape when the pattern is withdrawn, but not so hard that gases cannot escape. For this reason, vent holes are made with the vent wire so that steam and gases can leave the mould during casting. The gating system consists of the pouring basin, sprue, runner and gates, and its purpose is to lead the metal smoothly into the cavity with minimum turbulence. A good mould also allows for shrinkage, and the pattern has a taper so that it can be withdrawn without damaging the sand.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fs-201-practical-1-mould-for-a-solid-pattern_fig1_cross-section-of-a-sand-mould.jpeg",
+          "caption": "Figure 1: Cross-section of a sand mould showing the cope, drag, sprue, riser, pattern, lug and aligning pin (Lab Manual, p. 99)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-practical-1-mould-for-a-solid-pattern_fig2_moulding-box-cope-and-drag.jpeg",
+          "caption": "Figure 2: Moulding box (cope and drag) with dowel pins (Lab Manual, p. 97)."
+        },
+        {
+          "src": "assets/lab_images/fs-201-practical-1-mould-for-a-solid-pattern_fig3_sprue-pin-used-to-make.jpeg",
+          "caption": "Figure 3: Sprue pin used to make the pouring passage (Lab Manual, p. 97)."
+        }
+      ]
+    },
+    "procedure": [
+      "Mould making",
+      "A bottom board was placed on the moulding platform or floor, making the surface even.",
+      "The drag moulding flask was kept upside down on the bottom board along with the drag part of the pattern at the centre of the flask on the board.",
+      "Dry facing sand was sprinkled over the board and pattern to provide a non-sticky layer.",
+      "Freshly prepared moulding sand of requisite quality was poured into the drag and on the pattern to a thickness of 30 to 50 mm.",
+      "The rest of the drag flask was completely filled with the backup sand and uniformly rammed to compact the sand.",
+      "After the ramming was over, the excess sand in the flask was scraped using a flat bar (strike-off bar) to the level of the flask edges.",
+      "With a vent wire of 1 to 2 mm diameter with a pointed end, vent holes were made in the drag to the full depth of the flask as well as to the pattern, to facilitate the removal of gases during casting solidification. This completes the preparation of the drag.",
+      "The finished drag flask was rolled over to the bottom board, exposing the pattern.",
+      "Using a slick, the edges of sand around the pattern were repaired.",
+      "The cope flask on top of the drag was located, aligning it with the help of the drag box pins.",
+      "The sprue of the gating system for making the sprue passage was located at a small distance of about 50 mm from the pattern. The sprue base, runners and in-gates were also located as shown, and risers were also placed. Freshly prepared facing sand was poured around the pattern.",
+      "The moulding sand was then poured into the cope box. The sand was adequately rammed, excess sand scraped and vent holes made all over in the cope.",
+      "The sprue and the riser were carefully withdrawn from the flask.",
+      "Later the pouring basin was cut near the top of the sprue.",
+      "The cope was separated from the drag and any loose sand on the cope and drag interface was blown off with the help of the bellows.",
+      "Now the cope and the drag pattern halves were withdrawn by using the draw spikes and rapping the pattern all around to slightly enlarge the mould cavity so that the walls are not spoiled by the withdrawing pattern.",
+      "The runners and gates were then removed or cut in the mould carefully without spoiling the mould.",
+      "Any excess or loose sand in the runners and mould cavity was blown away using the bellows.",
+      "Now the facing paste was applied all over the mould cavity and the runners to give the finished casting a good surface finish.",
+      "A dry sand core was prepared using a core box. After suitable baking it was placed in the mould cavity (where the casting required one).",
+      "The cope was placed back on the drag taking care of the alignment of the two by means of the pins.",
+      "The mould was then ready for pouring molten metal. The liquid metal was allowed to cool and become solid, giving the casting desired."
+    ],
+    "precautions": [
+      "Wear safety glasses, gloves and closed shoes.",
+      "Do not ram the sand too hard or too soft; uniform ramming is required.",
+      "Use parting sand properly so the halves do not stick.",
+      "Withdraw the pattern carefully, rapping lightly before lifting it, to avoid damage to the mould.",
+      "Make sure the mould and the ladle are dry before pouring, because moisture can cause steam explosions.",
+      "Keep spectators away from the pouring area and wear protective clothing when pouring."
+    ],
+    "discussion": "The mould was successfully prepared, but the exercise showed us that good moulding is largely about control of the sand. When the sand was too wet it stuck to the pattern and made a ragged cavity, and when it was too dry it crumbled when the pattern was withdrawn. Ramming density had to be even: loose areas collapsed, while over-rammed areas were impermeable and would trap gas. Venting with the vent wire was a small step with a large effect, since gases that cannot leave the mould cause blow holes in the casting. Rapping the pattern slightly before withdrawing it enlarged the cavity just enough that the pattern came out clean without breaking the edges. The riser and gating system were arranged to deliver metal smoothly and to supply extra metal during solidification shrinkage.",
+    "conclusion": "The sand mould for a solid pattern was successfully prepared. The cavity was formed in the drag and cope with the gating system and vents, and the mould was ready for pouring. The exercise taught the sequence of moulding operations and the importance of sand properties and mould preparation.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the mould for a solid pattern.",
+        "answer": "The drawing is the cross-section in the figure above, showing cope, drag, pattern, sprue, riser, vents and parting line."
+      },
+      {
+        "question": "Produce the mould for a solid pattern.",
+        "answer": "See the procedure above."
+      },
+      {
+        "question": "Using simple sketches, outline sequentially the operational steps in the production of the mould for a solid pattern and the cast.",
+        "answer": "Sand preparation; place the drag on the board; place the pattern; ram the drag; place the runner and riser; ram the cope; remove the pattern, runner and riser; cut the gates; reassemble; pour."
+      },
+      {
+        "question": "List the functions of at least five tools you used.",
+        "answer": "Rammer: compacts the sand uniformly. Strike-off bar: removes excess sand level with the flask. Vent wire: makes vent holes for gases. Sprue pin: forms the pouring passage. Draw spike: withdraws the pattern. Gate cutter: cuts runners and gates. Bellows: blows loose sand out of the cavity."
+      },
+      {
+        "question": "List the safety precautions observed.",
+        "answer": "See the precautions above."
+      }
+    ],
+    "learnings": [
+      "The complete sequence of making a sand mould.",
+      "The roles of facing, backing and parting sand in the mould.",
+      "Why vent holes, a gating system and a riser are necessary.",
+      "That a good casting begins with a well-made mould."
+    ]
+  }
+}
