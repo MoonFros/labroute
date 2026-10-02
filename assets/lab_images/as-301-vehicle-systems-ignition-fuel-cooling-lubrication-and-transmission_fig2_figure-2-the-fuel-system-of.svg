@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-label="Fuel system of an internal combustion engine">
+  <style>
+    .lbl{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:12px;fill:#16202b}
+    .sm{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:10.5px;fill:#6b7b8a}
+    .ttl{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:13px;font-weight:600;fill:#14532d}
+    .bx{fill:#fff;stroke:#16202b;stroke-width:1.5}
+    .bx2{fill:#e8f3ec;stroke:#14532d;stroke-width:1.5}
+    .feed{fill:none;stroke:#9a3412;stroke-width:2.2;marker-end:url(#ar)}
+    .ret{fill:none;stroke:#1f7a43;stroke-width:1.8;stroke-dasharray:6 4;marker-end:url(#ag)}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9a3412"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f7a43"/>
+    </marker>
+  </defs>
+  <rect width="760" height="330" fill="#fff"/>
+  <text class="ttl" x="20" y="26">Fuel system — flow from tank to combustion chamber</text>
+  <text class="sm" x="20" y="43">Red = delivery (feed) line &#160;&#160;|&#160;&#160; Green dashed = surplus fuel return line</text>
+
+  <!-- Tank -->
+  <path class="bx2" d="M30 150 h116 a8 8 0 0 1 8 8 v58 a8 8 0 0 1 -8 8 h-116 a8 8 0 0 1 -8 -8 v-58 a8 8 0 0 1 8 -8 z"/>
+  <text class="lbl" x="88" y="180" text-anchor="middle">Fuel tank</text>
+  <text class="sm" x="88" y="196" text-anchor="middle">storage + float</text>
+  <text class="sm" x="88" y="210" text-anchor="middle">level sender</text>
+  <rect x="70" y="130" width="14" height="20" fill="#fff" stroke="#16202b" stroke-width="1.3"/>
+  <text class="sm" x="98" y="142">filler neck</text>
+
+  <!-- Pump -->
+  <rect class="bx" x="196" y="150" width="104" height="74" rx="5"/>
+  <circle cx="248" cy="182" r="15" fill="#e8f3ec" stroke="#16202b" stroke-width="1.3"/>
+  <path d="M248 167 a15 15 0 0 1 13 22" fill="none" stroke="#16202b" stroke-width="1.3"/>
+  <text class="lbl" x="248" y="212" text-anchor="middle">Fuel pump</text>
+
+  <!-- Filter -->
+  <rect class="bx" x="346" y="150" width="104" height="74" rx="5"/>
+  <g stroke="#16202b" stroke-width="1.2" fill="none">
+    <path d="M378 166 h40 M378 174 h40 M378 182 h40 M378 190 h40"/>
+  </g>
+  <text class="lbl" x="398" y="212" text-anchor="middle">Fuel filter</text>
+
+  <!-- Injector / carburettor -->
+  <rect class="bx2" x="496" y="150" width="120" height="74" rx="5"/>
+  <text class="lbl" x="556" y="176" text-anchor="middle">Injectors or</text>
+  <text class="lbl" x="556" y="192" text-anchor="middle">carburettor</text>
+  <text class="sm" x="556" y="210" text-anchor="middle">meters &amp; atomises fuel</text>
+
+  <!-- Engine -->
+  <rect class="bx" x="662" y="140" width="76" height="94" rx="5"/>
+  <text class="lbl" x="700" y="180" text-anchor="middle">Engine</text>
+  <text class="sm" x="700" y="196" text-anchor="middle">combustion</text>
+  <text class="sm" x="700" y="210" text-anchor="middle">chamber</text>
+
+  <!-- lines -->
+  <path class="feed" d="M154 187 H192"/>
+  <path class="feed" d="M300 187 H342"/>
+  <path class="feed" d="M450 187 H492"/>
+  <path class="feed" d="M616 187 H658"/>
+  <path class="ret" d="M556 150 V104 H88 V142"/>
+  <text class="sm" x="320" y="98">return line (excess fuel back to tank)</text>
+
+  <!-- air -->
+  <path d="M556 254 V232" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#ar)" opacity=".75"/>
+  <text class="sm" x="556" y="272" text-anchor="middle">filtered air from air cleaner</text>
+  <text class="sm" x="556" y="288" text-anchor="middle">(mixed with fuel to form the charge)</text>
+
+  <text class="sm" x="20" y="308">A failure anywhere on this line — a blocked filter, a weak pump, a torn diaphragm — stops the engine, because every element is in series.</text>
+</svg>
