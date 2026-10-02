@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 398" role="img" aria-label="Liquid cooling system circuit of an internal combustion engine">
+  <style>
+    .lbl{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:12px;fill:#16202b}
+    .sm{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:10.5px;fill:#6b7b8a}
+    .ttl{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:13px;font-weight:600;fill:#14532d}
+    .bx{fill:#fff;stroke:#16202b;stroke-width:1.5}
+    .hot{fill:none;stroke:#9a3412;stroke-width:3;marker-end:url(#arh)}
+    .cold{fill:none;stroke:#1d4ed8;stroke-width:3;marker-end:url(#arc)}
+  </style>
+  <defs>
+    <marker id="arh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9a3412"/></marker>
+    <marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1d4ed8"/></marker>
+  </defs>
+  <rect width="760" height="398" fill="#fff"/>
+  <text class="ttl" x="20" y="26">Cooling system — forced-circulation (pump-assisted) water circuit</text>
+  <text class="sm" x="20" y="43">Red = hot coolant leaving the jacket &#160;&#160;|&#160;&#160; Blue = cooled coolant returning to the engine</text>
+
+  <!-- Radiator -->
+  <rect class="bx" x="60" y="100" width="122" height="196" rx="6"/>
+  <g stroke="#dde4ea" stroke-width="1.2">
+    <path d="M74 120 v158 M92 120 v158 M110 120 v158 M128 120 v158 M146 120 v158 M164 120 v158"/>
+  </g>
+  <rect x="60" y="100" width="122" height="22" fill="#e8f3ec" stroke="#16202b" stroke-width="1.5"/>
+  <rect x="60" y="274" width="122" height="22" fill="#e8f3ec" stroke="#16202b" stroke-width="1.5"/>
+  <text class="sm" x="121" y="116" text-anchor="middle">upper header tank</text>
+  <text class="sm" x="121" y="290" text-anchor="middle">lower header tank</text>
+  <text class="lbl" x="121" y="320" text-anchor="middle">Radiator</text>
+  <text class="sm" x="121" y="336" text-anchor="middle">(air-to-water heat exchanger)</text>
+  <rect x="100" y="80" width="42" height="20" rx="4" class="bx"/>
+  <text class="sm" x="121" y="72" text-anchor="middle">pressure cap</text>
+
+  <!-- Fan -->
+  <g transform="translate(228,198)">
+    <circle r="34" fill="#fff" stroke="#16202b" stroke-width="1.5"/>
+    <g fill="#e8f3ec" stroke="#16202b" stroke-width="1.2">
+      <ellipse rx="8" ry="24" cy="0"/>
+      <ellipse rx="8" ry="24" cy="0" transform="rotate(60)"/>
+      <ellipse rx="8" ry="24" cy="0" transform="rotate(120)"/>
+    </g>
+    <circle r="5" fill="#16202b"/>
+    <text class="lbl" x="0" y="56" text-anchor="middle">Fan</text>
+  </g>
+  <g stroke="#475569" stroke-width="1.4" fill="none" opacity=".7">
+    <path d="M300 168 H272" marker-end="url(#arc)"/>
+    <path d="M300 198 H272" marker-end="url(#arc)"/>
+    <path d="M300 228 H272" marker-end="url(#arc)"/>
+  </g>
+  <text class="sm" x="322" y="202">air draught</text>
+
+  <!-- Engine block with jacket -->
+  <rect class="bx" x="440" y="130" width="250" height="160" rx="8"/>
+  <rect x="456" y="160" width="218" height="102" fill="#fdf1e7" stroke="#9a3412" stroke-width="1.2"/>
+  <g fill="#f6f8fa" stroke="#16202b" stroke-width="1.3">
+    <rect x="474" y="176" width="34" height="70" rx="4"/>
+    <rect x="522" y="176" width="34" height="70" rx="4"/>
+    <rect x="570" y="176" width="34" height="70" rx="4"/>
+    <rect x="618" y="176" width="34" height="70" rx="4"/>
+  </g>
+  <text class="lbl" x="565" y="152" text-anchor="middle">Engine block &amp; water jacket</text>
+  <text class="sm" x="565" y="278" text-anchor="middle">cylinders surrounded by coolant passages</text>
+  <text class="lbl" x="565" y="312" text-anchor="middle">Engine</text>
+
+  <!-- Thermostat -->
+  <rect class="bx" x="352" y="92" width="96" height="40" rx="5"/>
+  <text class="lbl" x="400" y="117" text-anchor="middle">Thermostat</text>
+  <text class="sm" x="400" y="82" text-anchor="middle">opens only above operating temperature</text>
+
+  <!-- Water pump -->
+  <g transform="translate(400,300)">
+    <circle r="26" fill="#e8f3ec" stroke="#16202b" stroke-width="1.5"/>
+    <path d="M0 -26 a26 26 0 0 1 22 38" fill="none" stroke="#16202b" stroke-width="1.4"/>
+    <circle r="4" fill="#16202b"/>
+    <text class="lbl" x="0" y="48" text-anchor="middle">Water pump</text>
+  </g>
+
+  <!-- Piping -->
+  <path class="hot" d="M440 152 H452" opacity="0"/>
+  <path class="hot" d="M470 130 V112 H448"/>
+  <path class="hot" d="M352 112 H182"/>
+  <text class="sm" x="262" y="104" text-anchor="middle">top hose</text>
+  <path class="cold" d="M121 296 V300 H370"/>
+  <path class="cold" d="M426 300 H520 V286"/>
+  <text class="sm" x="248" y="318" text-anchor="middle">bottom hose</text>
+
+  <text class="sm" x="20" y="370">While the thermostat is shut the coolant re-circulates inside the block only, so the engine reaches its</text>
+  <text class="sm" x="20" y="384">working temperature quickly; once the thermostat opens, the full radiator circuit is brought into use.</text>
+</svg>

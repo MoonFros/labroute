@@ -1,0 +1,86 @@
+{
+  "id": "hs-201-practical-1-butt-joint",
+  "code": "HS 201 P1",
+  "title": "Butt Joint",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Welding",
+    "#ButtJoint",
+    "#ArcWelding"
+  ],
+  "verified": true,
+  "file": "production/hs-201-practical-1-butt-joint.json",
+  "content": {
+    "aim": "To make a butt joint using the given two mild steel pieces by arc welding.",
+    "objectives": [
+      "To prepare the edges of the plates for welding.",
+      "To tack and weld two plates into a butt joint using an arc welding machine.",
+      "To remove slag and clean the weld."
+    ],
+    "apparatus": [
+      "Mild steel plates, 100 x 50 x 5 mm (2 pieces).",
+      "Welding electrodes: M.S. electrodes, 3.1 mm x 350 mm.",
+      "Air-cooled transformer welding machine (voltage 80 to 600 V, 3-phase supply, current up to 350 A).",
+      "Rough and smooth files, protractor, tongs, ground clamp, electrode holder.",
+      "Face shield, apron, gloves and chipping hammer."
+    ],
+    "theory": {
+      "text": "A butt joint is a joint in which two pieces are placed edge to edge in the same plane and welded along the line where they meet. Butt welds are widely used because they give an efficient transfer of load between the two plates and a smooth surface. For thin plates (about 5 mm, as here) the edges may be given a small bevel so that the weld penetrates to the root. The manual prescribes a bevel of about 30 degrees on one edge of each piece, leaving about a quarter of the plate thickness as the root face, which then forms a V-groove when the two plates are brought together. The two plates are positioned on the welding table with a slight gap between them (the root opening), which allows the first run (the root pass) to melt through and fill the gap and give proper penetration. The plates are tack welded first at both ends (and in the centre) to hold the alignment, because heat from welding causes expansion and contraction which can pull the plates out of line. The electrode is held at an angle of about 15 to 25 degrees from the vertical, tilted in the direction of welding. The arc is struck by tapping or scratching the electrode on the work, and then a short arc length (about the diameter of the electrode) is maintained as the electrode is moved along the joint at a uniform speed. A second run is deposited over the first one with a slight weave to fill the groove. Afterwards the slag, which is a glassy layer formed from the flux of the electrode, is removed with a chipping hammer and the weld is cleaned with a wire brush.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/hs-201-practical-1-butt-joint_fig1_butt-joint-two-100-x.jpeg",
+          "caption": "Figure 1: Butt joint: two 100 x 50 mm plates welded edge to edge, with the welded joint representation (Lab Manual, p. 66)."
+        },
+        {
+          "src": "assets/lab_images/hs-201-practical-1-butt-joint_fig2_edge-preparation-for-butt-joints.jpeg",
+          "caption": "Figure 2: Edge preparation for butt joints (Lab Manual, p. 60)."
+        },
+        {
+          "src": "assets/lab_images/hs-201-practical-1-butt-joint_fig3_arc-welding-circuit-used-for.jpeg",
+          "caption": "Figure 3: Arc welding circuit used for the practical (Lab Manual, p. 61)."
+        }
+      ]
+    },
+    "procedure": [
+      "The given mild steel pieces were thoroughly cleaned of rust and scale.",
+      "One edge of each piece was bevelled to an angle of 30 degrees, leaving nearly a quarter of the thickness as a flat face, at one end.",
+      "The two pieces were positioned on the welding table such that they were slightly separated for better penetration of the weld.",
+      "The electrode was fitted into the electrode holder and the welding current was set to a proper value.",
+      "The ground clamp was fastened to the welding table.",
+      "Wearing the apron and using the face shield, the arc was struck and held to tack the two pieces together. The first run of the weld was then done to fill the root gap.",
+      "The second run of the weld was done with proper weaving and with uniform movement. During welding the electrode was kept at 15 to 25 degrees from the vertical and in the direction of welding.",
+      "The scale formed on the welds was removed using the chipping hammer.",
+      "Filing was done to remove any spatter around the weld."
+    ],
+    "precautions": [
+      "Wear the apron, gloves and face shield at all times during welding.",
+      "Do not strike the arc without covering the face with the shield.",
+      "Ensure the ground clamp is firmly fixed to the table.",
+      "Use tongs for handling hot pieces, and wear safety glasses while chipping slag.",
+      "Keep flammable materials away from the welding area."
+    ],
+    "discussion": "The quality of the butt joint depended on four things: edge preparation, the gap, the current and the manner in which the electrode was moved. When the gap was too narrow the weld did not penetrate to the root, and when it was too wide the weld metal fell through. Tack welding at both ends and at the centre was very helpful, since it held the alignment while the weld cooled and contracted. Striking the arc was initially difficult, as the electrode tended to stick to the plate. A smooth scratching movement and withdrawal to a short arc length gave a stable arc. The slag layer protected the weld as it cooled and was removed afterwards to reveal the bead. Defects that could be observed in a poor weld include undercut, lack of fusion, porosity and spatter, which are mostly caused by wrong current, speed or arc length.",
+    "conclusion": "A butt joint was successfully produced from the two mild steel pieces using the arc welding process. The exercise taught edge preparation, tacking, running the weld, chipping the slag and cleaning, and it emphasised the safety requirements for arc welding.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the butt joint.",
+        "answer": "The drawing shows two plates 100 x 50 x 5 mm joined edge to edge with a weld along the 100 mm length (see the figure)."
+      },
+      {
+        "question": "Using simple sketches, state the operational sequence of how the butt joint was produced.",
+        "answer": "Marking, cutting, edge preparation, try square levelling, tacking, welding, cooling, chipping, cleaning."
+      },
+      {
+        "question": "State the safety precautions you observed.",
+        "answer": "See the precautions above."
+      }
+    ],
+    "learnings": [
+      "How to prepare a plate edge and set the root gap for a butt joint.",
+      "How to strike and hold an arc and run a weld bead.",
+      "Why tack welding is used and how slag is removed."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "bf-201-practical-1-square-fit",
+  "code": "BF 201 P1",
+  "title": "Square Fit",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Fitting",
+    "#Filing",
+    "#MarkingOut"
+  ],
+  "verified": true,
+  "file": "production/bf-201-practical-1-square-fit.json",
+  "content": {
+    "aim": "To make a square fit from the given mild steel piece.",
+    "objectives": [
+      "To file two edges square and straight using rough and smooth files and the try square.",
+      "To mark out, punch, saw and file the work to form a square fit.",
+      "To finish the fitted job to the dimensions given."
+    ],
+    "apparatus": [
+      "Mild steel flat, 40 x 40 x 3 mm.",
+      "6 in try square, 6 in scriber, odd-leg calliper, steel rule.",
+      "12 in hacksaw frame and blades.",
+      "10 in rough file, 10 in smooth file, 10 in square file.",
+      "Dot punch, ball pein hammer, chalk, bench vice."
+    ],
+    "theory": {
+      "text": "A square fit consists of two mating parts: a male part with a square projection and a female part with a square recess, which fit into each other with no gap and no rock. The accuracy of a square fit depends on the squareness of the edges, the straightness of the sides and the sizes of the mating dimensions. The manual specifies a raw material of 40 x 40 x 3 mm mild steel flat, to be filed to 38 mm square, and then divided to produce the square projection and recess. The sequence of operations is filing, marking, punching, sawing, filing and finishing. Filing is done first to produce two edges square to each other, which serve as reference edges (datum). Marking is done by chalking the surface, then scribing lines with the odd-leg calliper and steel rule from the datum edges. The lines are punched with the dot punch so that they remain visible. Sawing removes the bulk of the waste metal, leaving a small allowance. The remaining metal is removed by filing to the line, checking with the try square against the datum edges, and the parts are finished with the smooth file. Filing to a line by eye is not enough; the part must be checked with the try square, a steel rule and, by looking against light, for gaps. A rough file is used first for fast removal and a smooth file is used last for finish. The recess is finished with the square file, which has a safe edge for corners.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/bf-201-practical-1-square-fit_fig1_raw-material-38-mm-square.jpeg",
+          "caption": "Figure 1: Raw material (38 mm square) and the dimensioned male and female square-fit parts (Lab Manual, p. 52)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-practical-1-square-fit_fig2_cross-filing.jpeg",
+          "caption": "Figure 2: Cross filing (Lab Manual, p. 52)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-practical-1-square-fit_fig3_file-nomenclature.jpeg",
+          "caption": "Figure 3: File nomenclature (Lab Manual, p. 50)."
+        }
+      ]
+    },
+    "procedure": [
+      "The given mild steel flat piece was checked for the given dimensions.",
+      "One edge of the piece was filed to straightness with the rough and smooth files, and checked with the try square.",
+      "An adjacent edge was filed such that it was square to the first edge, and checked with the try square.",
+      "Wet chalk was applied on one side of the flat and dried for marking.",
+      "Lines were marked according to the given figure, using the odd-leg calliper and the steel rule.",
+      "Using the dot punch, punch marks were made along the marked lines.",
+      "The excess material was removed from the remaining two edges with the try square, levelling up to half of the marked dots.",
+      "Finally, the burrs were removed by filing the surface of the fitted job."
+    ],
+    "precautions": [
+      "The perpendicularity of the faces and edges was checked carefully using the try square.",
+      "Finishing was done using only smooth files.",
+      "Marking was done without parallax error.",
+      "The work was held rigidly in the vice, close to the jaws.",
+      "File strokes were kept straight and level, not rocking."
+    ],
+    "discussion": "The most important result was that accurate marking and accurate filing of the datum edges made the rest of the job much easier. When the first two edges were not exactly square, every dimension marked from them was affected. The use of the try square after each stage helped to find and correct errors early. Filing exactly to half of the punch marks allowed us to leave enough material to finish the job without overshooting the line. A common problem was a rocking motion of the file, which rounded the edges instead of keeping them flat. Maintaining a steady horizontal stroke, using the long, slow and steady forward stroke described for cross filing, produced flatter surfaces.",
+    "conclusion": "The square cutting and fitting were done successfully. The two parts of the square fit were made from the mild steel piece with accurate marking, sawing and filing, and the parts fitted into each other as required.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the square fit.",
+        "answer": "The drawing shows the 38 mm square raw material and the male and female parts with the dimensions in the figure above."
+      },
+      {
+        "question": "Using simple sketches enumerate sequentially the operational steps.",
+        "answer": "Filing, marking, punching, sawing, filing, finishing."
+      },
+      {
+        "question": "State the functions of each of the tools used.",
+        "answer": "Try square: checking squareness. Scriber and odd-leg calliper: marking lines. Steel rule: measuring. Dot punch and hammer: making marks permanent. Hacksaw: cutting away waste. Rough file: fast removal. Smooth file: finishing. Square file: filing the corners of the recess."
+      },
+      {
+        "question": "State the safety precautions that you observed.",
+        "answer": "See the precautions above."
+      }
+    ],
+    "learnings": [
+      "How to prepare datum edges by filing and testing with a try square.",
+      "How to mark, punch, saw and file in sequence.",
+      "That a good fit depends on checking the work repeatedly."
+    ]
+  }
+}

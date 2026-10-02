@@ -1,0 +1,80 @@
+{
+  "id": "bf-201-practical-2-dovetail-joint-fitting",
+  "code": "BF 201 P2",
+  "title": "Dovetail Joint (Fitting)",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Fitting",
+    "#Filing",
+    "#DovetailJoint"
+  ],
+  "verified": true,
+  "file": "production/bf-201-practical-2-dovetail-joint-fitting.json",
+  "content": {
+    "aim": "To prepare two smooth rectangular blocks of mild steel and fit them together as a dovetail joint.",
+    "objectives": [
+      "To file two mild steel blocks to the given rectangular dimensions.",
+      "To mark and cut the dovetail form on the blocks.",
+      "To fit the two blocks together so that the joint is accurate and flush."
+    ],
+    "apparatus": [
+      "Mild steel pieces to produce two rectangular blocks of 5.5 x 5 x 0.4 cm.",
+      "Bench vice, hacksaw, try square, hand file, surface plate, scale and scriber."
+    ],
+    "theory": {
+      "text": "A dovetail joint in metal is a sliding joint in which one part has a projection (the male part) with sloping sides that is wider at its end than at its base. The other part has a matching recess (the female part). Because the sides are sloping, the two parts can slide into each other along their length but cannot be separated at right angles to the sliding direction. The dovetail form is widely used in machine slides, such as the cross slide of a lathe, where it provides guidance as well as holding the two parts together. Making the joint demands greater accuracy than the square fit because the angles must match as well as the sizes. The blocks are first made rectangular and flat. A pair of parallel lines is scribed 55 mm apart on the work with the scriber and the surface plate. Then the dovetail outline is marked, using the angle of the dovetail. The waste metal is sawn out with a hacksaw cutting inside the line, and the sloping surfaces are filed to the line with a file that has a safe edge, checking against the mating part. The surface plate is used to test the flatness of the work: the work is placed on one of its faces, moved along the surface, and any high spots, where strain accumulates, are filed. A try square verifies that every edge is at right angles to its adjacent edge.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/bf-201-practical-2-dovetail-joint-fitting_fig1_surface-plate-used-to-test.jpeg",
+          "caption": "Figure 1: Surface plate used to test flatness (Lab Manual, p. 46)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-practical-2-dovetail-joint-fitting_fig2_try-square-used-to-check.jpeg",
+          "caption": "Figure 2: Try square used to check squareness (Lab Manual, p. 48)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-practical-2-dovetail-joint-fitting_fig3_hand-hacksaw-used-to-remove.jpeg",
+          "caption": "Figure 3: Hand hacksaw used to remove waste metal (Lab Manual, p. 49)."
+        }
+      ]
+    },
+    "procedure": [
+      "The work pieces were placed on the table, and straight parallel lines were drawn on them 55 mm apart using the scriber.",
+      "The work pieces were fixed firmly in the jaws of the vice.",
+      "The pieces were cut along the marked line using the hacksaw.",
+      "The cut work pieces were placed firmly between the jaws of the vice such that a small portion of one of the edges was above the level of the jaw.",
+      "The edges were filed using a hand file.",
+      "A try square was used to ensure that all edges of the work pieces were at right angles to adjacent edges.",
+      "The work was placed on one of its faces on the surface plate and moved along it to check the areas where strain had accumulated, and these were filed properly."
+    ],
+    "precautions": [
+      "While filing, the file should move in straight strokes and not slant.",
+      "Dimensions should be checked again and again, and a single hand file used so that the piece of proper dimensions is obtained.",
+      "The piece should be fixed straight in the jaws of the bench vice, otherwise an error in shape might occur.",
+      "Wear safety glasses and keep fingers away from the saw."
+    ],
+    "discussion": "This exercise required patience and accuracy. When filing the sides of the blocks, the biggest challenge was to keep the surfaces flat and the edges square. We observed that checking the work again and again with the try square and the surface plate was the only reliable method of avoiding errors. Using a single hand file near the end helped to prevent removing too much metal. The surface plate was valuable because it exposed high spots that cannot be seen by the eye. By moving the work along the plate, the places where the metal touched the plate were easily seen, and we filed them away until the surface was flat.",
+    "conclusion": "Two smooth rectangular mild steel blocks were prepared and fitted as a dovetail-type joint. The exercise demonstrated how marking, sawing and filing are combined to achieve an accurate fit and how the surface plate and try square are used to check the result.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the dovetail joint.",
+        "answer": "The drawing shows two rectangular blocks with the dovetail projection and recess (see the manual, p. 54)."
+      },
+      {
+        "question": "Using simple sketches enumerate the operational steps.",
+        "answer": "Mark parallel lines, hold in the vice, saw, file, check squareness, check flatness on the surface plate, fit the parts."
+      },
+      {
+        "question": "State the functions of each tool used.",
+        "answer": "Scriber: marking. Hacksaw: cutting. Hand file: filing flat surfaces. Try square: checking squareness. Surface plate: checking flatness. Scale: measuring."
+      }
+    ],
+    "learnings": [
+      "What a dovetail joint is, and why it is used in machine slides.",
+      "How to check flatness with a surface plate.",
+      "That a fit depends on accuracy of both size and angle."
+    ]
+  }
+}

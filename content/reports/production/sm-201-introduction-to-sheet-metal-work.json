@@ -1,0 +1,79 @@
+{
+  "id": "sm-201-introduction-to-sheet-metal-work",
+  "code": "SM 201",
+  "title": "Introduction to Sheet Metal Work",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#SheetMetalWork",
+    "#PatternDevelopment",
+    "#WorkshopPractice"
+  ],
+  "verified": true,
+  "file": "production/sm-201-introduction-to-sheet-metal-work.json",
+  "content": {
+    "aim": "To study the processes, metals, hand tools and operations involved in sheet metal practice, and to understand how a flat sheet is developed and formed into a useful article.",
+    "objectives": [
+      "To know the processes involved in sheet metal practice.",
+      "To know the metals used in sheet metal work.",
+      "To become familiar with the hand tools used in sheet metal practice.",
+      "To know the various sheet metal operations.",
+      "To be able to produce a rectangular plate (tray)."
+    ],
+    "apparatus": [
+      "Galvanised plain (G.P.) sheet, 28 gauge.",
+      "Measuring and marking tools: steel scale, steel square, scriber, divider, trammel, wire gauge.",
+      "Cutting tools: straight snips, bent snips and circular snips.",
+      "Punches: prick punch, centre punch and solid punch.",
+      "Hammers and mallets, stakes, files, pliers and soldering iron."
+    ],
+    "theory": {
+      "text": "To make a sheet metal object, the flat sheet is first cut to a particular shape. It is then formed by laying its entire lateral surfaces next to each other, and after that it is shaped by bending, forming and folding as appropriate, and finally joined by soldering, welding or riveting. The sheet metal process therefore consists of five stages: study of the drawing, development, preparation of patterns or templates, operations on the sheet metal, and joining.\n\nDevelopment and pattern\n\nThe complete surface of an object, opened out onto one plane and drawn on paper with suitable allowances for seams and hems, is called a development. The sheet obtained by laying all the outer surfaces of the object together, with the necessary allowances, is called a pattern or template. All lines in the development must be drawn in true length. Four methods of development are used. (1) The parallel-line method is used for right prisms, cylinders, cubes and rectangular trays. (2) The radial-line method is used for the lateral surfaces of right pyramids and cones. (3) The triangulation method is used where the surface is made of a number of triangles laid out in true size, for example transition pieces such as square to round. (4) The approximate method is used for double-curved surfaces such as a sphere.\n\nSheet metal operations\n\nMarking: the development is placed on the G.P. sheet, and the boundary line is marked with a scriber, with the bending lines punched. Cutting and shearing: the sheet is cut by chisel, hand snips or tin cutter, or by shearing machines. Circle cutting: curved contours are cut with curved chisels, hand snips or a circle-cutting machine. Hand forming: the sheet is shaped in three dimensions to its final shape and size. Hemming, edge stiffening and wiring: the edge of the sheet is folded to ensure safety, to give stiffness and to give a good appearance. Joint making or seaming: sheet parts are joined by folded or self-securing joints. Bending: the sheet is bent by hammering over a stake or by a bending or rolling machine. Notching: the opening left at the corners of seams and edges is notched to prevent bulging at those places. Notches can be straight, square or V-shaped. Drawing: done with a die and a punch on a press. Hollowing: beating the sheet into a bowl shape on a hollowing block or sand bag. Sinking: the bottom is sunk to form a tray with a flat rim. Raising: dinting the metal down over a tool with a raising hammer. Planishing: improving the surface and giving the final shape and finish. Soldering: joining sheet metal parts using a low-melting-point alloy (solder) that is melted between the surfaces and allowed to solidify.\n\nMetals used\n\nA large variety of metals are used as sheet and plate. The metal sheet is specified by its gauge number, length and width. The gauge number corresponds to the thickness of the sheet as measured by a standard wire gauge. The higher the gauge number, the thinner the sheet. Common metal sheets include black plain (hot rolled) sheet, cold-rolled sheet (0.1 to 0.3 % carbon), galvanised plain sheet (coated with zinc), aluminium sheet, copper sheet, tin sheet, stainless steel sheet (about 18 % chromium and 8 % nickel with less than 1 % carbon) and brass sheet.\n\nHand tools\n\nMeasuring and marking tools are the steel scale, wire gauge, micrometer and vernier calliper, steel square, scriber, divider and trammel point. Cutting tools are hand snips (straight, bent, combination and circular snips). Punches include the prick punch, solid punch, centre punch and hollow punch. Others are chisels, stakes of different shapes, hammers and mallets, files, pliers and soldering iron. Sheet metal fabrication is applied in automobile, aircraft and ship building, packaging, air conditioning, ventilation, and in the manufacture of funnels, hoppers, bins, trays, buckets, storage tanks and chimney boilers.\n\nHems and seams\n\nA hem is a folded edge. Single hems and double hems are used to stiffen and strengthen the edge and to remove the sharp edge. A seam is a joint between two sheet metal pieces. Common seams include the single lap seam, the grooved seam and the double seam. A wired edge is made by folding the sheet around a wire for rigidity.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/sm-201-introduction-to-sheet-metal-work_fig1_development-pattern-of-a-rectangular.jpeg",
+          "caption": "Figure 1: Development (pattern) of a rectangular tray showing the base, sides, ends and seaming allowance (redrawn for clarity from Lab Manual, p. 40)."
+        }
+      ]
+    },
+    "procedure": [
+      "The drawing of the article was studied and the dimensions were noted.",
+      "The pattern was developed on paper, including allowances for seams and hems, and with all lines drawn in true length.",
+      "The pattern was cut out and placed on the G.P. sheet, and the boundary and bend lines were marked with a scriber.",
+      "The sheet was cut along the boundary lines using hand snips.",
+      "The corners were notched to prevent bulging at the seams.",
+      "The sheet was bent along the bend lines over a stake or bench edge.",
+      "The edges were hemmed or seamed and the joints were soldered.",
+      "The finished surface was cleaned and checked."
+    ],
+    "precautions": [
+      "Wear gloves when handling sheet metal, since the edges are razor-sharp.",
+      "Remove burrs after cutting.",
+      "Do not use the snips to cut beyond their capacity.",
+      "Keep fingers away from the cutting edge and from the stake while hammering.",
+      "Use the soldering iron carefully and ventilate against fumes."
+    ],
+    "discussion": "Sheet metal work depends on correct development, since a mistake in the pattern appears as a gap, a misfit or a twisted article. The use of true lengths for all the lines in the development was emphasised, since the sloping sides of a tapered article look shorter in the plan than they really are. Allowances for seams and hems must be added to the pattern, or the finished article will be undersize. The choice of sheet also matters: galvanised plain sheet can be soldered, bent and formed easily, while stainless steel is harder to work. The thin sheets are easily distorted, and so it is important to work carefully and hammer lightly.",
+    "conclusion": "The processes, metals, tools and operations of sheet metal work were studied. We learned the methods of development, the importance of true length and seam allowance, and the sequence from marking and cutting to bending and joining, which prepares us to make the tray, dustpan and tapered tray.",
+    "questions": [
+      {
+        "question": "What are the five processes involved in sheet metal practice?",
+        "answer": "Study of the drawing, development, patterns or templates, operations on sheet metal, and joining."
+      },
+      {
+        "question": "What are the methods of development?",
+        "answer": "Parallel line, radial line, triangulation and approximate methods."
+      },
+      {
+        "question": "What does gauge number mean?",
+        "answer": "It indicates the thickness of the sheet, measured with a standard wire gauge; the higher the number, the thinner the sheet."
+      }
+    ],
+    "learnings": [
+      "The five stages of a sheet metal job and the four methods of development.",
+      "Why a development must be drawn in true length with allowances.",
+      "The names and uses of the main sheet metal hand tools and operations."
+    ]
+  }
+}

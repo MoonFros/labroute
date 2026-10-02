@@ -1,0 +1,62 @@
+{
+  "id": "gwp-201-introduction-to-the-workshop",
+  "code": "GWP 201",
+  "title": "Introduction to the Workshop",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#WorkshopPractice",
+    "#MachineTools",
+    "#Safety"
+  ],
+  "verified": true,
+  "file": "production/gwp-201-introduction-to-the-workshop.json",
+  "content": {
+    "aim": "To become familiar with the various shops that make up an engineering workshop and to understand the importance of the workshop in engineering training.",
+    "objectives": [
+      "To identify the common shops and the special shops of a workshop.",
+      "To state the purpose and typical activities of each shop.",
+      "To appreciate the role of the workshop in the practical training of an engineer."
+    ],
+    "apparatus": [
+      "Departmental workshop (guided tour of the shops).",
+      "Laboratory and Workshop Practice manual (Section: General Workshop Practice).",
+      "Personal protective equipment (safety glasses, overall and covered shoes)."
+    ],
+    "theory": {
+      "text": "The workshop is the centre of learning about engineering materials, manufacturing practices, equipment and tools, and the safety precautions to be observed in manufacturing operations. A mechanical or production engineer who has never touched a lathe, struck a weld or poured a mould will struggle to design components that can actually be made. For practical knowledge and skills, therefore, the workshop is indispensable. The workshop gives us the chance to link the theory taught in the lecture room to real materials, real tolerances and real mistakes. The shops in a workshop are divided into two groups: the common shops and the special shops.\n\nCommon shops\n\nThe common shops are those that every engineering student passes through, because they cover the basic manufacturing processes. They are the following. Carpentry (woodwork) and pattern-making shop: here timber is cut, planed and jointed. Besides furniture and doors, the shop makes the wooden patterns used in the foundry to form moulds. Bench work and fitting shop: here metal parts are marked out, cut, filed and assembled to the required fit using hand tools such as the hacksaw, files, scribers and the bench vice. Smithy and forging shop: here metal is heated and shaped by hammering or pressing while it is plastic, which also refines the grain structure of the metal. Sheet metal shop: here thin metal sheets are marked, cut, bent, folded and joined to make trays, funnels, ducts and similar articles. Electric arc and gas welding shop: here metals are joined permanently by fusion, using the heat of an electric arc or a gas flame. Machine shop: here machine tools such as the lathe, shaper, milling and drilling machines remove metal to produce parts of accurate size and finish. Foundry shop: here metal is melted and poured into moulds to produce castings.\n\nSpecial shops\n\nThe special shops cover more specialised trades that support engineering work. They are: electrical wiring, soldering and electronics; painting; heat treatment; plumbing; automobile; refrigeration and air-conditioning; and material testing. Heat treatment, for example, changes the properties of steel (hardness, toughness) by controlled heating and cooling, while the material testing shop measures strength, hardness and impact resistance of specimens.\n\nImportance of the workshop\n\nThe workshop develops manual skill, helps us to appreciate the limits and capabilities of the processes we will later specify in drawings, and teaches the discipline of working to dimensions and to safety rules. It also introduces us to the vocabulary and tools of each trade, which makes communication with technicians and craftsmen easier in industry.",
+      "diagrams": []
+    },
+    "procedure": [
+      "We assembled at the workshop with the necessary PPE and were briefed on the safety rules.",
+      "The instructor explained the division of the workshop into common shops and special shops.",
+      "We were taken round each of the seven common shops and shown the main machines, tools and products of each.",
+      "The special shops were then described, and the processes carried out in each were explained.",
+      "We noted down the functions of each shop and asked questions where necessary."
+    ],
+    "precautions": [
+      "Remain with the group and do not touch any machine during the tour.",
+      "Wear safety glasses, closed shoes and suitable clothing throughout.",
+      "Keep out of the way of operators who are working.",
+      "Do not run in the workshop and observe all warning signs."
+    ],
+    "discussion": "The tour made it clear that a workshop is not one room but a family of specialised areas, each with its own tools, hazards and skills. Moving from the carpentry shop to the foundry, for example, we saw how one object can pass through several shops: a wooden pattern made in the carpentry shop is used to produce a mould in the foundry, the casting is machined in the machine shop, and the finished part may be heat treated or welded to another component. We also appreciated why the common shops are compulsory for engineering students. Each of them teaches a basic process that the others depend on. The special shops, although less general, show how engineering extends into electrical work, automobiles, refrigeration and material testing.",
+    "conclusion": "The workshop is made up of seven common shops and seven special shops, each dedicated to a particular type of manufacturing or support activity. The exercise achieved its aim of familiarising us with these shops and with the importance of practical training in producing competent engineers.",
+    "questions": [
+      {
+        "question": "List the common shops in a workshop.",
+        "answer": "Carpentry and pattern making, bench work and fitting, smithy and forging, sheet metal, electric arc and gas welding, machine shop and foundry shop."
+      },
+      {
+        "question": "List the special shops.",
+        "answer": "Electrical wiring, soldering and electronics; painting; heat treatment; plumbing; automobile; refrigeration and air conditioning; and material testing."
+      }
+    ],
+    "learnings": [
+      "The workshop is the place where engineering theory becomes practice.",
+      "Each shop teaches a distinct process, and a single product often passes through several of them.",
+      "Working safely and to dimensions is as important as the finished product."
+    ]
+  }
+}

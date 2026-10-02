@@ -1,0 +1,85 @@
+{
+  "id": "ww-201-practical-2-planing-of-wood",
+  "code": "WW 201 P2",
+  "title": "Planing of Wood",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Woodwork",
+    "#Planing",
+    "#HandTools"
+  ],
+  "verified": true,
+  "file": "production/ww-201-practical-2-planing-of-wood.json",
+  "content": {
+    "aim": "To reduce timber to the required thickness and to produce a flat, square and smooth surface by planing.",
+    "objectives": [
+      "To surface, edge and thickness a piece of timber.",
+      "To set and use a jack plane and a smoothing plane correctly.",
+      "To use a try square and a marking gauge to test the work for flatness, squareness and thickness."
+    ],
+    "apparatus": [
+      "Afara timber, 600 x 75 x 25 mm (manual stock 12 x 1 x 12 in).",
+      "Jack plane and smoothing plane.",
+      "Marking gauge, pencil and try square.",
+      "Bar clamps or bench vice and bench stop."
+    ],
+    "theory": {
+      "text": "Planing is the process of reducing wood to usable sizes and smoothing it so that it is ready for finishing. The material to be dressed is planed to the required flatness and thickness. The main operations are surfacing the wood (producing one flat face), edging the wood (producing one flat edge square to the face), thicknessing to the required thickness, and marking out the width required. A hand plane is basically a cutting blade (iron) held at a fixed angle, about 45 degrees, in a body. The blade projects slightly through a slot called the mouth, and as the plane is pushed along the timber the blade removes a thin shaving. In the wooden jack plane the blade is held in place by a wooden wedge, while in the iron jack plane the blade is held by a lever cap and is adjusted by an adjusting lever and a frog. The sole of the plane runs on the high spots of the wood, and so a long plane such as the jack plane levels the surface. The smoothing plane is shorter and is used for finishing. The face side is the first surface prepared, and it is marked with a face mark to remember that it is the reference. The face edge is then planed square to the face and given an edge mark. All other dimensions are marked from these two reference surfaces using the marking gauge. This is the principle of working from datum surfaces, and it ensures that all faces are square to each other. A true surface is tested by looking along it, by laying a straight edge on it, and by testing with a try square. Planing is done with the grain wherever possible. Planing against the grain tears the fibres and leaves a rough surface. Large planing and moulding machines are used in industry to do the same job in bulk, using a rotating cutter block, but hand planing teaches the principles.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ww-201-practical-2-planing-of-wood_fig1_wooden-jack-plane-sectional-view.jpeg",
+          "caption": "Figure 1: Wooden jack plane (sectional view) showing the blade, wedge, mouth, sole and handle (Lab Manual, p. 27)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-practical-2-planing-of-wood_fig2_iron-jack-plane-sectional-view.jpeg",
+          "caption": "Figure 2: Iron jack plane (sectional view) (Lab Manual, p. 28)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-practical-2-planing-of-wood_fig3_marking-gauge-used-for-gauging.jpeg",
+          "caption": "Figure 3: Marking gauge used for gauging the thickness (Lab Manual, p. 23)."
+        }
+      ]
+    },
+    "procedure": [
+      "Each student was given a piece of timber 600 mm x 75 mm x 25 mm.",
+      "The timber was fixed using cramps or the bench vice.",
+      "The plane was used to smooth the surface until it was flat, and this was tested with the try square. The flat surface was marked with a face mark.",
+      "The edge was turned up and planed until it was square to the face; it was tested with the try square and given an edge mark.",
+      "The marking gauge was set to the required thickness and used to gauge a line all around from the face side.",
+      "The surplus was planed off down to the gauge line to give a uniform thickness.",
+      "The other edge was planed to give the required width.",
+      "The work was finally checked for flatness, squareness and dimension."
+    ],
+    "precautions": [
+      "Keep the plane blade sharp and set properly, and do not set it too deep.",
+      "Plane with the grain and keep the plane flat on the wood.",
+      "Clamp the work firmly and keep fingers away from the blade.",
+      "When the plane is not in use, lay it on its side so the blade does not touch the bench.",
+      "Check the work often against the try square and gauge lines.",
+      "Clear shavings from the floor to avoid slipping."
+    ],
+    "discussion": "Planing showed us how much patience precise woodwork requires. A first attempt at surfacing usually leaves hollow areas or ridges, and only repeated testing with the try square and by sighting along the work allowed us to correct them. We noticed that the plane cut best when the blade was sharp and set to take a thin shaving, and that planing against the grain gave a torn surface. The use of a reference face and a reference edge was the key to success. Because every other measurement was taken from these two surfaces, the final piece had square corners and uniform thickness. Without them, small errors would accumulate and the piece would be out of square.",
+    "conclusion": "The timber was planed to a flat, square and smooth surface with the required thickness and width. The exercise demonstrated the use of the jack plane and smoothing plane, the importance of datum surfaces and the need to plane with the grain.",
+    "questions": [
+      {
+        "question": "Show a working drawing of the marked-out wood.",
+        "answer": "The drawing shows a rectangular block 600 x 75 x 25 mm with the face side and face edge marked."
+      },
+      {
+        "question": "State the operational steps.",
+        "answer": "Clamp; plane the face; test for flatness; mark face mark; plane the edge square to the face; mark the edge mark; gauge the thickness; plane off the surplus; plane the other edge to width."
+      },
+      {
+        "question": "State the uses of each tool used.",
+        "answer": "Jack plane: removing large amounts of waste and flattening. Smooth plane: final smoothing. Marking gauge: marking thickness and width parallel to an edge. Try square: testing squareness. Pencil: marking."
+      }
+    ],
+    "learnings": [
+      "The meaning of surfacing, edging and thicknessing.",
+      "Why we work from a face side and a face edge.",
+      "How to set and use a jack plane safely."
+    ]
+  }
+}

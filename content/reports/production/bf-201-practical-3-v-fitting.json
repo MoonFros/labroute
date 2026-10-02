@@ -1,0 +1,84 @@
+{
+  "id": "bf-201-practical-3-v-fitting",
+  "code": "BF 201 P3",
+  "title": "V-Fitting",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Fitting",
+    "#Filing",
+    "#MarkingOut"
+  ],
+  "verified": true,
+  "file": "production/bf-201-practical-3-v-fitting.json",
+  "content": {
+    "aim": "To make a V-fit from the given mild steel piece.",
+    "objectives": [
+      "To produce two edges square and straight by filing.",
+      "To mark out and cut a V-shaped notch and a matching projection.",
+      "To fit the two V-parts together accurately."
+    ],
+    "apparatus": [
+      "Mild steel flat, 40 x 40 x 3 mm.",
+      "6 in try square, 6 in scriber, odd-leg calliper, steel rule.",
+      "12 in hacksaw frame with 12 TPI blades.",
+      "10 in rough, smooth and triangular files, knife-edge file.",
+      "Dot punch, ball pein hammer (0.5 lb)."
+    ],
+    "theory": {
+      "text": "A V-fit is a fitting exercise in which a V-shaped notch is cut into one part and the matching V-shaped projection is made on the other. It tests the ability to mark and file angular surfaces. The V-fit is similar to the square fit in its sequence, but the sloping sides require a different method of filing and of checking. The manual gives a raw material of 38 mm square, a depth of 19 mm and a 10 mm opening at the sides, as shown in the figure. The sequence of operations is the same as for the square fit: filing, marking, punching, sawing, filing and finishing. After making two adjacent edges square, the V is marked with a scriber and steel rule, using the odd-leg calliper to scribe lines parallel to the edges. The V is then punched and a hacksaw with a 12 TPI blade (a medium blade) is used to cut the waste out of the V. The triangular file, whose three faces are double cut and whose edges are single cut, is suitable for filing into the corners of the V. The knife-edge file reaches the sharp inside corners, and the smooth file finishes the surfaces. The V is checked against the mating part by trying the two together; the places where the part sticks or shows light are marked and filed. This process of trial and adjustment is called fitting and is what gives the operation its name.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/bf-201-practical-3-v-fitting_fig1_raw-material-and-the-v-fit.jpeg",
+          "caption": "Figure 1: Raw material and the V-fit parts with the main dimensions (Lab Manual, p. 56)."
+        },
+        {
+          "src": "assets/lab_images/bf-201-practical-3-v-fitting_fig2_types-of-file-including-triangular.jpeg",
+          "caption": "Figure 2: Types of file, including triangular and knife-edge files used for the V (Lab Manual, p. 51)."
+        }
+      ]
+    },
+    "procedure": [
+      "The given mild steel flat was checked for the given dimensions.",
+      "One edge was filed with rough and smooth files and checked for straightness using the try square.",
+      "An adjacent edge was filed square to the first edge and checked with the try square.",
+      "Wet chalk was applied on one side of the flat and dried for marking.",
+      "Lines were marked according to the given figure, using the odd-leg calliper and the steel rule.",
+      "Using the dot punch, punches were made along the marked lines.",
+      "The excess material was removed from the remaining two edges with the try square, levelling up to half of the marked dots.",
+      "Finally, burrs were removed by filing the surface of the fitted job."
+    ],
+    "precautions": [
+      "The perpendicularity of the faces and edges was checked carefully using the try square.",
+      "Finishing was done only with smooth files.",
+      "Marking was done without parallax error.",
+      "The work was held rigidly and the hacksaw was used with the teeth facing forward."
+    ],
+    "discussion": "The V-fit was more demanding than the square fit because the angled sides cannot be checked directly with the try square. The surfaces had to be filed evenly on both sides of the V so that the angle remained symmetrical; filing more on one side moved the apex off-centre and the male part would not seat. The triangular file was well suited to the job, while the knife-edge file reached the sharp corners. We also observed that the final fit was achieved by trial and adjustment, with the two parts tried together and the bright spots (where they touched first) filed down. This careful process is what gives a close, gap-free fit.",
+    "conclusion": "A V-fit was successfully produced from the mild steel flat. The exercise improved our accuracy in marking, sawing and filing angular surfaces and demonstrated the use of trial fitting to get a close fit.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the V-fit.",
+        "answer": "See the figure above: the 38 mm square raw material, a 19 mm deep V and 10 mm side shoulders."
+      },
+      {
+        "question": "Using simple sketches enumerate the operational steps.",
+        "answer": "Filing, marking, punching, sawing, filing and finishing."
+      },
+      {
+        "question": "State the functions of each tool used.",
+        "answer": "Triangular file: filing the V surfaces. Knife-edge file: sharp corners. Rough and smooth files: bulk removal and finishing. Hacksaw: removing waste. Dot punch: making lines permanent. Try square: checking squareness."
+      },
+      {
+        "question": "State the safety precautions.",
+        "answer": "See above."
+      }
+    ],
+    "learnings": [
+      "How to mark and cut an angular notch.",
+      "How to use triangular and knife-edge files.",
+      "How to fit parts by trial and adjustment."
+    ]
+  }
+}

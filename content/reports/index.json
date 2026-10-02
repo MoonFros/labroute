@@ -255,5 +255,515 @@
     ],
     "file": "electrical/eee-308-power-transformer-equivalent-circuit-efficiency-voltage-regulation.json",
     "verified": true
+  },
+  {
+    "id": "hse-201-health-and-safety-in-the-workplace",
+    "code": "HSE 201",
+    "title": "Health and Safety in the Workplace",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#HealthAndSafety",
+      "#WorkshopSafety",
+      "#PPE"
+    ],
+    "file": "production/hse-201-health-and-safety-in-the-workplace.json",
+    "verified": true
+  },
+  {
+    "id": "gwp-201-introduction-to-the-workshop",
+    "code": "GWP 201",
+    "title": "Introduction to the Workshop",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#WorkshopPractice",
+      "#MachineTools",
+      "#Safety"
+    ],
+    "file": "production/gwp-201-introduction-to-the-workshop.json",
+    "verified": true
+  },
+  {
+    "id": "em-201-study-of-workshop-measuring-and-marking-instruments",
+    "code": "EM 201",
+    "title": "Study of Workshop Measuring and Marking Instruments (Linear Measuring Devices)",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Metrology",
+      "#MeasuringInstruments",
+      "#WorkshopPractice"
+    ],
+    "file": "production/em-201-study-of-workshop-measuring-and-marking-instruments.json",
+    "verified": true
+  },
+  {
+    "id": "ww-201-introduction-to-woodwork-practice",
+    "code": "WW 201",
+    "title": "Introduction to Woodwork Practice",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Woodwork",
+      "#HandTools",
+      "#Timber"
+    ],
+    "file": "production/ww-201-introduction-to-woodwork-practice.json",
+    "verified": true
+  },
+  {
+    "id": "ww-201-practical-1-cutting-of-wood",
+    "code": "WW 201 P1",
+    "title": "Cutting of Wood",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Woodwork",
+      "#Sawing",
+      "#HandTools"
+    ],
+    "file": "production/ww-201-practical-1-cutting-of-wood.json",
+    "verified": true
+  },
+  {
+    "id": "ww-201-practical-2-planing-of-wood",
+    "code": "WW 201 P2",
+    "title": "Planing of Wood",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Woodwork",
+      "#Planing",
+      "#HandTools"
+    ],
+    "file": "production/ww-201-practical-2-planing-of-wood.json",
+    "verified": true
+  },
+  {
+    "id": "ww-201-practical-3-tee-halving-joint",
+    "code": "WW 201 P3",
+    "title": "Tee Halving Joint",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Woodwork",
+      "#Joinery",
+      "#WoodJoints"
+    ],
+    "file": "production/ww-201-practical-3-tee-halving-joint.json",
+    "verified": true
+  },
+  {
+    "id": "ww-201-practical-4-dovetail-halving-joint",
+    "code": "WW 201 P4",
+    "title": "Dovetail Halving Joint",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Woodwork",
+      "#Joinery",
+      "#DovetailJoint"
+    ],
+    "file": "production/ww-201-practical-4-dovetail-halving-joint.json",
+    "verified": true
+  },
+  {
+    "id": "sm-201-introduction-to-sheet-metal-work",
+    "code": "SM 201",
+    "title": "Introduction to Sheet Metal Work",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#SheetMetalWork",
+      "#PatternDevelopment",
+      "#WorkshopPractice"
+    ],
+    "file": "production/sm-201-introduction-to-sheet-metal-work.json",
+    "verified": true
+  },
+  {
+    "id": "sm-201-practical-1-rectangular-plate-tray",
+    "code": "SM 201 P1",
+    "title": "Rectangular Plate (Tray)",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#SheetMetalWork",
+      "#PatternDevelopment",
+      "#Bending"
+    ],
+    "file": "production/sm-201-practical-1-rectangular-plate-tray.json",
+    "verified": true
+  },
+  {
+    "id": "sm-201-practical-2-dustpan",
+    "code": "SM 201 P2",
+    "title": "Dustpan",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#SheetMetalWork",
+      "#PatternDevelopment",
+      "#Fabrication"
+    ],
+    "file": "production/sm-201-practical-2-dustpan.json",
+    "verified": true
+  },
+  {
+    "id": "sm-201-practical-3-tapered-tray",
+    "code": "SM 201 P3",
+    "title": "Tapered Tray",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#SheetMetalWork",
+      "#PatternDevelopment",
+      "#Fabrication"
+    ],
+    "file": "production/sm-201-practical-3-tapered-tray.json",
+    "verified": true
+  },
+  {
+    "id": "bf-201-introduction-to-the-fitting-shop-bench-work",
+    "code": "BF 201",
+    "title": "Introduction to the Fitting Shop (Bench Work)",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Fitting",
+      "#BenchWork",
+      "#HandTools"
+    ],
+    "file": "production/bf-201-introduction-to-the-fitting-shop-bench-work.json",
+    "verified": true
+  },
+  {
+    "id": "bf-201-practical-1-square-fit",
+    "code": "BF 201 P1",
+    "title": "Square Fit",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Fitting",
+      "#Filing",
+      "#MarkingOut"
+    ],
+    "file": "production/bf-201-practical-1-square-fit.json",
+    "verified": true
+  },
+  {
+    "id": "bf-201-practical-2-dovetail-joint-fitting",
+    "code": "BF 201 P2",
+    "title": "Dovetail Joint (Fitting)",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Fitting",
+      "#Filing",
+      "#DovetailJoint"
+    ],
+    "file": "production/bf-201-practical-2-dovetail-joint-fitting.json",
+    "verified": true
+  },
+  {
+    "id": "bf-201-practical-3-v-fitting",
+    "code": "BF 201 P3",
+    "title": "V-Fitting",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Fitting",
+      "#Filing",
+      "#MarkingOut"
+    ],
+    "file": "production/bf-201-practical-3-v-fitting.json",
+    "verified": true
+  },
+  {
+    "id": "hs-201-introduction-to-the-welding-shop-hot-shop-practice",
+    "code": "HS 201",
+    "title": "Introduction to the Welding Shop (Hot Shop) Practice",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Welding",
+      "#HotShop",
+      "#ArcWelding"
+    ],
+    "file": "production/hs-201-introduction-to-the-welding-shop-hot-shop-practice.json",
+    "verified": true
+  },
+  {
+    "id": "hs-201-practical-1-butt-joint",
+    "code": "HS 201 P1",
+    "title": "Butt Joint",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Welding",
+      "#ButtJoint",
+      "#ArcWelding"
+    ],
+    "file": "production/hs-201-practical-1-butt-joint.json",
+    "verified": true
+  },
+  {
+    "id": "hs-201-practical-2-lap-joint",
+    "code": "HS 201 P2",
+    "title": "Lap Joint",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Welding",
+      "#LapJoint",
+      "#ArcWelding"
+    ],
+    "file": "production/hs-201-practical-2-lap-joint.json",
+    "verified": true
+  },
+  {
+    "id": "ms-201-introduction-to-the-lathe-and-machining-operations",
+    "code": "MS 201",
+    "title": "Introduction to the Lathe and Machining Operations",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Lathe",
+      "#Machining",
+      "#Turning"
+    ],
+    "file": "production/ms-201-introduction-to-the-lathe-and-machining-operations.json",
+    "verified": true
+  },
+  {
+    "id": "ms-201-practical-1-step-turning-and-taper-turning-on-a-lathe",
+    "code": "MS 201 P1",
+    "title": "Step Turning and Taper Turning on a Lathe",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Lathe",
+      "#StepTurning",
+      "#TaperTurning"
+    ],
+    "file": "production/ms-201-practical-1-step-turning-and-taper-turning-on-a-lathe.json",
+    "verified": true
+  },
+  {
+    "id": "ms-201-practical-2-production-of-a-metal-door-hinge-using-a-centre-lathe",
+    "code": "MS 201 P2",
+    "title": "Production of a Metal Door Hinge Using a Centre Lathe",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Lathe",
+      "#Turning",
+      "#MetalFabrication"
+    ],
+    "file": "production/ms-201-practical-2-production-of-a-metal-door-hinge-using-a-centre-lathe.json",
+    "verified": true
+  },
+  {
+    "id": "as-201-the-internal-combustion-engine",
+    "code": "AS 201",
+    "title": "The Internal Combustion Engine",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#CombustionEngine",
+      "#Automobile",
+      "#ICEngine"
+    ],
+    "file": "production/as-201-the-internal-combustion-engine.json",
+    "verified": true
+  },
+  {
+    "id": "fs-201-introduction-to-the-foundry-shop",
+    "code": "FS 201",
+    "title": "Introduction to the Foundry Shop",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Foundry",
+      "#Casting",
+      "#Moulding"
+    ],
+    "file": "production/fs-201-introduction-to-the-foundry-shop.json",
+    "verified": true
+  },
+  {
+    "id": "fs-201-practical-1-mould-for-a-solid-pattern",
+    "code": "FS 201 P1",
+    "title": "Mould for a Solid Pattern",
+    "department": "production",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Foundry",
+      "#SandMoulding",
+      "#Casting"
+    ],
+    "file": "production/fs-201-practical-1-mould-for-a-solid-pattern.json",
+    "verified": true
+  },
+  {
+    "id": "hse-301-health-and-safety-management-in-workplaces",
+    "code": "HSE 301",
+    "title": "Health and Safety Management in Workplaces",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#HealthAndSafety",
+      "#Ergonomics",
+      "#RiskAssessment"
+    ],
+    "file": "production/hse-301-health-and-safety-management-in-workplaces.json",
+    "verified": true
+  },
+  {
+    "id": "em-301-study-of-workshop-measuring-devices",
+    "code": "EM 301",
+    "title": "Study of Workshop Measuring Devices",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Metrology",
+      "#AngularMeasurement",
+      "#PrecisionInstruments"
+    ],
+    "file": "production/em-301-study-of-workshop-measuring-devices.json",
+    "verified": true
+  },
+  {
+    "id": "ww-301-woodwork-practice-bridle-mortise-and-tenon-joints",
+    "code": "WW 301",
+    "title": "Woodwork Practice: Bridle, Mortise and Tenon Joints",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Woodwork",
+      "#Joinery",
+      "#MortiseAndTenon"
+    ],
+    "file": "production/ww-301-woodwork-practice-bridle-mortise-and-tenon-joints.json",
+    "verified": true
+  },
+  {
+    "id": "sm-301-sheet-metal-work-hexagonal-prism-and-frustum-of-a-cone",
+    "code": "SM 301",
+    "title": "Sheet Metal Work: Hexagonal Prism and Frustum of a Cone",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#SheetMetalWork",
+      "#PatternDevelopment",
+      "#Geometry"
+    ],
+    "file": "production/sm-301-sheet-metal-work-hexagonal-prism-and-frustum-of-a-cone.json",
+    "verified": true
+  },
+  {
+    "id": "bf-301-bench-fitting-taps-dies-and-the-production-of-a-bolt",
+    "code": "BF 301",
+    "title": "Bench Fitting: Taps, Dies and the Production of a Bolt and Nut",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Fitting",
+      "#TapsAndDies",
+      "#ThreadCutting"
+    ],
+    "file": "production/bf-301-bench-fitting-taps-dies-and-the-production-of-a-bolt.json",
+    "verified": true
+  },
+  {
+    "id": "hs-301-gas-welding-joining-two-parts-by-the-oxy-acetylene-process",
+    "code": "HS 301",
+    "title": "Gas Welding: Joining Two Parts by the Oxy-Acetylene Process",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Welding",
+      "#GasWelding",
+      "#OxyAcetylene"
+    ],
+    "file": "production/hs-301-gas-welding-joining-two-parts-by-the-oxy-acetylene-process.json",
+    "verified": true
+  },
+  {
+    "id": "ms-301-machine-shop-thread-cutting-and-knurling-on-the-centre-lathe",
+    "code": "MS 301",
+    "title": "Machine Shop: Thread Cutting and Knurling on the Centre Lathe",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Lathe",
+      "#ThreadCutting",
+      "#Knurling"
+    ],
+    "file": "production/ms-301-machine-shop-thread-cutting-and-knurling-on-the-centre-lathe.json",
+    "verified": true
+  },
+  {
+    "id": "as-301-vehicle-systems-ignition-fuel-cooling-lubrication-and-transmission",
+    "code": "AS 301",
+    "title": "Vehicle Systems: Ignition, Fuel, Cooling, Lubrication and Transmission",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Automobile",
+      "#VehicleSystems",
+      "#Transmission"
+    ],
+    "file": "production/as-301-vehicle-systems-ignition-fuel-cooling-lubrication-and-transmission.json",
+    "verified": true
+  },
+  {
+    "id": "fs-301-foundry-practice-green-sand-moulds-from-solid-and-split-patterns",
+    "code": "FS 301",
+    "title": "Foundry Practice: Green Sand Moulds from Solid and Split Patterns",
+    "department": "production",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Foundry",
+      "#GreenSandMoulding",
+      "#Casting"
+    ],
+    "file": "production/fs-301-foundry-practice-green-sand-moulds-from-solid-and-split-patterns.json",
+    "verified": true
   }
 ]

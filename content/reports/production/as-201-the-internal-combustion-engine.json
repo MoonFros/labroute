@@ -1,0 +1,108 @@
+{
+  "id": "as-201-the-internal-combustion-engine",
+  "code": "AS 201",
+  "title": "The Internal Combustion Engine",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#CombustionEngine",
+    "#Automobile",
+    "#ICEngine"
+  ],
+  "verified": true,
+  "file": "production/as-201-the-internal-combustion-engine.json",
+  "content": {
+    "aim": "To study the internal combustion engine, its major parts, classification and four-stroke working cycle, and the routine checks and maintenance carried out on it.",
+    "objectives": [
+      "To know the major parts of an internal combustion engine and their functions.",
+      "To know the different classifications of the internal combustion engine.",
+      "To describe the working cycle of a four-stroke spark ignition engine and a compression ignition engine.",
+      "To be able to diagnose simple internal combustion engine faults.",
+      "To know how to change the engine oil of an internal combustion engine.",
+      "To identify the tools used to carry out repairs on an engine.",
+      "To know the routine checks and routine maintenance carried out on an engine."
+    ],
+    "apparatus": [
+      "A sectioned or complete internal combustion engine (petrol and/or diesel).",
+      "Hand tools: spanner set, socket set, screwdrivers, pliers, plug spanner, torque wrench, feeler gauge.",
+      "Oil drain pan, new engine oil, oil filter, funnel, dip stick, tyre pressure gauge, hydrometer.",
+      "Personal protective equipment: gloves, overalls and safety glasses."
+    ],
+    "theory": {
+      "text": "The old steam engine was powerful, quiet and readily reversible, but it had low efficiency because the combustion took place externally, in a large and bulky boiler. Many engineers worked on replacing the boiler with an engine in which combustion takes place inside the cylinder. Several types of internal combustion engine were developed, of which only two, the spark ignition engine and the compression ignition engine, are still in general use. An internal combustion engine is any engine that operates by burning its fuel in a confined space called the combustion chamber, which is usually an integral part of the engine. In contrast, a steam engine burns its fuel outside the engine. Examples are all vehicle engines, motor bikes, tricycle engines, tractors, earth-moving equipment, lawnmowers, motor saws, generators and some electric power plants.\n\nMajor parts\n\nThe cylinder block houses the cylinders in which the pistons move. The cylinder head closes the top of the cylinders and houses the valves, spark plugs (or injectors) and the combustion chambers. The piston moves up and down in the cylinder and transmits the force of combustion to the connecting rod through the gudgeon pin; piston rings seal the gap between the piston and cylinder wall. The connecting rod links the piston to the crankshaft, which converts the reciprocating motion of the pistons into rotary motion. The flywheel stores energy and smooths out the power impulses. The camshaft, driven by the crankshaft at half speed, operates the inlet and exhaust valves through followers, push rods and rocker arms. The sump (oil pan) stores lubricating oil, which is circulated by the oil pump. The cooling system (radiator, water pump, thermostat) removes excess heat, the fuel system supplies fuel (a carburettor or injection system), and the electrical system (battery, ignition coil, contact breaker or electronic ignition, spark plugs) supplies the spark.\n\nTerms\n\nTop dead centre (TDC) is the position of the piston when it is at the top of its travel (farthest from the crankshaft). Bottom dead centre (BDC) is the lowest position of travel. The stroke is the distance the piston travels between TDC and BDC. The combustion chamber is the space above the piston at TDC in which combustion takes place. Engine capacity (swept volume) is the volume swept by the piston in moving from TDC to BDC, multiplied by the number of cylinders. Ignition temperature is the temperature at which the fuel-air mixture ignites. Priming is the pouring of a small amount of fuel into the system, or the operation of the primer pump, to help starting, especially in a diesel engine. A spark ignition engine ignites the mixture with an electric spark, and a compression ignition engine ignites the fuel by the heat of compression.\n\nClassification\n\nInternal combustion engines can be classified by the type of ignition (spark ignition and compression ignition), by the number of strokes per cycle (two-stroke and four-stroke), by fuel used (petrol, diesel, gas), by cylinder arrangement (inline, V, flat or radial), by cooling system (air or water cooled), and by valve arrangement.\n\nThe four-stroke cycle\n\nIn a four-stroke engine the cycle is completed in four strokes of the piston, which is two revolutions of the crankshaft. (1) Suction stroke: the inlet valve opens and the piston moves down from TDC to BDC, drawing in an air-fuel mixture in a petrol engine, or only air in a diesel engine. (2) Compression stroke: both valves are closed and the piston moves up, compressing the charge. (3) Power stroke: near the end of compression, in a spark ignition engine the spark plug ignites the mixture; in a compression ignition engine, fuel is injected into the very hot compressed air and ignites. The expanding gases force the piston down, which produces power. (4) Exhaust stroke: the exhaust valve opens and the piston moves up, expelling the burnt gases. The cycle then repeats. The compression ratio in a diesel engine (about 15:1 to 22:1) is much higher than in a petrol engine (about 8:1 to 10:1).\n\nRoutine checks and maintenance\n\nRoutine checks include water level in the radiator, oil level using the dip stick, brake fluid level, tyre air pressure using a pressure gauge, and acid level in the battery. Routine maintenance includes changing the oil, oil filter and fuel filter, changing the spark plug and the contact breaker, checking tyre alignment, wheel balancing, and lubricating (greasing) the necessary parts.\n\nChanging engine oil\n\nThe engine is warmed so that the oil flows easily and then switched off. The drain plug under the sump is removed and the old oil is drained into a pan. The oil filter is removed and replaced with a new one with its seal lightly oiled. The drain plug is refitted with its washer. New oil of the recommended grade is poured through the filler, the dipstick is used to check the level, and the engine is run briefly to circulate oil and checked for leaks, then the level is rechecked.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/as-201-the-internal-combustion-engine_fig1_the-four-strokes-of-the.jpeg",
+          "caption": "Figure 1: The four strokes of the four-stroke engine cycle: suction, compression, power and exhaust (schematic drawn for this report)."
+        }
+      ]
+    },
+    "procedure": [
+      "The engine was examined externally and its major components were identified.",
+      "The functions of the parts were explained, and the valve and piston movements were observed by turning the engine over by hand.",
+      "The working of the four-stroke cycle was explained, and the differences between the spark ignition and compression ignition cycles were discussed.",
+      "Routine checks were carried out: the radiator water level, engine oil level with the dip stick, brake fluid level, tyre pressure and battery acid level.",
+      "The procedure for changing the engine oil and filters was demonstrated.",
+      "The tools used for repair and maintenance were identified."
+    ],
+    "precautions": [
+      "Switch off the engine and remove the key before working on it.",
+      "Do not open a radiator cap when the engine is hot.",
+      "Allow the engine and exhaust to cool before touching them, and wear gloves.",
+      "Dispose of used oil responsibly and clean spills immediately.",
+      "Use the correct size of spanner, and keep the work area free from fuel and open flames.",
+      "Run the engine only in a well-ventilated area because exhaust gas contains carbon monoxide."
+    ],
+    "discussion": "The experiment showed that the engine works through a repeating sequence in which every part has a precise role: the valves control the flow of gases, the piston transmits the force, and the crankshaft turns the reciprocating movement into rotation. The cycle needs two complete revolutions for one power stroke, and in a multi-cylinder engine the power strokes are arranged to overlap, giving smooth running. The difference between the petrol and diesel engines is mainly in how the fuel is ignited. The spark ignition engine uses a spark, while the diesel engine depends on the high temperature produced by compressing air to a high ratio, so it needs a stronger construction. The routine checks highlighted how simple practices such as checking the oil, the water and the tyres prevent most breakdowns and prolong the life of the engine.",
+    "conclusion": "The major parts, classification, working cycle, routine checks and maintenance of an internal combustion engine were studied. The four-stroke cycle of suction, compression, power and exhaust was understood, and regular checks and maintenance were shown to be essential for reliable operation.",
+    "questions": [
+      {
+        "question": "Describe and illustrate with simple sketches the working cycle of a four-stroke spark ignition engine and compression ignition engine.",
+        "answer": "See the figure. In the spark ignition engine, a fuel-air mixture is drawn in, compressed, ignited by a spark and then exhausted. In the compression ignition engine, only air is drawn in and compressed to a high temperature, and the fuel is injected near the end of compression and ignites by itself."
+      },
+      {
+        "question": "What are the basic tools, spare parts and safety devices that a vehicle should have?",
+        "answer": "Tools: spanner set, screwdrivers, pliers, jack and wheel spanner, tyre pressure gauge. Spare parts: spare wheel, fan belt, fuses, bulbs, spark plugs. Safety devices: fire extinguisher, warning triangle, first aid box, seat belts."
+      },
+      {
+        "question": "Enumerate sequentially the steps taken when changing oil in an internal combustion engine.",
+        "answer": "Warm the engine and switch off; place a pan; remove the drain plug and drain; replace the filter; refit the plug; add new oil; check the level with the dip stick; run and check for leaks."
+      },
+      {
+        "question": "List and state two functions each of twenty components of an internal combustion engine (selected).",
+        "answer": "Piston: transmits the gas force; seals the cylinder with rings. Connecting rod: links piston to crankshaft; transmits force. Crankshaft: changes linear to rotary motion; delivers output. Camshaft: operates the valves; times their opening. Valves: admit mixture and release exhaust. Spark plug: ignites the mixture; seals the chamber. Flywheel: stores energy; smooths rotation. Radiator: cools the water; dissipates heat. Oil pump: supplies oil; maintains pressure. Water pump: circulates coolant; prevents overheating."
+      },
+      {
+        "question": "How often should one change the engine and gear oil of his vehicle?",
+        "answer": "Engine oil is generally changed every 5,000 km or as recommended by the manufacturer (about every 3 to 6 months), and gear oil about every 40,000 to 60,000 km, or according to the vehicle manual."
+      },
+      {
+        "question": "Assuming an engine refuses to start from rest, what are the likely problems and possible solutions?",
+        "answer": "Flat battery (charge or replace); faulty starter (repair); no fuel (refill, check pump); fouled spark plugs (clean or replace); wet or faulty ignition (dry, replace coil or contact breaker); blocked fuel filter (replace)."
+      },
+      {
+        "question": "Assuming an engine went off suddenly while driving on the highway, what is the likely problem and a possible solution?",
+        "answer": "Fuel starvation (blocked filter or pump failure: replace); ignition failure (loose or damaged wiring: check connections); overheating (allow to cool and refill coolant)."
+      },
+      {
+        "question": "List the different classifications of an internal combustion engine.",
+        "answer": "By ignition (spark or compression), strokes (two or four), fuel, cylinder arrangement, cooling system and valve arrangement."
+      },
+      {
+        "question": "List ten tools used to effect repair on an internal combustion engine.",
+        "answer": "Spanner set, socket set, screwdriver, pliers, plug spanner, torque wrench, feeler gauge, hammer, oil filter wrench and a jack."
+      },
+      {
+        "question": "Define the following terms.",
+        "answer": "Spark ignition engine: an engine in which the mixture is ignited by a spark. Compression ignition engine: one in which fuel ignites by the heat of compressed air. Stroke: the piston movement between TDC and BDC. TDC: top dead centre, the highest piston position. BDC: bottom dead centre, the lowest piston position. Combustion chamber: the space where the fuel burns. Ignition temperature: the temperature at which the mixture ignites. Two-stroke engine: one that completes the cycle in two strokes (one revolution). Four-stroke engine: one that completes the cycle in four strokes (two revolutions). Engine capacity: the total swept volume of all cylinders. Priming: supplying a small amount of fuel to help starting."
+      }
+    ],
+    "learnings": [
+      "The main components of the internal combustion engine and what each does.",
+      "How the four strokes combine to produce power.",
+      "Routine checks and maintenance that prolong engine life.",
+      "The basic procedure for changing engine oil and diagnosing simple faults."
+    ]
+  }
+}

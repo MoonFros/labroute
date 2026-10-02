@@ -1,0 +1,81 @@
+{
+  "id": "hs-201-practical-2-lap-joint",
+  "code": "HS 201 P2",
+  "title": "Lap Joint",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Welding",
+    "#LapJoint",
+    "#ArcWelding"
+  ],
+  "verified": true,
+  "file": "production/hs-201-practical-2-lap-joint.json",
+  "content": {
+    "aim": "To make a lap joint using the given two mild steel pieces and arc welding.",
+    "objectives": [
+      "To position two plates in overlap and tack weld them.",
+      "To weld the lap joint with a fillet weld along the edges.",
+      "To check alignment and clean the weld."
+    ],
+    "apparatus": [
+      "Mild steel plates, 100 x 50 x 5 mm (2 pieces).",
+      "Welding electrodes: M.S. electrodes, 3.1 mm x 350 mm.",
+      "Air-cooled transformer welding machine, up to 350 A.",
+      "Rough and smooth files, protractor, tongs, ground clamp, electrode holder.",
+      "Face shield, apron, gloves and chipping hammer."
+    ],
+    "theory": {
+      "text": "In a lap joint the two pieces overlap each other and are joined by fillet welds at the edge of the overlap. Overlapping increases the area over which the load is carried. A single-lap joint, made by overlapping the edges of two plates, is easy to prepare because no edge preparation is required, but it has little resistance to bending, since the load path is offset. For this reason a double-lap joint, welded on both sides, is stronger, but requires twice as much welding. In a fillet weld the weld metal is deposited in the corner formed by the surface of one plate and the edge of the other. The fillet has a roughly triangular cross-section, and the strength depends on the throat thickness (the shortest distance from the root to the face). The terms toe and root, used in the butt weld, apply here too. A fillet weld is usually deposited in the flat or horizontal position. The plates are tack welded at both ends and in the middle to hold them in position. The alignment is checked before the main weld is run, because distortion due to heating and cooling can pull the plates out of position. After welding, the slag is removed with the chipping hammer and the weld is cleaned.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/hs-201-practical-2-lap-joint_fig1_lap-joint-of-two-100.jpeg",
+          "caption": "Figure 1: Lap joint of two 100 x 50 mm plates with an overlap of 50 mm and a weld along the edge (Lab Manual, p. 68)."
+        },
+        {
+          "src": "assets/lab_images/hs-201-practical-2-lap-joint_fig2_terms-used-in-a-weld.jpeg",
+          "caption": "Figure 2: Terms used in a weld, including the fillet weld (Lab Manual, p. 59)."
+        }
+      ]
+    },
+    "procedure": [
+      "The given mild steel pieces were thoroughly cleaned of rust and scale.",
+      "The two pieces were positioned on the welding table such that they overlapped one over the other as shown in the drawing.",
+      "The electrode was fitted into the electrode holder and the welding current was set to a proper value.",
+      "The ground clamp was fastened to the welding table.",
+      "Wearing the apron and using the face shield, the arc was struck, and the work pieces were tack welded at both the ends and at the centre of the joint.",
+      "The alignment of the lap joint was checked and the tack-welded pieces were welded as required.",
+      "The scale formed on the welds was removed using the chipping hammer.",
+      "Filing was done to remove any spatter around the weld."
+    ],
+    "precautions": [
+      "Wear the face shield, apron and gloves at all times.",
+      "Check the alignment before the final weld is made.",
+      "Keep a short arc and uniform travel speed.",
+      "Make sure the ground clamp is secured and that there are no damaged cables.",
+      "Allow the job to cool, and handle it with tongs."
+    ],
+    "discussion": "The lap joint was easier to prepare than the butt joint since no edge preparation was needed, but obtaining a uniform fillet weld required a steady hand. When the electrode was held at the correct angle between the two plates, the fillet had an even, convex face. When the electrode was held too close to one plate, the weld metal fell on one side only and an undercut appeared on the other. Distortion was visible after welding because the plates had been heated only along one edge, and it showed why tack welding and checking of the alignment are necessary. The lap joint is acceptable for light work, but because the load path is offset, it bends easily and a double-lap joint would be better for heavier loads.",
+    "conclusion": "A lap joint was successfully made from two mild steel plates by arc welding. The exercise demonstrated how to position, tack and weld a fillet, and how to clean the weld after welding.",
+    "questions": [
+      {
+        "question": "Produce the working drawing of the lap joint.",
+        "answer": "The drawing shows two 100 x 50 mm plates overlapping by 50 mm, joined by a weld along the overlap (see the figure)."
+      },
+      {
+        "question": "Using simple sketches, state the operational sequence.",
+        "answer": "Marking, cutting, edge cleaning, try square levelling, tacking, welding, cooling, chipping, cleaning."
+      },
+      {
+        "question": "State the safety precautions you observed.",
+        "answer": "See above."
+      }
+    ],
+    "learnings": [
+      "How a lap joint and a fillet weld are made.",
+      "The strength limitations of a single-lap joint.",
+      "The importance of alignment checks and slag removal."
+    ]
+  }
+}

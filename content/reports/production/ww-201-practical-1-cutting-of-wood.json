@@ -1,0 +1,83 @@
+{
+  "id": "ww-201-practical-1-cutting-of-wood",
+  "code": "WW 201 P1",
+  "title": "Cutting of Wood",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Woodwork",
+    "#Sawing",
+    "#HandTools"
+  ],
+  "verified": true,
+  "file": "production/ww-201-practical-1-cutting-of-wood.json",
+  "content": {
+    "aim": "To cut a piece of timber to a required length and to a diagonal (bevel) line using the correct saws.",
+    "objectives": [
+      "To measure and mark out timber accurately using a tape, rule, pencil, try square and sliding bevel.",
+      "To select and use the rip saw, cross-cut saw and tenon saw for their correct purposes.",
+      "To cut along a marked line without drifting from it."
+    ],
+    "apparatus": [
+      "Afara timber, 600 x 75 x 25 mm (the manual lists the stock as 12 x 1 x 12 in).",
+      "Hand saws: rip saw, cross-cut saw (or framed saw), tenon saw and dovetail saw.",
+      "Steel rule or measuring tape, pencil, try square and sliding bevel.",
+      "Bench vice or bench hook for holding the work."
+    ],
+    "theory": {
+      "text": "Sawing is the first step in converting rough timber into usable pieces. A saw is a cutting tool with teeth on one edge. The cutting is done by a reciprocating motion between the toothed edge and the work. In a push saw the teeth cut on the forward stroke, while a pull saw cuts on the backward stroke. The saw teeth are set, meaning that alternate teeth are bent slightly to the left and right, so that the cut (the kerf) is wider than the blade. This stops the blade from binding in the wood. The rip saw is used to cut along the grain. Its teeth are shaped like small chisels that pare the fibres away. The cross-cut saw cuts across the grain; its teeth are shaped like knives that sever the fibres first. The tenon saw (back saw) has a stiff steel strip along the back of a thin blade and has fine teeth (5 to 8 per cm), so it makes straight, accurate cuts for joints. The dovetail saw is a smaller version for very fine work. Before sawing, the cut must be planned. A pencil line is drawn with the help of the rule and try square. A try square gives a line square to the edge, while a sliding bevel is set to the required angle (the manual uses a diagonal line) and then used to transfer the angle to the timber. Marking is done on the face side with a sharp pencil so that the line is thin and accurate. The saw is cut on the waste side of the line so that the finished piece keeps its full size.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ww-201-practical-1-cutting-of-wood_fig1_types-of-saw-used-in.jpeg",
+          "caption": "Figure 1: Types of saw used in woodwork (Lab Manual, p. 26)."
+        },
+        {
+          "src": "assets/lab_images/ww-201-practical-1-cutting-of-wood_fig2_marking-gauge-used-to-scribe.jpeg",
+          "caption": "Figure 2: Marking gauge used to scribe lines parallel to an edge (Lab Manual, p. 23)."
+        }
+      ]
+    },
+    "procedure": [
+      "Each student measured out a piece of wood 600 x 75 x 25 mm.",
+      "The piece was marked using the tape and pencil, and the lines were squared across the faces with the try square.",
+      "The timber was held firmly on the bench, and the rip saw was used to cut the piece to a length of 600 mm along the grain.",
+      "The cross-cut saw was used to cut to the required length across the grain.",
+      "A diagonal line was marked out using the sliding bevel set to the required angle.",
+      "The tenon saw was used to cut along the diagonal line, with the cut made on the waste side of the line.",
+      "The sawn edges were checked against the marked line and with the try square."
+    ],
+    "precautions": [
+      "Hold the work firmly before cutting, and keep the free hand clear of the saw path.",
+      "Start the cut with short, light strokes using the thumb as a guide.",
+      "Cut on the waste side of the line.",
+      "Keep the saw in line with the cut and do not force it, and use the full length of the blade.",
+      "Wear safety glasses and keep the floor clear of sawdust."
+    ],
+    "discussion": "We observed that the quality of a cut depends first on the marking and second on the technique. When the line was clear and the saw was started carefully using the thumb as a guide, the cut followed the line with little effort. When the saw was forced or held at an angle, it drifted away from the line and the surface became rough. The rip saw cut quickly along the grain, while the cross-cut saw produced a smoother edge across the grain. The tenon saw, because of its fine teeth and stiff back, gave the most accurate diagonal cut. It is also important to note that cutting on the waste side of the line leaves a small allowance that can be planed off to the exact size, whereas cutting on the wrong side makes the piece undersize and unusable.",
+    "conclusion": "The piece of timber was successfully cut to length and to the marked diagonal using the rip saw, cross-cut saw and tenon saw. The exercise showed the importance of accurate marking, correct choice of saw and careful sawing technique.",
+    "questions": [
+      {
+        "question": "Show a working drawing of the marked-out wood.",
+        "answer": "The working drawing shows a rectangular piece 600 mm long, 75 mm wide and 25 mm thick, with a diagonal line marked across one end using the sliding bevel (see the diagram of the saws and the dimensions above)."
+      },
+      {
+        "question": "Using good sketches and short notes, state the operational steps.",
+        "answer": "Measure and mark the stock; hold in the vice; rip saw to width along the grain; cross-cut to length across the grain; mark the diagonal with the sliding bevel; cut the diagonal with the tenon saw; check."
+      },
+      {
+        "question": "State the uses of each tool used during the exercise.",
+        "answer": "Rule and tape: measuring. Pencil: marking. Try square: marking and checking right angles. Sliding bevel: transferring angles. Rip saw: cutting along the grain. Cross-cut saw: cutting across the grain. Tenon saw: fine, accurate cuts."
+      },
+      {
+        "question": "State the safety precautions observed.",
+        "answer": "See the precautions listed above."
+      }
+    ],
+    "learnings": [
+      "How to select the correct saw for cutting along or across the grain.",
+      "How to use the sliding bevel to mark an angle.",
+      "That cutting on the waste side of the line keeps the piece to size."
+    ]
+  }
+}

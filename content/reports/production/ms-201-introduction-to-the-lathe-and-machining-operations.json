@@ -1,0 +1,138 @@
+{
+  "id": "ms-201-introduction-to-the-lathe-and-machining-operations",
+  "code": "MS 201",
+  "title": "Introduction to the Lathe and Machining Operations",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Lathe",
+    "#Machining",
+    "#Turning"
+  ],
+  "verified": true,
+  "file": "production/ms-201-introduction-to-the-lathe-and-machining-operations.json",
+  "content": {
+    "aim": "To study the characteristic features of the lathe, its main parts, accessories and tools, and the types of operation that can be performed on it.",
+    "objectives": [
+      "To study the characteristic features of the lathe.",
+      "To study the types of lathe operations.",
+      "To prepare for the production of a shaft by straight turning."
+    ],
+    "apparatus": [
+      "Centre lathe machine with its accessories: three-jaw chuck, four-jaw chuck, face plate, centres, steady rest and follower rest.",
+      "High-speed steel (H.S.S.) single point cutting tools, knurling tool and parting tool.",
+      "Vernier calliper, steel rule, chuck key and tool post spanner."
+    ],
+    "theory": {
+      "text": "The lathe is considered one of the oldest machine tools and is widely used in industry. It is called the mother of machine tools. The first screw-cutting lathe is said to have been developed by an Englishman, Henry Maudslay, in 1797, and modern high-speed, heavy-duty lathes are based on that machine. The primary task of a lathe is to generate cylindrical work pieces. The process of machining a work piece to the required shape and size by moving the cutting tool either parallel or perpendicular to the axis of rotation of the work piece is known as turning, in which the excess unwanted metal is removed. The machine tool is capable of plain turning, taper turning, thread cutting, chamfering and knurling.\n\nMain parts of a lathe\n\nThe main parts are the bed, headstock, spindle, tailstock, carriage (with saddle, apron, cross-slide, compound rest, compound slide and tool post), feed mechanism, lead screw, feed rod and the thread-cutting mechanism. Bed and ways. The bed is mounted on the legs of the lathe, which are bolted to the floor. It forms the base of the machine and is made of cast iron, with its top surface machined accurately. The headstock is at the extreme left, the tailstock at the extreme right and the carriage between them. The top of the bed has flat or V-shaped guideways. The tailstock and carriage slide on these guideways. Inverted V-shaped guideways give better guidance and accurate alignment of the saddle and tailstock, and also allow the metal chips to fall through. Headstock. The headstock is mounted permanently on the left side of the bed. It houses the hollow spindle and the mechanism for driving the spindle at multiple speeds. The drive may be a stepped cone pulley drive, a back gear drive or an all-geared drive. Spindle. The spindle rotates on two large bearings in the headstock. A hole through the spindle allows long bars to pass through. The front end is threaded to take chucks, face plate, driving plate and catch plate, and has a taper hole to take the live centre. A gear at the other end transmits power through the tumbler gears to the lead screw. Tailstock. The tailstock is located on the guideways at the right side of the bed. It has a body, a base and a spindle (or ram) which moves inside a bore. The spindle has a Morse taper hole to receive the dead centre or the shanks of tools such as drills and reamers. When the hand wheel is turned clockwise, the spindle advances, and when turned anti-clockwise, it is withdrawn. The tailstock can be clamped at any position on the bed. Its uses are: supporting the other end of long work held between centres, holding drills, reamers and taps, turning tapers by the set-over method, and setting the cutting tool at the correct height. Carriage. The carriage lies between the headstock and tailstock and moves along the bed. It consists of the saddle (an H-shaped casting which bridges the guideways), the apron (which carries the mechanism controlling the motion of the carriage and cross-slide), the cross-slide (which moves at right angles to the bed and carries the compound rest), the compound rest (which can be swivelled to any angle, used for taper turning), the compound slide, and the tool post. The cross-slide hand wheel is graduated so that the depth of cut can be set to about 0.05 mm. Tool post. The tool post holds the tools. Types include the single-screw tool post, the four-bolt tool post, the four-way tool post and the open-side tool post. The four-way tool post carries four tools at a time, so machining time is reduced. Feed rod and lead screw. The feed rod is a long shaft with a keyway, which transmits power from the spindle through gears to the apron to give automatic feed to the carriage and cross-slide. The lead screw is a long threaded shaft (usually Acme thread) used as a master screw in thread cutting. A split nut (half-nut) in the apron engages the lead screw to move the carriage by a calculated distance for each spindle revolution.\n\nTypes of lathe\n\nLathes are classified as speed lathes (woodworking, centring, polishing and metal spinning lathes), engine or centre lathes, bench lathes, tool-room lathes, semi-automatic lathes (capstan and turret), automatic lathes and special-purpose lathes (wheel lathe, gap-bed lathe, T-lathe and duplicating lathe). A speed lathe has a spindle speed of about 1200 to 3600 rpm and consists only of a headstock, a bed, a tailstock and a tool slide. The engine lathe is the most widely used, and it is so called because early lathes were driven by steam engines. A tool-room lathe is similar to an engine lathe but built more accurately with a wider range of speeds and feeds, for tool and die work.\n\nWork-holding devices\n\nThese include chucks, face plate, driving plate, catch plate, carriers, mandrels, centres and rests. The three-jaw self-centring chuck has three jaws that move together by rotating one pinion with a chuck key; it holds round or hexagonal work quickly and centres it automatically. The four-jaw independent chuck has four jaws, each moved by its own screw, so it can hold irregular shapes and be set to run accurately but takes more time. The magnetic chuck holds thin ferrous work by magnetic flux. The collet chuck has a spring-steel bush that grips bar stock evenly, and it is used on capstan and automatic lathes. The face plate is a circular disc with slots for bolts and clamps to hold large or irregular work. Centres (live and dead) hold the work between the headstock and tailstock, and they have a Morse taper shank. The steady rest has three jaws and supports long work near the free end, while the follower rest is attached to the carriage and moves with the tool to prevent slender work from bending.\n\nLathe tools and operations\n\nBy construction, lathe tools are solid tools, brazed-tipped tools and tool bit with tool holders. By the operation they perform, they are turning tools, thread-cutting tools, facing tools, forming tools, parting tools, grooving tools, boring tools, internal thread cutting tools and knurling tools. By feed direction there are right-hand, left-hand and round-nose tools. Facing is machining the end of the work to produce a flat surface square to the axis; the tool is fed perpendicular to the axis. Straight turning removes material to produce a cylinder with the tool fed parallel to the axis. Step turning produces different diameters on the same work. Chamfering bevels the end of the work. Grooving cuts a narrow groove on the cylindrical surface. Knurling embosses a diamond-shaped pattern on the surface to provide a good grip. Undercutting enlarges a diameter internally or reduces it externally over a short length. Taper turning is a uniform increase or decrease of diameter along the length, done by the form tool method, the compound rest method, tailstock set-over, taper turning attachment or combined feed. Thread cutting produces a helical groove by feeding the tool longitudinally by one pitch per revolution. Drilling, reaming, boring and tapping are also performed on the lathe.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig1_parts-of-the-lathe.jpeg",
+          "caption": "Figure 1: Parts of the lathe (Lab Manual, p. 69)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig2_tailstock-of-the-lathe.jpeg",
+          "caption": "Figure 2: Tailstock of the lathe (Lab Manual, p. 71)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig3_carriage-of-the-lathe-with.jpeg",
+          "caption": "Figure 3: Carriage of the lathe with saddle, apron, cross-slide, compound rest and tool post (Lab Manual, p. 72)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig4_single-screw-tool-post.jpeg",
+          "caption": "Figure 4: Single-screw tool post (Lab Manual, p. 74)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig5_three-jaw-self-centring-chuck.jpeg",
+          "caption": "Figure 5: Three-jaw self-centring chuck (Lab Manual, p. 77)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig6_four-jaw-independent-chuck.jpeg",
+          "caption": "Figure 6: Four-jaw independent chuck (Lab Manual, p. 77)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig7_collet-chuck.jpeg",
+          "caption": "Figure 7: Collet chuck (Lab Manual, p. 78)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig8_face-plate.jpeg",
+          "caption": "Figure 8: Face plate (Lab Manual, p. 78)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig9_holding-work-between-centres.jpeg",
+          "caption": "Figure 9: Holding work between centres (Lab Manual, p. 79)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig10_steady-rest.jpeg",
+          "caption": "Figure 10: Steady rest (Lab Manual, p. 79)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig11_follower-rest.jpeg",
+          "caption": "Figure 11: Follower rest (Lab Manual, p. 80)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig12_facing-operation.jpeg",
+          "caption": "Figure 12: Facing operation (Lab Manual, p. 82)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig13_straight-turning.jpeg",
+          "caption": "Figure 13: Straight turning (Lab Manual, p. 82)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig14_types-of-groove.jpeg",
+          "caption": "Figure 14: Types of groove (Lab Manual, p. 83)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig15_knurling.jpeg",
+          "caption": "Figure 15: Knurling (Lab Manual, p. 83)."
+        },
+        {
+          "src": "assets/lab_images/ms-201-introduction-to-the-lathe-and-machining-operations_fig16_thread-cutting-set-up-on-the.jpeg",
+          "caption": "Figure 16: Thread cutting set-up on the lathe (Lab Manual, p. 85)."
+        }
+      ]
+    },
+    "procedure": [
+      "The lathe machine was introduced and its main parts were identified with the labelled diagram.",
+      "The functions of the headstock, tailstock, carriage, lead screw and feed rod were explained.",
+      "The work-holding devices were examined and mounted, and the cutting tools were shown.",
+      "A demonstration of facing, straight turning, step turning, chamfering, grooving and knurling was given by the instructor.",
+      "The method of taper turning by compound rest and of thread cutting was explained."
+    ],
+    "precautions": [
+      "Wear safety glasses and close-fitting clothing; remove rings, watches and ties and tie up long hair.",
+      "Never leave the chuck key in the chuck.",
+      "Never touch a rotating work piece or chuck, and never try to stop the chuck by hand.",
+      "Do not remove chips by hand; use a brush or hook after stopping the machine.",
+      "Stop the machine before measuring, changing tools or adjusting the work.",
+      "Ensure the work and tool are firmly secured before starting."
+    ],
+    "discussion": "The lathe is described as the mother of machine tools because it can be used for many operations and also for making parts for other machines. Studying the different parts of the lathe showed that each has a specific function, and that the accuracy of the finished work depends on how rigidly the bed, headstock, carriage and tailstock are aligned. The lead screw and feed rod showed us two different drives: the feed rod provides smooth power feed for turning, and the lead screw with its half-nut gives a precise pitch for thread cutting. Work holding is an important lesson. The three-jaw chuck is convenient for round bars, but when the work is irregular, it must be held in the four-jaw chuck or on the face plate. Long slender work needs a steady rest or follower rest, since otherwise it bends away from the tool and finishes oversize in the middle. Choice of speed, feed and depth of cut also determines the finish and tool life.",
+    "conclusion": "The characteristic features of the lathe, its parts, accessories, tools and operations were studied. The lathe can perform turning, facing, chamfering, grooving, knurling, taper turning, thread cutting, drilling, boring and other operations, and its correct use depends on good work holding, proper tool setting and strict observance of safety rules.",
+    "questions": [
+      {
+        "question": "List the functions of the lathe machine.",
+        "answer": "Plain (straight) turning, facing, step turning, chamfering, grooving, forming, knurling, undercutting, eccentric turning, taper turning, thread cutting, drilling, reaming, boring and tapping."
+      },
+      {
+        "question": "What are the main parts of a lathe?",
+        "answer": "Bed, headstock, spindle, tailstock, carriage (saddle, apron, cross-slide, compound rest, compound slide, tool post), feed mechanism, lead screw and feed rod."
+      },
+      {
+        "question": "What is the difference between a live centre and a dead centre?",
+        "answer": "The live centre fits in the headstock spindle and rotates with the work; the dead centre fits in the tailstock spindle and does not rotate, so it is hardened and needs lubrication."
+      },
+      {
+        "question": "What is the purpose of knurling?",
+        "answer": "To provide an effective gripping surface, to give a better appearance, and to slightly increase the diameter of the work."
+      }
+    ],
+    "learnings": [
+      "The names and functions of the main parts of the lathe.",
+      "How different chucks, face plate, centres and rests hold the work.",
+      "The types of lathe operations and the tools used for them.",
+      "Safety rules specific to rotating machinery."
+    ]
+  }
+}

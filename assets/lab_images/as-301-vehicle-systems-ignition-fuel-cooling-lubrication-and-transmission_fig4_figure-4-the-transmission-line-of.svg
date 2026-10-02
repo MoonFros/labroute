@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-label="Transmission system power flow from engine to road wheels">
+  <style>
+    .lbl{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:11.5px;fill:#16202b}
+    .sm{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:10px;fill:#6b7b8a}
+    .ttl{font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif;font-size:13px;font-weight:600;fill:#14532d}
+    .bx{fill:#fff;stroke:#16202b;stroke-width:1.5}
+    .bx2{fill:#e8f3ec;stroke:#14532d;stroke-width:1.5}
+    .fl{fill:none;stroke:#9a3412;stroke-width:2.4;marker-end:url(#a2)}
+  </style>
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9a3412"/></marker>
+  </defs>
+  <rect width="760" height="300" fill="#fff"/>
+  <text class="ttl" x="20" y="26">Transmission system — torque path from engine to road wheels</text>
+  <text class="sm" x="20" y="43">Conventional front-engine, rear-wheel-drive layout</text>
+
+  <!-- Engine -->
+  <rect class="bx2" x="24" y="96" width="92" height="76" rx="5"/>
+  <text class="lbl" x="70" y="128" text-anchor="middle">Engine</text>
+  <text class="sm" x="70" y="144" text-anchor="middle">torque source</text>
+
+  <!-- Flywheel -->
+  <g transform="translate(150,134)">
+    <circle r="27" fill="#fff" stroke="#16202b" stroke-width="1.5"/>
+    <circle r="9" fill="#e8f3ec" stroke="#16202b" stroke-width="1.2"/>
+    <g stroke="#dde4ea" stroke-width="1.6">
+      <path d="M-27 0 h9 M18 0 h9 M0 -27 v9 M0 18 v9"/>
+    </g>
+    <text class="lbl" x="0" y="52" text-anchor="middle">Flywheel</text>
+    <text class="sm" x="-10" y="66" text-anchor="middle">smooths torque</text>
+  </g>
+
+  <!-- Clutch -->
+  <g transform="translate(228,134)">
+    <rect class="bx" x="-20" y="-32" width="40" height="64" rx="4"/>
+    <path d="M-8 -32 v64 M8 -32 v64" stroke="#16202b" stroke-width="1.2"/>
+    <text class="lbl" x="0" y="52" text-anchor="middle">Clutch</text>
+    <text class="sm" x="10" y="66" text-anchor="middle">connects / disconnects</text>
+  </g>
+
+  <!-- Gearbox -->
+  <g transform="translate(330,134)">
+    <rect class="bx2" x="-46" y="-42" width="92" height="84" rx="5"/>
+    <g fill="none" stroke="#16202b" stroke-width="1.3">
+      <circle cx="-18" cy="-12" r="14"/>
+      <circle cx="14" cy="14" r="18"/>
+    </g>
+    <text class="lbl" x="0" y="62" text-anchor="middle">Gear box</text>
+    <text class="sm" x="0" y="76" text-anchor="middle">varies torque / speed ratio</text>
+  </g>
+
+  <!-- Universal joints + propeller shaft -->
+  <g transform="translate(452,134)">
+    <circle cx="-30" cy="0" r="8" fill="#fff" stroke="#16202b" stroke-width="1.5"/>
+    <rect x="-22" y="-6" width="80" height="12" rx="3" class="bx"/>
+    <circle cx="66" cy="0" r="8" fill="#fff" stroke="#16202b" stroke-width="1.5"/>
+    <text class="lbl" x="18" y="-22" text-anchor="middle">Propeller shaft</text>
+    <text class="sm" x="-34" y="30" text-anchor="middle">universal</text>
+    <text class="sm" x="-34" y="42" text-anchor="middle">joint</text>
+    <text class="sm" x="70" y="30" text-anchor="middle">universal</text>
+    <text class="sm" x="70" y="42" text-anchor="middle">joint</text>
+  </g>
+
+  <!-- Differential -->
+  <g transform="translate(596,134)">
+    <circle r="32" fill="#e8f3ec" stroke="#14532d" stroke-width="1.5"/>
+    <g fill="none" stroke="#16202b" stroke-width="1.3">
+      <circle r="16"/>
+      <path d="M-16 0 h32"/>
+    </g>
+    <text class="lbl" x="0" y="56" text-anchor="middle">Differential</text>
+    <text class="sm" x="0" y="70" text-anchor="middle">splits drive, allows</text>
+    <text class="sm" x="0" y="82" text-anchor="middle">different wheel speeds</text>
+  </g>
+
+  <!-- Axles + wheels -->
+  <rect class="bx" x="628" y="128" width="46" height="12" rx="3"/>
+  <text class="sm" x="651" y="120" text-anchor="middle">rear axle</text>
+  <g transform="translate(700,134)">
+    <rect x="-16" y="-42" width="32" height="84" rx="14" fill="#16202b" opacity=".85"/>
+    <rect x="-9" y="-24" width="18" height="48" rx="8" fill="#fff"/>
+    <text class="lbl" x="0" y="62" text-anchor="middle">Road wheel</text>
+  </g>
+
+  <!-- Flow arrows -->
+  <path class="fl" d="M118 134 H136"/>
+  <path class="fl" d="M178 134 H204"/>
+  <path class="fl" d="M248 134 H280"/>
+  <path class="fl" d="M376 134 H414"/>
+  <path class="fl" d="M526 134 H560"/>
+
+  <text class="sm" x="20" y="268">Engine &#8594; flywheel &#8594; clutch &#8594; gear box &#8594; universal joint &#8594; propeller shaft &#8594; universal joint &#8594; differential &#8594; rear axle shafts &#8594; road wheels</text>
+  <text class="sm" x="20" y="284">Each element either changes the magnitude of torque, its direction, or accommodates the relative movement between the sprung and unsprung masses.</text>
+</svg>

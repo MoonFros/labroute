@@ -1,0 +1,72 @@
+{
+  "id": "hse-201-health-and-safety-in-the-workplace",
+  "code": "HSE 201",
+  "title": "Health and Safety in the Workplace",
+  "department": "production",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#HealthAndSafety",
+    "#WorkshopSafety",
+    "#PPE"
+  ],
+  "verified": true,
+  "file": "production/hse-201-health-and-safety-in-the-workplace.json",
+  "content": {
+    "aim": "To study the Health and Safety Management System (HSMS) of a workplace, and to understand the responsibilities of the people who work in it, the nature of workplace hazards, and the general safety rules that must be observed in the engineering workshop.",
+    "objectives": [
+      "To expand our knowledge of the elements that make up a workplace.",
+      "To know the role of the various health and safety Acts and regulations.",
+      "To understand how the physical environment is organised so that hazards can be controlled.",
+      "To be able to recognise, evaluate and control hazards using the three-step approach to safety."
+    ],
+    "apparatus": [
+      "Departmental Laboratory and Workshop Practice manual (Section: Health and Safety).",
+      "The workshop environment itself (machines, benches, electrical outlets, floors and storage areas) used for the hazard-recognition walk-through.",
+      "Personal Protective Equipment (PPE): safety glasses or goggles, closed shoes, overalls, gloves, ear protection.",
+      "First aid box, fire extinguisher and the Material Safety Data Sheet (MSDS) book kept at the safety cabinet."
+    ],
+    "theory": {
+      "text": "A Health and Safety Management System (HSMS) is an organised process for reducing the number of injuries, illnesses and even deaths that occur at work. Many safety elements have been identified, but four have been found to be critical to the success of any system. These are: the quality of leadership shown by management (the employer, supervisors and foremen) on safety and on the involvement of employees; analysis of the worksite for potential hazard spots; hazard prevention and control; and the quality and frequency of safety and health training programmes. Put simply, a safe workplace is one where the people in charge care, the dangers are known, the dangers are controlled, and everyone has been taught how to stay safe.\n\nWhat is a workplace?\n\nA workplace is anywhere that work is done, or is to be done, by a worker, a person or a group of persons carrying out an undertaking or business. By this definition a workshop, a business shop, an office, a farm, a home or even a playground can be a workplace. The components of a workplace are the physical objects (machinery, furniture, structures), the human beings (operators, workers, inspectors, visitors) and the environment in which the work is carried out.\n\nThe environment\n\nAn environment is the totality of all the factors that make up a workplace, and two are always identifiable. The physical environment is the actual place or site where the work is done: factories and plants, workshops, farms, roadways, vehicles and machinery, and buildings. The operating environment is the set of physical and atmospheric conditions that influence job delivery, such as seasonal variation, weather, temperature and relative humidity. Other environment-dependent factors include exposure to harmful substances, working in confined spaces, poorly ventilated or poorly lit enclosures, and attacks by insects or wild animals. Each of these carries a hazard if it is not properly controlled.\n\nHazard and hazard points\n\nA hazard is any situation, condition or extreme event (natural or caused) that carries a certain probability of producing adverse consequences for the safety or health of workers, property or the environment. The specific places where hazards occur are called hazard points: moving machine parts, work at heights, slippery floors, live electrical equipment, excessive noise, toxic substances and the lifting of heavy objects.\n\nTypes of hazard\n\nWorkplace hazards fall into four categories. (1) Physical hazards cause traumatic injury through lifting heavy loads, repetitive motion, slips, trips and falls, contact with moving parts of machinery such as unguarded belts and gears, electric shock and fire, excessive noise, and extreme temperatures or radiation. (2) Chemical hazards are injuries caused by exposure to substances such as battery acid, solvents, cleaners and pesticides, to dusts from grinding or sawmills, and to fumes from welding or gas emissions. (3) Biological hazards come from exposure to pathogens such as viruses, fungi, bacteria and mould, which can attack through the blood and body fluids. (4) Psychological hazards arise from unfavourable working conditions, inadequate or inappropriate tools, and working with old or worn-out equipment, which may lead to stress, fatigue, exhaustion and job depression.\n\nAccident, injury and safety\n\nAn accident is an unforeseen occurrence with negative consequences, resulting from sudden impact, system malfunction, human error, carelessness or unsafe acts. It results in pain, loss of a body part or even death, and also in waste of time, money and materials and damage to equipment. An injury, in public health terms, is physical harm to a person's body caused by contact between people and harmful objects, substances or other things in their surroundings: broken bones, cuts, bruises, brain damage, poisoning and burns. Safety, in its simplest form, is a state of being at little or no risk of injury from a harmful external impact, inhalation or contact. It is a holistic approach in which people feel free from harm in addition to actually being safe, and it requires thinking ahead about the hazards associated with the job.\n\nThe three-step approach to safety\n\nStep 1, Recognition: identify the hazards to which a person at the workplace is likely to be exposed. Step 2, Evaluation: assess the risk of injury or harm from each hazard identified. Step 3, Control: consider the means by which the risk may be reduced, whether by elimination, substitution, guarding, safe procedures or protective equipment. If hazards are not recognised, evaluated and controlled, a worker may be injured or killed by machinery, electricity, fires or falls.\n\nGeneral shop safety rules\n\nThe manual lists 29 rules for all students using the workshop. In summary: wear safety glasses or goggles in any shop area; wear shoes that cover the whole foot (no sandals); operate only equipment you are familiar with and have been authorised to use; never use power tools unless at least two people are in the shop; avoid blowing compressed air at people or at chips; report every injury, however slight, to the instructor; wash chemical splashes in the eye for 15 minutes before seeking medical help; shut machines off before cleaning, repairing or oiling; do not wear ties, loose clothing, jewellery or gloves around rotating machinery; tie back long hair; use a brush or hook, never the hands, to remove chips; keep floors clean and dry; do not work when tired or in a hurry; never indulge in horseplay; keep all machine guards in place; store oily rags in an approved metal container; check power cords for damage; consult the MSDS before using unfamiliar materials; and do not drink alcohol or bring food into the machine shop.",
+      "diagrams": []
+    },
+    "procedure": [
+      "Procedure followed in this exercise",
+      "We were briefed on the meaning of a workplace, its components and its environment, with the workshop used as the working example.",
+      "We were taken through the types of hazard (physical, chemical, biological and psychological) and shown where each could be found in the workshop.",
+      "We carried out a hazard-recognition walk-through of the workshop, identifying hazard points such as rotating machines, electrical outlets, floors, and storage areas for oily rags and chemicals.",
+      "For each hazard, we applied the three-step approach: recognition, evaluation of the risk, and consideration of control measures.",
+      "The 29 general shop safety rules were read out and explained, and the location of the first aid box, extinguisher and MSDS book were pointed out.",
+      "The correct use of personal protective equipment was demonstrated, and the instructor answered questions."
+    ],
+    "precautions": [
+      "Always wear the correct PPE before entering any shop area.",
+      "Never run, play or use a phone carelessly in the workshop.",
+      "Listen to the instructor and do not touch any machine without permission.",
+      "Know where the exits, first aid box, extinguisher and emergency switches are located.",
+      "Report every injury or unsafe condition immediately."
+    ],
+    "discussion": "This exercise showed us that safety in the workshop is not a matter of luck; it is the result of deliberate planning. When we walked through the workshop, hazards that we had earlier ignored became visible: a loose power cable, a floor with oil on it, a machine belt with its guard removed. The three-step approach (recognise, evaluate, control) gave us a simple habit we can apply to any job, in any shop, and even outside engineering. We also observed that most of the 29 rules are common sense that is easily forgotten under pressure. Rules such as not working when tired or in a hurry, keeping the floor clean, and tying back long hair are rarely broken on purpose; they are broken through carelessness. It is therefore important that leadership (the instructor, the technologist, the supervisor) sets a good example, which agrees with the manual's point that management leadership is the first of the four critical safety elements. It is also worth noting that hazards are not only physical. Psychological hazards such as stress, fatigue and working with worn-out tools reduce concentration and indirectly cause accidents. A safe workplace therefore deals with the person as well as the machine.",
+    "conclusion": "We conclude that a health and safety management system, built on good leadership, hazard analysis, hazard control and regular training, is essential to preventing injury and loss in any workplace. All the aims of the experiment were met: we understood the components of a workplace, the types of hazard, the three-step approach to safety and the general shop rules that govern our conduct in the workshop.",
+    "questions": [
+      {
+        "question": "What are the four critical elements of a successful safety and health management system?",
+        "answer": "Leadership qualities of management on safety and employee involvement; worksite analysis of potential hazard spots; hazard prevention and control; and the quality and frequency of safety and health training."
+      },
+      {
+        "question": "What is a hazard?",
+        "answer": "Any situation, condition or extreme event with some probability of causing adverse consequences to the safety or health of workers, property or the environment."
+      },
+      {
+        "question": "State the three-step approach to safety at the workplace.",
+        "answer": "Recognition of hazards, evaluation of the risk each hazard presents, and control, which means finding ways to reduce the risk."
+      }
+    ],
+    "learnings": [
+      "A workplace is any place where work is done, and it is made up of objects, people and the environment.",
+      "Hazards can be physical, chemical, biological or psychological, and each needs its own controls.",
+      "Accidents are caused mainly by unsafe acts and unsafe conditions, both of which can be prevented.",
+      "The rules of the workshop exist to protect me and the people around me, so I must follow them every time."
+    ]
+  }
+}
