@@ -13,6 +13,7 @@ const { GalleryStore } = require('./lib/gallery-store');
 const { MomentsService } = require('./lib/moments-service');
 const { PendingStore } = require('./lib/pending-store');
 const { RateLimitStore } = require('./lib/rate-limit');
+const { createBlobStorage } = require('./lib/blob-storage');
 const {
   HttpError,
   getClientIp,
@@ -55,12 +56,14 @@ const CHARSET_EXTENSIONS = new Set(['.html', '.css', '.js', '.mjs', '.json', '.s
 const BLOCKED_STATIC_ROOTS = new Set([
   '.git',
   '.env',
+  'api',
   'lib',
   'node_modules',
   'package-lock.json',
   'package.json',
   'server.js',
-  'tests'
+  'tests',
+  'vercel.json'
 ]);
 
 const apiNoStore = { 'Cache-Control': 'no-store' };
@@ -183,17 +186,60 @@ function readBody(req, limit) {
   });
 }
 
+function assertJsonObject(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    throw new HttpError(400, 'invalid_json', 'The request body must be a JSON object.');
+  }
+  return value;
+}
+
 async function readJsonBody(req, limit) {
+  const contentType = String(req.headers['content-type'] || '')
+    .split(';')[0]
+    .trim()
+    .toLowerCase();
+
+  // Some serverless platforms (Vercel's Node helpers) parse the JSON body
+  // before the handler runs and consume the request stream. Use that parsed
+  // body when present; on the plain Node server `req.body` is undefined and
+  // the stream path below runs exactly as before. The Vercel entrypoint also
+  // exports `config.api.bodyParser = false`, so this is belt and braces.
+  // Note the helpers' parser is a lazy getter that throws on invalid JSON.
+  let preParsed;
+  if (contentType === 'application/json' && 'body' in req) {
+    try {
+      preParsed = req.body;
+    } catch {
+      throw new HttpError(400, 'invalid_json', 'The request body was not valid JSON.');
+    }
+  }
+  if (preParsed !== undefined && preParsed !== null && preParsed !== '') {
+    if (typeof preParsed === 'object' && !Buffer.isBuffer(preParsed)) {
+      return assertJsonObject(preParsed);
+    }
+
+    const rawPreParsed = Buffer.isBuffer(preParsed) ? preParsed : Buffer.from(String(preParsed));
+    if (rawPreParsed.length > limit) {
+      throw new HttpError(
+        413,
+        'payload_too_large',
+        'That upload is too large. Please choose a smaller photo.'
+      );
+    }
+
+    try {
+      return assertJsonObject(JSON.parse(rawPreParsed.toString('utf8')));
+    } catch (error) {
+      if (error instanceof HttpError) throw error;
+      throw new HttpError(400, 'invalid_json', 'The request body was not valid JSON.');
+    }
+  }
+
   const raw = await readBody(req, limit);
 
   if (!raw.length) {
     throw new HttpError(400, 'empty_body', 'The request body was empty.');
   }
-
-  const contentType = String(req.headers['content-type'] || '')
-    .split(';')[0]
-    .trim()
-    .toLowerCase();
 
   if (contentType !== 'application/json') {
     throw new HttpError(415, 'unsupported_content_type', 'Expected an application/json request.');
@@ -206,11 +252,7 @@ async function readJsonBody(req, limit) {
     throw new HttpError(400, 'invalid_json', 'The request body was not valid JSON.');
   }
 
-  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
-    throw new HttpError(400, 'invalid_json', 'The request body must be a JSON object.');
-  }
-
-  return parsed;
+  return assertJsonObject(parsed);
 }
 
 function getVisitorIdentity(req, config) {
@@ -448,7 +490,11 @@ async function handleApi(req, res, pathname, url, ctx) {
       cooldownMinutes: config.cooldownMinutes,
       maxUploadBytes: config.maxUploadBytes,
       emailProvider: resolveProvider(config) || 'none',
-      storage: 'local'
+      storage: config.storageMode,
+      serverless: config.isServerless,
+      // Lets an operator verify production is durable without logging in:
+      // storage should be "vercel-blob" and secretConfigured true on Vercel.
+      secretConfigured: config.secretConfigured
     });
   }
 
@@ -593,6 +639,23 @@ async function serveStatic(req, res, pathname, ctx) {
   const resolved = resolveStaticFile(pathname, config);
   if (!resolved) return sendNotFound(req, res);
 
+  // Approved photos in Blob storage are not files in the deployment, so the
+  // CDN cannot serve them. Stream them from storage instead. (In local and
+  // ephemeral modes they are real files under config.uploadDir, below.)
+  if (resolved.isUpload && config.storageMode === 'vercel-blob') {
+    const uploaded = await ctx.moments.getUploadedFile(path.basename(resolved.file));
+    if (!uploaded) return sendNotFound(req, res);
+
+    res.writeHead(200, {
+      'Content-Type': uploaded.mime,
+      'Content-Length': uploaded.buffer.length,
+      'Cache-Control': cacheControlFor(resolved.file, true)
+    });
+    if (req.method !== 'HEAD') res.write(uploaded.buffer);
+    res.end();
+    return undefined;
+  }
+
   let { file } = resolved;
   let stat;
 
@@ -686,11 +749,27 @@ async function handleRequest(req, res, ctx) {
   return serveStatic(req, res, pathname, ctx);
 }
 
+function resolveBlobStorage(overrides, config) {
+  if (overrides.blobStorage) return overrides.blobStorage;
+  if (config.storageMode !== 'vercel-blob') return null;
+
+  const blobStorage = createBlobStorage({ access: config.blobAccess });
+  if (!blobStorage) {
+    // Blob was requested but the SDK is unavailable (e.g. `npm start`
+    // without `npm install`). Degrade to disk rather than failing every
+    // request; /api/health reports the mode that is actually in use.
+    config.storageMode = config.isServerless ? 'ephemeral' : 'local';
+    return null;
+  }
+  return blobStorage;
+}
+
 function createApp(overrides = {}) {
   const config = loadConfig(overrides);
-  const galleryStore = new GalleryStore(config);
-  const rateLimits = new RateLimitStore(config.rateLimitFile, config.rateLimit);
-  const pendingStore = new PendingStore(config);
+  const blobStorage = resolveBlobStorage(overrides, config);
+  const galleryStore = new GalleryStore(config, blobStorage);
+  const rateLimits = new RateLimitStore(config.rateLimitFile, config.rateLimit, blobStorage);
+  const pendingStore = new PendingStore(config, blobStorage);
   const moments = new MomentsService({ config, galleryStore, rateLimits, pendingStore });
   const ctx = {
     config,
@@ -698,12 +777,17 @@ function createApp(overrides = {}) {
     rateLimits,
     pendingStore,
     moments,
+    blobStorage,
     loginAttempts: new Map()
   };
 
-  const server = http.createServer((req, res) => {
+  // The same handler powers the long-running Node server (local / Node
+  // hosts) and the Vercel Function in api/[...path].js.
+  const handler = (req, res) => {
     handleRequest(req, res, ctx).catch((error) => sendError(res, error));
-  });
+  };
+
+  const server = http.createServer(handler);
 
   server.headersTimeout = 25 * 1000;
   server.requestTimeout = 60 * 1000;
@@ -711,7 +795,7 @@ function createApp(overrides = {}) {
     if (socket.writable) socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
   });
 
-  return { server, config, ctx };
+  return { server, handler, config, ctx };
 }
 
 function start() {
@@ -734,7 +818,9 @@ function start() {
     console.log(`  Local:     http://localhost:${config.port}`);
     console.log(`  Bind:      ${config.host}:${config.port}`);
     console.log(`  Uploads:   ${Math.round(config.maxUploadBytes / (1024 * 1024))} MB max · ${config.cooldownMinutes} min cooldown`);
-    console.log(`  Storage:   ${config.uploadDir}`);
+    console.log(
+      `  Storage:   ${config.storageMode}${config.storageMode === 'vercel-blob' ? '' : ` (${config.uploadDir})`}`
+    );
     console.log(
       `  Email:     ${provider || 'not configured'}${admins.length ? ` → ${admins.length} admin(s)` : ''}`
     );

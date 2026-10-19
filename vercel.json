@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30,
+      "includeFiles": "{content/gallery.json,data/admins.json}"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/assets/gallery/moments/(.*)",
+      "destination": "/api/moment-image/$1"
+    }
+  ]
+}
