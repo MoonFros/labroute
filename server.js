@@ -6,14 +6,14 @@ const http = require('http');
 const path = require('path');
 
 const adminAuth = require('./lib/admin-auth');
-const { loadConfig } = require('./lib/config');
+const { loadConfig, storageStatus } = require('./lib/config');
 const { loadEnvFile } = require('./lib/env');
 const { loadAdminEmails, logNotification, notifyMomentUpload, resolveProvider } = require('./lib/email');
 const { GalleryStore } = require('./lib/gallery-store');
 const { MomentsService } = require('./lib/moments-service');
 const { PendingStore } = require('./lib/pending-store');
 const { RateLimitStore } = require('./lib/rate-limit');
-const { createBlobStorage } = require('./lib/blob-storage');
+const { blobDiagnostics, createBlobStorage } = require('./lib/blob-storage');
 const {
   HttpError,
   getClientIp,
@@ -424,7 +424,10 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
       admin: session.email,
       count: pending.length,
       pending,
-      liveCount: gallery.length
+      liveCount: gallery.length,
+      // The dashboard turns this into a warning banner: approving while
+      // `durable` is false stores the photo in a throwaway /tmp.
+      storage: storageStatus(config)
     });
   }
 
@@ -453,10 +456,16 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
 
     if (action === 'approve') {
       const result = await ctx.moments.approvePending(id);
+      const storage = storageStatus(config);
+
       return sendJson(res, 200, {
         ok: true,
         admin: session.email,
-        message: 'Approved. The photo is now image 1 in the gallery.',
+        message: storage.durable
+          ? 'Approved. The photo is now image 1 in the gallery.'
+          : 'Approved into temporary storage. This photo will disappear on the next restart or deploy — connect a Vercel Blob store to keep it.',
+        durable: storage.durable,
+        storage,
         ...result
       });
     }
@@ -484,6 +493,9 @@ async function handleApi(req, res, pathname, url, ctx) {
   if (pathname === '/api/health') {
     if (method !== 'GET') return sendMethodNotAllowed(res, ['GET']);
 
+    const storage = storageStatus(config);
+    const blob = blobDiagnostics();
+
     return sendJson(res, 200, {
       ok: true,
       service: 'labroute-moments',
@@ -492,6 +504,14 @@ async function handleApi(req, res, pathname, url, ctx) {
       emailProvider: resolveProvider(config) || 'none',
       storage: config.storageMode,
       serverless: config.isServerless,
+      // false means approved photos are only in an ephemeral /tmp: they will
+      // vanish on the next cold start or deploy.
+      durable: storage.durable,
+      warning: storage.message,
+      hint: storage.hint,
+      // Booleans only (never the credential values). This is how you tell a
+      // missing Blob store apart from one connected to the wrong environment.
+      blob,
       // Lets an operator verify production is durable without logging in:
       // storage should be "vercel-blob" and secretConfigured true on Vercel.
       secretConfigured: config.secretConfigured
@@ -787,6 +807,13 @@ function createApp(overrides = {}) {
     handleRequest(req, res, ctx).catch((error) => sendError(res, error));
   };
 
+  const storage = storageStatus(config);
+  if (!storage.durable) {
+    console.warn(
+      '[labroute] Temporary storage in use: approvals live in /tmp and will be lost when this instance recycles. /api/health reports durable:false.'
+    );
+  }
+
   const server = http.createServer(handler);
 
   server.headersTimeout = 25 * 1000;
@@ -825,6 +852,15 @@ function start() {
       `  Email:     ${provider || 'not configured'}${admins.length ? ` → ${admins.length} admin(s)` : ''}`
     );
     console.log('');
+
+    const storage = storageStatus(config);
+    if (!storage.durable) {
+      console.warn('');
+      console.warn('  WARNING · temporary storage');
+      console.warn(`  ${storage.message}`);
+      console.warn(`  ${storage.hint}`);
+      console.warn('');
+    }
   });
 
   const shutdown = (signal) => {

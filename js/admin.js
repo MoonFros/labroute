@@ -259,6 +259,7 @@ async function loadPendingUploads() {
     }
 
     const data = await response.json();
+    renderStorageWarning(data.storage);
     renderPendingUploads(container, countElement, data.pending || [], data.liveCount || 0);
   } catch (error) {
     if (countElement) countElement.textContent = '—';
@@ -269,6 +270,35 @@ async function loadPendingUploads() {
         <p>Pending uploads need the LabRoute service. Start it with <code>npm start</code>.</p>
       </div>`;
   }
+}
+
+/**
+ * Say plainly when approvals are not permanent.
+ *
+ * The API reports `storage.durable: false` when approved photos are only in a
+ * serverless instance's /tmp. In that state the photo shows in the gallery
+ * until the instance recycles — the exact "approved image disappeared after a
+ * refresh" symptom — so the admin must see it before approving anything.
+ */
+function renderStorageWarning(storage) {
+  const element = document.getElementById('storageWarning');
+  if (!element) return;
+
+  if (!storage || storage.durable !== false) {
+    element.hidden = true;
+    element.innerHTML = '';
+    return;
+  }
+
+  const details = [storage.message, storage.hint].filter(Boolean).join(' ');
+
+  element.innerHTML = `
+    <span class="material-symbols-outlined" aria-hidden="true">warning</span>
+    <div>
+      <strong>Approvals are temporary</strong>
+      <p>${escapeHtml(details)}</p>
+    </div>`;
+  element.hidden = false;
 }
 
 function renderPendingUploads(container, countElement, pending, liveCount) {
@@ -347,10 +377,13 @@ async function reviewPending(id, action, button) {
     }
 
     if (statusElement) {
+      // The server message carries the temporary-storage caveat when it
+      // applies, so prefer it over a hard-coded success line.
       statusElement.textContent =
-        action === 'approve'
+        data.message ||
+        (action === 'approve'
           ? 'Approved. The photo is now image 1 in the gallery.'
-          : 'Declined. The photo was removed.';
+          : 'Declined. The photo was removed.');
     }
 
     await loadPendingUploads();

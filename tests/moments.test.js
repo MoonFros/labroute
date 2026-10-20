@@ -7,6 +7,9 @@ const path = require('node:path');
 const { test } = require('node:test');
 
 const { createApp } = require('../server');
+const { STATE_PATHS, createMemoryBlobStorage } = require('../lib/blob-storage');
+const { storageStatus } = require('../lib/config');
+const { GalleryStore } = require('../lib/gallery-store');
 const { sha256 } = require('../lib/util');
 
 const ONE_PIXEL_PNG =
@@ -138,6 +141,9 @@ test('LabRoute moments review API', async (t) => {
     galleryFile: path.join(contentDir, 'gallery.json'),
     adminsFile: path.join(dataDir, 'admins.json'),
     secret: 'test-secret-that-is-long-enough-for-hmac',
+    // Pin disk storage so the run never depends on Blob credentials in the
+    // environment (this suite asserts the durable, local mode).
+    storage: 'local',
     email: { provider: 'none' },
     trustProxy: false,
     cooldownMinutes: 30,
@@ -154,6 +160,11 @@ test('LabRoute moments review API', async (t) => {
       assert.equal(health.json.ok, true);
       assert.equal(health.json.cooldownMinutes, 30);
       assert.equal(health.json.emailProvider, 'none');
+      assert.equal(health.json.storage, 'local');
+      // A real disk is durable: no warning should be shown to the admin.
+      assert.equal(health.json.durable, true);
+      assert.equal(health.json.warning, null);
+      assert.equal(typeof health.json.blob.sdkAvailable, 'boolean');
 
       const gallery = await jsonRequest(baseUrl, '/api/gallery');
       assert.equal(gallery.status, 200);
@@ -407,6 +418,9 @@ test('LabRoute moments review API', async (t) => {
       assert.equal(pending.json.pending[0].caption, 'A different student at the workshop');
       assert.equal(pending.json.pending[1].caption, 'A new moment at the electronics bench');
       assert.equal(pending.json.pending[0].image, `/api/admin/pending/${secondMomentId}/image`);
+      // The dashboard needs to know whether approving will actually persist.
+      assert.equal(pending.json.storage.mode, 'local');
+      assert.equal(pending.json.storage.durable, true);
 
       const image = await fetch(`${baseUrl}/api/admin/pending/${firstMomentId}/image`, {
         headers: { Cookie: cookieHeader(adminJar) }
@@ -432,6 +446,8 @@ test('LabRoute moments review API', async (t) => {
       assert.equal(approve.json.gallery[2].id, 'gal-old-2');
       assert.equal(approve.json.gallery[3].id, 'gal-old-3');
       assert.equal(approve.json.moment.image, `assets/gallery/moments/${firstMomentId}.png`);
+      assert.equal(approve.json.durable, true);
+      assert.equal(approve.json.storage.durable, true);
 
       const diskGallery = JSON.parse(
         await fsp.readFile(path.join(contentDir, 'gallery.json'), 'utf8')
@@ -512,4 +528,102 @@ test('LabRoute moments review API', async (t) => {
     await new Promise((resolve) => app.server.close(resolve));
     await fsp.rm(root, { recursive: true, force: true });
   }
+});
+
+test('storageStatus flags temporary serverless storage as non-durable', () => {
+  const ephemeral = storageStatus({ storageMode: 'ephemeral' });
+  assert.equal(ephemeral.durable, false);
+  assert.match(ephemeral.message, /temporary/i);
+  assert.match(ephemeral.hint, /Blob/);
+
+  for (const mode of ['vercel-blob', 'local']) {
+    const status = storageStatus({ storageMode: mode });
+    assert.equal(status.durable, true);
+    assert.equal(status.message, null);
+    assert.equal(status.hint, null);
+  }
+
+  // Defensive: an unknown/absent mode must not be advertised as durable.
+  assert.equal(storageStatus({}).durable, true); // defaults to local
+});
+
+test('a lost gallery write is reported as a failure, not a successful approval', async () => {
+  // A Blob store whose reads never see what was written (the "photo shows up
+  // now, gone later" failure mode). The store must throw instead of telling
+  // the admin the photo is live.
+  const writes = [];
+  const lossyBlob = {
+    async getJson() {
+      return null;
+    },
+    async putJson(pathname) {
+      writes.push(pathname);
+    },
+    async getBytes() {
+      return null;
+    },
+    async putBytes(pathname) {
+      return { url: `https://memory-store.private.blob.vercel-storage.com/${pathname}` };
+    },
+    async copyBytes() {
+      return null;
+    },
+    async delete() {}
+  };
+
+  const store = new GalleryStore(
+    {
+      galleryFile: path.join(os.tmpdir(), 'labroute-missing-gallery.json'),
+      gallerySeedFile: path.join(os.tmpdir(), 'labroute-missing-seed.json'),
+      uploadDir: os.tmpdir()
+    },
+    lossyBlob
+  );
+
+  await assert.rejects(
+    () =>
+      store.add({
+        id: 'moment-lost',
+        image: 'assets/gallery/moments/moment-lost.png',
+        caption: 'Should not be reported as saved'
+      }),
+    /read back|could not be saved/
+  );
+
+  assert.ok(writes.includes(STATE_PATHS.gallery));
+});
+
+test('a verified gallery write is visible to the next request', async () => {
+  const blob = createMemoryBlobStorage({ access: 'private' });
+  const store = new GalleryStore(
+    {
+      galleryFile: path.join(os.tmpdir(), 'labroute-memory-gallery.json'),
+      gallerySeedFile: path.join(os.tmpdir(), 'labroute-memory-seed.json'),
+      uploadDir: os.tmpdir()
+    },
+    blob
+  );
+
+  const item = {
+    id: 'moment-kept',
+    image: 'assets/gallery/moments/moment-kept.png',
+    caption: 'Survives a new instance'
+  };
+
+  const next = await store.add(item);
+  assert.equal(next[0].id, 'moment-kept');
+  assert.equal(await blob.getJson(STATE_PATHS.gallery).then((rows) => rows[0].id), 'moment-kept');
+
+  // A fresh GalleryStore (cold start) reads the same state back.
+  const coldStart = new GalleryStore(
+    {
+      galleryFile: path.join(os.tmpdir(), 'unused.json'),
+      gallerySeedFile: path.join(os.tmpdir(), 'unused-seed.json'),
+      uploadDir: os.tmpdir()
+    },
+    blob
+  );
+  const gallery = await coldStart.publicGallery();
+  assert.equal(gallery.length, 1);
+  assert.equal(gallery[0].caption, 'Survives a new instance');
 });
