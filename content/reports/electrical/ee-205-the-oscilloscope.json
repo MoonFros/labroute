@@ -1,0 +1,161 @@
+{
+  "id": "ee-205-the-oscilloscope",
+  "code": "EE 205",
+  "title": "THE OSCILLOSCOPE",
+  "department": "electrical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#EE205",
+    "#ElectricalEngineering",
+    "#Oscilloscope"
+  ],
+  "verified": true,
+  "file": "electrical/ee-205-the-oscilloscope.json",
+  "content": {
+    "aim": "To investigate the oscilloscope.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "The following apparatus and equipment were used to carry out this experiment. Each item plays an important role in the set-up:",
+      "Oscilloscope (Type PDS7102T) — the main measuring instrument, used to display and measure the voltage signals.",
+      "D.C. Power Supply Unit — used to supply a steady direct voltage for the first part of the experiment.",
+      "2 Amp Variac — an adjustable transformer used to supply and control the alternating voltage used in the experiment.",
+      "A.C. Voltmeter (0 – 100V) — used to measure and confirm the actual A.C. voltage supplied by the variac.",
+      "Signal Generator (Oscillator) — used to produce a sine wave of known and adjustable frequency for the frequency measurement part of the experiment."
+    ],
+    "theory": {
+      "text": "An oscilloscope works by using an electron beam that moves across a screen from left to right at a steady speed, while the incoming voltage signal pushes the beam up or down. This up-and-down movement is called the deflection. Because the speed of the beam across the screen (time base) and the amount it moves up or down (voltage sensitivity) are both known and can be set by the user, the screen can be used like a graph, with time along the horizontal axis and voltage along the vertical axis.\n\nThe deflection sensitivity (D) of the oscilloscope tells us how many volts are represented by one centimetre of vertical movement on the screen. It is normally expressed in volts per centimetre (V/cm). For a D.C. signal, if a known voltage (V) produces a deflection (S) in centimetres, the sensitivity is calculated as D = V / S. For an A.C. signal, the voltage produces a vertical line on the screen whose length (L) represents the peak-to-peak voltage, so the sensitivity is calculated as D = 2Vp / L, where Vp is the peak voltage.\n\nThe oscilloscope can also be used to measure frequency. In this case, the TIME/DIV (time base) control is set to a known value, and the horizontal distance covered by one complete cycle of the wave is measured on the screen. The period (T) of the signal is then found by multiplying this distance by the Time/cm setting, and the frequency (F) is calculated as F = 1 / T.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-205-the-oscilloscope_diagram_1.png",
+          "caption": "Set-up for measuring D.C. voltage using the oscilloscope.",
+          "index": 1
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Voltage (V)",
+          "5",
+          "10",
+          "15",
+          "-5",
+          "-10",
+          "-15"
+        ],
+        "rows": [
+          [
+            "Deflection S (cm)",
+            "0.10",
+            "0.20",
+            "0.30",
+            "-0.10",
+            "-0.20",
+            "-0.30"
+          ],
+          [
+            "Deflection Sensitivity D = (V/S)",
+            "50",
+            "50",
+            "50",
+            "50",
+            "50",
+            "50"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Vrms (V)",
+          "V(peak) = Vrms x sqrt2",
+          "Length of Trace L (cm)",
+          "Deflection Sensitivity D = 2Vp/L"
+        ],
+        "rows": [
+          [
+            "2",
+            "2.83",
+            "0.11",
+            "50"
+          ],
+          [
+            "4",
+            "5.66",
+            "0.23",
+            "50"
+          ],
+          [
+            "6",
+            "8.49",
+            "0.34",
+            "50"
+          ],
+          [
+            "8",
+            "11.31",
+            "0.45",
+            "50"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Set Frequency (Hz)",
+          "Equiphase Distance d (cm)",
+          "Time/cm Setting (mS)",
+          "Measured Period T=dxTime/cm (mS)",
+          "Measured Frequency F=1/T (Hz)"
+        ],
+        "rows": [
+          [
+            "1,000",
+            "5.0",
+            "0.2",
+            "1.0",
+            "1,000"
+          ],
+          [
+            "5,000",
+            "4.0",
+            "0.05",
+            "0.2",
+            "5,000"
+          ],
+          [
+            "10,000",
+            "5.0",
+            "0.02",
+            "0.1",
+            "10,000"
+          ],
+          [
+            "Mains (50Hz)",
+            "4.0",
+            "5.0",
+            "20.0",
+            "50"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "(i) What is the common source of error (other than human) in the above experiment?\nApart from human error, a common source of error in this experiment is the accuracy of the oscilloscope's graticule (the grid lines on the screen used for reading measurements) and the calibration of its VOLTS/DIV and TIME/DIV controls. If these controls are not perfectly calibrated, every reading taken from the screen will carry a small, consistent error. Another possible source of error is instability in the mains supply voltage or frequency, which can cause the displayed wave to drift slightly while readings are being taken.\n(ii) An unknown voltage (V) is to be measured using an oscilloscope. Write the expression for the value of V in terms of the two oscilloscope parameters in and 205.2 for:\n(a) When the voltage is D.C.: V = S x D, where S is the deflection in centimetres read from the screen, and D is the deflection sensitivity in volts per centimetre obtained from .\n(b) When the voltage is A.C.: V(peak) = L x D, where L is the length of the vertical trace in centimetres, and D is the deflection sensitivity obtained from . Since this gives the peak voltage, the r.m.s. value of the unknown voltage can then be found using V(rms) = V(peak) / sqrt(2).",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "id": "fm-321-vortex-flow",
+  "code": "FM 321",
+  "title": "VORTEX FLOW",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#FM321",
+    "#MechanicalEngineering",
+    "#VortexFlow"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-321-vortex-flow.json",
+  "content": {
+    "aim": "To investigate vortex flow.",
+    "objectives": [
+      "To obtain the important characteristics of free and forced vortices."
+    ],
+    "apparatus": [
+      "The vortex apparatus () consists of a transparent cylindrical tank rotated by a motor, with a stopper at the base of the tank (for the forced vortex), a perforated cylinder with an annular space for water to enter (for the free vortex), a surface probe on a vertical scale and a horizontal scale (to read r), a total head probe connected to a water manometer, and a stopwatch to time 20 revolutions.",
+      ": Vortex apparatus (schematic)"
+    ],
+    "theory": {
+      "text": "Vortices\n\nA vortex is formed when the streamlines in a flow field are concentric circles. Vortices matter in pumps and turbines, and explain natural phenomena such as the bath-tub vortex, the whirlwind and the tornado. When the total head H increases from one streamline to the next, the flow is rotational, and when H is the same across all the streamlines, the flow is irrotational. The first type is called a forced vortex, and the second a free vortex.\n\nRadial pressure variation\n\nConsider a fluid element of density ρ, of radial thickness δr and angle δθ, moving in a circle of radius r at speed u (). The pressure is p on the inner face and p + (∂p/∂r)δr on the outer face, and the net force toward the centre is (∂p/∂r) r δθ δr (the pressures on the sides give the extra term). Its mass is ρ r δθ δr, and its acceleration toward the centre is u²/r, so Newton’s law gives\n\n: Surface shape of (a) a forced vortex and (b) a free vortex\n\ndp/dr = ρ u² / r\n\nIncluding gravity (z measured upward), the piezometric head p/ρg + z varies as\n\nd/dr ( p/ρg + z ) = u² / (g r)\n\nThe total head is H = u²/2g + p/ρg + z, and differentiating it with respect to r:\n\ndH/dr = (u/g)( du/dr + u/r )\n\nThese two equations give the variation of piezometric and total head across the streamlines of any vortex flow.\n\nForced vortex\n\nIn a forced vortex the fluid rotates as a solid body, u = Ω r with Ω constant. Then d/dr(p/ρg + z) = Ω² r/g, and integrating, p/ρg + z = Ω² r²/2g + k. Taking the pressure and elevation at the centre to be zero (datum), k = 0. At the free surface p = 0, so the height of the surface above the centre is\n\nz = Ω² r² / 2g\n\nwhich is a paraboloid of revolution. The total head, from dH/dr = (Ωr/g)(Ω + Ω) = 2Ω² r/g, is H = Ω² r²/g + C, and with H = 0 at r = 0:\n\nH = Ω² r² / g\n\nSo H and z both vary with r², with gradients Ω²/g and Ω²/2g respectively, i.e. H is twice z. The head increases with radius (rotational flow).\n\nFree vortex\n\nFor an irrotational flow dH/dr = 0, so du/dr + u/r = 0, which integrates to\n\nu r = C (u = C / r)\n\nThe velocity increases toward the centre. With the surface elevation at a very large radius as the datum, dz/dr = u²/g r = C²/g r³, and so\n\nz = − C² / (2 g r²)\n\nThis is a depression in the surface height as the centre is approached, becoming very deep near r = 0, and a graph of log(−z) against log r has a gradient of −2. In real fluids the viscosity prevents the velocity becoming infinite, so the centre of a real free vortex turns like a forced vortex.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-321-vortex-flow_diagram_1.png",
+          "caption": "Surface shape of (a) a forced vortex and (b) a free vortex",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-321-vortex-flow_diagram_2.png",
+          "caption": "Vortex apparatus (schematic)",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/fm-321-vortex-flow_diagram_3.png",
+          "caption": "Expected graphs (illustrative, from the equations; not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Horizontal reading R (mm)",
+          "Vertical LHS (mm)",
+          "Vertical RHS (mm)",
+          "z (LHS)",
+          "z (RHS)",
+          "Average z",
+          "r (mm)",
+          "r² (mm²)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "r¹ (cm)",
+          "r² (cm)",
+          "Vertical scale reading (cm)",
+          "Pitot tube H¹",
+          "H²",
+          "Mean H",
+          "r (cm)",
+          "r² (cm²)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "In the forced vortex the surface is a smooth paraboloid and rises toward the wall; in the free vortex there is a deep dimple near the centre.",
+      "The depression in the surface grows with speed.",
+      "Precautions",
+      "Level the apparatus, and wait until the surface is steady before reading; keep the probe tip just touching the surface.",
+      "Take more readings near the centre, where the surface changes quickly; make sure the manometer is free of air bubbles; read the probe with the eye level."
+    ],
+    "discussion": "1. Sources of error. The probe readings (±0.5 mm) are a large fraction of z near the centre, where the surface is steep; the surface fluctuates and the apparatus may not be level; the speed is not exactly constant, and is found from timing 20 revolutions (±0.3 s gives about ±1.5% on Ω, so ±3% on Ω²); the probe disturbs the surface and meniscus; the water manometer reading is affected by air bubbles; in the free vortex the viscosity of the water prevents the surface from reaching the theoretical depth near the centre. [Compare your gradients with Ω²/2g and Ω²/g.]\n2. How can the forced vortex be converted into a pump? By adding a casing with an outlet at the rim, and fitting vanes (an impeller) to the rotating tank, with a feed at the centre. The fluid is thrown outward, and the pressure rise from centre to rim is Ω²R²/2g (the head), which is what a centrifugal pump produces. The outlet must be at the periphery and the inlet at the centre.\n3. Whirlpool and tornado. A whirlpool in a river or sink is a free vortex: fluid drawn toward a drain keeps its angular momentum, so u r is constant and the speed rises sharply toward the centre, while the pressure and surface fall. A tornado is a similar vortex in air, with a core that rotates as a forced vortex and an outer region that behaves as a free vortex (a Rankine vortex); the very low pressure at the core (the ‘depression’) draws in air and debris, and the high wind speeds near the core cause the damage.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

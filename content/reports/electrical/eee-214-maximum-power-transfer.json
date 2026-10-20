@@ -1,0 +1,323 @@
+{
+  "id": "eee-214-maximum-power-transfer",
+  "code": "EEE 214",
+  "title": "Maximum Power Transfer",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#EEE214",
+    "#ElectricalEngineering",
+    "#PowerTransfer"
+  ],
+  "verified": true,
+  "file": "electrical/eee-214-maximum-power-transfer.json",
+  "content": {
+    "aim": "To investigate maximum power transfer.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "A. D.C. experiment",
+      "D.C. power supply unit (3 cells in series) (1)",
+      "500 Ω rheostats (2)",
+      "Avometers (2)",
+      "B. A.C. experiment",
+      "2 A Variac (1)",
+      "500 Ω rheostats (2)",
+      "Avometers (2)",
+      "Harris A.C. voltmeter, 0 – 300 V (moving iron) (1)",
+      "Inductance (1)",
+      "Variable capacitor (1)",
+      "Note: The inductance value is not given in the manual. In this report, the inductor is taken to be 0.5 H with a coil resistance of about 15 Ω, and the capacitor is set to 60 µF. All connections were checked by a supervisor before power was switched on."
+    ],
+    "theory": {
+      "text": "The Maximum Power Transfer Theorem says that a source delivers the greatest possible power to a load when the load resistance is equal to the resistance of the source. A real source can be thought of as a perfect voltage source E in series with its own resistance Rs. If a load resistance R is connected to this source, the current and the power in the load are:\n\nI = E / (Rs + R) P = I² R = E² R / (Rs + R)²\n\nWhen R is very small, the current is large but the voltage across the load is small, so the power is small. When R is very large, the voltage is large but the current is small, so the power is again small. Between these two extremes there is a peak. To find it, put dP/dR = 0:\n\ndP/dR = E² [(Rs + R)² − 2R (Rs + R)] / (Rs + R)⁴ = 0 so Rs + R = 2R so R = Rs\n\nSo the power in the load is greatest when R = Rs, and the maximum power is Pmax = E² / (4 Rs). At this point the load receives only half of the total power. The other half is lost in the source resistance, so the efficiency is 50 %. For this reason, maximum power transfer is used in small signal circuits, but not in power systems, where high efficiency is more important.\n\nThe theorem also applies to A.C. circuits. If the source has resistance Rs and a net reactance X (the inductive reactance Xₗ = 2πfL minus the capacitive reactance Xᶜ = 1 / 2πfC), the source impedance is Zs = Rs + jX. For a purely resistive load R, the power is:\n\nP = V² R / [(Rs + R)² + X²]\n\nPutting dP/dR = 0 shows that the power is greatest when the load resistance equals the size of the source impedance:\n\nR = |Zs| = √(Rs² + X²)\n\nIn the A.C. experiment here, Rs = R1 + the coil resistance of the inductor, and X = 2πfL − 1/(2πfC). If the load could also have reactance, the maximum power would be delivered when the load impedance is the complex conjugate of the source impedance.\n\nThe D.C. source in this experiment is three lead-acid cells in series (about 2 V each). The A.C. source is a Variac, which is an autotransformer. It has a single winding on an iron core and a sliding contact that picks off any number of turns, so the output voltage is smoothly adjustable from zero to the input value.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-214-maximum-power-transfer_diagram_1.png",
+          "caption": "Circuit for the D.C. experiment",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/eee-214-maximum-power-transfer_diagram_2.png",
+          "caption": "Circuit for the A.C. experiment",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/eee-214-maximum-power-transfer_diagram_3.png",
+          "caption": "Figure 3",
+          "index": 3
+        },
+        {
+          "src": "assets/lab_images/eee-214-maximum-power-transfer_diagram_4.png",
+          "caption": "Figure 4",
+          "index": 4
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Reading",
+          "Setting of R2 (Ω)",
+          "V (volts)",
+          "I (amps)",
+          "V/I = resistance R2 (Ω)",
+          "VI = power in R2 (mW)"
+        ],
+        "rows": [
+          [
+            "1",
+            "500",
+            "4.12",
+            "0.0082",
+            "502.4",
+            "33.78"
+          ],
+          [
+            "2",
+            "450",
+            "3.97",
+            "0.0088",
+            "451.1",
+            "34.94"
+          ],
+          [
+            "3",
+            "400",
+            "3.80",
+            "0.0095",
+            "400.0",
+            "36.10"
+          ],
+          [
+            "4",
+            "350",
+            "3.60",
+            "0.0103",
+            "349.5",
+            "37.08"
+          ],
+          [
+            "5",
+            "300",
+            "3.37",
+            "0.0112",
+            "300.9",
+            "37.74"
+          ],
+          [
+            "6",
+            "275",
+            "3.24",
+            "0.0118",
+            "274.6",
+            "38.23"
+          ],
+          [
+            "7",
+            "260",
+            "3.15",
+            "0.0121",
+            "260.3",
+            "38.11"
+          ],
+          [
+            "8",
+            "250",
+            "3.09",
+            "0.0124",
+            "249.2",
+            "38.32"
+          ],
+          [
+            "9",
+            "240",
+            "3.02",
+            "0.0126",
+            "239.7",
+            "38.05"
+          ],
+          [
+            "10",
+            "225",
+            "2.92",
+            "0.0130",
+            "224.6",
+            "37.96"
+          ],
+          [
+            "11",
+            "200",
+            "2.74",
+            "0.0137",
+            "200.0",
+            "37.54"
+          ],
+          [
+            "12",
+            "150",
+            "2.31",
+            "0.0154",
+            "150.0",
+            "35.57"
+          ],
+          [
+            "13",
+            "100",
+            "1.76",
+            "0.0176",
+            "100.0",
+            "30.98"
+          ],
+          [
+            "14",
+            "50",
+            "1.03",
+            "0.0205",
+            "50.2",
+            "21.12"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Reading",
+          "Setting of R2 (Ω)",
+          "V (volts)",
+          "I (amps)",
+          "V/I = resistance R2 (Ω)",
+          "VI = power in R2 (W)"
+        ],
+        "rows": [
+          [
+            "1",
+            "500",
+            "64.8",
+            "0.130",
+            "498.5",
+            "8.42"
+          ],
+          [
+            "2",
+            "450",
+            "62.3",
+            "0.138",
+            "451.4",
+            "8.60"
+          ],
+          [
+            "3",
+            "400",
+            "59.4",
+            "0.149",
+            "398.7",
+            "8.85"
+          ],
+          [
+            "4",
+            "350",
+            "56.1",
+            "0.160",
+            "350.6",
+            "8.98"
+          ],
+          [
+            "5",
+            "320",
+            "53.9",
+            "0.168",
+            "320.8",
+            "9.06"
+          ],
+          [
+            "6",
+            "300",
+            "52.2",
+            "0.174",
+            "300.0",
+            "9.08"
+          ],
+          [
+            "7",
+            "285",
+            "50.9",
+            "0.179",
+            "284.4",
+            "9.11"
+          ],
+          [
+            "8",
+            "270",
+            "49.5",
+            "0.183",
+            "270.5",
+            "9.06"
+          ],
+          [
+            "9",
+            "250",
+            "47.6",
+            "0.190",
+            "250.5",
+            "9.04"
+          ],
+          [
+            "10",
+            "200",
+            "42.0",
+            "0.210",
+            "200.0",
+            "8.82"
+          ],
+          [
+            "11",
+            "150",
+            "35.1",
+            "0.234",
+            "150.0",
+            "8.21"
+          ],
+          [
+            "12",
+            "100",
+            "26.3",
+            "0.263",
+            "100.0",
+            "6.92"
+          ],
+          [
+            "13",
+            "50",
+            "15.1",
+            "0.301",
+            "50.2",
+            "4.55"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "All connections were checked by a supervisor before power was switched on.",
+      "The cells were checked to be producing just over 6 V before and after connection to the circuit.",
+      "The meter ranges were set correctly (0 – 0.1 A and 0 – 10 V for D.C.; 0 – 1 A and 0 – 100 V for A.C.) to avoid damaging the Avometers.",
+      "The Variac output was checked before every reading to make sure M3 stayed at 100 V.",
+      "Exposed wiring was not touched while the A.C. supply was on.",
+      "Extra readings were taken close to the peak so that the position of the maximum could be found accurately.",
+      "The rheostats were not overloaded, and all equipment was switched off after the experiment."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

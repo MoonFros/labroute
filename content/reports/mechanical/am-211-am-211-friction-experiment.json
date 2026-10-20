@@ -1,0 +1,214 @@
+{
+  "id": "am-211-am-211-friction-experiment",
+  "code": "AM 211",
+  "title": "AM 211 FRICTION EXPERIMENT",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM211",
+    "#Friction",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-211-am-211-friction-experiment.json",
+  "content": {
+    "aim": "To investigate am 211 friction experiment.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Mild steel plane (adjustable angle), slider trays with different liners, cord, pulley at the end of the plane, hanger and slotted masses, ball-bearing tray (three wheels), laboratory scale, protractor or angle scale, and a ruler."
+    ],
+    "theory": {
+      "text": "Friction is the force that resists motion between two surfaces in contact. It acts along the surfaces, opposite to the direction of motion. Its size is given by\n\nF = μN\n\nwhere μ is the coefficient of friction (it has no units and depends on the two surfaces) and N is the normal reaction. Friction does not depend on the area of contact.\n\nLevel plane (Part A1): When the tray moves at a slow, constant velocity, it is not accelerating, so the net force is zero. The pulling force P equals the friction force, and the normal reaction equals the weight, N = W. So P = μW, which gives μ = P/W. A graph of P against W is a straight line whose slope is μ.\n\nAngle of friction (Part A2): On a tilted plane, the weight has two components: W sin θ along the plane (trying to slide the tray down) and W cos θ into the plane (the normal reaction). At the critical angle the tray just starts to slide, so W sin θ = μW cos θ. This gives tan θ = μ, and θ is called the angle of friction (or angle of repose).\n\nInclined plane (Part B): The tray is pulled parallel to the plane at constant velocity.\n\nUp the plane, friction and W sin θ both act down the slope, so P = W(sin θ + μ cos θ).\n\nDown the plane, friction acts up the slope and W sin θ helps the motion, so P = W(μ cos θ − sin θ).\n\nRolling friction: With ball-bearing wheels, sliding is replaced by rolling, which has much less resistance. With no friction the force needed would be P = W sin θ. The actual force is P_A = P + F, where F is the rolling resistance, so F = P_A − W sin θ.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Load added (N)",
+          "Total W (N)",
+          "Hanger + masses P (N)",
+          "P/W"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Tray / liner",
+          "Critical angle θ",
+          "tan θ",
+          "μ from Table 1"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "θ",
+          "W (N)",
+          "P exp. (up)",
+          "P theory (up)",
+          "P exp. (down)",
+          "P theory (down)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "θ",
+          "W (N)",
+          "P = W sin θ (N)",
+          "P_A measured (N)",
+          "F = P_A − P (N)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The friction force increased as the load increased.",
+      "The force needed to pull the tray up the plane was larger than the force needed to pull it down.",
+      "The ball-bearing tray needed much less force than the sliding trays.",
+      "Different liner materials gave different values of μ.",
+      "Precautions",
+      "The plane was levelled before Part A.",
+      "The tray was moved at a slow, constant velocity, not accelerated.",
+      "The cord was kept parallel to the plane.",
+      "Readings were taken at eye level to avoid parallax error.",
+      "The trays and masses were weighed on the scale, and the plane was kept clean and dry."
+    ],
+    "discussion": "Sources of error\nIt is hard to tell when the tray is moving at exactly constant velocity, so the added mass is slightly off.\nFriction in the pulley and stiffness of the cord.\nParallax when reading the protractor, so θ is only accurate to about ±[ ]°.\nDust or uneven surfaces changed μ from one run to another. This is why the manual says to expect some scatter.\nThe cord may not have been perfectly parallel to the plane.\nAgreement with theory. My μ from the graph was [ ] and from tan θ was [ ]. They [agree closely / differ by [ ] %], which is [within / outside] the expected experimental error. My experimental values of P were [close to / different from] the theoretical values by about [ ] %. The differences can be explained by the errors above.\nRolling friction. The rolling resistance was much smaller than sliding friction, because rolling contact has far less resistance than sliding contact.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

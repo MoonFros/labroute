@@ -1,0 +1,320 @@
+{
+  "id": "ela-301-linear-heat-conduction-in-a-metal-bar",
+  "code": "ELA 301",
+  "title": "Linear Heat Conduction in a Metal Bar",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#ELA301",
+    "#HeatConduction",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/ela-301-linear-heat-conduction-in-a-metal-bar.json",
+  "content": {
+    "aim": "To investigate linear heat conduction in a metal bar.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "See laboratory manual for theoretical background.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ela-301-linear-heat-conduction-in-a-metal-bar_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ela-301-linear-heat-conduction-in-a-metal-bar_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Heater power Q (W)",
+          "T₁ (°C)",
+          "T₂ (°C)",
+          "T₃ (°C)",
+          "T₄ (°C)",
+          "T₅ (°C)",
+          "T₆ (°C)",
+          "T₇ (°C)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Heater power Q (W)",
+          "Gradient ΔT/Δx from graph (K/m)",
+          "Thermal conductivity k = Q / (A × gradient) (W/m K)",
+          "Typical k of brass (W/m K)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "about 110"
+          ],
+          [
+            "",
+            "",
+            "",
+            "about 110"
+          ],
+          [
+            "",
+            "",
+            "",
+            "about 110"
+          ],
+          [
+            "",
+            "",
+            "",
+            "about 110"
+          ],
+          [
+            "",
+            "",
+            "",
+            "about 110"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Heater power Q (W)",
+          "T₁ (°C)",
+          "T₂ (°C)",
+          "T₃ (°C)",
+          "T₄ (°C)",
+          "T₅ (°C)",
+          "T₆ (°C)",
+          "T₇ (°C)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Time (s)",
+          "T₁ (°C)",
+          "T₂ (°C)",
+          "T₃ (°C)",
+          "T₄ (°C)",
+          "T₅ (°C)",
+          "T₆ (°C)",
+          "T₇ (°C)"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "70",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "90",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

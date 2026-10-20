@@ -1,0 +1,254 @@
+{
+  "id": "fm-314-hydrostatic-experiment-part-2",
+  "code": "FM 314",
+  "title": "HYDROSTATIC EXPERIMENT - Part 2",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#FM314",
+    "#Hydrostatic",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-314-hydrostatic-experiment-part-2.json",
+  "content": {
+    "aim": "To investigate hydrostatic experiment - part 2.",
+    "objectives": [
+      "(1) To demonstrate the principles of hydrostatic pressure and Pascal’s law. (2) To verify Archimedes’ principle by measuring the upthrust on a body. (3) To demonstrate buoyancy and flotation. (4) To determine the centre of pressure on a plane surface and compare the measured moment with theory."
+    ],
+    "apparatus": [
+      "(a) The liquid level apparatus: vertical tubes of different sizes, shapes and cross-sections, joined by a horizontal pipe at the bottom and connected to the header tank, filled with the bilge pump and an 800 ml beaker, with the drain valve closed. (b) The fluid upthrust apparatus: a cylindrical body (diameter 70 mm) on a moulding above the three-beam balance, a beaker (internal diameter 96 mm) and weights. (c) Plastic beakers and weights for the simple buoyancy demonstrations. (d) The centre of pressure apparatus: a quadrant tank assembly on a balance, with a weight hanger and weights, a trimming tank on the same side as the hanger, a scale on the quadrant to read the water level h below the pivot, a pipette and coloured dye, and a bench with the water supply (Figures 2 and 3).",
+      ": Fluid upthrust apparatus (schematic)"
+    ],
+    "theory": {
+      "text": "Hydrostatic pressure and Pascal’s law\n\nIn the study of hydrostatics we are mainly concerned with the pressures produced on solid boundaries by static fluids. The density of a liquid does not vary much with pressure, and the variation with temperature can usually be ignored, so for water the density is taken as constant, 1000 kg/m³. Consider a vertical column of liquid of constant cross-sectional area A and height h (Figure 1a). The downward force at plane 2 is the sum of the pressure p₁ acting over the area A at plane 1 and the weight of the liquid in the column, and for equilibrium this must be balanced by the pressure p₂ acting upward over A:\n\n: (a) Pressure at depth h, and (b) the liquid level apparatus\n\np₂ A = p₁ A + ρ g h A p₂ = p₁ + ρ g h\n\nThe area cancels and plays no part, so the pressure depends only on the depth. If the area is very small, p₂ can be taken as the pressure at a point in the liquid, and since the pressure at a point acts equally upward and downward, we deduce that pressure at a point in a liquid acts equally in all directions. This is Pascal’s law. There are two further facts that follow: (a) the pressure forces between a liquid at rest and a solid boundary always act normal to the plane of the boundary (if they did not, shear forces would be produced and the liquid would move); and (b) the pressure is the same at all points in a horizontal plane in a liquid at rest (otherwise a sideways force would act on an element, and the liquid would move).\n\nUpthrust and Archimedes’ principle\n\nConsider a rectangular body of plan area A floating in a liquid with its bottom a depth h below the surface. The pressure on its bottom is p₂ = p₁ + ρ g h, and equals p₁ at the top, so the net upward force, the upthrust, which balances the weight W of the body, is\n\nW = (p₁ + ρ g h) A − p₁ A = ρ g h A\n\nSince h × A is the volume of liquid displaced, this is the weight of the displaced liquid. This is a simple case of Archimedes’ law: the upthrust on a body is equal to the weight of the liquid it displaces. It is true for any body, irrespective of its shape, provided that the body and the liquid are at rest. In the upthrust experiment, a cylindrical body is lowered into a beaker of water on a balance. Extra water raises the level by a height h, and the balance has to carry the upthrust (which is equal to the weight of the water displaced) as well as the added water, so that\n\napplied weight = added water weight + upthrust = 2 × (weight of water displaced)\n\nwhen the extra water fills the annular space around the body, since the added water weight equals the weight of water displaced by the rise in level. So half the applied weight above the datum equals the weight of the water displaced, and the weight of displaced water is ρ g h A_w, where A_w = (area of the beaker − area of the body) is the area of the water surface that rises.\n\nBuoyancy and flotation\n\nThe upthrust depends only on the immersed volume and not on the density or the weight of the body. Whether a body floats or sinks does depend on these. If the maximum buoyancy force, produced when the body is fully immersed, is greater than its total weight, the body floats with only part of its volume immersed, in equilibrium where the buoyancy just equals its weight; if it is less, the body sinks. The criterion for floating is therefore that the average density of the body is less than that of the liquid. Stability depends on the position of the centre of gravity relative to the centre of buoyancy (see the experiment on the stability of a floating body).\n\nCentre of pressure on a plane surface\n\nThe centre of pressure is the point on a plane at which the total fluid thrust can be said to act, normal to that plane. A quadrant tank () is part of a balance. The cylindrical sides of the quadrant (radii R₁ and R₂) have their axes through the pivot O, so the fluid pressure on them, which acts normal to the surface and so passes through O, exerts no moment about O. The only moment is due to the fluid pressure on the plane surface, and this is balanced by weights W on a hanger on the opposite side. Let γ = ρ g be the weight per unit volume of water, B the breadth of the plane (75 mm), y the distance from O along the plane, h the depth of the water surface below O, and θ the angle of the plane to the vertical (here θ = 0°). An element of the plane of width dy at distance y has a depth (y cos θ − h) below the surface, so\n\n: Quadrant tank apparatus (schematic); the plane surface is the vertical face from R₁ to R₂ below the pivot O\n\ndF = γ (y cos θ − h) B dy dM = y dF = γ B (y² cos θ − h y) dy\n\nCase 1: plane fully submerged (limits R₁ and R₂). Integrating the moment about O:\n\nM = γ B [ cos θ (R₂³ − R₁³)/3 − (h/2)(R₂² − R₁²) ]\n\nThis is the equation of a straight line, y = m x + c, so a graph of M against h is a straight line with a negative gradient −(γB/2)(R₂² − R₁²), from which γ can be calculated (it should be 9810 N/m³ for water).\n\nCase 2: plane partially submerged (limits R₂ and h sec θ). For θ = 0:\n\nM = γ B [ R₂³/3 − h R₂²/2 + h³/6 ]\n\nM + γ B R₂² h / 2 = γ B R₂³ / 3 + γ B h³ / 6\n\nSo a graph of h³ against M + γ B R₂² h/2 is a straight line, with gradient 6/(γB), in which γ obtained from Case 1 is used. The total thrust is F = γ B[(R₂² − h²)/2 − h(R₂ − h)] for θ = 0 and the depth of the centre of pressure along the plane is y_cp = M/F.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-314-hydrostatic-experiment-part-2_diagram_1.png",
+          "caption": "(a) Pressure at depth h, and (b) the liquid level apparatus",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-314-hydrostatic-experiment-part-2_diagram_2.png",
+          "caption": "Quadrant tank apparatus (schematic); the plane surface is the vertical face from R₁ to R₂ below the pivot O",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/fm-314-hydrostatic-experiment-part-2_diagram_3.png",
+          "caption": "Fluid upthrust apparatus (schematic)",
+          "index": 3
+        },
+        {
+          "src": "assets/lab_images/fm-314-hydrostatic-experiment-part-2_diagram_4.png",
+          "caption": "Expected graphs (illustrative, from the equations; not experimental data)",
+          "index": 4
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Water height on scale (mm)",
+          "Height above datum h (m)",
+          "Applied weight for balance (g)",
+          "Weight above datum (N)",
+          "Weight of water displaced ρ g h A_w (N)"
+        ],
+        "rows": [
+          [
+            "Datum",
+            "",
+            "0",
+            "",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Mass W on hanger (g)",
+          "M = W g L/10³ (N·m)",
+          "h (mm)",
+          "h³ (m³)",
+          "M + γ B R₂² h/2 (N·m)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Water level h below pivot (mm)",
+          "Moment M (N·m)"
+        ],
+        "rows": [
+          [
+            "0",
+            "1.717"
+          ],
+          [
+            "50",
+            "1.165"
+          ],
+          [
+            "100",
+            "0.613"
+          ],
+          [
+            "125",
+            "0.362"
+          ],
+          [
+            "150",
+            "0.169"
+          ],
+          [
+            "175",
+            "0.044"
+          ],
+          [
+            "200",
+            "0.000"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The water levels in all the tubes of different shapes and sizes were the same, apart from a small rise in the thinnest tubes due to surface tension.",
+      "The weight needed to balance was about twice the weight of the added water.",
+      "The moment needed to balance fell as the water level in the quadrant tank fell, becoming zero when the plane was just no longer submerged.",
+      "Precautions",
+      "Make sure both tanks are empty and trim the assembly to the 0° position before every experiment; add water slowly, and let the balance settle before reading.",
+      "Read water heights with the eye level, at the bottom of the meniscus; use the pipette to remove water that is added in excess; keep the beaker and the body clean and free of air bubbles."
+    ],
+    "discussion": "Sources of error: in the upthrust experiment, the height of the water is read to about ±0.5 mm (which is 2% of a 25 mm rise), the beaker and body diameters are measured to ±0.2 mm (a 0.3% error in the diameter gives about 1% in the area difference A_w), air bubbles, water clinging to the sides, and the balance’s own resolution (±1 g, which is about 0.01 N). In the centre of pressure experiment: the trimming of the balance, friction at the pivot, the small amount of water left in the pipework, errors in reading h (±1 mm, a large fraction near the top of the range), the distance L, and the water entering the pivot’s cylindrical sides, which is assumed to exert no moment. The moment is zero when h = R₂, so the readings at small moments have large percentage errors. [Compare your measured and calculated values, and the γ obtained, with 9810 N/m³.]\nThe liquid level experiment shows that pressure depends on depth alone, so the shape and the width of a vessel do not matter (the hydrostatic paradox), and that pressure is transmitted equally in all directions. The agreement in the upthrust experiment shows that the upthrust is the weight of liquid displaced, which is why ships float, and the buoyancy demonstrations show the link between average density and floating.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "id": "ee-208-d-c-motor",
+  "code": "EE 208",
+  "title": "D.C. MOTOR",
+  "department": "electrical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#EE208",
+    "#ElectricalEngineering"
+  ],
+  "verified": true,
+  "file": "electrical/ee-208-d-c-motor.json",
+  "content": {
+    "aim": "To investigate d.c. motor.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Electrical Machine Tutor, Model EMT 180 Machine Assembly (1)",
+      "Power Supply Panel with Meters (1)",
+      "0 - 200 Ohm, 3A Rheostat on Panel (1)",
+      "Hand Tachometer (1)",
+      "Note: In this motor, the field coils are connected to the D.C. supply terminals and are in parallel with the armature circuit. Since the field excitation does not depend on the shaft load, it can be kept almost constant. This allows the shunt motor to give an almost level speed/torque characteristic, with the speed falling only slightly at the upper end of the load range. The speed of a d.c. shunt motor can be controlled by adjusting either the voltage applied to the armature or the current in the main field coils."
+    ],
+    "theory": {
+      "text": "A d.c. motor is a machine that converts electrical energy into mechanical energy. It works on the principle that when a current-carrying conductor is placed inside a magnetic field, it experiences a force. In a d.c. motor, the armature conductors carry current and are placed in the magnetic field produced by the field poles, so each conductor experiences a force given by F = BIL, where B is the flux density, I is the current in the conductor, and L is its effective length. The direction of this force is given by Fleming's Left-Hand Rule. Since the armature conductors are arranged around the armature core, the forces on them produce a turning effect, or torque, which makes the armature (and the shaft connected to it) rotate.\n\nA shunt motor is a type of d.c. motor in which the field winding is connected directly in parallel (shunt) with the armature winding, across the same supply. Because of this arrangement, the voltage across the field winding is always equal to the supply voltage, so the field current, and therefore the magnetic flux it produces, stays almost constant regardless of how much mechanical load is placed on the shaft. This constant-flux property is what gives the shunt motor its fairly steady speed, and is the main reason it is studied and used the way it is.\n\nAs the armature of the motor rotates inside the magnetic field, its conductors also cut through the magnetic flux, and by the laws of electromagnetic induction, this generates a voltage in the armature that opposes the applied supply voltage. This induced voltage is called the back e.m.f. (Eb). Because of the back e.m.f., the net voltage that actually drives current through the armature is reduced, so the armature current can be written as: Ia = (V - Eb) / Ra, where V is the supply voltage and Ra is the armature resistance. Rearranging this equation gives the back e.m.f. as Eb = V - IaRa.\n\nThe back e.m.f. is also directly related to the speed of the motor and the field flux, following the relationship Eb is proportional to (Flux x Speed). Since the flux of a shunt motor is nearly constant, the speed of the motor becomes almost directly proportional to the back e.m.f., and therefore to the quantity (V - IaRa). This explains why the speed of a shunt motor falls only slightly as the armature current increases with load: the drop in speed is caused only by the small voltage drop (IaRa) across the armature resistance, since the flux itself does not change.\n\nThe torque developed by the motor is directly proportional to the product of the flux and the armature current, that is, T is proportional to (Flux x Ia). Again, because the flux of a shunt motor stays almost constant, the developed torque becomes almost directly proportional to the armature current alone. This is why, on the Torque/Armature current graph of a shunt motor, the torque rises in an almost straight line as the armature current increases.\n\nThe electrical power supplied to the motor by the source is called the input power, and is given by Win = (Ia + If) x V, where If is the field current, Ia is the armature current, and V is the supply voltage. Not all of this input power is converted into useful mechanical output; some of it is lost as heat in the resistance of the armature winding, as armature copper loss (Ia²Ra). The output power, Wout, is what remains of the input power after this loss has been taken away, and the efficiency of the motor is the ratio of the output power to the input power, usually expressed as a percentage: Efficiency % = (Wout / Win) x 100%.\n\nBecause of its fairly constant speed under changing load, the d.c. shunt motor is widely used in machines that need a steady running speed, such as lathes, drilling machines, blowers, fans, conveyor belts, and centrifugal pumps. Its speed can also be conveniently controlled, either by changing the resistance in the field circuit (field control) or by changing the voltage applied to the armature (armature control), which makes it a flexible and popular choice in industry.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-208-d-c-motor_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-208-d-c-motor_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Reading No.",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "rows": [
+          [
+            "Ia (A)",
+            "0.6",
+            "0.8",
+            "1.0",
+            "1.2",
+            "1.4",
+            "1.6"
+          ],
+          [
+            "Ns (rpm)",
+            "110",
+            "106",
+            "102",
+            "98",
+            "94",
+            "90"
+          ],
+          [
+            "Torque (N.m)",
+            "0.1",
+            "0.2",
+            "0.3",
+            "0.4",
+            "0.5",
+            "0.6"
+          ],
+          [
+            "Win = (Ia+If)V (W)",
+            "84.0",
+            "92.0",
+            "100.0",
+            "108.0",
+            "116.0",
+            "124.0"
+          ],
+          [
+            "Wout = Win - Ia²Ra (W)",
+            "83.28",
+            "90.72",
+            "98.00",
+            "105.12",
+            "112.08",
+            "118.88"
+          ],
+          [
+            "Efficiency % = Wout/Win x100",
+            "99.1",
+            "98.6",
+            "98.0",
+            "97.3",
+            "96.6",
+            "95.9"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "(i) Nature of the speed-torque characteristic: With constant excitation, the speed of a d.c. shunt motor falls only slightly as the torque (load) increases, giving an almost straight, gently drooping speed-torque line. At no load, the ideal speed would be the highest speed the motor can reach, since only a very small torque is needed to overcome friction. As Rf, If, or V are changed: increasing the field resistance (Rf) reduces the field current (If) and raises the speed; increasing the field current (If) strengthens the field and lowers the speed; increasing the supply voltage (V) raises the speed at every value of torque.\n(ii) The mechanical power developed is the product of torque and speed. To obtain the actual mechanical output of the motor, the rotational losses (friction and windage) and the iron (core) losses must be subtracted from this developed power.\n(iii) A starting resistance is connected in series with the armature of a d.c. motor to limit the starting current. At the moment of starting, the back e.m.f. is zero, so the armature current would otherwise be very large and could damage the windings; the starting resistance keeps this current within a safe value until the motor speeds up and builds up its own back e.m.f.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

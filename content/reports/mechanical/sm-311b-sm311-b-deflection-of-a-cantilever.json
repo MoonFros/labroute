@@ -1,0 +1,231 @@
+{
+  "id": "sm-311b-sm311-b-deflection-of-a-cantilever",
+  "code": "SM 311B",
+  "title": "SM311(B): DEFLECTION OF A CANTILEVER",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#Cantilever",
+    "#MechanicalEngineering",
+    "#SM311B"
+  ],
+  "verified": true,
+  "file": "mechanical/sm-311b-sm311-b-deflection-of-a-cantilever.json",
+  "content": {
+    "aim": "To investigate sm311(b): deflection of a cantilever.",
+    "objectives": [
+      "To find experimentally the deflection of a cantilever subjected to (a) a concentrated force and (b) a uniformly distributed load, and to compare it with theory."
+    ],
+    "apparatus": [
+      "A steel beam clamped rigidly at one end and free at the other, weight hangers and slotted weights (0.5, 1, 1.5 and 2 kg), two dial gauges at 30 cm and 60 cm from the clamped end, a metre rule, and a micrometer or vernier calliper to measure the section of the beam. For the distributed load, the weights are spread along the beam ().",
+      ": Cantilever with (a) a concentrated force and (b) a uniformly distributed load (schematic)"
+    ],
+    "theory": {
+      "text": "Deflection of a cantilever\n\nA cantilever is a beam fixed rigidly at one end, with the other end free. Loads cause it to bend downward, and the deflection is greatest at the free end. For small deflections of a beam of uniform section, the bending moment M at any section is related to the curvature by\n\nE I d²y / dx² = M(x)\n\nwhere E is Young’s modulus, I the second moment of area of the cross-section (I = b t³/12 for a rectangle of width b and depth t), and y the deflection. The product EI is called the flexural rigidity.\n\nArea-moment method\n\nThe manual uses the area-moment (Mohr) method. Its two theorems are: (1) the change in slope between two points of a beam equals the area of the M/EI diagram between them; and (2) the deflection of a point from the tangent at another point equals the moment, about the first point, of the area of the M/EI diagram between them. For a cantilever, the tangent at the fixed end stays horizontal, so the deflection of the free end is the moment of the whole M/EI area about the free end ().\n\n: Area-moment method for a cantilever carrying (a) a point load at the free end and (b) a uniformly distributed load\n\nConcentrated force P at the free end. The moment is M = P x′, where x′ is the distance from the free end. The M/EI diagram is a triangle of area PL²/(2EI) whose centroid is 2L/3 from the free end, so\n\nδ_tip = (PL² / 2EI)(2L / 3) = P L³ / 3 E I\n\nUniformly distributed load w per unit length over the whole length. The moment is M = w x′²/2, and the M/EI diagram is a parabola of area wL³/(6EI), with its centroid 3L/4 from the free end, so\n\nδ_tip = (wL³ / 6EI)(3L / 4) = w L⁴ / 8 E I\n\nDeflection at any point\n\nApplying the same method to a point at distance x from the fixed end gives the deflection at that point. For a point load P at the free end (x = L):\n\ny(x) = P x² (3L − x) / (6 E I)\n\nFor a point load P at a distance a from the fixed end, the deflection at x is\n\ny = P x² (3a − x) / (6EI) for x ≤ a y = P a² (3x − a) / (6EI) for x ≥ a\n\nand for a uniformly distributed load w over the whole length:\n\ny(x) = w x² (6L² − 4Lx + x²) / (24 E I)\n\nIn the experiment, L = 60 cm, with the dial gauges at x = 30 cm and x = 60 cm. The first formula for x ≥ a also shows that the deflection at x for a load at a is the same as the deflection at a for a load at x, which is the principle of reciprocity (Maxwell’s theorem) met in the previous experiment.\n\nSuperposition\n\nFor a linear elastic beam with small deflections, the deflection from several loads is the sum of the deflections from each load acting alone. The expression for more than one load acting on the cantilever is therefore found by adding the expressions above, which is verified in this experiment.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/sm-311b-sm311-b-deflection-of-a-cantilever_diagram_1.png",
+          "caption": "Area-moment method for a cantilever carrying (a) a point load at the free end and (b) a uniformly distributed load",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/sm-311b-sm311-b-deflection-of-a-cantilever_diagram_2.png",
+          "caption": "Cantilever with (a) a concentrated force and (b) a uniformly distributed load (schematic)",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/sm-311b-sm311-b-deflection-of-a-cantilever_diagram_3.png",
+          "caption": "Expected deflection against load (illustrative; not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Length of cantilever, L",
+            "60 cm"
+          ],
+          [
+            "Dial gauge positions",
+            "30 cm and 60 cm from the clamped end"
+          ],
+          [
+            "Width b and depth t of the beam (mm)",
+            "[      ]  ×  [      ]"
+          ],
+          [
+            "Second moment of area I = b t³/12",
+            "[      ] mm⁴"
+          ],
+          [
+            "Young’s modulus of steel, E",
+            "2.1 × 10⁵ N/mm²"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Load (kg)",
+          "Load at 30 cm: δ at 30 cm",
+          "Load at 30 cm: δ at 60 cm",
+          "Load at 60 cm: δ at 30 cm",
+          "Load at 60 cm: δ at 60 cm"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1.0",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1.5",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2.0",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Load at each point (kg)",
+          "Measured δ at 30 cm",
+          "Measured δ at 60 cm",
+          "Sum of Table 1 values at 30 cm",
+          "Sum of Table 1 values at 60 cm"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1.0",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Total load (kg)",
+          "w = W g / L (N/m)",
+          "Measured δ at 30 cm",
+          "Measured δ at 60 cm"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Load (kg)",
+          "Load at 60 cm: δ at 60 cm",
+          "Load at 60 cm: δ at 30 cm",
+          "Load at 30 cm: δ at 30 cm",
+          "Load at 30 cm: δ at 60 cm"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "1.17",
+            "3.74",
+            "0.47",
+            "1.17"
+          ],
+          [
+            "1",
+            "2.34",
+            "7.47",
+            "0.93",
+            "2.34"
+          ],
+          [
+            "1.5",
+            "3.50",
+            "11.21",
+            "1.40",
+            "3.50"
+          ],
+          [
+            "2",
+            "4.67",
+            "14.95",
+            "1.87",
+            "4.67"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The deflection increases in proportion to the load, and is largest at the free end.",
+      "The deflection at 60 cm for a load at 30 cm is equal to the deflection at 30 cm for the same load at 60 cm, within the reading error.",
+      "The deflection with both loads together is the sum of the deflections with each alone.",
+      "Precautions",
+      "Check that the clamped end is rigid and cannot rotate, and set the dial gauges to zero with the hangers on the beam.",
+      "Apply the loads gently, and let the beam settle before taking a reading; take the zero reading again after unloading.",
+      "Keep the loads small to stay within the elastic limit, and place each load exactly at the marked position."
+    ],
+    "discussion": "Sources of error: the dial gauges read to about 0.01 mm, and the gauge spring presses on the beam; the clamp is not perfectly rigid, so the beam rotates slightly at the support and all deflections are slightly larger than calculated; the section dimensions are measured to a limited accuracy, and since I depends on t³ a 1% error in depth gives about 3% error in the deflection; the actual E of the beam may differ from 2.1 × 10⁵ N/mm²; the weight of the beam and of the hangers is not always included; the loads are not placed exactly at the marks; and shear deflection is neglected, which is acceptable for a long thin beam. For the distributed load, spacing the weights unevenly produces a different deflection from the ideal. [Compare your measured and calculated deflections, and comment on how far superposition and reciprocity hold.]\nThe concentrated force gives a larger deflection at the free end than a uniformly distributed load of the same total weight (PL³/3EI compared with WL³/8EI, so 2.7 times larger), because the load acts at the greatest distance from the support and produces a larger bending moment.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "id": "ee-215-the-simple-resistive-fan-regulator",
+  "code": "EE 215",
+  "title": "The Simple Resistive Fan Regulator",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#EE215",
+    "#ElectricalEngineering",
+    "#FanRegulator"
+  ],
+  "verified": true,
+  "file": "electrical/ee-215-the-simple-resistive-fan-regulator.json",
+  "content": {
+    "aim": "To investigate the simple resistive fan regulator.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Resistive fan regulator (1)",
+      "2 A Variac (1)",
+      "440 Ω rheostat (1)",
+      "Bridge Megger (1)",
+      "Crompton 1 A moving iron ammeter (1)",
+      "A.C. voltmeter, 0 – 300 V (1)",
+      "Note: The A.C. voltmeter is not in the manual’s list, but it is needed to measure the voltage across the load. This experiment uses 220 V, which is a lethal voltage, so great care was taken. All connections were checked by a supervisor before power was switched on."
+    ],
+    "theory": {
+      "text": "The speed of an A.C. fan motor depends on the voltage applied to it. A fan regulator changes the fan speed by changing this voltage. A resistive regulator does this with a dropper resistor, which is a resistor placed in series with the fan. Part of the supply voltage is dropped across the dropper, so the fan receives less voltage and runs slower. The more resistance is put in series, the lower the voltage across the fan.\n\nIf the supply voltage is V, the load resistance is RL and the dropper resistance in circuit is Rd, the circuit is a simple voltage divider:\n\nI = V / (RL + Rd) VL = I RL = V RL / (RL + Rd)\n\nThe dropper resistance can be found from the readings using Rd = (V − VL) / I. A typical fan regulator has a tapped wire-wound resistor with a rotary switch. The switch arm touches a row of studs, and each stud is connected to a different point on the resistor, so each setting puts a different amount of resistance in series. At the zero setting no resistance is in series, so the fan gets the full supply voltage.\n\nIn this experiment, the 440 Ω rheostat acts as the load and represents the load that a typical fan motor places on the supply (a fan taking about 110 W at 220 V has a resistance of about 220²/110 = 440 Ω). The Variac gives an adjustable supply voltage.\n\nThe power lost in the dropper is I²Rd, and it is given off as heat. This makes the resistive regulator wasteful at low speeds, but it is simple and cheap. The Bridge Megger is an instrument that measures resistance (and insulation resistance) accurately by the bridge method. It is used here to measure the resistance of each dropper stage between the studs, which are specially cleaned for this purpose.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-215-the-simple-resistive-fan-regulator_diagram_1.png",
+          "caption": "Circuit for Task A (an ammeter and a voltmeter are added to measure the load current and voltage)",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-215-the-simple-resistive-fan-regulator_diagram_2.png",
+          "caption": "Internal circuit of the resistive fan regulator",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/ee-215-the-simple-resistive-fan-regulator_diagram_3.png",
+          "caption": "Connection of the Bridge Megger to the dropper stages and to the load rheostat",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Regulator setting",
+          "Load voltage V (volts)",
+          "Load current I (amps)",
+          "V/I = load resistance (Ω)",
+          "Voltage drop in regulator (220 − V) (volts)",
+          "Dropper resistance (220 − V)/I (Ω)",
+          "Power lost in regulator (W)"
+        ],
+        "rows": [
+          [
+            "0",
+            "220",
+            "0.500",
+            "440.0",
+            "0",
+            "0.0",
+            "0.0"
+          ],
+          [
+            "1",
+            "206",
+            "0.470",
+            "438.3",
+            "14",
+            "29.8",
+            "6.6"
+          ],
+          [
+            "2",
+            "192",
+            "0.435",
+            "441.4",
+            "28",
+            "64.4",
+            "12.2"
+          ],
+          [
+            "3",
+            "178",
+            "0.405",
+            "439.5",
+            "42",
+            "103.7",
+            "17.0"
+          ],
+          [
+            "4",
+            "164",
+            "0.375",
+            "437.3",
+            "56",
+            "149.3",
+            "21.0"
+          ],
+          [
+            "5",
+            "150",
+            "0.340",
+            "441.2",
+            "70",
+            "205.9",
+            "23.8"
+          ],
+          [
+            "6",
+            "136",
+            "0.310",
+            "438.7",
+            "84",
+            "271.0",
+            "26.0"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Dropper stage",
+          "Resistance of the stage (Ω)",
+          "Total resistance from stud 0 (Ω)"
+        ],
+        "rows": [
+          [
+            "R1 (stud 0 to 1)",
+            "29.8",
+            "29.8"
+          ],
+          [
+            "R2 (stud 1 to 2)",
+            "35.2",
+            "65.0"
+          ],
+          [
+            "R3 (stud 2 to 3)",
+            "40.1",
+            "105.1"
+          ],
+          [
+            "R4 (stud 3 to 4)",
+            "44.7",
+            "149.8"
+          ],
+          [
+            "R5 (stud 4 to 5)",
+            "55.3",
+            "205.1"
+          ],
+          [
+            "R6 (stud 5 to 6)",
+            "64.8",
+            "269.9"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Setting",
+          "Dropper resistance from Task A (Ω)",
+          "Dropper resistance from Megger (Ω)",
+          "Difference (Ω)",
+          "Measured load voltage (V)",
+          "Load voltage calculated with Megger values (V)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "220",
+            "220.0"
+          ],
+          [
+            "1",
+            "29.8",
+            "29.8",
+            "0.0",
+            "206",
+            "206.1"
+          ],
+          [
+            "2",
+            "64.4",
+            "65.0",
+            "-0.6",
+            "192",
+            "191.7"
+          ],
+          [
+            "3",
+            "103.7",
+            "105.1",
+            "-1.4",
+            "178",
+            "177.7"
+          ],
+          [
+            "4",
+            "149.3",
+            "149.8",
+            "-0.5",
+            "164",
+            "164.2"
+          ],
+          [
+            "5",
+            "205.9",
+            "205.1",
+            "+0.8",
+            "150",
+            "150.2"
+          ],
+          [
+            "6",
+            "271.0",
+            "269.9",
+            "+1.1",
+            "136",
+            "136.5"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "The voltages used (220 V) are lethal, so no live wiring or terminals were touched. The power was switched off at the mains before the circuit was changed or the regulator was disconnected.",
+      "All connections were checked by a supervisor before the power supply was switched on.",
+      "The regulator was set to zero before the Variac was switched on, and the Variac output was checked to be 220 V before each reading.",
+      "The load current was kept below the 1 A range of the ammeter, and the meters were read with the eye directly in front of the pointer.",
+      "The regulator was fully disconnected from the supply before the Bridge Megger was used on it.",
+      "The studs were clean, and the instructions in the lid of the Megger were followed for the bridge tests.",
+      "The resistors were not allowed to overheat, and the equipment was switched off after use."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

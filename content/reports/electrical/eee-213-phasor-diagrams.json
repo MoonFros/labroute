@@ -1,0 +1,303 @@
+{
+  "id": "eee-213-phasor-diagrams",
+  "code": "EEE 213",
+  "title": "Phasor Diagrams",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#EEE213",
+    "#ElectricalEngineering",
+    "#PhasorDiagrams"
+  ],
+  "verified": true,
+  "file": "electrical/eee-213-phasor-diagrams.json",
+  "content": {
+    "aim": "To investigate phasor diagrams.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "2 A Variac (1)",
+      "100 Ω rheostat (1)",
+      "Switched capacitor (1)",
+      "Inductor (1)",
+      "Digital Phase Meter, DPM 380 (1)",
+      "Oscilloscope, type D54 (1)",
+      "Note: The capacitor values are in microfarads (µF). The Variac was set to give an input voltage V1 of 60 V (r.m.s.) at 50 Hz. All connections were checked by a supervisor before power was switched on."
+    ],
+    "theory": {
+      "text": "When a sinusoidal voltage is applied to a circuit that has resistance and reactance (inductance or capacitance), the current in the circuit is usually not in step with the voltage. The difference in phase between the voltage wave and the current wave depends on the size of the resistance and the reactance. A phasor is a line whose length represents the size of a voltage or current and whose direction represents its phase. Circuits that are combinations of R, L and C can be studied by adding the phasors of each element.\n\nFor an ideal resistor, the current is in phase with the voltage, and V = I R. For an ideal inductor, the current lags the voltage by 90°, and V = jωL I. For an ideal capacitor, the current leads the voltage by 90°, and V = I / (jωC). The opposition of an inductor to current is its reactance Xₗ = 2πfL ohms, and that of a capacitor is Xᶜ = 1 / (2πfC) ohms, where f is the frequency in hertz, L is the inductance in henries and C is the capacitance in farads.\n\nIn the series RC circuit, the same current I flows in R and C. The resistor voltage VR is in phase with I, and the capacitor voltage VC = V2 lags I by 90°. The input voltage V1 is the phasor sum of VR and VC. Let θ be the phase angle of the RC circuit (the angle between I and V1), and let φ be the angle between V1 and V2, which is what is seen on the oscilloscope. From the phasor diagram:\n\nφ = 90° − θ θ = tan⁻¹ (VC / VR) = tan⁻¹ (1 / ωCR) θ = sin⁻¹ (V2 / V1)\n\nSo, if φ is measured, θ is found from θ = 90° − φ. This value of θ can then be checked against the values from the voltage method and from the theory. The three methods of measuring φ are:\n\nOscilloscope method: measure the time interval between the two waves. The period of a 50 Hz wave is 20 ms, so φ = (time interval in ms / 20 ms) × 360°.\n\nDPM method: read the phase angle directly on the digital phase meter.\n\nVoltage method: measure the amplitudes of V1 and V2 on the oscilloscope and calculate θ = sin⁻¹ (V2 / V1).\n\nIn the RL circuit, the voltage across the inductor VL leads the current by 90°, while VR = V2 is in phase with the current. So V1 leads V2 by the angle φ = tan⁻¹ (VL / VR) = tan⁻¹ (Xₗ / R). The reactance of the inductor can therefore be found from Xₗ = R tan φ. Although this experiment uses only R and C (and then R and L), the same principles can be used for R-L-C circuits.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_1.png",
+          "caption": "Voltage, current and phasors for an ideal resistor, inductor and capacitor",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_2.png",
+          "caption": "Series RC circuit and its phasor diagram",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_3.png",
+          "caption": "Connection of the RC circuit",
+          "index": 3
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_4.png",
+          "caption": "Connection of the RL circuit",
+          "index": 4
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_5.png",
+          "caption": "Series RL circuit and its phasor diagram",
+          "index": 5
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_6.png",
+          "caption": "Figure 6",
+          "index": 6
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_7.png",
+          "caption": "Figure 7",
+          "index": 7
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_8.png",
+          "caption": "Figure 8",
+          "index": 8
+        },
+        {
+          "src": "assets/lab_images/eee-213-phasor-diagrams_diagram_9.png",
+          "caption": "Figure 9",
+          "index": 9
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "(i) Oscilloscope method",
+          "(i) Oscilloscope method",
+          "(i) Oscilloscope method",
+          "(ii) DPM method",
+          "(ii) DPM method",
+          "(iii) Voltage method",
+          "(iii) Voltage method",
+          "(iii) Voltage method",
+          "R (Ω)",
+          "C (µF)",
+          "θ = tan⁻¹ (1/ωCR) (°)"
+        ],
+        "rows": [
+          [
+            "Time interval (ms)",
+            "φ (°)",
+            "θ* = 90−φ (°)",
+            "φ (°)",
+            "θ* = 90−φ (°)",
+            "V1 (V)",
+            "V2 (V)",
+            "θ* = sin⁻¹ (V2/V1) (°)",
+            "R (Ω)",
+            "C (µF)",
+            "θ = tan⁻¹ (1/ωCR) (°)"
+          ],
+          [
+            "3.40",
+            "61.2",
+            "28.8",
+            "62.0",
+            "28.0",
+            "85",
+            "40.0",
+            "28.1",
+            "100",
+            "60",
+            "27.9"
+          ],
+          [
+            "3.20",
+            "57.6",
+            "32.4",
+            "57.4",
+            "32.6",
+            "85",
+            "45.5",
+            "32.4",
+            "100",
+            "50",
+            "32.5"
+          ],
+          [
+            "2.90",
+            "52.2",
+            "37.8",
+            "51.6",
+            "38.4",
+            "85",
+            "53.0",
+            "38.6",
+            "100",
+            "40",
+            "38.5"
+          ],
+          [
+            "2.40",
+            "43.2",
+            "46.8",
+            "43.4",
+            "46.6",
+            "85",
+            "62.0",
+            "46.8",
+            "100",
+            "30",
+            "46.7"
+          ],
+          [
+            "1.80",
+            "32.4",
+            "57.6",
+            "32.0",
+            "58.0",
+            "85",
+            "71.5",
+            "57.3",
+            "100",
+            "20",
+            "57.9"
+          ],
+          [
+            "1.00",
+            "18.0",
+            "72.0",
+            "17.5",
+            "72.5",
+            "85",
+            "81.0",
+            "72.4",
+            "100",
+            "10",
+            "72.6"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "C (µF)",
+          "Xᶜ (Ω)",
+          "V1 (V)",
+          "VR (V)",
+          "VC = V2 (V)",
+          "VR length (cm)",
+          "VC length (cm)"
+        ],
+        "rows": [
+          [
+            "60",
+            "53.1",
+            "60",
+            "52.9",
+            "28.2",
+            "5.29",
+            "2.82"
+          ],
+          [
+            "50",
+            "63.7",
+            "60",
+            "50.7",
+            "32.1",
+            "5.07",
+            "3.21"
+          ],
+          [
+            "40",
+            "79.6",
+            "60",
+            "46.9",
+            "37.4",
+            "4.69",
+            "3.74"
+          ],
+          [
+            "30",
+            "106.1",
+            "60",
+            "41.0",
+            "43.8",
+            "4.10",
+            "4.38"
+          ],
+          [
+            "20",
+            "159.2",
+            "60",
+            "32.4",
+            "50.5",
+            "3.24",
+            "5.05"
+          ],
+          [
+            "10",
+            "318.3",
+            "60",
+            "18.2",
+            "57.2",
+            "1.82",
+            "5.72"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "R (Ω)",
+          "Time interval (ms)",
+          "φ scope (°)",
+          "φ DPM (°)",
+          "V1 (V)",
+          "V2 (V)",
+          "φ = cos⁻¹ (V2/V1) (°)",
+          "φ = tan⁻¹ (Xₗ/R) (°)"
+        ],
+        "rows": [
+          [
+            "100",
+            "1.80",
+            "32.4",
+            "32.0",
+            "85",
+            "72",
+            "32.1",
+            "32.1"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "All connections were checked by a supervisor before the power supply was switched on.",
+      "The Variac was set to zero before switching on and was increased slowly to 60.",
+      "The oscilloscope controls were set to CAL, and both channels were grounded and centred before the time interval was measured.",
+      "The time base and volts/cm settings were expanded so that the phase gap almost filled the screen, to reduce reading error.",
+      "Method (i) was completed for all the capacitors before method (iii), because the two methods need different oscilloscope settings.",
+      "The readings were taken with the eye directly in front of the screen to avoid parallax error.",
+      "The rheostat current was kept below its rating, and all equipment was switched off after the experiment."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

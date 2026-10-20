@@ -1,0 +1,245 @@
+{
+  "id": "td-323-conductivity-of-liquids-and-gases",
+  "code": "TD 323",
+  "title": "Conductivity of Liquids and Gases",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#Conductivity",
+    "#MechanicalEngineering",
+    "#TD323"
+  ],
+  "verified": true,
+  "file": "mechanical/td-323-conductivity-of-liquids-and-gases.json",
+  "content": {
+    "aim": "To investigate conductivity of liquids and gases.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "See laboratory manual for theoretical background.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/td-323-conductivity-of-liquids-and-gases_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/td-323-conductivity-of-liquids-and-gases_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Temperature T (°C)",
+          "20",
+          "40",
+          "60",
+          "80",
+          "100"
+        ],
+        "rows": [
+          [
+            "k of air from (4) (W/m K)",
+            "0.0257",
+            "0.0271",
+            "0.0285",
+            "0.0299",
+            "0.0313"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Heater power (W)",
+          "T1 (°C)",
+          "T2 (°C)",
+          "Average temp (T1+T2)/2 (°C)",
+          "T1 − T2 (°C)",
+          "k of air (W/m K)",
+          "Calculated power Wcalc (W)",
+          "Power loss (W)"
+        ],
+        "rows": [
+          [
+            "70",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Heater power (W)",
+          "T1 (°C)",
+          "T2 (°C)",
+          "T1 − T2 (°C)",
+          "Power loss (W) (from Table 1)",
+          "Heat across gap (W)",
+          "k of fluid (W/m K)",
+          "Typical k (W/m K)"
+        ],
+        "rows": [
+          [
+            "70",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

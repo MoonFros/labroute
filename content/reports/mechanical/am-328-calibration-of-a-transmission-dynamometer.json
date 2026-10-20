@@ -1,0 +1,184 @@
+{
+  "id": "am-328-calibration-of-a-transmission-dynamometer",
+  "code": "AM 328",
+  "title": "CALIBRATION OF A TRANSMISSION DYNAMOMETER",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM328",
+    "#Dynamometer",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-328-calibration-of-a-transmission-dynamometer.json",
+  "content": {
+    "aim": "To investigate calibration of a transmission dynamometer.",
+    "objectives": [
+      "(a) To measure the forces or couples which tend to change the state of rest or uniform motion of a body. (b) To measure the power available from a uniformly revolving shaft, and to calibrate the transmission dynamometer."
+    ],
+    "apparatus": [
+      "The Tatham type belt dynamometer consists of: a driving pulley A; a driven pulley E, which is loaded by a loading screw; a control panel with the main start button (at the bottom of the panel), a red push start button and a speed control knob; a PMDC electric motor; guide pulleys B and C on a horizontal beam pivoted at a point about which the complete beam is balanced at rest; and an adjustable counter weight. A rule is used to measure the distances, and a digital display on the panel gives the speeds and the input power."
+    ],
+    "theory": {
+      "text": "Transmission dynamometers\n\nA dynamometer measures the torque and power of a rotating machine. An absorption dynamometer (a brake) wastes the power that it measures as heat. A transmission dynamometer measures the power while passing it on to the driven machine, and its reading is taken without absorbing the power. The Tatham type belt dynamometer used here consists of a driving pulley A, driven by a PMDC electric motor, a driven pulley E, a belt between them, and guide pulleys B and C mounted on a horizontal beam, which is pivoted at the point about which the beam is balanced at rest ().\n\n: Tatham type transmission dynamometer (schematic)\n\nPower from the belt tensions\n\nLet T₁ and T₂ be the effective belt tensions (tight and slack sides) under driving conditions, and W the weight, at a distance A from the pivot, that is needed to keep the beam horizontal. B is the distance between the two guide pulleys (so each guide pulley is B/2 from the pivot). If all portions of the belt between the pulleys are vertical, then for equilibrium of the beam about the pivot (moments of the weight and of the tensions pulling on the two guide pulleys):\n\nW g A + 2 T₂ B − 2 T₁ B = 0\n\nso the difference between the tensions is\n\nT₁ − T₂ = W g A / (2B)\n\nThe power transmitted is the net pull of the belt multiplied by its speed V:\n\nPower = (T₁ − T₂) V = (W g A / 2B) V\n\nThe belt speed follows from the driven pulley diameter D and its speed S₂ in rpm:\n\nV = π D S₂ / 60 (m/s)\n\nIn the manual, A = (a + A) is the distance of the weight pan from the pivot, made up of the fixed distance a and the measured distance A from the balance frame. The power transmitted (output) is therefore\n\nP_out = W g (a + A) π D S₂ / (2B × 60)\n\n(The manual states that V is ‘in rad/sec’; V = πDS₂/60 is a linear speed in m/s, which is what is needed to convert a force into power. The weight W is in kg, so multiply by g to obtain newtons.)\n\nCalibration and efficiency\n\nThe power input to the system is measured electrically at the motor, so the dynamometer reading can be compared with a known input; that is the calibration. The transmission efficiency is the ratio of the power transmitted by the belt to the power input:\n\nη = P_out / P_in × 100%\n\nThe output power is always smaller than the input power, since some power is lost in the motor, the bearings, the belt slip and the friction of the dynamometer.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-328-calibration-of-a-transmission-dynamometer_diagram_1.png",
+          "caption": "Tatham type transmission dynamometer (schematic)",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-328-calibration-of-a-transmission-dynamometer_diagram_2.png",
+          "caption": "Expected shape of the graphs (illustrative; efficiency of about 82% assumed, not experimental data)",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Fixed data",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Balanced weight, W",
+            "0.922 kg"
+          ],
+          [
+            "Distance a (fixed part of the lever arm)",
+            "0.202 m"
+          ],
+          [
+            "Diameter of the driven pulley, D",
+            "0.123 m"
+          ],
+          [
+            "Distance between the guide pulleys, B",
+            "0.075 m"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "Driving pulley S₁ (rpm)",
+          "Driven pulley S₂ (rpm)",
+          "Power input (W)",
+          "Power output (W)",
+          "a (m)",
+          "A (m)",
+          "Efficiency η (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "1593",
+            "",
+            "",
+            "",
+            "0.202",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "1800",
+            "",
+            "",
+            "",
+            "0.202",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "2183",
+            "",
+            "",
+            "",
+            "0.202",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "2300",
+            "",
+            "",
+            "",
+            "0.202",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "2596",
+            "",
+            "",
+            "",
+            "0.202",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "2830",
+            "",
+            "",
+            "",
+            "0.202",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S₂ (rpm)",
+          "V (m/s)",
+          "P_out (W) for L_A = 0.302 m"
+        ],
+        "rows": [
+          [
+            "1000",
+            "6.44",
+            "117"
+          ],
+          [
+            "1500",
+            "9.66",
+            "176"
+          ],
+          [
+            "2000",
+            "12.88",
+            "234"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The output power increased as the load on the driven pulley was increased by the loading screw.",
+      "The driven pulley ran slightly slower than the driving pulley, because of belt slip, and the slip increased with the load.",
+      "Precautions",
+      "Set the speed knob to zero before starting, and increase the speed slowly; keep hands and clothing away from the belt and pulleys.",
+      "Check that the beam is balanced before loading, and read the distance A when the beam is horizontal and steady."
+    ],
+    "discussion": "The output power is lower than the input power because of: (1) electrical and mechanical losses in the PMDC motor (copper and iron losses, brush friction, bearing friction); (2) friction in the bearings of the pulleys and in the dynamometer beam; (3) belt slip and the energy lost as the belt flexes; (4) the power that is absorbed by the loading screw device and any windage; and (5) readings: the input power is measured at the motor terminals, which include the motor losses, while the output is measured at the belt. Other errors: the speed from the digital display to about ±1 rpm, the distance A to ±1 mm, the balance of the beam (small imbalance causes a large error in the moment), and variation of speed during the reading. [Compare the efficiencies from your table and say how they vary with speed and load.]",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

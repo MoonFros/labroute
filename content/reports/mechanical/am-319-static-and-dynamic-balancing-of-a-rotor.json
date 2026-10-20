@@ -1,0 +1,171 @@
+{
+  "id": "am-319-static-and-dynamic-balancing-of-a-rotor",
+  "code": "AM 319",
+  "title": "STATIC AND DYNAMIC BALANCING OF A ROTOR",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM319",
+    "#MechanicalEngineering",
+    "#RotorBalancing"
+  ],
+  "verified": true,
+  "file": "mechanical/am-319-static-and-dynamic-balancing-of-a-rotor.json",
+  "content": {
+    "aim": "To investigate static and dynamic balancing of a rotor.",
+    "objectives": [
+      "To statically and dynamically balance a four-rotating-mass system, and to determine the magnitude of the balancing force and the angular positions of the masses."
+    ],
+    "apparatus": [
+      "The apparatus basically consists of: a steel shaft mounted in ball bearings in a stiff rectangular main frame; a set of six detachable blocks of different weights; a disc carrying a circular protractor scale fitted to one side of the frame, used for keeping the angular position of the rotating weights (a 30 mm distance fixture keeps a fixed distance between two consecutive weights, and the total central distance between weights is 40 mm); a 230 V single-phase 50 Hz electric motor; a main frame supported on the frame by chains; and a speed control knob ().",
+      ": Static and dynamic balancing apparatus (schematic)"
+    ],
+    "theory": {
+      "text": "Unbalance and centrifugal force\n\nWhen a rotor turns with its mass centre away from the axis of rotation, the mass centre experiences a centripetal acceleration, and a radially inward force is needed to provide it. The equal and opposite reaction, the centrifugal force, acts radially outward on the shaft and its bearings, and is the main source of unbalance in a rotor system. For a mass M whose centre of mass is a distance r (the eccentricity) from the axis, turning at angular velocity ω, its magnitude is\n\nF_c = M ω² r\n\nThe magnitude of this force is constant at a given speed, but its direction rotates with the rotor, so it pulls the bearings first one way and then the other. This causes vibration, noise, bearing wear and fatigue. The force rises with the square of the speed: for example, a 0.2 kg unbalance at a radius of 30 mm turning at 3000 rpm (ω = 314 rad/s) gives about 590 N, which is roughly 60 kgf, from a small mass. The quantity m r is called the degree of unbalance, expressed in g·mm (or g·cm), and it is the weight of each mass multiplied by the distance of its centre of gravity from the axis. The centre of gravity of each block is found by hanging the block by a fine thread in a horizontal position.\n\nStatic balancing\n\nTo counteract this force, a balancing mass m_b is introduced in the plane of rotation of the unbalanced mass, at radius r_b, so that the two centrifugal forces are equal and opposite. Taking ω² as a common factor (take ω² = 1):\n\nm r = m_b r_b\n\nIn a single-rotor system, when this equation is satisfied the rotor is statically balanced. For several masses in the same plane, or in different planes, the rotor is statically balanced when its combined mass centre lies on the axis of rotation, that is, when the vector sum of all the unbalanced forces is zero:\n\nΣ m r cos θ = 0 Σ m r sin θ = 0\n\nDynamic balancing\n\nWhen the masses lie in different planes along the shaft, balancing the forces is not enough. Each force acts at a different axial position, so the forces form a couple, which tries to rock the shaft about an axis perpendicular to it, and gives a different kind of vibration in the bearings. A rotor is dynamically balanced when, in addition to the forces, the couples are balanced. Choose a reference plane, and let x be the axial distance of each mass from it; the conditions for dynamic balance are then:\n\nΣ m r cos θ = 0 Σ m r sin θ = 0 (forces)\n\nΣ m r x cos θ = 0 Σ m r x sin θ = 0 (couples)\n\nThese four equations are solved either graphically, by drawing a force polygon and a couple polygon (the vectors are drawn to scale, and each polygon must close), or analytically as in the manual. A statically balanced shaft is not always dynamically balanced, but a dynamically balanced shaft is automatically in static balance.\n\nBalancing mass by the analytical method\n\nIf the unbalance is to be corrected by one mass m_b at radius r_b, then its magnitude and angular position follow from the vector sum of all the other masses:\n\nm_b r_b = √[ (Σ m r sin θ)² + (Σ m r cos θ)² ]\n\ntan θ_b = Σ m r sin θ / Σ m r cos θ\n\nwhere θ_b is taken in the quadrant that makes the balancing vector point opposite to the resultant of the unbalanced masses (that is, add 180° to the angle of the resultant). The method is shown with an example in the Analysis section.\n\n: Angular positions of the masses, and the force polygon (m r vectors) with the closing vector (illustrative, equal radii assumed)",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-319-static-and-dynamic-balancing-of-a-rotor_diagram_1.png",
+          "caption": "Angular positions of the masses, and the force polygon (m r vectors) with the closing vector (illustrative, equal radii assumed)",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-319-static-and-dynamic-balancing-of-a-rotor_diagram_2.png",
+          "caption": "Static and dynamic balancing apparatus (schematic)",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "Weight w (g)",
+          "Distance of C.G. from centre of rotation r (cm)",
+          "Force = w × r (g·cm)",
+          "Distance between weights x (cm)",
+          "Couple F × x (g·cm²)",
+          "Angle (°)"
+        ],
+        "rows": [
+          [
+            "1",
+            "212",
+            "",
+            "",
+            "0",
+            "",
+            "200"
+          ],
+          [
+            "2",
+            "206",
+            "",
+            "",
+            "4",
+            "",
+            "0"
+          ],
+          [
+            "3",
+            "196",
+            "",
+            "",
+            "8",
+            "",
+            "68"
+          ],
+          [
+            "4",
+            "182",
+            "",
+            "",
+            "12",
+            "",
+            "[calc.]"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "m r (g·cm)",
+          "θ (°)",
+          "m r cos θ",
+          "m r sin θ",
+          "m r x cos θ",
+          "m r x sin θ"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "200",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "68",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "[calc.]",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Σ",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "With the masses set at the calculated angles, the shaft ran smoothly, with very little vibration.",
+      "When any weight was moved from its position or angle, the vibration increased clearly.",
+      "The vibration became stronger as the speed was increased.",
+      "Precautions",
+      "Tighten each weight firmly with the alley key and the locking bolt after setting the angle, and check there is no loose part before starting the motor.",
+      "Increase the speed slowly with the control knob, keep clear of the rotating shaft, and stop the motor before touching or changing any weight.",
+      "Read the angle on the protractor with the eye level with the scale, and set weights perpendicular to the horizontal plane; measure the radius of each block carefully."
+    ],
+    "discussion": "Sources of error: the radius of each block’s centre of gravity is found by hanging it on a thread, which is accurate only to about ±0.5 mm; angles are set on the protractor to about ±1°, and an error of 1° in a 200 g mass at 30 mm gives a residual unbalance of about 100 g·mm; the weights have a manufacturing tolerance, the shaft is never perfectly straight and the bearings have some play; the shaft and discs already carry a small unbalance; and the judgement of vibration by sight and touch is subjective. [Estimate the residual unbalance from your table and say whether it is within these errors.] Accuracy can be improved by using a vibration sensor (accelerometer) to measure the vibration at the bearings, by weighing the blocks on a precision balance, and by balancing at the working speed.\nA statically balanced rotor is not always dynamically balanced: if the forces sum to zero but the masses are in different planes, the couple remains, and the shaft rocks on its bearings. This is why, in practice, rotors such as crankshafts, turbine rotors, flywheels, motor armatures and car wheels are balanced in two planes.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

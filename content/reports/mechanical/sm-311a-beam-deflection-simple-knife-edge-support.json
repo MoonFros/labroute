@@ -1,0 +1,215 @@
+{
+  "id": "sm-311a-beam-deflection-simple-knife-edge-support",
+  "code": "SM 311A",
+  "title": "BEAM DEFLECTION (SIMPLE KNIFE-EDGE SUPPORT)",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#BeamDeflection",
+    "#MechanicalEngineering",
+    "#SM311A"
+  ],
+  "verified": true,
+  "file": "mechanical/sm-311a-beam-deflection-simple-knife-edge-support.json",
+  "content": {
+    "aim": "To investigate beam deflection (simple knife-edge support).",
+    "objectives": [
+      "(1) To verify the principle of reciprocity for influence coefficients. (2) To find the deflection of an arbitrarily loaded beam by the method of influence coefficients."
+    ],
+    "apparatus": [
+      "A steel beam simply supported on two knife edges, with a span of 100 cm; four weight shackles (hangers) with weights, placed at stations 1 to 4 spaced 20 cm apart; four dial gauges, one at each station, to measure the deflection; and a ruler, a vernier calliper or micrometer to measure the section of the beam ().",
+      ": Beam on knife-edge supports with four stations, shackles and dial gauges (schematic)"
+    ],
+    "theory": {
+      "text": "Bending of beams and deflection\n\nWhen a beam carries transverse loads, it bends, and its axis takes up a curved shape. For small deflections of a beam of uniform section, the curvature is related to the bending moment M by the Euler–Bernoulli equation\n\nE I d²y / dx² = M(x)\n\nwhere E is Young’s modulus of the material, I is the second moment of area of the cross-section about the neutral axis, and y is the deflection at distance x along the beam. Integrating twice, and using the boundary conditions (zero deflection at the supports), gives the deflection curve. For a rectangular section of width b and depth t, I = b t³/12.\n\nFor a simply supported beam of span L carrying a single point load P at a distance a from the left support (b′ = L − a), the deflection at a point x between the left support and the load (x ≤ a) is\n\ny = P b′ x (L² − b′² − x²) / (6 E I L)\n\nFor a point on the other side of the load (x ≥ a), the same expression is used with the roles of the supports exchanged, so that x is measured from the right support and b′ is replaced by a.\n\nInfluence coefficients\n\nThe influence coefficient S_ij is defined as the deflection at station i caused by the application of a unit force at station j, in a loaded structural member (). If the beam is linearly elastic and the deflections are small, the deflection is proportional to the load, and the effects of several loads can be added (the principle of superposition). So the deflection at station i under loads P₁, P₂, P₃, P₄ at the four stations is\n\n: Influence coefficients and the reciprocity of S₄₂ and S₂₄\n\nδ_i = Σ S_ij P_j = S_i1 P₁ + S_i2 P₂ + S_i3 P₃ + S_i4 P₄\n\nThis depends on the force–displacement relationship being linear, which is the basis of the method of influence coefficients; once the coefficients S_ij have been measured, the deflection under any combination of loads at these stations can be found without further tests.\n\nPrinciple of reciprocity (Maxwell’s theorem)\n\nMaxwell’s reciprocal theorem states that the deflection at station i due to a unit load at j equals the deflection at j due to a unit load at i:\n\nS_ij = S_ji\n\nProof: apply loads P_i and P_j in two different orders. If P_i is applied first and then P_j, the work done is ½P_i δ_ii + ½P_j δ_jj + P_j δ_ji (the third term because P_i is already acting when P_j is applied, and δ_ji is the deflection at j caused by P_i). If P_j is applied first, the work is ½P_j δ_jj + ½P_i δ_ii + P_i δ_ij. Since the strain energy stored depends only on the final loads and not the order of application, the two are equal, so P_j δ_ji = P_i δ_ij. With unit loads this gives S_ji = S_ij.\n\nA consequence for the experiment: the matrix of coefficients is symmetric. Also, for a symmetric beam with the stations placed symmetrically about the centre (stations 1 to 4 at 20, 40, 60 and 80 cm on a span of 100 cm), S₁₁ = S₄₄ and S₂₂ = S₃₃, and S₁₂ = S₃₄, S₁₃ = S₂₄ and so on. These relations are used as a check on the results.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/sm-311a-beam-deflection-simple-knife-edge-support_diagram_1.png",
+          "caption": "Influence coefficients and the reciprocity of S₄₂ and S₂₄",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/sm-311a-beam-deflection-simple-knife-edge-support_diagram_2.png",
+          "caption": "Beam on knife-edge supports with four stations, shackles and dial gauges (schematic)",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Span of beam, L",
+            "100 cm"
+          ],
+          [
+            "Station spacing",
+            "20 cm (stations at 20, 40, 60, 80 cm)"
+          ],
+          [
+            "Width b and depth t of the beam (mm)",
+            "[      ]  ×  [      ]"
+          ],
+          [
+            "Second moment of area I = b t³/12",
+            "[      ] mm⁴"
+          ],
+          [
+            "Young’s modulus of steel, E",
+            "2.1 × 10⁵ N/mm²"
+          ],
+          [
+            "Resolution of the dial gauge",
+            "[      ] mm"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Station i \\ load at j",
+          "j = 1",
+          "j = 2",
+          "j = 3",
+          "j = 4"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Station",
+          "Load (kg)",
+          "Measured δ (mm)",
+          "Predicted ΣS_ijP_j (mm)",
+          "Calculated, beam theory (mm)"
+        ],
+        "rows": [
+          [
+            "1",
+            "2.0",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "1.0",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "1.5",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "1.0",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S_ij (mm/kgf)",
+          "j = 1",
+          "j = 2",
+          "j = 3",
+          "j = 4"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.89",
+            "1.25",
+            "1.11",
+            "0.64"
+          ],
+          [
+            "2",
+            "1.25",
+            "1.99",
+            "1.88",
+            "1.11"
+          ],
+          [
+            "3",
+            "1.11",
+            "1.88",
+            "1.99",
+            "1.25"
+          ],
+          [
+            "4",
+            "0.64",
+            "1.11",
+            "1.25",
+            "0.89"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The deflection at a station is largest when the load is applied at the same station.",
+      "The deflection at i for a load at j is the same as at j for a load at i, within the reading error.",
+      "The deflection under the combined load is the sum of the individual deflections.",
+      "Precautions",
+      "Set all four dial gauges to zero with the shackles in place, and leave the shackles on the beam throughout.",
+      "Apply the loads gently and let the beam settle before reading; check the zero after unloading.",
+      "Keep the loads small, so that the beam stays within the elastic limit, and place the knife edges so the span is exactly 100 cm."
+    ],
+    "discussion": "Sources of error: the dial gauges read to about 0.01 mm, which is a large fraction of the small deflections; zero errors and the gauge spring pressing up on the beam affect the readings; friction in the knife edges and the span not exactly 100 cm; the section dimensions are measured with a limited accuracy, and since I depends on t³ a 1% error in depth gives about 3% error in the calculated deflection; E for the actual beam may differ from 2.1 × 10⁵ N/mm²; shear deflection and the weight of the beam are neglected; and the loads are not exactly 1 kgf. [Compare your S_ij and S_ji and say how far the principle of reciprocity holds, and compare the measured deflections with the calculated ones.]\nSymmetry: S₁₁ should equal S₄₄ and S₂₂ should equal S₃₃, since the beam and stations are symmetric about the midspan. Differences show the combined effect of the errors above, and of the supports not being exactly symmetric.\nScope and usefulness of the method. Once the influence coefficients are known, the deflection under any set of loads at these stations is found by simple addition, without repeating tests or re-solving the beam equation. The method applies to any linear elastic structure with any shape and support, including those too complicated to solve analytically, and it is the basis of the flexibility method for statically indeterminate structures and of the finite-element stiffness method. Deflection matters in engineering because beams and structures must not deflect enough to cause damage to finishes, misalignment of machinery, excessive vibration or discomfort, and codes limit deflection to a fraction of the span (for example span/360), even when stresses are safe.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

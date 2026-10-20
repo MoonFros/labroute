@@ -1,0 +1,142 @@
+{
+  "id": "ee-202-measurement-of-capacitance",
+  "code": "EE 202",
+  "title": "MEASUREMENT OF CAPACITANCE",
+  "department": "electrical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Capacitance",
+    "#EE202",
+    "#ElectricalEngineering"
+  ],
+  "verified": true,
+  "file": "electrical/ee-202-measurement-of-capacitance.json",
+  "content": {
+    "aim": "To investigate measurement of capacitance.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "A capacitor is a device that stores electrical charge, and its capacitance, C, is a measure of how much charge it can store for a given voltage across it. In practice, no capacitor is perfect: some current always leaks slowly through the dielectric (the insulating material between its plates), and this loss can be represented in a circuit model as a small resistance, called the leakage resistance, in series (or parallel) with an ideal capacitance. Measuring both the capacitance and this leakage resistance gives a fuller picture of the quality of a capacitor, which is one of the reasons A.C. bridges such as the Schering Bridge are used.\n\nAn A.C. bridge works on the same basic idea as the D.C. Wheatstone Bridge: four components are arranged in a diamond, a source is connected across one pair of opposite corners, and a detector is connected across the other pair; the bridge is balanced when no signal is detected, which happens when the ratios of the impedances in the arms satisfy a particular condition. However, because the arms of an A.C. bridge may contain both resistance and capacitance, balancing generally requires matching not just the size (magnitude) but also the phase of the signals in each arm. This is why an A.C. bridge usually needs two independent adjustable components (in this experiment, a resistance box and a capacitance box), which must be adjusted alternately, since changing one affects both the magnitude and the phase balance, until the detector shows a true null.\n\nThe Schering Bridge is an A.C. bridge designed specially for measuring an unknown capacitance and its losses. The unknown capacitor (modelled as C1 in series with its leakage resistance R1) forms one arm of the bridge; a standard, loss-free capacitor, C2, forms the arm next to it; a variable decade resistance box, R2, forms a third arm; and a variable resistance R3 in parallel with a variable capacitance C3 forms the fourth arm. An A.F. (audio-frequency) generator supplies the bridge, and a pair of headphones is used as the detector, since the human ear is a very sensitive detector of the audio tone produced by the A.C. supply; when the bridge is balanced, the tone heard in the headphones disappears completely. At balance, the unknown capacitance and its leakage resistance can be calculated from the settings of the known components using the formulae C1 = (R3 / R2) x C2 and R1 = (C3 / C2) x R2.\n\nThe second method in this experiment finds the value of a capacitor in a completely different way, by studying how it charges through a known resistor. When a step (square wave) voltage, V, is suddenly applied to a capacitor, C, through a resistor, R, the voltage across the capacitor does not rise instantly; instead it rises gradually, following the exponential charging equation Vc = V(1 - e^(-t/RC)), where t is the time measured from the moment the voltage is applied. The quantity RC is called the time constant of the circuit, and it represents how quickly the capacitor charges: after a time equal to one time constant, the capacitor has charged to about 63 percent of the applied voltage. By measuring the voltage Vc across the capacitor at a known time t after the start of charging, and knowing the value of R, the above equation can be rearranged to give the capacitance directly: C = t / [R x ln(V / (V - Vc))].\n\nA low-frequency square wave is used to drive this circuit so that the capacitor has enough time to charge fully during one half-cycle and discharge fully during the other, producing a clean, repeating transient that can be observed on an oscilloscope. An oscilloscope, rather than an ordinary voltmeter, is needed for this measurement because the voltage across the capacitor changes within a few milliseconds, far too fast for a simple meter to follow, but easily displayed and measured on the calibrated screen of an oscilloscope.\n\nCompared with each other, the Schering Bridge method is generally the more accurate of the two, and has the added advantage of also giving the leakage resistance of the capacitor, but it requires a balanced A.C. bridge and a sensitive ear (or detector) to find the exact null point. The R-C transient method is simpler and needs only a signal generator, a known resistor, and an oscilloscope, and it has the additional benefit of letting the student see and sketch the actual exponential charging curve of a capacitor, which is a useful way of understanding the time-constant behaviour of R-C circuits.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-202-measurement-of-capacitance_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-202-measurement-of-capacitance_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "C2 (µF)",
+          "C3 (µF)",
+          "R2 (Ohm)",
+          "R3 (Ohm)",
+          "C1 (µF)",
+          "R1 (Ohm)"
+        ],
+        "rows": [
+          [
+            "0.1",
+            "0.50",
+            "100",
+            "500",
+            "0.50",
+            "500"
+          ],
+          [
+            "0.1",
+            "0.25",
+            "200",
+            "1000",
+            "0.50",
+            "500"
+          ],
+          [
+            "0.1",
+            "0.20",
+            "250",
+            "1250",
+            "0.50",
+            "500"
+          ],
+          [
+            "0.1",
+            "0.10",
+            "500",
+            "2500",
+            "0.50",
+            "500"
+          ],
+          [
+            "0.1",
+            "0.05",
+            "1000",
+            "5000",
+            "0.50",
+            "500"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Time t (ms)",
+          "Vc (Volts)",
+          "C = t / [R x ln(V/(V-Vc))]  (µF)"
+        ],
+        "rows": [
+          [
+            "1",
+            "3.16",
+            "0.10"
+          ],
+          [
+            "2",
+            "4.32",
+            "0.10"
+          ],
+          [
+            "3",
+            "4.75",
+            "0.10"
+          ],
+          [
+            "4",
+            "4.91",
+            "0.10"
+          ],
+          [
+            "5",
+            "4.97",
+            "0.10"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

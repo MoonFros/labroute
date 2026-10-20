@@ -1,0 +1,173 @@
+{
+  "id": "am-322-pivot-friction-experiment",
+  "code": "AM 322",
+  "title": "PIVOT FRICTION EXPERIMENT",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM322",
+    "#Friction",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-322-pivot-friction-experiment.json",
+  "content": {
+    "aim": "To investigate pivot friction experiment.",
+    "objectives": [
+      "(1) To obtain the coefficient of friction between the two bearing surfaces of a collar bearing, assuming uniform wear. (2) To investigate the relationship between friction torque T and axial load W, and compare the results with theory. (3) To study the effect of the vertex angle."
+    ],
+    "apparatus": [
+      "The pivot friction apparatus has four pairs of pivots in brass (BS 249) and mild steel (EN1A), with included angles of 60°, 90°, 120° and 180° (flat), and a ball thrust bearing set. The pivot is carried on a turntable that is loaded axially with weights and is turned by a pure couple from two equal weights on cords over the turntable, whose effective diameter (the arm of the couple) is 230 mm. The mean diameter of the pivots (and of the ball thrust bearing) is 30 mm. Check that all traces of oil have been removed from the bearing surfaces before use."
+    ],
+    "theory": {
+      "text": "Friction in a pivot or collar bearing\n\nA pivot or collar bearing carries an axial load W through an annular bearing surface, of inner radius R₁ and outer radius R₂, and a rotating shaft has to overcome the friction torque of this surface. For a conical surface of semi-angle α (half the included angle), the contact is on the slant, so the area of a ring of radius r and width dr measured along the cone is 2πr dr / sin α (). A flat bearing is the case α = 90°, sin α = 1.\n\n: Pivot friction apparatus and the geometry of a conical bearing surface\n\nLet p be the normal pressure on the ring. The normal force is dN = p · 2πr dr / sin α, and its axial component is dN sin α = p · 2πr dr, so the load is W = ∫ p 2πr dr. The friction force is dF = μ dN, and the torque from the ring is dT = r dF = μ p 2πr² dr / sin α.\n\nUniform wear\n\nIn a bearing that has run in, it is assumed that the wear is uniform, which means that the wear rate (proportional to pressure × sliding speed, which is proportional to p r) is the same everywhere, so p r = C is a constant. Then W = 2πC (R₂ − R₁), so C = W/[2π(R₂ − R₁)], and integrating the torque:\n\nT = ∫ μ C 2πr dr / sin α = μ W (R₁ + R₂) / (2 sin α)\n\nThis is the expression used in the manual. For a given bearing, T is proportional to W, so a graph of T against W is a straight line through the origin, with gradient\n\nT / W = μ (R₁ + R₂) / (2 sin α) so μ = 2 sin α × (gradient) / (R₁ + R₂)\n\nFor the flat pivot, α = 90°, so the gradient gives μ directly. For a constant axial load, the torque is proportional to 1/ sin α: the smaller the cone angle, the larger the friction torque, since the wedge action raises the normal force on the surface for the same axial load. A graph of T (at a fixed W) against 1/ sin α should therefore be a straight line through the origin.\n\nUniform pressure (the alternative assumption)\n\nIf the pressure is uniform instead (a new bearing), p = W/[π(R₂² − R₁²)], and\n\nT = (2/3) μ W / sin α × (R₂³ − R₁³) / (R₂² − R₁²)\n\nFor a narrow bearing (R₂ close to R₁) the two expressions are almost equal. For a bearing with a small R₁, uniform pressure gives a larger torque (for R₁ = 0, T = 2μWR₂/3 against μWR₂/2 for uniform wear), because the pressure is greater at the outside, where the friction has a longer arm. This answers the question posed in the manual.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-322-pivot-friction-experiment_diagram_1.png",
+          "caption": "Pivot friction apparatus and the geometry of a conical bearing surface",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-322-pivot-friction-experiment_diagram_2.png",
+          "caption": "Expected graphs (illustrative, from the equations; not experimental data)",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Item",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Effective diameter of the turntable (cords), D",
+            "230 mm"
+          ],
+          [
+            "Mean diameter of the pivots (R₁ + R₂ = 30 mm)",
+            "30 mm"
+          ],
+          [
+            "Minimum and maximum radii R₁ and R₂",
+            "[      ] and [      ] mm"
+          ],
+          [
+            "Included angles of the pivots",
+            "60°, 90°, 120°, 180°"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Axial load W (N)",
+          "Hanger mass m (kg each)",
+          "Torque T = m g D (N·m)",
+          "Theoretical T (N·m)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Included angle",
+          "α",
+          "1 / sin α",
+          "T at W = 50 N (N·m)"
+        ],
+        "rows": [
+          [
+            "180° (flat)",
+            "90°",
+            "1.00",
+            "0.113"
+          ],
+          [
+            "120°",
+            "60°",
+            "1.15",
+            "0.130"
+          ],
+          [
+            "90°",
+            "45°",
+            "1.41",
+            "0.159"
+          ],
+          [
+            "60°",
+            "30°",
+            "2.00",
+            "0.225"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The friction torque increased in proportion to the axial load for each pivot, and it was larger for the sharper cones.",
+      "The ball thrust bearing needed a far smaller torque than the plain pivot.",
+      "Precautions",
+      "Clean all the bearing surfaces of oil before use, and let the turntable settle; use the same slow constant rotation (not accelerating) when the balancing torque is read.",
+      "Add the hanger weights slowly in small steps, and keep the cords level; read the weights without the turntable swinging."
+    ],
+    "discussion": "Sources of error: the pivots are not run in uniformly, so the uniform-wear assumption is approximate (a new pivot is closer to uniform pressure); the measured radii R₁ and R₂ have an error of about ±0.2 mm, and a small difference between them gives a large relative error; the torque is judged when the turntable just rotates, so static and kinetic friction are mixed, and the answer depends on the step size of the weights; the cords add friction on the pulleys and their own weight; the oil film left on the surfaces lowers μ; and the pivots of different angle have slightly different surface finishes. [Compare your μ from the flat pivot with the others and say whether T ∝ W and T ∝ 1/ sin α hold.]\nThe ball thrust bearing has much less friction because rolling friction occurs in it, while in the plain bearing sliding friction has to be overcome. The question about uniform pressure is answered in the theory: the torque would be (2/3) μ W (R₂³ − R₁³)/[(R₂² − R₁²) sin α], which is larger than the uniform wear value for a wide bearing.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

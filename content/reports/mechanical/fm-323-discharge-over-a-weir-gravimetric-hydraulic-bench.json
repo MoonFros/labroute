@@ -1,0 +1,287 @@
+{
+  "id": "fm-323-discharge-over-a-weir-gravimetric-hydraulic-bench",
+  "code": "FM 323",
+  "title": "DISCHARGE OVER A WEIR (GRAVIMETRIC HYDRAULIC BENCH)",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#FM323",
+    "#MechanicalEngineering",
+    "#Weir"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-323-discharge-over-a-weir-gravimetric-hydraulic-bench.json",
+  "content": {
+    "aim": "To investigate discharge over a weir (gravimetric hydraulic bench).",
+    "objectives": [
+      "To observe the flow rate over a series of weirs of different geometric design (a V-notch and a rectangular weir), to verify the theoretical relationships between flow and head, and to obtain the coefficient of discharge for each profile."
+    ],
+    "apparatus": [
+      "The weir tank, made of fibreglass, is divided into three parts: the setting section at the entry, the middle gauging section, and the drainage section. Water is delivered to the tank by the pipe in the entry section, and the setting time is provided by the fact that it takes some time before the water flows over the weir, which separates the middle section from the drainage section, from where it is drained back through a pipe to the weighing tank of the hydraulic bench. Two sharp-edged weirs, one rectangular and the other triangular, made of hard plastic, fit into a groove in the weir tank, and rubber seals in the groove prevent water bypassing the weir. The height of the water just before the weir is taken with a hook gauge in a transparent setting chamber alongside the weir tank; the chamber is connected to the bottom of the middle section by a plastic tube, and the hook gauge measures to 0.1 mm. A drain is provided for the setting section ().",
+      ": Weir tank and hook gauge (schematic)"
+    ],
+    "theory": {
+      "text": "Flow over a weir\n\nA weir (or notch) is an opening or obstruction over which a liquid flows, and it is used to measure the flow rate in channels. The flow depends on the shape of the weir, and on the height H of the upstream water surface above the sill (or the bottom of the notch). The tests below establish the relation between these quantities and verify the theory. The theory assumes that the water particles pass through the notch like a free jet, so that a layer at depth x below the free surface has the velocity v = √(2 g x) (Torricelli’s result), the approach velocity is negligible, and the pressure in the jet is atmospheric.\n\n: (a) Rectangular notch and (b) V-notch, with a thin horizontal element at depth x\n\nRectangular notch\n\nTake an element of thickness dx at depth x, with the width B of the notch (Figure 1a). The area of the element is B dx, the velocity through it is √(2gx), and so the theoretical mass flow through the element is dq = ρ B √(2gx) dx. Integrating from the free surface (x = 0) to the sill (x = H):\n\nq_th = ρ B √(2g) ∫₀ᴴ x^½ dx = (2/3) ρ B √(2g) H^(3/2) (kg/s)\n\nThe actual discharge is less than this, and the coefficient of discharge C_d corrects for it:\n\nq = (2/3) C_d ρ B √(2g) H^(3/2)\n\nTriangular (V) notch\n\nFor a V-notch of half-angle θ (Figure 1b), consider an element at depth x. Its breadth is 2(H − x) tan θ, so its area is 2(H − x) tan θ dx, the velocity is √(2gx), and the mass flow through the element is ρ 2(H − x) tan θ √(2gx) dx. The total discharge is therefore\n\nq_th = 2 ρ tan θ √(2g) ∫₀ᴴ (H x^½ − x^(3/2)) dx = 2 ρ tan θ √(2g)(2/3 − 2/5) H^(5/2)\n\nq_th = (8/15) ρ tan θ √(2g) H^(5/2) q = (8/15) C_d ρ tan θ √(2g) H^(5/2)\n\nThe relation q = K Hⁿ\n\nIn both cases the flow follows a power law in the head, q = K Hⁿ, where q is the discharge (kg/s) and H the head above the sill (m), and K and n are constants. Taking logarithms gives a straight line:\n\nlog q = log K + n log H\n\nFrom the theory, n = 5/2 and K = (8/15) ρ tan θ √(2g) for the V-notch, and n = 3/2 and K = (2/3) ρ B √(2g) for the rectangular notch. The gradient and intercept of the measured log q against log H graph give n and K. If n is taken to be the same in the experiment and the theory, the coefficient of discharge is\n\nC_d = K_measured / K_calculated\n\nWhy is C_d needed? The theory neglects several effects: the jet contracts after passing the sill (the nappe is narrower than the notch, as in an orifice, the vena contracta), so the area is smaller; the water velocity is not uniform and is not exactly √(2gx) because of viscosity and surface tension (important at small heads); there is the velocity of approach, and energy lost to friction at the edges; and the head is measured at a distance upstream, where the surface has dropped slightly. C_d accounts for all of these in one factor, and it is typically 0.6 for a sharp-edged notch.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-323-discharge-over-a-weir-gravimetric-hydraulic-bench_diagram_1.png",
+          "caption": "(a) Rectangular notch and (b) V-notch, with a thin horizontal element at depth x",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-323-discharge-over-a-weir-gravimetric-hydraulic-bench_diagram_2.png",
+          "caption": "Weir tank and hook gauge (schematic)",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/fm-323-discharge-over-a-weir-gravimetric-hydraulic-bench_diagram_3.png",
+          "caption": "Expected log q against log H lines (illustrative; assumed values, not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Width of the rectangular notch, B",
+            "[      ] mm"
+          ],
+          [
+            "Half-angle of the V-notch, θ",
+            "[      ]° (tan θ = [      ])"
+          ],
+          [
+            "Hook gauge reading at the datum (water level with the sill)",
+            "[      ] mm"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Hook gauge reading (mm)",
+          "Head H (mm)",
+          "Mass collected (kg)",
+          "Time (s)",
+          "q (kg/s)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Hook gauge reading (mm)",
+          "Head H (mm)",
+          "Mass collected (kg)",
+          "Time (s)",
+          "q (kg/s)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Head H (mm)",
+          "V-notch q_th (kg/s)",
+          "V-notch, C_d = 0.6 (kg/s)",
+          "Rectangular q_th (kg/s)",
+          "Rectangular, C_d = 0.6 (kg/s)"
+        ],
+        "rows": [
+          [
+            "20",
+            "0.13",
+            "0.08",
+            "0.42",
+            "0.25"
+          ],
+          [
+            "40",
+            "0.76",
+            "0.45",
+            "1.18",
+            "0.71"
+          ],
+          [
+            "60",
+            "2.08",
+            "1.25",
+            "2.17",
+            "1.30"
+          ],
+          [
+            "80",
+            "4.28",
+            "2.57",
+            "3.34",
+            "2.00"
+          ],
+          [
+            "100",
+            "7.47",
+            "4.48",
+            "4.67",
+            "2.80"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The discharge increased very quickly with the head, faster for the V-notch than for the rectangular notch.",
+      "The nappe (the sheet of water leaving the weir) contracted after passing the sill, and was narrower than the notch.",
+      "Precautions",
+      "Check that the weir is seated in the groove without leakage, and measure the datum with the water just level with the sill.",
+      "Wait for the level to become steady before reading, and read the hook gauge with the eye level (to 0.1 mm); do not allow the weir to flood; keep the nappe free (ventilated)."
+    ],
+    "discussion": "Compare the values obtained for K and n with the theoretical values for the two notches. The gradient is usually close to 2.5 for the V-notch and 1.5 for the rectangular weir, with the largest deviations at small heads, where surface tension and viscosity matter and the nappe may cling to the plate. A measured K smaller than the calculated one gives C_d < 1, typically about 0.58 to 0.62. Sources of error: the head is read to 0.1 mm but the datum setting is uncertain by about 0.5 mm, which is a large fraction of H at small heads (a 1 mm error in 20 mm gives 5% in H, and 12% in q for the V-notch, since q ∝ H^2.5); the timing and the weighing (±0.3 s); the water surface not being steady; leakage past the seals; the approach velocity (neglected); and a nappe that is not fully ventilated. [Give your values of n, K and C_d.]\nCause for introducing C_d. The theory ignores the contraction of the jet, friction and surface tension, and the non-uniform velocity, so the theoretical flow is always larger than the actual flow. C_d corrects the theoretical flow to the actual flow: actual flow = C_d × theoretical flow.\nPractical applications. Weirs and notches are used to measure the flow of water in rivers, irrigation channels, canals and drains, in water and sewage treatment plants and in industrial processes, and in the laboratory. The V-notch is used for small flows, where its sensitivity to the head gives better accuracy, and the rectangular weir for larger flows. Weirs are also used to control water levels.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

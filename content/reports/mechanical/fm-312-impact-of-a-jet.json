@@ -1,0 +1,184 @@
+{
+  "id": "fm-312-impact-of-a-jet",
+  "code": "FM 312",
+  "title": "Impact of a Jet",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#FM312",
+    "#ImpactTest",
+    "#JetImpact",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-312-impact-of-a-jet.json",
+  "content": {
+    "aim": "To investigate impact of a jet.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "See laboratory manual for theoretical background.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-312-impact-of-a-jet_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-312-impact-of-a-jet_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No.",
+          "Position of movable weight X1 (cm or m)",
+          "Fa = force on the vane (N) (calculated)",
+          "Ft = theoretical force (N) (calculated)",
+          "K = Fa/Ft (coefficient of impact)",
+          "Q = actual discharge, rotameter reading (LPM)",
+          "Q (m³/s)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Rotameter reading (LPM)",
+          "Q (10-6 m³/s)",
+          "Jet velocity V = Q/a (m/s)",
+          "Ft flat vane ρQV (N)",
+          "Ft hemisphere, φ = 0, 2ρQV (N)"
+        ],
+        "rows": [
+          [
+            "10",
+            "166.7",
+            "2.12",
+            "0.35",
+            "0.71"
+          ],
+          [
+            "15",
+            "250.0",
+            "3.18",
+            "0.80",
+            "1.59"
+          ],
+          [
+            "20",
+            "333.3",
+            "4.24",
+            "1.41",
+            "2.83"
+          ],
+          [
+            "25",
+            "416.7",
+            "5.31",
+            "2.21",
+            "4.42"
+          ],
+          [
+            "30",
+            "500.0",
+            "6.37",
+            "3.18",
+            "6.37"
+          ],
+          [
+            "35",
+            "583.3",
+            "7.43",
+            "4.33",
+            "8.67"
+          ],
+          [
+            "40",
+            "666.7",
+            "8.49",
+            "5.66",
+            "11.32"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

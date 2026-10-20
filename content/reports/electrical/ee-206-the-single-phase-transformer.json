@@ -1,0 +1,218 @@
+{
+  "id": "ee-206-the-single-phase-transformer",
+  "code": "EE 206",
+  "title": "THE SINGLE PHASE TRANSFORMER",
+  "department": "electrical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#EE206",
+    "#ElectricalEngineering",
+    "#Transformer"
+  ],
+  "verified": true,
+  "file": "electrical/ee-206-the-single-phase-transformer.json",
+  "content": {
+    "aim": "To investigate the single phase transformer.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Variac, 0 - 270 V, 8 A, 2 kVA (1)",
+      "Transformer, Foster Type 2/3 (1)",
+      "A.C. Voltmeter, 0 - 300 V (2)",
+      "A.C. Voltmeter, 0 - 100 V (1)",
+      "A.C. Ammeter, 0 - 10 A (2)",
+      "A.C. Ammeter, 0 - 1 A (3)",
+      "Low Power Factor Wattmeter (1)",
+      "Wattmeter, 1/5 - 10 A, 125/240/600 V (1)",
+      "Resistance Load Bank (1)"
+    ],
+    "theory": {
+      "text": "A transformer is a static (no moving parts) electrical machine that transfers electrical energy from one circuit to another, at the same frequency, usually with a change in voltage, by the principle of mutual electromagnetic induction. It consists of two windings, called the primary and the secondary, wound on a common iron core. When an alternating voltage is applied to the primary winding, it sets up an alternating magnetic flux in the core; this changing flux links with the secondary winding and induces an e.m.f. in it.\n\nFor an ideal transformer (one with no losses), the ratio of the primary voltage to the secondary voltage is equal to the ratio of the number of turns on the primary winding to the number of turns on the secondary winding, that is, V1/V2 = N1/N2, or equivalently V2/V1 = N2/N1. In a real transformer, this relationship holds only approximately, since there are always some small losses and voltage drops in the windings; the Ratio Test carried out in this experiment checks how closely a real transformer follows this ideal relationship.\n\nEven when a transformer is on open-circuit (no load connected to its secondary, so no current flows in it), it still draws a small current and a small amount of power from the mains supply. This happens because an alternating flux in the iron core produces two kinds of core (or iron) losses: hysteresis loss, caused by the repeated magnetising and demagnetising of the core material, and eddy current loss, caused by small circulating currents induced within the core itself. Since these losses depend only on the supply voltage and frequency, and not on the load, they are present all the time the transformer is switched on, whether or not it is supplying any load. The No-Load Test measures this core loss directly, by supplying the primary at various voltages with the secondary left open, and recording the small current and power taken at each voltage; because the current on no-load is small and mostly magnetising (reactive) in nature, the power factor, Cosβ, on no-load is usually quite low.\n\nWhen a load is connected to the secondary of a transformer, a current flows in both windings, and an additional loss appears: copper loss (also called I-squared-R loss), caused by the resistance of the copper wire in the windings heating up as current flows through it. Unlike the core loss, copper loss increases rapidly as the load current increases, since it is proportional to the square of the current. The Load Test carried out in this experiment measures the input power (on the primary side) and the output power (on the secondary side) at several different load currents, so that the efficiency of the transformer, defined as the ratio of output power to input power, can be calculated at each load. In general, the efficiency of a transformer is lower at very light loads (where the constant core loss is large compared with the small power being delivered), rises as the load increases, and then falls again at very heavy loads (where the rapidly growing copper loss begins to dominate).\n\nCopper loss is not directly investigated in the No-Load Test, since almost no current flows in the windings when the secondary is open. It occurs whenever current flows through the resistance of the primary and secondary windings, and, being an I-squared-R loss, it becomes significant only when the transformer is carrying a reasonable load current, which is why it is instead studied in the Load Test. A separate test, called the Short-Circuit Test, is normally used to measure copper loss on its own: the secondary terminals are short-circuited through an ammeter, and only a small voltage is applied to the primary, just enough to circulate the full-load rated current in the windings. Because this applied voltage is so small, the flux in the core, and therefore the core loss, is negligible during this test, so almost all of the power measured by the wattmeter in this condition can be taken as the copper loss of the transformer at full load.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-206-the-single-phase-transformer_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-206-the-single-phase-transformer_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/ee-206-the-single-phase-transformer_diagram_3.png",
+          "caption": "Figure 3",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "N1 (Primary Turns)",
+          "N2 (Secondary Turns)",
+          "V1 (V)",
+          "V2 (V)",
+          "V2/V1",
+          "N2/N1"
+        ],
+        "rows": [
+          [
+            "192",
+            "8",
+            "220",
+            "10.0",
+            "0.045",
+            "0.042"
+          ],
+          [
+            "192",
+            "16",
+            "220",
+            "17.5",
+            "0.080",
+            "0.083"
+          ],
+          [
+            "192",
+            "32",
+            "220",
+            "37.5",
+            "0.170",
+            "0.167"
+          ],
+          [
+            "192",
+            "40",
+            "220",
+            "45.0",
+            "0.205",
+            "0.208"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "V1 (V)",
+          "I1 (A)",
+          "W1 (W)",
+          "Cosβ = W1/(I1V1)"
+        ],
+        "rows": [
+          [
+            "40",
+            "0.04",
+            "1",
+            "0.625"
+          ],
+          [
+            "80",
+            "0.08",
+            "3",
+            "0.469"
+          ],
+          [
+            "120",
+            "0.12",
+            "5",
+            "0.347"
+          ],
+          [
+            "160",
+            "0.18",
+            "7",
+            "0.243"
+          ],
+          [
+            "200",
+            "0.22",
+            "10",
+            "0.227"
+          ],
+          [
+            "220",
+            "1.00",
+            "12",
+            "0.055"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "V1 (V)",
+          "I1 (A)",
+          "W1 (W)",
+          "V2 (V)",
+          "I2 (A)",
+          "W2=V2xI2 (W)",
+          "Efficiency W2/W1"
+        ],
+        "rows": [
+          [
+            "220",
+            "1.2",
+            "40",
+            "47.5",
+            "2",
+            "95.0",
+            "98.9%"
+          ],
+          [
+            "220",
+            "1.5",
+            "80",
+            "47.5",
+            "4",
+            "190.0",
+            "97.8%"
+          ],
+          [
+            "220",
+            "1.8",
+            "120",
+            "47.5",
+            "6",
+            "285.0",
+            "96.7%"
+          ],
+          [
+            "220",
+            "2.1",
+            "160",
+            "47.5",
+            "8",
+            "380.0",
+            "95.6%"
+          ],
+          [
+            "220",
+            "2.5",
+            "200",
+            "47.5",
+            "10",
+            "475.0",
+            "94.4%"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "(i) Why does copper loss occur? Copper loss occurs because the copper wire used to wind the primary and secondary coils has some electrical resistance, and whenever a load current flows through this resistance, electrical energy is converted into heat (an I-squared-R loss). Since this loss depends on the square of the current, it is very small on no-load (where the current is small) but becomes significant as the load, and therefore the current, increases.\n(ii) How would copper loss be measured? Copper loss can be measured separately using a Short-Circuit Test: the secondary terminals are short-circuited (through an ammeter, to monitor the current), and a small, gradually increasing voltage is applied to the primary until the full-load rated current flows in the windings. Since the applied voltage in this test is very small, the flux in the core, and therefore the core loss, is negligible; so almost all of the power recorded by the wattmeter during this test can be taken as the full-load copper loss of the transformer.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "id": "ht-linear-heat-conduction-thermal-conductivity-of-a-metal-bar",
+  "code": "HT",
+  "title": "LINEAR HEAT CONDUCTION: THERMAL CONDUCTIVITY OF A METAL BAR",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#Conductivity",
+    "#HT",
+    "#HeatConduction",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/ht-linear-heat-conduction-thermal-conductivity-of-a-metal-bar.json",
+  "content": {
+    "aim": "To investigate linear heat conduction: thermal conductivity of a metal bar.",
+    "objectives": [
+      "(1) To investigate the temperature distribution along a metal bar carrying a steady heat flow. (2) To find the thermal gradient and the thermal conductivity of the bar. (3) To investigate the effect of the thermal connection (heat transfer paste) at the joints, and (4) to record how the temperatures change with time until they stabilize (thermal log)."
+    ],
+    "apparatus": [
+      "The apparatus consists of a metal bar made up of a heated section with an electric cartridge heater, an interchangeable middle section (brass here) and a water-cooled section, all in line and joined end to end. Seven thermocouples T₁ to T₇ are fitted along the bar, and are read on a digital temperature display. The bar is lagged to reduce heat loss, and the heater power is set and measured with a power control and meter. A supply of cooling water, a flow control and a tube of heat transfer paste are also used ().",
+      ": Linear heat conduction apparatus (schematic)"
+    ],
+    "theory": {
+      "text": "Fourier’s law of conduction\n\nConduction is the transfer of heat through a solid from the hotter to the colder region, as a result of the movement and collisions of atoms and free electrons. Fourier’s law states that the rate of heat flow Q through a material is proportional to the area A normal to the flow and to the temperature gradient dT/dx:\n\nQ = − k A dT / dx\n\nThe constant k is the thermal conductivity of the material, in W/m·K, and the negative sign shows that heat flows from high to low temperature (). Metals are good conductors because of their free electrons, so k is large (about 120 W/m·K for brass and 400 W/m·K for copper), while insulators have a small k.\n\n: One-dimensional conduction through a bar\n\nSteady one-dimensional conduction\n\nFor a uniform bar with no heat loss from its sides, in the steady state the heat flow is the same at every section, so Q, k and A are constant, and integration gives a linear temperature distribution along the bar:\n\nT(x) = T₁ − (Q / k A) x so dT/dx = − Q / (k A)\n\nA graph of temperature against distance is therefore a straight line, and its gradient is the thermal gradient. The thermal conductivity is obtained from the measured heat flow and the gradient:\n\nk = Q / (A × |dT/dx|) = Q L / (A ΔT)\n\nwhere A = π d²/4 for a bar of diameter d, and ΔT is the temperature difference over the length L. The heat flow Q can be taken as the electrical power supplied to the heater (V × I). Each section of the bar behaves as a thermal resistance R = L/(kA), by analogy with Ohm’s law (ΔT = Q R).\n\nThermal contact resistance\n\nWhere two sections of a bar are joined, the surfaces touch only at the high points of their roughness, and the gaps are filled with air, which is a poor conductor. This adds a contact resistance R_c, which produces a sudden drop in temperature ΔT_c = Q R_c at the joint, so the temperature graph has a step at the joint (Figure 3a). Heat transfer paste fills the gaps with a material that conducts much better than air, which lowers R_c and the step at the joint. With the paste removed, the step increases.\n\nUnsteady conduction and the thermal log\n\nAfter the heater is switched on, the bar takes time to warm up, because it has to store energy as its temperature rises. Temperature then depends on time and position, according to the heat conduction equation\n\n∂T / ∂t = α ∂²T / ∂x² α = k / (ρ c)\n\nwhere α is the thermal diffusivity, ρ the density and c the specific heat capacity. The temperature at each point rises roughly exponentially toward its final value, with a time constant of the order of L²/α, which for a brass bar of about 0.1 m is of the order of minutes. The readings are therefore recorded every 10 seconds until they stop changing, since only steady state readings can be used with the equations above.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ht-linear-heat-conduction-thermal-conductivity-of-a-metal-bar_diagram_1.png",
+          "caption": "One-dimensional conduction through a bar",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ht-linear-heat-conduction-thermal-conductivity-of-a-metal-bar_diagram_2.png",
+          "caption": "Linear heat conduction apparatus (schematic)",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/ht-linear-heat-conduction-thermal-conductivity-of-a-metal-bar_diagram_3.png",
+          "caption": "Expected graphs (illustrative; not experimental data): (a) steady-state profiles with and without paste, (b) thermal log",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Material of middle section",
+            "Brass"
+          ],
+          [
+            "Diameter of bar, d",
+            "[      ] mm"
+          ],
+          [
+            "Cross-sectional area, A = π d²/4",
+            "[      ] m²"
+          ],
+          [
+            "Positions of T₁ to T₇ along the bar",
+            "[      ] (see Table 1)"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "",
+          "T₁",
+          "T₂",
+          "T₃",
+          "T₄",
+          "T₅",
+          "T₆",
+          "T₇"
+        ],
+        "rows": [
+          [
+            "x (mm)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Condition, power Q (W)",
+          "T₁",
+          "T₂",
+          "T₃",
+          "T₄",
+          "T₅",
+          "T₆",
+          "T₇"
+        ],
+        "rows": [
+          [
+            "With paste, [   ] W",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "With paste, [   ] W",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "With paste, [   ] W",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Without paste, [   ] W",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Time (s)",
+          "T₁",
+          "T₂",
+          "T₃",
+          "T₄",
+          "T₅",
+          "T₆",
+          "T₇"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "70",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "90",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The temperature falls along the bar from the heater end to the cooled end, and the graph is close to a straight line within each section.",
+      "With the paste removed, a larger sudden drop in temperature appears at the joints.",
+      "In the thermal log, the temperatures rise quickly at first and then more slowly until they level off.",
+      "Precautions",
+      "Allow the apparatus to reach steady state before taking readings; do not use readings that are still changing.",
+      "Do not touch the heated section; keep the cooling water flowing when the heater is on (except for the thermal log, which uses a low power), and do not exceed the maximum temperature.",
+      "Check that the thermocouples are in good contact and read the same at the start (room temperature); apply the paste thinly and evenly, and clean it off completely for the test without paste."
+    ],
+    "discussion": "Causes of error. (1) Heat loss from the sides of the bar through the lagging, so the heat flow along the bar is less than the electrical input; using Q = V I then overestimates the heat flux, and so overestimates k, and the temperature line curves slightly. (2) Contact resistance at the joints, which is not zero even with paste, and which affects the gradient if the line is drawn through points on both sides of a joint. (3) Thermocouple errors of about ±0.5 K, and errors in their positions, which matter because the gradient is found from differences of readings. (4) Not waiting long enough for steady state. (5) Errors in measuring the heater power and the diameter of the bar (an error in d of 1% gives 2% in A). (6) Variation of k with temperature, which causes slight curvature in the line. (7) The cooling water temperature and flow varying during the test. [Add an estimate of the size of the errors for your results, and compare your k with the handbook value.]\nThe test without paste should show a bigger temperature step at the joints, and a higher temperature at the heater end for the same power, since the contact resistance adds to the total thermal resistance. The thermal log shows how long the apparatus takes to reach steady state, which is why readings must not be taken early.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}
