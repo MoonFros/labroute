@@ -13,7 +13,8 @@ Oboh Christopher - Team Member and Report Author
 
 The gallery on the home page accepts visitor photos, but nothing is published
 immediately. A visitor previews a JPEG, PNG, or WebP image on `upload.html` and
-sends it for review. The photo is stored in the private `data/pending/` folder
+sends it for review. The photo is stored in the private pending area
+(`data/pending/` on a Node host, Vercel Blob on Vercel)
 and listed under **Pending uploads** on `dashboard.html`, where an admin can:
 
 - **Approve** — the file moves to `assets/gallery/moments/` and becomes **image 1**
@@ -36,8 +37,10 @@ submitting visitor's name.
 npm start
 ```
 
-Then open <http://localhost:3000>. There are **no runtime dependencies** to
-install — the small Node service uses only the standard library.
+Then open <http://localhost:3000>. The local Node service uses only the
+standard library, so it runs without an install step. (`@vercel/blob` is the
+one dependency; it is loaded only when Blob storage is in use, and Vercel
+installs it automatically during deployment.)
 
 For local development with automatic restarts:
 
@@ -47,6 +50,8 @@ npm run dev
 
 ### Upload storage
 
+On a Node host everything is on disk:
+
 | Path | Purpose |
 | --- | --- |
 | `content/gallery.json` | Ordered public gallery. The first item is displayed first. |
@@ -54,9 +59,14 @@ npm run dev
 | `data/pending/` | Photos awaiting review plus `pending.json`. Private, never served statically, and gitignored. |
 | `data/runtime/` | Generated cookie secret, hashed cooldown state, and the notification log. This directory is gitignored. |
 
+On Vercel the same data lives in a connected Blob store under the `labroute/`
+prefix (`labroute/state/*.json`, `labroute/pending/`, `labroute/gallery/`);
+`content/gallery.json` in the repo is only the seed shown until the first
+approval. See **Deploying to Vercel** below.
+
 Run `npm test` to execute the integration suite (pending uploads, approval and
 decline, gallery ordering, per-visitor cooldowns, validation, admin
-authentication, and the review queue).
+authentication, the review queue, and the Vercel/Blob deployment path).
 
 ### Email notifications
 
@@ -75,11 +85,37 @@ Copy `.env.example` to `.env` and configure one provider:
 Admin addresses are read from `data/admins.json`; override them with
 `MOMENTS_ADMIN_EMAILS=one@example.com,two@example.com` if needed.
 
-### Deployment note
+### Deploying to Vercel (labroute.vercel.app)
 
-This feature needs a Node process with a **persistent disk** for the pending
-queue, gallery images, and cooldown state. It cannot run on a purely static
-Vercel deployment. Deploy the repository to a Node host (Render, Railway, Fly.io,
-a VPS, or any Node-capable host), or add external object storage plus serverless
-functions before deploying the API to Vercel. The home page still falls back to
-`content/gallery.json` if the upload service is offline.
+The API runs on Vercel as a Function: `api/[...path].js` hands every `/api/*`
+request to the same handler as the local server (a plain static deployment
+never starts `server.js`, which is why `/api/moments/status` used to 404 and
+the upload page reported the sharing service as unreachable).
+
+Two one-time dashboard steps make uploads **durable** on Vercel. Without
+them the API still works, but pending photos sit in a Function's temporary
+`/tmp` storage and can disappear when the instance is recycled:
+
+1. **Connect a Blob store** — Vercel dashboard → your project → **Storage →
+   Create → Blob**, choose **Private**, and connect it to the project
+   (Production at minimum). This sets `BLOB_READ_WRITE_TOKEN` / `BLOB_STORE_ID`
+   automatically. (A *public* store also works; the service detects the
+   store type, or you can pin it with `BLOB_ACCESS=public`.)
+2. **Set a cookie secret** — Project **Settings → Environment Variables**:
+   `MOMENTS_SECRET` to a long random string (32+ characters). Without it each
+   Function instance signs cookies with its own temporary secret, so admin
+   sessions and visitor cooldowns would appear to reset randomly.
+
+Then redeploy. Verify with <https://labroute.vercel.app/api/health>: it should
+report `"storage": "vercel-blob"` and `"secretConfigured": true`.
+`"storage": "ephemeral"` there means the temporary fallback is in use.
+
+Notes:
+
+- Photos are capped at **3 MB on Vercel** (Vercel Functions reject request
+  bodies over 4.5 MB, and uploads travel base64-encoded). The upload page
+  shows the limit the API reports.
+- Alternatively, deploy `server.js` to any Node host with a persistent disk
+  (Render, Railway, Fly.io, a VPS) — no Blob store is needed there.
+- The home page still falls back to `content/gallery.json` if the upload
+  service is offline.

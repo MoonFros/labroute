@@ -21,7 +21,9 @@
     cooldownReason: 'visitor',
     cooldownTimer: null,
     busy: false,
-    apiAvailable: true
+    apiAvailable: true,
+    statusRetryTimer: null,
+    statusAlertShown: false
   };
 
   const el = {};
@@ -57,6 +59,7 @@
     ];
 
     for (const id of required) el[id] = document.getElementById(id);
+    el.dropzoneHint = document.getElementById('dropzoneHint');
 
     if (!el.momentForm || !el.dropzone || !el.photoInput) return;
 
@@ -177,7 +180,9 @@
   /* ------------------------------------------------------------- file input */
 
   function openFilePicker() {
-    if (state.busy || isCoolingDown() || !state.apiAvailable) return;
+    // Choosing/previewing a photo is purely local, so it stays available
+    // while the sharing service is being (re)contacted.
+    if (state.busy || isCoolingDown()) return;
     el.photoInput.click();
   }
 
@@ -187,7 +192,7 @@
     ['dragenter', 'dragover'].forEach((type) => {
       zone.addEventListener(type, (event) => {
         event.preventDefault();
-        if (state.busy || isCoolingDown() || !state.apiAvailable) return;
+        if (state.busy || isCoolingDown()) return;
         zone.classList.add('is-dragover');
       });
     });
@@ -200,7 +205,7 @@
     });
 
     zone.addEventListener('drop', (event) => {
-      if (state.busy || isCoolingDown() || !state.apiAvailable) return;
+      if (state.busy || isCoolingDown()) return;
       handleFiles(event.dataTransfer ? event.dataTransfer.files : null);
     });
   }
@@ -349,9 +354,14 @@
   }
 
   function updateDropzoneAvailability() {
-    const disabled = state.busy || isCoolingDown() || !state.apiAvailable;
+    const disabled = state.busy || isCoolingDown();
     el.dropzone.classList.toggle('is-disabled', disabled);
     el.dropzone.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+  }
+
+  function updateDropzoneHint() {
+    if (!el.dropzoneHint) return;
+    el.dropzoneHint.textContent = `or click to browse. JPEG, PNG or WebP, up to ${formatBytes(state.maxBytes)}.`;
   }
 
   /* -------------------------------------------------------------- form state */
@@ -390,6 +400,14 @@
 
   /* ---------------------------------------------------------------- status */
 
+  function scheduleStatusRetry() {
+    if (state.statusRetryTimer) return;
+    state.statusRetryTimer = window.setTimeout(() => {
+      state.statusRetryTimer = null;
+      refreshStatus();
+    }, 10000);
+  }
+
   async function refreshStatus() {
     try {
       const response = await fetch('/api/moments/status', {
@@ -405,6 +423,7 @@
 
       if (Number.isFinite(status.maxUploadBytes) && status.maxUploadBytes > 0) {
         state.maxBytes = status.maxUploadBytes;
+        updateDropzoneHint();
       }
 
       if (Number.isFinite(status.cooldownMinutes) && status.cooldownMinutes > 0) {
@@ -412,6 +431,15 @@
       }
 
       state.apiAvailable = true;
+
+      if (state.statusRetryTimer) {
+        window.clearTimeout(state.statusRetryTimer);
+        state.statusRetryTimer = null;
+      }
+      if (state.statusAlertShown) {
+        state.statusAlertShown = false;
+        clearAlert();
+      }
 
       if (status.canUpload === false && status.nextAllowedAt) {
         startCooldown(new Date(status.nextAllowedAt).getTime(), status.reason);
@@ -422,9 +450,14 @@
       }
     } catch (error) {
       state.apiAvailable = false;
+      state.statusAlertShown = true;
+      // A single failed status check (flaky network, a cold start, a deploy
+      // in progress) must not brick the page until a manual reload: keep
+      // retrying in the background and re-enable the form on success.
       showAlert(
-        'The sharing service is not reachable right now. Check your connection and reload the page.'
+        'The sharing service is not reachable right now. You can still choose a photo — we will keep reconnecting automatically.'
       );
+      scheduleStatusRetry();
     } finally {
       updateSubmitState();
     }
@@ -450,8 +483,11 @@
     clearAlert();
 
     if (!state.apiAvailable) {
-      showAlert('The sharing service is not reachable right now. Please reload and try again.');
-      return;
+      await refreshStatus();
+      if (!state.apiAvailable) {
+        showAlert('The sharing service is not reachable right now. Please try again in a moment.');
+        return;
+      }
     }
 
     if (!state.file) {

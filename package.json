@@ -7,10 +7,10 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "test": "node --test tests/moments.test.js tests/email.test.js"
+    "test": "node --test tests/moments.test.js tests/email.test.js tests/vercel.test.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "keywords": [
     "labroute",
@@ -18,5 +18,8 @@
     "engineering",
     "lab-reports"
   ],
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@vercel/blob": "^2.8.2"
+  }
 }
