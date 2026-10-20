@@ -17,8 +17,12 @@ sends it for review. The photo is stored in the private pending area
 (`data/pending/` on a Node host, Vercel Blob on Vercel)
 and listed under **Pending uploads** on `dashboard.html`, where an admin can:
 
-- **Approve** — the file moves to `assets/gallery/moments/` and becomes **image 1**
-  of `content/gallery.json`. Every existing image shifts one place to the right.
+- **Approve** — the photo becomes **image 1** of the gallery; every existing
+  image shifts one place to the right. On a Node host it is moved to
+  `assets/gallery/moments/` and recorded in `content/gallery.json` on disk. On
+  Vercel it is copied to the connected Vercel Blob store and recorded in the
+  Blob copy of the gallery list, because the deployment's own files (and this
+  repository) are read-only to the running Function.
 - **Decline** — the file and its entry are deleted.
 
 Each visitor is held to **one upload every 30 minutes**. The cooldown is scoped
@@ -64,6 +68,15 @@ prefix (`labroute/state/*.json`, `labroute/pending/`, `labroute/gallery/`);
 `content/gallery.json` in the repo is only the seed shown until the first
 approval. See **Deploying to Vercel** below.
 
+**Approved photos are never written back into this Git repository.** A Vercel
+Function cannot write to the deployment it is running from, and this app has no
+GitHub token, so `assets/gallery/moments/` in the repo stays exactly as
+committed (the eight `gal-1` … `gal-8` originals). Every new photo is stored in
+external storage (Vercel Blob) and referenced from the Blob copy of
+`gallery.json`. If Blob is not connected, the only place left to write is the
+Function's `/tmp`, which is wiped on restart — see **Why did an approved photo
+disappear?** below.
+
 Run `npm test` to execute the integration suite (pending uploads, approval and
 decline, gallery ordering, per-visitor cooldowns, validation, admin
 authentication, the review queue, and the Vercel/Blob deployment path).
@@ -87,10 +100,11 @@ Admin addresses are read from `data/admins.json`; override them with
 
 ### Deploying to Vercel (labroute.vercel.app)
 
-The API runs on Vercel as a Function: `api/[...path].js` hands every `/api/*`
-request to the same handler as the local server (a plain static deployment
-never starts `server.js`, which is why `/api/moments/status` used to 404 and
-the upload page reported the sharing service as unreachable).
+The API runs on Vercel as a Function: `api/index.js` (plus the rewrites in
+`vercel.json`) hands every `/api/*` request to the same handler as the local
+server (a plain static deployment never starts `server.js`, which is why
+`/api/moments/status` used to 404 and the upload page reported the sharing
+service as unreachable).
 
 Two one-time dashboard steps make uploads **durable** on Vercel. Without
 them the API still works, but pending photos sit in a Function's temporary
@@ -107,8 +121,61 @@ them the API still works, but pending photos sit in a Function's temporary
    sessions and visitor cooldowns would appear to reset randomly.
 
 Then redeploy. Verify with <https://labroute.vercel.app/api/health>: it should
-report `"storage": "vercel-blob"` and `"secretConfigured": true`.
-`"storage": "ephemeral"` there means the temporary fallback is in use.
+report `"storage": "vercel-blob"`, `"durable": true`, and
+`"secretConfigured": true`.
+
+### Why did an approved photo disappear?
+
+Symptom: a photo appears at the front of the gallery right after approval, then
+is gone after a refresh a while later (or after the next deploy).
+
+Cause: `GET /api/health` reported `"storage": "ephemeral"`. Approved photos and
+the gallery manifest were written to the Function instance's `/tmp`, which
+belongs to that one instance. Once Vercel recycles it — or a new deployment
+replaces it — the photo and the manifest entry are gone. The eight original
+`gal-*` photos were never affected because they are real files committed to
+`assets/gallery/`, served by the deployment itself.
+
+Diagnose it in one request:
+
+```bash
+curl -s https://labroute.vercel.app/api/health
+```
+
+| Field | Meaning |
+| --- | --- |
+| `storage` | `vercel-blob` = durable. `ephemeral` = `/tmp`, approvals will vanish. `local` = a Node host's disk, durable. |
+| `durable` | `false` when approvals are temporary. The admin dashboard shows a red **Approvals are temporary** banner whenever this is false, and the approve endpoint says so in its response. |
+| `blob.credentials` | `false` when no Blob store is connected to this environment at all. |
+| `blob.hasStoreId` / `blob.hasOidcToken` | A store connected to the project but only for Preview shows `hasStoreId` without `hasOidcToken` (and no `hasReadWriteToken`) in Production. |
+| `blob.sdkAvailable` | `false` if `@vercel/blob` did not install into the Function. |
+
+`GET /api/gallery` also reports `source`: `storage` means the list came from
+Blob/disk, `seed` means storage had no manifest and the committed
+`content/gallery.json` was served instead. A gallery that shows only the
+original photos is usually `source: "seed"`.
+
+Fix: connect the Blob store to **Production** (not just Preview/Development), so
+`blob.credentials` becomes `true`, then redeploy and confirm
+`"storage": "vercel-blob"` / `"durable": true`. Photos approved after that are
+written to Blob and survive restarts, redeploys, and new Function instances.
+
+**Connecting a store is not retroactive.** Vercel captures environment
+variables into each deployment, so an already-running Production deployment
+keeps its old (credential-free) environment until a **new deployment** is
+created — push a commit, or use *Deployments → ⋯ → Redeploy*. Loading the site
+immediately after connecting a store therefore still shows
+`"storage": "ephemeral"`. If a redeploy is not possible, `MOMENTS_STORAGE=blob`
+forces the Blob path even when `BLOB_READ_WRITE_TOKEN` is not detected (the
+store must still be connected, or every request fails).
+
+Note that anything approved while the site was on `/tmp` cannot be recovered —
+those bytes were deleted with the instance. Ask visitors to re-upload.
+
+Approvals are also verified: `GalleryStore.add` reads the manifest back after
+writing it, and if the write cannot be confirmed the approval fails with an
+error (and the photo is moved back to pending) instead of reporting a success
+that later disappears.
 
 Notes:
 
