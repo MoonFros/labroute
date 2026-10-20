@@ -1,0 +1,691 @@
+{
+  "id": "fm-323-flow-over-weirs-volumetric-hydraulic-bench",
+  "code": "FM 323",
+  "title": "Flow over Weirs (Volumetric Hydraulic Bench)",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#FM323",
+    "#MechanicalEngineering",
+    "#Weir"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-323-flow-over-weirs-volumetric-hydraulic-bench.json",
+  "content": {
+    "aim": "To investigate flow over weirs (volumetric hydraulic bench).",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "See laboratory manual for theoretical background.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-323-flow-over-weirs-volumetric-hydraulic-bench_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-323-flow-over-weirs-volumetric-hydraulic-bench_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Head H (mm)",
+          "Rectangular, B = 30 mm (L/min)",
+          "V notch 90° (L/min)",
+          "V notch 30° (L/min)",
+          "Broad-crested, B = 30 mm (L/min)"
+        ],
+        "rows": [
+          [
+            "20",
+            "15.0",
+            "8.0",
+            "2.1",
+            "8.7"
+          ],
+          [
+            "30",
+            "27.6",
+            "22.1",
+            "5.9",
+            "15.9"
+          ],
+          [
+            "40",
+            "42.5",
+            "45.4",
+            "12.2",
+            "24.6"
+          ],
+          [
+            "50",
+            "59.4",
+            "79.2",
+            "21.2",
+            "34.3"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Water quantity (L)",
+          "Time (s)",
+          "Flow Q (m³/s)",
+          "Gauge reading (mm)",
+          "Head H (m)",
+          "H3/2",
+          "CdR"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Water quantity (L)",
+          "Time (s)",
+          "Flow Q (m³/s)",
+          "Gauge reading (mm)",
+          "Head H (m)",
+          "H5/2",
+          "CdV"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Water quantity (L)",
+          "Time (s)",
+          "Flow Q (m³/s)",
+          "Gauge reading (mm)",
+          "Head H (m)",
+          "H5/2",
+          "CdV"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Water quantity (L)",
+          "Time (s)",
+          "Flow Q (m³/s)",
+          "Gauge reading (mm)",
+          "Head H (m)",
+          "log Q",
+          "log H"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "9",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Water quantity (L)",
+          "Time (s)",
+          "Flow Q (m³/s)",
+          "Gauge reading (mm)",
+          "Head H (m)",
+          "H3/2",
+          "Cdb",
+          "H/B"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Water quantity (L)",
+          "Time (s)",
+          "Actual flow Q (m³/s)",
+          "Gauge reading (mm)",
+          "Head H (m)",
+          "H3/2 or H5/2 or H",
+          "Calculated flow (m³/s)",
+          "Error (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

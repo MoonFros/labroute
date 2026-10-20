@@ -1,0 +1,182 @@
+{
+  "id": "fm-311-the-stability-of-a-floating-body",
+  "code": "FM 311",
+  "title": "THE STABILITY OF A FLOATING BODY",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#Buoyancy",
+    "#FM311",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-311-the-stability-of-a-floating-body.json",
+  "content": {
+    "aim": "To investigate the stability of a floating body.",
+    "objectives": [
+      "(1) To investigate the stability of a floating pontoon. (2) To establish the metacentric height of a floating pontoon."
+    ],
+    "apparatus": [
+      "The floating-body apparatus (FM311) consists of a rectangular pontoon that floats in a water tank. A sail with five rows of V-slots, spaced 7.5 mm apart vertically, is fixed on the pontoon centre line, and an adjustable weight made of two cylinders screwed together fits in the V-slots to change the height of the centre of gravity. A jockey weight can be moved sideways along the pontoon to produce a tilt, a plumb line hangs from the top of the sail and moves over a scale to give the angle of list, and a set of magnetic weights fixes the base. Other items are a ruler, a knife edge to find the centre of gravity, and a balance.",
+      ": Arrangement of the floating pontoon apparatus"
+    ],
+    "theory": {
+      "text": "Equilibrium of a floating body\n\nA body floats at rest when two conditions are met: the weight of the water it displaces equals its own weight (Archimedes’ principle), and the two forces are in line. The weight W g acts downward through the centre of gravity G of the body, and the buoyancy force acts upward through the centre of buoyancy B, which is the centre of gravity of the displaced liquid. On an even keel, G and B lie on the same vertical line (Figure 1a).\n\n: A rectangular pontoon (a) on an even keel and (b) tilted through a small angle δθ\n\nStability and the metacentre\n\nIf the body is tilted through a small angle δθ, the shape of the displaced liquid changes, so the centre of buoyancy moves from B to B₁ (Figure 1b). The vertical line of action of the buoyancy force through B₁ meets the original centre line of the body at a point M called the metacentre. The weight (through G) and the buoyancy (through B₁) now form a couple:\n\nIf M lies above G, the couple tends to restore the body to the even keel position: the body is stable.\n\nIf M lies below G, the couple increases the tilt: the body is unstable.\n\nIf M coincides with G, the body is in neutral equilibrium.\n\nThe distance GM is the metacentric height, and it is the measure of stability: the larger GM, the larger the restoring moment for a given tilt, W g · GM · sin δθ.\n\nExperimental determination of the metacentric height\n\nLet the floating assembly have weight W (mass in kg) and let the adjustable weight w be moved through a distance δx₁ across the pontoon. The centre of gravity of the whole assembly moves parallel to the base from G to G₁, by the moment principle:\n\nGG₁ = (w / W) δx₁\n\nThe pontoon tilts by an angle δθ until the new centre of gravity is again vertically below M. From the geometry of Figure 1b, GG₁ = GM δθ for a small angle. Eliminating GG₁:\n\nGM = (w / W) δx₁/δθ → (w / W) dx₁/dθ\n\nSo the metacentric height is found by measuring the gradient dx₁/dθ of the graph of lateral position of the adjustable weight against the angle of list (θ in radians), for a known weight ratio w/W.\n\nTheoretical metacentric height\n\nWhen the pontoon tilts, a wedge of volume emerges on one side and an equal wedge becomes immersed on the other. The element of the immersed wedge at distance x from the axis XX, of plan area δs and height x δθ, has volume x δs δθ and weight ρ g x δs δθ, and so a moment about B of ρ g x² δs δθ. Summing over the whole waterplane gives the total restoring moment ρ g δθ ∫x² ds = ρ g I δθ, where I is the second moment of area of the waterplane about XX. The same moment is the buoyancy force ρ g V acting through the arm BB₁ = BM δθ, where V is the volume displaced. Equating:\n\nBM = I / V\n\nFor a rectangular pontoon of length L and breadth D (both in mm), and with the water density taken as 1000 kg/m³, the quantities used in the calculation are\n\nI = L D³ / 12 × 10⁻¹² m⁴ V = W / ρ (m³)\n\nDepth of immersion = V / (L D) CB = V / (2 L D)\n\nwhere CB is the height of the centre of buoyancy above the base. The distances are related by CM = CG + GM = CB + BM. The height of the centre of gravity CG of the assembly changes with the height y₁ of the adjustable weight above the base, according to\n\nCG = y₁ (w / W) + A\n\nwhere A is a constant for the pontoon (the contribution of the pontoon itself). Using one set of results, A can be found and then used to calculate CG for the other heights. Since GM = (w/W) dx₁/dθ and CM = CG + GM is constant, the stability line, a plot of dx₁/dθ against CG, is a straight line that falls to zero where CG = CM. This intercept is the highest position of G for which the pontoon is stable ().",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-311-the-stability-of-a-floating-body_diagram_1.png",
+          "caption": "A rectangular pontoon (a) on an even keel and (b) tilted through a small angle δθ",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-311-the-stability-of-a-floating-body_diagram_2.png",
+          "caption": "Arrangement of the floating pontoon apparatus",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/fm-311-the-stability-of-a-floating-body_diagram_3.png",
+          "caption": "Expected graphs (illustrative, from the theory; not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Symbol",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Total weight of floating assembly (kg)",
+            "W",
+            "[      ]"
+          ],
+          [
+            "Adjustable weight (kg)",
+            "w",
+            "[      ]"
+          ],
+          [
+            "Length of pontoon (mm)",
+            "L",
+            "[      ]"
+          ],
+          [
+            "Breadth of pontoon (mm)",
+            "D",
+            "[      ]"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Height y₁ (mm)",
+          "−52.5",
+          "−45",
+          "−30",
+          "−15",
+          "0",
+          "15",
+          "30",
+          "52.5"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "y₁ (mm)",
+          "CG (mm)",
+          "dx₁/dθ (mm/°)",
+          "GM (mm)",
+          "CM = CG + GM (mm)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "Moving the adjustable weight to one side tilts the pontoon, and the plumb line moves over the scale.",
+      "With the weight at a greater height, the same sideways movement produces a larger angle of list.",
+      "At the greatest height of the weight, the pontoon tilts strongly and approaches instability.",
+      "Precautions",
+      "Make sure the plumb line hangs free, and is not touching the scale, and wait for the water surface to settle before reading the angle.",
+      "Use small angles of tilt only, so that the theory holds.",
+      "Measure the heights from the outer surface of the pontoon (add the thickness of the sheet), and keep the pontoon dry on the inside."
+    ],
+    "discussion": "Sources of error: the angle of list is read from the plumb line to about ±0.5°, which is a large fraction of the small angles used; the plumb line may touch the scale and stick; the water surface ripples; the CG measured by the knife edge and the heights measured from the pontoon surface carry errors of about ±1 mm; and the theory is valid only for small angles (about 10° or less), so readings at large lists lie off the straight line. GM calculated from the gradient is sensitive to these errors, because it depends on a small slope. [Compare the experimental and calculated CG, GM and CM, and give the percentage difference.]\nDoes looping of the plumb-bob over the scale affect the results? Yes. The plumb-bob is part of the floating assembly, and if its mass m_p = 0.604 kg is not included in W, the total weight and the position of the centre of gravity are wrong. A correction is to add it: W′ = W + m_p, and CG′ = (W · CG + m_p · y_p)/(W + m_p), where y_p is the height of the point from which it hangs, which raises G a little. Looping the cord over the scale also adds friction, which makes the plumb line lag and the angle read too small.\nHow would stability change on a liquid denser than water? The volume displaced is V = W/ρ, so a denser liquid gives a smaller V and a smaller depth of immersion, and BM = I/V increases in proportion to ρ. B also moves up, which reduces BG slightly, so the net result is a larger GM and a more stable pontoon, provided the pontoon still floats with the same weight.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

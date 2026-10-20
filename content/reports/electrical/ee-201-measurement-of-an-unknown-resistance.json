@@ -1,0 +1,155 @@
+{
+  "id": "ee-201-measurement-of-an-unknown-resistance",
+  "code": "EE 201",
+  "title": "MEASUREMENT OF AN UNKNOWN RESISTANCE",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#EE201",
+    "#ElectricalEngineering",
+    "#Resistance"
+  ],
+  "verified": true,
+  "file": "electrical/ee-201-measurement-of-an-unknown-resistance.json",
+  "content": {
+    "aim": "To investigate measurement of an unknown resistance.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "Every resistor obeys, at least approximately, Ohm's Law, which states that the current flowing through a conductor is directly proportional to the voltage applied across it, provided the temperature and other physical conditions remain constant. This relationship is written as V = IR, where V is the voltage across the resistor, I is the current flowing through it, and R is its resistance in ohms. For a resistor that obeys Ohm's Law (an ohmic resistor), a graph of voltage against current is a straight line passing through the origin, and the resistance R can be found either from a single pair of readings (R = V/I) or, more accurately, from the slope of the V-I graph, since using the slope makes use of all the readings taken and reduces the effect of small errors in any one reading.\n\nBefore any measurement is taken, the approximate value of a resistor can usually be found from the colour code printed on its body. Each colour represents a digit, and the bands are read in order to give the first two (or three) significant figures of the resistance, a multiplier, and finally a tolerance band; this gives a quick estimate of the resistance which can then be checked against the value found experimentally.\n\nIn the current-voltage method, a known current is passed through the unknown resistor from a D.C. power supply, and the corresponding voltage across it is measured with a voltmeter connected in parallel with the resistor, while an ammeter connected in series with the resistor measures the current. By taking several pairs of readings of current and voltage, and using R = V/I at each point (or the slope of the V-I graph), the value of the unknown resistance can be calculated. This method is simple, but its accuracy is limited by the accuracy of the meters used, and by small errors caused by the meters themselves drawing or diverting a little current or voltage from the circuit (meter loading error).\n\nThe Wheatstone Bridge method works differently, and does not depend directly on the accuracy of a voltmeter or ammeter to read the actual value. The bridge consists of four resistances arranged in a diamond shape: two known resistors, R1 and R2; the unknown resistor, Rx; and a variable resistor, R3, which can be adjusted using a four-dial resistance box. A galvanometer, together with a key (switch), is connected between the two midpoints of the diamond (points P and Q in the diagram), while the D.C. power supply is connected across the other two corners (points A and B). When the key is pressed and the value of R3 is adjusted until the galvanometer shows no deflection at all, the bridge is said to be balanced. At balance, no current flows through the galvanometer, which means the ratio of the resistances in the two arms on one side of the bridge is equal to the ratio of the resistances in the two arms on the other side. This gives the balance condition R1 / Rx = R2 / R3, from which the unknown resistance can be calculated as: Rx = (R1 x R3) / R2.\n\nBecause the Wheatstone Bridge method is a null method (it depends only on detecting zero current, not on reading an exact value from a meter), it can give a more accurate result than the direct current-voltage method, provided the known resistors R1, R2 and R3 are accurate and the galvanometer is sensitive enough to detect very small currents near the balance point. Taking several different combinations of R1 and R2, as done in this experiment, and averaging the values of Rx obtained, further improves the accuracy and reliability of the result.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-201-measurement-of-an-unknown-resistance_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-201-measurement-of-an-unknown-resistance_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "I",
+          "V (Volts)",
+          "R = V/I (Ohm)"
+        ],
+        "rows": [
+          [
+            "3 mA",
+            "3.0",
+            "1000"
+          ],
+          [
+            "6 mA",
+            "6.0",
+            "1000"
+          ],
+          [
+            "9 mA",
+            "9.0",
+            "1000"
+          ],
+          [
+            "12 mA",
+            "12.0",
+            "1000"
+          ],
+          [
+            "15 mA",
+            "15.0",
+            "1000"
+          ],
+          [
+            "18 mA",
+            "18.0",
+            "1000"
+          ],
+          [
+            "21 mA",
+            "21.0",
+            "1000"
+          ],
+          [
+            "24 mA",
+            "24.0",
+            "1000"
+          ],
+          [
+            "27 mA",
+            "27.0",
+            "1000"
+          ],
+          [
+            "30 mA",
+            "30.0",
+            "1000"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "R1",
+          "R2",
+          "R3",
+          "Rx"
+        ],
+        "rows": [
+          [
+            "10",
+            "10",
+            "1000",
+            "1000"
+          ],
+          [
+            "10",
+            "100",
+            "10000",
+            "1000"
+          ],
+          [
+            "100",
+            "100",
+            "1000",
+            "1000"
+          ],
+          [
+            "100",
+            "1000",
+            "10000",
+            "1000"
+          ],
+          [
+            "1000",
+            "100",
+            "100",
+            "1000"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

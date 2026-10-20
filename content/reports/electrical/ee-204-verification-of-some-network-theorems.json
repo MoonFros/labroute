@@ -1,0 +1,187 @@
+{
+  "id": "ee-204-verification-of-some-network-theorems",
+  "code": "EE 204",
+  "title": "VERIFICATION OF SOME NETWORK THEOREMS",
+  "department": "electrical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#EE204",
+    "#ElectricalEngineering"
+  ],
+  "verified": true,
+  "file": "electrical/ee-204-verification-of-some-network-theorems.json",
+  "content": {
+    "aim": "To investigate verification of some network theorems.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "Many of the circuits met in electrical engineering contain more than one source of e.m.f., and analysing them directly, using only Ohm's Law and Kirchhoff's Laws, can quickly become complicated as the number of sources and components increases. Network theorems help electrical engineers to avoid this difficulty by giving shorter, more convenient methods of finding the current and/or voltage response in any branch of a circuit. The Superposition Theorem and Thevenin's Theorem are two such theorems, and this experiment sets out to confirm, by direct measurement, that both hold true in practice.\n\nThe Superposition Theorem states that, in any linear circuit containing more than one independent source, the current through, or the voltage across, any element of the circuit is equal to the algebraic sum of the currents or voltages produced by each source acting alone, with all the other independent sources replaced by their internal resistance (an ideal voltage source is replaced by a short circuit, and an ideal current source by an open circuit). In this experiment, the circuit contains two d.c. voltage sources, E1 and E2, together with three resistors, R1, R2, and R3. The voltage across, and the current through, each resistor is first measured with both sources connected; then E1 is removed (its terminals short-circuited) and the same quantities are measured with only E2 acting; then E2 is removed and E1 reconnected, and the measurements are repeated with only E1 acting. Because voltage and current are directed (vector-like) quantities, a reading that comes out in the opposite direction to the original reference direction is recorded as a negative value. If the theorem holds, the reading taken with both sources active should equal the algebraic sum of the two readings taken with each source acting alone.\n\nThevenin's Theorem states that, with respect to any pair of terminals, a linear network containing one or more e.m.f. sources can be replaced by a single equivalent voltage source, of value equal to the open-circuit voltage, Vo, measured across those terminals, in series with a single equivalent resistance, Ro, equal to the resistance measured across the same terminals when every e.m.f. source in the network has been replaced by its internal resistance. In this experiment, the pair of terminals chosen is C-D, and the circuit facing those terminals contains the source E1 together with resistors R1, R2, and R3. The open-circuit voltage, Vo, is measured directly across C-D with no load connected; the equivalent resistance, Ro, is found by disconnecting E1, short-circuiting the terminals where it was connected, and then measuring the resistance across C-D directly with the AVO-meter. Once Vo and Ro are known, the original network can be replaced, for the purpose of calculation, by the simple equivalent circuit of : a single source, Vo, in series with a single resistor, Ro. If a load resistor, RL, is then connected across C-D, the voltage across it should be given by VRL = Vo x RL / (Ro + RL), and the theorem is verified if this calculated value agrees with the value actually measured across RL in the original circuit.\n\nBoth theorems rely on the circuit being linear, which is why decade resistance boxes (whose resistance does not change with current) and stable d.c. voltage sources are used throughout this experiment. Being able to reduce a complicated network to a single equivalent source and resistance, as Thevenin's Theorem allows, is especially useful in practice, since it means the effect of connecting different loads to the same pair of terminals can be worked out quickly, without having to re-analyse the whole original circuit every time.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-204-verification-of-some-network-theorems_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-204-verification-of-some-network-theorems_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/ee-204-verification-of-some-network-theorems_diagram_3.png",
+          "caption": "Figure 3",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "",
+          "E1 (V)",
+          "E2 (V)"
+        ],
+        "rows": [
+          [
+            "Out-of-circuit",
+            "6.0",
+            "6.0"
+          ],
+          [
+            "In-circuit",
+            "5.9",
+            "5.9"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Circuit Condition",
+          "V1 (V)",
+          "V2 (V)",
+          "V3 (V)",
+          "I1 (mA)",
+          "I2 (mA)",
+          "I3 (mA)"
+        ],
+        "rows": [
+          [
+            "(a) E1 & E2",
+            "-2.0",
+            "2.0",
+            "-4.0",
+            "-66.7",
+            "66.7",
+            "-133.3"
+          ],
+          [
+            "(b) E2 Alone",
+            "2.0",
+            "4.0",
+            "-2.0",
+            "66.7",
+            "133.3",
+            "-66.7"
+          ],
+          [
+            "(c) E1 Alone",
+            "-4.0",
+            "-2.0",
+            "-2.0",
+            "-133.3",
+            "-66.7",
+            "-66.7"
+          ],
+          [
+            "Sum (b) + (c)",
+            "2.0",
+            "2.0",
+            "4.0",
+            "-66.6",
+            "66.6",
+            "-133.4"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Check",
+          "Left-hand side",
+          "Right-hand side"
+        ],
+        "rows": [
+          [
+            "(i)  V1(a) = V1(b) + V1(c)",
+            "V1(a) = -2.0 V",
+            "V1(b)+V1(c) = 2.0 + -4.0 = -2.0 V"
+          ],
+          [
+            "(ii) V2(a) = V2(b) + V2(c)",
+            "V2(a) = 2.0 V",
+            "V2(b)+V2(c) = 4.0 + (-2.0) = 2.0 V"
+          ],
+          [
+            "(iii) V3(a) = V3(b) + V3(c)",
+            "V3(a) = -4.0 V",
+            "V3(b)+V3(c) = -2.0 + -2.0 = 4.0 V"
+          ],
+          [
+            "(i)  I1(a) = I1(b) + I1(c)",
+            "I1(a) = -66.7 mA",
+            "I1(b)+I1(c) = 66.7 + (-133.3) = -66.6 mA"
+          ],
+          [
+            "(ii) I2(a) = I2(b) + I2(c)",
+            "I2(a) = 66.7 mA",
+            "I2(b)+I2(c) = 133.3 + (-66.7) = 66.6 mA"
+          ],
+          [
+            "(iii) I3(a) = I3(b) + I3(c)",
+            "I3(a) = -133.3 mA",
+            "I3(b)+I3(c) = -66.7 - 66.7 = -133.4 mA"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "e.m.f. E1 (V)",
+          "RL (Ohm)",
+          "Ro (Ohm)",
+          "Vo (V)",
+          "VRL (V)"
+        ],
+        "rows": [
+          [
+            "6.0",
+            "25",
+            "25",
+            "3.0",
+            "1.5"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

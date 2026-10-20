@@ -765,5 +765,728 @@
     ],
     "file": "production/fs-301-foundry-practice-green-sand-moulds-from-solid-and-split-patterns.json",
     "verified": true
+  },
+  {
+    "id": "ee-201-measurement-of-an-unknown-resistance",
+    "code": "EE 201",
+    "title": "MEASUREMENT OF AN UNKNOWN RESISTANCE",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#EE201",
+      "#ElectricalEngineering",
+      "#Resistance"
+    ],
+    "file": "electrical/ee-201-measurement-of-an-unknown-resistance.json",
+    "verified": true
+  },
+  {
+    "id": "ee-202-measurement-of-capacitance",
+    "code": "EE 202",
+    "title": "MEASUREMENT OF CAPACITANCE",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Capacitance",
+      "#EE202",
+      "#ElectricalEngineering"
+    ],
+    "file": "electrical/ee-202-measurement-of-capacitance.json",
+    "verified": true
+  },
+  {
+    "id": "ee-203-measurement-of-inductance",
+    "code": "EE 203",
+    "title": "MEASUREMENT OF INDUCTANCE",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#EE203",
+      "#ElectricalEngineering",
+      "#Inductance"
+    ],
+    "file": "electrical/ee-203-measurement-of-inductance.json",
+    "verified": true
+  },
+  {
+    "id": "ee-204-verification-of-some-network-theorems",
+    "code": "EE 204",
+    "title": "VERIFICATION OF SOME NETWORK THEOREMS",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#EE204",
+      "#ElectricalEngineering"
+    ],
+    "file": "electrical/ee-204-verification-of-some-network-theorems.json",
+    "verified": true
+  },
+  {
+    "id": "ee-205-the-oscilloscope",
+    "code": "EE 205",
+    "title": "THE OSCILLOSCOPE",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#EE205",
+      "#ElectricalEngineering",
+      "#Oscilloscope"
+    ],
+    "file": "electrical/ee-205-the-oscilloscope.json",
+    "verified": true
+  },
+  {
+    "id": "ee-206-the-single-phase-transformer",
+    "code": "EE 206",
+    "title": "THE SINGLE PHASE TRANSFORMER",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#EE206",
+      "#ElectricalEngineering",
+      "#Transformer"
+    ],
+    "file": "electrical/ee-206-the-single-phase-transformer.json",
+    "verified": true
+  },
+  {
+    "id": "ee-207-the-d-c-generator",
+    "code": "EE 207",
+    "title": "THE D.C. GENERATOR",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#EE207",
+      "#ElectricalEngineering"
+    ],
+    "file": "electrical/ee-207-the-d-c-generator.json",
+    "verified": true
+  },
+  {
+    "id": "ee-208-d-c-motor",
+    "code": "EE 208",
+    "title": "D.C. MOTOR",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#EE208",
+      "#ElectricalEngineering"
+    ],
+    "file": "electrical/ee-208-d-c-motor.json",
+    "verified": true
+  },
+  {
+    "id": "ee-209-three-phase-ac-circuits",
+    "code": "EE 209",
+    "title": "Three-Phase AC Circuits",
+    "department": "electrical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#EE209",
+      "#ElectricalEngineering",
+      "#ThreePhase"
+    ],
+    "file": "electrical/ee-209-three-phase-ac-circuits.json",
+    "verified": true
+  },
+  {
+    "id": "ee-215-the-simple-resistive-fan-regulator",
+    "code": "EE 215",
+    "title": "The Simple Resistive Fan Regulator",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#EE215",
+      "#ElectricalEngineering",
+      "#FanRegulator"
+    ],
+    "file": "electrical/ee-215-the-simple-resistive-fan-regulator.json",
+    "verified": true
+  },
+  {
+    "id": "eee-212-response-of-circuits-to-square-wave-voltages",
+    "code": "EEE 212",
+    "title": "Response of Circuits to Square Wave Voltages",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#EEE212",
+      "#ElectricalEngineering",
+      "#SquareWave"
+    ],
+    "file": "electrical/eee-212-response-of-circuits-to-square-wave-voltages.json",
+    "verified": true
+  },
+  {
+    "id": "eee-213-phasor-diagrams",
+    "code": "EEE 213",
+    "title": "Phasor Diagrams",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#EEE213",
+      "#ElectricalEngineering",
+      "#PhasorDiagrams"
+    ],
+    "file": "electrical/eee-213-phasor-diagrams.json",
+    "verified": true
+  },
+  {
+    "id": "eee-214-maximum-power-transfer",
+    "code": "EEE 214",
+    "title": "Maximum Power Transfer",
+    "department": "electrical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#EEE214",
+      "#ElectricalEngineering",
+      "#PowerTransfer"
+    ],
+    "file": "electrical/eee-214-maximum-power-transfer.json",
+    "verified": true
+  },
+  {
+    "id": "am-211-am-211-friction-experiment",
+    "code": "AM 211",
+    "title": "AM 211 FRICTION EXPERIMENT",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM211",
+      "#Friction",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-211-am-211-friction-experiment.json",
+    "verified": true
+  },
+  {
+    "id": "am-312-the-slotted-crank-quick-return-mechanism",
+    "code": "AM 312",
+    "title": "THE SLOTTED CRANK QUICK RETURN MECHANISM",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM312",
+      "#CrankMechanism",
+      "#MechanicalEngineering",
+      "#Mechanism",
+      "#QuickReturn"
+    ],
+    "file": "mechanical/am-312-the-slotted-crank-quick-return-mechanism.json",
+    "verified": true
+  },
+  {
+    "id": "am-315-motorized-gyroscope",
+    "code": "AM 315",
+    "title": "MOTORIZED GYROSCOPE",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM315",
+      "#Gyroscope",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-315-motorized-gyroscope.json",
+    "verified": true
+  },
+  {
+    "id": "am-317-universal-governor-apparatus",
+    "code": "AM 317",
+    "title": "UNIVERSAL GOVERNOR APPARATUS",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM317",
+      "#Governor",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-317-universal-governor-apparatus.json",
+    "verified": true
+  },
+  {
+    "id": "am-318-torsional-oscillation",
+    "code": "AM 318",
+    "title": "TORSIONAL OSCILLATION",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM318",
+      "#MechanicalEngineering",
+      "#Torsion"
+    ],
+    "file": "mechanical/am-318-torsional-oscillation.json",
+    "verified": true
+  },
+  {
+    "id": "am-319-static-and-dynamic-balancing-of-a-rotor",
+    "code": "AM 319",
+    "title": "STATIC AND DYNAMIC BALANCING OF A ROTOR",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM319",
+      "#MechanicalEngineering",
+      "#RotorBalancing"
+    ],
+    "file": "mechanical/am-319-static-and-dynamic-balancing-of-a-rotor.json",
+    "verified": true
+  },
+  {
+    "id": "am-321a-acceleration-of-a-geared-system",
+    "code": "AM 321A",
+    "title": "ACCELERATION OF A GEARED SYSTEM",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM321A",
+      "#Gears",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-321a-acceleration-of-a-geared-system.json",
+    "verified": true
+  },
+  {
+    "id": "am-321b-mechanical-efficiency-of-a-gear-train",
+    "code": "AM 321B",
+    "title": "MECHANICAL EFFICIENCY OF A GEAR TRAIN",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM321B",
+      "#Gears",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-321b-mechanical-efficiency-of-a-gear-train.json",
+    "verified": true
+  },
+  {
+    "id": "am-322-pivot-friction-experiment",
+    "code": "AM 322",
+    "title": "PIVOT FRICTION EXPERIMENT",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM322",
+      "#Friction",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-322-pivot-friction-experiment.json",
+    "verified": true
+  },
+  {
+    "id": "am-323-plate-clutch-friction-experiment",
+    "code": "AM 323",
+    "title": "PLATE CLUTCH FRICTION EXPERIMENT",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM323",
+      "#Clutch",
+      "#Friction",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-323-plate-clutch-friction-experiment.json",
+    "verified": true
+  },
+  {
+    "id": "am-324-the-geneva-wheel",
+    "code": "AM 324",
+    "title": "THE GENEVA WHEEL",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM324",
+      "#GenevaWheel",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-324-the-geneva-wheel.json",
+    "verified": true
+  },
+  {
+    "id": "am-326-mass-on-a-spring-a-effect-of-spring-mass-ii-stiffness-of-helical-springs",
+    "code": "AM 326",
+    "title": "MASS ON A SPRING (A: Effect of Spring Mass; II: Stiffness of Helical Springs)",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM326",
+      "#MechanicalEngineering",
+      "#Springs"
+    ],
+    "file": "mechanical/am-326-mass-on-a-spring-a-effect-of-spring-mass-ii-stiffness-of-helical-springs.json",
+    "verified": true
+  },
+  {
+    "id": "am-327-energy-of-a-flywheel",
+    "code": "AM 327",
+    "title": "ENERGY OF A FLYWHEEL",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM327",
+      "#Flywheel",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-327-energy-of-a-flywheel.json",
+    "verified": true
+  },
+  {
+    "id": "am-328-calibration-of-a-transmission-dynamometer",
+    "code": "AM 328",
+    "title": "CALIBRATION OF A TRANSMISSION DYNAMOMETER",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#AM328",
+      "#Dynamometer",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-328-calibration-of-a-transmission-dynamometer.json",
+    "verified": true
+  },
+  {
+    "id": "ela-301-linear-heat-conduction-in-a-metal-bar",
+    "code": "ELA 301",
+    "title": "Linear Heat Conduction in a Metal Bar",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#ELA301",
+      "#HeatConduction",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/ela-301-linear-heat-conduction-in-a-metal-bar.json",
+    "verified": true
+  },
+  {
+    "id": "fm-311-the-stability-of-a-floating-body",
+    "code": "FM 311",
+    "title": "THE STABILITY OF A FLOATING BODY",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Buoyancy",
+      "#FM311",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/fm-311-the-stability-of-a-floating-body.json",
+    "verified": true
+  },
+  {
+    "id": "fm-312-impact-of-a-jet",
+    "code": "FM 312",
+    "title": "Impact of a Jet",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FM312",
+      "#ImpactTest",
+      "#JetImpact",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/fm-312-impact-of-a-jet.json",
+    "verified": true
+  },
+  {
+    "id": "fm-314-hydrostatic-experiment-part-1",
+    "code": "FM 314",
+    "title": "HYDROSTATIC EXPERIMENT - Part 1",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FM314",
+      "#Hydrostatic",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/fm-314-hydrostatic-experiment-part-1.json",
+    "verified": true
+  },
+  {
+    "id": "fm-314-hydrostatic-experiment-part-2",
+    "code": "FM 314",
+    "title": "HYDROSTATIC EXPERIMENT - Part 2",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FM314",
+      "#Hydrostatic",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/fm-314-hydrostatic-experiment-part-2.json",
+    "verified": true
+  },
+  {
+    "id": "fm-321-vortex-flow",
+    "code": "FM 321",
+    "title": "VORTEX FLOW",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FM321",
+      "#MechanicalEngineering",
+      "#VortexFlow"
+    ],
+    "file": "mechanical/fm-321-vortex-flow.json",
+    "verified": true
+  },
+  {
+    "id": "fm-322-pipe-flow-losses-experiment",
+    "code": "FM 322",
+    "title": "PIPE FLOW LOSSES EXPERIMENT",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FM322",
+      "#MechanicalEngineering",
+      "#PipeFlow"
+    ],
+    "file": "mechanical/fm-322-pipe-flow-losses-experiment.json",
+    "verified": true
+  },
+  {
+    "id": "fm-323-discharge-over-a-weir-gravimetric-hydraulic-bench",
+    "code": "FM 323",
+    "title": "DISCHARGE OVER A WEIR (GRAVIMETRIC HYDRAULIC BENCH)",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FM323",
+      "#MechanicalEngineering",
+      "#Weir"
+    ],
+    "file": "mechanical/fm-323-discharge-over-a-weir-gravimetric-hydraulic-bench.json",
+    "verified": true
+  },
+  {
+    "id": "fm-323-flow-over-weirs-volumetric-hydraulic-bench",
+    "code": "FM 323",
+    "title": "Flow over Weirs (Volumetric Hydraulic Bench)",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#FM323",
+      "#MechanicalEngineering",
+      "#Weir"
+    ],
+    "file": "mechanical/fm-323-flow-over-weirs-volumetric-hydraulic-bench.json",
+    "verified": true
+  },
+  {
+    "id": "fm-325-bernoulli-s-theorem",
+    "code": "FM 325",
+    "title": "Bernoulli's Theorem",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Bernoulli",
+      "#FM325",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/fm-325-bernoulli-s-theorem.json",
+    "verified": true
+  },
+  {
+    "id": "fm-326-channel-flow-spillway-and-hydraulic-jump",
+    "code": "FM 326",
+    "title": "Channel Flow (Spillway and Hydraulic Jump)",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#ChannelFlow",
+      "#FM326",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/fm-326-channel-flow-spillway-and-hydraulic-jump.json",
+    "verified": true
+  },
+  {
+    "id": "ht-linear-heat-conduction-thermal-conductivity-of-a-metal-bar",
+    "code": "HT",
+    "title": "LINEAR HEAT CONDUCTION: THERMAL CONDUCTIVITY OF A METAL BAR",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Conductivity",
+      "#HT",
+      "#HeatConduction",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/ht-linear-heat-conduction-thermal-conductivity-of-a-metal-bar.json",
+    "verified": true
+  },
+  {
+    "id": "sm-311a-beam-deflection-simple-knife-edge-support",
+    "code": "SM 311A",
+    "title": "BEAM DEFLECTION (SIMPLE KNIFE-EDGE SUPPORT)",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#BeamDeflection",
+      "#MechanicalEngineering",
+      "#SM311A"
+    ],
+    "file": "mechanical/sm-311a-beam-deflection-simple-knife-edge-support.json",
+    "verified": true
+  },
+  {
+    "id": "sm-311b-sm311-b-deflection-of-a-cantilever",
+    "code": "SM 311B",
+    "title": "SM311(B): DEFLECTION OF A CANTILEVER",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Cantilever",
+      "#MechanicalEngineering",
+      "#SM311B"
+    ],
+    "file": "mechanical/sm-311b-sm311-b-deflection-of-a-cantilever.json",
+    "verified": true
+  },
+  {
+    "id": "sm-312-strut-test",
+    "code": "SM 312",
+    "title": "STRUT TEST",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#MechanicalEngineering",
+      "#SM312",
+      "#Strut"
+    ],
+    "file": "mechanical/sm-312-strut-test.json",
+    "verified": true
+  },
+  {
+    "id": "sm-321-shear-centre",
+    "code": "SM 321",
+    "title": "Shear Centre",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#MechanicalEngineering",
+      "#SM321",
+      "#ShearCentre"
+    ],
+    "file": "mechanical/sm-321-shear-centre.json",
+    "verified": true
+  },
+  {
+    "id": "sm-322-unsymmetrical-bending-of-beams",
+    "code": "SM 322",
+    "title": "Unsymmetrical Bending of Beams",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#BeamDeflection",
+      "#Bending",
+      "#MechanicalEngineering",
+      "#SM322"
+    ],
+    "file": "mechanical/sm-322-unsymmetrical-bending-of-beams.json",
+    "verified": true
+  },
+  {
+    "id": "sm-324-tensile-test",
+    "code": "SM 324",
+    "title": "Tensile Test",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#MechanicalEngineering",
+      "#SM324",
+      "#TensileTest"
+    ],
+    "file": "mechanical/sm-324-tensile-test.json",
+    "verified": true
+  },
+  {
+    "id": "sm-325-deflection-of-a-coil-spring",
+    "code": "SM 325",
+    "title": "Deflection of a Coil Spring",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#MechanicalEngineering",
+      "#SM325",
+      "#Springs"
+    ],
+    "file": "mechanical/sm-325-deflection-of-a-coil-spring.json",
+    "verified": true
+  },
+  {
+    "id": "td-311a-marcet-boiler",
+    "code": "TD 311A",
+    "title": "MARCET BOILER",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Boiler",
+      "#MechanicalEngineering",
+      "#TD311A"
+    ],
+    "file": "mechanical/td-311a-marcet-boiler.json",
+    "verified": true
+  },
+  {
+    "id": "td-323-conductivity-of-liquids-and-gases",
+    "code": "TD 323",
+    "title": "Conductivity of Liquids and Gases",
+    "department": "mechanical",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "#Conductivity",
+      "#MechanicalEngineering",
+      "#TD323"
+    ],
+    "file": "mechanical/td-323-conductivity-of-liquids-and-gases.json",
+    "verified": true
   }
 ]

@@ -1,0 +1,215 @@
+{
+  "id": "am-321b-mechanical-efficiency-of-a-gear-train",
+  "code": "AM 321B",
+  "title": "MECHANICAL EFFICIENCY OF A GEAR TRAIN",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM321B",
+    "#Gears",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-321b-mechanical-efficiency-of-a-gear-train.json",
+  "content": {
+    "aim": "To investigate mechanical efficiency of a gear train.",
+    "objectives": [
+      "To find the gearing efficiency between shafts A and B (and for the trains with shafts C and D meshed)."
+    ],
+    "apparatus": [
+      "The AM318 acceleration of a geared system apparatus () is used: parallel shafts A, B, C and D carrying spur gears and pinions that can be meshed in different combinations, with a drum on each of the shafts for the cords and weights, and weight hangers with slotted weights.",
+      ": Shafts A and B with cords, drums and weights (schematic)"
+    ],
+    "theory": {
+      "text": "Mechanical advantage, velocity ratio and efficiency\n\nA machine transmits a load by an effort. For a gear pair, the effort is the torque on the driving shaft A (T_A) and the load is the torque on the driven shaft B (T_B). The mechanical advantage is the ratio of the load to the effort:\n\nM.A. = Load (torque) / Effort (torque) = T_B / T_A\n\nThe velocity ratio is the ratio of the input speed to the output speed, which is fixed by the gear teeth (ω ∝ 1/teeth for meshed gears), so for gears of teeth N_A and N_B:\n\nV.R. = ω_A / ω_B = N_B / N_A\n\nFor an ideal pair with no losses, the output power equals the input power, so T_B ω_B = T_A ω_A and M.A. = V.R. In a real pair, friction between the teeth and in the bearings absorbs some power, so the mechanical efficiency is the fraction of the input power that appears at the output:\n\nη = M.A. / V.R. = T_B ω_B / (T_A ω_A) = Power out / Power in\n\nThe torques are found from the weights hanging on cords wrapped round drums on the two shafts. With a mass m_A on a drum of radius r_A and m_B on a drum of radius r_B:\n\nT_A = m_A g r_A T_B = m_B g r_B\n\nThe effort weight is increased from the balanced (static) condition until the system just starts to move at constant speed. At constant speed there is no angular acceleration, so the effort needed is the load plus the friction in the system. This gives the effort for the actual (lossy) machine, and the ideal effort is smaller, which gives an efficiency below 100%.\n\nEfficiency of several meshes\n\nWhen three or more shafts are meshed, the power passes through each mesh in turn, and the efficiencies multiply:\n\nη_total = η_AB × η_BC × η_CD\n\nFor example, three meshes with an efficiency of 98% each would give 0.98³ = 94%. The overall efficiency therefore falls as more gears are in the train.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-321b-mechanical-efficiency-of-a-gear-train_diagram_1.png",
+          "caption": "Shafts A and B with cords, drums and weights (schematic)",
+          "index": 1
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Shaft assembly",
+          "A",
+          "B"
+        ],
+        "rows": [
+          [
+            "Number of teeth on spur gear",
+            "90",
+            "—"
+          ],
+          [
+            "Number of teeth on pinion",
+            "—",
+            "30"
+          ],
+          [
+            "Diameter of drum (mm)",
+            "76.2",
+            "50.8"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Reading",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "rows": [
+          [
+            "Driving torque T_A (N·m)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Driven torque T_B (N·m)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Efficiency (%)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Reading",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "rows": [
+          [
+            "Driving torque T_A (N·m)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Driven torque T_B (N·m)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Efficiency (%)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Reading",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "rows": [
+          [
+            "Driving torque T_A (N·m)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Driven torque T_B (N·m)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Efficiency (%)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The effort weight needed to move the train was always larger than the ideal value, because of friction.",
+      "The efficiency fell as more meshes were added to the train.",
+      "Precautions",
+      "Check that all traces of oil have been removed from the places before use, where specified, and that the shafts turn freely.",
+      "Increase the weight slowly until the motion just starts, and make sure the speed is constant and slow; wind the cords evenly."
+    ],
+    "discussion": "Factors that influence the value of η. (1) Friction between the gear teeth, which depends on the tooth profile, surface finish, lubrication and the load; (2) friction in the shaft bearings, which is a larger fraction of the power at light loads, so η is lower for small loads; (3) the speed, because friction and churning of the lubricant rise with speed; (4) misalignment and the backlash between the gears; (5) the number of meshes in the train, since the efficiencies multiply; and (6) errors in the experiment: the weights are increased in steps, so the value at which the train ‘just starts to move’ is uncertain by one step, and the drum diameters and the cord thickness affect the radius. Because the torques are found from the weights, a 1% error in the radius of one drum causes 1% error in η. [Give your own estimate of the errors.]",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

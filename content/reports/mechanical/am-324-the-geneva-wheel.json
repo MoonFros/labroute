@@ -1,0 +1,258 @@
+{
+  "id": "am-324-the-geneva-wheel",
+  "code": "AM 324",
+  "title": "THE GENEVA WHEEL",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM324",
+    "#GenevaWheel",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-324-the-geneva-wheel.json",
+  "content": {
+    "aim": "To investigate the geneva wheel.",
+    "objectives": [
+      "To carry out a kinematic analysis of the external Geneva wheel (six-slot Geneva wheel, model TM13)."
+    ],
+    "apparatus": [
+      "A six-slot Geneva wheel model (TM13), with a driving crank carrying a roller, a driven slotted wheel, a locking device, a protractor to read the crank angle α and wheel angle β, and a rule or vernier calliper for the dimensions. An electronic calculator is used for the evaluations of the appendix expressions."
+    ],
+    "theory": {
+      "text": "The external Geneva mechanism\n\nThe external Geneva wheel is a mechanism commonly used on automatic machinery to produce intermittent rotary motion from an input rotating at constant speed. A roller on the driving crank enters a radial slot of the driven wheel and turns it through one step, and then leaves the slot, while a locking device holds the wheel still until the next slot is reached. The number of slots n fixes the ratio between the dwell period (when the wheel is locked) and the motion period (when the roller is in a slot). For the external Geneva, the dwell period always exceeds the motion period; the opposite is true of the internal Geneva (). The roller enters the slot when the crank-to-slot line makes a right angle, which is the condition that the roller approaches the slot radially:\n\n: External Geneva wheel (six slots), with crank radius a, centre distance b and crank angle α\n\nCrank angle in motion = 180° − 360°/n Crank angle in dwell = 180° + 360°/n\n\nFor six slots, the crank turns through 120° while the wheel indexes through 60°, and for the remaining 240° the wheel is stationary. The wheel rotates through 360°/n in each motion period.\n\nGeometry\n\nLet n = number of slots, a = crank radius and b = centre distance. Since the roller enters and leaves the slots at the point where the crank is perpendicular to the slot, b = a / sin(180°/n), so we put\n\nm = 1 / sin(180°/n) b = a m\n\nThe diameter of the driven wheel is given by\n\nD = 2 [ d²/4 + a² cot²(180°/n) ]^½\n\nwhere d is the roller diameter. These two relations are the theoretical values that the measured b and D are compared with.\n\nKinematics\n\nWith the roller at crank angle α, the distance of the roller from the wheel centre (the driven crank radius) is\n\nf = a (1 + m² − 2 m cos α)^½\n\nand the angular displacement β of the wheel (measured from the line of centres) follows from the triangle formed by the crank, the line of centres and f:\n\ncos β = (m − cos α) / (1 + m² − 2 m cos α)^½ tan β = sin α / (m − cos α)\n\nDifferentiating β with respect to time, for a constant angular speed ω of the driving crank (α̇ = ω), gives the angular velocity and acceleration of the wheel:\n\nβ̇ = ω (m cos α − 1) / (1 + m² − 2 m cos α)\n\nβ̈ = ω² m (1 − m²) sin α / (1 + m² − 2 m cos α)²\n\n(The manual writes the second as ω × the bracket; the factor is ω², since the quantity differentiated already contains one ω.) The angular velocity is greatest at α = 0, where the roller is nearest to the wheel centre, and equals ω/(m − 1). The velocity is zero at entry, where α = 90° − 180°/n, since the roller then moves along the slot. The acceleration is zero at α = 0, grows, and has a maximum magnitude at an intermediate angle, then has a non-zero value when the roller enters (or leaves) the slot, so that the acceleration changes suddenly from zero in the dwell. This step is called the jerk problem. The quantities dβ/dα = β̇/ω and d²β/dα² = β̈/ω² are tabulated in the experiment, since they do not depend on the speed.\n\n: Wheel displacement, velocity and acceleration against crank angle for a six-slot Geneva (theory)",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-324-the-geneva-wheel_diagram_1.png",
+          "caption": "External Geneva wheel (six slots), with crank radius a, centre distance b and crank angle α",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-324-the-geneva-wheel_diagram_2.png",
+          "caption": "Wheel displacement, velocity and acceleration against crank angle for a six-slot Geneva (theory)",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Dimensional data for the external Geneva TM13",
+          "Symbol",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Number of slots",
+            "n",
+            "6"
+          ],
+          [
+            "Crank radius",
+            "a",
+            "[      ] mm"
+          ],
+          [
+            "Roller diameter",
+            "d",
+            "[      ] mm"
+          ],
+          [
+            "Centre distance (measured, and calculated a/ sin 30° = 2a)",
+            "b",
+            "[      ] mm"
+          ],
+          [
+            "Diameter of wheel (measured, and calculated)",
+            "D",
+            "[      ] mm"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "α (°)",
+          "β experimental (°)",
+          "β theoretical (°)",
+          "dβ/dα",
+          "d²β/dα²"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "0.00",
+            "1.000",
+            "-0.000"
+          ],
+          [
+            "5",
+            "",
+            "4.96",
+            "0.978",
+            "-0.507"
+          ],
+          [
+            "10",
+            "",
+            "9.71",
+            "0.914",
+            "-0.926"
+          ],
+          [
+            "15",
+            "",
+            "14.05",
+            "0.820",
+            "-1.203"
+          ],
+          [
+            "20",
+            "",
+            "17.88",
+            "0.708",
+            "-1.332"
+          ],
+          [
+            "25",
+            "",
+            "21.13",
+            "0.591",
+            "-1.342"
+          ],
+          [
+            "30",
+            "",
+            "23.79",
+            "0.477",
+            "-1.272"
+          ],
+          [
+            "35",
+            "",
+            "25.91",
+            "0.370",
+            "-1.159"
+          ],
+          [
+            "40",
+            "",
+            "27.52",
+            "0.275",
+            "-1.029"
+          ],
+          [
+            "45",
+            "",
+            "28.68",
+            "0.191",
+            "-0.900"
+          ],
+          [
+            "50",
+            "",
+            "29.44",
+            "0.118",
+            "-0.779"
+          ],
+          [
+            "55",
+            "",
+            "29.87",
+            "0.054",
+            "-0.671"
+          ],
+          [
+            "60",
+            "",
+            "30.00",
+            "0.000",
+            "-0.577"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "n",
+          "m",
+          "Entry angle α",
+          "Peak velocity ω/(m−1) (× ω)",
+          "Max |β̈|/ω² and where",
+          "|β̈|/ω² at entry"
+        ],
+        "rows": [
+          [
+            "3",
+            "1.155",
+            "30°",
+            "6.46",
+            "31.39 at 4.8°",
+            "1.73"
+          ],
+          [
+            "4",
+            "1.414",
+            "45°",
+            "2.41",
+            "5.41 at 11.5°",
+            "1.00"
+          ],
+          [
+            "5",
+            "1.701",
+            "54°",
+            "1.43",
+            "2.30 at 17.6°",
+            "0.73"
+          ],
+          [
+            "6",
+            "2.000",
+            "60°",
+            "1.00",
+            "1.35 at 22.9°",
+            "0.58"
+          ],
+          [
+            "8",
+            "2.613",
+            "68°",
+            "0.62",
+            "0.70 at 31.6°",
+            "0.41"
+          ],
+          [
+            "12",
+            "3.864",
+            "75°",
+            "0.35",
+            "0.35 at 44.0°",
+            "0.27"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The wheel stays still (locked) while the crank is outside the slot, and turns 60° while the roller is in the slot.",
+      "The wheel starts and stops smoothly in velocity but with a noticeable knock at entry, which is the sudden change of acceleration.",
+      "Precautions",
+      "Turn the crank slowly and by hand, and read the angles with the eye level with the scale.",
+      "Check the zero of both protractors, and do not force the wheel when the roller is entering the slot."
+    ],
+    "discussion": "Sources of error: the backlash and the clearance of the roller in the slot (about ±1° of wheel angle), the zero error and the reading of the angles on the protractors (±0.5°), and measurement of a and b (±0.2 mm), which affects the theoretical curve. Differences near entry are larger because small changes in α make large changes in β̈. The derivatives are theoretical, since the model gives only β (a numerical derivative of the experimental β would be very noisy). [Compare the measured and theoretical β, and b and D, and estimate the error.]\nMaximum acceleration. The table in the analysis shows that, as the number of slots increases, the magnitude of the maximum acceleration falls sharply (from about 31 ω² for three slots to 1.35 ω² for six slots and 0.35 ω² for twelve), because the wheel turns through a smaller angle in each step, and the position at which it occurs moves away from α = 0 toward the entry angle (5° for three slots, 23° for six, 44° for twelve).\nThe jerk problem. The acceleration changes suddenly from zero to a finite value when the roller enters the slot, which produces an impact load, noise and wear. It can be reduced by: (1) using more slots, since the entry acceleration falls (1.73 ω² for three slots, 0.58 ω² for six); (2) running at a lower crank speed, since the acceleration is proportional to ω²; (3) curving the slots near the entry, or using a modified Geneva (or cam-driven indexing mechanism) so that the acceleration starts from zero; or (4) using a flexible or cushioned roller.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

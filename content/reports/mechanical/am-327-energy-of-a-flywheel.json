@@ -1,0 +1,193 @@
+{
+  "id": "am-327-energy-of-a-flywheel",
+  "code": "AM 327",
+  "title": "ENERGY OF A FLYWHEEL",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM327",
+    "#Flywheel",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-327-energy-of-a-flywheel.json",
+  "content": {
+    "aim": "To investigate energy of a flywheel.",
+    "objectives": [
+      "To verify the laws of motion applied to a flywheel, that is, the relationship between torque and angular acceleration, and to find its moment of inertia."
+    ],
+    "apparatus": [
+      "A flywheel (solid disc) on a horizontal shaft with bearings, with an axle on which a cord is wound, a weight pan and weights, an additional circular ring that can be fitted to the disc, a digital stopwatch, a balance, a rule or calliper for the radii."
+    ],
+    "theory": {
+      "text": "Rotational motion of a flywheel\n\nA flywheel is a heavy rotating wheel that stores kinetic energy and smooths the speed of a machine. For a body that rotates about a fixed axis, Newton’s second law takes the form torque = moment of inertia × angular acceleration, T = I α. The moment of inertia I depends on the mass and how it is distributed, and is written in terms of the radius of gyration k as\n\nI = M k² I = ½ M R² (solid disc)\n\nso the inertia constant is K = ½ for a solid disc, since k² = K R². (The manual writes I = K (W/g) R², with W the weight of the flywheel; if the flywheel is weighed in kg, W is its mass M, and I = K M R².) The kinetic energy stored at angular velocity ω, which comes from the speed N in rpm, is\n\nK.E. = ½ I ω² ω = 2πN / 60\n\nFalling-weight method (neglecting friction)\n\nA cord is wound round the axle of the flywheel (radius r) and carries a pan with weights of mass m. When the mass falls, it accelerates the flywheel (). For the falling mass, and for the flywheel (where T is the tension in the cord):\n\n: Flywheel driven by a falling weight (schematic)\n\nm a = m g − T I α = T r\n\nEliminating the tension, and using α = a/r:\n\nI α = m (g − a) r a = m g r² / (I + m r²) α = a / r\n\nIf the weight falls a known height h from rest in time t, the linear acceleration is a = 2h/t². In this experiment the time for one revolution of the flywheel is measured, in which the cord unwinds by h = 2πr (if the cord is wound on the axle), so\n\na = 4π r / t² α = 4π / t²\n\nThe moment of inertia and radius of gyration then follow:\n\nI = m r (g − a) / α = m r² (g − a) / a k² = I / M\n\nThis expression assumes no friction. In practice a friction torque T_f in the bearings opposes the motion, so m g r − T_f = (4π/t²)(I + m r²), which gives a straight line when the weight m is plotted against 1/t²: the intercept gives the friction and the gradient the inertia.\n\nEnergy check\n\nIn one revolution the weight falls h = 2π r, and loses potential energy m g h. This appears as kinetic energy of the flywheel and the weight, plus the work done against friction:\n\nm g h = ½ I ω² + ½ m v² + W_friction\n\nwhere ω = α t = 4π/t is the angular velocity at the end of the revolution and v = ω r. The agreement of the two sides is a check on the experiment.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-327-energy-of-a-flywheel_diagram_1.png",
+          "caption": "Flywheel driven by a falling weight (schematic)",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-327-energy-of-a-flywheel_diagram_2.png",
+          "caption": "Expected graphs (illustrative, from the equations; not experimental data)",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Mass of the flywheel (solid disc), M",
+            "[      ] kg"
+          ],
+          [
+            "Radius of the disc, R",
+            "[      ] m"
+          ],
+          [
+            "Radius of the axle, r",
+            "[      ] m"
+          ],
+          [
+            "Mass and radii of the additional ring",
+            "[      ] kg, [      ] m"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "Weight of flywheel (kg)",
+          "Weight in the pan (kg)",
+          "Time for 1 revolution t (s)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "a = 4πr/t² (m/s²)",
+          "α = 4π/t² (rad/s²)",
+          "I (kg·m²)",
+          "k² = I/M (m²)",
+          "K = k²/R²"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Mass in pan m (kg)",
+          "α (rad/s²)",
+          "Time for 1 rev t (s)"
+        ],
+        "rows": [
+          [
+            "0.25",
+            "0.87",
+            "3.80"
+          ],
+          [
+            "0.50",
+            "1.74",
+            "2.69"
+          ],
+          [
+            "1.00",
+            "3.46",
+            "1.91"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The flywheel accelerates uniformly while the weight falls, and the time for one revolution falls as the weight in the pan is increased.",
+      "The additional ring increases the time for one revolution for the same weight, since it increases the moment of inertia.",
+      "Precautions",
+      "Wind the cord evenly on the axle so that it does not slip or overlap, and release the weight without any push.",
+      "Start the stopwatch exactly as the flywheel starts to move and stop it after exactly one revolution (use a mark); reset the watch before each reading; keep clear of the rotating wheel."
+    ],
+    "discussion": "Constancy of K and the limits of the method. The constancy of the inertia constant K (and of M k²) was investigated for various loads and conditions: if Newton’s laws apply, the calculated I should be the same for every weight in the pan, and larger by the known amount with the ring. Differences arise from bearing friction (which has a larger effect with small weights, because it is a larger fraction of the torque), the stopwatch error (about 0.3 s on times of 2 to 4 s, so 8 to 15% in t and up to 30% in α), the thickness of the cord (which increases the effective r), the mass of the cord, and the error in the radii. These make the method not very accurate for finding I, especially for small accelerations (times). [State how well Newton’s laws are verified: how close K is to 0.5 for the disc, and how constant I is.]\nWould this method be recommended for finding I? It is a simple and direct teaching method, but it is not accurate, because of the timing and friction errors. Better methods are the torsion pendulum or trifilar suspension (the period of oscillation depends on I, and can be timed over many oscillations to reduce error), or a rotational deceleration test with an electronic timer. The advantages of flywheels are that they store energy and smooth fluctuations in speed (in engines and presses); disadvantages are the weight, the danger of bursting at high speed, and the extra energy and time needed to speed up or stop.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

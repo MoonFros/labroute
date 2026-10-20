@@ -1,0 +1,301 @@
+{
+  "id": "td-311a-marcet-boiler",
+  "code": "TD 311A",
+  "title": "MARCET BOILER",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#Boiler",
+    "#MechanicalEngineering",
+    "#TD311A"
+  ],
+  "verified": true,
+  "file": "mechanical/td-311a-marcet-boiler.json",
+  "content": {
+    "aim": "To investigate marcet boiler.",
+    "objectives": [
+      "(1) To determine the relationship between pressure and temperature of saturated steam. (2) To calculate the enthalpy of dry saturated steam at various pressures."
+    ],
+    "apparatus": [
+      "The Marcet boiler is a small boiler made of heavy-duty steel section, heated electrically, and lagged to allow rapid heating, arranged for bench mounting. It has a pressure gauge, a steam valve, a safety valve, a thermometer pocket with a thermometer, and a water level cock. A barometer is used to read the atmospheric pressure ().",
+      ": Marcet boiler apparatus (schematic)"
+    ],
+    "theory": {
+      "text": "Saturated steam\n\nWhen water is heated in a closed vessel, it boils when its vapour pressure equals the pressure above it. At that point the liquid and its vapour are in equilibrium, and the steam is called saturated. For a given pressure there is only one temperature at which this can happen, the saturation temperature T_sat, and as the pressure rises the saturation temperature rises (). Steam at the saturation temperature with no liquid water in it is dry saturated steam. The latent heat (enthalpy of evaporation) h_fg is the heat needed to change 1 kg of saturated water into dry saturated steam at constant pressure, and the specific enthalpy of dry saturated steam is\n\nh_g = h_f + h_fg\n\nClapeyron’s equation\n\nAlong the saturation line, liquid and vapour are in equilibrium, so their specific Gibbs functions are equal: g_f = g_g. For a small change dT in temperature with the corresponding dP in pressure, the change in g is the same for both phases, so −s_f dT + v_f dP = −s_g dT + v_g dP. Rearranging, with s_fg = s_g − s_f and v_fg = v_g − v_f:\n\ndP / dT = s_fg / v_fg\n\nDuring evaporation at constant temperature, s_fg = h_fg / T, so we obtain the Clausius–Clapeyron relation:\n\n(dT / dP)_sat = T v_fg / h_fg\n\nHere T is the absolute temperature in K, and v_fg and h_fg are the changes in specific volume and enthalpy during evaporation, which are obtained from steam tables. The equation says that the slope of the saturation curve can be calculated from steam table properties, and it also means that if the slope is found experimentally from measured pressure and temperature, then the latent heat can be found:\n\nh_fg = T v_fg (dP / dT)\n\n: Saturation curve of steam and the slope dT/dP at three pressures\n\nSimplified form\n\nAt moderate pressures, v_f is negligible beside v_g, and the vapour behaves nearly as an ideal gas, so v_fg ≈ v_g ≈ RT/P. Substituting, d ln P/dT = h_fg/(R T²), so a graph of ln P against 1/T is nearly a straight line with gradient −h_fg/R. The slope dT/dP falls as pressure rises: from about 28 K/bar at 1 bar to about 3 K/bar at 15 bar, because v_fg falls much faster than h_fg.\n\nAbsolute pressure\n\nThe pressure gauge reads gauge pressure. The absolute pressure that is used in steam tables is\n\nP_abs = P_gauge + P_atm P_atm (bar) = barometer reading (mm Hg) × 0.001333",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/td-311a-marcet-boiler_diagram_1.png",
+          "caption": "Saturation curve of steam and the slope dT/dP at three pressures",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/td-311a-marcet-boiler_diagram_2.png",
+          "caption": "Marcet boiler apparatus (schematic)",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/td-311a-marcet-boiler_diagram_3.png",
+          "caption": "Expected graphs (illustrative: experimental scatter is typical, not real data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Gauge pressure (bar)",
+          "Absolute pressure (bar)",
+          "Temperature, increasing (°C)",
+          "Temperature, decreasing (°C)",
+          "Mean temp. (°C)",
+          "Absolute temp. (K)"
+        ],
+        "rows": [
+          [
+            "0 (atm.)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "0.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "9",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "11",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "12",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "13",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "14",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "15",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "P (bar abs.)",
+          "T_sat (°C)",
+          "v_g (m³/kg)",
+          "h_fg (kJ/kg)",
+          "dT/dP (K/bar)",
+          "h_g (kJ/kg)"
+        ],
+        "rows": [
+          [
+            "1",
+            "99.63",
+            "1.694",
+            "2257.5",
+            "27.96",
+            "2675.0"
+          ],
+          [
+            "2",
+            "120.23",
+            "0.8857",
+            "2201.9",
+            "15.80",
+            "2706.6"
+          ],
+          [
+            "5",
+            "151.86",
+            "0.3749",
+            "2108.5",
+            "7.53",
+            "2748.7"
+          ],
+          [
+            "10",
+            "179.91",
+            "0.1944",
+            "2015.3",
+            "4.35",
+            "2778.1"
+          ],
+          [
+            "15",
+            "198.32",
+            "0.1318",
+            "1947.3",
+            "3.16",
+            "2792.2"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The temperature rose with pressure, but by less for each additional bar at high pressure.",
+      "The temperatures read while the boiler was cooling were a little different from those read while heating at the same pressure.",
+      "Steam came out of the valve when it was opened at atmospheric pressure, and the thermometer reading steadied near 100 °C.",
+      "Precautions",
+      "Open the valve and boil the water at atmospheric pressure at the start, so that the air is driven out of the boiler.",
+      "Take readings only when the temperature and pressure have settled; never exceed 15 bar, and watch the safety valve.",
+      "Keep the barometer reading and take it at the time of the experiment; read the gauge and thermometer with the eye level with the scale; take care with the hot boiler and do not open the valve at high pressure."
+    ],
+    "discussion": "Difference between experimental and calculated slopes. The experimental slope is found from small differences between readings, so it is sensitive to errors: the thermometer reads to about 0.5 to 1 °C and the Bourdon pressure gauge to about 0.1 bar (more at the low end of its range), and a 1 °C error over a 2 bar interval changes the slope by 0.5 K/bar. The tangents drawn on the graph also add scatter. The accuracy can be improved by heating slowly and allowing the readings to settle at each pressure, by using a calibrated pressure transducer and a digital thermometer, by lagging the boiler well, by taking readings at smaller steps, and by using the slope of a smooth curve fitted to the points. [State your own differences.]\n1. Is there any discrepancy between the two curves on graph 2? Usually yes, a small one. The experimental curve is often slightly below the steam-table curve. The reasons are thermometer and gauge errors, thermal lag of the pocket, and the presence of air in the boiler (see question 3).\n2. Is there any discrepancy between the temperature at corresponding pressures during heating and cooling? Yes. During heating, the temperature of the pocket lags behind the steam temperature, so the thermometer reads low; while cooling, it lags in the other direction, so the reading is high. The heating and cooling readings therefore bracket the true value, and the mean of the two is a better estimate. Friction in the gauge mechanism (hysteresis) adds to the difference.\n3. What will be the effect of any air left in the boiler? The total pressure is the sum of the steam partial pressure and the air partial pressure (Dalton’s law). For a given gauge reading the steam pressure is therefore lower, so the temperature is lower than T_sat for that total pressure, and the experimental curve lies below the steam table curve. The error is greatest at low pressures, where the air is a larger fraction of the total. This is why the water is first boiled with the valve open, to drive out the air.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

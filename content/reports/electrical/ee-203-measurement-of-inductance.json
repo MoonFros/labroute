@@ -1,0 +1,142 @@
+{
+  "id": "ee-203-measurement-of-inductance",
+  "code": "EE 203",
+  "title": "MEASUREMENT OF INDUCTANCE",
+  "department": "electrical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#EE203",
+    "#ElectricalEngineering",
+    "#Inductance"
+  ],
+  "verified": true,
+  "file": "electrical/ee-203-measurement-of-inductance.json",
+  "content": {
+    "aim": "To investigate measurement of inductance.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Standard laboratory equipment"
+    ],
+    "theory": {
+      "text": "An inductor is a coil of wire wound in a way that opposes any change in the current flowing through it, storing energy in the magnetic field it produces. Because a real inductor is made from a length of wire, it always has some resistance as well as inductance, so a practical inductor is best represented in a circuit as an ideal inductance, Lx, in series with a small resistance, Rx. Measuring both of these quantities, as this experiment sets out to do, gives a more complete picture of a real inductor than measuring its inductance alone.\n\nMaxwell's Bridge is an A.C. bridge designed to measure an unknown inductance and its series resistance by comparing it, not against another inductor, but against a known capacitor. Standard capacitors can be made more accurately and cheaply than standard inductors, which is the main reason this arrangement is preferred. In the bridge used here, the unknown inductor (Rx in series with Lx) forms one arm; a resistance box, R1, forms the arm opposite to it; another resistance box, R2, forms a third arm; and a resistance box, R3, in parallel with a capacitance box, C, forms the fourth arm. As with the Schering Bridge, an A.F. generator supplies the bridge and a pair of headphones is used as the null detector, since balance is heard as the point where the tone in the headphones disappears completely. Because both a resistive and a reactive balance condition must be satisfied at the same time, the bridge is balanced by adjusting two components alternately, usually the capacitance C and one of the resistance boxes, until no tone at all is heard. At balance, the unknown quantities can be calculated from the settings of the known components using the formulae Rx = (R1 x R2) / R3 and Lx = R1 x R2 x C.\n\nThe second method finds the inductance in a completely different way, by studying how current grows in a circuit containing a resistor and an inductor in series. When a step (square wave) voltage, V, is suddenly applied to a series R-L circuit, the current does not rise instantly, because the inductor opposes any sudden change in current; instead, the current, and therefore the voltage across the resistor, VR, rises gradually towards its final value, following the equation VR = V(1 - e^(-tR/L)), where t is the time measured from the moment the voltage is applied. The quantity L/R is called the time constant of the circuit, and after a time equal to one time constant, the voltage across the resistor has risen to about 63 percent of its final value. By measuring VR at a known time t after the voltage is applied, and knowing the value of R, this equation can be rearranged to give the inductance directly: L = tR / ln(V / (V - VR)).\n\nAs in the earlier R-C experiment, a low-frequency square wave is used so that the current has enough time to rise fully during one half-cycle and fall fully during the other, and an oscilloscope, rather than an ordinary meter, is needed because the voltage changes too quickly (within a fraction of a millisecond in this experiment) for a simple meter to follow.\n\nComparing the two methods, Maxwell's Bridge is generally the more accurate, and has the advantage of also giving the winding resistance of the inductor, but it needs a balanced A.C. bridge and careful, alternate adjustment of two components to find the true null. The R-L transient method is simpler, needing only a signal generator, a known resistor, and an oscilloscope, and it has the added benefit of letting the student directly observe the exponential rise of current in an R-L circuit, which is a useful way of understanding the time-constant behaviour of such circuits.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-203-measurement-of-inductance_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-203-measurement-of-inductance_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "R1 (Ohm)",
+          "R2 (Ohm)",
+          "R3 (Ohm)",
+          "C (µF)",
+          "Lx (mH)",
+          "Rx (Ohm)"
+        ],
+        "rows": [
+          [
+            "100",
+            "100",
+            "1000",
+            "20",
+            "200",
+            "10"
+          ],
+          [
+            "200",
+            "100",
+            "1000",
+            "15",
+            "300",
+            "20"
+          ],
+          [
+            "300",
+            "100",
+            "1000",
+            "10",
+            "300",
+            "30"
+          ],
+          [
+            "400",
+            "100",
+            "1000",
+            "7",
+            "280",
+            "40"
+          ],
+          [
+            "500",
+            "100",
+            "1000",
+            "5",
+            "250",
+            "50"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Time t (µs)",
+          "VR (Volts)",
+          "L = tR / ln(V/(V-VR))  (mH)"
+        ],
+        "rows": [
+          [
+            "100",
+            "1.57",
+            "266"
+          ],
+          [
+            "200",
+            "2.64",
+            "266"
+          ],
+          [
+            "300",
+            "3.38",
+            "267"
+          ],
+          [
+            "400",
+            "3.89",
+            "267"
+          ],
+          [
+            "500",
+            "4.24",
+            "266"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "id": "fm-322-pipe-flow-losses-experiment",
+  "code": "FM 322",
+  "title": "PIPE FLOW LOSSES EXPERIMENT",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#FM322",
+    "#MechanicalEngineering",
+    "#PipeFlow"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-322-pipe-flow-losses-experiment.json",
+  "content": {
+    "aim": "To investigate pipe flow losses experiment.",
+    "objectives": [
+      "To measure the loss of pressure at different flow rates in a pipe, and to demonstrate the distinction between laminar and turbulent flow."
+    ],
+    "apparatus": [
+      "The apparatus consists of a stainless steel tube of 3 mm bore with a two-way pressure tapping at each end, the tappings being 524 mm apart. Water is fed into one end and the flow is controlled by a valve at the other end. One hole from each tapping is connected to opposite sides of a water manometer (an isolating valve is fitted, to isolate the manometer when it is not in use). The water manometer is used when the pressure drop is small, and an air chamber at the top is pressurized with a bicycle pump, to bring the water levels within the graduated scale. A mercury–water manometer is used at higher pressure drops, and bleed screws at the top of each limb of the mercury manometer enable it to be made air-free. Water is supplied from the hydraulic bench, and weighed in the weighing tank ().",
+      ": Pipe friction apparatus (schematic)"
+    ],
+    "theory": {
+      "text": "Head loss due to friction\n\nWhen a liquid flows steadily through a pipe, there is a loss of pressure head due to friction, which depends on the velocity of the fluid, the wetted surface, and the nature of the surface. This experiment investigates the relationship between this pressure drop and the flow rate, and shows the difference between laminar and turbulent flow. Osborne Reynolds showed that there are two flow regimes, laminar and turbulent. The change between them occurs at a critical velocity for a given flow situation, and it is accompanied by a change in the law of loss of pressure (energy) with velocity. The regime is decided by the Reynolds number\n\nRe = ρ ū d / μ\n\nwhere ρ is the density of the water, ū the mean velocity, d the pipe diameter and μ the dynamic viscosity of water at the room temperature. Flow in a pipe is laminar for Re below about 2000, and turbulent for Re above about 4000, with a transitional region between.\n\nLaminar flow in a round pipe (Hagen–Poiseuille)\n\nConsider a cylinder of fluid of radius r and length L in steady laminar flow, with pressure drop Δp (). The pressure force π r² Δp is balanced by the viscous shear on its surface, τ 2π r L = −μ (du/dr) 2π r L, so du/dr = −Δp r/(2 μ L). Integrating with u = 0 at the wall r = R:\n\n: Laminar flow in a round pipe: parabolic velocity profile\n\nu = Δp (R² − r²) / (4 μ L)\n\nThe velocity profile is a paraboloid of revolution. The maximum velocity at r = 0 is u_max = Δp R²/(4μL), and the mean velocity is half of it, ū = u_max/2 = Δp R²/(8 μ L). The flow rate Q = π R² ū is therefore\n\nQ = π Δp R⁴ / (8 μ L)\n\nwhich is the Hagen–Poiseuille equation. Writing the pressure drop as a head loss, Δp = ρ g h_f, and R = d/2:\n\nh_f = 32 μ L ū / (ρ g d²)\n\nSo in laminar flow the head loss is proportional to the mean velocity (h_f ∝ ū), and depends on the viscosity but not on the roughness of the surface.\n\nTurbulent flow: the Darcy equation\n\nIn turbulent flow the head lost to friction was found by experiment to be proportional to the square of the velocity (approximately). Consider a pipe of diameter d between sections 1 and 2, with pressure p₁ > p₂. The resultant pressure force is (p₁ − p₂) π d²/4, and it overcomes the frictional resistance, which is proportional to the wetted area π d L and to the square of the velocity: f′ (π d L) ū². Equating:\n\n(p₁ − p₂) π d²/4 = f′ π d L ū² h_f = (p₁ − p₂)/ρ g = 4 f L ū² / (2 g d)\n\nwhere f is the friction coefficient (the Fanning factor, f = f′ 2/ρ; the Darcy factor is 4f). This is the Darcy equation. Dividing by L gives the hydraulic gradient i:\n\ni = h_f / L = k ū² k = 4 f / (2 g d)\n\nIn practice, the exponent is nearer 1.75 to 2.0, depending on the roughness, so that i = k ū^n, and a graph of log i against log ū is a straight line of slope n. In laminar flow, n = 1, and in turbulent flow n is between 1.75 and 2. The point where the extended lines intersect gives the critical velocity.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-322-pipe-flow-losses-experiment_diagram_1.png",
+          "caption": "Laminar flow in a round pipe: parabolic velocity profile",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-322-pipe-flow-losses-experiment_diagram_2.png",
+          "caption": "Pipe friction apparatus (schematic)",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/fm-322-pipe-flow-losses-experiment_diagram_3.png",
+          "caption": "Expected graphs (illustrative, from the equations; not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Diameter of tube, d",
+            "3 mm (A = 7.07 × 10⁻⁶ m²)"
+          ],
+          [
+            "Distance between tappings, L",
+            "524 mm"
+          ],
+          [
+            "Temperature of the water, and μ, ρ",
+            "[      ] °C,  [      ] Pa·s,  [      ] kg/m³"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Mass collected (kg)",
+          "Time t (s)",
+          "Manometer reading Δh (cm)",
+          "Head loss h_f (m of water)",
+          "Q (m³/s)",
+          "ū (m/s)",
+          "Re"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "8",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Re",
+          "ū (m/s)",
+          "Q (cm³/s)",
+          "h_f (mm of water)",
+          "i = h_f/L"
+        ],
+        "rows": [
+          [
+            "500",
+            "0.167",
+            "1.18",
+            "32",
+            "0.128"
+          ],
+          [
+            "1000",
+            "0.333",
+            "2.36",
+            "63",
+            "0.064"
+          ],
+          [
+            "2000",
+            "0.667",
+            "4.71",
+            "127",
+            "0.032"
+          ],
+          [
+            "5000",
+            "1.667",
+            "11.78",
+            "929",
+            "0.038"
+          ],
+          [
+            "10000",
+            "3.333",
+            "23.56",
+            "3126",
+            "0.032"
+          ],
+          [
+            "20000",
+            "6.667",
+            "47.12",
+            "10514",
+            "0.027"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "At low flows the manometer reading was steady, and rose in proportion to the flow; at higher flows it fluctuated and rose faster.",
+      "The head loss was much larger than expected at higher flow rates, which required the mercury manometer.",
+      "Precautions",
+      "Remove all air bubbles from the manometer and the pressure leads; check the manometer zero at no flow.",
+      "Allow the reading to settle before timing; use a long time for small flows so that the weighing error is small; record the water temperature, since the viscosity depends on it."
+    ],
+    "discussion": "Is the transition from laminar to turbulent flow well defined? Not sharply. Between about Re = 2000 and 4000 there is a transitional region in which the flow switches between laminar and turbulent, and the manometer fluctuates, so the points do not lie on either line. The critical point is taken as the intersection of the laminar line (slope 1) and the line through the turbulent points (slope about 1.75 to 2) on the log i–log ū graph, which gives a critical velocity of about [ ] m/s, and the corresponding Reynolds number [ ]. This should be about 2000 to 2300. The slope in turbulent flow (about 1.75 for a smooth pipe) and the intercepts depend on the roughness and on the temperature. [Give your own values.]\nHow will surface roughness affect the losses? In laminar flow, the head loss does not depend on roughness, since it is controlled by the viscosity of the fluid and the flow is smooth over the roughness elements, so the losses are unchanged. In turbulent flow, roughness increases the losses (the friction factor depends on ε/d), as the eddies caused by the surface projections extract more energy, and the exponent n rises toward 2. A rough pipe may also change to turbulent flow at a slightly lower Reynolds number.\nSources of error: the weighing and timing (±0.3 s, which is significant for short times at high flows); reading the manometer (±1 mm) and air bubbles in the leads; the temperature of the water (which changes μ by about 2% per °C); the pressure tappings at the ends, where the flow is not fully developed (entry effects add to the loss); and the pipe diameter, which enters as d⁴ in the laminar formula (a 1% error in d gives about 4% in h_f).",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

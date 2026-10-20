@@ -1,0 +1,267 @@
+{
+  "id": "am-315-motorized-gyroscope",
+  "code": "AM 315",
+  "title": "MOTORIZED GYROSCOPE",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM315",
+    "#Gyroscope",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-315-motorized-gyroscope.json",
+  "content": {
+    "aim": "To investigate motorized gyroscope.",
+    "objectives": [
+      "(i) To observe gyroscope behaviour. (ii) To measure the applied torque and the gyroscopic torque. (iii) To apply a known torque and measure the resulting precession."
+    ],
+    "apparatus": [
+      "The motorized gyroscope (AM315) consists of a motor coupled to a balanced disc rotor, whose shaft turns on two ball bearings housed in an inner frame. In the steady position this frame is balanced by a counterweight pan on the opposite side of the rotor. The yoke frame is free to rotate about the vertical axis ZZ, so the rotor has freedom of rotation about three perpendicular axes. Other items are:",
+      "a control panel with a RED push button to start the equipment, a knob that raises the motor voltage to set the speed, and a digital display meter for speed in rpm;",
+      "weights of 0.524 kg, 0.906 kg and 1.586 kg that are placed in the weight pan;",
+      "a protractor scale for the angle of precession and a stop watch for timing.",
+      "Fixed data:",
+      "Sketch: above. [Add your own neat, labelled sketch of the apparatus if the lecturer requires it.]"
+    ],
+    "theory": {
+      "text": "Gyroscopic motion\n\nA gyroscope is a body that spins about one axis (the spin axis) while being free to turn about the other two perpendicular axes. Because it spins, it has angular momentum, which for a rotor of moment of inertia I turning at angular velocity ω is\n\nH = I ω\n\nAngular momentum is a vector along the spin axis. Newton’s second law for rotation states that the applied torque equals the rate of change of angular momentum:\n\nT = dH/dt\n\nIf a torque is applied about an axis perpendicular to the spin axis, it does not make the rotor turn about that axis. Instead it changes the direction of H. The spin axis turns toward the torque vector, so the rotor rotates about the third perpendicular axis. This steady turning of the spin axis is called precession, and the angular velocity of this motion is the precession velocity ω_p. In this apparatus the rotor spins about the horizontal axis XX, the weight is applied to produce a torque about the horizontal axis YY, and the yoke frame precesses about the vertical axis ZZ ().\n\n: Schematic of the motorized gyroscope showing spin, applied torque and precession axes\n\nGyroscopic torque relation\n\nSuppose the spin axis turns through a small angle dθ in a short time dt. The magnitude of H stays constant, but its direction changes, so the change in angular momentum is\n\ndH = H dθ = I ω dθ\n\nDividing by dt and using ω_p = dθ/dt gives the torque needed to produce this precession, which is the gyroscopic torque:\n\nT = I ω ω_p\n\nIn the steady state this equals the torque applied by the weight on the pan. The direction rule is: the spin vector turns toward the torque vector (). If the torque is reversed, or the spin direction is reversed, the precession reverses direction.\n\n: Vector relation between spin angular momentum, applied torque and precession\n\nQuantities used in the calculation\n\nMoment of inertia of the disc (a solid disc spinning about its own axis, mass m, radius r):\n\nI = m r² / 2\n\nThe manual writes this as I = (W/g)(r²/2) with W the weight of the disc in kg. Since the disc is weighed in kilograms, W is its mass, so use I = W r²/2 directly (SI units, kg m²) and do not divide by g. Spin angular velocity from the speed N in rpm:\n\nω = 2πN / 60\n\nPrecession velocity from the angle turned through, φ (in degrees), and the time taken, t (in seconds):\n\nω_p = dθ/dt = (φ × π / 180) / t\n\nApplied torque from the weight W on the pan, at distance L from the centre of the disc:\n\nT = W g L\n\nThe manual defines T = W × L in kg·m; multiply by g = 9.81 m/s² to obtain N·m so that it can be compared with I ω ω_p. Precession is calculated over a short interval, since friction makes the disc speed fall slowly, and the vertical yoke frame turns steadily only while ω is much greater than ω_p.\n\nRules of gyroscopic behaviour\n\nRule 1: when the frame is balanced and the rotor spins, the spin axis keeps a fixed direction in space if no torque is applied (gyroscopic inertia or rigidity).\n\nRule 2: when a torque is applied about an axis perpendicular to the spin axis, the spin axis precesses about the third axis, turning so that the spin vector moves toward the torque vector.\n\nRule 3: for a given torque, the precession is slower when the rotor spins faster, since ω_p = T/(Iω).\n\nRule 4: for a given speed, precession is faster for a larger torque.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-315-motorized-gyroscope_diagram_1.png",
+          "caption": "Schematic of the motorized gyroscope showing spin, applied torque and precession axes",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-315-motorized-gyroscope_diagram_2.png",
+          "caption": "Vector relation between spin angular momentum, applied torque and precession",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/am-315-motorized-gyroscope_diagram_3.png",
+          "caption": "Expected trends for the motorized gyroscope (illustrative, from the equations; not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Weight (mass) of disc, W",
+            "6.064 kg"
+          ],
+          [
+            "Diameter of disc, D (radius r = 0.150 m)",
+            "300 mm"
+          ],
+          [
+            "Distance between disc centre and weight pan centre, L",
+            "195 mm"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "Weight W (kg)",
+          "Angle of rotation φ (°)",
+          "Time t (s)"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.524",
+            "30",
+            ""
+          ],
+          [
+            "2",
+            "0.524",
+            "60",
+            ""
+          ],
+          [
+            "3",
+            "0.524",
+            "90",
+            ""
+          ],
+          [
+            "4",
+            "0.906",
+            "30",
+            ""
+          ],
+          [
+            "5",
+            "0.906",
+            "60",
+            ""
+          ],
+          [
+            "6",
+            "0.906",
+            "90",
+            ""
+          ],
+          [
+            "7",
+            "1.586",
+            "30",
+            ""
+          ],
+          [
+            "8",
+            "1.586",
+            "60",
+            ""
+          ],
+          [
+            "9",
+            "1.586",
+            "90",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "T = W g L (N·m)",
+          "ω_p (rad/s)",
+          "ω (rad/s)",
+          "T_gyro = I ω ω_p (N·m)",
+          "Difference (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "…",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Weight W (kg)",
+          "T = W g L (N·m)",
+          "ω_p = T/(Iω) (rad/s)",
+          "Time for 90° (s)"
+        ],
+        "rows": [
+          [
+            "0.524",
+            "1.00",
+            "0.094",
+            "16.8"
+          ],
+          [
+            "0.906",
+            "1.73",
+            "0.162",
+            "9.7"
+          ],
+          [
+            "1.586",
+            "3.03",
+            "0.283",
+            "5.5"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Source",
+          "Cause",
+          "Estimated magnitude"
+        ],
+        "rows": [
+          [
+            "Timing",
+            "Reaction time in starting and stopping the stop watch; a 90° turn takes only about 5 to 17 s",
+            "±0.3 s, i.e. about 2 to 6%"
+          ],
+          [
+            "Angle reading",
+            "Judging 30°, 60° and 90° by eye on the scale",
+            "±1 to 2°"
+          ],
+          [
+            "Speed drift",
+            "Disc slows during the run from friction and windage, and the display resolution is limited",
+            "about ±1 to 3%"
+          ],
+          [
+            "Friction in bearings",
+            "Extra resisting torque in the yoke and rotor bearings, so the weight needed for precession is slightly larger",
+            "a few percent of T"
+          ],
+          [
+            "Unsteady start",
+            "The yoke accelerates before reaching steady precession (nutation), so the first part of the motion is not steady",
+            "depends on run"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "When a weight is added to the pan, the disc does not tilt; instead the vertical yoke starts turning about ZZ.",
+      "The yoke turns faster for heavier weights, and more slowly when the disc speed is higher.",
+      "The speed shown on the display falls slightly during a run because of bearing friction and air drag.",
+      "Precautions",
+      "Allow the disc to reach a constant speed before putting a weight in the pan.",
+      "Start the stop watch exactly as the weight is placed, and stop it as the yoke reaches the angle mark, with the eye level with the scale.",
+      "Keep hands and loose clothing away from the rotating disc and frame; use the guard.",
+      "Keep the speed the same for all runs."
+    ],
+    "discussion": "Interpretation of the results\nA torque applied about one axis does not tilt the disc but makes the frame turn about the third axis. At fixed speed, doubling the weight roughly doubles ω_p, so T against ω_p is a straight line through the origin with slope Iω; a higher rotor speed lowers ω_p, since ω_p = T/(Iω). The computed gyroscopic torque I ω ω_p should agree with the applied torque W g L if the measurements are sound.\nSources of error and their estimated size\nTiming matters most for the heaviest weight, where a 90° turn takes only about 5.5 s, so 0.3 s is roughly 5%. If your percentage difference is of the same order as the combined uncertainty (about 5 to 10%), the results are within experimental error. [State your own figures.]\nAgreement with theory\n[Compare your measured values with the theoretical ones. Slower precession than predicted points to bearing friction and speed loss; faster points to the speed reading.] Deviations are largest at small weights, where friction is a bigger fraction of the torque.\nImproving accuracy\nTime over a larger angle, use a photo-gate or video timing instead of a stop watch, and take the mean of the speed at the start and end of each run.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

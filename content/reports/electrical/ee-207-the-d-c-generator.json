@@ -1,0 +1,350 @@
+{
+  "id": "ee-207-the-d-c-generator",
+  "code": "EE 207",
+  "title": "THE D.C. GENERATOR",
+  "department": "electrical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#EE207",
+    "#ElectricalEngineering"
+  ],
+  "verified": true,
+  "file": "electrical/ee-207-the-d-c-generator.json",
+  "content": {
+    "aim": "To investigate the d.c. generator.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "EMT 180 Machine Assembly (Electrical Machine Tutor-Model) (1)",
+      "Power supply panel with meters (1)",
+      "500 Ω rheostat (1)",
+      "Tachometer (1)",
+      "0 – 200 Ω rheostat, on the panel (1)",
+      "Connecting leads"
+    ],
+    "theory": {
+      "text": "A d.c. generator is a machine that changes mechanical energy into electrical energy. It has a field winding on the stator, which produces a magnetic flux, and an armature winding on the rotor. When the armature is turned by a prime mover (here, a drive motor), its conductors cut the magnetic flux and an e.m.f. is induced in them, by the principle of electromagnetic induction. The size of the generated e.m.f., E, depends on the flux per pole, Φ, and on the speed of the machine, N, so that E is proportional to Φ × N. If the speed is kept constant, the generated e.m.f. depends only on the flux, and therefore on the field current, IF.\n\nD.C. generators are named according to how their field winding is supplied. In a separately excited generator, the field winding is connected to an independent d.c. source, so the field current can be set to any value, and it does not change when the load changes. In a shunt generator, the field winding is connected across the armature, so the machine supplies its own field current. This is called self-excitation. A shunt generator can start only because of the small residual magnetism that is left in its poles after earlier use.\n\nThe open-circuit characteristic (O.C.C.), also called the magnetisation curve, is a graph of the generated voltage, E, against the field current, IF, at constant speed with no load connected. At zero field current, a small voltage is still produced because of the residual magnetism. As IF increases, E rises almost in a straight line at first, and then the curve bends over and becomes flat, because the iron of the machine becomes saturated. In the Open-Circuit Test, the generator is driven at a constant speed of 1200 rev/min and the field current is raised in steps from zero to 1.2 A, while the terminal voltage is recorded at each step. The critical field resistance, Rc, is the highest value of field-circuit resistance at which a shunt generator can still build up its voltage. It is found from the slope of the straight part of the O.C.C., that is, Rc = ΔE / ΔIF.\n\nWhen a load is connected to the generator, the terminal voltage, Vt, is no longer equal to the generated e.m.f., E, because of the voltage drop in the armature resistance, Ra. For a separately excited generator, the armature current, Ia, is the same as the load current, IL, so that E = Vt + IaRa. For a shunt generator, the armature must supply both the load current and the field current, so that Ia = IL + IF, and E = Vt + (IL + IF)Ra. The load characteristic, also called the external characteristic, is a graph of Vt against IL. The graph of E against IL, called the internal characteristic, is also drawn on the same sheet.\n\nIn a separately excited generator, the field current is kept constant, so the terminal voltage falls only slightly as the load increases. This small fall is caused by the voltage drop in the armature resistance and by armature reaction, which slightly weakens the main field. In a shunt generator, the same two effects are present, but there is a third one: as the terminal voltage falls, the field current taken from the armature also falls, which weakens the flux further and makes E fall again. For this reason, the terminal voltage of a shunt generator falls more quickly with load than that of a separately excited generator.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/ee-207-the-d-c-generator_diagram_1.png",
+          "caption": "Figure 1",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/ee-207-the-d-c-generator_diagram_2.png",
+          "caption": "Figure 2",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/ee-207-the-d-c-generator_diagram_3.png",
+          "caption": "Figure 3",
+          "index": 3
+        },
+        {
+          "src": "assets/lab_images/ee-207-the-d-c-generator_diagram_4.png",
+          "caption": "Figure 4",
+          "index": 4
+        },
+        {
+          "src": "assets/lab_images/ee-207-the-d-c-generator_diagram_5.png",
+          "caption": "Figure 5",
+          "index": 5
+        },
+        {
+          "src": "assets/lab_images/ee-207-the-d-c-generator_diagram_6.png",
+          "caption": "Figure 6",
+          "index": 6
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "Field current, IF (A)",
+          "Generated voltage, E = Vg (V)"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.0",
+            "1.5"
+          ],
+          [
+            "2",
+            "0.1",
+            "4.5"
+          ],
+          [
+            "3",
+            "0.2",
+            "8.0"
+          ],
+          [
+            "4",
+            "0.3",
+            "11.0"
+          ],
+          [
+            "5",
+            "0.4",
+            "14.0"
+          ],
+          [
+            "6",
+            "0.5",
+            "16.5"
+          ],
+          [
+            "7",
+            "0.6",
+            "18.5"
+          ],
+          [
+            "8",
+            "0.7",
+            "20.0"
+          ],
+          [
+            "9",
+            "0.8",
+            "21.3"
+          ],
+          [
+            "10",
+            "0.9",
+            "22.3"
+          ],
+          [
+            "11",
+            "1.0",
+            "23.0"
+          ],
+          [
+            "12",
+            "1.2",
+            "24.0"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "Load current, IL (A)",
+          "Terminal voltage, Vt (V)",
+          "E = Vt + IaRa (V)"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.05",
+            "23.6",
+            "24.0"
+          ],
+          [
+            "2",
+            "0.10",
+            "23.3",
+            "24.0"
+          ],
+          [
+            "3",
+            "0.15",
+            "22.9",
+            "24.0"
+          ],
+          [
+            "4",
+            "0.20",
+            "22.5",
+            "23.9"
+          ],
+          [
+            "5",
+            "0.25",
+            "22.1",
+            "23.9"
+          ],
+          [
+            "6",
+            "0.30",
+            "21.8",
+            "23.9"
+          ],
+          [
+            "7",
+            "0.35",
+            "21.4",
+            "23.9"
+          ],
+          [
+            "8",
+            "0.40",
+            "21.0",
+            "23.8"
+          ],
+          [
+            "9",
+            "0.50",
+            "20.3",
+            "23.8"
+          ],
+          [
+            "10",
+            "0.60",
+            "19.5",
+            "23.7"
+          ],
+          [
+            "11",
+            "0.70",
+            "18.8",
+            "23.7"
+          ],
+          [
+            "12",
+            "0.80",
+            "18.0",
+            "23.6"
+          ],
+          [
+            "13",
+            "0.90",
+            "17.3",
+            "23.6"
+          ],
+          [
+            "14",
+            "0.95",
+            "16.9",
+            "23.6"
+          ],
+          [
+            "15",
+            "1.00",
+            "16.5",
+            "23.5"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/N",
+          "Load current, IL (A)",
+          "Terminal voltage, Vt (V)",
+          "E = Vt + (IL + IF)Ra (V)"
+        ],
+        "rows": [
+          [
+            "1",
+            "0.05",
+            "23.6",
+            "24.0"
+          ],
+          [
+            "2",
+            "0.10",
+            "23.3",
+            "24.0"
+          ],
+          [
+            "3",
+            "0.15",
+            "22.9",
+            "24.0"
+          ],
+          [
+            "4",
+            "0.20",
+            "22.5",
+            "23.9"
+          ],
+          [
+            "5",
+            "0.25",
+            "22.1",
+            "23.9"
+          ],
+          [
+            "6",
+            "0.30",
+            "21.8",
+            "23.9"
+          ],
+          [
+            "7",
+            "0.35",
+            "21.4",
+            "23.9"
+          ],
+          [
+            "8",
+            "0.40",
+            "21.0",
+            "23.8"
+          ],
+          [
+            "9",
+            "0.50",
+            "20.3",
+            "23.8"
+          ],
+          [
+            "10",
+            "0.60",
+            "19.5",
+            "23.7"
+          ],
+          [
+            "11",
+            "0.70",
+            "18.8",
+            "23.7"
+          ],
+          [
+            "12",
+            "0.80",
+            "18.0",
+            "23.6"
+          ],
+          [
+            "13",
+            "0.90",
+            "17.3",
+            "23.6"
+          ],
+          [
+            "14",
+            "0.95",
+            "16.9",
+            "23.6"
+          ],
+          [
+            "15",
+            "1.00",
+            "16.5",
+            "23.5"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Follow standard laboratory safety procedures."
+    ],
+    "discussion": "(i) Explain the conditions necessary for satisfactory self-excitation of a d.c. shunt generator. Three conditions must be met. First, there must be some residual magnetism in the field poles, since this produces the small starting voltage that begins the build-up. Second, the field winding must be connected the right way round, so that the small current it carries strengthens the residual flux and does not oppose it; if it is connected the wrong way, the voltage dies away instead of building up. Third, the total resistance of the field circuit must be less than the critical field resistance, Rc, found from the open-circuit characteristic. If the field resistance is higher than Rc, the generator will not build up its voltage. In addition, the speed must be high enough, because the critical resistance falls as the speed falls.\n(ii) Compare the external characteristics of the separately excited and shunt generators, and explain the difference. In both generators, the terminal voltage falls as the load current increases, but the fall is much greater in the shunt generator. In the separately excited generator, the field current is supplied by an independent source and stays constant, so the voltage falls only because of the armature resistance drop and armature reaction. In the shunt generator, these two effects are also present, but the field current comes from the generator itself. As the terminal voltage falls, the field current falls too, the flux becomes weaker, and the generated e.m.f. falls again. Also, the armature current in a shunt generator is IL + IF, which is slightly larger than the load current. This is why the shunt generator has poorer voltage regulation.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

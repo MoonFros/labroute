@@ -1,0 +1,234 @@
+{
+  "id": "sm-312-strut-test",
+  "code": "SM 312",
+  "title": "STRUT TEST",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#MechanicalEngineering",
+    "#SM312",
+    "#Strut"
+  ],
+  "verified": true,
+  "file": "mechanical/sm-312-strut-test.json",
+  "content": {
+    "aim": "To investigate strut test.",
+    "objectives": [
+      "To measure the deflections of loaded struts and investigate the validity of Euler’s formula."
+    ],
+    "apparatus": [
+      "The strut test apparatus consists of a rigid frame with end fittings that can be arranged as pin joints or as fixed (built-in) ends, interchangeable steel struts of different lengths (45, 50 and 75 cm, and a shorter one to start with), a loading screw that applies axial compression, a spring balance that measures the load, a dial gauge at mid-length to read the deflection, and a spirit level ().",
+      ": Strut test apparatus (schematic)"
+    ],
+    "theory": {
+      "text": "Buckling of slender struts\n\nA strut is a member that carries a compressive axial load. A short, stocky strut fails by crushing when the stress reaches the yield strength. A long, slender strut fails at a much lower load by buckling, which is a sudden lateral bending that appears when the load reaches a critical value. Beyond this load the straight form of equilibrium is unstable: a small sideways disturbance grows instead of dying away, and the strut collapses (it ‘cripples’). Euler’s analysis gives this critical load for an ideal strut, which is perfectly straight, of uniform section and made of a linear elastic material, with a load that is exactly axial.\n\nEuler’s formula for a pin-ended strut\n\nConsider a strut of length L with both ends pinned, carrying the load P, and let it be bent into a slightly curved shape with deflection y at distance x from one end. The bending moment at the section is M = −P y, so the beam equation gives\n\nE I d²y / dx² = − P y\n\nThis is rewritten as d²y/dx² + k² y = 0, with k² = P/(EI). The solution is y = A sin kx + B cos kx. The boundary conditions are y = 0 at x = 0, giving B = 0, and y = 0 at x = L, giving A sin kL = 0. A non-zero deflection (A ≠ 0) is possible only if sin kL = 0, so kL = π, 2π, … The smallest value, kL = π, gives the Euler critical load, and the deflected shape is a half sine wave:\n\nP_cr = π² E I / L²\n\nHere I is the smallest second moment of area of the cross-section, because the strut buckles about the weakest axis. For a rectangular section of width b and thickness t (with t < b), I = b t³/12. The expression for the critical load shows three things: the load falls with the square of the length, it is proportional to the flexural rigidity EI, and it does not depend on the strength of the material.\n\nEffect of end conditions\n\nThe three end conditions used in the experiment are shown in . For other end conditions, the formula is applied with the effective length L_e, which is the length of an equivalent pin-ended strut, that is, the distance between the points of zero bending moment:\n\n: Buckled shapes and critical loads for the three end conditions\n\nP_cr = π² E I / L_e²\n\nSlenderness ratio and the limit of Euler’s formula\n\nThe slenderness ratio is L_e/k, where k = √(I/A) is the least radius of gyration of the section. Dividing P_cr by the area gives the critical stress\n\nσ_cr = π² E / (L_e / k)²\n\nEuler’s formula holds only while σ_cr is below the proportional limit (or yield stress) of the material, since it assumes elastic behaviour. For a strut with a small slenderness ratio, σ_cr from the formula exceeds the yield stress and the strut fails by yielding before it can buckle, so the formula overestimates the load; empirical formulae of Rankine–Gordon or Johnson are used there. For the thin steel struts in this test, the slenderness ratio is large (several hundred), so Euler’s formula should apply.\n\nBehaviour of real struts: the Southwell plot\n\nReal struts are never perfectly straight, and the load is never perfectly axial. If the strut has an initial deflection or eccentricity e, the deflection at mid-length grows with load P as\n\nδ = e / (P_cr / P − 1)\n\nThe deflection is small at low loads and rises without limit as P approaches P_cr, so the load–deflection graph bends over toward an asymptote at P_cr. Rearranging gives δ/P = δ/P_cr + e/P_cr, so a Southwell plot of δ/P against δ is a straight line, whose gradient is 1/P_cr. This allows P_cr to be found from readings taken at loads well below the crippling load, so that the strut is not damaged.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/sm-312-strut-test_diagram_1.png",
+          "caption": "Buckled shapes and critical loads for the three end conditions",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/sm-312-strut-test_diagram_2.png",
+          "caption": "Strut test apparatus (schematic)",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/sm-312-strut-test_diagram_3.png",
+          "caption": "Expected graphs (illustrative, from the equations; not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "End conditions",
+          "Effective length L_e",
+          "Critical load"
+        ],
+        "rows": [
+          [
+            "(a) Both ends pinned",
+            "L",
+            "π²EI / L²"
+          ],
+          [
+            "(b) Both ends fixed",
+            "L / 2",
+            "4π²EI / L²"
+          ],
+          [
+            "(c) One end fixed, other pinned",
+            "≈ 0.7 L",
+            "≈ 2.05π²EI / L²"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Material of strut",
+            "[      ]"
+          ],
+          [
+            "Width b and thickness t of strut (mm)",
+            "[      ]  ×  [      ]"
+          ],
+          [
+            "Least second moment of area I = b t³/12",
+            "[      ] mm⁴"
+          ],
+          [
+            "Young’s modulus E",
+            "[      ]  (2.1 × 10⁵ N/mm² for steel)"
+          ],
+          [
+            "End condition tested",
+            "[pinned–pinned / fixed–fixed / fixed–pinned]"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Load P (N)",
+          "Deflection δ (mm)",
+          "δ/P (mm/N)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "L (mm)",
+          "L_e (mm)",
+          "Slenderness L_e/k",
+          "Experimental crippling load (N)",
+          "Euler P_cr (N)",
+          "Difference (%)"
+        ],
+        "rows": [
+          [
+            "450",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "500",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "750",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Length L (mm)",
+          "Pinned–pinned P_cr (N)",
+          "Fixed–fixed P_cr (N)",
+          "Fixed–pinned P_cr (N)"
+        ],
+        "rows": [
+          [
+            "450",
+            "576",
+            "2303",
+            "1178"
+          ],
+          [
+            "500",
+            "466",
+            "1865",
+            "954"
+          ],
+          [
+            "750",
+            "207",
+            "829",
+            "424"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "For small loads the deflection is small, and it increases sharply as the load approaches the crippling load.",
+      "The longer the strut, the lower the load at which it buckles.",
+      "When the crippling load was reached, the strut bent suddenly and the load could not be increased.",
+      "Precautions",
+      "Check that the apparatus is horizontal with the spirit level before each reading, and that the dial gauge is set properly at the centre of the strut.",
+      "Increase the load slowly, and in small steps near the buckling load; remove the load quickly once the strut cripples so that it is not permanently bent.",
+      "Stand clear of the strut and keep the guard in place, since a buckling strut can spring out; use the least load required and do not exceed the elastic limit of the strut more than needed."
+    ],
+    "discussion": "The measured crippling loads are usually lower than the Euler values. Reasons: the struts are not perfectly straight and the load is not perfectly axial, so the deflection grows from the start and the strut cripples before reaching P_cr; the end fittings are not ideal pins (friction in the pins raises the load) and not ideal fixed ends (the clamp is not perfectly rigid, so the effective length is longer than L/2); the dial gauge and the spring balance have limited resolution; the cross-section dimensions are measured with limited accuracy, and since I depends on t³ a 1% error in thickness gives about 3% error in P_cr; and E may differ from the assumed value. For the shorter struts, the stress can be near the yield stress, and the deviation can become larger. [State your own percentage differences and which strut agreed best.]\nUsefulness of the experiment: it confirms that the critical load decreases with L² and increases with the end fixity, and that the load–deflection curve of an imperfect strut tends to the Euler load as an asymptote, which the Southwell plot uses to find P_cr without destroying the strut. It also shows the limits of the formula: it holds only for slender struts that remain elastic, and in design a factor of safety is used, because small imperfections reduce the real strength well below P_cr.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

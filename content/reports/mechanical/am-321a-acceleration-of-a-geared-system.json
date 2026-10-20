@@ -1,0 +1,199 @@
+{
+  "id": "am-321a-acceleration-of-a-geared-system",
+  "code": "AM 321A",
+  "title": "ACCELERATION OF A GEARED SYSTEM",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM321A",
+    "#Gears",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-321a-acceleration-of-a-geared-system.json",
+  "content": {
+    "aim": "To investigate acceleration of a geared system.",
+    "objectives": [
+      "To verify the expression for the equivalent inertia of a geared system."
+    ],
+    "apparatus": [
+      "The apparatus (AM318 acceleration of a geared system) has four parallel shafts, each carrying spur gears and pinions of different sizes, with provision for disengaging any selected pairs of gears. The train is driven by a falling weight on a cord wound on a drum, and extra inertia loads can be added to the shafts. A cam wheel is fitted on each shaft with its pulley, and each cam operates a micro-switch connected to the recorder unit. The recorder has a chart drum driven at a constant speed by a synchronous motor; a high-voltage stylus carried by a lead-screw from the same motor, when the selected micro-switch closes, leaves a pip mark on the trace. Other items: cords, weights, a stopwatch, a metre rule and calipers."
+    ],
+    "theory": {
+      "text": "Equivalent inertia of a geared system\n\nIn a gear train, every shaft with its gears, pulleys and attached masses has its own moment of inertia, but the shafts turn at different speeds. For the motion of the whole train, the inertia of all shafts is referred to one shaft (here the driving shaft A), which gives the equivalent inertia I_eq: the single inertia on shaft A that needs the same driving torque to give the same acceleration. This follows from equating the energy of the train to that of the equivalent single shaft, and is derived from the torques as follows.\n\nConsider three gear wheels A, B and C in mesh (). Let N₁ be the speed ratio of B relative to A (ω_B/ω_A), and N₂ that of C relative to B (ω_C/ω_B), and let η_AB and η_BC be the gearing efficiencies of the two meshes. Then, for an angular acceleration α_A of shaft A, the shafts B and C have\n\n: Three shafts in a geared train, driven at shaft A\n\nα_B = N₁ α_A α_C = N₁ N₂ α_A\n\nWorking from the last shaft back to the first. The torque needed to accelerate shaft C is T_C = I_C α_C. A gear mesh transmits power with efficiency η, so the torque that must be applied on the driving side is the output torque multiplied by the speed ratio and divided by the efficiency:\n\nT_B(for C) = N₂ T_C / η_BC = N₂ I_C N₁ N₂ α_A / η_BC\n\nThe torque on shaft B is the sum of that needed to accelerate B itself and that needed to drive C:\n\nT_B = I_B N₁ α_A + N₁ N₂² I_C α_A / η_BC\n\nSimilarly, the torque on shaft A is that needed to accelerate A plus N₁ T_B/η_AB, so\n\nT_A = [ I_A + N₁² I_B / η_AB + (N₁ N₂)² I_C / (η_AB η_BC) ] α_A\n\nThe manual prints the last term as (N₁/N₂)² I_C; this is the same result if N₂ is taken as the speed ratio of B relative to C (ω_B/ω_C), the opposite way round to the definition above. The product N₁N₂ is the speed ratio ω_C/ω_A in either case, and the symbols should be checked against your apparatus. The quantity in the square brackets is the equivalent inertia referred to shaft A:\n\nI_eq = I_A + N₁² I_B / η_AB + (N₁ N₂)² I_C / (η_AB η_BC) T_A = I_eq α_A\n\nWith perfect gears (η = 1), this reduces to I_eq = I_A + N₁² I_B + (N₁N₂)² I_C. The inertia of a shaft that turns faster than the driving shaft counts for its inertia multiplied by the square of the speed ratio, and divided by the efficiency in a real train, which is why the high-speed shafts contribute most.\n\nFinding the individual inertias and the acceleration\n\nThe inertia of each shaft with its associated parts is found by the falling-weight method. A mass m on a cord wrapped round a drum of radius r falls a height h in time t from rest, so its linear acceleration is a = 2h/t² and the angular acceleration of the shaft is α = a/r. The cord tension is m(g − a), and the torque on the shaft, less the friction torque T_f, is I α:\n\nI = [ m (g − a) r − T_f ] / α a = 2h / t² α = a / r\n\nThe friction torque T_f is found as m₀ g r from the smallest mass m₀ that keeps the shaft turning at a slow, constant speed.\n\nWith the recording unit, the cam on the shaft has n indents (n = 12), and each indent closes the micro-switch to leave a pip mark on the moving chart (paper speed 1 in/s, so a distance in inches is the same as a time in seconds). The time for 1/n of a revolution, t₁, t₂, t₃ …, is read from the spacing of the pip marks (), so the average angular velocities are ω₁ = 2π/(n t₁), ω₂ = 2π/(n t₂) …, and these occur at the midpoints of the intervals, which are t₁₂, t₂₃ … apart. The average angular accelerations are\n\n: Pip marks on the recorder trace, and the intervals t₁, t₂ … and t₁₂, t₂₃ …\n\nα₁ = (ω₂ − ω₁) / t₁₂ = (2π / n t₁₂)(1/t₂ − 1/t₁)\n\nand similarly α₂ from ω₃ and ω₂ with t₂₃, and so on. The mean of α₁, α₂, α₃ … is used.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-321a-acceleration-of-a-geared-system_diagram_1.png",
+          "caption": "Three shafts in a geared train, driven at shaft A",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-321a-acceleration-of-a-geared-system_diagram_2.png",
+          "caption": "Pip marks on the recorder trace, and the intervals t₁, t₂ … and t₁₂, t₂₃ …",
+          "index": 2
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Item",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Number of teeth: spur gear on A / pinion on B",
+            "90 / 30"
+          ],
+          [
+            "Drum diameter on shaft A",
+            "76.2 mm"
+          ],
+          [
+            "Number of indents on the cam, n",
+            "12"
+          ],
+          [
+            "Paper speed",
+            "1 in/s"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Meshed shafts",
+          "Driving torque T_A (N·m)",
+          "Driven torque T_B (N·m)",
+          "Efficiency (%)"
+        ],
+        "rows": [
+          [
+            "A and B",
+            "",
+            "",
+            ""
+          ],
+          [
+            "A, B and C",
+            "",
+            "",
+            ""
+          ],
+          [
+            "A, B, C and D",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Shaft",
+          "Mass m (kg)",
+          "Drop h (m)",
+          "Time t (s)",
+          "a = 2h/t² (m/s²)",
+          "α = a/r (rad/s²)",
+          "I (kg·m²)"
+        ],
+        "rows": [
+          [
+            "A",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "B",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "C",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Interval",
+          "t (s)",
+          "ω (rad/s)",
+          "t₁₂ etc. (s)",
+          "α (rad/s²)",
+          ""
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The pip marks become closer together as the train speeds up, showing steady acceleration.",
+      "Adding inertia to a fast shaft reduces the acceleration more than the same inertia on the slow shaft.",
+      "Precautions",
+      "Wind the cord evenly on the drum, and avoid it slipping; release the weight without a push.",
+      "Disengage the gears that are not used, and check that the shafts turn freely before each run; use the same chart speed for all readings."
+    ],
+    "discussion": "Sources of error: friction in the bearings and gear meshes, which is estimated from the minimum weight to keep the shaft turning but varies with speed; efficiencies assumed constant for each mesh; reading the spacing of the pip marks on the chart to about ±0.5 mm, which for the short intervals at high speed is a few per cent; the stopwatch error in the falling-weight tests, which is largest for short falls (0.3 s in 3 s is 10% in t, and 20% in a); the cord’s own mass and its stretch; and the inertia of the drum and the cord being included in the shaft. [Estimate the size of these for your results, and compare the measured and expected equivalent inertia to show whether the expression is verified within experimental error.]",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

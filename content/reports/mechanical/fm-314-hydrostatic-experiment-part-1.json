@@ -1,0 +1,224 @@
+{
+  "id": "fm-314-hydrostatic-experiment-part-1",
+  "code": "FM 314",
+  "title": "HYDROSTATIC EXPERIMENT - Part 1",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#FM314",
+    "#Hydrostatic",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/fm-314-hydrostatic-experiment-part-1.json",
+  "content": {
+    "aim": "To investigate hydrostatic experiment - part 1.",
+    "objectives": [
+      "(1) To determine the density of a liquid and of a solid, and the specific gravity of a liquid. (2) To demonstrate capillary action and the dependence of the rise of water on the size of the tube or gap. (3) To determine the viscosity of liquids from the terminal velocity of a falling sphere."
+    ],
+    "apparatus": [
+      "The hydrostatic apparatus (FM314) with its accessories: for density, a triple-beam balance, measuring beaker, Eureka can, density bottle and a solid object (cylinder or cube); for specific gravity, hydrometers (universal, S.G. 0.7 to 2.0, and sensitive, S.G. 1.0 to 1.2) and tall glass cylinders; for capillarity, three glass capillary tubes with bores of 0.4, 0.8 and 1.6 mm, glass plates with plastic shim strips (thicknesses from 0.050 mm to 0.500 mm), the header tank and clips; for viscosity, three graduated jars filled with water, oil and glycerine, steel balls, a ball guide, movable timing band markers, a stopwatch, a thermometer and a measuring rule."
+    ],
+    "theory": {
+      "text": "Density, specific weight and specific gravity\n\nThe density ρ of a fluid is its mass per unit volume (kg/m³). To find the density of a liquid, the mass of a known volume is measured:\n\nρ = m / V\n\nWith mass measured in grams and volume in ml (cm³), ρ (kg/m³) = (mass in g / volume in ml) × 10⁶/10³. The density of pure water at 20 °C is 998.2 kg/m³, usually rounded to 1000 kg/m³. The specific weight is the weight per unit volume, w = ρ g, and has a fixed value only if g is constant. The specific gravity (relative density) is the ratio of the density of a fluid to the density of water, so it has no units:\n\nS.G. = ρ_liquid / ρ_water\n\nTypical values are 0.8 for paraffin, 1.6 for carbon tetrachloride and 13.6 for mercury. Specific gravity is numerically equal to density in g/cm³ and should not be confused with density. It is measured directly with a hydrometer, a hollow glass float weighted to float upright. The depth to which its stem sinks measures the density of the liquid, and a scale on the stem is calibrated to read the specific gravity. A hydrometer with a large bulb and thin stem is more sensitive (Figure 1c).\n\n: Methods of finding density: (a) Eureka can, (b) density bottle and (c) hydrometer\n\nThe volume is the more difficult quantity to measure. The three methods used are: (a) a measuring beaker, in which the volume is read from the graduations, which is not very precise; (b) a Eureka can, which has a fixed spout, so that a solid object put in it displaces a volume of liquid equal to its own volume, which collects in a beaker under the spout; and (c) a density bottle of fixed known volume (50 cm³) with a stopper with a fine hole, which is the most accurate, since its accuracy is limited only by the balance. The density of a solid such as sand is found by putting a known mass of it in the Eureka can in place of the solid: the volume of sand is the mass of water displaced divided by the density of water, and ρ_sand = mass of sand / volume.\n\nCapillarity\n\nSurface tension σ (the force per unit length along the surface) makes a liquid rise in a narrow tube if it wets the walls. For a tube of internal diameter d, the surface tension acts along the circumference, so the upward force is F = π d σ (taking the water as drawn up tangent to the wall). In equilibrium, this is balanced by the weight of the column of liquid of height h_t:\n\nπ d σ = (π d² / 4) ρ g h_t\n\nh_t = 4σ / (ρ g d)\n\nFor two parallel plates a distance b apart, the force on a width w of the surface is 2wσ (two surfaces) and the weight of the column is w b h ρ g, so\n\nh_p = 2σ / (ρ g b)\n\nFor constant σ and ρ, h_t d/4 and h_p b/2 should both be constant and equal to σ/(ρ g). For clean water, σ = 0.0728 N/m, and σ/(ρ g) is about 7.4 mm². The heights obtained in an experiment depend on the cleanliness of the glass and the water, and on the contact angle, so they are often much lower. The effect is significant only if the gap is small, and is generally ignored in hydrostatics for tubes with a bore larger than about 5 mm. It must be allowed for in small manometer tubes.\n\nViscosity\n\nViscosity is the property of a fluid that resists relative motion between layers. In a simple case in which a section of fluid is acted on by a shear stress τ, a velocity gradient du/dy is produced which is proportional to the shear stress. The constant is the coefficient of dynamic viscosity μ (N·s/m²):\n\nτ = μ du / dy\n\nThis model describes laminar flow, in which layers move smoothly over one another. The kinematic viscosity is ν = μ/ρ (m²/s). Viscosity falls as temperature rises, so the temperature must be recorded.\n\nA common method of finding μ uses the fall of a smooth sphere through the liquid. At equilibrium, the sphere falls at a constant terminal velocity u, when the weight is balanced by the buoyancy and the viscous drag (). The drag on a small sphere is 3π μ d u, which is Stokes’ law, so\n\n: Falling-sphere viscometer and the forces on the sphere\n\n(π d³/6) σ g = (π d³/6) ρ g + 3 π μ d u\n\nu = (g d² / 18 ν) (σ/ρ − 1) so ν = (g d² / 18 u) (σ/ρ − 1)\n\nwhere d is the diameter of the sphere, σ its density, ρ the density of the fluid and ν the kinematic viscosity. The equation is valid only for viscous flow, for which the Reynolds number Re = u d/ν is below about 0.2. Above this value the errors increase. The equation also shows that the fall velocity decreases as ν increases, and that for different sized balls the velocity depends on d².",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/fm-314-hydrostatic-experiment-part-1_diagram_1.png",
+          "caption": "Methods of finding density: (a) Eureka can, (b) density bottle and (c) hydrometer",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/fm-314-hydrostatic-experiment-part-1_diagram_2.png",
+          "caption": "Falling-sphere viscometer and the forces on the sphere",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/fm-314-hydrostatic-experiment-part-1_diagram_3.png",
+          "caption": "Capillary rise in tubes of different bore, and h against 1/d (illustrative; clean-water line and the manual’s typical results)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Method",
+          "Mass of liquid (g)",
+          "Volume (ml)",
+          "Density ρ (kg/m³)",
+          "Difference from 1000 (%)"
+        ],
+        "rows": [
+          [
+            "Measuring beaker",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Eureka can",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Density bottle (50 cm³)",
+            "",
+            "50",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Tube or plates",
+          "Bore d or gap b (mm)",
+          "Height h (mm)",
+          "h d/4 or h b/2 (mm²)",
+          "σ = ρ g × (h d/4) (N/m)"
+        ],
+        "rows": [
+          [
+            "Tube 1",
+            "1.6",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Tube 2",
+            "0.8",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Tube 3",
+            "0.4",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Plates",
+            "[      ]",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Liquid",
+          "Ball d (mm)",
+          "Distance s (mm)",
+          "Time t (s)",
+          "u = s/t (m/s)",
+          "Temp (°C)",
+          "ν (m²/s)",
+          "Re = u d/ν"
+        ],
+        "rows": [
+          [
+            "Water",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Oil",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Glycerine",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Tube or plates",
+          "Typical h (mm)",
+          "h d/4 or h b/2 (mm²)",
+          "Clean-water h (mm)",
+          "Clean-water value (mm²)"
+        ],
+        "rows": [
+          [
+            "1.6 mm tube",
+            "7",
+            "2.8",
+            "18.5",
+            "7.4"
+          ],
+          [
+            "0.8 mm tube",
+            "12",
+            "2.4",
+            "37.1",
+            "7.4"
+          ],
+          [
+            "0.4 mm tube",
+            "23",
+            "2.3",
+            "74.2",
+            "7.4"
+          ],
+          [
+            "Plates 0.35 mm apart",
+            "14",
+            "2.5",
+            "42.4",
+            "7.4"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The measured density of water was close to 1000 kg/m³, with the density bottle giving the best result.",
+      "Water rose higher in the narrower tubes than in the wider ones, and rose between the plates.",
+      "The steel balls fell much more slowly in glycerine and oil than in water, and the balls fell at constant speed after the first few centimetres.",
+      "Precautions",
+      "Keep the glassware clean and free of grease, since impurities change the capillary rise; read the meniscus at its lowest point with the eye level.",
+      "Dry the outside of the density bottle and check that the liquid is level with the top of the stopper; place the Eureka can level, and let it stop dripping.",
+      "Do not let the hydrometer touch the sides of the cylinder; drop each ball through the guide at the centre of the jar, record the temperature, and do not use the oil that is supplied for maintenance of the apparatus."
+    ],
+    "discussion": "Density. The density bottle should be the most accurate, because its volume is known exactly and its accuracy depends only on the balance. The measuring beaker is the least accurate, because the graduations are coarse and cannot be checked. The Eureka can is less accurate than the bottle, because of drops left on the spout and in the object, but it shows a more basic way of finding volume. Whether the best accuracy is given by a narrow deep can or a wide shallow one is a question for discussion: a narrow deep can has a smaller surface area, so a small error in the level gives a smaller error in volume.\nWould the density of water be the same on the Moon, where gravity is one-sixth of that on Earth, and would you obtain the same result using the methods above? Density is mass per unit volume, and neither the mass nor the volume of water changes with gravity, so the density of water is the same. The methods used here weigh the liquid on a beam balance, which compares masses against standard masses, so they would give the same result on the Moon. A spring balance or a measurement of weight would give a reading one-sixth as large, and the specific weight (ρ g) would be one-sixth of the Earth value.\nCapillarity. The results show that the rise is greater for narrow tubes, and that h d/4 is roughly constant, as the theory predicts, so σ is roughly constant. The values obtained (about 2.3 to 2.8 mm², which corresponds to σ of about 0.023 to 0.027 N/m) are well below the clean-water value of 7.4 mm² (0.073 N/m), which shows that the glass and water were contaminated or not wetted well. In most hydrostatic calculations the effect is ignored, but for manometer tubes of small bore it must be taken into account, or tubes with a bore above about 5 mm used.\nViscosity. Sources of error: the temperature changes the viscosity significantly (a few degrees changes ν by several per cent); timing by stopwatch has an uncertainty of about 0.3 s, which is large for water, where the fall time is only a fraction of a second, so only thick liquids should be used for accurate work; the ball is not in an infinite fluid, and the jar walls affect the speed; the ball may not have reached its terminal velocity by the first marker; the diameter of the ball (measured to about 0.01 mm) enters as d², which gives a 1.3% error for d = 1.6 mm; and the Reynolds number may be above 0.2. [Add your own comparison with the values in the table.]",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

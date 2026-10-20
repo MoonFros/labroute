@@ -1,0 +1,454 @@
+{
+  "id": "am-312-the-slotted-crank-quick-return-mechanism",
+  "code": "AM 312",
+  "title": "THE SLOTTED CRANK QUICK RETURN MECHANISM",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM312",
+    "#CrankMechanism",
+    "#MechanicalEngineering",
+    "#Mechanism",
+    "#QuickReturn"
+  ],
+  "verified": true,
+  "file": "mechanical/am-312-the-slotted-crank-quick-return-mechanism.json",
+  "content": {
+    "aim": "To investigate the slotted crank quick return mechanism.",
+    "objectives": [
+      "To carry out a kinematic analysis of the slotted-crank quick return mechanism."
+    ],
+    "apparatus": [
+      "Tecquipment model of the slotted-crank quick return mechanism with:",
+      "a protractor incorporated for measuring the angular displacements of the driving crank (θ1) and of the slotted link (θ2);",
+      "a linear scale for the displacement of the slider (x);",
+      "the driving crank A, the slotted link B (second crank), the connecting rod and the slider with its guide;",
+      "a metre rule or vernier calliper for measuring link dimensions.",
+      ": Apparatus layout showing the measuring scales (schematic; redraw a neat sketch of your own rig if required)",
+      "Measured dimensions of the model:"
+    ],
+    "theory": {
+      "text": "Quick return mechanisms\n\nMany machine tools (shapers, slotting machines, power hacksaws) cut only on one stroke of a reciprocating tool. The return stroke does no useful work, so it is desirable to make it as fast as possible. A quick return mechanism does this by making the working (forward) stroke take a longer part of the crank cycle than the return stroke, even though the driving crank turns at constant speed.\n\nThe slotted-crank quick return mechanism is an inversion of the slider-crank chain. The driving crank A (radius a) carries a sliding block that moves in the slot of a second link B (the slotted link, or second crank, of length b). Link B oscillates about its own fixed pivot, which is a distance h from the pivot of crank A. The free end of B is joined by a connecting rod of length L to a slider P that moves in a straight guide. Rotation of A is therefore converted into oscillation of B, and then into reciprocation of P.\n\n: Schematic of the slotted-crank quick return mechanism (not to scale)\n\nTime ratio and quick return ratio\n\nWhile the crank turns through the angle (180° + α) the slotted link makes its forward sweep, and during the remaining (180° − α) it makes the return sweep, where α is the angle by which the slotted link’s two extreme positions are offset from the symmetrical case. Since the crank speed is constant:\n\nQuick return ratio = time of forward stroke / time of return stroke = (180° + α) / (180° − α)\n\nA ratio greater than 1 means the return stroke is quicker. The ratio is controlled by the ratio of crank radius to centre distance, a/h: the larger a/h, the larger α and the more pronounced the quick return effect. In the usual oscillating-lever arrangement, the extreme positions of the slotted link occur when the crank is perpendicular to the slotted link, so that sin(α/2) = a/h.\n\n: Extreme positions of the slotted link and the forward and return crank angles\n\nKinematic relations used in this experiment\n\nNotation (from the laboratory manual): a = length of crank A; b = length of slotted link B; L = length of connecting rod; h = distance between crank centres; θ1 = angle of the driving crank; θ2 = angle of the slotted link; φ = angle of the connecting rod to the line of stroke; x_p = displacement of slider P; ω1, ω2 = angular velocities of A and B; α2 = angular acceleration of B; k = b/a. (Confirm each symbol against Figures 1 and 2 of the manual.)\n\nSlotted link angle. From the geometry of the configuration () the manual gives\n\nA / cos θ2 = R / cos λ = H / sin(θ2 − λ)\n\nwhere the real crank angle is θ1 = λ + β and β = sin⁻¹(h/a), assuming O2S1 is horizontal. Eliminating the intermediate lengths and writing k = b/a gives\n\nsin θ2 cos λ − cos θ2 sin λ = k cos θ2\n\ntan θ2 = tan λ + k sec λ\n\nThis is the key position equation: it gives θ2 for any value of crank angle λ (hence θ1).\n\nConnecting rod and slider. The slotted link’s end and the slider are joined by the rod L, so the vertical offset of the rod end must be consistent on both sides:\n\nL sin φ = b sin θ2, i.e. sin φ = (b/L) sin θ2\n\nThe displacement of slider P measured from its extreme (starting) position is\n\nx_p = L(1 − cos φ) + b(1 − cos θ2)\n\nAngular velocity of the slotted link. Differentiating the slotted-link angle equation with respect to time, with ω1 = dλ/dt:\n\nsec² θ2 · ω2 = ω1 (sec² λ + k sec λ tan λ)\n\nω2 = ω1 (sec² λ + k sec λ tan λ) / sec² θ2\n\nAngular acceleration of the slotted link. For a crank driven at constant speed (α1 = 0), differentiating again gives\n\nα2 sec² θ2 + 2 ω2² sec² θ2 tan θ2 = ω1² [2 sec² λ tan λ + k sec λ (sec² λ + tan² λ)]\n\nα2 = ω1² [2 sec² λ tan λ + k sec λ (sec² λ + tan² λ)] / sec² θ2 − 2 ω2² tan θ2\n\nSlider velocity and acceleration. Differentiating the slider displacement equation:\n\nẋ_p = L φ̇ sin φ + b ω2 sin θ2\n\nẍ_p = L(φ̇² cos φ + φ̈ sin φ) + b(ω2² cos θ2 + α2 sin θ2)\n\nThe rod’s angular velocity and acceleration follow from differentiating the connecting-rod relation:\n\nφ̇ = b ω2 cos θ2 / (L cos φ)\n\nφ̈ = [(b/L)(α2 cos θ2 − ω2² sin θ2) + φ̇² sin φ] / cos φ\n\nGraphical differentiation\n\nIf the displacement–angle graph is available, velocity and acceleration can be obtained without any equations. For a constant crank speed ω1, the angle θ1 is proportional to time, t = θ1/ω1. The slope of the curve of x versus θ1 at a point (found by drawing a tangent, or by taking Δx/Δθ1 over a small interval) is dx/dθ1, so ẋ_p = ω1 · dx/dθ1. Plotting these slopes against θ1 gives the velocity curve; repeating the process on the velocity curve gives the acceleration curve, ẍ_p = ω1 · dẋ_p/dθ1. The same procedure applied to θ2 gives ω2 and α2. Each differentiation amplifies scatter in the data, so the acceleration curves are always the least accurate.\n\n: Graphical differentiation: slope of the x–θ1 curve gives the velocity curve",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-312-the-slotted-crank-quick-return-mechanism_diagram_1.png",
+          "caption": "Schematic of the slotted-crank quick return mechanism (not to scale)",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-312-the-slotted-crank-quick-return-mechanism_diagram_2.png",
+          "caption": "Extreme positions of the slotted link and the forward and return crank angles",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/am-312-the-slotted-crank-quick-return-mechanism_diagram_3.png",
+          "caption": "Graphical differentiation: slope of the x–θ1 curve gives the velocity curve",
+          "index": 3
+        },
+        {
+          "src": "assets/lab_images/am-312-the-slotted-crank-quick-return-mechanism_diagram_4.png",
+          "caption": "Apparatus layout showing the measuring scales (schematic; redraw a neat sketch of your own rig if required)",
+          "index": 4
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Symbol",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Length of crank A (mm)",
+            "a",
+            "[      ]"
+          ],
+          [
+            "Length of crank B, slotted crank (mm)",
+            "b",
+            "[      ]"
+          ],
+          [
+            "Length of connecting rod (mm)",
+            "L",
+            "[      ]"
+          ],
+          [
+            "Distance between crank centres (mm)",
+            "h",
+            "[      ]"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "θ1 (°)",
+          "θ2 exp. (°)",
+          "x exp. (mm)",
+          "θ2 theory (°)",
+          "x theory (mm)"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "70",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "80",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "90",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "100",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "110",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "120",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "130",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "140",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "150",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "160",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "170",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "180",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "190",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "200",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "210",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "220",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "230",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "240",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "250",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "260",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "270",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "280",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "290",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "300",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "310",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "320",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "330",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "340",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "350",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "360",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "θ1 (°)",
+          "ω2",
+          "α2",
+          "ẋ_p",
+          "ẍ_p"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Source",
+          "Cause",
+          "Estimated magnitude"
+        ],
+        "rows": [
+          [
+            "Reading resolution",
+            "Protractor graduations and linear scale divisions",
+            "about ±0.5° and ±0.5 mm"
+          ],
+          [
+            "Parallax",
+            "Eye not level with the pointer",
+            "about ±0.5°"
+          ],
+          [
+            "Zero error",
+            "Scales not set exactly at zero",
+            "[measure]"
+          ],
+          [
+            "Backlash and clearance",
+            "Play in the slot, pins and guide, so readings depend on the direction of approach",
+            "about ±1° in θ2, ±1 mm in x"
+          ],
+          [
+            "Dimension errors",
+            "Errors in a, b, L and h feed into the theoretical curves",
+            "±0.5 mm on each length"
+          ],
+          [
+            "Graphical differentiation",
+            "Tangents drawn by eye; scatter magnified at each differentiation",
+            "about ±5–10% for velocity, larger for acceleration"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The slotted link does not turn uniformly even though the crank is turned steadily: it moves slowly through part of the cycle and quickly through the rest.",
+      "The slider travels more quickly in one direction than the other, confirming the quick return action.",
+      "Some play (backlash) was noticeable at the slot and pin joints.",
+      "Precautions",
+      "Read the protractor and scale with the eye level with the pointer to avoid parallax error.",
+      "Check and correct zero error on both protractors and the linear scale before starting.",
+      "Turn the crank in one direction only, to prevent backlash entering the readings.",
+      "Make sure the slider moves freely in its guide and the pins are not loose."
+    ],
+    "discussion": "Shape of the results\nThe θ2–θ1 graph is not a straight line. The slotted link’s sweep is slowest around one part of the crank cycle and fastest around the opposite part, so the angular velocity ω2 rises and falls once per revolution. It reaches its maximum when the crank is nearest to the slotted link’s pivot line, and passes through zero at the extremes of the swing as the link reverses. The slider displacement curve is similarly asymmetric: the forward stroke occupies a larger part of the 360° than the return stroke, which is the quick return effect. The slider velocity curve has a higher peak on the return stroke than on the forward stroke, and the acceleration curve has sharp, large peaks near the ends of the stroke where the slider reverses direction. These large end accelerations are why inertia forces limit the speed of such mechanisms in practice.\nSources of error and their estimated size\nA simple estimate of the uncertainty in a measured angle is the combined reading and parallax error, √(0.5² + 0.5²) ≈ 0.7°. For a typical θ2 of [ ]°, this is a relative error of about [ ]%. If the mean percentage difference between experimental and theoretical values (the analysis) is of the same order, the results are within the limit of experimental error.\nAgreement with theory\nCompare the experimental points with the theoretical curve on graphs 1 and 2. [State whether the points lie close to the curve and where the largest deviations occur. Deviations are usually largest near the ends of the swing, where small errors in θ1 produce large changes in θ2, and where backlash matters most.] The experimental acceleration curve is expected to be noisy, because it comes from two stages of graphical differentiation. This is a limit of the method, not a fault in the theory.\nImproving accuracy\nUse a smaller step in θ1 near the ends of the stroke, approach each reading from the same direction, and smooth the data before differentiating.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

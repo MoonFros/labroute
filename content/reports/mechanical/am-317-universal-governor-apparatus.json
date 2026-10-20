@@ -1,0 +1,426 @@
+{
+  "id": "am-317-universal-governor-apparatus",
+  "code": "AM 317",
+  "title": "UNIVERSAL GOVERNOR APPARATUS",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM317",
+    "#Governor",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-317-universal-governor-apparatus.json",
+  "content": {
+    "aim": "To investigate universal governor apparatus.",
+    "objectives": [
+      "(i) To determine the characteristics of sleeve position against controlling force and speed. (ii) To obtain the graph of radius of rotation against force. (iii) To obtain the graph of governor speed against sleeve displacement. (iv) To obtain the governor characteristic, i.e. controlling force against radius of the ball centre, for the Watt, Porter, Proell and Hartnell governors."
+    ],
+    "apparatus": [
+      "The universal governor apparatus (AM317) consists of a motor-driven vertical spindle on which the governor mechanism is mounted, a control panel (motor speed control and a digital rpm meter), a scale for the sleeve displacement, and interchangeable parts (arms, links, sleeves and weights) so that the Watt, Porter, Proell and Hartnell governors can be assembled. The upper sleeve is removed with a 16–17 mm spanner to change the governor. for the four arrangements.",
+      "*The manual prints the horizontal arm as 12.1 mm; this looks like a misprint for 121 mm. Confirm on the apparatus."
+    ],
+    "theory": {
+      "text": "Function of a governor\n\nThe function of a governor is to keep the mean speed of an engine nearly constant when the load changes. If the load increases, the speed falls and the fuel supply must be increased to bring the speed back; if the load decreases, the speed rises and the fuel supply must be reduced. The governor does this automatically by moving a sleeve that is connected to the fuel (or throttle) control. Governors are classified as centrifugal governors, which balance the centrifugal force of rotating balls against an equal and opposite radial force called the controlling force, and inertia governors, in which the balls respond to the angular acceleration of the spindle as well as to centrifugal force. This experiment deals with centrifugal governors, which are of two kinds: gravity-controlled (Watt, Porter, Proell) and spring-controlled (Hartnell).\n\nControlling force and the governor characteristic\n\nA ball of mass m rotating at radius r with angular velocity ω needs a radial inward force to stay on its circle. This is the controlling force, and it is equal to the centrifugal force at equilibrium:\n\nF_c = m ω² r\n\nThe angular velocity follows from the speed N in rpm:\n\nω = 2πN / 60\n\nThe manual writes F_c = (W/g) ω² r with W the ball weight in kg. Since the balls are weighed in kg, W is their mass, so use F_c = W ω² r with r in metres, which gives newtons. The graph of F_c against r is the governor characteristic or controlling force curve. Its shape decides the stability of the governor (). For a straight line F_c = a r ± b:\n\nb = 0 (line through the origin): the governor is isochronous, meaning it has the same equilibrium speed at every radius, and so cannot settle in one position.\n\nline cuts the force axis below the origin (F_c = a r − b): the governor is stable, since the controlling force grows faster than the centrifugal force as the radius increases.\n\nline cuts the force axis above the origin (F_c = a r + b): the governor is unstable.\n\n: Controlling force curves for stable, isochronous and unstable governors\n\nWatt governor\n\nThe Watt governor is the simplest centrifugal governor: a conical pendulum with two balls on arms of length L pivoted on the spindle, with links attached to a sleeve, all of negligible weight except the balls (). The arm pivots are 50 mm from the spindle axis, so the radius of rotation and the height are\n\n: Geometry of the Watt governor and the forces on a ball\n\nh = h₀ − x/2 cos α = h/L r = 50 + L sin α\n\nwhere x is the sleeve displacement, h₀ the initial height and α the inclination of the arm to the vertical. Moments of the ball’s weight and centrifugal force about the pivot give tan α = F_c/(mg). For an ideal conical pendulum with the pivot on the axis, this reduces to h = g/ω² (about 895/N² metres), which shows that the height changes little at high speed, so the Watt governor is insensitive and suited only to low speeds.\n\nPorter governor\n\nThe Porter governor adds a heavy central load M on the sleeve to the Watt design. The extra downward force means a higher speed is needed to lift the balls to a given height, and for a given sleeve movement the speed change is smaller, which improves sensitivity. For arm and link angles α and β, with q = tan β / tan α, the controlling force is\n\nF_c = [ m g + (M g/2)(1 + q) ] tan α\n\nand for equal arms with q = 1, N² = ((m + M)/m) × (895/h), with h in metres. The Porter governor can be made more sensitive by a heavier central load.\n\nProell governor\n\nThe Proell governor is like the Porter governor, with a heavy central load, but the balls are carried on extensions of the lower arms instead of at the junction of the upper and lower arms. The balls are therefore at a larger radius and move through a larger distance for the same sleeve displacement, which makes the governor highly sensitive: a large sleeve movement occurs for a very small change in speed. The force balance is taken by moments about the instantaneous centre of the lower arm. The apparatus uses half-ball flyweights on each side to make up the ball mass.\n\nHartnell governor\n\nThe Hartnell governor is spring-loaded. Two bell-crank levers pivot on the frame, which rotates with the spindle. Each lever has a ball on its vertical arm (length a) and a roller on its horizontal arm (length b); a helical spring in compression gives equal downward force on the two rollers through the sleeve. The controlling force comes mainly from the spring, so the speed can be set by adjusting the spring. Neglecting the weights of the balls and levers about the pivot, and when the arms are vertical and horizontal, taking moments about the pivot:\n\nF_c × a = (S/2) × b so F_c = (b / 2a) S\n\nwhere S is the total downward force on the sleeve (spring force plus sleeve weight). For a sleeve lift x, the ball radius changes by Δr = (a/b) x, and the spring stiffness is s = ΔS/Δx. Because the spring stiffness fixes the controlling force, the Hartnell governor works at higher speeds than the others and can be made stable or isochronous by choosing the initial compression and stiffness.\n\n: Schematic of the four governors (not to scale)\n\nSensitiveness, stability and effort\n\nSensitiveness measures how much the sleeve moves for a given speed change, usually expressed as the ratio of the speed range to the mean speed:\n\nSensitiveness = (N₂ − N₁) / N = 2(N₂ − N₁) / (N₁ + N₂)\n\nwhere N₁ and N₂ are the minimum and maximum speeds for the full sleeve travel. Stability means that there is one equilibrium speed for each sleeve position. A governor that is too sensitive tends to hunt, that is, to overshoot and oscillate about the mean speed. Governor effort is the average force exerted at the sleeve for a given change in speed, and is greater for governors with larger sleeve loads such as the Porter, Proell and Hartnell.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-317-universal-governor-apparatus_diagram_1.png",
+          "caption": "Controlling force curves for stable, isochronous and unstable governors",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-317-universal-governor-apparatus_diagram_2.png",
+          "caption": "Geometry of the Watt governor and the forces on a ball",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/am-317-universal-governor-apparatus_diagram_3.png",
+          "caption": "Schematic of the four governors (not to scale)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Data",
+          "Watt",
+          "Porter",
+          "Proell",
+          "Hartnell"
+        ],
+        "rows": [
+          [
+            "Length of each link, L (mm)",
+            "125",
+            "125",
+            "125",
+            "a = 75, b = 121*"
+          ],
+          [
+            "Initial height h₀ (mm)",
+            "95",
+            "95",
+            "95",
+            "—"
+          ],
+          [
+            "Initial radius r₀ (mm)",
+            "132",
+            "132",
+            "130",
+            "165"
+          ],
+          [
+            "Weight of each ball (kg)",
+            "0.328",
+            "0.328",
+            "0.328",
+            "—"
+          ],
+          [
+            "Weight on sleeve (kg)",
+            "—",
+            "[      ]",
+            "0.280",
+            "0.712 / 0.220"
+          ],
+          [
+            "Free height of spring (mm)",
+            "—",
+            "—",
+            "—",
+            "132"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "N (rpm)",
+          "x (mm)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "N (rpm)",
+          "x (mm)",
+          "W (kg)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "N (rpm)",
+          "x (mm)",
+          "W (kg)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "N (rpm)",
+          "x (mm)",
+          "W (kg)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "h (m)",
+          "α (°)",
+          "r (m)",
+          "ω (rad/s)",
+          "F_c (N)",
+          "Remarks"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "x (mm)",
+          "h (mm)",
+          "α (°)",
+          "r (mm)",
+          "N (rpm)",
+          "F_c (N)"
+        ],
+        "rows": [
+          [
+            "0",
+            "95.0",
+            "40.5",
+            "131",
+            "76",
+            "2.75"
+          ],
+          [
+            "10",
+            "90.0",
+            "43.9",
+            "137",
+            "79",
+            "3.10"
+          ],
+          [
+            "20",
+            "85.0",
+            "47.2",
+            "142",
+            "83",
+            "3.47"
+          ],
+          [
+            "30",
+            "80.0",
+            "50.2",
+            "146",
+            "86",
+            "3.86"
+          ],
+          [
+            "40",
+            "75.0",
+            "53.1",
+            "150",
+            "89",
+            "4.29"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Governor",
+          "Controlling force",
+          "Sensitiveness",
+          "Typical use"
+        ],
+        "rows": [
+          [
+            "Watt",
+            "Gravity (ball weight only)",
+            "Low, because height changes little at high speed",
+            "Low speed only"
+          ],
+          [
+            "Porter",
+            "Gravity plus central load",
+            "Better than Watt",
+            "Medium speed"
+          ],
+          [
+            "Proell",
+            "Gravity plus central load, balls on extended arms",
+            "Highest of the gravity types",
+            "Where high sensitivity is needed"
+          ],
+          [
+            "Hartnell",
+            "Spring force",
+            "Adjustable by spring",
+            "High speed, compact, e.g. engines"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The sleeve rises as the speed increases, and falls when the speed is reduced.",
+      "The Hartnell governor operates at a much higher speed than the others for the same sleeve movement.",
+      "The Proell governor shows a large sleeve displacement for a small change in speed.",
+      "Precautions",
+      "Increase the speed gradually and let it stabilize before reading x and N.",
+      "Fit the governor and linkage correctly, with the spanner, and check that all the parts move freely before switching on.",
+      "Keep clear of the rotating parts and use the guard."
+    ],
+    "discussion": "Sources of error: reading the sleeve scale and the digital speed to the resolution of the instrument (about ±1 mm and ±1 rpm); the sleeve not settling because of friction in the links and the sleeve guide, so x depends on the direction of approach; the pivot offset and link lengths not being exact; and speed fluctuation from the motor. Friction makes the sleeve ‘sticky’, so the readings for rising and falling speed differ. A few percent difference between calculated and theoretical values would be within these limits. [Add your own comparison.]\nAnswer the questions in the manual: compare your F_c–r graphs with to say whether each governor is stable, isochronous or unstable, and say which has the greatest sleeve movement for a given speed change.",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

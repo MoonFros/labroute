@@ -1,0 +1,311 @@
+{
+  "id": "eee-212-response-of-circuits-to-square-wave-voltages",
+  "code": "EEE 212",
+  "title": "Response of Circuits to Square Wave Voltages",
+  "department": "electrical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#EEE212",
+    "#ElectricalEngineering",
+    "#SquareWave"
+  ],
+  "verified": true,
+  "file": "electrical/eee-212-response-of-circuits-to-square-wave-voltages.json",
+  "content": {
+    "aim": "To investigate response of circuits to square wave voltages.",
+    "objectives": [
+      "To carry out the experiment as outlined in the laboratory manual."
+    ],
+    "apparatus": [
+      "Philip Harris Oscillator (1)",
+      "Philip Harris Switched Capacitor (1)",
+      "Philip Harris Switched Resistor (1)",
+      "J.J. Instruments Switched Inductor (1)",
+      "Oscilloscope, type D54 (1)",
+      "Note: The capacitor values in this report are in microfarads (µF). All connections were checked by a supervisor before power was switched on."
+    ],
+    "theory": {
+      "text": "When a sudden change of voltage (a step) is applied to a circuit that has a capacitor or an inductor, the output voltage does not change at once. It changes gradually to its final value. This gradual change is called the transient response. The theory of transient response shows that the output waveform seen across the capacitor is the sum of two parts: the complementary function, which is due to the circuit itself, and the particular integral, which is due to the shape of the input.\n\nFor an RC circuit with a step input of size Vi, the voltage across the capacitor is:\n\nVo = Vi (1 − e^(−t/RC))\n\nThe product RC is called the time constant of the circuit. When a square wave is applied, the simple transient analysis can be used only if the time constant is much smaller than half the period of the waveform, that is, RC << T/2. In this case the output has time to reach its final value before the input changes again. When the input falls, the capacitor discharges in the same way and the output falls as Vo = Vi e^(−t/RC).\n\nTo find the time t0.8 for the output to rise to 80 % of its full value, we put Vo = 0.8 Vi:\n\n1 − e^(−t0.8/RC) = 0.8 so e^(−t0.8/RC) = 0.2 so t0.8 = RC ln 5 = 1.61 RC\n\nThe analysis of the RL circuit is similar. Here the output is taken across the resistor R. The inductor does not allow the current to change suddenly, so the voltage across R rises gradually:\n\nVo = Vi (1 − e^(−tR/L)) and t0.8 = 1.61 L/R\n\nIn the RL circuit the time constant is L/R. A larger capacitance C or a larger inductance L gives a larger time constant, so the output rises more slowly and the edges of the square wave look more rounded.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/eee-212-response-of-circuits-to-square-wave-voltages_diagram_1.png",
+          "caption": "RC and RL circuits with a transient (step) input voltage",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/eee-212-response-of-circuits-to-square-wave-voltages_diagram_2.png",
+          "caption": "Connection of the RC circuit",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/eee-212-response-of-circuits-to-square-wave-voltages_diagram_3.png",
+          "caption": "Connection of the RL circuit",
+          "index": 3
+        },
+        {
+          "src": "assets/lab_images/eee-212-response-of-circuits-to-square-wave-voltages_diagram_4.png",
+          "caption": "Figure 4",
+          "index": 4
+        },
+        {
+          "src": "assets/lab_images/eee-212-response-of-circuits-to-square-wave-voltages_diagram_5.png",
+          "caption": "Figure 5",
+          "index": 5
+        },
+        {
+          "src": "assets/lab_images/eee-212-response-of-circuits-to-square-wave-voltages_diagram_6.png",
+          "caption": "Figure 6",
+          "index": 6
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "R (kΩ)",
+          "C (µF)",
+          "Distance to 80 % (cm)",
+          "Timebase setting (µs/cm)",
+          "t0.8 measured (µs)",
+          "t0.8 calculated (µs)"
+        ],
+        "rows": [
+          [
+            "100",
+            "0.00047",
+            "3.9",
+            "20",
+            "78",
+            "75.6"
+          ],
+          [
+            "100",
+            "0.0010",
+            "3.3",
+            "50",
+            "165",
+            "160.9"
+          ],
+          [
+            "100",
+            "0.0022",
+            "3.6",
+            "100",
+            "360",
+            "354.1"
+          ],
+          [
+            "100",
+            "0.0047",
+            "3.9",
+            "200",
+            "780",
+            "756.4"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "R (kΩ)",
+          "L (H)",
+          "Distance to 80 % (cm)",
+          "Timebase setting (µs/cm)",
+          "t0.8 measured (µs)",
+          "t0.8 calculated (µs)"
+        ],
+        "rows": [
+          [
+            "4.7",
+            "1.0",
+            "3.3",
+            "100",
+            "330",
+            "342.4"
+          ],
+          [
+            "4.7",
+            "0.8",
+            "5.4",
+            "50",
+            "270",
+            "273.9"
+          ],
+          [
+            "4.7",
+            "0.6",
+            "4.0",
+            "50",
+            "200",
+            "205.5"
+          ],
+          [
+            "4.7",
+            "0.4",
+            "6.6",
+            "20",
+            "132",
+            "137.0"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Circuit",
+          "Component",
+          "Time constant (µs)",
+          "Time constant / (T/2)",
+          "Appearance of output"
+        ],
+        "rows": [
+          [
+            "RC",
+            "C = 0.00047 µF",
+            "47",
+            "0.9 %",
+            "Almost square, edges slightly rounded"
+          ],
+          [
+            "RC",
+            "C = 0.0010 µF",
+            "100",
+            "2.0 %",
+            "Slightly rounded edges"
+          ],
+          [
+            "RC",
+            "C = 0.0022 µF",
+            "220",
+            "4.4 %",
+            "Clearly rounded edges"
+          ],
+          [
+            "RC",
+            "C = 0.0047 µF",
+            "470",
+            "9.4 %",
+            "Well rounded, reaches full value before the half period ends"
+          ],
+          [
+            "RL",
+            "L = 1.0 H",
+            "213",
+            "4.3 %",
+            "Clearly rounded edges"
+          ],
+          [
+            "RL",
+            "L = 0.8 H",
+            "170",
+            "3.4 %",
+            "Rounded edges"
+          ],
+          [
+            "RL",
+            "L = 0.6 H",
+            "128",
+            "2.6 %",
+            "Slightly rounded edges"
+          ],
+          [
+            "RL",
+            "L = 0.4 H",
+            "85",
+            "1.7 %",
+            "Slightly rounded edges"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Circuit",
+          "Component",
+          "Measured (µs)",
+          "Calculated (µs)",
+          "Difference (%)"
+        ],
+        "rows": [
+          [
+            "RC",
+            "C = 0.00047 µF",
+            "78",
+            "75.6",
+            "+3.1"
+          ],
+          [
+            "RC",
+            "C = 0.0010 µF",
+            "165",
+            "160.9",
+            "+2.5"
+          ],
+          [
+            "RC",
+            "C = 0.0022 µF",
+            "360",
+            "354.1",
+            "+1.7"
+          ],
+          [
+            "RC",
+            "C = 0.0047 µF",
+            "780",
+            "756.4",
+            "+3.1"
+          ],
+          [
+            "RL",
+            "L = 1.0 H",
+            "330",
+            "342.4",
+            "−3.6"
+          ],
+          [
+            "RL",
+            "L = 0.8 H",
+            "270",
+            "273.9",
+            "−1.4"
+          ],
+          [
+            "RL",
+            "L = 0.6 H",
+            "200",
+            "205.5",
+            "−2.7"
+          ],
+          [
+            "RL",
+            "L = 0.4 H",
+            "132",
+            "137.0",
+            "−3.6"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "All connections were checked by a supervisor before the power supply was switched on.",
+      "The oscilloscope was allowed to warm up, and the CAL positions of the voltage and time controls were used so that readings were accurate.",
+      "The brightness of the trace was kept low and the spot was not left standing in one place.",
+      "The common (earth) terminals of the oscillator and oscilloscope were joined correctly to avoid a wrong display.",
+      "The waveform was positioned carefully on the graticule and the readings were taken with the eye directly in front of the screen to avoid parallax error.",
+      "The timebase was expanded to a suitable setting before each measurement of t0.8, to reduce reading error.",
+      "The component values were set carefully, and all equipment was switched off after the experiment."
+    ],
+    "discussion": "",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

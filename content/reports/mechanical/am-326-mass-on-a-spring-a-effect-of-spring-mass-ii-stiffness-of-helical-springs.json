@@ -1,0 +1,216 @@
+{
+  "id": "am-326-mass-on-a-spring-a-effect-of-spring-mass-ii-stiffness-of-helical-springs",
+  "code": "AM 326",
+  "title": "MASS ON A SPRING (A: Effect of Spring Mass; II: Stiffness of Helical Springs)",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM326",
+    "#MechanicalEngineering",
+    "#Springs"
+  ],
+  "verified": true,
+  "file": "mechanical/am-326-mass-on-a-spring-a-effect-of-spring-mass-ii-stiffness-of-helical-springs.json",
+  "content": {
+    "aim": "To investigate mass on a spring (a: effect of spring mass; ii: stiffness of helical springs).",
+    "objectives": [
+      "(A) To study the effect of the mass of a spring on the behaviour of a spring–mass system. (II) To find the stiffness k of the three helical springs provided (1) statically, (2) dynamically and (3) using the close-coiled spring formula."
+    ],
+    "apparatus": [
+      "A heavy coil spring (and the three helical springs for part II), a hanger and weights (up to 2 kg, in steps of 0.2 or 0.25 kg), a support from a high point with a scale for the extension, a stopwatch, a balance, and a micrometer screw gauge and calipers for the wire diameter d and the mean coil diameter D."
+    ],
+    "theory": {
+      "text": "Stiffness and the simple spring–mass system\n\nFor a spring that obeys Hooke’s law, the force F is proportional to the extension x, where the constant k is the stiffness (N/m):\n\nF = k x\n\nA mass M hung on a massless spring and displaced vertically moves with simple harmonic motion, since the restoring force is −kx. Newton’s law gives M ẍ = −kx, whose solution has the natural circular frequency and period\n\nω = √(k / M) T = 2π / ω = 2π √(M / k)\n\nEffect of the mass of the spring (energy method)\n\nWhen the mass m of the spring is not negligible, an approximate correction is found by the energy method. Assume (1) that the system vibrates with SHM at circular frequency ω with the mass M having an amplitude a, (2) that the spring is wound uniformly, with mass m and equilibrium length L, and (3) that the displacement of a point on the spring at distance y from the support is proportional to y, so that it is y a/L ().\n\n: Spring element and the T² against M graph (illustrative)\n\nThe maximum strain energy is that of the spring, S.E. = ½ k a². The maximum kinetic energy of the mass M is ½ (ω a)² M. An element of the spring of length dy has mass (m/L) dy and a maximum velocity ω a y/L, so its kinetic energy is ½ (ω a y/L)² (m/L) dy. Integrating over the length of the spring:\n\nK.E. (spring) = (ω² a² m / 2L³) ∫₀ᴸ y² dy = ½ ω² a² (m / 3)\n\nSo the total maximum kinetic energy is ½ ω² a² (M + m/3). Equating the maximum kinetic and strain energies, ½ k a² = ½ ω² a² (M + m/3), so\n\nω² = k / (M + m/3) T = 2π √[ (M + m/3) / k ]\n\nHence, to allow for the spring mass, one-third of the mass of the spring is added to the suspended mass, and the standard formula is used with the new mass. Squaring the period gives a straight line in M:\n\nT² = (4π² / k)(M + m/3)\n\nA plot of T² against M therefore has a gradient of 4π²/k, from which k is found, and an intercept on the M axis of −m/3, from which the mass of the spring can be checked ().\n\nClose-coiled helical spring formula\n\nWhen a close-coiled helical spring of mean coil diameter D and wire diameter d carries an axial force F, each section of the wire is twisted by a torque F D/2. A wire of length π D N (N active coils) with polar second moment J = π d⁴/32 twists through θ = T L/(G J) = (F D/2)(π D N)/(G π d⁴/32) = 16 F D² N/(G d⁴). The axial deflection is δ = θ D/2 = 8 F D³ N/(G d⁴), so the stiffness is\n\nk = F / δ = G d⁴ / (8 N D³)\n\nwhere G is the modulus of rigidity (8.0 × 10¹⁰ N/m² for spring steel), d is the diameter of the wire, N is the number of active coils and D is the mean diameter of the coils. This result follows from the same torsion theory as the torsional oscillation experiment.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-326-mass-on-a-spring-a-effect-of-spring-mass-ii-stiffness-of-helical-springs_diagram_1.png",
+          "caption": "Spring element and the T² against M graph (illustrative)",
+          "index": 1
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Mass of spring, m",
+            "[      ] kg"
+          ],
+          [
+            "Natural length and number of coils, N",
+            "[      ] mm,  [      ]"
+          ],
+          [
+            "Wire diameter d / mean coil diameter D",
+            "[      ] mm / [      ] mm"
+          ],
+          [
+            "Modulus of rigidity G (spring steel)",
+            "8.0 × 10¹⁰ N/m²"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "No.",
+          "Mass M (kg)",
+          "Extension x (mm)",
+          "Time for 20 oscillations (s)",
+          "Period T (s)",
+          "T² (s²)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "7",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Spring",
+          "k static (N/m)",
+          "k dynamic (N/m)",
+          "k from formula (N/m)",
+          "Spring mass m (from intercept) (kg)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Mass M (kg)",
+          "T (s)",
+          "T² (s²)"
+        ],
+        "rows": [
+          [
+            "0.25",
+            "0.1014",
+            "0.0103"
+          ],
+          [
+            "0.5",
+            "0.1419",
+            "0.0201"
+          ],
+          [
+            "1",
+            "0.1997",
+            "0.0399"
+          ],
+          [
+            "1.5",
+            "0.2442",
+            "0.0596"
+          ],
+          [
+            "2",
+            "0.2817",
+            "0.0794"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The period increased with the suspended mass, and T² against M was nearly a straight line.",
+      "The line did not pass through the origin: it cut the M axis at a negative value, showing the effect of the spring mass.",
+      "Precautions",
+      "Start with small vertical oscillations and avoid lateral swing and ‘bumping’ of the coils (at low loads the coils may touch).",
+      "Time at least 10 to 20 oscillations, starting the watch as the mass passes the centre; keep the amplitude small so that the spring stays elastic."
+    ],
+    "discussion": "Accuracy and consistency; the three assumptions. The three assumptions are: (1) the motion is simple harmonic, which holds if the spring is linear and the amplitude is small; (2) the spring is uniformly wound with its mass evenly distributed, which is approximately true except at the end coils; and (3) the displacement of a point on the spring is proportional to its distance from the support (a linear distribution of displacement), which is true for a slow motion, but at high frequency the spring has its own modes. The result m/3 is then an approximation that is good for m small compared with M. Errors: the timing (stopwatch ±0.3 s on 10 to 20 oscillations, or about 1 to 3% in T, and so 2 to 6% in T²); the extension measured to ±0.5 mm; the end coils of the spring, which are not active, so that N is not exactly the number of turns; damping; and the diameters d and D measured to about ±0.01 mm, with d entering as d⁴ (1% error in d gives 4% in k). The stiffness from the formula depends on G, which is not exactly 8.0 × 10¹⁰ N/m². [Estimate the accuracy and consistency of your three values of k.]",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}

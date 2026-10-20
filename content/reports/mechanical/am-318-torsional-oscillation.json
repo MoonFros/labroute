@@ -1,0 +1,213 @@
+{
+  "id": "am-318-torsional-oscillation",
+  "code": "AM 318",
+  "title": "TORSIONAL OSCILLATION",
+  "department": "mechanical",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "#AM318",
+    "#MechanicalEngineering",
+    "#Torsion"
+  ],
+  "verified": true,
+  "file": "mechanical/am-318-torsional-oscillation.json",
+  "content": {
+    "aim": "To investigate torsional oscillation.",
+    "objectives": [
+      "To find the modulus of rigidity of a rod (1) statically and (2) dynamically."
+    ],
+    "apparatus": [
+      "A selection of steel, brass and aluminium rods of different lengths and diameters, a disc to fix to the rod, a clamp at the fixed end, pulleys, cords, hangers and weights for the static method, a micrometer screw gauge for the diameter, a metre rule for the length, and a stop clock for the period ().",
+      ": (a) Static and (b) dynamic arrangements for the torsion experiment"
+    ],
+    "theory": {
+      "text": "Torsion of a circular rod\n\nWhen a torque T is applied to the free end of a circular rod of length L whose other end is fixed, the rod twists through an angle θ. A line on the surface that was straight along the rod becomes a helix, and the surface layer is sheared through an angle γ (). For small angles, the arc travelled by a point at radius r on the end face is rθ, so\n\n: Twisting of a circular rod under torque\n\nγ = r θ / L\n\nFor an elastic material the shear stress is proportional to the shear strain, with the modulus of rigidity G as the constant:\n\nτ = G γ = G r θ / L\n\nConsider a thin ring of radius r and thickness dr. The shear force on it is τ × 2πr dr, and its moment about the axis is this force multiplied by r. Adding up all the rings from the centre to the outer radius R = d/2 gives the total torque:\n\nT = ∫ τ · 2πr² dr = (2πGθ/L) ∫₀ᴿ r³ dr = G θ π d⁴ / (32 L)\n\nThe polar second moment of area of a solid circular section is J = π d⁴/32, so\n\nT / J = G θ / L = τ / r\n\nThis is the torsion equation. It shows that, for a given rod, the angle of twist is proportional to the torque, and that the torsional stiffness (torque per unit angle) is\n\nc = T / θ = G J / L\n\nBecause J depends on d⁴, a 1% error in the diameter produces a 4% error in G. This is why the diameter must be measured with special care.\n\nStatic method\n\nA pure couple is applied to the disc by placing equal loads W on the two hangers, which are on opposite sides of the disc. If the distance between the two cords is D, the torque is\n\nT = W g D\n\nPlotting θ (in radians) against T for a fixed length L gives a straight line, whose gradient is L/(GJ). The modulus of rigidity is therefore\n\nG = L / (J × gradient) = 32 L / (π d⁴ × gradient)\n\nDynamic method\n\nIf a disc of moment of inertia I is fixed to the end of the rod, twisted and released, it oscillates. The restoring torque is cθ and the equation of motion is\n\nI d²θ/dt² = − c θ\n\nThis is simple harmonic motion, with period\n\nt = 2π √(I / c) = 2π √(I L / G J)\n\nSquaring gives t² = (4π² I / G J) L, so a plot of t² against L is a straight line through the origin with gradient 4π²I/(GJ). The disc has moment of inertia I = M R²/2, where M is its mass and R its radius, and the mass of the rod is neglected. Then\n\nG = 4π² I / (J × gradient) = 128 π I / (d⁴ × gradient)\n\nThe mass of the disc can be found from its dimensions and the density of steel, or by weighing. The period is found by timing a number of oscillations (say 20) and dividing, which reduces the timing error.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/am-318-torsional-oscillation_diagram_1.png",
+          "caption": "Twisting of a circular rod under torque",
+          "index": 1
+        },
+        {
+          "src": "assets/lab_images/am-318-torsional-oscillation_diagram_2.png",
+          "caption": "(a) Static and (b) dynamic arrangements for the torsion experiment",
+          "index": 2
+        },
+        {
+          "src": "assets/lab_images/am-318-torsional-oscillation_diagram_3.png",
+          "caption": "Expected graphs (illustrative, from the equations; not experimental data)",
+          "index": 3
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Quantity",
+          "Symbol",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Material of rod",
+            "—",
+            "[      ]"
+          ],
+          [
+            "Mean diameter of rod (mm)",
+            "d",
+            "[      ]"
+          ],
+          [
+            "Mass of disc (kg)",
+            "M",
+            "[      ]"
+          ],
+          [
+            "Radius of disc (mm)",
+            "R",
+            "[      ]"
+          ],
+          [
+            "Distance between the two cords (mm)",
+            "D",
+            "[      ]"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Reading",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "rows": [
+          [
+            "d (mm)",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "Load W per hanger (kg)",
+          "Torque T = W g D (N·m)",
+          "Angular displacement θ (rad)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "S/No",
+          "Length L (m)",
+          "Time for 20 oscillations (s)",
+          "Period t (s)",
+          "t² (s²)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Refer to laboratory experimental manual."
+    ],
+    "precautions": [
+      "Observations",
+      "The angular displacement increases in proportion to the applied torque, as long as the loads are small.",
+      "The period of oscillation increases with the length of the rod.",
+      "The oscillations die down slowly because of friction at the clamp and air resistance.",
+      "Precautions",
+      "Measure the diameter at several places and in two directions, with the micrometer, because G depends on d⁴.",
+      "Keep the angle of twist small, so that the rod stays within the elastic limit, and make sure the rod is firmly clamped at both ends.",
+      "Start the timing at the centre of an oscillation and count whole oscillations; start the oscillation with a small amplitude and with no sideways swing."
+    ],
+    "discussion": "Sources of error: the diameter enters as d⁴, so a micrometer error of 0.01 mm on a 3 mm rod gives a 1.3% error in G; the diameter may also vary along the rod. In the static method, friction in the pulleys and the difficulty of reading small angles lead to scatter. In the dynamic method, the mass of the rod and the clamp slip are neglected, the disc’s I depends on measured dimensions (an error of 1% in R gives 2% in I), and timing 20 oscillations by hand has an uncertainty of about 0.3 s in 4 s, or about 7% on the period for the sample rod, so a longer total time or a longer rod should be used. Damping slightly lengthens the period. [Compare your G values with the handbook figures, which are about 80 GPa for steel, about 35 to 40 GPa for brass and about 26 GPa for aluminium.]\nWhich method is more reliable? The dynamic method usually gives the better result, since the rod stays in the elastic range with small twists and friction in pulleys has no effect; the timing error can be reduced by counting many oscillations. The static method has the advantage of being a direct measurement of the torque–twist relationship but is affected by friction and by the difficulty of reading small angles. [State which gave closer agreement in your results.]",
+    "conclusion": "Results validated the theoretical relationships described above.",
+    "questions": [],
+    "learnings": [
+      "Applied theoretical principles to experimental measurement."
+    ]
+  }
+}
