@@ -217,6 +217,72 @@ test('the Vercel handler serves the moments API (the reported 404)', async () =>
   }
 });
 
+test('production rewrites restore nested API paths', async () => {
+  const { root, overrides } = await makeFixture();
+
+  // Guard the exact production failure: an api/[...path].js catch-all only
+  // matched a single segment in production (/api/health worked while
+  // /api/moments/status 404'd). Nested routes must arrive via the rewrite.
+  const repoRoot = path.join(__dirname, '..');
+  const vercelConfig = JSON.parse(await fsp.readFile(path.join(repoRoot, 'vercel.json'), 'utf8'));
+  const apiFiles = await fsp.readdir(path.join(repoRoot, 'api'));
+  assert.deepEqual(apiFiles, ['index.js']);
+  assert.ok(
+    vercelConfig.rewrites.some(
+      (rewrite) =>
+        rewrite.source === '/api/(.*)' && rewrite.destination === '/api?__labroute_path=$1'
+    )
+  );
+
+  const handler = createVercelHandler(overrides);
+  const server = http.createServer(handler);
+  const baseUrl = await listen(server);
+
+  try {
+    // Exactly how Vercel presents GET /api/moments/status after the rewrite.
+    const status = await jsonRequest(
+      baseUrl,
+      '/api?__labroute_path=moments/status',
+      { headers: { 'X-Labroute-Device': 'device-rewritten-12345' } },
+      {}
+    );
+    assert.equal(status.status, 200);
+    assert.equal(status.json.canUpload, true);
+
+    const upload = await jsonRequest(
+      baseUrl,
+      '/api?__labroute_path=moments',
+      {
+        method: 'POST',
+        headers: { 'X-Labroute-Device': 'device-rewritten-12345' },
+        body: JSON.stringify({
+          image: imgDataUrl(),
+          caption: 'Uploaded via a rewritten production route',
+          consent: true
+        })
+      },
+      status.jar
+    );
+    assert.equal(upload.status, 201);
+    assert.equal(upload.json.pendingCount, 1);
+
+    // Real query parameters must survive alongside the rewrite parameter.
+    const recent = await jsonRequest(
+      baseUrl,
+      '/api?__labroute_path=moments/recent&limit=10'
+    );
+    assert.equal(recent.status, 200);
+    assert.equal(recent.json.count, 0);
+
+    const session = await jsonRequest(baseUrl, '/api?__labroute_path=admin/session');
+    assert.equal(session.status, 200);
+    assert.equal(session.json.authenticated, false);
+  } finally {
+    await close(server);
+    await fsp.rm(root, { recursive: true, force: true });
+  }
+});
+
 test('a body pre-parsed by the platform is accepted', async () => {
   const { root, overrides } = await makeFixture();
   const handler = createVercelHandler(overrides);

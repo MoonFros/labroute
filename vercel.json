@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/*.js": {
+    "api/index.js": {
       "maxDuration": 30,
       "includeFiles": "{content/gallery.json,data/admins.json}"
     }
@@ -10,6 +10,10 @@
     {
       "source": "/assets/gallery/moments/(.*)",
       "destination": "/api/moment-image/$1"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api?__labroute_path=$1"
     }
   ]
 }
