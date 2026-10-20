@@ -548,6 +548,44 @@ test('storageStatus flags temporary serverless storage as non-durable', () => {
   assert.equal(storageStatus({}).durable, true); // defaults to local
 });
 
+test('the temporary-storage hint names the exact missing piece', () => {
+  const saved = {
+    token: process.env.BLOB_READ_WRITE_TOKEN,
+    store: process.env.BLOB_STORE_ID,
+    oidc: process.env.VERCEL_OIDC_TOKEN
+  };
+
+  try {
+    delete process.env.BLOB_READ_WRITE_TOKEN;
+    delete process.env.BLOB_STORE_ID;
+    delete process.env.VERCEL_OIDC_TOKEN;
+
+    // Nothing connected at all.
+    assert.match(storageStatus({ storageMode: 'ephemeral' }).hint, /No Blob store is attached/);
+
+    // Store attached, but no credential the SDK can use — the exact state the
+    // production deployment reported (hasStoreId true, no token, no OIDC).
+    process.env.BLOB_STORE_ID = 'store_example';
+    const attached = storageStatus({ storageMode: 'ephemeral' });
+    assert.equal(attached.durable, false);
+    assert.match(attached.hint, /BLOB_STORE_ID is set/);
+    assert.match(attached.hint, /BLOB_READ_WRITE_TOKEN/);
+
+    // A credential is present: stop blaming the store connection.
+    process.env.BLOB_READ_WRITE_TOKEN = 'vercel_blob_rw_example';
+    const credentialed = storageStatus({ storageMode: 'ephemeral' });
+    assert.doesNotMatch(credentialed.hint, /No Blob store is attached/);
+    assert.match(credentialed.hint, /did not install|next deployment/);
+  } finally {
+    if (saved.token === undefined) delete process.env.BLOB_READ_WRITE_TOKEN;
+    else process.env.BLOB_READ_WRITE_TOKEN = saved.token;
+    if (saved.store === undefined) delete process.env.BLOB_STORE_ID;
+    else process.env.BLOB_STORE_ID = saved.store;
+    if (saved.oidc === undefined) delete process.env.VERCEL_OIDC_TOKEN;
+    else process.env.VERCEL_OIDC_TOKEN = saved.oidc;
+  }
+});
+
 test('a lost gallery write is reported as a failure, not a successful approval', async () => {
   // A Blob store whose reads never see what was written (the "photo shows up
   // now, gone later" failure mode). The store must throw instead of telling

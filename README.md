@@ -146,14 +146,37 @@ curl -s https://labroute.vercel.app/api/health
 | --- | --- |
 | `storage` | `vercel-blob` = durable. `ephemeral` = `/tmp`, approvals will vanish. `local` = a Node host's disk, durable. |
 | `durable` | `false` when approvals are temporary. The admin dashboard shows a red **Approvals are temporary** banner whenever this is false, and the approve endpoint says so in its response. |
-| `blob.credentials` | `false` when no Blob store is connected to this environment at all. |
-| `blob.hasStoreId` / `blob.hasOidcToken` | A store connected to the project but only for Preview shows `hasStoreId` without `hasOidcToken` (and no `hasReadWriteToken`) in Production. |
+| `blob.credentials` | `false` when the Function has no credential it can authenticate with. |
+| `blob.hasStoreId` / `blob.hasReadWriteToken` / `blob.hasOidcToken` | `hasStoreId: true` with **both** `hasReadWriteToken: false` and `hasOidcToken: false` means a store is attached to the project but the running Function has no usable token — the gallery then stays on `/tmp` even though "Blob is connected". |
 | `blob.sdkAvailable` | `false` if `@vercel/blob` did not install into the Function. |
 
 `GET /api/gallery` also reports `source`: `storage` means the list came from
 Blob/disk, `seed` means storage had no manifest and the committed
 `content/gallery.json` was served instead. A gallery that shows only the
 original photos is usually `source: "seed"`.
+
+### Store attached, but still ephemeral
+
+This is the state where the dashboard's *Storage* tab clearly shows a Blob
+store, yet `/api/health` reports:
+
+```json
+"storage": "ephemeral",
+"blob": { "credentials": false, "hasReadWriteToken": false, "hasStoreId": true, "hasOidcToken": false }
+```
+
+`BLOB_STORE_ID` is injected into the deployment, but the SDK has nothing to
+authenticate with, so it cannot read or write a single byte. Two ways to fix it:
+
+1. **Give the deployment the store token (most reliable).** Vercel dashboard →
+   **Storage** → your Blob store → **.env** / **Connect** → copy
+   `BLOB_READ_WRITE_TOKEN`, then **Project → Settings → Environment Variables**
+   → add `BLOB_READ_WRITE_TOKEN` with that value for **Production** →
+   **Redeploy**. `/api/health` must then report `blob.hasReadWriteToken: true`.
+2. **Enable OIDC for the project** so Vercel injects `VERCEL_OIDC_TOKEN` at
+   runtime (`blob.hasOidcToken: true`), then redeploy.
+
+Either way the target is `"storage": "vercel-blob"` and `"durable": true`.
 
 Fix: connect the Blob store to **Production** (not just Preview/Development), so
 `blob.credentials` becomes `true`, then redeploy and confirm
