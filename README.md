@@ -150,10 +150,24 @@ curl -s https://labroute.vercel.app/api/health
 | `blob.hasStoreId` / `blob.hasOidcToken` | A store connected to the project but only for Preview shows `hasStoreId` without `hasOidcToken` (and no `hasReadWriteToken`) in Production. |
 | `blob.sdkAvailable` | `false` if `@vercel/blob` did not install into the Function. |
 
+`GET /api/gallery` also reports `source`: `storage` means the list came from
+Blob/disk, `seed` means storage had no manifest and the committed
+`content/gallery.json` was served instead. A gallery that shows only the
+original photos is usually `source: "seed"`.
+
 Fix: connect the Blob store to **Production** (not just Preview/Development), so
 `blob.credentials` becomes `true`, then redeploy and confirm
 `"storage": "vercel-blob"` / `"durable": true`. Photos approved after that are
 written to Blob and survive restarts, redeploys, and new Function instances.
+
+**Connecting a store is not retroactive.** Vercel captures environment
+variables into each deployment, so an already-running Production deployment
+keeps its old (credential-free) environment until a **new deployment** is
+created — push a commit, or use *Deployments → ⋯ → Redeploy*. Loading the site
+immediately after connecting a store therefore still shows
+`"storage": "ephemeral"`. If a redeploy is not possible, `MOMENTS_STORAGE=blob`
+forces the Blob path even when `BLOB_READ_WRITE_TOKEN` is not detected (the
+store must still be connected, or every request fails).
 
 Note that anything approved while the site was on `/tmp` cannot be recovered —
 those bytes were deleted with the instance. Ask visitors to re-upload.

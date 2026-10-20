@@ -169,6 +169,7 @@ test('LabRoute moments review API', async (t) => {
       const gallery = await jsonRequest(baseUrl, '/api/gallery');
       assert.equal(gallery.status, 200);
       assert.equal(gallery.json.gallery.length, 3);
+      assert.equal(gallery.json.source, 'storage');
       assert.equal(gallery.json.gallery[0].id, 'gal-old-1');
       assert.equal(gallery.json.gallery[0].uploaded, false);
     });
@@ -626,4 +627,40 @@ test('a verified gallery write is visible to the next request', async () => {
   const gallery = await coldStart.publicGallery();
   assert.equal(gallery.length, 1);
   assert.equal(gallery[0].caption, 'Survives a new instance');
+});
+
+test('the gallery reports whether it came from storage or the committed seed', async () => {
+  const blob = createMemoryBlobStorage({ access: 'private' });
+  const dir = await fsp.mkdtemp(path.join(os.tmpdir(), 'labroute-source-'));
+  const seedFile = path.join(dir, 'gallery.json');
+
+  await fsp.writeFile(
+    seedFile,
+    JSON.stringify([{ id: 'gal-seed', image: 'assets/gallery/seed.jpeg', caption: 'Seed photo' }])
+  );
+
+  const store = new GalleryStore(
+    { galleryFile: path.join(dir, 'unused.json'), gallerySeedFile: seedFile, uploadDir: dir },
+    blob
+  );
+
+  // No manifest in storage yet: the committed seed is what visitors see.
+  const before = await store.publicGalleryState();
+  assert.equal(before.source, 'seed');
+  assert.equal(before.gallery[0].id, 'gal-seed');
+
+  await store.add({
+    id: 'moment-live',
+    image: 'assets/gallery/moments/moment-live.png',
+    caption: 'Stored in Blob'
+  });
+
+  // After a successful approval the manifest exists in storage, so the site
+  // must stop reporting (and stop serving) the seed.
+  const after = await store.publicGalleryState();
+  assert.equal(after.source, 'storage');
+  assert.equal(after.gallery[0].id, 'moment-live');
+  assert.equal(after.gallery[1].id, 'gal-seed');
+
+  await fsp.rm(dir, { recursive: true, force: true });
 });

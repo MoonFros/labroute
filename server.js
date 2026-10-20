@@ -521,8 +521,11 @@ async function handleApi(req, res, pathname, url, ctx) {
   if (pathname === '/api/gallery') {
     if (method !== 'GET') return sendMethodNotAllowed(res, ['GET']);
 
-    const gallery = await galleryStore.publicGallery();
-    return sendJson(res, 200, { ok: true, gallery, count: gallery.length });
+    const { gallery, source } = await galleryStore.publicGalleryState();
+    // `source: "seed"` means storage held no gallery manifest and the site is
+    // showing content/gallery.json as committed — approved photos are absent
+    // from storage, they are not just missing from the rendered page.
+    return sendJson(res, 200, { ok: true, gallery, count: gallery.length, source });
   }
 
   if (pathname === '/api/moments/status') {
