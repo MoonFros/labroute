@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "test": "node --test tests/moments.test.js tests/gallery-paging.test.js tests/email.test.js tests/vercel.test.js",
+    "test": "node --test tests/moments.test.js tests/gallery-paging.test.js tests/promo.test.js tests/email.test.js tests/vercel.test.js",
     "publish": "node tools/publish-moment.js"
   },
   "engines": {
