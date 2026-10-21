@@ -8,11 +8,18 @@
   'use strict';
 
   const DEVICE_STORAGE_KEY = 'labroute_device_id';
-  const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
-  const ALLOWED_EXTENSIONS = /\.(jpe?g|png|webp)$/i;
+  // Everything the browser can decode is accepted: JPEG, PNG, WebP, GIF, BMP,
+  // AVIF and (on iOS) HEIC. The photo is re-encoded to JPEG before upload, so
+  // the server only has to understand one format for these contributions.
+  const MAX_EDGE = 2048; // px on the long edge after resizing
+  const DECODE_TIMEOUT_MS = 10000;
+  const JPEG_QUALITY = 0.85;
+  const IMAGE_EXTENSIONS = /\.(jpe?g|jfif|png|webp|gif|bmp|avif|heic|heif)$/i;
 
   const state = {
     file: null,
+    preparedBlob: null,
+    preparing: false,
     previewUrl: '',
     deviceId: '',
     maxBytes: 8 * 1024 * 1024,
@@ -156,8 +163,148 @@
   }
 
   function fileExtension(file) {
-    const match = String(file.name || '').match(ALLOWED_EXTENSIONS);
+    const match = String(file.name || '').match(IMAGE_EXTENSIONS);
     return match ? match[0].slice(1).toLowerCase() : '';
+  }
+
+  /**
+   * Is this something we should try to open?
+   *
+   * Deliberately generous: an empty `file.type` (Google Photos, Drive, some
+   * share sheets) or an unknown one still gets a chance, because the browser
+   * decoder is the real test. Only obviously non-image files are refused here.
+   */
+  function looksLikeImage(file) {
+    const type = String(file.type || '').toLowerCase();
+    if (type.startsWith('image/')) return true;
+    if (!type && fileExtension(file)) return true;
+    // No type and no helpful extension (e.g. "IMG_0001" from a share sheet).
+    if (!type && !fileExtension(file)) return true;
+    return false;
+  }
+
+  /** HEIC/HEIF container sniff — used only to explain what to do next. */
+  async function isHeic(file) {
+    if (/\.(heic|heif)$/i.test(file.name || '')) return true;
+
+    try {
+      const head = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+      if (head.length < 12) return false;
+      if (String.fromCharCode(head[4], head[5], head[6], head[7]) !== 'ftyp') return false;
+
+      const brand = String.fromCharCode(head[8], head[9], head[10], head[11]).toLowerCase();
+      return ['heic', 'heix', 'hevc', 'hevx', 'heim', 'heis', 'heif', 'mif1'].includes(brand);
+    } catch {
+      return false;
+    }
+  }
+
+  const HEIC_MESSAGE =
+    'This looks like an iPhone HEIC photo, which browsers cannot always open. ' +
+    'On iPhone: Settings → Camera → Formats → Most Compatible, or share the photo as JPEG.';
+
+  function decodeWithImageElement(file) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const image = new Image();
+      let settled = false;
+
+      const finish = (settle, value) => {
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(timer);
+        URL.revokeObjectURL(url);
+        settle(value);
+      };
+
+      // Some browsers never fire load *or* error for a format they do not
+      // know (HEIC outside Safari). Without this the form would sit on
+      // "Optimising photo…" forever.
+      const timer = window.setTimeout(
+        () => finish(reject, new Error('decode-timeout')),
+        DECODE_TIMEOUT_MS
+      );
+
+      image.onload = () => finish(resolve, image);
+      image.onerror = () => finish(reject, new Error('decode-failed'));
+
+      image.src = url;
+    });
+  }
+
+  function drawToBlob(source, width, height) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+
+    const context = canvas.getContext('2d');
+    if (!context) return Promise.reject(new Error('no-canvas'));
+
+    // JPEG has no transparency: paint white so PNG/GIF cut-outs do not go black.
+    context.fillStyle = '#ffffff';
+    context.fillRect(0, 0, width, height);
+    context.drawImage(source, 0, 0, width, height);
+
+    return new Promise((resolve, reject) => {
+      canvas.toBlob(
+        (blob) => (blob ? resolve(blob) : reject(new Error('encode-failed'))),
+        'image/jpeg',
+        JPEG_QUALITY
+      );
+    });
+  }
+
+  /**
+   * Normalise any photo the browser can open into a JPEG that fits the limits.
+   *
+   * This is what makes "allow all image types" work end to end: HEIC (iOS),
+   * AVIF, GIF and BMP all become a plain JPEG, EXIF rotation is applied by the
+   * decoder, GPS metadata is dropped, and a 6 MB phone photo shrinks to a few
+   * hundred KB so it clears the serverless upload cap.
+   *
+   * Returns { blob, width, height } or null when the browser cannot decode it
+   * (the caller then falls back to sending the original bytes untouched).
+   */
+  async function preparePhoto(file) {
+    let source = null;
+    let width = 0;
+    let height = 0;
+
+    if (typeof window.createImageBitmap === 'function') {
+      try {
+        // `from-image` applies the EXIF orientation instead of rotating later.
+        source = await window.createImageBitmap(file, { imageOrientation: 'from-image' });
+        width = source.width;
+        height = source.height;
+      } catch {
+        source = null;
+      }
+    }
+
+    if (!source) {
+      try {
+        source = await decodeWithImageElement(file);
+        width = source.naturalWidth || source.width;
+        height = source.naturalHeight || source.height;
+      } catch {
+        return null;
+      }
+    }
+
+    if (!width || !height) return null;
+
+    const scale = Math.min(1, MAX_EDGE / Math.max(width, height));
+    const targetWidth = Math.max(1, Math.round(width * scale));
+    const targetHeight = Math.max(1, Math.round(height * scale));
+
+    try {
+      const blob = await drawToBlob(source, targetWidth, targetHeight);
+      return { blob, width: targetWidth, height: targetHeight };
+    } catch {
+      return null;
+    } finally {
+      if (source && typeof source.close === 'function') source.close();
+    }
   }
 
   /* ------------------------------------------------------------------ alert */
@@ -210,22 +357,14 @@
     });
   }
 
-  function handleFiles(fileList) {
+  async function handleFiles(fileList) {
     clearAlert();
 
     const file = fileList && fileList[0];
     if (!file) return;
 
-    if (!ALLOWED_TYPES.has(file.type) && !fileExtension(file)) {
-      showAlert('Please choose a JPEG, PNG, or WebP photo.');
-      resetFileInput();
-      return;
-    }
-
-    if (file.size > state.maxBytes) {
-      showAlert(
-        `That photo is ${formatBytes(file.size)}. Please choose one under ${formatBytes(state.maxBytes)}.`
-      );
+    if (!looksLikeImage(file)) {
+      showAlert('That file is not an image. Please choose a photo (JPEG, PNG, WebP, GIF or BMP).');
       resetFileInput();
       return;
     }
@@ -236,21 +375,77 @@
       return;
     }
 
-    revokePreview();
-    state.file = file;
-    state.previewUrl = URL.createObjectURL(file);
+    // A photo is resized and re-encoded, so the raw size is only a sanity
+    // check: a 12 MP phone JPEG (8-12 MB) is perfectly acceptable and arrives
+    // at a fraction of that size once normalised.
+    if (file.size > state.maxBytes * 4) {
+      showAlert(
+        `That photo is ${formatBytes(file.size)}, which is very large. Please choose one under ${formatBytes(
+          state.maxBytes * 4
+        )}.`
+      );
+      resetFileInput();
+      return;
+    }
 
-    el.previewImage.src = state.previewUrl;
-    el.previewImage.alt = `Preview of ${file.name}`;
-    el.previewName.textContent = file.name;
-    el.previewMeta.textContent = `${formatBytes(file.size)} · ${
-      file.type ? file.type.replace('image/', '').toUpperCase() : fileExtension(file).toUpperCase()
-    }`;
+    setPreparing(true);
 
-    el.photoPreview.hidden = false;
-    el.dropzone.hidden = true;
+    try {
+      const prepared = await preparePhoto(file);
 
-    updateSubmitState();
+      if (!prepared) {
+        // The browser could not decode it. HEIC is the usual culprit outside
+        // Safari, so explain rather than show a generic failure.
+        if (await isHeic(file)) {
+          showAlert(HEIC_MESSAGE);
+        } else {
+          showAlert(
+            'That image could not be opened in this browser. Please try a JPEG, PNG, WebP, GIF or BMP file.'
+          );
+        }
+        resetFileInput();
+        return;
+      }
+
+      if (prepared.blob.size > state.maxBytes) {
+        showAlert(
+          `That photo is still ${formatBytes(prepared.blob.size)} after optimising. Please choose one under ${formatBytes(
+            state.maxBytes
+          )}.`
+        );
+        resetFileInput();
+        return;
+      }
+
+      revokePreview();
+      state.file = file;
+      state.preparedBlob = prepared.blob;
+      state.previewUrl = URL.createObjectURL(prepared.blob);
+
+      el.previewImage.src = state.previewUrl;
+      el.previewImage.alt = `Preview of ${file.name}`;
+      el.previewName.textContent = file.name;
+      el.previewMeta.textContent = `${formatBytes(prepared.blob.size)} · JPEG (${prepared.width}×${prepared.height})`;
+
+      el.photoPreview.hidden = false;
+      el.dropzone.hidden = true;
+    } finally {
+      setPreparing(false);
+      updateSubmitState();
+    }
+  }
+
+  // Small "optimising" state so a slow phone decode does not look like a hang.
+  function setPreparing(isPreparing) {
+    state.preparing = isPreparing;
+
+    if (el.dropzone) el.dropzone.classList.toggle('is-busy', isPreparing);
+
+    if (isPreparing) {
+      el.previewMeta.textContent = 'Optimising photo…';
+      el.photoPreview.hidden = false;
+      el.dropzone.hidden = true;
+    }
   }
 
   function resetFileInput() {
@@ -270,6 +465,7 @@
     revokePreview();
     resetFileInput();
     state.file = null;
+    state.preparedBlob = null;
 
     el.previewImage.removeAttribute('src');
     el.photoPreview.hidden = true;
@@ -361,7 +557,7 @@
 
   function updateDropzoneHint() {
     if (!el.dropzoneHint) return;
-    el.dropzoneHint.textContent = `or click to browse. JPEG, PNG or WebP, up to ${formatBytes(state.maxBytes)}.`;
+    el.dropzoneHint.textContent = `or click to browse. Any photo — JPEG, PNG, WebP, GIF, AVIF or iPhone HEIC. Resized automatically to fit ${formatBytes(state.maxBytes)}.`;
   }
 
   /* -------------------------------------------------------------- form state */
@@ -380,6 +576,7 @@
     const canSubmit =
       state.apiAvailable &&
       !state.busy &&
+      !state.preparing &&
       !isCoolingDown() &&
       Boolean(state.file) &&
       Boolean(el.consent.checked);
@@ -517,7 +714,10 @@
     setBusy(true);
 
     try {
-      const dataUrl = await readAsDataUrl(state.file);
+      // Send the normalised JPEG produced at selection time; fall back to the
+      // original file only if preparation somehow did not run.
+      const payload = state.preparedBlob || state.file;
+      const dataUrl = await readAsDataUrl(payload);
 
       const response = await fetch('/api/moments', {
         method: 'POST',
@@ -554,7 +754,7 @@
         if (response.status === 413) {
           showAlert('That image is larger than the upload limit. Please choose a smaller photo.');
         } else if (response.status === 415) {
-          showAlert('Please choose a JPEG, PNG, or WebP photo.');
+          showAlert(data.message || 'Please choose a JPEG, PNG, WebP, GIF or BMP photo.');
         } else if (data.message) {
           showAlert(data.message);
         } else {

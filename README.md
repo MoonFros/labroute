@@ -12,8 +12,8 @@ Oboh Christopher - Team Member and Report Author
 ## Community Lab Moments
 
 The gallery on the home page accepts visitor photos, but nothing is published
-immediately. A visitor previews a JPEG, PNG, or WebP image on `upload.html` and
-sends it for review. The photo is stored in the private pending area
+immediately. A visitor previews any photo on `upload.html` and sends it for
+review. The photo is stored in the private pending area
 (`data/pending/` on a Node host, Vercel Blob on Vercel)
 and listed under **Pending uploads** on `dashboard.html`, where an admin can:
 
@@ -325,7 +325,24 @@ Notes:
 
 - Photos are capped at **3 MB on Vercel** (Vercel Functions reject request
   bodies over 4.5 MB, and uploads travel base64-encoded). The upload page
-  shows the limit the API reports.
+  shows the limit the API reports. The browser resizes every photo to 2048 px
+  on the long edge and re-encodes it as JPEG, so a 10 MP phone photo arrives as
+  a few hundred KB and comfortably fits.
+- **Any photo format is accepted.** `upload.html` has `accept="image/*"` and the
+  browser re-encodes what it can decode (JPEG, PNG, WebP, GIF, BMP, AVIF, and
+  HEIC on iOS Safari) into JPEG, which also applies EXIF rotation and strips
+  GPS metadata. The server then sniffs the bytes rather than trusting the
+  browser's label:
+  - a JPEG reported as `application/octet-stream`, with no label at all, or as
+    `image/jpg` (Android) is accepted — this used to fail with "the photo could
+    not be read";
+  - a mislabelled file (PNG bytes sent as `image/jpeg`) is stored as what it
+    actually is;
+  - GIF and BMP are stored as-is when they arrive directly;
+  - HEIC that the browser cannot decode (iPhone photos opened in desktop
+    Chrome) is refused with instructions for switching the iPhone camera to
+    *Most Compatible*; TIFF/AVIF exported to the API directly get a message
+    asking for JPEG/PNG/WebP/GIF/BMP.
 - Alternatively, deploy `server.js` to any Node host with a persistent disk
   (Render, Railway, Fly.io, a VPS) — no Blob store is needed there.
 - The home page still falls back to `content/gallery.json` if the upload

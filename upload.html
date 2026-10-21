@@ -44,11 +44,12 @@
                     aria-label="Choose a lab photo to upload">
                     <span class="dropzone-icon material-symbols-outlined" aria-hidden="true">add_photo_alternate</span>
                     <strong>Drop a photo here</strong>
-                    <span class="dropzone-hint" id="dropzoneHint">or click to browse. JPEG, PNG or WebP, up to 8 MB.</span>
+                    <span class="dropzone-hint" id="dropzoneHint">or click to browse. Any photo — JPEG, PNG, WebP, GIF, AVIF or iPhone HEIC. Resized automatically.</span>
                 </div>
 
-                <input type="file" id="photoInput" class="visually-hidden"
-                    accept="image/jpeg,image/png,image/webp" />
+                <!-- Any image: the browser re-encodes it to JPEG before upload,
+                     so HEIC/AVIF/GIF/BMP from a phone all work. -->
+                <input type="file" id="photoInput" class="visually-hidden" accept="image/*" />
 
                 <div class="photo-preview" id="photoPreview" hidden>
                     <img id="previewImage" alt="Preview of the lab moment you selected" />
