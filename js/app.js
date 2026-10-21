@@ -1,6 +1,9 @@
 let repositoryData = { gallery: [], reports: [] };
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Pagination controls exist before the first render; wire them once.
+  initGalleryPagination();
+
   // Kick off the data loading as soon as the page is ready
   loadRepositoryData();
 });
@@ -116,28 +119,56 @@ function safeImageSource(value) {
   return '';
 }
 
-// 2. Render Gallery HTML (Masonry Layout)
+// 2. Render Gallery HTML (Masonry Layout, nine photos per page)
+// Nine keeps the desktop grid to a tidy 3x3 block and the mobile carousel to a
+// handful of swipes, no matter how many photos the archive collects.
+const GALLERY_PAGE_SIZE = 9;
+const galleryView = { items: [], page: 0 };
+
 function renderGallery(items) {
   const container = document.getElementById('galleryMasonryGrid');
   if (!container) return;
 
-  const validItems = Array.isArray(items)
+  galleryView.items = Array.isArray(items)
     ? items.filter((item) => item && safeImageSource(item.image))
     : [];
+  galleryView.page = 0;
 
-  if (!validItems.length) {
+  if (!galleryView.items.length) {
     container.innerHTML = `
       <p class="gallery-empty">
         The gallery is being prepared. <a href="upload.html">Share the first moment</a>.
       </p>`;
+    renderGalleryPagination();
     return;
   }
+
+  renderGalleryPage();
+}
+
+function galleryPageCount() {
+  return Math.max(1, Math.ceil(galleryView.items.length / GALLERY_PAGE_SIZE));
+}
+
+// Render only the current page of photos (at most GALLERY_PAGE_SIZE cards).
+function renderGalleryPage() {
+  const container = document.getElementById('galleryMasonryGrid');
+  if (!container) return;
+
+  const total = galleryView.items.length;
+  const pages = galleryPageCount();
+  const page = Math.min(Math.max(galleryView.page, 0), pages - 1);
+  galleryView.page = page;
+
+  const start = page * GALLERY_PAGE_SIZE;
+  const visibleItems = galleryView.items.slice(start, start + GALLERY_PAGE_SIZE);
 
   // We assign a pseudo-random shape to each image to force the scattered layout
   const shapes = ['tall', 'standard', 'square', 'tall'];
 
-  container.innerHTML = validItems
+  container.innerHTML = visibleItems
     .map((item, index) => {
+      const position = start + index;
       const shapeClass = shapes[index % shapes.length];
       const caption = item.caption || item.title || 'A moment from the LabRoute archive';
       const image = safeImageSource(item.image);
@@ -145,7 +176,7 @@ function renderGallery(items) {
 
       return `
       <figure class="gallery-card ${shapeClass}">
-        ${index === 0 && item.uploaded ? '<span class="gallery-new-badge">New</span>' : ''}
+        ${position === 0 && item.uploaded ? '<span class="gallery-new-badge">New</span>' : ''}
         <img src="${escapeHtml(image)}" alt="${escapeHtml(caption)}" class="gallery-image" loading="lazy" />
         <figcaption class="gallery-caption">
           <h4>${escapeHtml(caption)}</h4>
@@ -154,6 +185,107 @@ function renderGallery(items) {
       </figure>`;
     })
     .join('');
+
+  renderGalleryPagination();
+}
+
+// Build the "showing x–y of n" line and the page controls.
+function renderGalleryPagination() {
+  const nav = document.getElementById('galleryPagination');
+  const status = document.getElementById('galleryPageStatus');
+
+  const total = galleryView.items.length;
+  const pages = galleryPageCount();
+  const page = Math.min(galleryView.page, pages - 1);
+  const first = total ? page * GALLERY_PAGE_SIZE + 1 : 0;
+  const last = Math.min(total, (page + 1) * GALLERY_PAGE_SIZE);
+
+  if (status) {
+    status.textContent = total
+      ? `Showing ${first}–${last} of ${total} photo${total === 1 ? '' : 's'}`
+      : '';
+  }
+
+  if (!nav) return;
+
+  if (pages <= 1) {
+    nav.hidden = true;
+    nav.innerHTML = '';
+    return;
+  }
+
+  const numbers = galleryPageNumbers(page, pages)
+    .map((entry) => {
+      if (entry === 'gap') return '<span class="gallery-page-gap" aria-hidden="true">…</span>';
+
+      const isCurrent = entry === page;
+      return `
+        <button type="button"
+                class="gallery-page-btn${isCurrent ? ' is-current' : ''}"
+                data-gallery-page="${entry}"
+                ${isCurrent ? 'aria-current="page"' : ''}
+                aria-label="Page ${entry + 1} of ${pages}">${entry + 1}</button>`;
+    })
+    .join('');
+
+  nav.innerHTML = `
+    <button type="button" class="gallery-page-btn gallery-page-arrow" data-gallery-page="prev"
+            aria-label="Previous photos" ${page === 0 ? 'disabled' : ''}>
+      <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+    </button>
+    <div class="gallery-page-numbers">${numbers}</div>
+    <button type="button" class="gallery-page-btn gallery-page-arrow" data-gallery-page="next"
+            aria-label="Next photos" ${page >= pages - 1 ? 'disabled' : ''}>
+      <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+    </button>`;
+  nav.hidden = false;
+}
+
+// 1 2 3 … 8 9 style page list, windowed around the current page.
+function galleryPageNumbers(current, pages) {
+  if (pages <= 7) return Array.from({ length: pages }, (_, index) => index);
+
+  const wanted = new Set([0, pages - 1, current - 1, current, current + 1]);
+  const numbers = [...wanted].filter((page) => page >= 0 && page < pages).sort((a, b) => a - b);
+
+  return numbers.reduce((list, page, index) => {
+    if (index && page - numbers[index - 1] > 1) list.push('gap');
+    list.push(page);
+    return list;
+  }, []);
+}
+
+function goToGalleryPage(page, options = {}) {
+  const pages = galleryPageCount();
+  const target = Math.min(Math.max(Number(page) || 0, 0), pages - 1);
+  const changed = target !== galleryView.page;
+
+  galleryView.page = target;
+  renderGalleryPage();
+
+  const shouldScroll = options.scroll !== false;
+  if (!changed || !shouldScroll) return;
+
+  const grid = document.getElementById('galleryMasonryGrid');
+  if (grid && typeof grid.scrollIntoView === 'function') {
+    grid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function initGalleryPagination() {
+  const nav = document.getElementById('galleryPagination');
+  if (!nav || nav.dataset.paginationReady === 'true') return;
+  nav.dataset.paginationReady = 'true';
+
+  nav.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-gallery-page]');
+    if (!button || button.disabled) return;
+
+    const value = button.dataset.galleryPage;
+    if (value === 'prev') goToGalleryPage(galleryView.page - 1);
+    else if (value === 'next') goToGalleryPage(galleryView.page + 1);
+    else goToGalleryPage(Number(value));
+  });
 }
 
 // 3. Render Reports HTML
