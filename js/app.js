@@ -46,7 +46,7 @@ async function loadGalleryData() {
 
     if (response.ok) {
       const data = await response.json();
-      if (Array.isArray(data.gallery)) return data.gallery;
+      if (Array.isArray(data.gallery)) return orderGallery(data.gallery);
     }
   } catch (error) {
     // The upload service is optional on a static deployment; use the file.
@@ -59,7 +59,26 @@ async function loadGalleryData() {
   if (!fallback.ok) throw new Error(`Gallery request failed with ${fallback.status}`);
 
   const data = await fallback.json();
-  return Array.isArray(data) ? data : data.gallery || [];
+  return orderGallery(Array.isArray(data) ? data : data.gallery || []);
+}
+
+// Community photos come first, newest first; the archive follows in file order.
+// The API already returns this order — repeating it here keeps a static
+// deployment (where /api/gallery does not exist) consistent with the server,
+// no matter where a hand-published record sits in content/gallery.json.
+function orderGallery(items) {
+  const momentIsImage = (value) => {
+    const image = String(value || '');
+    return image.startsWith('assets/gallery/moments/') || /^https:\/\/.+\.blob\.vercel-storage\.com\//.test(image);
+  };
+  const isMoment = (item) => Boolean(item) && (item.uploaded === true || momentIsImage(item.image));
+  const time = (item) => {
+    const parsed = Date.parse(item.uploadedAt || item.approvedAt || '');
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+
+  const moments = items.filter(isMoment).sort((a, b) => time(b) - time(a));
+  return moments.length ? [...moments, ...items.filter((item) => !isMoment(item))] : items;
 }
 
 async function loadReportsData() {

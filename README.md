@@ -18,7 +18,11 @@ sends it for review. The photo is stored in the private pending area
 and listed under **Pending uploads** on `dashboard.html`, where an admin can:
 
 - **Approve** — the photo becomes **image 1** of the gallery; every existing
-  image shifts one place to the right. On a Node host it is moved to
+  image shifts one place to the right. The same is true of a photo published by
+  hand: where its record sits in `content/gallery.json` does not matter, the
+  newest community photo is always served first and the archive follows in file
+  order (ordering is derived in `lib/gallery-store.js` and mirrored in
+  `js/app.js` for the static fallback). On a Node host it is moved to
   `assets/gallery/moments/` and recorded in `content/gallery.json` on disk. On
   Vercel it is copied to the connected Vercel Blob store and recorded in the
   Blob copy of the gallery list, because the deployment's own files (and this
@@ -111,6 +115,10 @@ nothing can expire, because the photo ends up as a normal file in the repo.
 5. Back on the dashboard, click **Already committed** to clear the item from the
    queue.
 
+You can paste the JSON record anywhere in `content/gallery.json` (top, bottom,
+or straight through GitHub's web editor) — the newest community photo is served
+first either way, and every existing photo simply shifts one place down.
+
 Why this is durable: Vercel checks the filesystem **before** applying
 `vercel.json` rewrites ("precedence is given to the filesystem prior to rewrites
 being applied"), so a committed
@@ -118,6 +126,13 @@ being applied"), so a committed
 `/assets/gallery/moments/(.*)` rewrite only catches file names that exist solely
 in Blob. `content/gallery.json` is the committed gallery, so the entry appears
 on the home page as soon as the deployment lands.
+
+One rule to know: once storage holds a gallery manifest (i.e. after any
+automatic approval), records added to `content/gallery.json` are merged in front
+of it, and archived captions edited in the repo win over the stored copy — but
+an item deleted from the repo is not removed while the manifest still lists it.
+Deleting archived photos from a live deployment therefore needs the Blob
+manifest cleared as well.
 
 Caveat: the *pending queue* still needs somewhere to live between upload and
 download. With a working Blob store it is durable; without one the photos sit in
