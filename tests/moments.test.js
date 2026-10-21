@@ -885,3 +885,163 @@ test('publish-moment turns the dashboard downloads into a commit-ready change', 
     await fsp.rm(downloads, { recursive: true, force: true });
   }
 });
+
+test('a newly published photo always becomes image 1, shifting the rest', async () => {
+  const { orderGallery } = require('../lib/gallery-store');
+  const blob = createMemoryBlobStorage({ access: 'private' });
+  const dir = await fsp.mkdtemp(path.join(os.tmpdir(), 'labroute-order-'));
+  const seedFile = path.join(dir, 'gallery.json');
+
+  const archive = [
+    { id: 'gal-8', image: 'assets/gallery/a.jpeg', caption: 'Archive one' },
+    { id: 'gal-7', image: 'assets/gallery/b.jpeg', caption: 'Archive two' },
+    { id: 'gal-1', image: 'assets/gallery/c.jpeg', caption: 'Archive three' }
+  ];
+
+  const writeSeed = (items) => fsp.writeFile(seedFile, JSON.stringify(items, null, 2));
+
+  // The easy mistake when committing by hand: the record is pasted at the END.
+  await writeSeed([
+    ...archive,
+    {
+      id: 'moment-new',
+      image: 'assets/gallery/moments/moment-new.webp',
+      caption: 'Photo of Faculty of Engineering',
+      contributor: 'Labroute Archives',
+      uploadedAt: '2026-10-21T11:57:38.001Z',
+      tall: true
+    }
+  ]);
+
+  const store = new GalleryStore(
+    { galleryFile: path.join(dir, 'unused.json'), gallerySeedFile: seedFile, uploadDir: dir },
+    blob
+  );
+
+  const committed = await store.publicGalleryState();
+  assert.equal(committed.gallery[0].id, 'moment-new');
+  assert.equal(committed.gallery[0].image, 'assets/gallery/moments/moment-new.webp');
+  // Everything else shifts one place right, in its original order.
+  assert.deepEqual(
+    committed.gallery.slice(1).map((item) => item.id),
+    ['gal-8', 'gal-7', 'gal-1']
+  );
+
+  // Two approved photos: the newest one is first.
+  await writeSeed([
+    ...archive,
+    { id: 'moment-older', image: 'assets/gallery/moments/older.webp', uploadedAt: '2026-10-20T08:00:00.000Z' },
+    {
+      id: 'moment-newest',
+      image: 'assets/gallery/moments/newest.webp',
+      uploadedAt: '2026-10-21T12:30:00.000Z'
+    }
+  ]);
+
+  const ordered = await store.publicGallery();
+  assert.deepEqual(
+    ordered.map((item) => item.id),
+    ['moment-newest', 'moment-older', 'gal-8', 'gal-7', 'gal-1']
+  );
+
+  // The API approval path is unchanged: the new photo goes to the front.
+  await writeSeed(archive);
+  const afterApprove = await store.add({
+    id: 'moment-approved',
+    image: 'assets/gallery/moments/moment-approved.png',
+    caption: 'Approved through the dashboard',
+    uploaded: true,
+    uploadedAt: new Date().toISOString(),
+    tall: true
+  });
+  assert.equal(afterApprove[0].id, 'moment-approved');
+  assert.deepEqual(afterApprove.map((item) => item.id).slice(1), ['gal-8', 'gal-7', 'gal-1']);
+
+  // Ordering is stable for items that are neither moments nor timestamped.
+  assert.deepEqual(
+    orderGallery(archive).map((item) => item.id),
+    ['gal-8', 'gal-7', 'gal-1']
+  );
+
+  await fsp.rm(dir, { recursive: true, force: true });
+});
+
+test('a photo committed to the repo appears even when storage already has a manifest', async () => {
+  const blob = createMemoryBlobStorage({ access: 'private' });
+  const dir = await fsp.mkdtemp(path.join(os.tmpdir(), 'labroute-merge-'));
+  const seedFile = path.join(dir, 'gallery.json');
+
+  const archive = [
+    { id: 'gal-8', image: 'assets/gallery/a.jpeg', caption: 'Archive one' },
+    { id: 'gal-7', image: 'assets/gallery/b.jpeg', caption: 'Archive two' }
+  ];
+  await fsp.writeFile(seedFile, JSON.stringify(archive, null, 2));
+
+  const store = new GalleryStore(
+    { galleryFile: path.join(dir, 'unused.json'), gallerySeedFile: seedFile, uploadDir: dir },
+    blob
+  );
+
+  // A photo approved through the API a while ago — it lives only in storage.
+  await store.add({
+    id: 'moment-stored',
+    image: 'assets/gallery/moments/moment-stored.png',
+    caption: 'Only in storage',
+    uploaded: true,
+    uploadedAt: '2026-10-20T09:00:00.000Z',
+    tall: true
+  });
+
+  // Later, an admin commits a new photo to the repository by hand.
+  await fsp.writeFile(
+    seedFile,
+    JSON.stringify(
+      [
+        ...archive,
+        {
+          id: 'moment-committed',
+          image: 'assets/gallery/moments/moment-committed.webp',
+          caption: 'Committed later',
+          uploadedAt: '2026-10-21T12:00:00.000Z',
+          tall: true
+        }
+      ],
+      null,
+      2
+    )
+  );
+
+  const state = await store.publicGalleryState();
+  assert.equal(state.source, 'storage+committed');
+  // The freshly committed photo is first, the stored approval is kept, and the
+  // archive follows in its original order.
+  assert.deepEqual(
+    state.gallery.map((item) => item.id),
+    ['moment-committed', 'moment-stored', 'gal-8', 'gal-7']
+  );
+
+  // Editing an archived caption in the repo wins over the stale manifest copy.
+  await fsp.writeFile(
+    seedFile,
+    JSON.stringify(
+      [
+        { id: 'gal-8', image: 'assets/gallery/a.jpeg', caption: 'Archive one (edited)' },
+        ...archive.slice(1),
+        {
+          id: 'moment-committed',
+          image: 'assets/gallery/moments/moment-committed.webp',
+          caption: 'Committed later',
+          uploadedAt: '2026-10-21T12:00:00.000Z'
+        }
+      ],
+      null,
+      2
+    )
+  );
+
+  const edited = await store.publicGallery();
+  const archived = edited.find((item) => item.id === 'gal-8');
+  assert.equal(archived.caption, 'Archive one (edited)');
+
+  await fsp.rm(dir, { recursive: true, force: true });
+});
