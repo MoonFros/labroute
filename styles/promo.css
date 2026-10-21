@@ -1,0 +1,205 @@
+/* ==========================================================================
+   PROMO CARD — one quiet advertisement per session
+   Desktop: a small card tucked into the bottom-right corner.
+   Mobile:  a compact bar pinned above the bottom edge, clear of the safe area,
+            so it never sits in the middle of the page or under the thumb.
+   ========================================================================== */
+
+.promo-root {
+  position: fixed;
+  z-index: 900; /* below the sticky header (1000) and drawers (1001) */
+  pointer-events: none; /* the card itself re-enables them */
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.promo-root.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.promo-root.is-leaving {
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+}
+
+.promo-card {
+  pointer-events: auto;
+  position: relative;
+  width: 20rem;
+  max-width: calc(100vw - 2rem);
+  display: flex;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* The creative and the text are one link: wherever it is tapped, it opens. */
+.promo-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.promo-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--surface-tint);
+}
+
+.promo-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem 2.25rem 0.85rem 0.9rem;
+}
+
+.promo-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.promo-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-main);
+}
+
+.promo-body {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.promo-cta {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-light);
+}
+
+.promo-link:hover .promo-cta,
+.promo-link:focus-visible .promo-cta {
+  text-decoration: underline;
+}
+
+.promo-link:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: -2px;
+}
+
+.promo-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 33, 71, 0.62);
+  color: #fff;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+}
+
+.promo-close:hover {
+  background: rgba(0, 33, 71, 0.9);
+}
+
+.promo-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile: 56px thumbnail beside two lines of text. Roughly 96px tall, so it
+   occupies a sliver of the viewport and leaves the page readable behind it.
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .promo-root {
+    right: 0.5rem;
+    left: 0.5rem;
+    bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  }
+
+  .promo-card {
+    width: 100%;
+    max-width: none;
+    border-radius: 14px;
+  }
+
+  .promo-link {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .promo-image {
+    width: 5.5rem;
+    min-width: 5.5rem;
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .promo-copy {
+    gap: 0.1rem;
+    padding: 0.55rem 2.75rem 0.55rem 0.7rem;
+    justify-content: center;
+  }
+
+  .promo-title {
+    font-size: 0.9rem;
+  }
+
+  /* Keep the bar short: the description is desktop-only. */
+  .promo-body {
+    display: none;
+  }
+
+  .promo-cta {
+    margin-top: 0.15rem;
+    font-size: 0.72rem;
+  }
+
+  .promo-close {
+    top: 50%;
+    right: 0.35rem;
+    transform: translateY(-50%);
+    background: transparent;
+    color: var(--text-muted);
+    backdrop-filter: none;
+  }
+
+  .promo-close:hover {
+    background: var(--surface-tint);
+    color: var(--text-main);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-root,
+  .promo-root.is-visible,
+  .promo-root.is-leaving {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "oncePerSession": true,
+  "delaySeconds": 12,
+  "dismissDays": 0,
+  "respectDoNotTrack": true,
+  "label": "Sponsored",
+  "ads": [
+    {
+      "id": "sample-lab-kit",
+      "enabled": true,
+      "image": "assets/ads/sample-lab-kit.jpg",
+      "alt": "A compact electronics lab kit with a multimeter, breadboard and resistors",
+      "title": "Lab kit starter set",
+      "body": "Placeholder creative — replace the image and the link below with your product.",
+      "cta": "Take a look",
+      "href": "about.html",
+      "weight": 1
+    }
+  ]
+}

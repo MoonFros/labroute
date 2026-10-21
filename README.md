@@ -95,6 +95,55 @@ external storage (Vercel Blob) and referenced from the Blob copy of
 Function's `/tmp`, which is wiped on restart — see **Why did an approved photo
 disappear?** below.
 
+### Sponsored card (single, quiet ad)
+
+`content/ads.json` drives one small promo card that appears **once per browser
+session**:
+
+- **Where** — a card tucked into the bottom-right corner on desktop; on phones a
+  compact bar pinned above the bottom edge, inset for `env(safe-area-inset-bottom)`.
+  No backdrop, no scroll lock, and the rest of the page stays usable.
+- **When** — after `delaySeconds` (default 12, clamped to 3–120s) so nobody is
+  interrupted before they start reading. It is skipped entirely in a hidden tab,
+  when the visitor sends Do-Not-Track, or with `?noad=1` on any URL.
+- **How often** — `oncePerSession` marks `sessionStorage`, so following a link to
+  another page will not re-open it. `dismissDays` (default `0`) adds an optional
+  cross-session cooldown after a dismissal.
+- **Dismissing** — the `×` button, Escape, or following the ad. Two interactive
+  elements only: the creative (one link covering image + text) and the close
+  button.
+- **Safety** — image and link values are validated (`assets/…` or https, never
+  `javascript:`/`data:`/`//host`), and every text field is HTML-escaped.
+
+To advertise something:
+
+```json
+{
+  "enabled": true,
+  "delaySeconds": 12,
+  "label": "Sponsored",
+  "ads": [
+    {
+      "id": "my-product",
+      "enabled": true,
+      "image": "assets/ads/my-product.png",
+      "alt": "Describe the product for screen readers",
+      "title": "My product",
+      "body": "One short line of context.",
+      "cta": "Shop now",
+      "href": "https://example.com/my-product",
+      "weight": 1
+    }
+  ]
+}
+```
+
+Put the creative in `assets/ads/`, set `enabled: true`, and commit. Several ads
+can share the slot — one is chosen per session, proportionally to `weight`.
+Set the top-level `enabled` to `false` to pause all advertising without touching
+the pages. `assets/ads/sample-lab-kit.jpg` and its record are a placeholder to
+replace.
+
 ### Publishing without Blob (manual commit)
 
 The upload → review → **download → commit** path needs no storage service and
