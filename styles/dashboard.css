@@ -471,3 +471,47 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
 }
+
+/* 8. Manual publish workflow (download → commit → mark as committed) */
+.pending-help {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary-light);
+  border-radius: var(--radius-md);
+  background: var(--surface-tint);
+  color: var(--text-muted);
+  font-size: 0.813rem;
+  line-height: 1.6;
+}
+
+.pending-help strong,
+.pending-help b {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.pending-help code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.pending-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.pending-downloads .btn {
+  gap: 0.35rem;
+}
+
+.pending-downloads .material-symbols-outlined {
+  font-size: 18px;
+}

@@ -327,10 +327,24 @@ function renderPendingUploads(container, countElement, pending, liveCount) {
             <span class="pending-flag">Action required</span>
             <h3 class="moments-caption">${caption}</h3>
             <p class="moments-meta">${contributor}${date ? ` · ${date}` : ''}</p>
+            <div class="pending-downloads">
+              <a class="btn btn-outline btn-sm" href="/api/admin/pending/${encodeURIComponent(moment.id)}/download" download>
+                <span class="material-symbols-outlined">download</span>
+                <span>Download photo</span>
+              </a>
+              <a class="btn btn-outline btn-sm" href="/api/admin/pending/${encodeURIComponent(moment.id)}/metadata" download>
+                <span class="material-symbols-outlined">data_object</span>
+                <span>Download JSON</span>
+              </a>
+            </div>
             <div class="pending-actions">
               <button type="button" class="btn btn-primary btn-sm" data-action="approve" data-id="${id}">
                 <span class="material-symbols-outlined">check</span>
                 <span>Approve</span>
+              </button>
+              <button type="button" class="btn btn-outline btn-sm" data-action="publish" data-id="${id}">
+                <span class="material-symbols-outlined">upload_file</span>
+                <span>Already committed</span>
               </button>
               <button type="button" class="btn btn-outline btn-sm" data-action="reject" data-id="${id}">
                 <span class="material-symbols-outlined">close</span>
@@ -356,7 +370,12 @@ async function reviewPending(id, action, button) {
   });
 
   if (statusElement) {
-    statusElement.textContent = action === 'approve' ? 'Approving photo…' : 'Declining photo…';
+    statusElement.textContent =
+      action === 'approve'
+        ? 'Approving photo…'
+        : action === 'publish'
+          ? 'Removing from the review queue…'
+          : 'Declining photo…';
   }
 
   try {
@@ -383,7 +402,9 @@ async function reviewPending(id, action, button) {
         data.message ||
         (action === 'approve'
           ? 'Approved. The photo is now image 1 in the gallery.'
-          : 'Declined. The photo was removed.');
+          : action === 'publish'
+            ? 'Marked as published.'
+            : 'Declined. The photo was removed.');
     }
 
     await loadPendingUploads();

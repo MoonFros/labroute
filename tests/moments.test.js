@@ -431,6 +431,69 @@ test('LabRoute moments review API', async (t) => {
       assert.equal((await image.arrayBuffer()).byteLength > 0, true);
     });
 
+    await t.test('an admin can download the photo and its JSON record', async () => {
+      const download = await fetch(
+        `${baseUrl}/api/admin/pending/${firstMomentId}/download`,
+        { headers: { Cookie: cookieHeader(adminJar) } }
+      );
+
+      assert.equal(download.status, 200);
+      assert.equal(download.headers.get('content-type'), 'image/png');
+      assert.match(
+        download.headers.get('content-disposition') || '',
+        new RegExp(`attachment; filename=\"${firstMomentId}\\.png\"`)
+      );
+      assert.ok((await download.arrayBuffer()).byteLength > 0);
+
+      const metadata = await fetch(
+        `${baseUrl}/api/admin/pending/${firstMomentId}/metadata`,
+        { headers: { Cookie: cookieHeader(adminJar) } }
+      );
+
+      assert.equal(metadata.status, 200);
+      assert.match(metadata.headers.get('content-disposition') || '', /attachment; filename=/);
+
+      const record = JSON.parse(await metadata.text());
+      assert.equal(record.id, firstMomentId);
+      // The record is exactly what belongs in content/gallery.json, so the
+      // downloaded file can be committed without editing.
+      assert.equal(record.image, `assets/gallery/moments/${firstMomentId}.png`);
+      assert.equal(record.caption, 'A new moment at the electronics bench');
+      assert.equal(record.contributor, 'Ada');
+
+      const anonymous = await fetch(`${baseUrl}/api/admin/pending/${firstMomentId}/download`);
+      assert.equal(anonymous.status, 401);
+    });
+
+    await t.test('a committed photo can be cleared from the queue', async () => {
+      const publish = await jsonRequest(
+        baseUrl,
+        `/api/admin/pending/${secondMomentId}/publish`,
+        { method: 'POST' },
+        adminJar
+      );
+
+      assert.equal(publish.status, 200);
+      // Only this photo leaves the queue; the other one is still waiting.
+      assert.equal(publish.json.pendingCount, 1);
+      assert.equal(publish.json.item.image, `assets/gallery/moments/${secondMomentId}.png`);
+
+      // Nothing was added to the live gallery: the repository is the source.
+      const gallery = await jsonRequest(baseUrl, '/api/gallery');
+      assert.equal(gallery.json.gallery.length, 3);
+
+      const pendingFiles = await fsp.readdir(pendingDir);
+      assert.equal(pendingFiles.includes(`${secondMomentId}.png`), false);
+
+      const again = await jsonRequest(
+        baseUrl,
+        `/api/admin/pending/${secondMomentId}/publish`,
+        { method: 'POST' },
+        adminJar
+      );
+      assert.equal(again.status, 404);
+    });
+
     await t.test('approving moves the photo into the gallery as image 1', async () => {
       const approve = await jsonRequest(
         baseUrl,
@@ -440,7 +503,7 @@ test('LabRoute moments review API', async (t) => {
       );
 
       assert.equal(approve.status, 200);
-      assert.equal(approve.json.pendingCount, 1);
+      assert.equal(approve.json.pendingCount, 0);
       assert.equal(approve.json.galleryCount, 4);
       assert.equal(approve.json.gallery[0].id, firstMomentId);
       assert.equal(approve.json.gallery[1].id, 'gal-old-1');
@@ -483,9 +546,33 @@ test('LabRoute moments review API', async (t) => {
     });
 
     await t.test('declining removes a pending photo without touching the gallery', async () => {
+      // A third photo exists only so this test has something to decline.
+      const visitorThree = await jsonRequest(
+        baseUrl,
+        '/api/moments/status',
+        { headers: { 'X-Labroute-Device': 'device-three-24680' } },
+        {}
+      );
+      const upload = await jsonRequest(
+        baseUrl,
+        '/api/moments',
+        {
+          method: 'POST',
+          headers: { 'X-Labroute-Device': 'device-three-24680' },
+          body: JSON.stringify({
+            image: imgDataUrl(),
+            caption: 'A photo that will be declined',
+            consent: true
+          })
+        },
+        visitorThree.jar
+      );
+      assert.equal(upload.status, 201);
+      const declinedId = upload.json.moment.id;
+
       const decline = await jsonRequest(
         baseUrl,
-        `/api/admin/pending/${secondMomentId}/reject`,
+        `/api/admin/pending/${declinedId}/reject`,
         { method: 'POST' },
         adminJar
       );
@@ -494,7 +581,7 @@ test('LabRoute moments review API', async (t) => {
       assert.equal(decline.json.pendingCount, 0);
 
       const pendingFiles = await fsp.readdir(pendingDir);
-      assert.equal(pendingFiles.includes(`${secondMomentId}.png`), false);
+      assert.equal(pendingFiles.includes(`${declinedId}.png`), false);
 
       const gallery = await jsonRequest(baseUrl, '/api/gallery');
       assert.equal(gallery.json.gallery.length, 4);
@@ -701,4 +788,100 @@ test('the gallery reports whether it came from storage or the committed seed', a
   assert.equal(after.gallery[1].id, 'gal-seed');
 
   await fsp.rm(dir, { recursive: true, force: true });
+});
+
+test('publish-moment turns the dashboard downloads into a commit-ready change', async () => {
+  const { publishMoment } = require('../tools/publish-moment');
+
+  const root = await fsp.mkdtemp(path.join(os.tmpdir(), 'labroute-publish-'));
+  const downloads = await fsp.mkdtemp(path.join(os.tmpdir(), 'labroute-downloads-'));
+
+  await fsp.mkdir(path.join(root, 'content'), { recursive: true });
+  await fsp.writeFile(
+    path.join(root, 'content', 'gallery.json'),
+    JSON.stringify([{ id: 'gal-1', image: 'assets/gallery/group1.jpeg', caption: 'Original' }])
+  );
+
+  const photo = path.join(downloads, 'moment-abc123.png');
+  await fsp.writeFile(photo, Buffer.from(ONE_PIXEL_PNG, 'base64'));
+
+  const metadataFile = path.join(downloads, 'moment-abc123.json');
+  await fsp.writeFile(
+    metadataFile,
+    JSON.stringify({
+      id: 'moment-abc123',
+      image: 'assets/gallery/moments/moment-abc123.png',
+      caption: 'Students at the electronics bench',
+      contributor: 'Ada',
+      uploadedAt: '2026-10-20T10:00:00.000Z',
+      tall: true
+    })
+  );
+
+  try {
+    const result = await publishMoment({
+      root,
+      imagePath: photo,
+      metadata: metadataFile
+    });
+
+    assert.equal(result.written, true);
+    assert.equal(result.id, 'moment-abc123');
+    assert.equal(result.galleryCount, 2);
+
+    // The photo is now a real file the deployment can serve directly.
+    const committed = await fsp.readFile(
+      path.join(root, 'assets', 'gallery', 'moments', 'moment-abc123.png')
+    );
+    assert.equal(committed.length > 0, true);
+
+    // It is first in the gallery, ahead of the originals.
+    const gallery = JSON.parse(await fsp.readFile(path.join(root, 'content', 'gallery.json'), 'utf8'));
+    assert.equal(gallery.length, 2);
+    assert.equal(gallery[0].id, 'moment-abc123');
+    assert.equal(gallery[0].image, 'assets/gallery/moments/moment-abc123.png');
+    assert.equal(gallery[0].caption, 'Students at the electronics bench');
+    assert.equal(gallery[0].uploadedAt, '2026-10-20T10:00:00.000Z');
+    assert.equal(gallery[1].id, 'gal-1');
+
+    // Running it twice must not duplicate the entry.
+    await publishMoment({ root, imagePath: photo, metadata: metadataFile, force: true });
+    const twice = JSON.parse(await fsp.readFile(path.join(root, 'content', 'gallery.json'), 'utf8'));
+    assert.equal(twice.length, 2);
+
+    // Without --force an existing file is protected.
+    await assert.rejects(
+      () => publishMoment({ root, imagePath: photo, metadata: metadataFile }),
+      /already exists/
+    );
+
+    // A caption is mandatory when no metadata file is supplied.
+    await assert.rejects(
+      () => publishMoment({ root, imagePath: photo, id: 'moment-nocaption' }),
+      /caption is required/i
+    );
+
+    // Non-images are rejected before anything is written.
+    const textFile = path.join(downloads, 'notes.txt');
+    await fsp.writeFile(textFile, 'not a photo');
+    await assert.rejects(
+      () => publishMoment({ root, imagePath: textFile, caption: 'Nope' }),
+      /Unsupported image type/
+    );
+
+    // A dry run reports but never touches the repository.
+    const dry = await publishMoment({
+      root,
+      imagePath: photo,
+      metadata: metadataFile,
+      id: 'moment-dryrun',
+      dryRun: true
+    });
+    assert.equal(dry.written, false);
+    const untouched = JSON.parse(await fsp.readFile(path.join(root, 'content', 'gallery.json'), 'utf8'));
+    assert.equal(untouched.length, 2);
+  } finally {
+    await fsp.rm(root, { recursive: true, force: true });
+    await fsp.rm(downloads, { recursive: true, force: true });
+  }
 });

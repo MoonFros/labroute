@@ -447,7 +447,55 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
     return undefined;
   }
 
-  const pendingAction = /^\/api\/admin\/pending\/([A-Za-z0-9_-]{4,80})\/(approve|reject)$/.exec(pathname);
+  // Manual publish: hand the admin the exact bytes and the exact JSON record,
+  // so the photo can be committed to the repository instead of stored in Blob.
+  const pendingDownload = /^\/api\/admin\/pending\/([A-Za-z0-9_-]{4,80})\/(download|metadata)$/.exec(
+    pathname
+  );
+  if (pendingDownload) {
+    if (method !== 'GET') return sendMethodNotAllowed(res, ['GET']);
+
+    requireAdmin(req, config);
+    const [, id, kind] = pendingDownload;
+
+    if (kind === 'download') {
+      const file = await ctx.moments.getPendingFile(id);
+      const entry = (await ctx.pendingStore.get(id)) || {};
+      const ext = String(entry.ext || mimeExtension(file.mime)).replace(/^\./, '');
+      const filename = `${id}.${ext}`;
+
+      res.writeHead(200, {
+        'Content-Type': file.mime,
+        'Content-Length': file.buffer.length,
+        // A real download, not a preview: "Save as" gets a usable filename.
+        'Content-Disposition': attachmentHeader(filename),
+        'Cache-Control': 'no-store'
+      });
+      res.end(file.buffer);
+      return undefined;
+    }
+
+    const entry = await ctx.pendingStore.get(id);
+    if (!entry) {
+      throw new HttpError(404, 'pending_not_found', 'That pending photo no longer exists.');
+    }
+
+    const body = Buffer.from(
+      `${JSON.stringify(ctx.moments.publishedItem(entry), null, 2)}\n`,
+      'utf8'
+    );
+
+    res.writeHead(200, {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Content-Length': body.length,
+      'Content-Disposition': attachmentHeader(`${id}.json`),
+      'Cache-Control': 'no-store'
+    });
+    res.end(body);
+    return undefined;
+  }
+
+  const pendingAction = /^\/api\/admin\/pending\/([A-Za-z0-9_-]{4,80})\/(approve|reject|publish)$/.exec(pathname);
   if (pendingAction) {
     if (method !== 'POST') return sendMethodNotAllowed(res, ['POST']);
 
@@ -466,6 +514,17 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
           : 'Approved into temporary storage. This photo will disappear on the next restart or deploy — connect a Vercel Blob store to keep it.',
         durable: storage.durable,
         storage,
+        ...result
+      });
+    }
+
+    if (action === 'publish') {
+      const result = await ctx.moments.publishPending(id);
+      return sendJson(res, 200, {
+        ok: true,
+        admin: session.email,
+        message:
+          'Marked as published. Commit the downloaded photo and its JSON to the repository to make it live.',
         ...result
       });
     }
@@ -607,6 +666,24 @@ async function handleApi(req, res, pathname, url, ctx) {
   });
 }
 
+function mimeExtension(mime) {
+  switch (String(mime || '').toLowerCase()) {
+    case 'image/png':
+      return 'png';
+    case 'image/webp':
+      return 'webp';
+    case 'image/gif':
+      return 'gif';
+    default:
+      return 'jpg';
+  }
+}
+
+/** RFC 6266 attachment header; ASCII names only (ids are [A-Za-z0-9_-]). */
+function attachmentHeader(filename) {
+  return `attachment; filename="${filename}"`;
+}
+
 function cacheControlFor(file, isUpload) {
   if (isUpload) return 'public, max-age=31536000, immutable';
 
@@ -666,17 +743,32 @@ async function serveStatic(req, res, pathname, ctx) {
   // CDN cannot serve them. Stream them from storage instead. (In local and
   // ephemeral modes they are real files under config.uploadDir, below.)
   if (resolved.isUpload && config.storageMode === 'vercel-blob') {
-    const uploaded = await ctx.moments.getUploadedFile(path.basename(resolved.file));
-    if (!uploaded) return sendNotFound(req, res);
+    const name = path.basename(resolved.file);
+    const uploaded = await ctx.moments.getUploadedFile(name);
 
-    res.writeHead(200, {
-      'Content-Type': uploaded.mime,
-      'Content-Length': uploaded.buffer.length,
-      'Cache-Control': cacheControlFor(resolved.file, true)
-    });
-    if (req.method !== 'HEAD') res.write(uploaded.buffer);
-    res.end();
-    return undefined;
+    if (uploaded) {
+      res.writeHead(200, {
+        'Content-Type': uploaded.mime,
+        'Content-Length': uploaded.buffer.length,
+        'Cache-Control': cacheControlFor(resolved.file, true)
+      });
+      if (req.method !== 'HEAD') res.write(uploaded.buffer);
+      res.end();
+      return undefined;
+    }
+
+    // Not in Blob — but it may be a photo committed to the repository by the
+    // manual publish workflow, which is a real file on disk. (On Vercel the
+    // filesystem is checked before this rewrite, so those requests never
+    // reach here; this covers Node hosts that also have Blob configured.)
+    const committed = path.join(config.rootDir, 'assets', 'gallery', 'moments', name);
+    try {
+      const committedStat = await fsp.stat(committed);
+      if (!committedStat.isFile()) return sendNotFound(req, res);
+      resolved.file = committed;
+    } catch {
+      return sendNotFound(req, res);
+    }
   }
 
   let { file } = resolved;

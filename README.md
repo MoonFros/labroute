@@ -23,6 +23,11 @@ and listed under **Pending uploads** on `dashboard.html`, where an admin can:
   Vercel it is copied to the connected Vercel Blob store and recorded in the
   Blob copy of the gallery list, because the deployment's own files (and this
   repository) are read-only to the running Function.
+- **Publish manually** — **Download photo** and **Download JSON** save the image and
+  the exact `content/gallery.json` record. Publish both with
+  `npm run publish -- <photo> --metadata <json>` and commit the result; the photo
+  then lives in the repository like the original eight and needs no storage
+  service at all. **Already committed** clears it from the queue.
 - **Decline** — the file and its entry are deleted.
 
 Each visitor is held to **one upload every 30 minutes**. The cooldown is scoped
@@ -77,9 +82,52 @@ external storage (Vercel Blob) and referenced from the Blob copy of
 Function's `/tmp`, which is wiped on restart — see **Why did an approved photo
 disappear?** below.
 
+### Publishing without Blob (manual commit)
+
+The upload → review → **download → commit** path needs no storage service and
+nothing can expire, because the photo ends up as a normal file in the repo.
+
+1. Visitor uploads; the photo waits under **Pending uploads** on `dashboard.html`.
+2. An admin clicks **Download photo** (original bytes, correct extension) and
+   **Download JSON** (the exact gallery record).
+3. Locally, in a clone of the repository:
+
+   ```bash
+   npm run publish -- ~/Downloads/moment-abc123.png \
+       --metadata ~/Downloads/moment-abc123.json
+   ```
+
+   That copies the photo to `assets/gallery/moments/` and prepends the record to
+   `content/gallery.json` (idempotent; `--dry-run` shows the change without
+   writing, `--force` overwrites).
+4. Commit and push:
+
+   ```bash
+   git add assets/gallery/moments/ content/gallery.json
+   git commit -m "gallery: publish moment-abc123"
+   git push
+   ```
+
+5. Back on the dashboard, click **Already committed** to clear the item from the
+   queue.
+
+Why this is durable: Vercel checks the filesystem **before** applying
+`vercel.json` rewrites ("precedence is given to the filesystem prior to rewrites
+being applied"), so a committed
+`assets/gallery/moments/<id>.<ext>` is served directly from the deployment. The
+`/assets/gallery/moments/(.*)` rewrite only catches file names that exist solely
+in Blob. `content/gallery.json` is the committed gallery, so the entry appears
+on the home page as soon as the deployment lands.
+
+Caveat: the *pending queue* still needs somewhere to live between upload and
+download. With a working Blob store it is durable; without one the photos sit in
+the Function's `/tmp`, so download them before that instance is recycled (a few
+minutes of inactivity, or the next deploy). Anything already downloaded is safe.
+
 Run `npm test` to execute the integration suite (pending uploads, approval and
-decline, gallery ordering, per-visitor cooldowns, validation, admin
-authentication, the review queue, and the Vercel/Blob deployment path).
+decline, gallery ordering, downloads and manual publishing, per-visitor
+cooldowns, validation, admin authentication, the review queue, and the
+Vercel/Blob deployment path).
 
 ### Email notifications
 
