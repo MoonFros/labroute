@@ -1,62 +1,62 @@
 [
   {
-    "id": "gal-8",
+    "id": "gal-9",
     "image": "assets/gallery/drone_shot_maingate.jpeg",
     "caption": "Aerial view of the University of Benin main gate",
     "contributor": "LabRoute Archive",
     "tall": true
   },
   {
-    "id": "gal-7",
+    "id": "gal-8",
     "image": "assets/gallery/Auditorium.jpg",
     "caption": "The University of Benin main auditorium",
     "contributor": "LabRoute Archive",
     "tall": true
   },
   {
-    "id": "gal-6",
+    "id": "gal-7",
     "image": "assets/gallery/auditorium.jpeg",
     "caption": "Auditorium during a departmental briefing",
     "contributor": "LabRoute Archive",
     "tall": true
   },
   {
-    "id": "gal-5",
+    "id": "gal-6",
     "image": "assets/gallery/images2.jpeg",
     "caption": "Students calibrating equipment during a lab session",
     "contributor": "LabRoute Archive",
     "tall": true
   },
   {
-    "id": "gal-4",
+    "id": "gal-5",
     "image": "assets/gallery/image1.jpeg",
     "caption": "A practical session at the workbench",
     "contributor": "LabRoute Archive",
     "tall": true
   },
   {
-    "id": "gal-3",
+    "id": "gal-4",
     "image": "assets/gallery/group3.jpeg",
     "caption": "Engineering students in lab coats",
     "contributor": "LabRoute Archive",
     "tall": true
   },
   {
-    "id": "gal-2",
+    "id": "gal-3",
     "image": "assets/gallery/group2.jpeg",
     "caption": "Project team group photo",
     "contributor": "LabRoute Archive",
     "tall": true
   },
   {
-    "id": "gal-1",
+    "id": "gal-2",
     "image": "assets/gallery/group1.jpeg",
     "caption": "Team members after a lab session",
     "contributor": "LabRoute Archive",
     "tall": false
   },
   {
-  "id": "moment-mvi2593m-53a508984bddcd6a",
+  "id": "gal-1",
   "image": "assets/gallery/moments/moment-mvi2593m-53a508984bddcd6a.webp",
   "caption": "Photo of Faculty of Engineering",
   "contributor": "Labroute Archives",
