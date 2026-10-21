@@ -34,6 +34,15 @@ and listed under **Pending uploads** on `dashboard.html`, where an admin can:
   service at all. **Already committed** clears it from the queue.
 - **Decline** — the file and its entry are deleted.
 
+### Home page gallery
+
+The gallery shows **nine photos at a time** — a 3x3 block on desktop, nine cards
+in the horizontal carousel on phones — with `Prev`/`Next` and numbered page
+buttons below it (`Showing 1-9 of 23 photos`). Paging is client side in
+`js/app.js` (`GALLERY_PAGE_SIZE`), so the API and `content/gallery.json` still
+carry the whole gallery; only the current page is in the DOM. A gallery of nine
+or fewer photos shows no pager at all.
+
 Each visitor is held to **one upload every 30 minutes**. The cooldown is scoped
 to that visitor (a signed HttpOnly cookie plus a browser-local device id), so one
 person uploading does not block anybody else. A hashed network guard also limits
