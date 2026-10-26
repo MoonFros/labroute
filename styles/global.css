@@ -391,7 +391,7 @@ a {
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--accent);
-  z-index: 1001;
+  z-index: 1;
 }
 
 .brand-logo .material-symbols-outlined {
@@ -444,7 +444,7 @@ a {
 }
 
 ::placeholder {
-  color: var(--text-main);
+  color: var(--text-muted);
   font-size: 0.875rem;
   text-wrap: ellipsis;
 }
