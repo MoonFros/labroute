@@ -7,15 +7,15 @@
   "label": "Sponsored",
   "ads": [
     {
-      "id": "sample-lab-kit",
-      "enabled": true,
-      "image": "assets/ads/sample-lab-kit.jpg",
-      "alt": "A compact electronics lab kit with a multimeter, breadboard and resistors",
-      "title": "Lab kit starter set",
-      "body": "Placeholder creative — replace the image and the link below with your product.",
-      "cta": "Take a look",
-      "href": "about.html",
-      "weight": 1
+  "id": "knowmentor-study-helper",
+  "enabled": true,
+  "image": "assets/ads/knowmentor.jpg",
+  "alt": "KnowMentor AI study helper explaining a topic with clear text and visual examples",
+  "title": "Learning is easier with KnowMentor",
+  "body": "Stuck on a topic? Let KnowMentor break it down with clear explanations and helpful visuals. Learn at your own pace!",
+  "cta": "Start learning",
+  "href": "https://knowmentor-project.vercel.app",
+  "weight": 1
     }
   ]
 }
