@@ -9,7 +9,7 @@
     {
   "id": "knowmentor-study-helper",
   "enabled": true,
-  "image": "assets/ads/knowmentor.jpg",
+  "image": "assets/ads/knowmentor.jpg.png",
   "alt": "KnowMentor AI study helper explaining a topic with clear text and visual examples",
   "title": "Learning is easier with KnowMentor",
   "body": "Stuck on a topic? Let KnowMentor break it down with clear explanations and helpful visuals. Learn at your own pace!",
