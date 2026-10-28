@@ -407,6 +407,147 @@ test('public Blob stores produce direct gallery image URLs', async () => {
   assert.ok(await store.readUploadedImage('moment-test-1.png'));
 });
 
+test('ephemeral approval refuses an uncommitted photo and confirms the commit', async () => {
+  const { root, contentDir, dataDir, overrides } = await makeFixture();
+  // Serverless without a Blob store: /tmp is wiped between instances, so the
+  // repository is the only thing that can make a photo permanent.
+  const ephemeralOverrides = { ...overrides, serverless: true };
+
+  const app = createApp(ephemeralOverrides);
+  assert.equal(app.config.storageMode, 'ephemeral');
+  const baseUrl = await listen(app.server);
+
+  try {
+    const upload = await jsonRequest(
+      baseUrl,
+      '/api/moments',
+      {
+        method: 'POST',
+        headers: { 'X-Labroute-Device': 'deviceephemeral1' },
+        body: JSON.stringify({
+          image: imgDataUrl(),
+          caption: 'A photo that has to be committed to survive',
+          contributor: 'Ada',
+          consent: true
+        })
+      },
+      {}
+    );
+    assert.equal(upload.status, 201);
+    const momentId = upload.json.moment.id;
+    const filename = upload.json.moment.filename;
+    assert.equal(filename, `${momentId}.png`);
+
+    const login = await jsonRequest(baseUrl, '/api/admin/login', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'admin@example.com', password: 'correct-horse' })
+    });
+    assert.equal(login.status, 200);
+
+    const pending = await jsonRequest(baseUrl, '/api/admin/pending', {}, login.jar);
+    assert.equal(pending.json.count, 1);
+    // The dashboard needs the exact paths to commit by hand.
+    assert.equal(pending.json.pending[0].repoPath, `assets/gallery/moments/${filename}`);
+    assert.equal(pending.json.pending[0].filename, filename);
+
+    // 1. Approving before the commit lands must not report success.
+    const early = await jsonRequest(
+      baseUrl,
+      `/api/admin/pending/${momentId}/approve`,
+      { method: 'POST' },
+      login.jar
+    );
+    assert.equal(early.status, 409);
+    assert.equal(early.json.error, 'not_committed');
+    assert.equal(early.json.file, `assets/gallery/moments/${filename}`);
+    assert.equal(early.json.record.id, momentId);
+    assert.equal(early.json.record.image, `assets/gallery/moments/${filename}`);
+    assert.equal(early.json.downloadUrl, `/api/admin/pending/${momentId}/download`);
+    assert.equal(early.json.metadataUrl, `/api/admin/pending/${momentId}/metadata`);
+
+    const stillPending = await jsonRequest(baseUrl, '/api/admin/pending', {}, login.jar);
+    assert.equal(stillPending.json.count, 1);
+    const galleryBefore = await jsonRequest(baseUrl, '/api/gallery');
+    assert.equal(galleryBefore.json.gallery.some((item) => item.id === momentId), false);
+
+    // 2. The admin downloads and commits both files...
+    const photo = await fetch(`${baseUrl}/api/admin/pending/${momentId}/download`, {
+      headers: { Cookie: cookieHeader(login.jar) }
+    });
+    assert.equal(photo.status, 200);
+    const photoBytes = Buffer.from(await photo.arrayBuffer());
+
+    const metadata = await jsonRequest(
+      baseUrl,
+      `/api/admin/pending/${momentId}/metadata`,
+      {},
+      login.jar
+    );
+    assert.equal(metadata.status, 200);
+    // The downloaded JSON *is* the record to paste into content/gallery.json.
+    assert.equal(metadata.json.id, momentId);
+    assert.equal(metadata.json.image, `assets/gallery/moments/${filename}`);
+    const record = metadata.json;
+
+    const momentsDir = path.join(root, 'assets', 'gallery', 'moments');
+    await fsp.mkdir(momentsDir, { recursive: true });
+    await fsp.writeFile(path.join(momentsDir, filename), photoBytes);
+
+    const committedGallery = JSON.parse(
+      await fsp.readFile(path.join(contentDir, 'gallery.json'), 'utf8')
+    );
+    await fsp.writeFile(
+      path.join(contentDir, 'gallery.json'),
+      JSON.stringify([record, ...committedGallery], null, 2)
+    );
+
+    // 3. Approving again finds the commit and clears the queue.
+    const approve = await jsonRequest(
+      baseUrl,
+      `/api/admin/pending/${momentId}/approve`,
+      { method: 'POST' },
+      login.jar
+    );
+    assert.equal(approve.status, 200);
+    assert.equal(approve.json.source, 'repository');
+    assert.equal(approve.json.moment.id, momentId);
+    assert.equal(approve.json.gallery[0].id, momentId);
+    assert.equal(approve.json.pendingCount, 0);
+
+    // The committed photo is served like any other gallery image.
+    const served = await fetch(`${baseUrl}/assets/gallery/moments/${filename}`);
+    assert.equal(served.status, 200);
+    assert.ok((await served.arrayBuffer()).byteLength > 0);
+
+    // 4. The commit triggers a redeploy that wipes /tmp. The admin presses
+    //    Approve once more: the photo is live, so that must still succeed
+    //    rather than 404 because the queue entry is gone.
+    const again = createApp(ephemeralOverrides);
+    const againBase = await listen(again.server);
+    try {
+      const cookies = { ...login.jar };
+      const replay = await jsonRequest(
+        againBase,
+        `/api/admin/pending/${momentId}/approve`,
+        { method: 'POST' },
+        cookies
+      );
+      assert.equal(replay.status, 200);
+      assert.equal(replay.json.published, true);
+      assert.equal(replay.json.moment.id, momentId);
+
+      const live = await jsonRequest(againBase, '/api/gallery');
+      assert.equal(live.json.gallery[0].id, momentId);
+      assert.equal(live.json.gallery[1].id, 'gal-old-1');
+    } finally {
+      await close(again.server);
+    }
+  } finally {
+    await close(app.server);
+    await fsp.rm(root, { recursive: true, force: true });
+  }
+});
+
 test('Blob-backed uploads survive across app instances (cold starts)', async () => {
   const { root, contentDir, overrides } = await makeFixture();
   const blobStorage = createMemoryBlobStorage({ access: 'private' });

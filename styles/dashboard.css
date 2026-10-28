@@ -501,17 +501,59 @@
   white-space: nowrap;
 }
 
-.pending-downloads {
+/* 9. Approval workflow on a pending card */
+.pending-steps {
+  margin: 0.75rem 0 0.9rem;
+  padding-left: 1.1rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-.pending-downloads .btn {
+  flex-direction: column;
   gap: 0.35rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
-.pending-downloads .material-symbols-outlined {
-  font-size: 18px;
+.pending-steps li::marker {
+  color: var(--primary-light);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.pending-steps a {
+  color: var(--primary-light);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.pending-steps strong {
+  color: var(--text-main);
+}
+
+.pending-steps code,
+.pending-help code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+
+/* The status line turns amber when approval is blocked on the commit. */
+.pending-status.is-warning {
+  color: #b45309;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.pending-card.needs-commit {
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.25);
+}
+
+@media (max-width: 640px) {
+  .pending-steps {
+    font-size: 0.8rem;
+  }
 }

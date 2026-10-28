@@ -319,32 +319,33 @@ function renderPendingUploads(container, countElement, pending, liveCount) {
       const caption = escapeHtml(moment.caption || 'Untitled lab moment');
       const contributor = escapeHtml(moment.contributor || 'Anonymous contributor');
       const date = formatDate(moment.uploadedAt);
+      const repoPath = escapeHtml(
+        moment.repoPath ||
+          `assets/gallery/moments/${moment.filename || `${moment.id}.jpg`}`
+      );
 
       return `
         <article class="moments-card pending-card" data-id="${id}">
           <img src="/api/admin/pending/${encodeURIComponent(moment.id)}/image" alt="${caption}" loading="lazy" />
           <div class="moments-card-body">
-            <span class="pending-flag">Action required</span>
+            <span class="pending-flag">Awaiting approval</span>
             <h3 class="moments-caption">${caption}</h3>
             <p class="moments-meta">${contributor}${date ? ` · ${date}` : ''}</p>
-            <div class="pending-downloads">
-              <a class="btn btn-outline btn-sm" href="/api/admin/pending/${encodeURIComponent(moment.id)}/download" download>
-                <span class="material-symbols-outlined">download</span>
-                <span>Download photo</span>
-              </a>
-              <a class="btn btn-outline btn-sm" href="/api/admin/pending/${encodeURIComponent(moment.id)}/metadata" download>
-                <span class="material-symbols-outlined">data_object</span>
-                <span>Download JSON</span>
-              </a>
-            </div>
+
+            <ol class="pending-steps">
+              <li>
+                <a href="/api/admin/pending/${encodeURIComponent(moment.id)}/download" download>Download the photo</a>
+                and
+                <a href="/api/admin/pending/${encodeURIComponent(moment.id)}/metadata" download>the JSON</a>
+              </li>
+              <li>Commit both to GitHub — the photo to <code>${repoPath}</code>, the record into <code>content/gallery.json</code></li>
+              <li>Press <strong>Approve</strong> — the photo takes image 1 and everything else shifts down</li>
+            </ol>
+
             <div class="pending-actions">
               <button type="button" class="btn btn-primary btn-sm" data-action="approve" data-id="${id}">
                 <span class="material-symbols-outlined">check</span>
                 <span>Approve</span>
-              </button>
-              <button type="button" class="btn btn-outline btn-sm" data-action="publish" data-id="${id}">
-                <span class="material-symbols-outlined">upload_file</span>
-                <span>Already committed</span>
               </button>
               <button type="button" class="btn btn-outline btn-sm" data-action="reject" data-id="${id}">
                 <span class="material-symbols-outlined">close</span>
@@ -371,11 +372,7 @@ async function reviewPending(id, action, button) {
 
   if (statusElement) {
     statusElement.textContent =
-      action === 'approve'
-        ? 'Approving photo…'
-        : action === 'publish'
-          ? 'Removing from the review queue…'
-          : 'Declining photo…';
+      action === 'approve' ? 'Checking the repository for this photo…' : 'Declining photo…';
   }
 
   try {
@@ -392,8 +389,29 @@ async function reviewPending(id, action, button) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
+      // 409 means the commit has not landed yet: show the instruction, not a
+      // generic failure, and leave the buttons usable so it can be retried.
+      if (response.status === 409 && data.record) {
+        statusElement.textContent = data.message;
+        statusElement.classList.add('is-warning');
+        buttons.forEach((item) => {
+          item.disabled = false;
+        });
+        if (card) {
+          card.classList.add('needs-commit');
+          // The queue entry is still there; approving again is the step that
+          // completes once the commit has deployed.
+          const approve = card.querySelector('[data-action="approve"] > span:last-child');
+          if (approve) approve.textContent = 'Approve again';
+        }
+        return;
+      }
+
       throw new Error(data.message || 'That review action could not be completed.');
     }
+
+    if (statusElement) statusElement.classList.remove('is-warning');
+    if (card) card.classList.remove('needs-commit');
 
     if (statusElement) {
       // The server message carries the temporary-storage caveat when it
@@ -402,9 +420,7 @@ async function reviewPending(id, action, button) {
         data.message ||
         (action === 'approve'
           ? 'Approved. The photo is now image 1 in the gallery.'
-          : action === 'publish'
-            ? 'Marked as published.'
-            : 'Declined. The photo was removed.');
+          : 'Declined. The photo was removed.');
     }
 
     await loadPendingUploads();
