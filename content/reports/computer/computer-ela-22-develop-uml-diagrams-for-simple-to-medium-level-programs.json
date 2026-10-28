@@ -1,0 +1,61 @@
+{
+  "id": "computer-ela-22-develop-uml-diagrams-for-simple-to-medium-level-programs",
+  "code": "Computer ELA 22",
+  "title": "Develop UML Diagrams for Simple to Medium Level Programs",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#UML",
+    "#SoftwareDesign",
+    "#ComputerELA22",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-22-develop-uml-diagrams-for-simple-to-medium-level-programs.json",
+  "content": {
+    "aim": "The objective of this experiment is to develop UML modelling skills.",
+    "objectives": [],
+    "apparatus": [
+      "Draw.io, Lucidchart, or StarUML",
+      "Java IDE (e.g., IntelliJ IDEA or Eclipse) for code implementation"
+    ],
+    "theory": {
+      "text": "This experiment focuses on an intermediate-level banking application that requires both Object-Oriented Programming (OOP) implementation and UML interaction modelling. The system manages various account types and performs transactions. Specifically, the architecture must support two distinct account types (SavingsAccount and CheckingAccount) that both inherit from a base Account class. 4. Procedures (UML Modelling) Prior to coding, the system's static and dynamic behaviors were modelled using UML principles. 4.1 Class Diagram Design A Class Diagram was developed to map the four required structural components: 1. Account (Base Class): Designed with attributes for account number and balance. It includes a core method deposit(amount) and an abstract method withdraw(amount). 2. Savings Account (Class 2): Modelled to inherit from Account. It overrides the withdraw(amount) method to prevent withdrawals if the balance drops below a minimum threshold (e.g., N1000). 3. Checking Account (Class 3): Modelled to inherit from Account. It overrides the withdraw(amount) method to allow overdrafts while imposing a fee if the balance falls below zero. 4. Bank App (Class 4): Modelled as the main application logic, maintaining an aggregation relationship with the Account class to manage a list of Account objects. 4.2 Dynamic Behavior Modelling • Sequence Diagram: A Sequence Diagram was created to illustrate a successful SavingsAccount withdrawal. It traces the user initiating a withdrawal via the Bank App, which calls the withdraw() method on the SavingsAccount lifeline, validates the N1000 minimum threshold, and returns a success message. • Use Case Diagram: A Use Case Diagram was mapped to illustrate the dynamic behavior of the full banking application, showing the actor interacting with distinct use cases such as depositing funds, withdrawing funds, and managing accounts.",
+      "diagrams": []
+    },
+    "tables": [],
+    "graphs": [],
+    "procedure": [
+      "Following the UML design, the banking system was implemented using Java.",
+      "import java.util.ArrayList;\nimport java.util.List;",
+      "// Class 1: Account (Base Class)",
+      "abstract class Account {",
+      "    protected String accountNumber;\n    protected double balance;",
+      "    public Account(String accountNumber, double balance) {\n        this.accountNumber = accountNumber;\n        this.balance = balance;\n    }",
+      "    public void deposit(double amount) {\n        if (amount > 0) {\n            balance += amount;\n            System.out.println(\"Deposited: N\" + amount + \". New Balance: N\" + balance);\n        }\n    }",
+      "    public abstract boolean withdraw(double amount);",
+      "    public double getBalance() {\n        return balance;\n    }",
+      "}",
+      "// Class 2: Savings Account\nclass SavingsAccount extends Account {\n    private static final double MIN_THRESHOLD = 1000.0;",
+      "    public SavingsAccount(String accountNumber, double balance) {\n        super(accountNumber, balance);\n    }",
+      "    @Override\n    public boolean withdraw(double amount) {\n        if ((balance - amount) >= MIN_THRESHOLD) {\n            balance -= amount;\n            System.out.println(\"Withdrawal successful. New Balance: N\" + balance);\n            return true;\n        } else {\n            System.out.println(\"Withdrawal failed. Minimum threshold of N\" + MIN_THRESHOLD + \" must be maintained.\");\n            return false;\n        }\n    }",
+      "}",
+      "// Class 3: Checking Account\nclass CheckingAccount extends Account {\n    private static final double OVERDRAFT_FEE = 50.0;",
+      "    public CheckingAccount(String accountNumber, double balance) {\n        super(accountNumber, balance);\n    }",
+      "    @Override\n    public boolean withdraw(double amount) {\n        balance -= amount;\n        System.out.println(\"Withdrew: N\" + amount);\n        if (balance < 0) {\n            balance -= OVERDRAFT_FEE;\n            System.out.println(\"Account overdrawn. Overdraft fee of N\" + OVERDRAFT_FEE + \" applied.\");\n        }\n        System.out.println(\"New Balance: N\" + balance);\n        return true;\n    }",
+      "}",
+      "// Class 4: Bank App\npublic class BankApp {\n    private List<Account> accounts = new ArrayList<>();",
+      "    public void addAccount(Account account) {\n        accounts.add(account);\n        System.out.println(\"Account added successfully.\");\n    }",
+      "    public static void main(String[] args) {\n        BankApp app = new BankApp();",
+      "        System.out.println(\"--- Testing Savings Account ---\");\n        SavingsAccount savings = new SavingsAccount(\"SA001\", 5000);\n        app.addAccount(savings);\n        savings.withdraw(3000); // Should succeed\n        savings.withdraw(1500); // Should fail (falls below 1000)",
+      "        System.out.println(\"\\n--- Testing Checking Account ---\");\n        CheckingAccount checking = new CheckingAccount(\"CA001\", 2000);\n        app.addAccount(checking);\n        checking.withdraw(2500); // Should succeed but apply overdraft fee\n    }",
+      "}"
+    ],
+    "precautions": [],
+    "discussion": "• How does using UML improve code development? Using UML dramatically improves code development by providing a clear, structural blueprint before any code is written. By defining base classes, abstract methods, and inheritance structures beforehand, developers avoid architectural mistakes and logical inconsistencies that are costly to fix during the actual coding phase. • What advantages did each UML diagram present in the overall design process? The Class Diagram ensured the static architecture was sound, clearly defining the required inheritance between Account, SavingsAccount, and CheckingAccount. The Sequence Diagram isolated the dynamic logic of a single function (a successful withdrawal), making it easier to program the exact step-by-step conditional checks required. The Use Case Diagram provided a high-level view of system boundaries, clarifying exactly what interactions a user should be able to perform within the finished application.",
+    "conclusion": "This experiment successfully bridged the gap between theoretical software design and practical execution. By modelling an intermediate banking system with UML diagrams prior to implementation, the structural dependencies and OOP principles (like inheritance and abstraction) were cleanly translated into a robust, working Java application.",
+    "questions": [],
+    "learnings": []
+  }
+}

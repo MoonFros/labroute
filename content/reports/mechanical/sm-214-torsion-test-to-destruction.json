@@ -1,0 +1,237 @@
+{
+  "id": "sm-214-torsion-test-to-destruction",
+  "code": "SM 214",
+  "title": "Torsion Test to Destruction",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Torsion",
+    "#MaterialTesting",
+    "#SM214",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/sm-214-torsion-test-to-destruction.json",
+  "content": {
+    "aim": "To carry out a torsion test to destruction on a metal test piece, in order to determine: (a) the modulus of rigidity G; (b) the shear stress at the limit of proportionality; (c) the general characteristics of the torque and angle of twist relationship.",
+    "objectives": [],
+    "apparatus": [
+      "Tec-equipment torsion testing machine (twisting by a hand wheel or handle",
+      "With a torque scale and an angle scale)",
+      "Prepared test piece",
+      "Vernier calipers",
+      "Meter rule"
+    ],
+    "theory": {
+      "text": "When a circular shaft is twisted by a torque T, every cross-section turns relative to the next, and the material is stressed in shear. For a circular specimen of gauge length L, polar second moment of area J and radius r, the torsion equation is T / J = G θ / L = τ / r where T is the applied torque (N·m), J is the polar second moment of area (mm⁴), G is the modulus of rigidity (N/mm²), θ is the angle of twist over length L (radians), L is the gauge length (mm), τ is the shear stress (N/mm²) and r is the radius of the parallel length (mm). For a solid circular bar of diameter d, J = πd⁴/32. Rearranging the torsion equation: G = T L / (J θ) τ = T r / J In the elastic range, torque and angle of twist are proportional (like load and extension in the tensile test), so the graph of T against θ is a straight line from the origin with slope T/θ = GJ/L, which gives G. At the limit of proportionality the line starts to curve, and the shear stress there is τ = Tp r / J, where Tp is the torque at that point. Beyond this the metal yields in shear. Twisting continues with the torque increasing slowly (strain hardening in a ductile metal) until the specimen fractures. A ductile metal fractures across a plane perpendicular to the axis (a shear fracture), after a large angle of twist. A brittle metal fractures on a helical surface at 45° to the axis (along the plane of maximum tensile stress), after a small twist.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Dimensions of the test piece",
+        "headers": [
+          "Measurement",
+          "Initial",
+          "Final"
+        ],
+        "rows": [
+          [
+            "Diameter (mm)",
+            "",
+            ""
+          ],
+          [
+            "Gauge length (mm)",
+            "",
+            ""
+          ],
+          [
+            "Overall length (mm)",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 2: Torque and angle of twist",
+        "headers": [
+          "Angle of twist (°)",
+          "Angle θ (rad)",
+          "Torque T (N·m)",
+          "T/θ (N·m/rad)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 3: Mechanical properties",
+        "headers": [
+          "Property",
+          "Experimental",
+          "Theoretical / accepted value"
+        ],
+        "rows": [
+          [
+            "Modulus of rigidity G (N/mm²)",
+            "",
+            "steel about 80 000; aluminium about 26 000; brass about 38 000"
+          ],
+          [
+            "Torque at limit of proportionality Tp (N·m)",
+            "",
+            ""
+          ],
+          [
+            "Shear stress at limit of proportionality (N/mm²)",
+            "",
+            ""
+          ],
+          [
+            "Torque at fracture (N·m) and angle at fracture (°)",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Measure the diameter of the parallel length of the test piece with the vernier calipers at several places, and the gauge length and overall length with the rule. Record them.",
+      "Fit the test piece in the grips of the machine. Set the torque indicator and the angle scale to zero.",
+      "Apply the torque slowly and steadily by turning the handle. At each step of angle (for example every 1° at the start) read the torque. Take more readings near the limit of proportionality.",
+      "Continue to fracture. Note the torque and the angle at fracture.",
+      "Remove the broken pieces, fit them together, and measure the final diameter, gauge length and overall length. Examine the fracture surface."
+    ],
+    "precautions": [
+      "The torque was applied slowly and steadily, with no sudden jerks.",
+      "The test piece was gripped firmly and centrally so it did not slip or bend.",
+      "The diameter was measured at several places (the radius is raised to the 4th power in J, so errors in d are very important).",
+      "The torque and angle scales were zeroed before the test, and read at eye level.",
+      "Everyone stood clear of the machine when the specimen fractured."
+    ],
+    "discussion": "The torque rose in direct proportion to the angle of twist at first, giving a straight line through the origin. After the limit of proportionality the line curved over and the torque increased more slowly with each additional degree of twist (yielding). The specimen finally broke with a [clean / helical] fracture. The fracture surface was [flat and perpendicular to the axis (ductile) / at 45° (brittle)]. The specimen was longer or shorter after the test by [ ] mm, and its diameter was [ ] mm.\n\nGeneral characteristics of the torque–twist relationship. The graph has a straight elastic part, a curved part after the limit of proportionality, and ends at fracture. The straight part gives the stiffness of the shaft (GJ/L), and G is found from its slope. A larger area under the curve means the metal can absorb more energy in twisting. This is the same behaviour as the tensile test, but with shear instead of direct stress. Comparing the results. I found G = [ ] N/mm², which differs by [ ] % from the accepted value of about [ ] N/mm². The shear stress at the limit of proportionality was [ ] N/mm², which is about [ ] % of the tensile yield stress (the shear yield stress is usually about 0.5 to 0.6 of the tensile yield stress). Sources of error Reading torque and angle from scales by eye, with limited divisions. Slip of the specimen in the grips, and twist in the machine itself, which add to the measured angle (so G comes out too low). Error in measuring the diameter, which is magnified by d⁴. It is not easy to see exactly where the straight line ends (the limit of proportionality). The specimen is not perfectly circular or uniform, and the gauge length is not exactly the length between the grips.",
+    "conclusion": "The torsion test gave a modulus of rigidity of [ ] N/mm², a shear stress at the limit of proportionality of [ ] N/mm², and a fracture at a torque of [ ] N·m after a twist of [ ]°. The torque and angle of twist were proportional up to the limit of proportionality, then yielding followed until fracture. The results are used in the design of drive shafts, axles, springs, drill bits and screwdrivers, where twisting is the main loading.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how a torsion test is carried out, how to get the modulus of rigidity from a torque–twist graph, and how a shaft behaves up to fracture."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Taking readings at regular steps of angle gives a good graph, and one test gives G, the shear stress at the limit of proportionality and the fracture behaviour. The accuracy depends on how well the scales are read and how well the specimen is gripped."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Reading the torque and the angle at the same time while turning the handle steadily, and deciding where the limit of proportionality is. It can be reduced by having two people (one turning, one reading), and by plotting the graph as the test goes on."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A torque sensor with an angle encoder and a data logger, or a vibrating (torsional pendulum) method to find G, or a tension test and the relation G = E/2(1 + ν)."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Diameter d, gauge length L, torque T, angle of twist θ, polar second moment J, modulus of rigidity G and shear stress τ."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The vernier calipers measure the diameter of the test piece. The torque and angle scales on the machine measure T and θ."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Design of drive shafts, propeller shafts, axles, torsion bars, springs and drill bits."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Strength of materials (torsion of circular shafts). 13. What interested me most. The straight-line relationship between torque and angle of twist, and how the specimen finally fractured. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how a torsion test is carried out, how to get the modulus of rigidity from a torque–twist graph, and how a shaft behaves up to fracture."
+    ]
+  }
+}

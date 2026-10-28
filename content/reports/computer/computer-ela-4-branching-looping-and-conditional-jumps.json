@@ -1,0 +1,124 @@
+{
+  "id": "computer-ela-4-branching-looping-and-conditional-jumps",
+  "code": "Computer ELA 4",
+  "title": "Branching, Looping and Conditional Jumps",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#8085",
+    "#8086",
+    "#ControlFlow",
+    "#ComputerELA4",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-4-branching-looping-and-conditional-jumps.json",
+  "content": {
+    "aim": "To understand and implement program control mechanisms in the 8085 and 8086 microprocessors using branching, looping, and conditional jump instructions.",
+    "objectives": [
+      "To demonstrate the use of unconditional jump instructions.",
+      "To implement decision-making using conditional jumps.",
+      "To generate a loop using conditional jumps and register decrements.",
+      "To implement looping using the dedicated LOOP instruction in the 8086 architecture."
+    ],
+    "apparatus": [
+      "8085 or 8086 Microprocessor Trainer Kit / Emulator / Simulator",
+      "Power Supply"
+    ],
+    "theory": {
+      "text": "In microprocessor-based systems, program execution normally follows a sequential order. Branching and looping instructions allow the processor to deviate from this order based on specific conditions. These conditions are evaluated using status flags that are set by the Arithmetic Logic Unit (ALU) after arithmetic or logical operations are performed. These control-flow mechanisms are essential for implementing decision-making logic, iteration, delays, counters, and real-time embedded applications.\n\nThe instructions can be broken down as follows: • 8085 Control Instructions: Common control instructions include JMP (unconditional jump), conditional jumps like JZ, JNZ, JC, JNC, as well as CALL, RET, and conditional return instructions. These jumps manipulate the Program Counter (PC) directly to point to non-sequential memory addresses. • 8086 Loop Instructions: The 16-bit 8086 microprocessor supports additional dedicated looping instructions such as LOOP, LOOPE, and LOOPNE. These specifically use the CX register as an automatic loop counter, which reduces the instruction fetch overhead and optimizes loop execution time. Diagram: Please use the manual's diagrams for any architectural references or flowcharts.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Experiment Part",
+          "Instruction Type",
+          "Key Instructions Used",
+          "Purpose"
+        ],
+        "rows": [
+          [
+            "Part 1",
+            "Unconditional Branching",
+            "JMP",
+            "Skip instructions entirely"
+          ],
+          [
+            "Part 2",
+            "Conditional Branching",
+            "CPI, JZ, JNZ",
+            "Decision-making based on flags"
+          ],
+          [
+            "Part 3",
+            "Looping (8085)",
+            "DCR, JNZ",
+            "Iteration using general registers"
+          ],
+          [
+            "Part 4",
+            "Looping (8086)",
+            "LOOP",
+            "Iteration using dedicated CX register"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "The trainer kit or emulator was powered on, and the microprocessor was reset.",
+      "For the unconditional branching experiment (Part 1), a value was loaded into the accumulator, and the JMP instruction was used to skip a subsequent instruction, allowing the change in program flow to be observed.",
+      "To implement conditional branching (Part 2), a value was loaded, compared with another value using CPI, and a JZ or JNZ instruction was executed based on the comparison.",
+      "Executing the looping logic: To generate a loop using registers (Part 3), a count value was initialized in register C. The register was decremented inside the loop, and the JNZ instruction was carefully entered to repeat execution until the count reached zero. Entering these branching addresses is a delicate process; care was taken to confirm the target memory locations with the group's project and the manual to ensure the jump did not route to an invalid address.",
+      "Finally, for the 8086 loop instruction (Part 4), the CX register was loaded with a loop count, and the LOOP instruction was executed to observe the automatic decrement and branching."
+    ],
+    "precautions": [
+      "Always reset the microprocessor before starting a new program to ensure a clean state.",
+      "Double-check the target addresses for JMP and JNZ commands to prevent infinite loops or the execution of random memory garbage."
+    ],
+    "discussion": "The experiments clearly demonstrated that conditional jumps depend directly on the status of the ALU flags. By using these mechanisms, program execution was successfully diverted from its normal sequential flow. Furthermore, utilizing dedicated loop instructions (like those in the 8086) was observed to reduce code size and improve overall clarity compared to manual decrementing loops in the 8085. Proper use of these branching techniques significantly improves program efficiency.",
+    "conclusion": "This laboratory exercise successfully demonstrated how branching, looping, and conditional jump instructions control program execution in 8085 and 8086 microprocessors.",
+    "questions": [
+      {
+        "question": "What is the difference between unconditional and conditional jump instructions?",
+        "answer": ""
+      },
+      {
+        "question": "List any four conditional jump instructions used in the 8085.",
+        "answer": ""
+      },
+      {
+        "question": "Which flags are commonly tested during conditional branching?",
+        "answer": ""
+      },
+      {
+        "question": "Explain the purpose of the LOOP instruction in 8086.",
+        "answer": ""
+      },
+      {
+        "question": "Why are loops important in delay generation?",
+        "answer": ""
+      },
+      {
+        "question": "What happens if a conditional jump is executed when the condition is false?",
+        "answer": ""
+      },
+      {
+        "question": "How can infinite loops be avoided in program design?",
+        "answer": ""
+      },
+      {
+        "question": "Explain the role of flags in conditional execution.",
+        "answer": "2. What you've learned: Practical understanding was gained regarding how status flags dictate the flow of assembly programs. The ability to structure efficient loops using both general-purpose registers in the 8085 and the dedicated CX register in the 8086 was also developed."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": []
+  }
+}

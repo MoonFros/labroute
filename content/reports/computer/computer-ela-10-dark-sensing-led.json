@@ -1,0 +1,96 @@
+{
+  "id": "computer-ela-10-dark-sensing-led",
+  "code": "Computer ELA 10",
+  "title": "Dark Sensing LED",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#Arduino",
+    "#LDR",
+    "#Sensors",
+    "#ComputerELA10",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-10-dark-sensing-led.json",
+  "content": {
+    "aim": "To light up the LED when there is no sensing light (Dark) environment.",
+    "objectives": [
+      "To understand the working principle of a Light Dependent Resistor (LDR).",
+      "To interface an analog light sensor and a digital output (LED) with an Arduino microcontroller.",
+      "To implement conditional logic (if statements) to control hardware behavior based on environmental changes."
+    ],
+    "apparatus": [
+      "L.E.D",
+      "Resistors 470Ω - 1",
+      "Photo Resistor (LDR)",
+      "Arduino Uno (any board)",
+      "Breadboard",
+      "Connecting wires"
+    ],
+    "theory": {
+      "text": "In this experiment, a dark-sensing circuit is built using an Arduino, an LED, and a Light Dependent Resistor (LDR). An LDR is a special component that changes its electrical resistance based on the amount of light hitting it. When it is bright (daylight), its resistance drops to a low value (around 5 KΩ). When it is dark, its resistance increases significantly (up to 20 MΩ). This property makes it highly useful for real-world applications like automatic lighting switches and camera shutter controls.\n\nThe Arduino reads these changing light levels as analog values. By writing a program with an \"if\" condition, the microcontroller checks whether the environment is currently dark or light. If the analog reading falls below a certain threshold (indicating darkness), the Arduino sends a HIGH command to digital pin 13 to turn on the LED. When light returns, it turns the LED off. Current-limiting resistors are kept in the circuit to safely guard both the light-dependent sensor and the light-emitting diode from high currents, preventing them from burning. Diagram: Please refer to the circuit diagram (Figure 9) for the LED and sensor connections with the Arduino.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Environmental Condition",
+          "Approximate LDR Resistance",
+          "LED State"
+        ],
+        "rows": [
+          [
+            "Daylight (High Light Intensity)",
+            "5 KΩ (Low)",
+            "OFF (LOW)"
+          ],
+          [
+            "Dark (Low Light Intensity)",
+            "20 MΩ (High)",
+            "ON (HIGH)"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Connections were made as per the circuit diagram, ensuring the resistors were properly placed to safeguard the components.",
+      "The Arduino was connected to the PC, and the Arduino IDE was configured.",
+      "The code was designed (with instructor guidance) to read analog values and apply an \"if\" condition. It was then verified for errors and uploaded to the Arduino microcontroller.",
+      "Executing the dark sensor: The photo resistor was manually covered to simulate a dark environment. It was successfully observed that the LED lighted up only when the sensor was deprived of light.",
+      "Arduino IDE Code Used (Representative Implementation):",
+      "int ldrPin = A0;   // Pin connected to the LDR voltage divider\nint ledPin = 13;   // Built-in or external LED pin\nint ldrValue = 0;  // Variable to store sensor readings",
+      "void setup() {\n  pinMode(ledPin, OUTPUT); // Set LED as an output\n  Serial.begin(9600);      // Initialize serial monitor for debugging",
+      "}",
+      "void loop() {",
+      "ldrValue = analogRead(ldrPin); // Read the light intensity",
+      "  // Apply the logic condition based on light levels\n  if (ldrValue < 300) {          // If it is dark (value drops below threshold)\n    digitalWrite(ledPin, HIGH);  // Turn the LED ON",
+      "} else { // If there is daylight",
+      "    digitalWrite(ledPin, LOW);   // Turn the LED OFF",
+      "}",
+      "  delay(100); // Short delay for stability",
+      "}"
+    ],
+    "precautions": [
+      "Connections should be made properly to ensure accurate analog readings.",
+      "Avoid loose connections.",
+      "Verify the code thoroughly before uploading it to the Arduino board."
+    ],
+    "discussion": "The experiment successfully illustrated the interaction between environmental sensors and microcontroller logic. The LDR effectively functioned as a variable resistor, modifying the voltage sent to the Arduino's analog input pin based on room lighting. By applying conditional \"if\" logic in the code, the system was able to dynamically respond to its environment, completing the circuit to the LED only when the threshold condition for darkness was met. This demonstrates the fundamental logic utilized in automated streetlights and security systems.",
+    "conclusion": "The LED was successfully configured to light up in a dark environment using an LDR and an Arduino Uno, verifying the principles of light-dependent resistance and conditional microcontroller programming.",
+    "questions": [
+      {
+        "question": "(No specific post-lab questions were listed for this module) 2.",
+        "answer": "What you've learned: Practical understanding was gained regarding how variable resistors like LDRs translate physical environmental changes into electrical signals. The ability to use \"if-else\" conditional statements in Arduino C++ to control output hardware was also developed."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": []
+  }
+}

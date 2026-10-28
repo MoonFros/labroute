@@ -1,0 +1,188 @@
+{
+  "id": "sm-212-shear-force-in-a-beam",
+  "code": "SM 212",
+  "title": "Shear Force in a Beam",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#ShearForce",
+    "#BeamTheory",
+    "#SM212",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/sm-212-shear-force-in-a-beam.json",
+  "content": {
+    "aim": "To investigate how the shear force at a cut in a simply supported beam varies with an increasing point load (Experiment 1). To investigate how the shear force at the cut varies for various loading conditions, and to draw shear force diagrams (Experiment 2).",
+    "objectives": [
+      "To investigate how the shear force at a cut in a simply supported beam varies with an increasing point load (Experiment 1). To investigate how the shear force at the cut varies for various loading conditions",
+      "To draw shear force diagrams (Experiment 2)."
+    ],
+    "apparatus": [
+      "Tec-equipment SM 212 shear force in a beam apparatus: a beam with a cut",
+      "A mechanism bridging the cut to a load cell",
+      "A digital force display",
+      "Hangers with slotted masses (100 g to 500 g)",
+      "A test frame with thumbscrews",
+      "And a rule",
+      "The hanger supports are 20 mm apart with a central groove for the hangers"
+    ],
+    "theory": {
+      "text": "When a beam carries loads, internal forces are set up in it. The shear force at a section is the algebraic sum of all the vertical forces acting on one side of that section. If it is worked out from the left side, an upward force (like the left reaction) is taken as positive and a downward load as negative. The same value (with the opposite sign) is got from the right side. For a simply supported beam of span L carrying a single point load W at a distance a from the left support A, the reactions are found by taking moments: RB = W a / L RA = W (L − a) / L The cut in this experiment is on the right of the load (40 mm away from it), so the shear force at the cut, taken from the right side, is just the right reaction: Sc = W a / L For several loads the same statement is used: the shear force at the cut is equal to the algebraic sum of the forces acting to the left (or right) of the cut. The shear force diagram jumps up at an upward reaction and jumps down at a downward load, by the size of that force, and is flat between the forces. In the apparatus the beam is cut at the section, and the cut is bridged by a mechanism that carries shear only and reacts on a load cell. The digital display therefore reads the shear force directly.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 2: Results for Experiment 1",
+        "headers": [
+          "Mass (g)",
+          "Load W (N)",
+          "Experimental shear force (N)",
+          "Theoretical shear force (N)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "",
+            "0"
+          ],
+          [
+            "100",
+            "0.98",
+            "",
+            "0.579"
+          ],
+          [
+            "200",
+            "1.96",
+            "",
+            "1.158"
+          ],
+          [
+            "300",
+            "2.94",
+            "",
+            "1.737"
+          ],
+          [
+            "400",
+            "3.92",
+            "",
+            "2.316"
+          ],
+          [
+            "500",
+            "4.90",
+            "",
+            "2.895"
+          ]
+        ]
+      },
+      {
+        "title": "Table 3: Results for Experiment 2",
+        "headers": [
+          "Fig.",
+          "W1 (N)",
+          "W2 (N)",
+          "Experimental shear force (N)",
+          "RA (N)",
+          "RB (N)",
+          "Theoretical shear force (N)"
+        ],
+        "rows": [
+          [
+            "4",
+            "3.92",
+            "–",
+            "",
+            "5.17",
+            "−1.25",
+            "+1.25"
+          ],
+          [
+            "5",
+            "1.96",
+            "3.92",
+            "",
+            "2.58",
+            "3.30",
+            "−3.30"
+          ],
+          [
+            "6",
+            "4.91",
+            "3.92",
+            "",
+            "2.59",
+            "6.24",
+            "−2.32"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Inspect all parts, leads and fastenings for damage and check that everything is secure. Fit the left and right supports into the test frame and tighten the thumbscrews. Make sure the internal bars are in the middle of their travel.",
+      "Connect the mini DIN lead from \"Force Input 1\" on the digital force display to the \"Force Output\" socket on the left support, making sure the lead does not touch the beam. Zero the force meter using the dial. Check that the display reads zero with no load.",
+      "Experiment 1: hang a 100 g hanger 40 mm to the left of the cut and record the display reading. Repeat with 200, 300, 400 and 500 g.",
+      "Experiment 2: load the beam as in figures 4, 5 and 6 using the loads in the table. Record the digital display reading for each case.",
+      "Mass to load conversion (Table 1)",
+      "[TABLE]",
+      "Mass (g) | 100 | 200 | 300 | 400 | 500",
+      "Load (N) | 0.98 | 1.96 | 2.94 | 3.92 | 4.90",
+      "[/TABLE]"
+    ],
+    "precautions": [
+      "The force display was zeroed with no load, and checked again between readings. If the meter was reading only ±0.1 N the frame was tapped lightly to overcome stiction.",
+      "The loads were hung carefully in the grooves of the hanger supports at the stated distances.",
+      "The lead from the load cell was kept away from the beam.",
+      "Excessive loads were never put on any part of the equipment.",
+      "The apparatus was on a level, steady surface."
+    ],
+    "discussion": "The digital reading increased steadily as the load was increased (Experiment 1), in a straight-line way. The experimental shear force was close to the theoretical shear force, but slightly different. The reading changed sign depending on which side of the cut the heavier load was, so the shear force can be positive or negative. When a load was moved to the right of the cut it no longer changed the sum of the forces to the left of the cut, but it changed the reactions.\n\nShape of the graph. The graph of shear force against load is a straight line through the origin, with a slope of a/L = 0.591 in theory. This tells us that the shear force at the cut is directly proportional to the load. Doubling the load doubles the shear force. So the equation Sc = W a / L predicts the behaviour of the beam well, provided the experimental points lie close to the theoretical line (my readings differed from theory by [ ] %). Comparison of experiment 2 with theory. The experimental values at the cut agree with the calculated values within [ ] %. The shear force diagrams show jumps equal to the loads and reactions, and the shear force is constant between the loads. Possible reasons for differences Friction (\"stiction\") in the cut mechanism and in the load cell. The weight of the beam and the cut mechanism itself is not in the theory, nor is the weight of the hangers. The positions of the hangers (measured to about 1 mm) and the actual span. Slight zero error or drift of the digital display, and the digital readings are to only 0.1 N.",
+    "conclusion": "The shear force at the cut increased in direct proportion to the load (Sc = Wa/L), and the experimental values agreed with theory to within about [ ] %. For the three loading arrangements the shear force at the cut was found by summing the forces on one side of the cut, and shear force diagrams were drawn. The shear force is needed in beam design to size the web and the connections, for example in the design of bridges and floor beams.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt what shear force is, how to calculate it at a cut from the reactions and loads, and how to draw a shear force diagram."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "The cut and load cell give the shear force directly on a digital display, so readings are fast and clear. Using five loads and a graph shows the trend better than one reading."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Getting the display to return to zero (stiction in the mechanism) and positioning the hangers correctly. It can be reduced by tapping the frame lightly, re-zeroing, and measuring distances carefully."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A strain gauge beam, or a hydraulic or spring balance at the supports to measure the reactions and hence the shear force."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Load W (from mass), positions a and the span L, reactions RA and RB, and the shear force at the cut."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The digital force display (with the load cell) measures the shear force, and a rule measures the distances."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Design of beams in buildings, bridges and cranes, and in machine shafts and frames."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Strength of materials / structures (shear force and bending moment in beams)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The shear force reading changed sign when the heavier load was moved from one side of the cut to the other. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt what shear force is, how to calculate it at a cut from the reactions and loads, and how to draw a shear force diagram."
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "id": "am-225-the-conical-pendulum",
+  "code": "AM 225",
+  "title": "The Conical Pendulum",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#ConicalPendulum",
+    "#CircularMotion",
+    "#AM225",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-225-the-conical-pendulum.json",
+  "content": {
+    "aim": "To investigate the variation in height of a conical pendulum with change of speed. To determine the acceleration due to gravity, g.",
+    "objectives": [],
+    "apparatus": [
+      "Tec-equipment conical pendulum apparatus with a variable speed motor",
+      "A drive unit and a tachometer (speed indicator)",
+      "The pendulum bob is supported on a thin steel rod and runs on a semicircular guide bar with negligible friction",
+      "And has an effective length L (read from the manual as about 230 mm; the print is unclear",
+      "So check on the rig)",
+      "A protractor and pointer are fitted for measuring the angle θ: the angle is right when the conical pendulum rod coincides with the centre-line of the pointer"
+    ],
+    "theory": {
+      "text": "A conical pendulum is a mass (the bob) that is made to move in a horizontal circle at the end of a rod or string of length L, which then traces out a cone. Let M = the total mass, θ = the inclination of the pendulum to the vertical axis, ω = the angular velocity of the bob, r = the radius of the circle and h = the vertical height of the cone, so that h = L cos θ and r = L sin θ. The forces on the bob are its weight Mg downwards and the tension T along the rod. The bob moves in a circle, so there is a resultant force towards the centre. The equations of motion are: T sin θ = M ω² r (along the radius, towards the centre) T cos θ = M g (along the vertical, no vertical acceleration) Dividing the first by the second to eliminate T and the mass: tan θ = ω² r / g and with r = L sin θ: ω² = g / (L cos θ) = g / h So ω² is proportional to 1/h. A plot of ω² (vertical) against 1/h (horizontal) is a straight line through the origin whose slope is g. The height h falls as the speed rises, because the bob swings out further. The angular velocity is found from the speed N in rev/min: ω = 2πN/60.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Conical pendulum results",
+        "headers": [
+          "θ (°)",
+          "h = L cos θ (m)",
+          "1/h (m⁻¹)",
+          "N (rpm)",
+          "ω = 2πN/60 (rad/s)",
+          "ω² (rad²/s²)",
+          "ω² h (= g) (m/s²)"
+        ],
+        "rows": [
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "15",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "25",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "35",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Set the pointer to a required angle θ (start at a small angle, for example 10° or 15°).",
+      "Increase the speed ω slowly until the pendulum rod lines up with the pointer, and note the speed from the tachometer.",
+      "Repeat with the angle increased in steps of 5°.",
+      "Calculate h = L cos θ and ω = 2πN/60 for each angle."
+    ],
+    "precautions": [
+      "The speed was increased very slowly and steadily so that the rod stayed in line with the pointer.",
+      "The pointer was read at eye level.",
+      "The speed was read from the tachometer only when the speed was steady.",
+      "Guards were in place and no one reached into the rotating parts."
+    ],
+    "discussion": "The bob rose and moved outwards as the speed was increased, and the height h decreased. A very small speed was not enough to lift the bob from the vertical position. The speed had to pass a minimum value (ω² = g/L when θ = 0) before the cone could form. The speed needed rose quickly as the angle got larger. The points of ω² against 1/h lay close to a straight line.\n\nDo the results show any appreciable deviation from theory? Explain. The points [lie close to a straight line through the origin / show some scatter] and the value of g from the slope was [ ] m/s², which differs from 9.81 m/s² by [ ] %. Where there is a deviation, it comes from the factors below. Friction between the bob and the guide bar, and air resistance, which are not in the theory. The rod and the bob are not a point mass on a weightless string (the rod has mass and the bob has size), so L is not the exact length to the centre of mass. The angle was set by eye with a pointer, so θ may be out by 1° or more, which has a big effect on h at small angles. The speed fluctuates a bit while the pendulum is lined up with the pointer. Local value of g. The value of g from the slope of the graph is [ ] m/s².",
+    "conclusion": "The height of the conical pendulum decreased as the speed increased, and the graph of ω² against 1/h was a straight line through the origin, in agreement with ω² = g/h. The local value of g obtained from the slope was [ ] m/s², about [ ] % different from 9.81 m/s². The principle is used in centrifugal governors, fairground swing rides and the analysis of vehicles on banked bends.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how a mass moving in a horizontal circle forms a cone and how the height depends on speed, and how to find g from the slope of an ω² against 1/h graph."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "The angle is set first and the speed adjusted until the rod lines up with the pointer, so the readings are quick. Using several angles and a graph gives a better answer for g than one reading."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Judging the exact moment when the rod lines up with the pointer while the speed is changing. It can be reduced by increasing the speed very slowly and repeating each reading."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A simple pendulum or a free fall (falling body) experiment, or a compound pendulum, can also give g."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Pendulum length L, angle θ, height h = L cos θ, speed N (rpm) and angular velocity ω."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The tachometer measures the speed in rev/min, and the protractor with pointer measures the angle θ."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Centrifugal (Watt) governors, fairground swing rides, centrifuges, and the design of banked curves on roads and railways."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Dynamics (circular motion and centripetal force). 13. What interested me most. The bob rose higher the faster it turned, in the same way as a swing ride. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how a mass moving in a horizontal circle forms a cone and how the height depends on speed, and how to find g from the slope of an ω² against 1/h graph."
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "computer-ela-18-implement-java-python-programs-using-two-ides",
+  "code": "Computer ELA 18",
+  "title": "Implement Java / Python Programs Using Two IDEs",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#Java",
+    "#Python",
+    "#IDEs",
+    "#ComputerELA18",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-18-implement-java-python-programs-using-two-ides.json",
+  "content": {
+    "aim": "The objective of this experiment is to compare development workflows across different IDEs.",
+    "objectives": [],
+    "apparatus": [
+      "IntelliJ IDEA",
+      "Eclipse",
+      "VS Code"
+    ],
+    "theory": {
+      "text": "An Integrated Development Environment (IDE) provides essential tools for software development, typically combining a source code editor, build automation, and a debugger into a single application. The development workflow within an IDE heavily depends on the architecture of the programming language being used: • Java: Java is a high-level, class-based, object-oriented programming language. It is strictly statically typed, meaning that all variable types must be explicitly declared and are checked at compile-time. This architecture allows fully-featured IDEs like IntelliJ IDEA to perform deep, continuous code analysis, catching syntax and structural errors long before the program is executed. Furthermore, Java code is compiled into bytecode, which is then run on the Java Virtual Machine (JVM), requiring a rigid file and class structure even for simple applications. • Python: Python is a high-level, interpreted programming language prioritized for code readability and rapid development. It is dynamically typed, meaning variable types are inferred and checked at runtime rather than during compilation. This provides a highly flexible and concise scripting experience, eliminating the need for structural boilerplate like class declarations for basic logic. Because it executes line-by-line, developers often rely on extensible editors like VS Code, augmented with specialized extensions, to provide real-time linting and runtime debugging to catch errors that a compiler would otherwise miss.",
+      "diagrams": []
+    },
+    "tables": [],
+    "graphs": [],
+    "procedure": [
+      "4.1: Implement a calculator program in Java using IntelliJ IDEA",
+      "A basic calculator capable of fundamental arithmetic operations was built using Java. The implementation required standard structural boilerplate, including a public class definition and a main execution method.",
+      "import java.util.Scanner;",
+      "public class Calculator {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        System.out.println(\"Enter first number:\");\n        double num1 = scanner.nextDouble();\n        System.out.println(\"Enter an operator (+, -, *, /):\");\n        char operator = scanner.next().charAt(0);\n        System.out.println(\"Enter second number:\");\n        double num2 = scanner.nextDouble();",
+      "        double result = 0;\n        switch (operator) {\n            case '+': result = num1 + num2; break;\n            case '-': result = num1 - num2; break;\n            case '*': result = num1 * num2; break;\n            case '/':\n                if(num2 != 0) { result = num1 / num2; }\n                else { System.out.println(\"Error: Divide by zero\"); return; }\n                break;\n            default: System.out.println(\"Invalid operator\"); return;\n        }\n        System.out.println(\"Result: \" + result);\n        scanner.close();\n    }",
+      "}",
+      "4.2: Implement the same program in Python using VS Code",
+      "The identical arithmetic logic was recreated in Python. The resulting source code was significantly shorter and less rigid due to the language's dynamic typing and lack of structural overhead.",
+      "def calculate():\n    num1 = float(input(\"Enter first number: \"))\n    operator = input(\"Enter an operator (+, -, *, /): \")\n    num2 = float(input(\"Enter second number: \"))",
+      "    if operator == '+': result = num1 + num2\n    elif operator == '-': result = num1 - num2\n    elif operator == '*': result = num1 * num2\n    elif operator == '/':\n        if num2 != 0: result = num1 / num2\n        else: return \"Error: Divide by zero\"\n    else: return \"Invalid operator\"",
+      "    return f\"Result: {result}\"",
+      "print(calculate())",
+      "4.3: Debug both programs and document differences",
+      "Breakpoints were set at the mathematical operations in both environments to trace variable states and compare the debugging utility native to IntelliJ IDEA versus the extension-driven debugging in VS Code."
+    ],
+    "precautions": [],
+    "discussion": "The execution of the programs successfully highlighted the core differences between the two development workflows. • Which IDE provided better debugging support? IntelliJ IDEA provided a superior, out-of-the-box debugging experience. Features such as inline variable inspection and memory analysis are built natively into the environment specifically for the JVM. VS Code is a highly capable tool but required manual configuration and the installation of third-party extensions to debug Python effectively. • How did the experience differ between Java and Python? Java demanded a strict, object-oriented structure, but rewarded this rigidity by catching syntax and type errors immediately during the compile phase. Python facilitated a much faster, more flexible initial scripting phase, but relied heavily on active runtime execution and manual debugging to expose logical or type-related errors.",
+    "conclusion": "The experiment demonstrated that fully-featured IDEs like IntelliJ are optimal for structured, strictly typed projects, providing immediate error-checking and robust debugging tools. Conversely, extensible editors like VS Code excel in rapid development and concise scripting, provided the environment is configured correctly.",
+    "questions": [],
+    "learnings": []
+  }
+}

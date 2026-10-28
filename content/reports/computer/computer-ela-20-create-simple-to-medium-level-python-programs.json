@@ -1,0 +1,51 @@
+{
+  "id": "computer-ela-20-create-simple-to-medium-level-python-programs",
+  "code": "Computer ELA 20",
+  "title": "Create Simple to Medium-Level Python Programs",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#Python",
+    "#Programming",
+    "#ComputerELA20",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-20-create-simple-to-medium-level-python-programs.json",
+  "content": {
+    "aim": "The objective of this experiment is to develop Python problem-solving skills.",
+    "objectives": [],
+    "apparatus": [
+      "Python 3.x",
+      "VS Code / PyCharm"
+    ],
+    "theory": {
+      "text": "Transitioning to intermediate Python programming involves mastering several core concepts and project management techniques: • Object-Oriented Programming (OOP): This encompasses the use of classes, objects, methods, constructors (__init__), attributes, inheritance, and encapsulation. • External Library Integration and Data Analysis: Intermediate programming involves importing and utilizing major third-party libraries such as pandas, requests, and matplotlib. • Project Management for Portability: To successfully create and run intermediate Python projects across multiple IDEs (like PyCharm and VS Code), specific setup procedures must be strictly followed. • Isolation (Virtual Environments): Every intermediate project must live within its own Virtual Environment (venv). This acts as the foundation for portability, ensuring that the project's dependencies do not clash with other projects or the system's global Python installation. • Dependency Manifest: A requirements.txt file (or pyproject.toml if using Poetry) must be created using the command pip freeze > requirements.txt. This file allows any IDE—local or remote—to replicate the exact working environment.",
+      "diagrams": []
+    },
+    "tables": [],
+    "graphs": [],
+    "procedure": [
+      "4.1 Beginner Activity: Write a program to reverse a string",
+      "A simple Python program was written to accept a string and return it in reverse order. This was achieved using Python's native string slicing capabilities.",
+      "def reverse_string(text):\n    # Using Python's slice notation to reverse the string\n    return text[::-1]",
+      "original_text = \"Engineering\"",
+      "reversed_text = reverse_string(original_text)",
+      "print(f\"Original: {original_text}\")\nprint(f\"Reversed: {reversed_text}\")",
+      "4.2 Medium Activity: Build a student grade management system using dictionaries",
+      "A grade management system was developed utilizing Python dictionaries to store and manipulate key-value pairs representing student names and their corresponding grades.",
+      "def grade_management_system():\n    # Initialize an empty dictionary\n    student_grades = {}",
+      "    # Add records\n    student_grades[\"Alice\"] = 85\n    student_grades[\"Bob\"] = 92\n    student_grades[\"Charlie\"] = 78",
+      "    print(\"--- Initial Grades ---\")\n    for student, grade in student_grades.items():\n        print(f\"{student}: {grade}\")",
+      "    # Update a record\n    print(\"\\n--- Updating Alice's Grade ---\")\n    student_grades[\"Alice\"] = 90\n    print(f\"Alice's new grade is {student_grades['Alice']}\")",
+      "    # Retrieve a specific record\n    print(\"\\n--- Retrieving Bob's Grade ---\")\n    print(f\"Bob's grade: {student_grades.get('Bob')}\")",
+      "grade_management_system()"
+    ],
+    "precautions": [],
+    "discussion": "• How does Python's dynamic typing affect coding speed? Dynamic typing significantly increases initial coding speed. Because there is no need to explicitly declare variable types before assigning values to them, scripts can be drafted and modified much faster than in statically typed languages. • What advantages did you notice compared to Java? Python offers a massive reduction in boilerplate code. Unlike Java, which requires class declarations and a main method just to execute a print statement, Python allows for functional scripting directly in the file. Additionally, Python's native syntax for data structures (like dictionaries and lists) is much more intuitive and concise than Java's HashMap or ArrayList initialization.",
+    "conclusion": "This experiment successfully demonstrated fundamental Python problem-solving skills. By implementing both a string manipulation algorithm and a dictionary-based data management system, the advantages of Python's concise syntax and dynamic typing became evident, especially when compared to more rigid object-oriented languages.",
+    "questions": [],
+    "learnings": []
+  }
+}

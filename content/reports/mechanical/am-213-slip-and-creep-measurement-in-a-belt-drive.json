@@ -1,0 +1,303 @@
+{
+  "id": "am-213-slip-and-creep-measurement-in-a-belt-drive",
+  "code": "AM 213",
+  "title": "Slip and Creep Measurement in a Belt Drive",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#BeltDrive",
+    "#SlipAndCreep",
+    "#AM213",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-213-slip-and-creep-measurement-in-a-belt-drive.json",
+  "content": {
+    "aim": "To measure the coefficient of friction between the pulley material and different belt materials. To measure the power transmitted with varied belt tension and plot a graph of power output against (T₁ − T₂), that is, the tension characteristics. To measure the percentage slip at fixed belt tension by varying the load on the brake drum, and to plot (T₁ − T₂) against percentage slip (the slip characteristics), fixing the creep zone from the graph. To measure belt slip speed and observe the limiting value of the load at constant speed when the slip just starts.",
+    "objectives": [
+      "To measure the coefficient of friction between the pulley material and different belt materials. To measure the power transmitted with varied belt tension and plot a graph of power output against (T₁ − T₂), that is, the tension characteristics. To measure the percentage slip at fixed belt tension by varying the load on the brake drum",
+      "To plot (T₁ − T₂) against percentage slip (the slip characteristics), fixing the creep zone from the graph. To measure belt slip speed and observe the limiting value of the load at constant speed when the slip just starts."
+    ],
+    "apparatus": [
+      "A variable speed PMDC motor drives two cast iron pulleys P₁ and P₂ of equal diameter",
+      "With flat rims",
+      "P₁ is the driving pulley",
+      "Mounted directly on the motor shaft",
+      "P₂ is the driven pulley",
+      "An endless (or stitched) belt passes over both pulleys",
+      "The bearing block of the driven pulley can slide over the base to vary the initial belt tension",
+      "P₂ is balanced on a single bearing block and carries a brake drum",
+      "Over which a brake belt is passed",
+      "With its ends attached to two spring balances that give the tight and slack tensions",
+      "Output power is therefore found from the difference of the spring balance readings",
+      "The speed of the motor is varied by a variable speed drive",
+      "And two digital indicators on the control panel show S₁ and S₂",
+      "So the slip can be calculated"
+    ],
+    "theory": {
+      "text": "Slip in a belt The slip in a belt drive is mainly due to reduced frictional grip between the belt and the pulley, and it depends on the angle of contact. It is defined as the relative motion between the pulley and the belt. The difference between the linear speed of the pulley rim and the belt is the measure of slip. It is expressed as a percentage and it reduces the speed of the driven pulley and the efficiency of power transmission. Creep in a belt drive When the pulleys rotate clockwise, the lower side of the belt is the tight side (tension T₁) and the upper side is the slack side (tension T₂). When the belt passes from the tight side to the slack side its length contracts, and when it passes from the slack side to the tight side it stretches. So the belt alternately stretches and contracts as it goes round. This causes a small difference between the speed of the belt and the speed of the pulley rim, and the relative motion that results is called creep. Creep is mainly due to changes in belt length. It increases with load and results in greater power loss, because creep makes the driven pulley slower. Usually creep must stay within a tolerable limit of about 1 % of the load at normal conditions. If the load is raised above the designed value, slip may occur on one or both pulleys. Both slip and creep reduce the performance of a belt drive and increase maintenance. Equations T₁ / T₂ = eμθ so μ = (1/θ) ln(T₁/T₂) θ = 180° = π rad % Slip = (S₁ − S₂)/S₁ × 100 Torque = (T₁ − T₂) r Power = 2πN₂ (T₁ − T₂) g r / 60 000 kW T₁ and T₂ are the tight and slack side tensions, μ is the coefficient of friction between belt and pulley, θ is the angle of lap, S₁ is the speed of the driving pulley (rpm), S₂ is the speed of the driven pulley (rpm), r is the radius of the brake drum pulley, and g = 9.81 m/s² if the tensions are read in kg.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1 (Experiment 1): coefficient of friction",
+        "headers": [
+          "S/No",
+          "S₁ (rpm)",
+          "S₂ (rpm)",
+          "T₁ (kg)",
+          "T₂ (kg)",
+          "Coefficient of friction μ"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 2 (Experiment 2): slip characteristic at constant speed",
+        "headers": [
+          "S/No",
+          "S₁ (rpm)",
+          "S₂ (rpm)",
+          "T₁ (kg)",
+          "T₂ (kg)",
+          "T₁ − T₂ (kg)",
+          "(S₁ − S₂)/2",
+          "Slip (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 3 (Experiment 3): tension characteristic and power",
+        "headers": [
+          "S/No",
+          "S₁ (rpm)",
+          "S₂ (rpm)",
+          "T₁ (kg)",
+          "T₂ (kg)",
+          "Torque (N·m)",
+          "(T₁ + T₂)/2 (kg)",
+          "Power (kW)",
+          "Slip (%)"
+        ],
+        "rows": [
+          [
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Plug the apparatus into the power supply.",
+      "Before starting, make sure the speed knob is at zero (turned anti-clockwise).",
+      "Press the green start button at the bottom of the control panel.",
+      "The display will glow and show \"press START\". Press the red push button to start the motor.",
+      "Use the knob to increase or decrease the motor speed. Always do this slowly.",
+      "Experiment 1: coefficient of friction",
+      "Adjust some initial tension on the belt and run the motor at a steady speed.",
+      "Load the brake drum until the belt is just about to slip. Record S₁, S₂, T₁ and T₂.",
+      "Repeat for five sets of readings, and for each belt material available. Calculate μ from μ = (1/π) ln(T₁/T₂).",
+      "Experiment 2: slip characteristic",
+      "Adjust some initial tension and start the motor to a constant speed (say 600 rpm).",
+      "Take the reading of S₁ and S₂ at zero load (the slip is almost zero).",
+      "Increase the load on the brake drum slightly and take the T₁ − T₂, S₁ and S₂ readings. Repeat in steps, noting (T₁ − T₂) and (S₁ − S₂) each time.",
+      "Experiment 3: tension characteristic",
+      "Repeat the procedure of Experiment 2 and adjust the initial tension.",
+      "Start the motor, take readings of T₁, T₂, S₁ and S₂, and find the power output from (T₁ − T₂).",
+      "Repeat for different initial tensions and compare the results."
+    ],
+    "precautions": [
+      "The speed knob was at zero before starting and the speed was changed slowly.",
+      "The load on the brake drum was added slowly and in small steps.",
+      "The spring balances were zeroed and read at the same time at steady speed.",
+      "The belt was clean, free of oil and dust, and the pulleys were aligned.",
+      "Hands were kept away from the belt and pulleys while the motor was running."
+    ],
+    "discussion": "At zero load the slip was almost zero. The driven pulley speed S₂ fell slowly as the load on the brake drum increased. At small loads the slip increased in proportion to the load (creep). At a higher load, the slip increased quickly and the belt slipped on the pulley. The tight side tension T₁ increased and the slack side tension T₂ decreased as load was added. Power output rose with (T₁ − T₂) up to a maximum, and then fell when the belt slipped because the speed fell. Higher initial tension gave a greater power capacity before slip began.\n\nEffectiveness of the procedure. The procedure measures slip, tensions and power directly with simple instruments, so it clearly shows the difference between creep (small, in proportion to load) and slip (large, when the limit of friction is reached). It also shows that the power capacity depends on the initial tension. The weak points are that the spring balance readings fluctuate and that the slip points are hard to tell exactly. Belt drives compared with other transmissions. A belt drive is quiet, cheap, needs no lubrication, can connect shafts that are far apart, absorbs shock and acts as a safety device because it slips when overloaded. But because of slip and creep the speed ratio is not exact (typically 1 to 3 % loss), it can only transmit moderate power, and it needs tension maintained, so the bearing loads are high. A gear drive or a chain drive gives an exact speed ratio and a higher power capacity in a smaller space, but needs lubrication, accurate alignment and is noisier and more expensive. For the same job, a V-belt or toothed (timing) belt reduces slip further. Sources of error Fluctuation of the spring balance readings and their limited scale divisions. Variation of speed readings on the digital display (a few rpm). Belt stretch and change of the initial tension during the test, and heating of the belt. The angle of lap is taken as exactly 180° (equal pulleys), so small shifts in the pulley position change μ slightly. Dust or oil on the belt and pulley surface.",
+    "conclusion": "The coefficient of friction between the pulley and the belt was found to be about [ ]. The slip characteristic showed a creep zone up to about [ ] % slip, followed by a rapid increase in slip when the belt began to slip. The power transmitted increased with (T₁ − T₂) up to a maximum of [ ] kW. Belt drives are suitable for moderate power transmission over long distances, but slip and creep make the speed ratio inexact.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt the difference between slip and creep in a belt drive, how to find the coefficient of friction from T₁/T₂ = eμθ, and how the power and slip change with load."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Digital speed indicators and spring balances give quick readings, and the three experiments use the same set-up, so a lot can be done in one session. The readings of tension fluctuate a bit."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Reading the two spring balances and the two speeds at the same moment while the load changes. It can be reduced by waiting for a steady condition, by having two people read, and by repeating the readings."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A torque transducer and a dynamometer (such as a Prony brake) to measure power, or stroboscope or tachometer to measure the speed."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Speeds S₁ and S₂, tensions T₁ and T₂, pulley radius, angle of lap, torque, power and percentage slip."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The spring balances measure the tensions, and the digital indicators measure the speeds S₁ and S₂ in rpm."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Belt drives in cars (fan and alternator belts), machine tools, conveyors, washing machines and generators."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Machines and mechanisms (belt drives and power transmission)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The driven pulley slowed down very slightly as the load increased even before the belt slipped, which is creep. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt the difference between slip and creep in a belt drive, how to find the coefficient of friction from T₁/T₂ = eμθ, and how the power and slip change with load."
+    ]
+  }
+}

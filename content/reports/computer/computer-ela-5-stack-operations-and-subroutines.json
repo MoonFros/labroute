@@ -1,0 +1,120 @@
+{
+  "id": "computer-ela-5-stack-operations-and-subroutines",
+  "code": "Computer ELA 5",
+  "title": "Stack Operations and Subroutines",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#Stack",
+    "#Subroutines",
+    "#AssemblyLanguage",
+    "#ComputerELA5",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-5-stack-operations-and-subroutines.json",
+  "content": {
+    "aim": "To understand and implement subroutines and stack operations in the 8085 and 8086 microprocessors using CALL, RET, PUSH, and POP instructions for modular and structured program design.",
+    "objectives": [
+      "To demonstrate subroutine execution using CALL and RET instructions.",
+      "To understand register storage and retrieval using the stack.",
+      "To demonstrate nested CALL instructions and stack behavior in the 8085.",
+      "To implement subroutines and stack operations in the 8086 architecture."
+    ],
+    "apparatus": [
+      "8085 or 8086 Microprocessor Trainer Kit / Emulator / Simulator",
+      "Power Supply"
+    ],
+    "theory": {
+      "text": "Subroutines are reusable blocks of code that perform specific tasks and can be invoked from different parts of a program. When a subroutine is called, the return address is automatically stored on the stack, ensuring that program execution resumes correctly after completion. The stack itself is a last-in, first-out (LIFO) memory structure controlled by the Stack Pointer (SP).\n\nThe stack is critical for preventing data loss during context switches. By pushing current register states before executing a subroutine and popping them afterward, the original program state is perfectly preserved. In the 8085, the stack grows downward in memory, while in the 8086 it operates using segmented addressing with the SS:SP register pair. Instructions such as PUSH and POP allow for the temporary storage of register contents, which is fundamentally necessary for supporting complex operations like nested subroutines and hardware interrupt handling. Diagram: Please use the manual's diagrams for any architectural references or flowcharts.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Experiment Part",
+          "Instruction Focus",
+          "Observed Behavior"
+        ],
+        "rows": [
+          [
+            "Part 1: Simple Subroutine",
+            "CALL, RET",
+            "Return address is automatically stored and retrieved."
+          ],
+          [
+            "Part 2: Stack Operations",
+            "PUSH, POP",
+            "Register values are preserved and restored (LIFO)."
+          ],
+          [
+            "Part 3: Nested Subroutines",
+            "Multiple CALLs",
+            "Stack depth increases; proper management required."
+          ],
+          [
+            "Part 4: 8086 Stack",
+            "SS:SP initialization",
+            "Segmented stack addressing correctly manages calls."
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "For the simple subroutine execution, a main program was written that called a subroutine.",
+      "An arithmetic operation was performed inside the subroutine, and control was returned to the main program using the RET instruction.",
+      "To observe stack operations, data was loaded into a register pair and then pushed onto the stack using the PUSH instruction.",
+      "The registers were subsequently cleared, and the original data was retrieved by popping it back from the stack.",
+      "Nested subroutines were demonstrated by calling a subroutine from the main program, and inside that subroutine, another subroutine was called. Stack growth and the proper return sequence were carefully observed.",
+      "Finally, for the 8086 implementation, the stack segment and stack pointer were initialized before using CALL, RET, PUSH, and POP to store and retrieve register contents."
+    ],
+    "precautions": [
+      "Ensure the stack pointer is properly initialized before any CALL or PUSH instructions to prevent stack overflow or writing over system memory.",
+      "Carefully track nested subroutines to ensure proper stack management and avoid underflow during RET operations."
+    ],
+    "discussion": "The experiments revealed that the stack stores return addresses automatically during subroutine calls. It was also observed that PUSH and POP instructions are essential to preserve register values during program execution. Furthermore, the successful execution of nested subroutines relies heavily on proper stack management. These LIFO memory mechanisms are fundamental to achieving modular and structured assembly program design.",
+    "conclusion": "This laboratory session demonstrated the importance of subroutines and stack operations in structured programming for microprocessors. The experiments showed how CALL, RET, PUSH, and POP instructions enable modular design, efficient memory use, and reliable program flow control in the design or system application of both 8085 and 8086 functionalities.",
+    "questions": [
+      {
+        "question": "What is a subroutine and why is it used?",
+        "answer": ""
+      },
+      {
+        "question": "Explain the function of the stack pointer.",
+        "answer": ""
+      },
+      {
+        "question": "What happens to the stack during a CALL instruction?",
+        "answer": ""
+      },
+      {
+        "question": "Why is the stack important for interrupt handling?",
+        "answer": ""
+      },
+      {
+        "question": "What errors can occur if the stack is not properly initialized?",
+        "answer": ""
+      },
+      {
+        "question": "Explain stack overflow and underflow.",
+        "answer": ""
+      },
+      {
+        "question": "How does nested subroutine execution affect stack depth?",
+        "answer": ""
+      },
+      {
+        "question": "Why must registers be preserved during subroutine execution?",
+        "answer": "2. What you've learned: A practical understanding was gained regarding how the stack automatically stores return addresses during subroutine calls. The ability to preserve register values using PUSH and POP during program execution was also developed."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": []
+  }
+}

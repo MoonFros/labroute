@@ -1,0 +1,246 @@
+{
+  "id": "am-212-rolling-on-an-inclined-plane",
+  "code": "AM 212",
+  "title": "Rolling on an Inclined Plane",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#RollingMotion",
+    "#NewtonsLaws",
+    "#AM212",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-212-rolling-on-an-inclined-plane.json",
+  "content": {
+    "aim": "To find the radius of gyration k of a body rolling on an inclined plane, and to verify Newton's laws for this case.",
+    "objectives": [
+      "To find the radius of gyration k of a body rolling on an inclined plane",
+      "To verify Newton's laws for this case."
+    ],
+    "apparatus": [
+      "Inclined plane with two parallel rails",
+      "Wheel and axle (the rolling body)",
+      "Stopwatch",
+      "Meter rule",
+      "Protractor or a height gauge for the angle",
+      "And a balance for the mass",
+      "Other rolling bodies (solid and hollow cylinders) were also available"
+    ],
+    "theory": {
+      "text": "A wheel and axle rolls without slipping down parallel rails. Let m be its mass, α the angle of the slope, r the radius from the centre of mass G to the rolling surface (the axle radius, since the axle rests on the rails), k the radius of gyration about G, f the linear acceleration of G and β the angular acceleration. Newton's second law along the slope: mg sin α − Ff = mf Ff is the friction at the contact point that stops sliding. Torque about G: Ff r = I β = mk²β. Rolling without slipping gives β = f/r, so Ff = mk²β / r = mk²f / r² Eliminating Ff: mg sin α = mf (1 + k²/r²) so f = g sin α / (1 + k²/r²) The body starts from rest and covers a distance L in time t, so L = ½ft² and f = 2L/t². Putting this in and rearranging gives the radius of gyration: k² = r² ( g t² sin α / (2L) − 1 ) The measured acceleration depends on t², so timing errors matter a lot. Accuracy is best when f is small, which needs a small α and a large k²/r². That is why a wheel on a small axle is better than, for example, a sphere rolling in a V-groove. Prediction of k from geometry. For a uniform solid disc k² = R²/2, for a thin ring k² = R². For a wheel and axle, I is found by adding the contributions of the rim, hub and axle (I = Σ ½ m(Ro² + Ri²) for each hollow cylinder), then k² = I/m. Friction needed to roll. Ff = mg sin α · (k²/r²)/(1 + k²/r²). The surfaces must supply at least this much friction or the body will slip.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Timing results and radius of gyration",
+        "headers": [
+          "Body",
+          "α (°)",
+          "L (m)",
+          "t1 (s)",
+          "t2 (s)",
+          "t3 (s)",
+          "Mean t (s)",
+          "f = 2L/t² (m/s²)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Body",
+          "r (m)",
+          "k from experiment (m)",
+          "k from geometry (m)",
+          "% difference"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 2: Check of Newton's laws (acceleration from theory against acceleration measured)",
+        "headers": [
+          "α (°)",
+          "sin α",
+          "f theory = g sin α / (1 + k²/r²)",
+          "f measured",
+          "% difference"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Measure the axle radius r, the mass m and the dimensions of the wheel.",
+      "Set the plane to a small angle α. Mark a start line and a finish line a distance L apart.",
+      "Release the wheel from rest at the start line (no push) and time it to the finish line. Repeat several times and take the mean t.",
+      "Repeat for other angles and for other rolling bodies."
+    ],
+    "precautions": [
+      "The wheel was released from rest without a push and from the same start line each time.",
+      "The rails were clean, parallel and free of dust so that the wheel did not slip.",
+      "Each time was measured at least three times and the mean was used, because f depends on t².",
+      "The angle was kept small and measured carefully."
+    ],
+    "discussion": "The wheel rolled down slowly, with constant acceleration, without slipping. The time of descent was longer for a smaller angle. Bodies of the same shape took about the same time, whatever their mass. A solid cylinder (smaller k) accelerated faster than a wheel with a heavy rim (larger k).\n\nSources of error Reaction time when starting and stopping the stopwatch (about 0.2 s). This is large compared with t, and it is doubled in f. Difficulty in releasing the wheel exactly at the start line. Error in measuring α and in the effective radius r where the axle touches the rails. Rolling friction, air resistance and slight slipping. Rails not perfectly parallel or level across. Accuracy of k. The experimental k was [ ] m and the calculated k was [ ] m, a difference of [ ] %. This is [within / outside] the expected accuracy from the timing error above. Newton's laws. The measured acceleration agreed with g sin α/(1 + k²/r²) to within [ ] %, so the observations [do / do not] verify Newton's second law for combined translation and rotation. The acceleration was constant (L ∝ t²), which shows that the net force and torque were constant. Rolling friction. Rolling resistance would make the measured acceleration smaller than the theoretical value. Its size can be investigated in two ways: (1) find the angle αc at which the wheel just begins to roll steadily, so that the resistance is about mg sin αc; or (2) use Fr = m [ g sin α − f(1 + k²/r²) ] from the measured f. My value was Fr ≈ [ ] N, which is [ ] % of mg sin α.",
+    "conclusion": "The radius of gyration of the wheel and axle was found to be [ ] m from experiment and [ ] m from its dimensions, a difference of [ ] %. The motion had constant acceleration and agreed with f = g sin α/(1 + k²/r²), which supports Newton's laws. Rolling bodies accelerate more slowly than sliding ones because part of the energy goes into rotation. The results are useful in designing wheels, rollers, flywheels and vehicles on slopes.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how translation and rotation combine in rolling, how to find a radius of gyration from simple timing, and why timing errors matter when the result depends on t²."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "A slow, small-angle motion gives a long time of descent, which reduces the effect of reaction time. Repeating the timing and averaging improves accuracy, and bodies of the same shape give the same acceleration, so many bodies can be tested quickly."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Timing the descent accurately by hand. It can be reduced with a longer track, a smaller angle, timing gates (photocells) or several timings averaged."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "The compound pendulum (oscillating the body about a knife edge, T = 2π√((k² + h²)/gh)) or a trifilar suspension can also be used to find k."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Angle of slope α, distance L, time t, acceleration f, axle radius r, mass m and radius of gyration k."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The stopwatch measures the time t. It reads to 0.01 s, but the reaction time of the person (about 0.2 s) is the real limit on accuracy."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Design of wheels, rollers, flywheels, bearings, vehicles on hills and any rolling machine part."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Dynamics (kinetics of rigid bodies in plane motion, moment of inertia)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "Bodies of different mass but the same shape reached the bottom together. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how translation and rotation combine in rolling, how to find a radius of gyration from simple timing, and why timing errors matter when the result depends on t²."
+    ]
+  }
+}

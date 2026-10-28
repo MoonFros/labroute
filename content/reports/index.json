@@ -1,19 +1,5 @@
 [
   {
-    "id": "cpe-401-microprocessor",
-    "code": "CPE 401",
-    "title": "Microprocessor Interfacing & Programming",
-    "department": "computer",
-    "level": "400",
-    "session": "2023/2024",
-    "tags": [
-      "Microprocessors",
-      "EmbeddedSystems"
-    ],
-    "file": "computer/cpe-401-microprocessor.json",
-    "verified": true
-  },
-  {
     "id": "eee-281-thevenin",
     "code": "EEE 281",
     "title": "Verification of Thevenin's & Norton's Theorems",
@@ -1487,6 +1473,595 @@
       "#TD323"
     ],
     "file": "mechanical/td-323-conductivity-of-liquids-and-gases.json",
+    "verified": true
+  },
+  {
+    "id": "am-212-rolling-on-an-inclined-plane",
+    "code": "AM 212",
+    "title": "Rolling on an Inclined Plane",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#RollingMotion",
+      "#NewtonsLaws",
+      "#AM212",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-212-rolling-on-an-inclined-plane.json",
+    "verified": true
+  },
+  {
+    "id": "am-214-screw-jack",
+    "code": "AM 214",
+    "title": "Screw Jack",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#ScrewJack",
+      "#SimpleMachines",
+      "#AM214",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-214-screw-jack.json",
+    "verified": true
+  },
+  {
+    "id": "am-217-centrifugal-force-experiment",
+    "code": "AM 217",
+    "title": "Centrifugal Force Experiment",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#CentrifugalForce",
+      "#RotationalDynamics",
+      "#AM217",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-217-centrifugal-force-experiment.json",
+    "verified": true
+  },
+  {
+    "id": "am-218-a-simple-wheel-and-axle",
+    "code": "AM 218(A)",
+    "title": "Simple Wheel and Axle",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#WheelAndAxle",
+      "#SimpleMachines",
+      "#AM218A",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-218-a-simple-wheel-and-axle.json",
+    "verified": true
+  },
+  {
+    "id": "am-218-b-wheel-and-differential-axle",
+    "code": "AM 218(B)",
+    "title": "Wheel and Differential Axle",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#WheelAndAxle",
+      "#SimpleMachines",
+      "#AM218B",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-218-b-wheel-and-differential-axle.json",
+    "verified": true
+  },
+  {
+    "id": "am-221-radial-cam-and-follower",
+    "code": "AM 221",
+    "title": "Radial Cam and Follower",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#CamAndFollower",
+      "#Kinematics",
+      "#AM221",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-221-radial-cam-and-follower.json",
+    "verified": true
+  },
+  {
+    "id": "am-223-the-offset-slider-crank-mechanism",
+    "code": "AM 223",
+    "title": "The Offset Slider-Crank Mechanism",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#SliderCrank",
+      "#Kinematics",
+      "#AM223",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-223-the-offset-slider-crank-mechanism.json",
+    "verified": true
+  },
+  {
+    "id": "sm-212-shear-force-in-a-beam",
+    "code": "SM 212",
+    "title": "Shear Force in a Beam",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#ShearForce",
+      "#BeamTheory",
+      "#SM212",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/sm-212-shear-force-in-a-beam.json",
+    "verified": true
+  },
+  {
+    "id": "sm-213-bending-moment-in-a-beam",
+    "code": "SM 213",
+    "title": "Bending Moment in a Beam",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#BendingMoment",
+      "#BeamTheory",
+      "#SM213",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/sm-213-bending-moment-in-a-beam.json",
+    "verified": true
+  },
+  {
+    "id": "sm-214-torsion-test-to-destruction",
+    "code": "SM 214",
+    "title": "Torsion Test to Destruction",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Torsion",
+      "#MaterialTesting",
+      "#SM214",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/sm-214-torsion-test-to-destruction.json",
+    "verified": true
+  },
+  {
+    "id": "am-213-slip-and-creep-measurement-in-a-belt-drive",
+    "code": "AM 213",
+    "title": "Slip and Creep Measurement in a Belt Drive",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#BeltDrive",
+      "#SlipAndCreep",
+      "#AM213",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-213-slip-and-creep-measurement-in-a-belt-drive.json",
+    "verified": true
+  },
+  {
+    "id": "am-225-the-conical-pendulum",
+    "code": "AM 225",
+    "title": "The Conical Pendulum",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#ConicalPendulum",
+      "#CircularMotion",
+      "#AM225",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-225-the-conical-pendulum.json",
+    "verified": true
+  },
+  {
+    "id": "am-226-a-simple-pendulum",
+    "code": "AM 226(A)",
+    "title": "Simple Pendulum",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#SimplePendulum",
+      "#Oscillations",
+      "#AM226A",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-226-a-simple-pendulum.json",
+    "verified": true
+  },
+  {
+    "id": "am-226-b-compound-pendulum-conditions-for-minimum-period",
+    "code": "AM 226(B)",
+    "title": "Compound Pendulum: Conditions for Minimum Period",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#CompoundPendulum",
+      "#Oscillations",
+      "#AM226B",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-226-b-compound-pendulum-conditions-for-minimum-period.json",
+    "verified": true
+  },
+  {
+    "id": "am-229-flywheel-and-falling-weight",
+    "code": "AM 229",
+    "title": "Flywheel and Falling Weight",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Flywheel",
+      "#MomentOfInertia",
+      "#AM229",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-229-flywheel-and-falling-weight.json",
+    "verified": true
+  },
+  {
+    "id": "am-231-automat-spur-gear-models-a1-to-a5",
+    "code": "AM 231",
+    "title": "Automat Spur Gear Models (A1 to A5)",
+    "department": "mechanical",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#Gears",
+      "#Machines",
+      "#AM231",
+      "#MechanicalEngineering"
+    ],
+    "file": "mechanical/am-231-automat-spur-gear-models-a1-to-a5.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-1-2-to-4-line-decoder",
+    "code": "Computer ELA 1",
+    "title": "2-to-4 Line Decoder",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#LogicGates",
+      "#Decoder",
+      "#DigitalElectronics",
+      "#ComputerELA1",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-1-2-to-4-line-decoder.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-2-data-transfer-instructions-in-8085-8086",
+    "code": "Computer ELA 2",
+    "title": "Data Transfer Instructions in 8085/8086",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#8085",
+      "#8086",
+      "#AssemblyLanguage",
+      "#ComputerELA2",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-2-data-transfer-instructions-in-8085-8086.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-3-arithmetic-operations-in-8085-8086",
+    "code": "Computer ELA 3",
+    "title": "Arithmetic Operations in 8085/8086",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#8085",
+      "#8086",
+      "#AssemblyLanguage",
+      "#ComputerELA3",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-3-arithmetic-operations-in-8085-8086.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-4-branching-looping-and-conditional-jumps",
+    "code": "Computer ELA 4",
+    "title": "Branching, Looping and Conditional Jumps",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#8085",
+      "#8086",
+      "#ControlFlow",
+      "#ComputerELA4",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-4-branching-looping-and-conditional-jumps.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-5-stack-operations-and-subroutines",
+    "code": "Computer ELA 5",
+    "title": "Stack Operations and Subroutines",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Stack",
+      "#Subroutines",
+      "#AssemblyLanguage",
+      "#ComputerELA5",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-5-stack-operations-and-subroutines.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-6-measuring-room-temperature-using-lm-35",
+    "code": "Computer ELA 6",
+    "title": "Measuring Room Temperature Using LM-35",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Arduino",
+      "#LM35",
+      "#Sensors",
+      "#ComputerELA6",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-6-measuring-room-temperature-using-lm-35.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-7-finding-the-distance-of-an-object-ultrasonic-sensor",
+    "code": "Computer ELA 7",
+    "title": "Finding the Distance of an Object (Ultrasonic Sensor)",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Arduino",
+      "#UltrasonicSensor",
+      "#Sensors",
+      "#ComputerELA7",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-7-finding-the-distance-of-an-object-ultrasonic-sensor.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-8-displaying-a-stopwatch-on-an-lcd",
+    "code": "Computer ELA 8",
+    "title": "Displaying a Stopwatch on an LCD",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Arduino",
+      "#LCD",
+      "#EmbeddedSystems",
+      "#ComputerELA8",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-8-displaying-a-stopwatch-on-an-lcd.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-9-traffic-lights-using-leds",
+    "code": "Computer ELA 9",
+    "title": "Traffic Lights Using LEDs",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Arduino",
+      "#LEDs",
+      "#EmbeddedSystems",
+      "#ComputerELA9",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-9-traffic-lights-using-leds.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-10-dark-sensing-led",
+    "code": "Computer ELA 10",
+    "title": "Dark Sensing LED",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Arduino",
+      "#LDR",
+      "#Sensors",
+      "#ComputerELA10",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-10-dark-sensing-led.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-11-proficiency-with-software-development-tools",
+    "code": "Computer ELA 11",
+    "title": "Proficiency with Software Development Tools",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#IDEs",
+      "#Git",
+      "#Debugging",
+      "#ComputerELA11",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-11-proficiency-with-software-development-tools.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-18-implement-java-python-programs-using-two-ides",
+    "code": "Computer ELA 18",
+    "title": "Implement Java / Python Programs Using Two IDEs",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Java",
+      "#Python",
+      "#IDEs",
+      "#ComputerELA18",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-18-implement-java-python-programs-using-two-ides.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-19-create-beginner-to-intermediate-java-programs",
+    "code": "Computer ELA 19",
+    "title": "Create Beginner to Intermediate Java Programs",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Java",
+      "#Programming",
+      "#ComputerELA19",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-19-create-beginner-to-intermediate-java-programs.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-20-create-simple-to-medium-level-python-programs",
+    "code": "Computer ELA 20",
+    "title": "Create Simple to Medium-Level Python Programs",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#Python",
+      "#Programming",
+      "#ComputerELA20",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-20-create-simple-to-medium-level-python-programs.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-22-develop-uml-diagrams-for-simple-to-medium-level-programs",
+    "code": "Computer ELA 22",
+    "title": "Develop UML Diagrams for Simple to Medium Level Programs",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#UML",
+      "#SoftwareDesign",
+      "#ComputerELA22",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-22-develop-uml-diagrams-for-simple-to-medium-level-programs.json",
+    "verified": true
+  },
+  {
+    "id": "computer-ela-23-knowledge-of-and-proficiency-with-software-testing-tools",
+    "code": "Computer ELA 23",
+    "title": "Knowledge of and Proficiency with Software Testing Tools",
+    "department": "computer",
+    "level": "400",
+    "session": "2025/2026",
+    "tags": [
+      "#SoftwareTesting",
+      "#QualityAssurance",
+      "#ComputerELA23",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/computer-ela-23-knowledge-of-and-proficiency-with-software-testing-tools.json",
+    "verified": true
+  },
+  {
+    "id": "logic-lab-1-electrical-and-logic-circuits-8085-z80-application",
+    "code": "Logic Lab 1",
+    "title": "Electrical and Logic Circuits, 8085/Z80 Application",
+    "department": "computer",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#LogicCircuits",
+      "#8085",
+      "#Z80",
+      "#LogicLab1",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/logic-lab-1-electrical-and-logic-circuits-8085-z80-application.json",
+    "verified": true
+  },
+  {
+    "id": "logic-lab-2-logic-circuits-diode-transistor-logic",
+    "code": "Logic Lab 2",
+    "title": "Logic Circuits (Diode-Transistor Logic)",
+    "department": "computer",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#DiodeLogic",
+      "#LogicGates",
+      "#LogicLab2",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/logic-lab-2-logic-circuits-diode-transistor-logic.json",
+    "verified": true
+  },
+  {
+    "id": "logic-lab-3-half-adder-circuit",
+    "code": "Logic Lab 3",
+    "title": "Half Adder Circuit",
+    "department": "computer",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#HalfAdder",
+      "#CombinationalLogic",
+      "#LogicLab3",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/logic-lab-3-half-adder-circuit.json",
+    "verified": true
+  },
+  {
+    "id": "logic-lab-4-full-adder-circuit",
+    "code": "Logic Lab 4",
+    "title": "Full Adder Circuit",
+    "department": "computer",
+    "level": "200",
+    "session": "2025/2026",
+    "tags": [
+      "#FullAdder",
+      "#CombinationalLogic",
+      "#LogicLab4",
+      "#ComputerEngineering"
+    ],
+    "file": "computer/logic-lab-4-full-adder-circuit.json",
     "verified": true
   }
 ]

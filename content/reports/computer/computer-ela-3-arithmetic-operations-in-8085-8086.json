@@ -1,0 +1,135 @@
+{
+  "id": "computer-ela-3-arithmetic-operations-in-8085-8086",
+  "code": "Computer ELA 3",
+  "title": "Arithmetic Operations in 8085/8086",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#8085",
+    "#8086",
+    "#AssemblyLanguage",
+    "#ComputerELA3",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-3-arithmetic-operations-in-8085-8086.json",
+  "content": {
+    "aim": "To explore and implement arithmetic operations (addition, subtraction, and multiplication) within the 8085 and 8086 microprocessor architectures.",
+    "objectives": [
+      "To develop a clear understanding of 8-bit arithmetic operations.",
+      "To analyze how condition flags change after arithmetic operations.",
+      "To compare arithmetic implementations between 8-bit (8085) and 16-bit (8086) architectures."
+    ],
+    "apparatus": [
+      "8085 or 8086 Microprocessor Trainer Kit",
+      "Power Supply",
+      "Emulator / Assembler (Jubin Mitra's 8085 Simulator or Proteus)"
+    ],
+    "theory": {
+      "text": "Arithmetic operations in microprocessors are carried out by the Arithmetic Logic Unit (ALU). The ALU performs these operations based on opcodes fetched by the CPU. Crucially, the ALU also updates condition flags, such as Zero, Sign, Carry, Parity, and Auxiliary Carry, which influence the overall program flow.\n\nThe arithmetic instructions are categorized as follows: • Addition: Uses instructions such as ADD, ADI, and ADC. These instructions allow for multi-byte addition by incorporating the carry flag from previous operations to handle numbers larger than 8 bits. • Subtraction: Uses instructions such as SUB, SUI, and SBB. Two's complement logic is utilized internally by the ALU to compute these differences efficiently. • Multiplication: The 16-bit 8086 uses dedicated MUL and IMUL instructions. However, in the 8-bit 8085, multiplication must be implemented manually using repeated addition routines since it lacks a direct multiplication command. This highlights the significant architectural and computational leap between the 8-bit and 16-bit generations. Diagram: Please use the manual's diagrams for any architectural references or flowcharts.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Operation",
+          "Input A",
+          "Input B",
+          "Output Q",
+          "Flags Affected F"
+        ],
+        "rows": [
+          [
+            "Addition",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Subtraction",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Multiplication",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "The trainer kit was powered on, and the reset button was pressed to initialize the microprocessor.",
+      "For the first part involving 8-bit addition, the first number was loaded from memory location 8000H into register A, moved to register B, and then the second number was loaded from 8001H.",
+      "Executing the arithmetic logic: The ADD B instruction was carefully entered to add the contents of A and B, and the result was then stored in memory location 8002H using the STA 8002H command. This step is where the actual computation happens inside the ALU. Since the exact hex codes entered might vary slightly depending on the specific assembler used, care was taken to confirm with the group's project and the manual to ensure everything matched up before execution.",
+      "Similar steps were repeated for 8-bit subtraction, using memory locations 8100H and 8101H, and the SUB C instruction to find the difference.",
+      "For multiplication on the 8085, a loop was set up to repeatedly add the multiplicand to the accumulator until the multiplier (acting as a counter in register C) became zero.",
+      "Finally, the dedicated arithmetic instructions were tested on the 8086 processor, observing how commands like ADD AL, BL and MUL BL handled the operations directly without needing a manual loop."
+    ],
+    "precautions": [
+      "Always reset the microprocessor before starting a new program to clear any previous data or flag states.",
+      "Double-check memory addresses when storing results (e.g., 8002H or 8102H) to prevent accidentally overwriting input operands."
+    ],
+    "discussion": "The experiments demonstrated the structural differences between the two processors. The 8085 relies on manual algorithmic routines, like repeated addition, for operations like multiplication due to its limited instruction set. In contrast, the 8086 provides enhanced arithmetic capabilities through dedicated instructions such as MUL and IMUL. Observing the ALU process data and update condition flags provided practical insight into how microprocessors handle computation at the hardware level.",
+    "conclusion": "The laboratory exercise successfully strengthened the understanding of arithmetic operations within the 8085 and 8086 microprocessor architectures, developing confidence in memory addressing, register manipulation, and loop constructs.",
+    "questions": [
+      {
+        "question": "What is the function of the ALU in the 8085/8086 microprocessor?",
+        "answer": ""
+      },
+      {
+        "question": "Describe the difference between ADD and ADC instructions.",
+        "answer": ""
+      },
+      {
+        "question": "Why does the 8085 not have a direct multiplication instruction?",
+        "answer": ""
+      },
+      {
+        "question": "What is the role of the Carry Flag during subtraction?",
+        "answer": ""
+      },
+      {
+        "question": "Write any two arithmetic instructions for 8086.",
+        "answer": ""
+      },
+      {
+        "question": "Explain how the Carry and Zero flags change after addition.",
+        "answer": ""
+      },
+      {
+        "question": "Why is multiplication slower in 8085 compared to 8086?",
+        "answer": ""
+      },
+      {
+        "question": "Write an 8085 program that subtracts two numbers using SBB.",
+        "answer": ""
+      },
+      {
+        "question": "What happens if the product of an 8086 multiplication exceeds 8 bits?",
+        "answer": ""
+      },
+      {
+        "question": "Write a program to add two 8-bit numbers stored in memory.",
+        "answer": ""
+      },
+      {
+        "question": "Identify errors.",
+        "answer": "/ Suggest improvements. 2. What you've learned: Practical insight was gained into how the ALU processes data and updates condition flags during computation. The implementation of manual loops for multiplication in the 8085 was also learned, and the efficiency of dedicated instructions in the 8086 was observed."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": []
+  }
+}

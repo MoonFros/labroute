@@ -1,0 +1,199 @@
+{
+  "id": "am-218-b-wheel-and-differential-axle",
+  "code": "AM 218(B)",
+  "title": "Wheel and Differential Axle",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#WheelAndAxle",
+    "#SimpleMachines",
+    "#AM218B",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-218-b-wheel-and-differential-axle.json",
+  "content": {
+    "aim": "To calculate the velocity ratio of the machine. To obtain an equation for the relationship between load and effort, and from it a value for the limiting efficiency of the machine.",
+    "objectives": [],
+    "apparatus": [
+      "Wheel and differential axle mounted on the wall",
+      "Movable pulley and load hanger",
+      "Effort hanger",
+      "Cords",
+      "Meter rule",
+      "Dead weights and calipers"
+    ],
+    "theory": {
+      "text": "The wheel and differential axle has a wheel of effective diameter D and an axle in two steps: a major axle of effective diameter d1 and a minor axle of effective diameter d2. The load hangs from a movable pulley on a cord loop. One end of the loop is wound on d1 and the other end is wound on d2 in the opposite sense. In one turn of the wheel the effort moves πD. At the same time the cord winds on by πd1 on the major axle and unwinds by πd2 from the minor axle, so the loop shortens by π(d1 − d2). The load is carried by two strands, so it rises by half of this: distance moved by the load = π(d1 − d2) / 2 V.R. = πD / [ π(d1 − d2) / 2 ] = 2D / (d1 − d2) M.A. = W / E η = M.A. / V.R. × 100 % W1 = E × V.R. Effect of friction = W1 − W Law of the machine: E = aW + b. The limiting efficiency occurs when M.A. = 1/a, so limiting efficiency = (1/a)/V.R. × 100 %. The velocity ratio is large when d1 and d2 are nearly equal, so a small effort can lift a big load. For lifting, the cords are wound anticlockwise on D, clockwise on d1 and anticlockwise on d2.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Results",
+        "headers": [
+          "Actual load W",
+          "Effort E",
+          "V.R.",
+          "Load if 100 % efficient W1 = E × V.R.",
+          "Effect of friction (W1 − W)",
+          "M.A. = W/E",
+          "Efficiency (M.A./V.R.) × 100 %"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "70",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "90",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Measure D, d1 and d2 with calipers and add the cord diameter to each.",
+      "Calculate V.R. = 2D/(d1 − d2).",
+      "Wind the cords as described and add effort until the load just rises at constant speed. With no load this gives the friction effort.",
+      "Repeat for loads of 10, 20, 30 ... up to 100 N."
+    ],
+    "precautions": [
+      "The cords were wound on in the correct senses and did not overlap.",
+      "The load was raised slowly and at constant speed.",
+      "The diameters were measured carefully, since d1 − d2 is a small difference and any error in it changes V.R. a lot.",
+      "At the end of each test the effort mass was supported while the load masses were removed."
+    ],
+    "discussion": "The velocity ratio was large, so the effort was much smaller than the load. The effort needed to raise no load was [ ] N because of friction. The efficiency was lower than for the simple wheel and axle, and below 50 % for most loads. The load stayed up when the effort was removed (the machine is self-locking if the efficiency is below 50 %).\n\nSources of error d1 − d2 is small, so a small error in measuring either diameter gives a large error in V.R. Judging constant speed by eye. Friction in the bearings and the movable pulley, and cord stiffness. The load pulley may hang slightly sideways if the strands are not the same length. Comparison with theory. The experimental limiting efficiency was [ ] %. The ideal value is 100 %. The difference comes from friction, which is large here because the velocity ratio is large and the cords bend around several small pulleys.",
+    "conclusion": "The velocity ratio of the differential axle was [ ]. The law of the machine was E = [ ]W + [ ] and the limiting efficiency was [ ] %. The machine gives a large mechanical advantage but a low efficiency. Differential axles and the similar differential chain block are used for lifting heavy loads in workshops and garages.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how a differential axle gives a high velocity ratio, and how to get the law of the machine and its limiting efficiency from a graph."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Many loads are used and a graph is drawn, so the result is an average and not one reading. The test is quick because only the effort mass changes."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Measuring d1 and d2 accurately, because V.R. depends on their small difference. Using calipers and measuring several times reduces the error."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A differential chain block (Weston differential pulley block) or a screw jack can also show a high velocity ratio."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "D, d1, d2, load W, effort E, V.R., M.A. and efficiency. 7. Measuring instrument used. The calipers (vernier or outside calipers) measure the diameters. Outside calipers are set on the axle and then read on a rule."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Chain blocks and hoists for lifting engines and heavy parts in garages and workshops."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Machines and mechanisms (simple machines and efficiency)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The load stayed up by itself when I removed the effort, because the machine is self-locking. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how a differential axle gives a high velocity ratio, and how to get the law of the machine and its limiting efficiency from a graph."
+    ]
+  }
+}

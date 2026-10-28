@@ -1,0 +1,97 @@
+{
+  "id": "logic-lab-1-electrical-and-logic-circuits-8085-z80-application",
+  "code": "Logic Lab 1",
+  "title": "Electrical and Logic Circuits, 8085/Z80 Application",
+  "department": "computer",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#LogicCircuits",
+    "#8085",
+    "#Z80",
+    "#LogicLab1",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/logic-lab-1-electrical-and-logic-circuits-8085-z80-application.json",
+  "content": {
+    "aim": "To investigate the two-input resistor network shown in Figure 1 (the “SUM” circuit) and to determine the actual mathematical relationship between the input voltages VA, VB and the measured output voltage VSUM.",
+    "objectives": [
+      "To construct the circuit using two 100 kΩ input resistors and a 100 kΩ load resistor on a prototyping board. To measure VSUM for six combinations of VA and VB using a digital multimeter. To determine whether the circuit truly performs the arithmetic function SUM = A + B, as claimed in Figure 2, or some other function. To classify the operation of the circuit as analogue or digital, with justification."
+    ],
+    "apparatus": [
+      "Two 0–10 V DC power supplies",
+      "Digital multimeter",
+      "Two 100 kΩ (0.5 W) resistors",
+      "One 100 kΩ (0.5 W) resistor",
+      "Prototyping (bread)board",
+      "Connecting wires"
+    ],
+    "theory": {
+      "text": "The circuit (Figure 1) has two input resistors, one from VA and one from VB, meeting at a common node. A third 100 kΩ resistor connects this node to ground, and the node voltage is measured as VSUM using a high-impedance digital multimeter (which draws negligible current). Applying Kirchhoff's Current Law at the common node, with the input resistors equal to R and the grounding resistor equal to R′: (VA − VSUM)/R + (VB − VSUM)/R = VSUM/R′ Rearranging: VSUM = (VA + VB) / (2 + R/R′) When the grounding resistor R′ is much larger than the input resistors (R/R′ → 0), this reduces to VSUM ≈ (VA + VB)/2. This is the behaviour confirmed by the measurements in Section 5 below: the node does not add VA and VB arithmetically — it produces their average. The circuit is therefore a passive resistive averaging (voltage‑mixing) network, not a true adder.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "VA (V)",
+          "VB (V)",
+          "VSUM Measured (V)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0.00"
+          ],
+          [
+            "0",
+            "5",
+            "2.50"
+          ],
+          [
+            "0",
+            "10",
+            "5.00"
+          ],
+          [
+            "5",
+            "5",
+            "5.00"
+          ],
+          [
+            "5",
+            "10",
+            "7.50"
+          ],
+          [
+            "10",
+            "10",
+            "10.00"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Connect the two DC power supplies to inputs VA and VB respectively.",
+      "Connect the digital multimeter across the output node to measure VSUM.",
+      "Systematically vary VA and VB across the six combinations listed in the table.",
+      "Record the resulting VSUM for each combination.",
+      "From the results, determine the relationship between VA, VB and VSUM, and state whether the system is analogue or digital."
+    ],
+    "precautions": [
+      "Set each DC supply to the intended voltage before connecting it to the circuit.",
+      "Verify resistor values with the multimeter before inserting them, to avoid using an incorrect value.",
+      "Do not exceed the 0.5 W power rating of the resistors.",
+      "Observe correct polarity when connecting the DC supplies.",
+      "Allow the output reading to settle before recording it.",
+      "Switch off the power supplies before altering any wiring."
+    ],
+    "discussion": "The measured results follow VSUM = (VA + VB)/2 exactly for all six test points, rather than VSUM = VA + VB as claimed by the block diagram in Figure 2. For example, with VA = 5 V and VB = 10 V, true summation would give 15 V, but the measured VSUM was only 7.50 V — precisely the average of the two inputs. This confirms the theoretical derivation in Section 4: because the grounding resistor is large relative to the effective source resistance at the node, the circuit behaves as a resistive averager rather than an adder. Because VSUM varies continuously and proportionally with VA and VB over the full 0–10 V range, rather than switching between two discrete states, the circuit is an analogue system, not a digital one. It has no defined logic thresholds and no discrete HIGH/LOW output levels.",
+    "conclusion": "The tested circuit does not perform true arithmetic summation. It is a passive analogue averaging circuit obeying VSUM = (VA + VB)/2. The correct block diagram for its actual operation is “AVERAGE = (A + B)/2” rather than “SUM = A + B.” The system is analogue, since its output is a continuous function of two continuous input voltages.",
+    "questions": [],
+    "learnings": []
+  }
+}

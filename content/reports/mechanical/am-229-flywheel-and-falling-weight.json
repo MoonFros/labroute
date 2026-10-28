@@ -1,0 +1,202 @@
+{
+  "id": "am-229-flywheel-and-falling-weight",
+  "code": "AM 229",
+  "title": "Flywheel and Falling Weight",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Flywheel",
+    "#MomentOfInertia",
+    "#AM229",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-229-flywheel-and-falling-weight.json",
+  "content": {
+    "aim": "To determine the moment of inertia of a flywheel and to use it to verify Newton's laws as applied in this case.",
+    "objectives": [
+      "To determine the moment of inertia of a flywheel",
+      "To use it to verify Newton's laws as applied in this case."
+    ],
+    "apparatus": [
+      "A flywheel on a horizontal axle with bearings, a cord wound round the axle (radius r) with a hanger for the falling weights, slotted masses, a stopwatch, a rule or tape to measure h, vernier calipers for the axle diameter, a vibrating cantilever with paper (for the trace) and a balance. The length of the string is adjusted so that, when the weight reaches the ground, the string detaches itself from the axle and the flywheel is then allowed to come to rest under the friction in the bearings",
+      "Observations required",
+      "Magnitude of the falling weight = mg",
+      "Height of descent = h",
+      "Mass of the flywheel and axle = M",
+      "Moment of inertia of the flywheel and axle I = Mk², where k = the radius of gyration",
+      "Time of descent = t",
+      "Radius of the axle = r"
+    ],
+    "theory": {
+      "text": "A flywheel and axle of mass M and moment of inertia I = Mk² (k = radius of gyration) is turned by a weight mg hung on a cord wound round the axle of radius r. The falling weight descends a height h in a time t. (a) Neglecting friction For the falling mass (Newton's second law): m a = m g − T, where T is the tension in the cord. For the flywheel (torque = moment of inertia × angular acceleration): Mk² α = T r. The cord does not slip, so a = α r. Eliminating T: Mk² α = (mg − ma) r a = α r Mk² = m r² ( g/a − 1 ) and a = m g r² / (Mk² + m r²) If the time t for the weight to descend the known height h is measured, the linear acceleration is found from a = 2h/t², so Mk² = mr² (gt²/2h − 1). (b) With friction in the bearings Let there be an opposing frictional couple Lf. Then m a = mg − T and Mk² α = T r − Lf, which gives Mk² a / r² = (mg − ma) − Lf/r so a = (mg − Lf/r) / (m + Mk²/r²) If Lf is known we can proceed as before. If Lf is not known, we can try two or three values of m, and a graph of m(g − a) against a gives a straight line with slope Mk²/r² and intercept Lf/r. The intercept is therefore the friction force at the axle radius (the weight needed just to overcome friction). (c) The falling weight method (energy method) Let m = the mass, H = h the distance it falls, v = its speed on reaching the floor, ω = v/r the angular velocity of the flywheel when m is detached, N = the number of revolutions made after m is detached, and n = the number of revolutions made while m falls, n = h/2πr. When the mass falls it loses potential energy mgh and gains kinetic energy ½mv², plus the flywheel's kinetic energy ½Iω², plus work done against friction 2πn Lf: mgh = ½mv² + ½Iω² + 2πn Lf After m is detached the flywheel comes to rest, so the work done against friction equals its kinetic energy: 2πN Lf = ½Iω². Eliminating Lf: mgh = ½mv² + ½Iω² (N + n)/N The motion of m is at constant acceleration, so v = 2h/t, and substituting for ω = v/r gives I = m r² [ g t²/(2h) − 1 ] × [ N/(N + n) ]",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Falling weight results",
+        "headers": [
+          "m (kg)",
+          "mg (N)",
+          "t (s)",
+          "a = 2h/t² (m/s²)",
+          "Mk² from (a) (kg m²)",
+          "N (rev)",
+          "n = h/2πr",
+          "I from (c) (kg m²)",
+          "k² = I/M (m²)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 2: Comparison with the value from the geometry",
+        "headers": [
+          "Quantity",
+          "Experiment",
+          "Calculated from dimensions",
+          "Difference (%)"
+        ],
+        "rows": [
+          [
+            "Moment of inertia I (kg m²)",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Radius of gyration k (m)",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Before beginning, spin the flywheel by hand to warm up the bearings; otherwise the frictional couple will not stay constant during the experiment and results will be inconsistent.",
+      "Choose several values for m (at least 50 g upwards) that give a convenient time of fall.",
+      "For each m, release the weight and measure t. After it detaches, count the number of revolutions N until the flywheel stops. Repeat several times for each m.",
+      "The value of n is found more accurately from h/2πr than by counting.",
+      "Obtain a value of I for each m, find the average if it is not constant, and compare with the value calculated from the mass and dimensions of the flywheel, neglecting the axle. Estimate the accuracy of the results."
+    ],
+    "precautions": [
+      "The flywheel was spun by hand to warm up the bearings before starting, so that the frictional couple stayed constant.",
+      "The cord was wound neatly in a single layer and its length adjusted so it detached from the axle just as the weight reached the floor.",
+      "The stopwatch was started when the weight was released and stopped when it hit the floor; measurements were repeated and averaged.",
+      "The number of revolutions N was counted carefully with a marker on the flywheel.",
+      "The radius r included half of the cord thickness. The falling weight was not allowed to swing."
+    ],
+    "discussion": "The weight accelerated downwards at a roughly constant rate, and the flywheel went on turning for a number of revolutions after the weight was detached before it stopped. A larger falling mass gave a shorter time of fall. The time of fall was repeatable for each mass to within about [ ] s. The value of Mk² calculated ignoring friction was larger / smaller than that with friction allowed for.\n\nNotes on procedure. (1) The constancy of a for various loads can be investigated by timing the descent over different heights; if a is constant, the motion is uniformly accelerated, as Newton's second law predicts. (2) The ratio Lf/Mk² can be found by spinning the flywheel and counting the rotations in given times (the speed falls at a constant rate for constant friction). It is limited by the accuracy with which the counting and the times can be done. (3) Lf can also be found with a short cord, so that the weight rises again after the descent (the falling weight method), which is more accurate because it uses the same weights and bearing conditions. (4) Using different values of m and M, k² is found for each, and the results are compared with and without allowance for Lf. (5) The vibrating cantilever can generate a trace on paper attached to the flywheel rim; knowing the period of vibration, the angular acceleration is found directly. Sources of error Friction in the bearings is not exactly constant (it changes with temperature and speed). Reaction time in timing the descent, particularly for short times. Cord thickness, slipping or bunching of the cord on the axle, and its mass. Estimating the moment of inertia from the geometry ignores holes, keyways and the axle. Counting the revolutions N while the flywheel is slowing down.",
+    "conclusion": "The moment of inertia of the flywheel was found to be [ ] kg m² (k = [ ] m). The values are within about [ ] % of the value calculated from the geometry. Allowing for the bearing friction (the falling weight method) gave a more accurate value than neglecting friction. Newton's laws are verified to the extent that the linear acceleration of the falling mass and the angular acceleration of the flywheel were consistent with the torque equation Mk²α = Tr − Lf. The method is recommended for finding moments of inertia of flywheels and rotors, but it needs a steady bearing friction and accurate timing. An alternative for irregular bodies is the torsion pendulum or the trifilar suspension.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how to find the moment of inertia of a flywheel by timing a falling weight, how bearing friction affects the result, and how to allow for it with the falling weight method."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Using several masses and several repeats averages out timing errors, and the falling weight method allows for friction. The method only needs a stopwatch, rule and masses."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Counting the revolutions N while the flywheel slows down and timing the fall accurately. It can be reduced by marking the flywheel, repeating each reading, and using larger heights so that t is longer."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A torsion pendulum or a trifilar suspension for the moment of inertia, or a photogate and a data logger for t and N."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Falling mass m, height h, time t, axle radius r, number of revolutions N, mass M, acceleration a and moment of inertia I."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The stopwatch measures the time of fall, the rule measures the height h, and the vernier calipers measure the axle diameter."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Flywheels in engines and presses, energy storage, rotating machinery, and the design of rotors and wheels."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Dynamics (rotation of rigid bodies: moment of inertia and angular acceleration)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The flywheel kept turning for many revolutions after the weight was detached. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how to find the moment of inertia of a flywheel by timing a falling weight, how bearing friction affects the result, and how to allow for it with the falling weight method."
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "id": "am-226-a-simple-pendulum",
+  "code": "AM 226(A)",
+  "title": "Simple Pendulum",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#SimplePendulum",
+    "#Oscillations",
+    "#AM226A",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-226-a-simple-pendulum.json",
+  "content": {
+    "aim": "To determine the acceleration due to gravity, g.",
+    "objectives": [],
+    "apparatus": [
+      "A spherical steel ball (bob)",
+      "A length of thread",
+      "A chuck for gripping the thread at the top",
+      "A stopwatch and a meter rule"
+    ],
+    "theory": {
+      "text": "A simple pendulum is a small heavy bob (here a steel ball) hung from a light thread of length L. If the ball is displaced through a small angle θ and released, it swings to and fro. The restoring force is the component of the weight along the arc, mg sin θ. For small angles sin θ ≈ θ (in radians), so the motion is approximately simple harmonic motion (SHM), where the acceleration is proportional to the displacement and directed towards the middle: ω² x = g/L × x so ω² = g / L where ω is the angular velocity of the motion. The period of oscillation is T = 2π/ω, so T = 2π √(L / g) T² = (4π² / g) L g = 4π² L / T² Therefore a graph of T² (vertical) against L (horizontal) is a straight line through the origin, and its slope is 4π²/g, so g = 4π² / slope. The period does not depend on the mass of the bob or (for small swings) on the amplitude.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Simple pendulum results",
+        "headers": [
+          "Length L (m)",
+          "Time for 50 oscillations (s)",
+          "Period T (s)",
+          "T² (s²)",
+          "g = 4π²L/T² (m/s²)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Fix the thread in the chuck and hang the ball on it. Measure the length L from the point of support to the centre of the ball (the thread length plus the radius of the ball).",
+      "Displace the ball through a small angle (less than about 10°) and release it. Record the time for 50 oscillations. Divide by 50 for the period T.",
+      "Vary the length and repeat the timing. Do this about eight times so that there are enough points to plot the graph."
+    ],
+    "precautions": [
+      "The ball was displaced through a small angle only (under 10°), so that sin θ ≈ θ.",
+      "It was released without pushing, and swung in one plane, not in an ellipse.",
+      "The time was taken for 50 oscillations, to reduce the effect of reaction time, and was repeated.",
+      "The length was measured from the point of support (the clamp) to the centre of the ball.",
+      "The thread was held firmly in the chuck so it did not slip or change length.",
+      "Timing started when the ball passed the middle point (the lowest point), where its speed is greatest and it is easier to see."
+    ],
+    "discussion": "The period increased as the length increased, and the pendulum took longer for each swing. The swings slowly became smaller because of air resistance, but the period stayed about the same (the pendulum is isochronous for small amplitudes). The points on the T² against L graph lay close to a straight line through the origin.\n\nSources of error Reaction time in starting and stopping the stopwatch (reduced by timing 50 oscillations). Miscounting the number of oscillations. Error in measuring L, particularly to the centre of the ball and the exact point of support. Air resistance, and the mass of the thread, which is not zero. Amplitude that is too big, so that the swing is not really SHM (the period increases slightly with amplitude).",
+    "conclusion": "From the slope of the T² against L graph, the acceleration due to gravity was found to be [ ] m/s². 1. Is your value the same as the theoretical value? Why? The accepted value is 9.81 m/s² (the exact value depends on the latitude and height; in Nigeria it is close to 9.78 m/s²). My value differs by [ ] %. The difference is mainly due to the errors listed above. 2. Limitations of this method. The method depends on the small-angle approximation, on accurate timing by hand, and on an exact length measurement. Air resistance and the thread mass affect the result, so it can give g only to about 1 or 2 % even when carefully done. More accurate values of g come from a reversible (Kater's) pendulum or a free-fall timer.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how a simple pendulum behaves as SHM, why T² is proportional to L, and how to get g from the slope of the graph."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Timing 50 oscillations reduces the error from reaction time, and plotting a graph of eight points reduces the effect of any single bad reading. The apparatus is cheap and simple."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Counting a large number of oscillations while watching the stopwatch and keeping the swing in one plane. It can be reduced by using a fiducial mark at the lowest point, and by repeating each timing."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A compound pendulum (Kater's reversible pendulum), a free fall apparatus with an electronic timer, or a conical pendulum."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Length L, time for 50 oscillations, period T, T², and g. 7. Measuring instrument used. The stopwatch measures the time, and the meter rule measures the length of the pendulum."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Pendulum clocks, metronomes, measuring g for geological surveys and the study of oscillations in structures and swings."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Dynamics (simple harmonic motion). 13. What interested me most. The period did not change much as the swing died down, only the length changed it. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how a simple pendulum behaves as SHM, why T² is proportional to L, and how to get g from the slope of the graph."
+    ]
+  }
+}

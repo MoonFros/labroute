@@ -1,0 +1,246 @@
+{
+  "id": "am-223-the-offset-slider-crank-mechanism",
+  "code": "AM 223",
+  "title": "The Offset Slider-Crank Mechanism",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#SliderCrank",
+    "#Kinematics",
+    "#AM223",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-223-the-offset-slider-crank-mechanism.json",
+  "content": {
+    "aim": "To study the kinematics of an offset slider-crank mechanism (slider displacement, velocity and acceleration against crank angle).",
+    "objectives": [],
+    "apparatus": [
+      "Tec-equipment model of an offset slider-crank mechanism with a crank",
+      "Connecting rod",
+      "Slider on a guide with a scale",
+      "An angular scale (protractor) for the crank angle",
+      "And a rule or vernier calipers to measure r",
+      "L and e"
+    ],
+    "theory": {
+      "text": "A slider-crank mechanism changes the rotation of a crank into the straight-line (reciprocating) motion of a slider, as in a piston engine. In the offset type the line of motion of the slider does not pass through the crank centre but is displaced by a distance e. Let r = crank radius, L = connecting rod length, e = offset, θ = crank angle and φ = angle of the connecting rod. From the geometry (see Fig. 1): L sin φ = r sin θ − e so sin φ = (1/q)(sin θ − e/r) where q = L/r x = r(1 − cos θ) + L(cos φ0 − cos φ) φ0 = sin-1(−e/L) = value of φ at θ = 0° The crank turns at constant angular velocity ω. Differentiating with respect to time: dx/dt = rω sin θ + Lφ' sin φ d²x/dt² = rω² cos θ + L φ'² cos φ + L φ'' sin φ Exact solution. Differentiating L sin φ = r sin θ − e gives φ' cos φ = (ω/q) cos θ, and a second differentiation gives φ'' cos φ − φ'² sin φ = −(ω²/q) sin θ. For each value of θ, φ, φ' and φ'' can be found and put in the above equations. Approximate solution. For q ≥ 4 and e/r ≤ 1/4 the square root in cos φ can be expanded and only the first two terms of the binomial series are kept. This gives x ≈ r(1 − cos θ) + (r/2q)[ sin²θ − 2(e/r) sin θ ] dx/dθ ≈ r[ sin θ + (1/2q)( sin 2θ − 2(e/r) cos θ ) ] d²x/dθ² ≈ r[ cos θ + (1/q)( cos 2θ + (e/r) sin θ ) ] So the acceleration of the slider is mainly a cosine curve (simple harmonic) at the crank speed, plus a smaller second-harmonic term caused by the finite length of the connecting rod. The offset moves the top and bottom dead centre positions and makes the stroke different in the forward and return directions (a quick-return effect).",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Slider displacement against crank angle",
+        "headers": [
+          "θ (°)",
+          "Slider reading (mm)",
+          "x (mm)",
+          "dx/dθ (mm/rad)",
+          "d²x/dθ² (mm/rad²)",
+          "Theoretical d²x/dθ² (mm/rad²)"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "70",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "80",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "90",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Set the crank angle at 0° and note the slider position to get the zero-displacement reading.",
+      "Increase the crank angle θ in small steps (10° is recommended) and record the slider displacement x for each crank angle, for a complete revolution of the crank.",
+      "Measure the slider offset e, the crank radius r and the connecting rod length L."
+    ],
+    "precautions": [
+      "The zero position of the crank angle and of the slider were checked before the test.",
+      "The crank was turned in one direction only to avoid backlash errors.",
+      "The scale was read at eye level to avoid parallax.",
+      "The crank radius, rod length and offset were measured at several places and the average used."
+    ],
+    "discussion": "The slider moved away from the crank and returned once for each turn of the crank. The slider was at rest at the ends of its stroke (dead centres). The velocity was greatest around mid-stroke. The acceleration was greatest near the ends of the stroke and changed sign during the stroke. Because of the offset, the dead centre positions were not exactly at θ = 0° and 180°, and the forward and return strokes took different crank angles.\n\n1. How would you obtain the slider velocity and acceleration at any crank angle, given that the crank rotates at a uniform rate ω rad/s? From the displacement x(θ), the velocity is v = dx/dt = (dx/dθ)(dθ/dt) = ω dx/dθ. The acceleration is a = dv/dt = ω² d²x/dθ² because ω is constant. So the values of dx/dθ and d²x/dθ² read from the graphs (or calculated from the formulae in the Theory section) are multiplied by ω and ω². 2. Variation of slider velocity and acceleration with crank position. The velocity is zero at the two dead centres, rises to a maximum when the crank is nearly at right angles to the connecting rod and then falls again. The acceleration is highest at the dead centre positions (about rω² at the outer dead centre, and a bit different at the inner one because of the second harmonic term r ω²/q cos 2θ), is zero when the velocity is greatest, and reverses in direction between the two dead centres. The curve is nearly a cosine curve if the connecting rod is long. 3. Effect of the slider offset. The offset e shifts the dead centre positions and changes the stroke. For e ≠ 0, the crank angles for the forward and return strokes are no longer equal (180° each), so the mechanism has a quick-return effect: the forward stroke is slower than the return stroke, or the other way. The terms that contain e in the displacement, velocity and acceleration formulas show this. The maximum velocity and acceleration are also changed slightly. With a large offset the rod makes a bigger angle with the slider path, so the side thrust on the slider guide is larger. Sources of error Reading the slider position and crank angle by eye (parallax and limited scale divisions). Backlash and play in the joints of the mechanism. Graphical differentiation magnifies errors, and the second derivative is the least accurate. The approximate formula was used, which is only valid for q ≥ 4 and e/r ≤ 1/4.",
+    "conclusion": "The displacement of the slider of the offset slider-crank was recorded against the crank angle, and the velocity and acceleration diagrams were obtained by differentiation. The acceleration curve agreed with the theoretical curve within about [ ] %. The velocity is zero at the dead centres, and the acceleration is greatest there. The offset gives different forward and return strokes (quick return). The mechanism is used in engines, compressors, pumps and presses.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how a slider-crank changes rotation into reciprocating motion, and how to find velocity and acceleration of the slider by differentiation of the displacement curve."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "The mechanism is simple and a complete cycle takes only 36 readings in 10° steps. The result can be compared with a theoretical curve."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Reading the slider displacement accurately and getting the second derivative graphically. It can be reduced by using small steps and smooth curves, or by a computer to do the differentiation."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A rotary encoder on the crank and a linear transducer on the slider could record the motion electronically."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Crank angle θ, slider displacement x, crank radius r, rod length L and offset e."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The rule or vernier calipers measure r, L and e, and the protractor scale measures the crank angle."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Internal combustion engines, compressors, pumps, presses, shaping machines and quick-return mechanisms."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Mechanisms (kinematics of machines: slider-crank chain)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The forward and return strokes of the slider were different because of the offset. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how a slider-crank changes rotation into reciprocating motion, and how to find velocity and acceleration of the slider by differentiation of the displacement curve."
+    ]
+  }
+}

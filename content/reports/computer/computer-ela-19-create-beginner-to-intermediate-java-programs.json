@@ -1,0 +1,58 @@
+{
+  "id": "computer-ela-19-create-beginner-to-intermediate-java-programs",
+  "code": "Computer ELA 19",
+  "title": "Create Beginner to Intermediate Java Programs",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#Java",
+    "#Programming",
+    "#ComputerELA19",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-19-create-beginner-to-intermediate-java-programs.json",
+  "content": {
+    "aim": "The primary objective of this experiment is to build confidence in Java programming by transitioning from basic algorithmic implementations to structured, intermediate-level applications utilizing Object-Oriented Programming (OOP) principles.",
+    "objectives": [],
+    "apparatus": [
+      "Java JDK",
+      "IntelliJ IDEA / Eclipse"
+    ],
+    "theory": {
+      "text": "As Java programming progresses from beginner scripts to intermediate applications, the focus shifts toward structured, multi-file projects that utilize standard libraries and solid Object-Oriented Programming (OOP) principles. The core concepts essential at this stage include: • Advanced OOP and Collections: This involves structuring code using Inheritance (using the extends keyword), Polymorphism, Interfaces, and Abstract Classes to create modular systems. Additionally, it requires utilizing Java's built-in data structures, such as ArrayList, HashMap, and HashSet, for efficient data collection and manipulation. • File Handling and Error Management: Robust applications must handle potential runtime failures and external data gracefully. This is achieved through proper error management using try-catch-finally blocks and custom exceptions, alongside Input/Output (I/O) streams like FileWriter and FileReader. • External Tool Integration: Scaling projects often coincides with the adoption of build tools such as Maven or Gradle. These tools are critical for dependency management and seamlessly integrating third-party libraries into the development workflow.",
+      "diagrams": []
+    },
+    "tables": [],
+    "graphs": [],
+    "procedure": [
+      "4.1 Beginner Activity: Calculate the factorial of a number",
+      "A beginner-level Java program was created to calculate the factorial of a user-provided integer. This exercise focused on basic input handling and loop structures.",
+      "import java.util.Scanner;",
+      "public class FactorialCalculator {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        System.out.print(\"Enter a positive integer: \");",
+      "        if (scanner.hasNextInt()) {\n            int number = scanner.nextInt();\n            if (number < 0) {\n                System.out.println(\"Factorial is not defined for negative numbers.\");\n            } else {\n                long factorial = 1;\n                for (int i = 1; i <= number; i++) {\n                    factorial *= i;\n                }\n                System.out.println(\"The factorial of \" + number + \" is \" + factorial);\n            }\n        } else {\n            System.out.println(\"Invalid input. Please enter an integer.\");\n        }\n        scanner.close();\n    }",
+      "}",
+      "4.2 Intermediate Activity: Create a simple banking system",
+      "An intermediate-level program was developed to simulate a banking system. This implementation utilized OOP concepts by creating a BankAccount class to encapsulate the account balance and behaviors (methods) for depositing and withdrawing funds, including basic error handling for invalid transactions.",
+      "import java.util.Scanner;",
+      "class BankAccount {\n    private double balance;",
+      "    public BankAccount(double initialBalance) {\n        this.balance = initialBalance;\n    }",
+      "    public void deposit(double amount) {\n        if (amount > 0) {\n            balance += amount;\n            System.out.println(\"Successfully deposited: $\" + amount);\n        } else {\n            System.out.println(\"Error: Deposit amount must be positive.\");\n        }\n    }",
+      "    public void withdraw(double amount) {\n        if (amount > 0 && amount <= balance) {\n            balance -= amount;\n            System.out.println(\"Successfully withdrew: $\" + amount);\n        } else if (amount > balance) {\n            System.out.println(\"Error: Insufficient funds.\");\n        } else {\n            System.out.println(\"Error: Withdrawal amount must be positive.\");\n        }\n    }",
+      "    public double getBalance() {\n        return balance;\n    }",
+      "}",
+      "public class BankingSystem {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        BankAccount myAccount = new BankAccount(100.00); // Starting balance of $100",
+      "        System.out.println(\"Welcome to the Simple Banking System\");\n        System.out.println(\"Current Balance: $\" + myAccount.getBalance());",
+      "        // Simulating a deposit\n        System.out.print(\"Enter amount to deposit: \");\n        double depositAmount = scanner.nextDouble();\n        myAccount.deposit(depositAmount);",
+      "        // Simulating a withdrawal\n        System.out.print(\"Enter amount to withdraw: \");\n        double withdrawAmount = scanner.nextDouble();\n        myAccount.withdraw(withdrawAmount);",
+      "        System.out.println(\"Final Balance: $\" + myAccount.getBalance());\n        scanner.close();\n    }",
+      "}"
+    ],
+    "precautions": [],
+    "discussion": "The transition from a simple algorithmic script to an object-oriented system highlighted key software design principles. • How do classes and objects help organize code? Classes and objects organize code through encapsulation. By grouping related data (like the account balance) and behaviors (like deposit and withdraw methods) into a single BankAccount entity, the code becomes modular, easier to read, and reusable. It prevents variables from being scattered globally and restricts direct access to sensitive data (using private modifiers), ensuring the state of the object is only modified through intended methods. • What challenges did you face with error handling? The primary challenge was anticipating invalid states and unpredictable user inputs. For instance, in the banking system, it was necessary to prevent negative deposits or withdrawals that exceeded the current balance. Addressing this required implementing conditional logic to validate business rules before executing state changes, simulating the need for more advanced try-catch exception handling in larger applications.",
+    "conclusion": "This experiment successfully demonstrated the progression from fundamental Java syntax to intermediate software design. By implementing both a procedural algorithm and an object-oriented banking simulation, it became evident that OOP principles—such as classes and encapsulation—alongside proactive error management, are essential for building robust, scalable, and organized applications.",
+    "questions": [],
+    "learnings": []
+  }
+}

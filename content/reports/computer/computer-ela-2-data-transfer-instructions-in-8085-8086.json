@@ -1,0 +1,141 @@
+{
+  "id": "computer-ela-2-data-transfer-instructions-in-8085-8086",
+  "code": "Computer ELA 2",
+  "title": "Data Transfer Instructions in 8085/8086",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#8085",
+    "#8086",
+    "#AssemblyLanguage",
+    "#ComputerELA2",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-2-data-transfer-instructions-in-8085-8086.json",
+  "content": {
+    "aim": "To explore the fundamental data transfer instructions of the 8085 and 8086 microprocessors and gain a practical understanding of how data moves between registers, memory locations, and I/O ports.",
+    "objectives": [
+      "To establish mastery over the fundamental data transfer instruction set of the 8085/8086 microprocessors.",
+      "To proficiently execute, analyze, and apply commands such as MOV, MVI, LDA, STA, LXI, and XCHG.",
+      "To develop initial competency in writing and debugging functional assembly programs for core data manipulation tasks.",
+      "To understand how addressing modes determine memory access and predict how data flows during execution."
+    ],
+    "apparatus": [
+      "8085 or 8086 Microprocessor Trainer Kit",
+      "Power Supply",
+      "Emulator / Assembler (Jubin Mitra's 8085 Simulator or Proteus)",
+      "Memory monitor",
+      "Hex keypad",
+      "Register display LEDs (for 8085 kits)"
+    ],
+    "theory": {
+      "text": "Data transfer instructions are essentially the backbone of microprocessor programming because they allow the movement of data between different registers, memory locations, and I/O devices. In both the 8-bit 8085 and the 16-bit 8086 architectures, these specific instructions are unique because they do not modify the processor's flags; their main job is just to set up the operands that will later be used by arithmetic, logical, or control instructions.\n\nThe data movement instructions can be broken down into several distinct classes: • Register-to-Register Transfers (8085): These instructions copy contents from a source register to a destination register (e.g., MOV B, C). This is the fastest form of data transfer since it occurs entirely within the CPU's internal registers. • Register/Memory Transfers (8085): These facilitate reading from or writing to a memory address temporarily stored in the HL register pair (e.g., MOV M, A). This requires the CPU to access external memory via the address bus, making it slightly slower than register-to-register transfers. • Immediate Data Transfers (8085): These are used to load an 8-bit immediate value directly into a memory location or register (e.g., MVI A, 3AH). This is particularly useful for initializing counters or setting specific baseline values. • Load/Store & Stack Operations (8085): This includes loading and storing the Accumulator using 16-bit memory addresses (LDA, STA), as well as utilizing the stack pointer to retrieve or store register pairs (PUSH, POP). Stack operations are critical for saving processor states during subroutine calls or interrupt handling. • 8086 Specific Transfers: The 16-bit architecture supports more complex addressing modes (like Direct, Register Indirect, and Based Indexed), segment register control for memory segmentation, and string data transfer instructions (MOVSB, MOVSW) for efficient block transfers, which significantly speed up operations involving large arrays of data. Diagram: Please use the manual's diagrams for any architectural references or flowcharts.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Step",
+          "Instruction",
+          "Register A",
+          "Register B",
+          "Register C"
+        ],
+        "rows": [
+          [
+            "1",
+            "After MVI B",
+            "-",
+            "25H",
+            "-"
+          ],
+          [
+            "2",
+            "After MVI C",
+            "-",
+            "25H",
+            "10H"
+          ],
+          [
+            "3",
+            "After MOV A,B",
+            "25H",
+            "25H",
+            "10H"
+          ],
+          [
+            "4",
+            "After MOV B,C",
+            "25H",
+            "10H",
+            "10H"
+          ],
+          [
+            "5",
+            "After MOV C,A",
+            "25H",
+            "10H",
+            "25H"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "The trainer kit was switched ON and the RESET button was pressed to initialize the register contents.",
+      "The memory address display was set to the program start location, which was 8000H.",
+      "For the first experiment focusing on register-to-register transfers, the given assembly code instructions were carefully entered starting at address 8000H.",
+      "Once everything was typed in, RUN or EXECUTE was pressed to run the code.",
+      "The register contents were observed after each MOV instruction to verify how the data was moving. These observations were recorded in the table, confirming that Register A eventually contained 25H, B contained 10H, and C contained 25H as predicted.",
+      "Similar steps were repeated for the memory-to-register, register-to-memory, and string move experiments, utilizing Jubin Mitra's emulator when necessary, and specific memory locations (like 2000H) were checked to validate that the outputs copied over correctly."
+    ],
+    "precautions": [
+      "Always press RESET to initialize register contents before starting a new program to avoid leftover data interfering with the results.",
+      "Ensure the correct starting memory address (e.g., 8000H) is set before entering the machine code to prevent accidentally overwriting important system memory."
+    ],
+    "discussion": "The experiments clearly demonstrated how data is manipulated within the microprocessor architecture. By executing commands like MVI and MOV, it became evident how values are passed between registers without altering any flags. The use of both the hardware trainer kit and the emulator provided a practical view of memory addressing, showing exactly how instructions fetch and store data in specific hex addresses like 9000H or 2000H. This foundational understanding of addressing modes is critical for evaluating code efficiency in terms of execution speed and memory usage.",
+    "conclusion": "In this experiment, the fundamental data transfer instructions of the 8085 and 8086 microprocessors were successfully explored, providing a practical understanding of how data moves between registers, memory locations, and I/O ports.",
+    "questions": [
+      {
+        "question": "Write one example each of register-to-register and memory-to-register transfers.",
+        "answer": ""
+      },
+      {
+        "question": "Explain how MOV M, A works internally in 8085.",
+        "answer": ""
+      },
+      {
+        "question": "Why do data transfer instructions not affect the flag register?.",
+        "answer": ""
+      },
+      {
+        "question": "What is the purpose of the PUSH and POP instructions?.",
+        "answer": ""
+      },
+      {
+        "question": "How do MOVSB and MOVSW differ from standard MOV instructions?.",
+        "answer": ""
+      },
+      {
+        "question": "What is the difference between MVI and MOV in 8085?.",
+        "answer": ""
+      },
+      {
+        "question": "Explain why 8086 uses little-endian storage.",
+        "answer": ""
+      },
+      {
+        "question": "What type of addressing mode does MOV A, M use?.",
+        "answer": "2. What you've learned: An understanding of how to write and debug functional assembly programs for core data manipulation tasks was developed. It was also learned how addressing modes affect program execution and how data physically moves through the address and data buses into registers."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": []
+  }
+}
