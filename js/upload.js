@@ -232,6 +232,37 @@
     });
   }
 
+  /** `canvas.toBlob` is missing on very old Safari; fall back to a data URL. */
+  function canvasToJpegBlob(canvas) {
+    if (typeof canvas.toBlob === 'function') {
+      return new Promise((resolve, reject) => {
+        canvas.toBlob(
+          (blob) => (blob ? resolve(blob) : reject(new Error('encode-failed'))),
+          'image/jpeg',
+          JPEG_QUALITY
+        );
+      });
+    }
+
+    try {
+      const dataUrl = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
+      return Promise.resolve(dataUrlToBlob(dataUrl));
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  }
+
+  function dataUrlToBlob(dataUrl) {
+    const [header, base64] = String(dataUrl).split(',');
+    const mime = (header.match(/data:([^;]+)/) || [])[1] || 'image/jpeg';
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+
+    for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+
+    return new Blob([bytes], { type: mime });
+  }
+
   function drawToBlob(source, width, height) {
     const canvas = document.createElement('canvas');
     canvas.width = width;
@@ -245,12 +276,18 @@
     context.fillRect(0, 0, width, height);
     context.drawImage(source, 0, 0, width, height);
 
-    return new Promise((resolve, reject) => {
-      canvas.toBlob(
-        (blob) => (blob ? resolve(blob) : reject(new Error('encode-failed'))),
-        'image/jpeg',
-        JPEG_QUALITY
-      );
+    return canvasToJpegBlob(canvas).catch((error) => {
+      // A phone can run out of canvas memory on a huge photo; retry once at
+      // half the size before giving up.
+      if (width <= 640 || height <= 640) throw error;
+
+      canvas.width = Math.round(width / 2);
+      canvas.height = Math.round(height / 2);
+      context.fillStyle = '#ffffff';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(source, 0, 0, canvas.width, canvas.height);
+
+      return canvasToJpegBlob(canvas);
     });
   }
 
@@ -271,17 +308,30 @@
     let height = 0;
 
     if (typeof window.createImageBitmap === 'function') {
+      // 1. Preferred: decodes with the EXIF orientation applied, off the main
+      //    thread, which is what phones need for a portrait photo.
       try {
-        // `from-image` applies the EXIF orientation instead of rotating later.
         source = await window.createImageBitmap(file, { imageOrientation: 'from-image' });
-        width = source.width;
-        height = source.height;
       } catch {
         source = null;
       }
+
+      // 2. Safari before 17 rejects the options object outright.
+      if (!source) {
+        try {
+          source = await window.createImageBitmap(file);
+        } catch {
+          source = null;
+        }
+      }
     }
 
-    if (!source) {
+    if (source) {
+      width = source.width;
+      height = source.height;
+    } else {
+      // 3. <img> decodes anything the browser can render, including HEIC on iOS
+      //    and AVIF/GIF on mobile Chrome. Modern browsers apply EXIF rotation.
       try {
         source = await decodeWithImageElement(file);
         width = source.naturalWidth || source.width;

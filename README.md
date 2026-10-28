@@ -17,22 +17,32 @@ review. The photo is stored in the private pending area
 (`data/pending/` on a Node host, Vercel Blob on Vercel)
 and listed under **Pending uploads** on `dashboard.html`, where an admin can:
 
-- **Approve** — the photo becomes **image 1** of the gallery; every existing
-  image shifts one place to the right. The same is true of a photo published by
-  hand: where its record sits in `content/gallery.json` does not matter, the
-  newest community photo is always served first and the archive follows in file
-  order (ordering is derived in `lib/gallery-store.js` and mirrored in
-  `js/app.js` for the static fallback). On a Node host it is moved to
-  `assets/gallery/moments/` and recorded in `content/gallery.json` on disk. On
-  Vercel it is copied to the connected Vercel Blob store and recorded in the
-  Blob copy of the gallery list, because the deployment's own files (and this
-  repository) are read-only to the running Function.
-- **Publish manually** — **Download photo** and **Download JSON** save the image and
-  the exact `content/gallery.json` record. Publish both with
-  `npm run publish -- <photo> --metadata <json>` and commit the result; the photo
-  then lives in the repository like the original eight and needs no storage
-  service at all. **Already committed** clears it from the queue.
+- **Download photo** / **Download JSON** — save the original image (correct
+  extension) and the exact `content/gallery.json` record. Every card shows the
+  path to commit: `assets/gallery/moments/<file>` for the photo, plus the record
+  in `content/gallery.json`.
+- **Approve** — first *checks the repository for that photo*, then completes.
+  - Committed (by `npm run publish`, the GitHub web editor, or a `git push`):
+    the queue entry is cleared and the photo is **image 1**; every existing
+    photo shifts one place down. Where its record sits in
+    `content/gallery.json` does not matter — the newest community photo is
+    always served first and the archive follows in file order (ordering lives
+    in `lib/gallery-store.js`, mirrored in `js/app.js` for the static fallback).
+  - Not committed, on a deployment with no durable storage: the request is
+    answered with **409 `not_committed`** naming the two files to commit. The
+    dashboard shows that instruction in amber and keeps the download links, so
+    nothing is silently lost. Press **Approve again** once the commit has
+    deployed.
+  - Not committed, on a Node host (`npm start`) or with Blob storage connected:
+    the photo is published automatically — moved to `assets/gallery/moments/`
+    and written to `content/gallery.json` on a Node host, or copied to Vercel
+    Blob and recorded in the Blob copy of the gallery list on Vercel, because a
+    deployed Function's own files are read-only.
 - **Decline** — the file and its entry are deleted.
+
+Approving a photo whose queue entry has already gone (the deploy that followed
+your commit wipes `/tmp`) still succeeds while the photo is in the gallery, so a
+reloaded dashboard never loses a photo it has just published.
 
 ### Home page gallery
 
@@ -112,6 +122,12 @@ session**:
 - **Dismissing** — the `×` button, Escape, or following the ad. Two interactive
   elements only: the creative (one link covering image + text) and the close
   button.
+- **Layout** — on a desktop the card sits in the bottom-right corner; on a phone
+  (`max-width: 640px`) it is the same card made full width above the bottom
+  safe area: 16:9 creative on top, then *Sponsored*, the title, the description
+  (two lines) and the call-to-action button. Only the width changes, so the
+  advertisement always says what it is offering. Its close button sits over the
+  image, and the card never exceeds the viewport height.
 - **Safety** — image and link values are validated (`assets/…` or https, never
   `javascript:`/`data:`/`//host`), and every text field is HTML-escaped.
 
@@ -170,8 +186,9 @@ nothing can expire, because the photo ends up as a normal file in the repo.
    git push
    ```
 
-5. Back on the dashboard, click **Already committed** to clear the item from the
-   queue.
+5. Back on the dashboard, click **Approve**. It verifies the commit and clears
+   the item from the queue; the photo is already image 1 because the repository
+   is the gallery.
 
 You can paste the JSON record anywhere in `content/gallery.json` (top, bottom,
 or straight through GitHub's web editor) — the newest community photo is served

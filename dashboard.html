@@ -93,13 +93,15 @@
                 <div class="storage-warning" id="storageWarning" role="alert" hidden></div>
 
                 <p class="pending-help">
-                    <strong>Two ways to publish.</strong>
-                    <b>Approve</b> adds the photo to the live gallery automatically — this needs durable
-                    storage, so check the banner above first.
-                    <b>Download photo</b> + <b>Download JSON</b> saves both files; publish them with
-                    <code>npm run publish -- &lt;photo&gt; --metadata &lt;json&gt;</code>, commit the result, and the
-                    photo is served from the repository like the original eight. Use <b>Already committed</b>
-                    to clear it from this queue afterwards.
+                    <strong>How approval works.</strong>
+                    <b>1.</b> Download the photo and its JSON.
+                    <b>2.</b> Commit both to GitHub — the photo into <code>assets/gallery/moments/</code>,
+                    its record into <code>content/gallery.json</code>.
+                    <b>3.</b> Press <b>Approve</b>: the site checks the repository and puts the photo first in
+                    the gallery, shifting every other photo one place down.
+                    <br />
+                    A photo that is not committed yet cannot be approved, because a deployed site cannot
+                    save files to itself — the commit is what makes it permanent.
                 </p>
 
                 <p class="pending-status" id="pendingStatus" role="status" aria-live="polite"></p>

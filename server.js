@@ -511,9 +511,10 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
       return sendJson(res, 200, {
         ok: true,
         admin: session.email,
-        message: storage.durable
-          ? 'Approved. The photo is now image 1 in the gallery.'
-          : 'Approved into temporary storage. This photo will disappear on the next restart or deploy — connect a Vercel Blob store to keep it.',
+        message:
+          result.source === 'repository'
+            ? 'Approved. The photo is committed to the repository and is now image 1 in the gallery.'
+            : 'Approved. The photo is now image 1 in the gallery.',
         durable: storage.durable,
         storage,
         ...result
@@ -780,6 +781,31 @@ async function serveStatic(req, res, pathname, ctx) {
     stat = await fsp.stat(file);
   } catch {
     stat = null;
+  }
+
+  // A photo committed to the repository but not uploaded through this host:
+  // /assets/gallery/moments/ is also the public prefix for approved uploads,
+  // so a missing upload-dir file has to fall back to the committed one.
+  // Vercel checks the filesystem first and never gets here; this keeps the
+  // commit-then-approve flow working under `npm start` too.
+  if ((!stat || !stat.isFile()) && resolved.isUpload) {
+    const committed = path.join(
+      config.rootDir,
+      'assets',
+      'gallery',
+      'moments',
+      path.basename(resolved.file)
+    );
+
+    try {
+      const committedStat = await fsp.stat(committed);
+      if (committedStat.isFile()) {
+        file = committed;
+        stat = committedStat;
+      }
+    } catch {
+      // Keep the 404 from the upload dir.
+    }
   }
 
   // Friendly extensionless routes such as /upload or /about.
