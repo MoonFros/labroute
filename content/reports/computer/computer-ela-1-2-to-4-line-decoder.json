@@ -1,0 +1,122 @@
+{
+  "id": "computer-ela-1-2-to-4-line-decoder",
+  "code": "Computer ELA 1",
+  "title": "2-to-4 Line Decoder",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#LogicGates",
+    "#Decoder",
+    "#DigitalElectronics",
+    "#ComputerELA1",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-1-2-to-4-line-decoder.json",
+  "content": {
+    "aim": "To investigate the operation and practical implementation of a basic combinational logic decoder circuit.",
+    "objectives": [
+      "To construct a 2-to-4 line decoder shown in the diagram using basic logic gates.",
+      "To understand how decoders translate binary input combinations into unique active outputs.",
+      "To analyze the truth table and evaluate the behavior of a basic hardware decoder.",
+      "To compare the constructed decoder with commercial decoder ICs in terms of features and functionality."
+    ],
+    "apparatus": [
+      "5-volt d.c. power supply",
+      "Prototyping board",
+      "74LS04 (NOT gate) and 74LS08 (AND gate) ICs",
+      "Resistors (optional for pull-up/pull-down logic)",
+      "Logic probe or LEDs (to visualize output states)",
+      "Connecting jumper wires"
+    ],
+    "theory": {
+      "text": "A 2-to-4-line decoder essentially acts like a translator for digital signals. It takes 2 input bits (which we call A and B) and converts them into 4 separate output lines. Each of these output lines is directly tied to one of the 4 possible binary combinations you can make with the inputs (00, 01, 10, and 11).\n\nThe defining characteristic of this circuit is that it activates only one single output line at any given time, corresponding exactly to whatever binary value is being fed into the inputs. For example, if both inputs are off (00), only the first output turns on, while the rest stay off. By changing the input switches, the active output shifts accordingly. This makes the decoder incredibly useful for selecting specific pathways or memory locations in digital systems based on a simple, two-bit binary code. Internally, this is achieved by combining NOT gates to invert inputs and AND gates to ensure only specific combinations yield a high (1) output. This fundamental logic forms the basis for more complex memory addressing schemes in advanced computing systems. Diagram: Please use the manual's diagram for the circuit layout and pin connections.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Input A",
+          "Input B",
+          "Output Y0",
+          "Output Y1",
+          "Output Y2",
+          "Output Y3"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "A suitable prototyping board was obtained and the base of the circuit was constructed.",
+      "The ICs were placed securely on the breadboard, ensuring they bridged the center gap.",
+      "All IC Vcc pins were connected to the +5V rail and the GND pins to the ground rail.",
+      "Two input switches were set up using jumper wires to represent inputs A and B.",
+      "Making the connections: Inputs A and B were first routed through the NOT gates to create the inverted signal lines. Once established, these inverted lines, along with the regular A and B lines, were carefully wired into the correct input pins of the AND gates. This step creates the unique logic conditions for each of the four outputs. Since the exact wire placement, spacing, and pin routing might vary depending on the breadboard layout, care was taken to confirm target locations with the group's project and the manual's diagram to ensure everything matched up.",
+      "Once wired, the A and B inputs were set through the following combinations: 00, 01, 10, 11.",
+      "Finally, the truth table was completed based on the observations of the output LEDs."
+    ],
+    "precautions": [
+      "Ensure the Vcc and GND connections are wired to the correct pins before powering on the circuit to prevent damaging the ICs.",
+      "Ensure all jumper wires are firmly stripped and pressed into the prototyping board to avoid loose connections and false readings."
+    ],
+    "discussion": "The experiment successfully demonstrates how binary inputs are translated into distinct, isolated outputs. By observing the LEDs, the hardware behaved precisely as predicted by the theoretical truth table, with only one output line activating per input combination. While this experiment achieved the decoding logic using discrete NOT and AND gates, commercially available decoder ICs often include additional features like \"Enable\" pins. These extra features allow the ICs to be cascaded together, making them more versatile for complex digital systems and memory addressing than our basic constructed circuit.",
+    "conclusion": "The 2-to-4 line decoder was successfully constructed using basic logic gates, and its operational truth table was accurately verified against theoretical expectations.",
+    "questions": [
+      {
+        "question": "Compare your results with table 2.2 in the main text.",
+        "answer": ""
+      },
+      {
+        "question": "Using manufacturer's literature identify commercially available decoder ICs.",
+        "answer": "Do these devices have any features not found in the above circuit?"
+      },
+      {
+        "question": "What you've learned: Practical experience was gained in applying combinational logic to route digital signals.",
+        "answer": "It was also observed how theoretical binary conditions translate into physical wire pathways using different logic gates to build a functional data decoding component."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": [
+      "It was also observed how theoretical binary conditions translate into physical wire pathways using different logic gates to build a functional data decoding component."
+    ]
+  }
+}

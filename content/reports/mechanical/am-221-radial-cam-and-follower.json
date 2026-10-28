@@ -1,0 +1,235 @@
+{
+  "id": "am-221-radial-cam-and-follower",
+  "code": "AM 221",
+  "title": "Radial Cam and Follower",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#CamAndFollower",
+    "#Kinematics",
+    "#AM221",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-221-radial-cam-and-follower.json",
+  "content": {
+    "aim": "To record the kinematic properties (displacement, velocity and acceleration) of various radial cams.",
+    "objectives": [],
+    "apparatus": [
+      "Radial cam and follower apparatus: four cams (A: SHM, B: uniform motion, C: constant acceleration, D: tangent), five follower types (roller, lever, knife-edge, flat-footed and offset roller), a dial gauge with 40 mm travel graduated in 0.01 mm, a revolution counter on the dial, a protractor scale (20° divisions on the lever arm scale), a centre wing nut for locking the cam and a slotted spigot for the gauge",
+      "Setting up",
+      "Fit the screwed spigot of the gauge into the slotted hole and tighten the nut finger-tight",
+      "Loosen the centre wing nut, rotate the selected cam until the roller follower rests on the highest point",
+      "Set the dial gauge to read 50 mm (that is, 2 on the revolution counter and 0 on the main scale) and adjust the bezel for fine setting. Tighten the dial gauge fixing nut"
+    ],
+    "theory": {
+      "text": "A cam is a rotating or sliding part that gives a required motion to another part called the follower. In a radial cam the follower moves up and down (radially) as the cam turns on its shaft. The follower motion is set by the shape of the cam profile, so the same machine can give many different motions just by changing the cam. For a cam turning at constant angular velocity ω, the follower displacement s is a function of the cam angle θ. The velocity and acceleration of the follower follow by differentiating: v = ds/dt = ω (ds/dθ) a = dv/dt = ω² (d²s/dθ²) The four cams in the experiment give four different types of motion for the rise (and the fall): Cam A (simple harmonic motion, SHM). s = (h/2)(1 − cos(πθ/β)), where h is the lift and β the angle of rise. The velocity is a sine curve and the acceleration a cosine curve. The acceleration is finite, but it jumps from a maximum to zero at the start and end of the rise (so there is a small jerk). Cam B (uniform motion, constant velocity). s = hθ/β. The velocity is constant during the stroke. At the start and end of each stroke the velocity changes suddenly, so the acceleration theoretically becomes infinite (a shock). Cam C (constant acceleration). The follower accelerates uniformly for the first half of the rise and decelerates uniformly in the second half: s = 2h(θ/β)² for the first half. The acceleration is constant but changes sign. This gives the smallest maximum acceleration for a given lift and rise angle, but the acceleration changes suddenly at three points. Cam D (tangent cam). The profile is made of straight lines (tangents) joined to circular arcs. The follower motion is a mixture of uniform and varying velocity. The type of follower also changes the motion that results from the same cam profile. The follower types provided are the roller, lever, knife-edge, flat-footed and offset roller. A knife-edge follower gives the exact profile motion but wears quickly, a roller follower reduces wear because of rolling contact, a flat-footed follower gives a lift that depends on the cam shape and is limited to convex cams, and an offset roller follower changes the pressure angle and the displacement curve.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Displacement of the follower against cam angle (cam ___)",
+        "headers": [
+          "Cam angle θ (°)",
+          "Dial reading (mm)",
+          "Displacement s (mm)",
+          "ds/dθ (mm/°)",
+          "d²s/dθ² (mm/°²)"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "70",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "80",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "90",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "100",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "110",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "120",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Use a 25 mm diameter roller on the centreline of the cam. Fix cam A in position and zero the pointer and dial gauge. The centre wing nut is loosened so the cam can be turned and then locked at any position, and the other wing nuts are kept tight.",
+      "Turn the cam a few degrees at a time and record the follower displacement (lift) from the dial gauge at each angle, for one complete revolution.",
+      "Plot cam angle against displacement on a suitable scale.",
+      "Repeat for the other cams, and with the other followers if time allows.",
+      "Lever arm test: remove the push rod and dial gauge using the two wing nuts at the back of the column, screw the roller follower onto the end of the lever arm, set the cam at its lowest point under the follower, set the pointer to zero on the 20° scale, and then proceed as above, noting the angle of displacement of the lever for each cam position."
+    ],
+    "precautions": [
+      "The cam was turned slowly in one direction only, so that backlash in the follower and the dial gauge did not change the readings.",
+      "The dial gauge was set to zero at the start, and it was checked after one complete turn.",
+      "The centre wing nut was tightened at each reading so the cam did not move while reading.",
+      "The roller was kept on the centreline of the cam and the follower was kept clean and lubricated."
+    ],
+    "discussion": "Cam A (SHM): the displacement curve was smooth and the acceleration curve varied smoothly. Cam B (uniform): the displacement rose in a straight line and the follower moved at a steady speed in the stroke, but jerked at the ends. Cam C (constant acceleration): the displacement curve was parabolic (S-shaped) with the greatest speed in the middle of the stroke. Cam D (tangent): the follower motion changed from straight-line to curved parts of the profile. The follower stayed at rest (dwell) over the parts of the cam with a constant radius.\n\nMerits and limitations of the experiment Merits: the cam profiles are tested directly, and the dial gauge shows the actual motion clearly. The same machine tests several cams and followers, so they can be compared quickly. It shows why different cams are used for different jobs. Limitations: the readings are taken by hand at a few angles, so peaks and sudden changes (such as the infinite acceleration of the uniform motion cam) are missed. Graphical differentiation magnifies small errors, so the acceleration diagram is very rough. Backlash and the friction of the follower affect the displacement. The test is static (slow turning), so dynamic effects such as follower bounce and cam speed are not shown. Use and selection of cams in engineering practice Cams are used in internal combustion engines (valve operation), automatic machines, textile machines, printing presses, packaging machines and shoe machines. The SHM cam is good for moderate speeds because the acceleration is finite. Constant acceleration cams give the least peak acceleration and so the least inertia force for a given rise, so they are good for high speeds. Uniform motion cams give a steady speed but cannot be used at high speed because of the shock at the ends of the stroke. Tangent cams are easy to make, so they are often used in engine valve gear. The follower is chosen for the job: roller followers for low wear and heavy loads, flat followers for compact valve gear, knife-edge followers only for light loads, and offset followers to reduce the side thrust on the guide.",
+    "conclusion": "The displacement of the follower was recorded against cam angle for cams A to D, and velocity and acceleration diagrams were obtained by graphical differentiation. The shapes agree with those expected from cam theory: SHM (smooth), uniform motion (straight displacement, shocks at the ends), constant acceleration (parabolic) and tangent (mixed). The acceleration peaks occurred at [ ]°. The choice of cam type is a compromise between smooth motion, speed, wear and cost.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how the shape of a cam decides the motion of the follower, and how to get velocity and acceleration diagrams from a displacement curve by graphical differentiation."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "The dial gauge gives the follower movement directly with a good resolution of 0.01 mm. It is easy to change cams and followers, so the comparison is quick."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Reading the dial gauge accurately while turning the cam, and getting the acceleration from the slope of a slope. It can be reduced by taking readings at small angle steps, using a smooth curve, and repeating the test."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "An electronic displacement transducer (LVDT) with a data logger on the follower could be used to record the motion, and give the velocity and acceleration by differentiating electronically."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Cam angle θ, follower displacement s (dial gauge), velocity and acceleration (by calculation), lift h, rise angle and dwell angle."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The dial gauge (40 mm travel, 0.01 mm graduations) measures the displacement. The reading is the number of whole revolutions on the revolution counter plus the main scale."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Engine valve gear, automatic machine tools, textile and packaging machines, printing presses and sewing machines."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Mechanisms (kinematics of machines: cams and followers)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The uniform motion cam gave a straight-line displacement but a sudden jerk at the end of each stroke. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how the shape of a cam decides the motion of the follower, and how to get velocity and acceleration diagrams from a displacement curve by graphical differentiation."
+    ]
+  }
+}

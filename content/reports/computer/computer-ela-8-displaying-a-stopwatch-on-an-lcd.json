@@ -1,0 +1,107 @@
+{
+  "id": "computer-ela-8-displaying-a-stopwatch-on-an-lcd",
+  "code": "Computer ELA 8",
+  "title": "Displaying a Stopwatch on an LCD",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#Arduino",
+    "#LCD",
+    "#EmbeddedSystems",
+    "#ComputerELA8",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-8-displaying-a-stopwatch-on-an-lcd.json",
+  "content": {
+    "aim": "To display a stopwatch through an LCD and control the stopwatch through a start/stop button.",
+    "objectives": [
+      "To interface a 16x2 Liquid Crystal Display (LCD) with an Arduino microcontroller.",
+      "To utilize push buttons for external state control, specifically for start and stop functionalities.",
+      "To implement time-tracking logic using the internal millis() function."
+    ],
+    "apparatus": [
+      "LCD Screen",
+      "220Ω Resistor (1)",
+      "10kΩ potentiometer (1)",
+      "Arduino Uno (any board)",
+      "Breadboard",
+      "Connecting wires",
+      "Push button – 2"
+    ],
+    "theory": {
+      "text": "LCD displays are electronic devices commonly found all around the world in laptops, mobiles, calculators, TVs, and digital watches to display digits. An LCD uses liquid crystal to show the visible image. In standard microcontroller circuits, a 16x2 LCD display is most often used, which means 16 characters are displayed across 2 separate lines. Each individual character is displayed within a 5x7-pixel matrix. To properly display the stopwatch with the LCD, a potentiometer is connected to the LCD with the Arduino to control and adjust the brightness and contrast of the liquid crystal display. The timing mechanism relies on the Arduino's internal clock tracking milliseconds, which is then mathematically converted to seconds for the final display. Diagram: Please refer to the circuit diagram (Figure 7) for the LCD, potentiometer, and push button connections with the Arduino.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Stopwatch State",
+          "Input Condition",
+          "LCD Output"
+        ],
+        "rows": [
+          [
+            "Initial State",
+            "Awaiting start press",
+            "\"press start\""
+          ],
+          [
+            "Running State",
+            "Start button (Pin 8) LOW",
+            "Incrementing seconds"
+          ],
+          [
+            "Stopped State",
+            "Stop button (Pin 9) LOW",
+            "Paused seconds display"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Connections were made as per the circuit diagram, ensuring the potentiometer and push buttons were appropriately linked to the LCD and Arduino pins.",
+      "The Arduino was connected to the PC, and the Arduino IDE was configured.",
+      "The provided Arduino IDE C++ code (detailed below) was copied, verified for errors in the Arduino IDE, and subsequently uploaded to the Arduino microcontroller.",
+      "Executing the stopwatch control: The LCD was observed to find out the stopwatch output. The push buttons were pressed to transition the stopwatch between the active counting state and the paused state.",
+      "Arduino IDE Code Used:",
+      "#include <LiquidCrystal.h>",
+      "LiquidCrystal lcd(7, 6, 5, 4, 3, 2);",
+      "double i = 0;",
+      "double a = millis();",
+      "double c;",
+      "void setup() {",
+      "lcd.begin(16, 2);",
+      "lcd.clear();",
+      "  Serial.begin(9600);\n  pinMode(8, INPUT);\n  digitalWrite(8, HIGH);\n  pinMode(9, INPUT);\n  digitalWrite(9, HIGH);",
+      "}",
+      "void loop() {",
+      "lcd.clear();",
+      "lcd.print(\"press start\");",
+      "  delay(100);\n  if(digitalRead(8) == LOW) {\n    lcd.clear();\n    a = millis();\n    while (digitalRead(9) == HIGH) {\n      c = millis();\n      i = (c - a) / 1000;\n      lcd.print(i);\n      lcd.setCursor(7,0);\n      lcd.print(\"Sec's\");\n      lcd.setCursor(0,0);\n      Serial.println(c);\n      Serial.println(a);\n      Serial.println(i);\n      Serial.println(\".......\");\n      delay(100);\n    }\n    if(digitalRead(9) == LOW) {\n      while (digitalRead(8) == HIGH) {\n        lcd.setCursor(0,0);\n        lcd.print(i);\n        lcd.setCursor(11,0);\n        lcd.print(\" \");\n        lcd.setCursor(0,0);\n        delay(100);\n      }\n    }",
+      "}",
+      "}"
+    ],
+    "precautions": [
+      "Connections should be made properly to prevent short circuits.",
+      "Avoid loose connections, which can cause screen flickering or inaccurate button readings.",
+      "Verify the code thoroughly before uploading it to the Arduino board."
+    ],
+    "discussion": "The experiment successfully demonstrated the integration of a 16x2 LCD with an Arduino to create a functional stopwatch. By utilizing the internal millis() function, the microcontroller accurately tracked elapsed time without pausing the entire system logic. The push buttons, configured with internal pull-up resistors using the digitalWrite(HIGH) command on input pins, effectively toggled the counting states when pulled LOW. Furthermore, the potentiometer successfully provided manual adjustment for the LCD's pixel contrast, ensuring the digits were clearly visible.",
+    "conclusion": "The stopwatch was successfully displayed through the LCD and properly controlled using the start/stop push buttons. The experiment highlighted how microcontrollers can track real-time events and output dynamic visual data.",
+    "questions": [
+      {
+        "question": "(No specific post-lab questions were listed for this module) 2.",
+        "answer": "What you've learned: Practical understanding was gained regarding the initialization and cursor management of LCDs using the LiquidCrystal library. The ability to implement non-blocking time tracking using the millis() function to calculate elapsed durations was also developed."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": []
+  }
+}

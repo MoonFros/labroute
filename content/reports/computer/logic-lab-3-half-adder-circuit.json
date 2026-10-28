@@ -1,0 +1,88 @@
+{
+  "id": "logic-lab-3-half-adder-circuit",
+  "code": "Logic Lab 3",
+  "title": "Half Adder Circuit",
+  "department": "computer",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#HalfAdder",
+    "#CombinationalLogic",
+    "#LogicLab3",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/logic-lab-3-half-adder-circuit.json",
+  "content": {
+    "aim": "To construct and verify the operation of a Half Adder circuit built from basic logic gates.",
+    "objectives": [
+      "To understand how a Half Adder produces SUM and CARRY outputs from two single-bit inputs, A and B. To build the circuit shown in Figure 3 (Half Adder) on a breadboard using standard logic-gate ICs. To verify the circuit's operation by completing a truth table. To retain the constructed circuit for use in the Full Adder experiment (Experiment 4)."
+    ],
+    "apparatus": [
+      "5 V DC power supply",
+      "Logic gate ICs (AND and XOR-equivalent gates)",
+      "Prototyping board",
+      "Logic probe",
+      "Connecting wires"
+    ],
+    "theory": {
+      "text": "A Half Adder adds two single bits, A and B, producing two outputs: SUM and CARRY. The SUM output is the Exclusive-OR (XOR) of the inputs, while the CARRY output is their logical AND: SUM = A ⊕ B CARRY = A · B In Figure 3, this is realised using two AND gates and an inverting (“1”) stage arranged to produce the XOR function for SUM, together with a separate AND gate that produces CARRY directly from A and B.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "A",
+          "B",
+          "SUM",
+          "CARRY"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "0",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Wire the logic gate ICs on the breadboard as shown in Figure 3, and power them with 5 V.",
+      "Apply all four combinations of A and B using switches.",
+      "Observe the SUM and CARRY outputs using a logic probe or LED indicators.",
+      "Record the results in the truth table and retain the circuit for Experiment 4."
+    ],
+    "precautions": [
+      "Switch off the power supply before changing any wiring.",
+      "Ensure IC pins are correctly oriented (align the pin-1 notch) before insertion.",
+      "Do not leave unused gate inputs floating; tie them to a defined logic level.",
+      "Use current-limiting resistors for any LED indicators.",
+      "Verify the +5 V and ground rails before powering the board."
+    ],
+    "discussion": "The measured truth table matched the theoretical Half Adder function exactly: SUM followed the XOR pattern and CARRY followed the AND pattern for all four input combinations. A key limitation of the Half Adder is that it has no carry-in input, so it can only add two bits at a time and cannot, on its own, be chained to add multi-bit numbers beyond the least-significant bit position.",
+    "conclusion": "The constructed circuit correctly implements the Half Adder Boolean functions, SUM = A ⊕ B and CARRY = A · B, matching the theoretical truth table. This circuit forms the basic building block used in Experiment 4 to construct a Full Adder.",
+    "questions": [],
+    "learnings": []
+  }
+}

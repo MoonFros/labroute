@@ -1,0 +1,203 @@
+{
+  "id": "am-218-a-simple-wheel-and-axle",
+  "code": "AM 218(A)",
+  "title": "Simple Wheel and Axle",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#WheelAndAxle",
+    "#SimpleMachines",
+    "#AM218A",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-218-a-simple-wheel-and-axle.json",
+  "content": {
+    "aim": "To determine the velocity ratio of the machine. To obtain an equation for the relationship between load and effort, and from it a value for the limiting efficiency of the machine.",
+    "objectives": [],
+    "apparatus": [
+      "Tec-equipment wheel and axle mounted on a wall",
+      "Load hanger",
+      "Effort hanger",
+      "Cords",
+      "Meter rule",
+      "Dead weights and calipers"
+    ],
+    "theory": {
+      "text": "A wheel and axle is a simple machine in which an effort E applied on the rim cord of a wheel of effective diameter D lifts a load W hung from the cord on an axle of effective diameter d. (Effective diameter = diameter of wheel or axle + diameter of the cord.) In one turn the effort moves πD and the load moves πd, so Velocity ratio V.R. = πD / πd = D / d Mechanical advantage M.A. = W / E Efficiency η = M.A. / V.R. × 100 % With no friction, E0 = W/V.R. and η = 100 %. The effect of friction is the load W1 = E × V.R. that the effort could lift if there were no friction, minus the actual load, W1 − W. Law of the machine. The graph of E against W is a straight line, so E = aW + b. Here a is the slope and b is the effort needed to overcome friction at no load. When W is very large, M.A. → 1/a, so Limiting efficiency = (1/a) / V.R. × 100 % In an ideal machine a = 1/V.R. and b = 0, so the limiting efficiency would be 100 %. Friction makes a larger than 1/V.R. and b greater than zero.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Results",
+        "headers": [
+          "Actual load W",
+          "Effort E",
+          "V.R.",
+          "Load if 100 % efficient W1 = E × V.R.",
+          "Effect of friction (W1 − W)",
+          "M.A. = W/E",
+          "Efficiency (M.A./V.R.) × 100 %"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "40",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "70",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "90",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "100",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Measure the diameters of the wheel (D) and the axle (d) with calipers and add the cord diameter to each.",
+      "Calculate V.R. = D/d (check by counting the rope movement for one turn of the wheel).",
+      "Wind the cords on the wheel and the axle in opposite senses. Add effort until the load hanger just rises at a constant speed. The effort with no load is the effort needed to lift the load hanger alone.",
+      "Repeat for loads of 10, 20, 30, 40 ... up to 100 N."
+    ],
+    "precautions": [
+      "The cords were wound neatly in the correct senses and did not overlap.",
+      "The effort was added slowly so the load rose at constant speed.",
+      "Diameters were measured at several places and the cord thickness was included.",
+      "At the end of each test the effort mass was supported while the load masses were removed, so the machine did not spin."
+    ],
+    "discussion": "The effort needed increased almost in a straight line with the load. Efficiency was low at small loads and increased as the load increased. The effort was always greater than W/V.R., because of friction in the bearing and cords.\n\nSources of error Judging \"just rises at constant speed\" by eye, so the effort has some range of error. Friction in the axle bearing, which is not the same at all loads. Errors in D and d, which change V.R. directly. The weight of the hangers and the stiffness of the cords. Agreement with theory. The experimental limiting efficiency was [ ] % against 100 % for an ideal machine. The difference is because of friction. The E–W graph [was / was not] a straight line, and its intercept b = [ ] N is the effort lost to friction at no load. The limiting efficiency is higher than the efficiency at any single load in the test.",
+    "conclusion": "The velocity ratio of the wheel and axle was [ ]. The law of the machine was E = [ ]W + [ ], and the limiting efficiency was [ ] %. Efficiency increased with load. Wheels and axles are used in winches, windlasses, capstans, door knobs, steering wheels and screwdrivers.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how to find the velocity ratio, mechanical advantage and efficiency of a wheel and axle, and how to get the law of the machine from a graph."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Taking readings at many loads and using the graph gives a better value of the limiting efficiency than one reading. The set-up is simple, so many readings are taken in a short time."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Deciding when the load rises at constant speed. It can be reduced by adding very small masses, tapping the machine gently and repeating each reading."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A spring balance in place of the effort mass, or a differential wheel and axle, or a pulley system could be used to show the same ideas."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Diameters D and d, load W, effort E, V.R., M.A. and efficiency."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The vernier calipers measure the diameters of the wheel and axle to about 0.02 mm."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Winches, windlasses, capstans, cranes, steering wheels, door handles and screwdrivers."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Machines and mechanisms (simple machines, V.R., M.A., efficiency)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "A small effort on the large wheel lifted a much larger load on the axle. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how to find the velocity ratio, mechanical advantage and efficiency of a wheel and axle, and how to get the law of the machine from a graph."
+    ]
+  }
+}

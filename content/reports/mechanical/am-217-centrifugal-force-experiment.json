@@ -1,0 +1,265 @@
+{
+  "id": "am-217-centrifugal-force-experiment",
+  "code": "AM 217",
+  "title": "Centrifugal Force Experiment",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#CentrifugalForce",
+    "#RotationalDynamics",
+    "#AM217",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-217-centrifugal-force-experiment.json",
+  "content": {
+    "aim": "To show that the centrifugal force on a rotating mass is m ω² r, by finding the speed at which a balanced bell crank \"snaps over\", and to study how this speed changes with the masses and with the radius.",
+    "objectives": [
+      "To show that the centrifugal force on a rotating mass is m ω² r, by finding the speed at which a balanced bell crank \"snaps over\"",
+      "To study how this speed changes with the masses and with the radius."
+    ],
+    "apparatus": [
+      "A horizontal rotating member driven by a variable-speed motor and gearbox",
+      "Carrying two brackets with pivoted balanced bell cranks",
+      "Each crank sits between two stops: one holds its arms horizontal/vertical and the other lets the vertical arm move just out of the upright position",
+      "The brackets can be locked at different radii in equally spaced holes",
+      "Accurately machined weights fit on the crank arms",
+      "Speed is read from the counter on the control box with a stopwatch",
+      "Or with a tachometer"
+    ],
+    "theory": {
+      "text": "A mass m moving in a circle of radius r at angular velocity ω needs an inward (centripetal) force mω²r. The equal and opposite outward force on the mass is the centrifugal force: F = m ω² r The apparatus has two pivoted bell cranks on a horizontal rotating arm. On each crank the vertical arm (length a) carries a mass ma and the horizontal arm (length b) carries a mass mb. The pivot is at radius r from the axis of rotation. The centrifugal force on ma acts horizontally, outward, at height a above the pivot. Its moment about the pivot is maω²r × a. The weight of mb acts downward at distance b from the pivot. Its moment is mbg × b, in the opposite sense. The weight of ma and the centrifugal force on mb both pass through the pivot, so they have no moment. The crank snaps from one stop to the other when the two moments are equal: ma ω² r × a = mb g × b so centrifugal force = ma ω² r = mb g b / a This gives ω² = (mb g b)/(ma r a). So ω² is proportional to 1/ma (Test I), proportional to mb (Test II) and proportional to 1/r (Test III). The angular velocity is found from the speed N in rev/min: ω = 2πN/60.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1 (Test I): varying ma; r = [ ] m and mb = [ ] kg constant",
+        "headers": [
+          "ma (kg)",
+          "1/ma (kg-1)",
+          "N (rpm)",
+          "ω = 2πN/60 (rad/s)",
+          "ω² (rad²/s²)",
+          "F = maω²r (N)",
+          "F = mbgb/a (N)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 2 (Test II): varying mb; r = [ ] m and ma = [ ] kg constant",
+        "headers": [
+          "mb (kg)",
+          "N (rpm)",
+          "ω (rad/s)",
+          "ω² (rad²/s²)",
+          "F = maω²r (N)",
+          "F = mbgb/a (N)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 3 (Test III): varying r; ma = [ ] kg and mb = [ ] kg constant",
+        "headers": [
+          "r (m)",
+          "1/r (m-1)",
+          "N (rpm)",
+          "ω (rad/s)",
+          "ω² (rad²/s²)",
+          "F = maω²r (N)",
+          "F = mbgb/a (N)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Run the apparatus for a few minutes first so the bearings in the motor and gearbox reach a steady condition.",
+      "Fix equal masses on the two vertical arms and equal masses on the two horizontal arms, and pin both brackets at equal radius.",
+      "Start the motor very slowly and raise the speed until both cranks audibly \"snap over\". Measure the speed at that moment.",
+      "Test I: keep r and mb constant and vary ma five times. Test II: keep r and ma constant and vary mb five times. Test III: keep ma and mb constant and vary r from the inner to the outer radius."
+    ],
+    "precautions": [
+      "The apparatus was left running for a few minutes before starting the test.",
+      "The speed was raised very slowly near the snap-over speed so the reading was not overshot.",
+      "Equal weights were fitted on both cranks, and both brackets were pinned at the same radius, so the machine stayed balanced.",
+      "Guards were closed and everyone stood clear while the arm was spinning."
+    ],
+    "discussion": "Both cranks changed over together, with an audible click, at almost the same speed. A heavier ma (Test I) or a larger radius (Test III) made the cranks snap over at a lower speed. A heavier mb (Test II) needed a higher speed. Small changes of speed near the snap-over point were hard to read.\n\nComparing calculated and experimental results The experimental and calculated forces agreed to within [ ] %. The graphs were [straight lines through the origin / close to straight lines], which supports F = mω²r: for a given balancing moment, ω² varies as 1/ma and as 1/r. Possible reasons for any discrepancy The moment of the stops and friction at the crank pivot oppose the snap-over, so the real speed is a little higher. The moment of the weight of the crank arms themselves was not exactly balanced. The snap-over was identified by sound, and the speed was still rising, so there is a lag in the reading. The radius r was measured to the pivot, not to the exact centre of the mass. Errors in the speed counter, in the stopwatch timing and in the lengths a and b.",
+    "conclusion": "The centrifugal force on a rotating mass was shown to be mω²r and, at the snap-over speed, equal to mbgb/a. The experimental and calculated values agreed to within [ ] %. The force increases with mass, with radius and with the square of the speed. The result is used in the design of centrifugal governors, centrifuges, centrifugal clutches and pumps, and in balancing rotating machinery.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt that centrifugal force depends on mass, radius and the square of the angular velocity, and how moments about a pivot can be used to measure it."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Using two equal cranks keeps the machine balanced. Changing one quantity at a time (mass, then radius) makes the relationship easy to see, and each test needs only a few runs, so it is quick."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Detecting the exact snap-over speed by sound. It can be reduced by increasing the speed very slowly, repeating each reading, or using a light sensor to detect the movement."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A whirling mass on a string with a spring balance, or a centrifugal governor, can also be used to measure centrifugal force."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Masses ma and mb, radius r, lengths a and b, speed N (rpm) and ω."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The tachometer (or counter with stopwatch) measures the speed N in rev/min. It is read at the moment the cranks snap over."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Governors, centrifugal clutches, centrifugal pumps, centrifuges, washing-machine drums, banked road bends and the balancing of rotating shafts."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Dynamics (kinetics of particles, circular motion and balancing of rotating masses)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "Both cranks snapped over together with an audible click at a well-defined speed. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt that centrifugal force depends on mass, radius and the square of the angular velocity, and how moments about a pivot can be used to measure it."
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "id": "am-214-screw-jack",
+  "code": "AM 214",
+  "title": "Screw Jack",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#ScrewJack",
+    "#SimpleMachines",
+    "#AM214",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-214-screw-jack.json",
+  "content": {
+    "aim": "To obtain the velocity ratio of the screw jack. To plot graphs against increasing load showing the variation of (a) effort, (b) effect of friction and (c) efficiency. To obtain an equation relating load and effort, and from it the limiting efficiency of the machine.",
+    "objectives": [],
+    "apparatus": [
+      "Tec-equipment screw jack with a steel turntable",
+      "Cord",
+      "Effort hanger and dead weights",
+      "Meter rule",
+      "Vernier calipers and outside calipers"
+    ],
+    "theory": {
+      "text": "A screw jack lifts a load W with a small effort E. In one turn of the turntable the effort moves a distance πD (D = diameter of the turntable + diameter of the cord), while the load rises by one pitch P of the thread. Velocity ratio V.R. = distance moved by effort / distance moved by load = πD / P Mechanical advantage M.A. = W / E Efficiency η = M.A. / V.R. × 100 % If the machine had no friction the effort would be E0 = W/V.R. The load that E could lift with 100 % efficiency is W1 = E × V.R., so the effect of friction (load lost to friction) is W1 − W. Law of the machine. For most machines the graph of E against W is a straight line: E = aW + b where a is the slope and b is the effort needed to overcome friction with no load. As the load becomes very large the term b becomes small compared with aW, so M.A. = W/E tends to 1/a. Therefore Limiting efficiency = (1/a) / V.R. × 100 % Theory of the screw. For a square thread of mean diameter dm, lead angle λ (tan λ = P/πdm) and friction angle φ (tan φ = μ), the efficiency is η = tan λ / tan(λ + φ). A screw jack is self-locking (stays up when the effort is removed) if φ > λ, which means its efficiency is below 50 %.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Screw jack results",
+        "headers": [
+          "Actual load W (kg)",
+          "Effort E (kg)",
+          "V.R.",
+          "Load if 100 % efficient W1 = E × V.R.",
+          "Effect of friction (W1 − W)",
+          "M.A. = W/E",
+          "Efficiency (M.A./V.R.) × 100 %"
+        ],
+        "rows": [
+          [
+            "0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "15",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Measure the pitch P of the thread, the turntable diameter plus the cord diameter (D), and calculate πD and V.R.",
+      "With no load, add effort mass until the turntable just turns slowly at constant speed. This effort is the one needed to raise no load.",
+      "Repeat for increasing loads (for example 5, 10, 15, 20 ... up to 80 kg) and record the effort each time."
+    ],
+    "precautions": [
+      "The turntable was turned slowly and at constant speed when the effort was read.",
+      "The pitch and diameters were measured with calipers (more accurate than a rule), and the cord diameter was added to the turntable diameter.",
+      "The thread was lubricated lightly and kept the same through the test.",
+      "The effort mass was supported while the load was being changed."
+    ],
+    "discussion": "The effort needed to raise no load was not zero. It was [ ] kg because of friction in the thread and bearing. Effort increased steadily (almost linearly) with load. The jack stayed in position when the effort was removed, so it is self-locking. The velocity ratio was large ([ ]), so a small effort lifted a large load.\n\nSources of error It is difficult to judge the effort that gives exactly constant speed. Friction is not constant when the jack starts or stops. Error in measuring the pitch and the effective diameter D, which directly affects V.R. Friction in the turntable bearing and in the cord, and the weight of the hanger. Different thread surface conditions during the test. Shapes of the graphs. The efficiency curve rises from zero and flattens towards the limiting efficiency. The friction effect (W1 − W) increases with load, more slowly at high loads. The effort graph is a straight line with a positive intercept b. The limiting efficiency I found was [ ] %, and the theoretical value from tan λ / tan(λ + φ) was [ ] %. [They agree / differ by [ ] %]. The efficiency of the jack is low (below 50 %). That is the price of a high V.R. and self-locking: most of the effort is spent on friction in the thread.",
+    "conclusion": "The velocity ratio of the screw jack was [ ]. Its law of the machine was E = [ ]W + [ ], and its limiting efficiency was [ ] %. The efficiency increased with load, and the jack was self-locking. Screw jacks are used for lifting vehicles, in presses, vices, clamps, machine tool lead screws and aircraft flap actuators.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how to find V.R., M.A. and efficiency of a machine, how to write its law E = aW + b, and how friction limits the efficiency."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Taking effort readings at many loads and plotting E against W reduces the effect of a single bad reading, and the straight line gives a and b more accurately than one point. The loads are quick to change, so the test takes little time."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Judging the effort that gives a slow constant speed. It can be reduced by adding very small masses and turning the turntable by hand first, and by repeating each reading."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A spring balance or a torque wrench on the screw handle can measure the effort. A hydraulic jack could also be used to compare efficiencies."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Pitch P, turntable diameter D (with cord), load W, effort E, V.R., M.A. and efficiency."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The vernier calipers measure the pitch and the diameter. The reading is the main scale reading plus the vernier division that lines up, to about 0.02 mm."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Car and truck jacks, lifting platforms, presses, vices, G-clamps, valve screws and the lead screws of lathes and machine tools."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Machines and mechanisms (simple machines, velocity ratio and efficiency)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "A very small effort could lift a heavy load, and the load stayed in place when the effort was removed. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how to find V.R., M.A. and efficiency of a machine, how to write its law E = aW + b, and how friction limits the efficiency."
+    ]
+  }
+}

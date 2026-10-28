@@ -1,0 +1,233 @@
+{
+  "id": "am-226-b-compound-pendulum-conditions-for-minimum-period",
+  "code": "AM 226(B)",
+  "title": "Compound Pendulum: Conditions for Minimum Period",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#CompoundPendulum",
+    "#Oscillations",
+    "#AM226B",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-226-b-compound-pendulum-conditions-for-minimum-period.json",
+  "content": {
+    "aim": "To suspend a given rigid body from a number of points and to study the variation of the period with the distance of the suspension point from the centre of mass.",
+    "objectives": [
+      "To suspend a given rigid body from a number of points",
+      "To study the variation of the period with the distance of the suspension point from the centre of mass."
+    ],
+    "apparatus": [
+      "Stopwatch, knife-edge, rigid bar with a row of equally spaced holes (the bar used in Kater's pendulum experiment; the wall-mounted Kater's pendulum bar is stainless steel and the one on the universal vibrations rig is brass), a rule and a balance",
+      "Observations required",
+      "Dimensions of the bar",
+      "Mass of the bar",
+      "Position of its centre of mass",
+      "List of periods and corresponding distances of the point of suspension from the centre of mass"
+    ],
+    "theory": {
+      "text": "A compound (physical) pendulum is any rigid body that swings about a horizontal axis that does not pass through its centre of mass G. Let M = the mass of the pendulum, h = the distance from the point of suspension (knife-edge) to G, k = the radius of gyration of the body about G, and θ = the angle of swing. For a small swing the restoring moment about the knife-edge is Mgh θ, and the moment of inertia about the knife-edge is M(h² + k²) (parallel axis theorem), so M g h θ = M (h² + k²) d²θ/dt² This is simple harmonic motion with ω² = 4π²/T² = g h / (h² + k²) = g / Le where Le = (h² + k²)/h = h + k²/h Le is the length of the equivalent simple pendulum: a simple pendulum of length Le has the same period. Then the period is T = 2π √(Le/g), so from the measured period Le = g T² / 4π² Condition for minimum period. The period is smallest (the frequency is greatest) when Le is smallest: dLe/dh = 1 − k²/h² = 0 so h = ± k So the minimum period occurs when the distance of the knife-edge from G equals the radius of gyration, and the minimum value of Le is 2k. The ± sign corresponds to the fact that the knife-edge can be the same distance on either side of G and give the same period. Straight-line form. Since Le h = h² + k², a graph of (Le h) against h² is a straight line with slope 1 and intercept k². This lets the radius of gyration be found easily from the intercept.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Compound pendulum results",
+        "headers": [
+          "h (m)",
+          "Time for n swings (s)",
+          "Period T (s)",
+          "Le = gT²/4π² (m)",
+          "Leh (m²)",
+          "h² (m²)",
+          "k² = Leh − h² (m²)",
+          "k (m)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "title": "Table 2: Calculated radius of gyration from the dimensions",
+        "headers": [
+          "Quantity",
+          "From experiment",
+          "From dimensions and density"
+        ],
+        "rows": [
+          [
+            "Mass M (kg)",
+            "",
+            ""
+          ],
+          [
+            "Radius of gyration k (m)",
+            "",
+            ""
+          ],
+          [
+            "Minimum period Tmin (s)",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Find the centre of mass G by balancing the bar on the knife-edge. Measure the dimensions and the mass.",
+      "Suspend the bar from a hole on the knife-edge at a measured distance h from G. Give it a small swing (under 10°).",
+      "Measure the time for 5, 10 or 20 swings with the stopwatch and calculate the period T. Repeat the observation and change observers.",
+      "Repeat for all the holes along the bar, on both sides of G (although the bar is supposed to be symmetrical, check this; it improves accuracy). Vary the period for about eight different values of h."
+    ],
+    "precautions": [
+      "The bar was swung through small angles only (under 10°), so sin θ ≈ θ.",
+      "The swing was kept in one plane and the knife-edge was set firmly, level and without slipping.",
+      "The period was found from 5, 10 or 20 swings, not one, to reduce timing error, and the observations were repeated with different observers.",
+      "The distance h was measured from the centre of mass to the knife-edge accurately."
+    ],
+    "discussion": "The period was large when the knife-edge was very near G (h small), fell to a minimum at some distance h, and then increased again as the suspension point moved towards the end of the bar. Holes the same distance on opposite sides of G gave nearly the same period, as expected (the bar is almost symmetrical). The experimental points lay close to the predicted Le = h + k²/h curve.\n\nConclusions and comments. How accurately was k determined? The value of k from the experiment was [ ] m and from the dimensions [ ] m, a difference of [ ] %. The experimental and calculated results are expected to agree within a few per cent if the timings are good. The theory is verified to the extent that the experimental Le against h points follow the curve Le = h + k²/h and the straight-line plot has a slope close to 1. Sources of error Timing errors from reaction time, and miscounting swings. Error in finding the position of the centre of mass and in measuring h. Friction at the knife-edge and air resistance, which damp the swing. The holes in the bar and any non-uniformity, which the calculation from the dimensions ignores. Large swing angles, which lengthen the period.",
+    "conclusion": "The period of the compound pendulum was measured for different suspension points. Le was smallest when h was about equal to the radius of gyration k, which agrees with the theory (minimum period at h = k). The radius of gyration was found to be [ ] m, which is within [ ] % of the value calculated from the dimensions. The compound pendulum is the basis of Kater's reversible pendulum, which gives accurate values of g, and the method is used to find the moment of inertia of connecting rods and other irregular bodies.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how the period of a rigid body changes with the point of suspension, why there is a minimum period at h = k, and how to find the radius of gyration from the results."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "Many holes along the bar give many readings from one set-up, and timing several swings reduces the error. The straight-line plot of Leh against h² gives k directly."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Timing swings accurately and finding the exact centre of mass. It can be reduced by timing 20 swings, repeating with different observers and balancing the bar carefully on the knife-edge."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "A torsion pendulum, or the trifilar suspension, can be used to find the moment of inertia, and Kater's reversible pendulum to find g."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Distance h, period T, length of the equivalent simple pendulum Le, radius of gyration k, mass M and dimensions of the bar."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The stopwatch measures the time of the swings, and the rule measures h and the dimensions of the bar. The balance measures the mass."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Kater's pendulum for finding g, finding the moment of inertia of connecting rods and engine parts, and the design of clock pendulums and swinging machine parts."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Dynamics (rigid body motion, moment of inertia and SHM)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The period was smallest at a certain distance from the centre of mass and larger on either side of it. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how the period of a rigid body changes with the point of suspension, why there is a minimum period at h = k, and how to find the radius of gyration from the results."
+    ]
+  }
+}

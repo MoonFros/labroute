@@ -1,0 +1,145 @@
+{
+  "id": "am-231-automat-spur-gear-models-a1-to-a5",
+  "code": "AM 231",
+  "title": "Automat Spur Gear Models (A1 to A5)",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#Gears",
+    "#Machines",
+    "#AM231",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/am-231-automat-spur-gear-models-a1-to-a5.json",
+  "content": {
+    "aim": "To examine the working of various types of toothed gearing through the Automat models, and to write a brief technical report on the use of toothed gears in engineering.",
+    "objectives": [
+      "To examine the working of various types of toothed gearing through the Automat models",
+      "To write a brief technical report on the use of toothed gears in engineering."
+    ],
+    "apparatus": [
+      "The Automat spur gear models A1 to A5 (single-stage spur gear",
+      "Spur gear with idler",
+      "Compound gear",
+      "Worm gear and bevel gear) with turning handles",
+      "Labelled gears and shafts"
+    ],
+    "theory": {
+      "text": "A gear is a toothed wheel that transmits motion and torque from one shaft to another without slip. A pair of meshing gears has a constant speed ratio set by the numbers of teeth. The gear on the shaft that supplies the power is the driver (driving gear) and the gear that receives the power is the driven gear (follower). The gear ratio is defined as Gear ratio (G.R.) = Ndriver / Ndriven = Tdriven / Tdriver where N is the speed in rev/min and T is the number of teeth. Meshing gears must have the same module (tooth size). External gears turn in opposite directions. When G.R. > 1 the driven shaft is slower and the torque is greater (a speed reducer); when G.R. < 1 it is faster and the torque is smaller (a speed increaser). The power is nearly the same on both shafts (apart from friction losses of the order of 1 to 3 % per stage). The models provided are: A1: single stage spur gear. Two spur gears on parallel shafts. G.R. = T2/T1. The directions of rotation are opposite. A2: spur gear with idler. An idler gear sits between the driver and the driven gears. It does not change the gear ratio (the idler's teeth cancel out), G.R. = T3/T1, but it changes the direction of rotation. A3: compound gear train. Two gears are fixed on one intermediate shaft, so the speed reduction takes place in two stages. G.R. = (T2/T1) × (T4/T3), the product of the stage ratios. A4: worm and worm wheel. A screw-like worm (driver) meshes with a worm wheel (driven) on a shaft at right angles. For a single-start worm, one turn of the worm advances the wheel by one tooth, so G.R. = Twheel/(number of starts on the worm). It gives a very high ratio in one stage and can be self-locking. A5: bevel gears. Cone-shaped gears that connect shafts that intersect, usually at 90°. G.R. = Tdriven/Tdriver.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Gear data and gear ratios",
+        "headers": [
+          "Model",
+          "Teeth on driver",
+          "Teeth on idler / intermediate gears",
+          "Teeth on driven gear",
+          "G.R. from teeth",
+          "Turns of driver per turn of driven",
+          "Direction of driven shaft (same / opposite)"
+        ],
+        "rows": [
+          [
+            "A1 single stage",
+            "",
+            "–",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "A2 with idler",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "A3 compound",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "A4 worm",
+            "(starts: )",
+            "–",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "A5 bevel",
+            "",
+            "–",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "For each model, identify the driving and the driven shafts, and note the direction of rotation of each shaft.",
+      "Count the teeth on every gear and, turning the driver by a known number of turns, count the turns of the driven shaft. Calculate the gear ratio in both ways.",
+      "Vary the gear combination (change the gears on the models) and see how the ratio changes, so that the general formula for the gear ratio can be established."
+    ],
+    "precautions": [
+      "The teeth were counted carefully and a mark was used to count the turns of the shafts.",
+      "The handle was turned slowly and smoothly, and fingers were kept clear of the meshing gears.",
+      "The models were handled gently so that the gears did not get damaged."
+    ],
+    "discussion": "In A1 the driven shaft turned in the opposite direction to the driver, and a smaller driver turned the larger gear slowly. In A2 the driven shaft turned in the same direction as the driver, and the idler had no effect on the gear ratio. In A3 the speed was reduced in two steps, and the overall ratio was the product of the two ratios. In A4 many turns of the worm were needed to turn the worm wheel once, and the worm wheel could not drive the worm back (self-locking). In A5 the direction of rotation changed through 90°.\n\nThe measured gear ratios (by counting the turns) agreed with those calculated from the numbers of teeth, to within the error of counting. The experiment shows that the gear ratio depends only on the numbers of teeth and not on the size or the idler gears. The models make it easy to see the direction of rotation, but they cannot show the real problems of gears such as the tooth profile, backlash, noise, lubrication and wear. Limitations of the models Backlash (clearance between teeth) makes the driven shaft lag when the direction is reversed. The models are not loaded, so the torque, power and efficiency cannot be measured. The turns are counted by eye, which becomes inaccurate at higher ratios.",
+    "conclusion": "The working of five types of gearing (single-stage spur, spur with idler, compound, worm and bevel) was examined. The gear ratio is G.R. = Ndriver/Ndriven = Tdriven/Tdriver, and for a train it is the product of the stage ratios. An idler changes the direction but not the ratio. Large ratios between far-apart parallel shafts are best obtained with a compound train. Gears are used in gearboxes, clocks, machine tools, vehicles, winches and almost every machine that transmits power.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt how the different types of gears work, how to find the gear ratio from the teeth, and why idlers and compound trains are used."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "The models allow the gears to be turned by hand and counted directly, so the ratios can be checked by two methods. The gears can easily be changed, so the formula can be established."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Counting the turns of the driven shaft accurately when the ratio is large. It can be reduced by marking the shafts and counting slowly."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "Real gearboxes with a tachometer on the two shafts to measure the speed ratio, or a software simulation of gear trains."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Numbers of teeth, number of turns of the driver and driven shafts, direction of rotation, and gear ratio."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "No instrument was needed, only the counting of teeth and turns, but a tachometer could measure the speeds."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Car gearboxes and differentials, clocks, machine tools, winches, lifts, wind turbines, and every machine that transmits power."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Machines and mechanisms (gears and gear trains). 13. What interested me most. The idler gear did not change the ratio but only changed the direction of rotation. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt how the different types of gears work, how to find the gear ratio from the teeth, and why idlers and compound trains are used."
+    ]
+  }
+}

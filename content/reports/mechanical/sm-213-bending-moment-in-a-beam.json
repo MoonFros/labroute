@@ -1,0 +1,198 @@
+{
+  "id": "sm-213-bending-moment-in-a-beam",
+  "code": "SM 213",
+  "title": "Bending Moment in a Beam",
+  "department": "mechanical",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#BendingMoment",
+    "#BeamTheory",
+    "#SM213",
+    "#MechanicalEngineering"
+  ],
+  "verified": true,
+  "file": "mechanical/sm-213-bending-moment-in-a-beam.json",
+  "content": {
+    "aim": "To verify the bending moment variation at the point of loading (Experiment 1). To examine how the bending moment at the cut varies for various loading conditions, and to draw bending moment diagrams (Experiment 2).",
+    "objectives": [
+      "To verify the bending moment variation at the point of loading (Experiment 1). To examine how the bending moment at the cut varies for various loading conditions",
+      "To draw bending moment diagrams (Experiment 2)."
+    ],
+    "apparatus": [
+      "Tec-equipment SM 213 bending moment in a beam apparatus: a beam with a cut at which a pivoting mechanism and a load cell measure the moment",
+      "A digital force display",
+      "Hangers and slotted masses (100 g to 500 g)",
+      "A test frame with thumbscrews",
+      "And a rule"
+    ],
+    "theory": {
+      "text": "When a simply supported beam is loaded, there is a bending moment at every section. The bending moment at a section is the algebraic sum of the moments, about that section, of all the forces on one side of it. It is taken positive when it makes the beam sag (curve upward, like a smile). For a single point load W at a distance a from the left support A, on a beam of span L, the reactions are RA = W(L − a)/L and RB = Wa/L. If the cut is under the load (Experiment 1), the bending moment there is M (at cut) = W a (L − a) / L This is the maximum bending moment for a single load. For several loads the bending moment at the cut is M = RA × x − Σ W (x − xW) for the loads to the left of the cut, where x is the distance of the cut from A and xW is the position of each load. In the apparatus the beam is cut and a load cell reads the force F that it takes to hold the two halves in place. This force acts at a lever arm of 0.125 m, so bending moment = displayed force × 0.125 (N·m).",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Table 1: Result table for bending moment (Experiment 1)",
+        "headers": [
+          "Mass (g)",
+          "Load (N)",
+          "Force (N)",
+          "Experimental bending moment (N·m)",
+          "Theoretical bending moment (N·m)",
+          "Difference (%)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "–"
+          ],
+          [
+            "100",
+            "0.98",
+            "0.7",
+            "0.0875",
+            "0.0935",
+            "−6.9"
+          ],
+          [
+            "200",
+            "1.96",
+            "1.3",
+            "0.1625",
+            "0.1871",
+            "−13.1"
+          ],
+          [
+            "300",
+            "2.94",
+            "1.9",
+            "0.2375",
+            "0.2806",
+            "−15.5"
+          ],
+          [
+            "400",
+            "3.92",
+            "2.7",
+            "0.3375",
+            "0.3742",
+            "−9.8"
+          ],
+          [
+            "500",
+            "4.92",
+            "3.1",
+            "0.3875",
+            "0.4696",
+            "−17.5"
+          ]
+        ]
+      },
+      {
+        "title": "Table 2: Results for Experiment 2",
+        "headers": [
+          "Fig.",
+          "W1 (N)",
+          "W2 (N)",
+          "Force (N)",
+          "Experimental bending moment (N·m)",
+          "RA (N)",
+          "RB (N)",
+          "Theoretical bending moment (N·m)"
+        ],
+        "rows": [
+          [
+            "4",
+            "3.92",
+            "–",
+            "−1.4",
+            "−0.175",
+            "5.17",
+            "−1.25",
+            "−0.175"
+          ],
+          [
+            "5",
+            "1.96",
+            "3.92",
+            "3.4",
+            "0.425",
+            "2.58",
+            "3.30",
+            "+0.462"
+          ],
+          [
+            "6",
+            "4.91",
+            "3.92",
+            "3.6",
+            "0.450",
+            "2.59",
+            "6.24",
+            "+0.482"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Inspect the equipment, check the electrical connections and fastenings and fit the supports to the test frame (four securing nuts, thumbscrews tight).",
+      "Connect the mini DIN lead from \"Force Input 1\" to the \"Force Output\" socket and make sure the lead does not touch the beam. Zero the force meter and check that it reads zero with no load.",
+      "Experiment 1: place a hanger with 100 g at the cut, record the display reading, and repeat for 200, 300, 400 and 500 g. Bending moment = displayed force × 0.125 (N·m).",
+      "Experiment 2: load the beam as in figures 4, 5 and 6, and record the display readings."
+    ],
+    "precautions": [
+      "The meter was zeroed with no load and checked again before each reading.",
+      "The loads were put exactly at the positions given for each figure.",
+      "The lead was kept away from the beam.",
+      "No excessive loads were put on the beam, and the frame was on a firm level surface."
+    ],
+    "discussion": "The bending moment at the point of loading increased in a straight line with the load. The experimental values were always a bit smaller than the theoretical values (6 to 18 % lower in Experiment 1). When the load was outside the supports (figure 4) the bending moment at the cut was negative. The bending moment diagrams are made of straight lines, with a change of slope at every load and support.\n\nShape of the graph. Both lines are straight, starting from zero. So the bending moment at the point of loading is directly proportional to the load, as the equation M = Wa(L − a)/L says (for fixed a and L, M is a constant times W). The experimental line has a smaller slope than the theoretical line, but the same shape. So the equation predicts how the beam behaves, but the measured moments are a little lower than the theory. Experiment 2. The experimental and theoretical moments agree to within about 0.2 % for figure 4, and within 8 % for figures 5 and 6. The theory predicts the signs correctly (negative for the overhanging load, positive when the loads are between the supports). Possible reasons for the differences Friction in the pivots of the cut mechanism and the load cell, which makes the force reading too low, especially at bigger loads. The weight of the hanger and the beam are not in the theory. The cut is not exactly under the load, so the lever arm and the position are not exactly as assumed (an error of a few mm changes M by several %). The digital display only shows 0.1 N, which is a large step when the force is under 4 N. The 500 g load used 4.92 N in the manual table here but 4.90 N in the shear force experiment, a small difference.",
+    "conclusion": "The bending moment at the point of loading was directly proportional to the load, as predicted by M = Wa(L − a)/L, although the experimental values were about 7 to 18 % lower than the theoretical values. For three loading cases the bending moment at the cut was calculated from the reactions and measured with the load cell, and bending moment diagrams were drawn. The results confirm the theory within the accuracy of the apparatus. Bending moments are used to size beams, shafts and frames so that the bending stress σ = My/I stays within safe limits.",
+    "questions": [
+      {
+        "question": "What I learnt from the experiment.",
+        "answer": "I learnt what bending moment is, how to calculate it at a section, and how to draw a bending moment diagram."
+      },
+      {
+        "question": "Comment on the experimental procedure.",
+        "answer": "The moment is read from the force display (× 0.125), so no calculation of the internal moment is needed. Using many loads and a graph gives a clear trend. It is also fast."
+      },
+      {
+        "question": "Most difficult aspect of the experiment.",
+        "answer": "Friction in the cut mechanism and the coarse resolution of the digital display (0.1 N). They can be reduced by tapping the frame lightly and repeating readings."
+      },
+      {
+        "question": "Another method that could be used.",
+        "answer": "Strain gauges attached to the beam, or a dial gauge to measure the deflection of the beam and calculate the moment from it."
+      },
+      {
+        "question": "Parameters measured / involved.",
+        "answer": "Load W (from mass), positions of the loads, span L, reactions RA and RB, force F from the display, and bending moment M = F × 0.125."
+      },
+      {
+        "question": "Measuring instrument used.",
+        "answer": "The digital force display with its load cell, and a rule to measure the positions."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Design of beams, floors, bridges, shafts, crane jibs and machine frames."
+      },
+      {
+        "question": "Section of the course it belongs to.",
+        "answer": "Strength of materials / structures (bending moment and shear force in beams)."
+      },
+      {
+        "question": "What interested me most.",
+        "answer": "The bending moment was negative when the load was outside the supports, so the beam bent the other way. 2, 10, 11, 12, 14 and 15 (personal / references): to be filled in by you."
+      }
+    ],
+    "learnings": [
+      "I learnt what bending moment is, how to calculate it at a section, and how to draw a bending moment diagram."
+    ]
+  }
+}

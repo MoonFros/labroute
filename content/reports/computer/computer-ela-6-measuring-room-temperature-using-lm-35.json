@@ -1,0 +1,110 @@
+{
+  "id": "computer-ela-6-measuring-room-temperature-using-lm-35",
+  "code": "Computer ELA 6",
+  "title": "Measuring Room Temperature Using LM-35",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#Arduino",
+    "#LM35",
+    "#Sensors",
+    "#ComputerELA6",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-6-measuring-room-temperature-using-lm-35.json",
+  "content": {
+    "aim": "To measure the room temperature of a place through an Arduino microcontroller using an LM-35 temperature sensor.",
+    "objectives": [
+      "To widen the applicability and develop innovative sensor system solutions.",
+      "To interface an analog temperature sensor with a microcontroller.",
+      "To convert physical temperature quantities into electrical signals and discrete digital data."
+    ],
+    "apparatus": [
+      "Arduino Uno Rev 2",
+      "Temperature resistor (LM35)",
+      "Resistor (470Ω)",
+      "Breadboard",
+      "Connecting wires",
+      "PC with Arduino IDE"
+    ],
+    "theory": {
+      "text": "A sensor is a converter which translates a physical quantity into a measurable electrical signal. The LM-35 is an absolute temperature sensor whose output voltage is linearly proportional to the Celsius temperature. Specifically, the output increments by 10 mV for every 1°C change in temperature, and it is capable of measuring temperatures ranging from -50°C to +150°C.\n\nThe Arduino's analog pins operate on a +5V reference and feature a 10-bit analog-to-digital converter (ADC), yielding a resolution from 0 to 1023. The microcontroller processes the raw analog input into a voltage, applies mathematical operations to convert it into human-readable Celsius and Fahrenheit values, and transmits it via serial communication. A 470Ω resistor is connected between the temperature sensor and ground to prevent the component from burning. Diagram: Please use the manual's diagram (Figure 5) for the LM-35 connection with the Arduino.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "Time",
+          "Temperature (°C)",
+          "Temperature (°F)"
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Connections were made as per the provided circuit diagram, ensuring the 470Ω resistor was placed appropriately to protect the sensor.",
+      "The Arduino board was connected to a PC, and the Arduino IDE was configured.",
+      "The provided Arduino C++ code (detailed below) was written into the Arduino IDE, verified for errors, and successfully uploaded to the microcontroller.",
+      "Executing the serial monitoring: The Serial Monitor was opened to observe the output. The baud rate was ensured to match the Serial.begin(9600) declaration in the setup function. The temperature readings, formatted in both degrees Celsius and Fahrenheit, were observed and recorded as they updated automatically at 5000-millisecond intervals.",
+      "Arduino IDE Code Used:",
+      "const int sensor=A0;",
+      "float tempc;",
+      "float tempf;",
+      "float vout;",
+      "void setup() {\n  pinMode(sensor,INPUT);\n  Serial.begin(9600);",
+      "}",
+      "void loop() {",
+      "vout=analogRead(sensor);",
+      "vout=(vout/1024.0)*5.0;",
+      "tempc = (vout - 0.5)*100;",
+      "tempf=(tempc *1.8)+32;",
+      "  Serial.print(\"in DegreeC=\");\n  Serial.print(\"\\t\");\n  Serial.print(tempc);\n  Serial.print(\"C \");\n  Serial.print(\"in Fahrenheit=\");\n  Serial.print(\"\\t\");\n  Serial.print(tempf);\n  Serial.println(\"F \");\n  delay(5000);",
+      "}"
+    ],
+    "precautions": [
+      "Ensure the 470Ω resistor is correctly placed between the temperature sensor and ground to avoid burning the sensor.",
+      "Verify the Arduino is connected to the correct COM port before attempting to upload the code to prevent communication errors."
+    ],
+    "discussion": "The experiment successfully demonstrated the integration of an analog sensor with an embedded system. The LM-35 accurately converted the ambient room temperature into a proportional voltage. The Arduino's ADC successfully translated this continuous voltage into discrete digital values (0-1023), which were then mathematically converted into standard temperature formats using the programmed equations. This highlights the crucial role microcontrollers play in functioning modern sensor networks.",
+    "conclusion": "The room temperature was successfully measured using the LM-35 sensor and Arduino Uno. The experiment highlighted the essential role of microcontrollers and sensors in embedded systems and future automation applications.",
+    "questions": [
+      {
+        "question": "Define the key concepts of the experiment.",
+        "answer": ""
+      },
+      {
+        "question": "Describe expected outcomes.",
+        "answer": ""
+      },
+      {
+        "question": "Identify components required.",
+        "answer": "2. What you've learned: Practical understanding was gained regarding analog-to-digital conversion and sensor interfacing. The ability to write, verify, and deploy C++ code to an Arduino for real-time serial data monitoring was also developed."
+      },
+      {
+        "question": "Special questions: (Not covered in this report as per instructions)",
+        "answer": ""
+      }
+    ],
+    "learnings": []
+  }
+}

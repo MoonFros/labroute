@@ -1,0 +1,49 @@
+{
+  "id": "computer-ela-11-proficiency-with-software-development-tools",
+  "code": "Computer ELA 11",
+  "title": "Proficiency with Software Development Tools",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#IDEs",
+    "#Git",
+    "#Debugging",
+    "#ComputerELA11",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-11-proficiency-with-software-development-tools.json",
+  "content": {
+    "aim": "To gain familiarity with Integrated Development Environments (IDEs), compilers, debuggers, and version control systems. • To understand core Git concepts, including repositories, commits, and branching strategies. • To execute the standard collaborative workflow (GitHub Flow) using pull requests, peer reviews, and merge strategies.",
+    "objectives": [
+      "To gain familiarity with Integrated Development Environments (IDEs), compilers, debuggers, and version control systems.",
+      "To understand core Git concepts, including repositories, commits, and branching strategies.",
+      "To execute the standard collaborative workflow (GitHub Flow) using pull requests, peer reviews, and merge strategies."
+    ],
+    "apparatus": [
+      "IntelliJ IDEA",
+      "Eclipse",
+      "VS Code",
+      "Git",
+      "GitHub Desktop",
+      "PC"
+    ],
+    "theory": {
+      "text": "I. Core Version Control Concepts (Git): Git is a distributed version control system whose fundamental goal is to track changes and manage multiple lines of development without conflicts. Key elements include: • Repository (Repo): The folder where Git stores all files, history, and metadata. It exists locally on the computer and remotely on servers like GitHub. • Commit: A \"snapshot\" of the repository at a specific point in time. Every commit includes a unique SHA identifier, the actual file changes, a descriptive message, and metadata (author/timestamp). • Branch: An independent line of development allowing developers to work on new features or fixes without affecting the main codebase until the work is complete. • Synchronization: \"Fetch\" downloads remote changes without merging them. \"Pull\" downloads and automatically merges them. \"Push\" uploads local commits to the remote repository. II. The Standard Collaborative Workflow (GitHub Flow): This workflow revolves around creating branches, committing changes, and merging them back via Pull Requests (PRs). The standard steps involve cloning the repository, creating a feature branch off the main branch, committing and pushing changes locally, and opening a PR. The team then reviews the code (leaving line-by-line comments or running automated CI/CD checks). Once approved, the branch is merged into the main repository and the feature branch is deleted to keep the repository tidy. III. Key GitHub Collaboration Features: • Issues & Labels: Used to track tasks, bugs, and feature requests (acting as the project's backlog), and categorize them (e.g., bug, documentation, high-priority). • Projects (Kanban Boards): Provides a visual workflow overview organizing Issues and PRs into columns (To Do, In Progress, Done). • Code Owners: A file defined to automatically assign mandatory reviewers for specific directories, ensuring expert team members review critical codebase changes. 5. Procedure (Execution) The concepts outlined in the GitHub Flow were executed practically using the terminal to manage a local repository and synchronize it with the remote repository on GitHub. Terminal Commands Used: # Step 1: Clone the repository and update the local main branch git clone https://github.com/username/repository-name.git cd repository-name git checkout main git pull origin main\n\n# Step 2: Create a Feature Branch git checkout -b feature/new-login-ui\n\n# Step 3: Commit and Push Changes Locally git add . git commit -m \"feat: Add new user input validation logic\" git push origin feature/new-login-ui Following the terminal execution, the GitHub web interface was utilized to open a Pull Request. A code review was simulated, and the branch was successfully merged into the main branch using the \"Squash and Merge\" strategy (to combine all feature commits into a single, clean commit on main).",
+      "diagrams": []
+    },
+    "tables": [],
+    "graphs": [],
+    "procedure": [
+      "Two different IDEs (VS Code and IntelliJ IDEA) were installed, and their respective user interfaces, project structures, and file management systems were explored.",
+      "A simple \"Hello World\" program was written in both Java and Python to test the integrated compilers and execution environments.",
+      "The built-in debuggers were utilized to step through the code execution, allowing for the observation of variable states and logic flow."
+    ],
+    "precautions": [],
+    "discussion": "Reflection on IDEs: During the exploration phase, distinct differences between the IDEs were noted. IntelliJ IDEA provided a comprehensive, heavy-duty environment equipped with built-in tools heavily optimized for complex Java projects. In contrast, VS Code operated as a highly customizable, lightweight text editor reliant on modular extensions. VS Code felt the most intuitive overall, largely due to its minimalist interface, rapid startup speed, and seamless integrated terminal for executing Git commands.\n\nThe laboratory exercise successfully illustrated how distributed version control systems manage collaborative software engineering. By utilizing isolated feature branches, the primary codebase remained stable while new logic was developed. The Pull Request process proved essential for quality assurance, acting as a mandatory checkpoint for peer reviews and automated testing. Understanding the various merge strategies was also critical; while a standard \"Merge Commit\" preserves the entire history, utilizing \"Squash and Merge\" kept the main branch's commit history significantly cleaner and easier to read sequentially.",
+    "conclusion": "Proficiency with essential software development tools, including IDE debugging interfaces and collaborative Git version control workflows, was successfully attained, demonstrating the foundational practices necessary for modern software engineering.",
+    "questions": [],
+    "learnings": []
+  }
+}

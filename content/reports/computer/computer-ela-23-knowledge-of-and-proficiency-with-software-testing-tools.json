@@ -1,0 +1,68 @@
+{
+  "id": "computer-ela-23-knowledge-of-and-proficiency-with-software-testing-tools",
+  "code": "Computer ELA 23",
+  "title": "Knowledge of and Proficiency with Software Testing Tools",
+  "department": "computer",
+  "level": "400",
+  "session": "2025/2026",
+  "tags": [
+    "#SoftwareTesting",
+    "#QualityAssurance",
+    "#ComputerELA23",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/computer-ela-23-knowledge-of-and-proficiency-with-software-testing-tools.json",
+  "content": {
+    "aim": "The objective of this experiment is to gain familiarity with and proficiency of Software Testing Tools.",
+    "objectives": [],
+    "apparatus": [
+      "JUnit 5",
+      "Pytest"
+    ],
+    "theory": {
+      "text": "Unit testing in Java and Python involves using language-specific frameworks to isolate items of code (units) and verify if they work correctly. Java Unit Testing (JUnit 5) Java unit testing is typically done using the JUnit framework, with JUnit 5 (Jupiter) being the current standard. It relies heavily on specific annotations to define the testing lifecycle: • @Test: Marks a method as a test case. • @BeforeEach: Runs before each test method (typical for resetting objects). • @AfterEach: Runs after each test method (good for cleanup). • @BeforeAll: Runs once before all test methods in the class. • @AfterAll: Runs once after all test methods in the class. • @DisplayName: Provides a more readable name for the test in reports. Python Unit Testing (Pytest) While Python has a built-in unittest module, pytest is considered a more popular and modern choice due to its simpler syntax, powerful fixtures, and ease of use. It automatically discovers test files and uses the standard Python assert keyword, eliminating the need to import a base class.",
+      "diagrams": []
+    },
+    "tables": [],
+    "graphs": [],
+    "procedure": [
+      "4.1 Java Testing (JUnit 5) Implementation",
+      "Step 1: Project Setup: The project was configured (via Maven or Gradle) to include the junit-jupiter-api dependency (for annotations) and the junit-jupiter-engine (to run the tests).",
+      "Step 2: The Code Under Test: A simple Calculator class was created to demonstrate basic arithmetic and exception throwing.",
+      "package com.example;",
+      "public class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }",
+      "    public int divide(int a, int b) {\n        if (b == 0) {\n            throw new ArithmeticException(\"Cannot divide by zero\");\n        }\n        return a / b;\n    }",
+      "}",
+      "Step 3: Writing the Test Class: A corresponding test class was created in the src/test/java directory. It utilizes the \"Arrange, Act, Assert\" pattern and tests both positive outcomes and expected exceptions.",
+      "package com.example;",
+      "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;",
+      "public class CalculatorTest {\n    // 1. ARRANGE: Declare object for the test\n    private final Calculator calculator = new Calculator();",
+      "    @Test\n    void testAddition_PositiveNumbers() {\n        // ARRANGE (Setup is already done by object initialization)\n        int a = 5;\n        int b = 3;\n        int expected = 8;",
+      "        // 2. ACT: Execute the method under test\n        int actual = calculator.add(a, b);",
+      "        // 3. ASSERT: Verify the result\n        assertEquals(expected, actual, \"The sum of 5 and 3 should be 8\");\n    }",
+      "    @Test\n    void testDivision_ByZero_ShouldThrowException() {\n        // ARRANGE\n        int numerator = 10;\n        int denominator = 0;",
+      "        // ACT & ASSERT: Use assertThrows to check for exceptions\n        assertThrows(ArithmeticException.class, () -> {\n            calculator.divide(numerator, denominator); // ACT\n        }, \"Dividing by zero should throw an ArithmeticException\");\n    }",
+      "}",
+      "4.2 Python Testing (Pytest) Implementation",
+      "Step 1: Project Setup: The framework was installed via the terminal using the command pip install pytest.",
+      "Step 2: The Code Under Test: A Python file named operations.py was created with functions for multiplication and prime number checking.",
+      "# operations.py\ndef multiply(a, b):\n    return a * b",
+      "def is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+      "Step 3: Writing the Test Functions: A test file named test_operations.py was created. It utilizes pytest's parametrize decorator to test multiple cases efficiently.",
+      "# test_operations.py\nimport pytest\nfrom operations import multiply, is_prime",
+      "def test_multiplication_positive():\n    # 1. ARRANGE (Setup variables)\n    a = 4\n    b = 6\n    expected = 24",
+      "    # 2. ACT (Call the function)\n    result = multiply(a, b)",
+      "    # 3. ASSERT (Use standard Python assert)\n    assert result == expected",
+      "# Using parametrization for concise testing\n@pytest.mark.parametrize(\"input_number, expected_result\", [\n    (2, True),   # Test case 1: 2 is prime\n    (9, False),  # Test case 2: 9 is not prime\n    (17, True)   # Test case 3: 17 is prime",
+      "])",
+      "def test_is_prime(input_number, expected_result):\n    # ACT & ASSERT happen directly within the function\n    assert is_prime(input_number) == expected_result",
+      "Step 4: Running the Tests: The tests were executed by opening the terminal in the project root directory and running the pytest command, which automatically discovered and executed the functions."
+    ],
+    "precautions": [],
+    "discussion": "• What was the success rate of your tests per app? The success rate for both the Java and Python test suites was 100%. All unit tests passed without error. The JUnit assertions successfully verified the arithmetic logic and exception handling (divide by zero) in the Java application. Similarly, the parameterized Pytest inputs accurately validated the expected boolean returns for both prime and non-prime numbers in the Python script.",
+    "conclusion": "",
+    "questions": [],
+    "learnings": []
+  }
+}

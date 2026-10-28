@@ -1,0 +1,134 @@
+{
+  "id": "logic-lab-4-full-adder-circuit",
+  "code": "Logic Lab 4",
+  "title": "Full Adder Circuit",
+  "department": "computer",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#FullAdder",
+    "#CombinationalLogic",
+    "#LogicLab4",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/logic-lab-4-full-adder-circuit.json",
+  "content": {
+    "aim": "To design, implement and verify a Full Adder circuit that adds three input bits (A, B and Cin) and produces a SUM and a CARRY-OUT (Cout).",
+    "objectives": [
+      "To design and implement a Full Adder using basic logic gates (AND, OR, XOR). To understand the function of a Full Adder in performing binary addition of three input bits: A, B, and Cin (carry-in). To analyse the outputs: Sum (S), the result of the addition; and Carry-out (Cout), the carry that can be passed to the next stage of a multi-bit adder. To develop skills in digital circuit construction and logic analysis using breadboards / prototyping tools."
+    ],
+    "apparatus": [
+      "5 V DC power supply",
+      "Two previously-constructed Half Adder circuits (from Experiment 3), or equivalent gate ICs",
+      "Assorted logic gates: AND (7408), OR (7432), XOR (7486)",
+      "1 kΩ resistors",
+      "Prototyping board, logic probe, switches (for inputs A, B, Cin) and LEDs (for SUM and CARRY outputs)"
+    ],
+    "theory": {
+      "text": "A Full Adder performs 1-bit binary addition of three bits, including a possible carry from a less-significant stage, producing a SUM and a possible carry to a more significant stage. Figure 4 shows it built by cascading two Half Adders and an OR gate: the first Half Adder adds A and B, producing an intermediate SUM and CARRY; the second Half Adder adds that intermediate SUM to Cin, producing the final SUM and a second CARRY; the two CARRY outputs are combined with an OR gate to give Cout. Equivalently, at the gate level (as implemented directly with XOR, AND and OR gates): Sum (S) = A ⊕ B ⊕ Cin Carry-out (Cout) = (A AND B) OR (B AND Cin) OR (A AND Cin) Both realisations — the two-Half-Adder-plus-OR structure and the direct XOR/AND/OR gate structure — are logically equivalent and should produce identical truth tables.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "A",
+          "B",
+          "Cin",
+          "Sum",
+          "Cout"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Method 1 — using two Half Adders (Figure 4):",
+      "Feed A and B into the first Half Adder, obtaining an intermediate SUM and CARRY.",
+      "Feed the intermediate SUM and Cin into the second Half Adder, obtaining the final SUM and a second CARRY.",
+      "OR the two CARRY signals together to obtain Cout.",
+      "Method 2 — using discrete logic gates:",
+      "Connect the ICs to the breadboard and power them with 5 V.",
+      "Use XOR gates (7486) to compute A ⊕ B, then ⊕ Cin, for the SUM.",
+      "Use three AND gates (7408) to compute A AND B, B AND Cin, and A AND Cin.",
+      "Use two OR gates (7432) to combine the AND results and produce Cout.",
+      "Connect the inputs A, B and Cin through switches and resistors.",
+      "Connect LEDs (through 1 kΩ resistors) to the SUM and Cout outputs for visualisation.",
+      "For either method, apply all eight combinations of A, B and Cin and record SUM and Cout."
+    ],
+    "precautions": [
+      "Power down the circuit before rewiring between the two construction methods.",
+      "Verify gate pin-outs (7486, 7408, 7432) against the datasheet before wiring.",
+      "Do not leave any carry-chain input floating.",
+      "Use current-limiting resistors for all LED indicators.",
+      "Confirm that each Half Adder sub-circuit (Experiment 3) functions correctly before combining them."
+    ],
+    "discussion": "Both realisations of the Full Adder produced the same 8-row truth table, confirming that the two-Half-Adder-plus-OR structure and the direct gate-level equations (Sum = A⊕B⊕Cin, Cout = AB + BCin + ACin) are logically equivalent. Comparing this result with the Half Adder truth table from Experiment 3 shows that the Full Adder reduces to the Half Adder whenever Cin = 0: for those rows, Sum and Cout in this table match SUM and CARRY in the Half Adder table exactly. The Full Adder is therefore a generalisation of the Half Adder that additionally accepts a carry-in, which is what allows multiple Full Adders to be chained together (ripple-carry) to build a multi-bit binary adder, a core building block of an ALU (Arithmetic Logic Unit) in a processor such as the 8085/Z80 referenced in Experiment 1.",
+    "conclusion": "The Full Adder circuit correctly sums three input bits, producing Sum = A ⊕ B ⊕ Cin and Cout = AB + BCin + ACin. It was successfully realised in two equivalent ways — by cascading two Half Adders with an OR gate, and directly from XOR/AND/OR gates — both of which produced identical, theoretically-correct truth tables. This confirms the Full Adder as the fundamental building block for constructing multi-bit binary adders and ALUs.",
+    "questions": [
+      {
+        "question": "Experiment 1 Determine the relationship between VA, VB and VSUM — VSUM = (VA + VB)/2 (an averaging relationship, not arithmetic summation).",
+        "answer": "Draw a block diagram describing the actual operation of the system — the correct block should read “AVERAGE = (A + B)/2” in place of the claimed “SUM = A + B” block shown in Figure 2. State, giving reasons, whether the system is analogue or digital — Analogue, because VSUM varies continuously with VA and VB rather than switching between two discrete logic levels. Experiment 2 Based on the results, identify the Boolean function of each circuit — Circuit A = AND, Circuit B = OR, Circuit C = NOT. If several of the circuits were connected in series, will there be a problem? — Yes: the diode forward-voltage drop accumulates across cascaded diode-logic stages, degrading the HIGH/LOW levels until they can fall outside the valid logic-1/logic-0 thresholds; a restoring (active/transistor) stage is needed between stages. Experiments 3 and 4 Compare and comment on the Full Adder truth table versus the Half Adder truth table — the Full Adder truth table matches the Half Adder's SUM/CARRY values exactly whenever Cin = 0; the Full Adder is a generalisation of the Half Adder that additionally handles a carry-in, enabling cascaded multi-bit addition. What I've Learned A passive resistor network only performs true arithmetic addition under specific impedance conditions; here it instead performed averaging, showing the importance of verifying a circuit's claimed function experimentally rather than assuming it from a block diagram. Diode-resistor networks can realise basic AND/OR logic cheaply, but they lack the level-restoring property of active gates, so diode logic degrades when cascaded and needs periodic transistor buffering. A single BJT stage can realise a logic inversion (NOT) while simultaneously restoring signal levels, illustrating why real logic-gate ICs are built from transistors rather than diodes alone. The Half Adder (SUM = A⊕B, CARRY = A·B) and Full Adder (Sum = A⊕B⊕Cin, Cout = AB+BCin+ACin) illustrate how larger digital building blocks (adders, and eventually ALUs) are constructed by combining smaller logic blocks, and that the same Boolean function can be implemented by more than one equivalent gate structure. This progression, from simple resistor/diode circuits to combinational adders, mirrors how arithmetic and logic units inside real microprocessors (e.g. the 8085/Z80 referenced in Experiment 1) are built up from simple logic-block hierarchies. Special Questions Not covered in this laboratory session, as indicated in the manual."
+      }
+    ],
+    "learnings": []
+  }
+}

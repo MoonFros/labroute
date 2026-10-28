@@ -1,0 +1,133 @@
+{
+  "id": "logic-lab-2-logic-circuits-diode-transistor-logic",
+  "code": "Logic Lab 2",
+  "title": "Logic Circuits (Diode-Transistor Logic)",
+  "department": "computer",
+  "level": "200",
+  "session": "2025/2026",
+  "tags": [
+    "#DiodeLogic",
+    "#LogicGates",
+    "#LogicLab2",
+    "#ComputerEngineering"
+  ],
+  "verified": true,
+  "file": "computer/logic-lab-2-logic-circuits-diode-transistor-logic.json",
+  "content": {
+    "aim": "To investigate three discrete-component logic circuits (two diode-resistor circuits and one transistor circuit) and to identify the Boolean function performed by each.",
+    "objectives": [
+      "To construct Circuits A, B and C (Figure 3) using diodes, resistors and an NPN transistor. To measure the output voltage of each circuit for every input combination. To classify each output as logic 0 (0–1 V) or logic 1 (4–5 V). To determine the Boolean function of each circuit and to evaluate what happens if several such circuits are cascaded in series."
+    ],
+    "apparatus": [
+      "5 V DC power supply",
+      "1 kΩ resistors (pull-up / pull-down, one per diode circuit)",
+      "10 kΩ resistor (transistor base resistor)",
+      "Low-power silicon diodes (two per diode circuit)",
+      "One NPN transistor (BC108)",
+      "Voltmeter (analogue or digital)",
+      "Prototyping board and connecting wires"
+    ],
+    "theory": {
+      "text": "Circuit A — Diode AND gate Inputs A and B feed a common node through diodes, with a 1 kΩ resistor pulling the node up to +5 V. If either input is LOW, its diode conducts and clamps the node close to that input's voltage, so the output stays LOW. The output only rises HIGH when both A and B are HIGH (no diode conducts, and the pull-up resistor takes the node to +5 V). This realizes OQ = A AND B. Circuit B — Diode OR gate Inputs A and B feed a common node through diodes, with a 1 kΩ resistor pulling the node down to 0 V. If either input is HIGH, its diode conducts and pulls the node up close to that input's voltage. The output is LOW only when both A and B are LOW. This realizes OQ = A OR B. Circuit C — Transistor inverter (NOT gate) Input A drives the base of an NPN transistor (BC108) through a 10 kΩ resistor; the collector is pulled up to +5 V through 1 kΩ, and the emitter is grounded. When A is HIGH, the transistor saturates and pulls the collector (output) LOW. When A is LOW, the transistor is OFF and the collector is pulled HIGH by the 1 kΩ resistor. This realizes OQ = NOT A.",
+      "diagrams": []
+    },
+    "tables": [
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "A",
+          "B",
+          "OQ (A)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "1"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "A",
+          "B",
+          "OQ (B)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1"
+          ]
+        ]
+      },
+      {
+        "title": "Experimental Measurements",
+        "headers": [
+          "A",
+          "OQ (C)"
+        ],
+        "rows": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "procedure": [
+      "Connect each circuit (A, B, C) as shown in Figure 3, using the prototyping board.",
+      "Use the voltmeter to measure the output voltage at each circuit's designated output node.",
+      "Vary the input(s) through all combinations and complete a truth table for each circuit.",
+      "Classify readings of 0–1 V as logic 0 and 4–5 V as logic 1."
+    ],
+    "precautions": [
+      "Observe correct diode polarity — a reversed diode will not conduct as intended.",
+      "Do not exceed the transistor's maximum collector current or power rating.",
+      "Confirm all resistor values with a multimeter before inserting them.",
+      "Avoid shorting +5 V directly to ground.",
+      "Allow the output to settle before taking each voltmeter reading.",
+      "Handle the BC108 transistor by its leads and avoid excessive heat near the package."
+    ],
+    "discussion": "The three circuits demonstrate that basic Boolean functions (AND, OR, NOT) can be implemented with discrete diodes and a transistor rather than dedicated logic-gate ICs. Diode gates exploit the one-way conduction of diodes, while the transistor gate uses the switching (saturation/cut-off) behaviour of a BJT to invert and restore the logic level. A practical limitation of diode logic is that each conducting diode introduces a forward voltage drop of approximately 0.6–0.7 V. If several diode gates (Circuits A and/or B) are connected in series without an intervening restoring stage, this drop accumulates: the HIGH level droops and the LOW level rises with each stage. After a few cascaded stages the signal can fall outside the 0–1 V / 4–5 V thresholds used to define logic 0 and 1, causing logic errors. A transistor stage such as Circuit C, which actively switches and restores full-swing output levels, is normally needed between diode-logic stages to prevent this degradation.",
+    "conclusion": "Circuit A implements the AND function, Circuit B implements the OR function, and Circuit C implements the NOT (inverter) function. Diode-resistor logic gates cannot be cascaded indefinitely in series without signal degradation, because of the cumulative diode voltage drop; periodic restoration using an active device (e.g. a transistor stage) is required.",
+    "questions": [],
+    "learnings": []
+  }
+}
