@@ -228,7 +228,7 @@ test('the card keeps its creative, title, description and CTA on every viewport'
   const markup = api.promoMarkup(CONFIG.ads[0], CONFIG);
 
   // The advertisement has to say what it is selling, on a phone as much as on
-  // a desktop: the earlier mobile layout dropped the description entirely.
+  // a desktop: an earlier mobile layout dropped the description entirely.
   assert.match(markup, /class="promo-image"/);
   assert.match(markup, /class="promo-label"/);
   assert.match(markup, /class="promo-title"/);
@@ -236,26 +236,59 @@ test('the card keeps its creative, title, description and CTA on every viewport'
   assert.match(markup, /class="promo-cta"/);
 
   const css = fs.readFileSync(path.join(__dirname, '..', 'styles', 'promo.css'), 'utf8');
-  const mobile = css.slice(css.indexOf('@media (max-width: 640px)'));
-  assert.ok(mobile.length > 0, 'there is a mobile block');
+  const mobile = css.slice(css.indexOf('@media (max-width: 768px)'));
 
   // The description stays visible and readable rather than being hidden.
   const bodyRule = /\.promo-body\s*\{([^}]*)\}/.exec(mobile);
-  assert.ok(bodyRule, 'the mobile block styles .promo-body');
+  assert.ok(bodyRule, 'the small-screen block styles .promo-body');
   assert.match(bodyRule[1], /display:\s*-webkit-box/);
   assert.match(bodyRule[1], /-webkit-line-clamp:\s*2/);
   assert.doesNotMatch(bodyRule[1], /display:\s*none/);
 
-  // The copy column is the same anatomy as the desktop card, not a thumbnail
-  // strip: the image sits above the text at full width.
+  // Same anatomy as the desktop card, not a thumbnail strip beside the text.
   const linkRule = /\.promo-link\s*\{([^}]*)\}/.exec(mobile);
-  assert.ok(linkRule, 'the mobile block lays out .promo-link');
-  assert.match(linkRule[1], /flex-direction:\s*column/);
+  assert.ok(linkRule, 'the small-screen block lays out .promo-link');
+  assert.match(linkRule[1], /overflow-y:\s*auto/);
 
+  // Compact, but still a card with the creative on top.
   const imageRule = /\.promo-image\s*\{([^}]*)\}/.exec(mobile);
-  assert.ok(imageRule, 'the mobile block sizes .promo-image');
-  assert.match(imageRule[1], /width:\s*100%/);
-  assert.match(imageRule[1], /aspect-ratio:\s*16\s*\/\s*9/);
+  assert.ok(imageRule, 'the small-screen block sizes the creative');
+  assert.match(imageRule[1], /height:\s*6\.5rem/);
+});
+
+test('the card can never be wider than the screen or sized by the creative', () => {
+  const css = fs.readFileSync(path.join(__dirname, '..', 'styles', 'promo.css'), 'utf8');
+
+  // A fixed element with no width is shrink-to-fit: with this creative
+  // (1366x768) the card would be 1366px wide and drag the page sideways.
+  const cardRule = /\.promo-card\s*\{([^}]*)\}/.exec(css);
+  assert.ok(cardRule, 'there is a base .promo-card rule');
+  assert.match(cardRule[1], /width:\s*20rem/);
+  assert.match(cardRule[1], /max-width:\s*calc\(100vw - 2rem\)/);
+
+  const mobile = css.slice(css.indexOf('@media (max-width: 768px)'));
+  const mobileCard = /\.promo-card\s*\{([^}]*)\}/.exec(mobile);
+  assert.ok(mobileCard, 'the small-screen block sizes the card');
+  assert.match(mobileCard[1], /width:\s*100%/);
+  assert.match(mobileCard[1], /max-width:\s*22rem/);
+
+  // Offsets must exist without env(): a webview that does not understand
+  // env() must not drop `bottom`, which is what made the card scroll away
+  // with the page instead of staying pinned.
+  const rootRule = /\.promo-root\s*\{([^}]*)\}/.exec(css);
+  assert.ok(rootRule, 'there is a base .promo-root rule');
+  assert.match(rootRule[1], /position:\s*fixed/);
+  assert.match(rootRule[1], /right:\s*1rem/);
+  assert.match(rootRule[1], /bottom:\s*1rem/);
+  assert.doesNotMatch(rootRule[1], /env\(/, 'safe-area values live in @supports');
+
+  // The small-screen card is pinned across the full width of the viewport.
+  const mobileRoot = /\.promo-root\s*\{([^}]*)\}/.exec(mobile);
+  assert.ok(mobileRoot, 'the small-screen block pins the card');
+  assert.match(mobileRoot[1], /left:\s*0/);
+  assert.match(mobileRoot[1], /right:\s*0/);
+  assert.match(mobileRoot[1], /bottom:\s*0/);
+  assert.match(mobileRoot[1], /padding:\s*0 0\.75rem 0\.75rem/);
 });
 
 test('dismissing remembers the session and respects the configured days', () => {

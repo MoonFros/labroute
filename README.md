@@ -122,12 +122,14 @@ session**:
 - **Dismissing** — the `×` button, Escape, or following the ad. Two interactive
   elements only: the creative (one link covering image + text) and the close
   button.
-- **Layout** — on a desktop the card sits in the bottom-right corner; on a phone
-  (`max-width: 640px`) it is the same card made full width above the bottom
-  safe area: 16:9 creative on top, then *Sponsored*, the title, the description
-  (two lines) and the call-to-action button. Only the width changes, so the
-  advertisement always says what it is offering. Its close button sits over the
-  image, and the card never exceeds the viewport height.
+- **Layout** — on a desktop the card sits in the bottom-right corner. On small
+  screens (`max-width: 768px`) it is pinned across the bottom edge instead:
+  a short banner crop of the creative on top, then *Sponsored*, the title, the
+  description (two lines) and the call-to-action — about 230px tall, so it
+  never swallows the page, and always narrower than the viewport. The card has
+  an explicit width and its safe-area offsets live in `@supports`, so a
+  webview that does not understand `env()` still pins it correctly instead of
+  sizing it to the creative.
 - **Safety** — image and link values are validated (`assets/…` or https, never
   `javascript:`/`data:`/`//host`), and every text field is HTML-escaped.
 
