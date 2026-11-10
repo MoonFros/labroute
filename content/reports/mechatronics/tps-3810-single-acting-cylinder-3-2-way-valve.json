@@ -1,0 +1,200 @@
+{
+  "id": "tps-3810-single-acting-cylinder-3-2-way-valve",
+  "code": "TPS 3810",
+  "title": "Pneumatic Systems: Single Acting Cylinder Controlled by a 3/2-Way Valve",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "Pneumatics",
+    "Cylinders",
+    "DirectionalControlValves",
+    "FluidPower"
+  ],
+  "verified": true,
+  "file": "mechatronics/tps-3810-single-acting-cylinder-3-2-way-valve.json",
+  "content": {
+    "aim": "To understand and build a simple pneumatic system and a pneumatic logic gate, to identify the components of the TPS-3810 pneumatic trainer and to realise AND and OR logic with two 3/2 push-button valves.",
+    "objectives": [
+      "To understand what a pneumatic system is.",
+      "To identify the equipment used in the experiment: compressor, air pressure filter regulator, push-button valve, single acting cylinder and flow control valve.",
+      "To build a simple pneumatic system using a 3/2 push-button valve and a single acting cylinder.",
+      "To use the adjustable flow control valve on the cylinder to control the mass of air flowing through the system.",
+      "To build the AND and OR logic gates with two 3/2 push-button valves."
+    ],
+    "apparatus": [
+      "TPS-3810/B pneumatic metal base with PNE-381H air pressure filter regulator / pressure gauge",
+      "PNE-381B single acting cylinder 80 mm with flow control valve module",
+      "PNE-381C 3/2-way valve with push-button switch (two of them for the logic part)",
+      "Compressor",
+      "4 mm flexible tubes",
+      "T-branch"
+    ],
+    "theory": {
+      "text": "The word pneumatics comes from the Greek pneuma, which means air. Pneumatic technology uses compressed air to carry out automatic actions, and it is widely used in automated industry. A pneumatic system is one that uses pressurised air to produce mechanical motion. Pneumatic systems are divided into three types:\n\n• Pure pneumatic systems: only pneumatic parts such as cylinders, valves, control components and motors.\n\n• Electro-pneumatic systems: pneumatic parts together with electrical parts such as solenoid valves, limit switches, push buttons and relays.\n\n• Computerised pneumatic systems: electro-pneumatic systems that also have a controller such as a PLC.\n\nMain components.\n\n• Compressor. It supplies compressed air through a pipe system. Because a compressor is noisy and its output pulsates, an air tank is attached; the compressor fills the tank to a set pressure and stops, and starts again automatically when the tank pressure drops below a set value.\n\n• Air supply regulator (service unit). It drains the moisture in the compressed air and sets the pressure entering the system, which is read on the attached pressure gauge.\n\n• Single acting cylinder. A cylinder with a piston, rod and spring. Compressed air pushes the rod out; the spring inside returns it when the air is released from the cylinder port.\n\n• Flow control valve. Like a water tap, it sets the amount of air by turning a screw. Often a non-return valve is in parallel with it, so that the air is restricted in one direction only and flows freely in the other.\n\n• 3/2 push-button valve. A valve is described by its number of ports, its number of positions and its way of operation. This valve has 3 ports and 2 positions and is operated by a push button with spring return. Air pressure is supplied to port P, the activated element is connected to port A, and port R lets the air out of the element when the valve is released. In the normal position (button not pressed), air from A is exhausted through R. When the button is pressed, air flows from P to A and R is blocked.\n\nPressure and force. Pressure is force per unit area, measured in N/m² (pascal). 1 atm = 101 325 Pa ≈ 0.1 MPa ≈ 14.7 psi, and the force follows F = p × A (also F = m × a). Force may also be quoted in kgf (1 kgf = 9.81 N). Because the gauge on the trainer is not in atm, readings were converted to MPa or psi before the 2 atm setting.\n\nLogic. Two 3/2 valves in series (outlet of one into the inlet of the other) allow air through only when both are pressed: an AND function. Two valves in parallel on a T-branch allow air through when either one is pressed, or both: an OR function.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/tps-3810-single-acting-cylinder-3-2-way-valve_diagram_1.png",
+          "caption": "Figure 5.1: Schematic of the single acting cylinder controlled by a 3/2 push-button valve."
+        },
+        {
+          "src": "assets/lab_images/tps-3810-single-acting-cylinder-3-2-way-valve_diagram_2.png",
+          "caption": "Figure 5.2: Arrangement of the two 3/2 valves for the AND (series) and OR (parallel) conditions."
+        }
+      ]
+    },
+    "procedure": [
+      "Single acting cylinder with one 3/2 valve",
+      "Identify the 3/2 push-button valve module and check its air input (P), air output (A) and the release gate R, which is usually covered with a filtering net.",
+      "Install the 3/2 valve module on the system's panel, and then identify and install the 80 mm single acting cylinder module.",
+      "Identify the air input gate of the cylinder and the flow control valve on it.",
+      "Connect a pipe from the air supply regulator output to the P port of the 3/2 valve, and another pipe from the A port of the valve to the cylinder input.",
+      "Check that the setup matches the schematic, then open the supply and adjust the regulator to 2 atm.",
+      "Press the push button and watch the piston. It pops out while the button is held and pops in when the button is released.",
+      "Describe the path of the air when the button is pressed and when it is released, and mark each path in a different colour on a copy of the diagram.",
+      "Close the flow control valve by turning the screw clockwise and try to operate the cylinder.",
+      "Open the flow control valve slowly and operate the cylinder again, repeating until the cylinder works normally.",
+      "Press the push button for a short time, release it, and observe what the cylinder does.",
+      "Logic conditions with two 3/2 valves",
+      "OR (parallel): adjust the regulator to 2 atm, connect it to a T-branch, connect the T-branch to the two 3/2 valves in parallel, join the valve outlets with a second T-branch and connect that to the cylinder port. Press one valve, then the other, then both, and watch the cylinder.",
+      "Close the regulator knob at the top of the supply.",
+      "AND (series): connect the regulator to port P of the first valve, its outlet to the inlet port of the second valve, and the outlet of the second valve to the inlet of the cylinder. Press one valve, then the other, then both, and watch the cylinder.",
+      "State the logic gate condition for each arrangement."
+    ],
+    "precautions": [
+      "Ensure the tubes are connected properly to the various components.",
+      "Make sure the valve on the air supply is closed and there is no pressure in the pipes before connecting or changing anything.",
+      "Before opening the supply, make sure the regulator output is connected through a pipe to a closed valve input, otherwise air will flow freely into the room.",
+      "Set the air supply regulator to a constant 2 atm so that the pressure is the same for every run.",
+      "Avoid parallax error when reading the pressure gauge."
+    ],
+    "tables": [
+      {
+        "title": "Table 5.1: Single acting cylinder with one 3/2 valve at 2 atm",
+        "headers": [
+          "Action",
+          "Piston movement"
+        ],
+        "rows": [
+          [
+            "Push button pressed and held",
+            "Piston moves out and stays out"
+          ],
+          [
+            "Push button released",
+            "Piston returns (spring) to the start position"
+          ],
+          [
+            "Short press, then release",
+            "Piston moves part of the way out and then returns"
+          ],
+          [
+            "Flow control valve closed",
+            "Piston does not move, or moves very slowly"
+          ],
+          [
+            "Flow control valve opened gradually",
+            "Piston speed increases until the cylinder works normally"
+          ]
+        ]
+      },
+      {
+        "title": "Table 5.2: Logic conditions with two 3/2 push-button valves",
+        "headers": [
+          "Push button A",
+          "Push button B",
+          "Motion of piston: AND (series)",
+          "Motion of piston: OR (parallel)"
+        ],
+        "rows": [
+          [
+            "Press",
+            "No press",
+            "No motion",
+            "Moves out"
+          ],
+          [
+            "Press",
+            "Press",
+            "Moves out",
+            "Moves out"
+          ],
+          [
+            "No press",
+            "Press",
+            "No motion",
+            "Moves out"
+          ],
+          [
+            "No press",
+            "No press",
+            "No motion",
+            "No motion"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "discussion": "The cylinder moved out only while the valve was held, because the spring returns the valve and the cylinder as soon as the air is released through port R. Closing the flow control valve stopped the cylinder or made it very slow, since the flow into the cylinder is reduced; opening it again restored normal speed.\n\nThis shows that the flow control valve controls speed, not force.\n\nSeries valves behaved as an AND gate because air can only reach the cylinder when both paths are open; parallel valves behaved as an OR gate because either path can feed the cylinder. Sources of error were small air leaks at the push-in fittings, drift of the regulator setting, parallax when reading the gauge, and compressor pulsation.",
+    "conclusion": "A simple pneumatic circuit was built and operated. A single acting cylinder moves out under a 3/2 valve and returns by its spring, its speed is set by the flow control valve, and two 3/2 valves in series or parallel give AND or OR logic. At 2 atm the 80 mm cylinder can theoretically exert about 1019 N.",
+    "questions": [
+      {
+        "question": "What is the function of the spring in the push-button valve?",
+        "answer": "It returns the valve to its normal position when the button is released, so the cylinder port is connected to the exhaust again."
+      },
+      {
+        "question": "What is the function of the ports in the valve?",
+        "answer": "Port P takes the supply air, port A is the working port connected to the cylinder, and port R lets the air out of the cylinder when the valve is not pressed."
+      },
+      {
+        "question": "Advantages and disadvantages of a single acting cylinder.",
+        "answer": "Advantages: it uses less air, it needs only one air line and the spring gives an automatic return. Disadvantages: the stroke is limited by the spring length, part of the force is lost to the spring, and the return speed cannot be controlled as well as with a double acting cylinder."
+      },
+      {
+        "question": "Describe a use for the flow control valve (FCV).",
+        "answer": "It sets the speed of a cylinder, for example the closing speed of a pneumatic press or sliding door, so that it moves smoothly and safely."
+      },
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I learned how a basic pneumatic circuit works, how the valve ports act, and how series and parallel valves make AND and OR logic."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "Yes for the simple circuit, but the logic part is easier with a partner who presses the valves while someone else watches the cylinder."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "The steps go from simple to logic and are quick. Testing the flow control valve at different openings shows speed control clearly."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Keeping the push-in fittings airtight. Pushing each tube fully in and checking for hissing reduces this."
+      },
+      {
+        "question": "Name another method or apparatus.",
+        "answer": "A solenoid valve controlled electrically, or a PLC-controlled valve."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "Supply pressure (2 atm), cylinder bore (80 mm), valve type and state, flow control valve setting and the piston movement."
+      },
+      {
+        "question": "Discuss one measuring instrument.",
+        "answer": "The pressure gauge of the air supply regulator: a Bourdon-type gauge that reads supply pressure and is used to set 2 atm."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Pneumatic presses, clamping, sorting and packaging machines, automatic doors and two-hand safety controls."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "Pneumatics and fluid power."
+      }
+    ],
+    "learnings": [
+      "Identified the compressor, service unit, 3/2 push-button valve, single acting cylinder and flow control valve, and traced the air path through the valve in both positions.",
+      "Showed that the flow control valve sets cylinder speed, not force, and that two 3/2 valves in series give AND while two in parallel give OR.",
+      "Calculated the theoretical force of the 80 mm cylinder at 2 atm (about 1019 N) and understood why the measured rod force is lower."
+    ]
+  }
+}

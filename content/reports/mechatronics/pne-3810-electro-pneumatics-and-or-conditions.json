@@ -1,0 +1,221 @@
+{
+  "id": "pne-3810-electro-pneumatics-and-or-conditions",
+  "code": "PNE 3810",
+  "title": "Electro-pneumatics: Electric Conditioning Circuits (AND, OR)",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "ElectroPneumatics",
+    "SolenoidValves",
+    "LogicGates",
+    "SafetyControl"
+  ],
+  "verified": true,
+  "file": "mechatronics/pne-3810-electro-pneumatics-and-or-conditions.json",
+  "content": {
+    "aim": "To build AND and OR electrical conditioning circuits on the PNL-3810 electronic board and use them to operate a 3/2 solenoid valve and a single-acting pneumatic cylinder.",
+    "objectives": [
+      "To build a switches-in-series (\"AND\") condition on an electronic board and use it to control a pneumatic cylinder.",
+      "To build a switches-in-parallel (\"OR\") condition on the electronic board.",
+      "To understand how a solenoid valve interacts with the electronic board (PNL-3810) through the ladder diagram idea."
+    ],
+    "apparatus": [
+      "TPS-3810/B + PNE-381H pneumatic base and pressure regulator",
+      "PNE-381B single acting cylinder 80 mm with flow control valve module (push-button one-way control valve)",
+      "PNE-381Z 3/2-way solenoid valve, normally closed, spring return",
+      "PNL-3810 electronic board with 3 push buttons, 3 switches and 4 relays",
+      "12 V power supply",
+      "Banana wires",
+      "Compressor, 4 mm flexible tubes, air supply regulator"
+    ],
+    "theory": {
+      "text": "An electro-pneumatic system combines pneumatic parts with electrical parts such as solenoid valves, push buttons, switches and relays. Here a 3/2 solenoid valve, normally closed with spring return, is operated by an electric signal instead of by hand. When the coil SV1 is energised, the valve shifts and air passes from the supply to the single acting cylinder; when the coil is de-energised, the spring returns the valve and the cylinder exhausts. On the electronic board (PNL-3810), a red diode lights with a sound (a click) when the coil is energised, so it can be used to check that the electric part works before the air is used.\n\nControl machines such as an electric paper cutting machine or an electric press perform dangerous actions, so they need safety control. To operate a paper cutter, the worker has to press two separate push buttons so that both hands are away from the cutting place. This condition, where both push buttons must be pressed, is the AND operation: SV1 is activated only if PB1 and PB2 are pressed at the same time. Sometimes an operation must be possible from two or more places, for example operating a system with one push button or another. The condition that at least one push button is pressed is the OR operation: SV1 is activated when PB1 or PB2 or both are pressed.\n\nThese are shown on a ladder diagram: two vertical rails, with the push-button contacts and the coil SV1 on a rung between them. Contacts in series on one rung give AND; contacts on parallel branches give OR. On the board, the circuit is made with banana wires.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/pne-3810-electro-pneumatics-and-or-conditions_diagram_1.png",
+          "caption": "Figure 7.1: Ladder diagrams for the AND and OR conditions, and the pneumatic part."
+        }
+      ]
+    },
+    "procedure": [
+      "Precaution: make sure the air supply valve is closed and there is no pressure in the pipes.",
+      "Install the electric component module PNL-3810 (electronic board) on the system's panel.",
+      "Install the 80 mm single acting cylinder module on the panel.",
+      "Install the 3/2 solenoid valve module.",
+      "Install the 2/1 way push-button valve.",
+      "Build the pneumatic system from the schematic diagram: supply to the solenoid valve, solenoid valve to the cylinder.",
+      "Implement the electric system. First connect a simple short circuit on the electronic board with a banana wire; this makes the interaction between the solenoid valve and the PNL-3810 clear from the ladder diagram.",
+      "AND circuit: connect the banana wires on the electronic board in the AND arrangement (PB1 and PB2 in series with SV1).",
+      "Adjust the air pressure on the gauge to 2 atm using the knob on top of the gauge. Because the gauge has no atm scale, convert to MPa or psi.",
+      "Connect the 12 V power supply to the power inlet socket of the PNL-3810.",
+      "Press PB1 and check whether the diode produces red light with sound in the 3/2 solenoid valve. If it responds, press the green button on the flow valve and check the piston's behaviour.",
+      "Press PB2 and check whether it responds in the same way.",
+      "Press both push buttons and check the diode and the piston.",
+      "Change the banana wire plugs from the buttons to the switches (flip down = OFF, flip up = ON) and fill in the table.",
+      "OR circuit: connect the banana wires for the OR arrangement (PB1 and PB2 on parallel branches) and repeat the same checks with PB1, PB2 and both, then with the switches."
+    ],
+    "precautions": [
+      "Make sure the valve in the air supply is closed and there is no pressure in the pipes before connecting anything.",
+      "Check that the 12 V supply is connected to the PNL-3810 before testing.",
+      "The red diode and a click in the solenoid valve showed that the electric part worked before the piston was checked.",
+      "In the AND circuit, nothing happened when only one button was pressed.",
+      "Keep fingers clear of the cylinder rod when the air is on."
+    ],
+    "tables": [
+      {
+        "title": "Table 7.1: AND circuit",
+        "headers": [
+          "Switch 1",
+          "Switch 2",
+          "Operate (Yes/No)"
+        ],
+        "rows": [
+          [
+            "OFF",
+            "OFF",
+            "No"
+          ],
+          [
+            "OFF",
+            "ON",
+            "No"
+          ],
+          [
+            "ON",
+            "OFF",
+            "No"
+          ],
+          [
+            "ON",
+            "ON",
+            "Yes"
+          ]
+        ]
+      },
+      {
+        "title": "Table 7.2: OR circuit",
+        "headers": [
+          "Switch 1",
+          "Switch 2",
+          "Operate (Yes/No)"
+        ],
+        "rows": [
+          [
+            "OFF",
+            "OFF",
+            "No"
+          ],
+          [
+            "OFF",
+            "ON",
+            "Yes"
+          ],
+          [
+            "ON",
+            "OFF",
+            "Yes"
+          ],
+          [
+            "ON",
+            "ON",
+            "Yes"
+          ]
+        ]
+      },
+      {
+        "title": "Table 7.3: Combined truth table (1 = operated)",
+        "headers": [
+          "A",
+          "B",
+          "Y (AND)",
+          "Y (OR)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "discussion": "The AND condition gives a two-hand safety control: the machine cannot operate unless both hands are on the buttons. The OR condition lets a machine be started from two places. The same board and valve were used for both and only the banana wire connections were changed, so the logic is wired, not built into the valve. Possible errors are a loose banana plug, a flat supply, air leaks and pressure drifting from 2 atm, and mixing up the PB and switch connections.",
+    "conclusion": "AND and OR conditions were built on the PNL-3810 board and used to operate a 3/2 solenoid valve and single acting cylinder. The AND circuit operated only when both switches were on; the OR circuit operated when either or both were on.",
+    "questions": [
+      {
+        "question": "Fill in the AND function truth table (input = manual valve state, output = piston; operated",
+        "answer": "A=0,B=0: Y=0; A=0,B=1: Y=0; A=1,B=0: Y=0; A=1,B=1: Y=1."
+      },
+      {
+        "question": "Fill in the OR function truth table.",
+        "answer": "A=0,B=0: Y=0; A=0,B=1: Y=1; A=1,B=0: Y=1; A=1,B=1: Y=1."
+      },
+      {
+        "question": "Give two additional examples for using each circuit.",
+        "answer": "AND: (1) a press brake or guillotine that needs both hands on two buttons; (2) a machine guard interlock where the door must be closed and the start button pressed. OR: (1) a door or gate that can be opened from inside or outside; (2) a lift called from any floor button."
+      },
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I learned how electrical conditions control a pneumatic valve and how AND and OR are wired with banana wires."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "Yes, but it is better with two people so one wires the board while the other checks the valve and piston."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "Checking the electric part first (diode and click) and only then the air is a safe order."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Wiring the OR arrangement correctly. A printed wiring diagram on the board would help."
+      },
+      {
+        "question": "Name another method or apparatus.",
+        "answer": "A PLC could be used in place of the board; or a relay circuit."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "Supply pressure (2 atm), supply voltage (12 V), state of PB1/PB2 and the valve and piston response."
+      },
+      {
+        "question": "Discuss one measuring instrument.",
+        "answer": "The pressure gauge, which reads the regulator output; it has no atm scale so readings were converted to MPa or psi."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Safety controls on presses and cutters, and multi-point control of doors and conveyors."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "Electro-pneumatics and control logic."
+      }
+    ],
+    "learnings": [
+      "Verified on the board that contacts in series give Y = A · B and contacts in parallel give Y = A + B for the solenoid coil output.",
+      "Used the red diode and the click of the solenoid valve to confirm the electrical condition before admitting air to the cylinder.",
+      "Linked the logic to real safety practice: two-hand AND control for presses and cutters, OR control for starting from more than one station."
+    ]
+  }
+}

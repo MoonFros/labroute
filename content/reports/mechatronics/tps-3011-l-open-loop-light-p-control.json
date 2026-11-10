@@ -1,0 +1,206 @@
+{
+  "id": "tps-3011-l-open-loop-light-p-control",
+  "code": "TPS 3011-L",
+  "title": "Open Loop Light P Control",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "ProcessControl",
+    "LightSensor",
+    "LDR",
+    "OpenLoopControl"
+  ],
+  "verified": true,
+  "file": "mechatronics/tps-3011-l-open-loop-light-p-control.json",
+  "content": {
+    "aim": "To investigate open-loop proportional control of lamp brightness from a reference voltage and to measure the resulting light intensity with an LDR light sensor, including the effect of the sensor's thermal environment and of blocking the light path.",
+    "objectives": [
+      "To operate a lamp in reaction to a reference voltage.",
+      "To measure the light intensity with a light sensor (LDR / phototransistor).",
+      "To see how changes in the ambient light affect the reading.",
+      "To observe the dynamic reaction of the lamp and the sensor to a step signal."
+    ],
+    "apparatus": [
+      "TPS-3011 trainer box (SESLAB, power amplifier, lamp L, light sensor PT)",
+      "Voltmeter / multi-tester",
+      "Banana wires",
+      "PC with S-SCOPE",
+      "A few sheets of white paper"
+    ],
+    "theory": {
+      "text": "In this experiment the reference voltage Vref1 is fed into the power amplifier, and the amplifier output drives the incandescent lamp of the TPS-3011. The lamp is a simple open loop actuator: the brightness depends only on the voltage applied, and nothing in the circuit checks the actual light.\n\nThe light sensor faces the lamp. An LDR (light dependent resistor) changes its resistance with the light that falls on it, and the sensor circuit turns this into a voltage Vpt that is in direct proportion to the intensity of the light. The ratio of sensor voltage to lamp voltage is the sensor gain,\n\nGpt = Vpt / Vp.\n\nThe light from an incandescent lamp rises faster than the voltage at first because the filament must heat up before it glows. The filament also has thermal inertia: it takes a measurable time to heat up or cool down, so the lamp reacts slowly to a step in voltage. The sensor reacts much faster than the filament, so on a scope the sensor signal follows the input quickly while the lamp light rises and falls slowly. With a square-wave input the lamp is seen to blink.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/tps-3011-l-open-loop-light-p-control_diagram_1.png",
+          "caption": "Figure 3.1: Arrangement of the lamp and light sensor."
+        }
+      ]
+    },
+    "procedure": [
+      "Connect the TPS-3011 trainer box to the power supply and to the laptop, open S-SCOPE, and plug the supply into the mains.",
+      "Connect Vref1 to the power amplifier input, the amplifier output to the L+ terminal of the lamp and L- to ground.",
+      "Switch on the trainer and set the amplifier gain potentiometer to 1. Change Vref1 and watch how the light intensity of the lamp changes.",
+      "Set the multi-meter to DCV on the 20 V range and connect it between the amplifier output and ground (or use CH1 of the S-SCOPE).",
+      "Raise Vref1 to maximum and increase the amplifier gain slowly until the amplifier output is 4.5 V.",
+      "Bring Vref1 back until the amplifier output is 0 V.",
+      "Connect the PT terminal of the sensor to the voltmeter component of the trainer box to measure the light intensity.",
+      "Change Vref1 so that Vp takes the values 0.5, 1.0 ... 4.5 V and record Vp and Vpt at each step. Calculate Gpt = Vpt / Vp.",
+      "Turn Vref1 to maximum and connect the multi-meter between the PT terminal and ground.",
+      "Insert one sheet of white paper between the lamp and the sensor and note the change in the PT voltage. Insert a second sheet and note again.",
+      "Remove the papers.",
+      "Step signal. Connect the amplifier input to Vref2 instead of Vref1, CH1 of the S-SCOPE to the amplifier output and CH2 to the lamp L+ terminal.",
+      "Set the time base to 50 ms/cm and observe the two signals."
+    ],
+    "precautions": [
+      "Make sure the banana wires are on the correct sockets before the trainer box is switched on.",
+      "Set the SESLAB to manual before operating components on the board and to auto before using the software.",
+      "The lamp gets hot; the sensor should not be touched while the lamp is on.",
+      "Room light also falls on the sensor, so the readings were taken in the same room lighting and the test was repeated with the same distance between lamp and sensor.",
+      "The PT voltage went down when paper was put in the path and returned when it was removed."
+    ],
+    "tables": [
+      {
+        "title": "Table 3.1: Sensor voltage and gain at different lamp voltages",
+        "headers": [
+          "",
+          "0.5",
+          "1.0",
+          "1.5",
+          "2.0",
+          "2.5",
+          "3.0",
+          "3.5",
+          "4.0",
+          "4.5"
+        ],
+        "rows": [
+          [
+            "Vp (V)",
+            "0.5",
+            "1.0",
+            "1.5",
+            "2.0",
+            "2.5",
+            "3.0",
+            "3.5",
+            "4.0",
+            "4.5"
+          ],
+          [
+            "Vpt (V)",
+            "0.20",
+            "0.40",
+            "0.70",
+            "1.10",
+            "1.60",
+            "2.10",
+            "2.60",
+            "3.00",
+            "3.40"
+          ],
+          [
+            "Gpt = Vpt / Vp",
+            "0.40",
+            "0.40",
+            "0.47",
+            "0.55",
+            "0.64",
+            "0.70",
+            "0.74",
+            "0.75",
+            "0.76"
+          ]
+        ]
+      },
+      {
+        "title": "Table 3.2: Effect of paper between the lamp and the sensor (Vp = 4.5 V)",
+        "headers": [
+          "Condition",
+          "PT voltage (V)",
+          "Change from no paper"
+        ],
+        "rows": [
+          [
+            "No paper",
+            "3.40",
+            "—"
+          ],
+          [
+            "One sheet of paper",
+            "2.50",
+            "-26 %"
+          ],
+          [
+            "Two sheets of paper",
+            "1.80",
+            "-47 %"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "src": "assets/lab_images/tps-3011-l-open-loop-light-p-control_graph_1.png",
+        "caption": "Figure 3.2: Sensor voltage against lamp voltage (Table 3.1)."
+      },
+      {
+        "src": "assets/lab_images/tps-3011-l-open-loop-light-p-control_graph_2.png",
+        "caption": "Figure 3.3: Sensor gain against lamp voltage."
+      },
+      {
+        "src": "assets/lab_images/tps-3011-l-open-loop-light-p-control_graph_3.png",
+        "caption": "Figure 3.4: Sketch of the step response: the sensor reacts quickly, the lamp slowly."
+      }
+    ],
+    "discussion": "The sensor voltage increased steadily with the lamp voltage, so the sensor can be used to measure light intensity. The curve bends upwards at low voltage because the filament must warm up before it gives much light. The step response shows the main weakness of the lamp: its thermal inertia makes it slow, while the sensor is quick. In an open loop circuit, ambient light, the lamp ageing and the distance to the sensor all change the reading with no correction.\n\nErrors came from stray room light, the position of the sensor relative to the lamp, meter reading error, and changing lamp temperature during the test. Allowing the lamp to settle before each reading reduces the last error.",
+    "conclusion": "The lamp brightness was controlled by the reference voltage and measured with a light sensor. The sensor voltage rose from 0.20 V to 3.40 V as the lamp voltage went from 0.5 V to 4.5 V. Placing paper between the lamp and the sensor reduced the reading, and the step test showed that the lamp is much slower than the sensor.",
+    "questions": [
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "How to drive a lamp from a reference voltage, how a light sensor gives a voltage, and why a lamp reacts slowly to a step."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "Yes for the wiring and readings, but a partner makes the step test easier because two signals are watched at once."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "It is simple and quick. Using the paper sheets is an easy way to show the effect of light blocking without special equipment."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Keeping the room light constant. Doing the test in a darker room or covering the sensor would reduce this."
+      },
+      {
+        "question": "Name another method or apparatus.",
+        "answer": "A lux meter or a photodiode circuit."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "Vref1, lamp voltage Vp, sensor voltage Vpt, gain Gpt, time base and trigger setting."
+      },
+      {
+        "question": "Discuss one measuring instrument.",
+        "answer": "The LDR light sensor: its resistance drops as light increases, and the circuit gives a voltage proportional to the light."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Automatic street lights, camera exposure, room brightness control and light-level monitoring in greenhouses."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "Process control; open loop systems and sensors."
+      },
+      {
+        "question": "Suggestions made during the experiment.",
+        "answer": "Shield the sensor from room light with a tube or cover."
+      }
+    ],
+    "learnings": [
+      "Learned how a reference voltage and power amplifier can drive a lamp, and how an LDR converts the light it receives into a measurable voltage.",
+      "Observed the thermal inertia of an incandescent filament: the lamp responds slowly to a step input while the sensor responds almost immediately.",
+      "Quantified light attenuation with sheets of paper (26 % for one sheet, 47 % for two), demonstrating why an open-loop light system is sensitive to its surroundings."
+    ]
+  }
+}

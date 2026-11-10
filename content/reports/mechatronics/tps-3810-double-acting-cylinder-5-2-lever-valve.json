@@ -1,0 +1,141 @@
+{
+  "id": "tps-3810-double-acting-cylinder-5-2-lever-valve",
+  "code": "TPS 3810",
+  "title": "Controlling a Double Acting Cylinder Directly with a 5/2 Lever Valve",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "Pneumatics",
+    "DoubleActingCylinder",
+    "DirectionalControlValves",
+    "FluidPower"
+  ],
+  "verified": true,
+  "file": "mechatronics/tps-3810-double-acting-cylinder-5-2-lever-valve.json",
+  "content": {
+    "aim": "To operate a double-acting cylinder directly from a single 5/2-way manual lever valve, to trace the air path for each handle position and to control the piston speed with the cylinder flow control valves.",
+    "objectives": [
+      "To operate a double acting cylinder directly with a single 5/2-way manual lever valve.",
+      "To identify the ports of the 5/2 valve (air input, the two outputs and the exhausts).",
+      "To trace the path of the air for each position of the handle.",
+      "To change the cylinder speed with the flow control valves."
+    ],
+    "apparatus": [
+      "TPS-3810/B pneumatic base with PNE-381H air pressure filter regulator",
+      "PNE-381A double acting cylinder 100 mm with flow control valves module",
+      "PNE-381D 5/2-way valve with selector switch (manual lever)",
+      "Compressor",
+      "4 mm flexible tubes"
+    ],
+    "theory": {
+      "text": "In the earlier experiment a single acting cylinder was operated with a 3/2 valve. A double acting cylinder is driven by air in both directions, so it needs a valve that can supply one side and exhaust the other. A single 5/2-way valve with a selector (lever) does this.\n\nThe valve has 5 ports: P for the air supply, A and B for the air outputs, and two exhaust (release) ports R. It has 2 fixed positions, set by the handle (up or down). With the handle up, the P input is connected to port A, and port B is connected to the exhaust. With the handle down, P is connected to port B, and port A is connected to the exhaust.\n\nWhen the cylinder extends, air at the supply pressure acts on the full piston area; when it retracts, the rod takes up part of the area, so the force is smaller. For the 100 mm bore cylinder at 2 atm (202 650 Pa), A = π(0.100)²/4 = 7.85 × 10-3 m², so the theoretical extending force is F = pA ≈ 1592 N (about 162 kgf). The speed is changed with the flow control valves on the cylinder ports.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/tps-3810-double-acting-cylinder-5-2-lever-valve_diagram_1.png",
+          "caption": "Figure 6.1: 5/2 lever valve controlling the double acting cylinder."
+        }
+      ]
+    },
+    "procedure": [
+      "Check the 5/2 manual lever valve and identify the air input gate (P), the output gates (A and B), the air release gates (usually covered with a filtering net) and the control inputs.",
+      "Install the 5/2 manual lever valve module on the system's panel.",
+      "Install the 100 mm double acting cylinder module on the panel.",
+      "Build the circuit in the figure: supply regulator to P, port A to one cylinder port, port B to the other.",
+      "Set the air supply regulator to 2 atm.",
+      "Lower the handle and watch the piston. It pops out.",
+      "Raise the handle. The piston pops in.",
+      "Describe the path the air follows in each of the operations.",
+      "Copy the system diagram into your notebook and mark the air path of each operation in a different colour.",
+      "Change the flow control valves and operate the cylinder again until you get different piston speeds."
+    ],
+    "precautions": [
+      "Ensure the valve in the air supply is closed and there is no pressure in the pipes before connecting.",
+      "Both the extend and retract movements need the handle to be held in its end position; the valve stays where it is put (it has two fixed positions).",
+      "The piston speed depended on how far the flow control valves were opened.",
+      "Keep hands away from the rod while the cylinder moves."
+    ],
+    "tables": [
+      {
+        "title": "Table 6.1: Lever positions, valve connections and piston movement",
+        "headers": [
+          "Handle position",
+          "Valve connection",
+          "Piston movement"
+        ],
+        "rows": [
+          [
+            "Down",
+            "P to B; A to exhaust R",
+            "Piston moves out (extends)"
+          ],
+          [
+            "Up",
+            "P to A; B to exhaust R",
+            "Piston moves in (retracts)"
+          ],
+          [
+            "Flow control valve nearly closed",
+            "Same connections",
+            "Slow movement"
+          ],
+          [
+            "Flow control valve open",
+            "Same connections",
+            "Fast movement"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "discussion": "One 5/2 lever valve was enough to drive the double acting cylinder in both directions, which is simpler than the earlier arrangement with more valves. Unlike the spring-return 3/2 valve, the lever valve stays in the position in which it is left, so the cylinder stays where it was moved. The flow control valves let the speed be adjusted without changing the supply pressure.\n\nSources of error were air leaks at fittings, the regulator drifting from 2 atm, and judging speed by eye.\n\nUsing a stopwatch over the stroke would give a number for the speed.",
+    "conclusion": "A double acting cylinder was controlled directly by a 5/2 lever valve. With the handle down the piston extends and with the handle up it retracts, and the speed is adjusted by the flow control valves.",
+    "questions": [
+      {
+        "question": "Describe at least 3 examples of using a similar control circuit with a flow control valve.",
+        "answer": "(1) A sliding door or gate that must open and close slowly. (2) A clamping fixture on a machine that must close gently on the workpiece. (3) A pneumatic press or stamping machine with a controlled pressing speed. (4) A conveyor diverter or lifting platform where smooth movement is needed."
+      },
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I learned how the 5/2 valve connects its ports in each position, and that one valve is enough to drive a double acting cylinder both ways."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "Yes, since only one valve is handled; it is easier with a partner to watch the cylinder and note the speed."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "Short and clear. Colouring the air path on a copy of the diagram made the valve action easy to understand."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Tracing the air path through the crossing lines inside the valve symbol. Drawing it twice, once for each handle position, helps."
+      },
+      {
+        "question": "Name another method or apparatus.",
+        "answer": "A 5/2 solenoid valve controlled by a switch or PLC, or two 3/2 valves."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "Supply pressure (2 atm), cylinder bore (100 mm), handle position and flow control valve opening."
+      },
+      {
+        "question": "Discuss one measuring instrument.",
+        "answer": "The pressure gauge on the regulator, used to hold the supply at 2 atm."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Lifts, material handling, clamping, doors and presses use double acting cylinders with 5/2 valves."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "Pneumatics and fluid power."
+      }
+    ],
+    "learnings": [
+      "Traced how a 5/2 valve swaps supply and exhaust between ports A and B as the lever moves, driving the piston out or in.",
+      "Found that one 5/2 lever valve replaces the pair of 3/2 valves needed for the same double-acting motion, and that the lever holds its position.",
+      "Calculated the extending force of the 100 mm bore cylinder at 2 atm (about 1592 N) and noted that retraction force is lower because of the rod area."
+    ]
+  }
+}
