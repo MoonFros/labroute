@@ -1,0 +1,169 @@
+{
+  "id": "tps-3011-process-control-trainer-seslab-s-scope",
+  "code": "TPS 3011",
+  "title": "Introduction to the Process Control Trainer, SESLAB and S-SCOPE",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "ProcessControl",
+    "SESLAB",
+    "Instrumentation",
+    "Oscilloscope"
+  ],
+  "verified": true,
+  "file": "mechatronics/tps-3011-process-control-trainer-seslab-s-scope.json",
+  "content": {
+    "aim": "To set up the TPS-3011 process control trainer with the SESLAB unit, establish communication with the S-SCOPE software and use it as a two-channel oscilloscope for measuring reference voltages, time intervals and signal period.",
+    "objectives": [
+      "To understand what a control system and process control are, and what the words system and control mean on their own.",
+      "To identify the sections of the TPS-3011 process control trainer box (motor-dynamo, lamp-light sensor, amplifiers, multi-tester and the two reference voltages).",
+      "To connect the trainer to a computer, find the correct COM port and open communication with the SESLAB unit.",
+      "To use the S-SCOPE software as an oscilloscope: choose channels, time base, trigger mode and sampling mode, and measure a signal with the marker lines.",
+      "To take simple DC voltage measurements with the multi-tester so that later experiments can be done correctly."
+    ],
+    "apparatus": [
+      "TPS-3011 trainer box with SESLAB unit",
+      "Power supply and mains cord",
+      "PC or laptop with the S-SCOPE software",
+      "Communication cable (D9 / USB) and USB plug",
+      "Banana wires",
+      "Multi-tester (multi-meter)"
+    ],
+    "theory": {
+      "text": "A system is a combination of components that are connected together and work as one unit to produce a particular result. Control is the ability to hold a command over a set of variables, that is, to decide when and how a state changes. A control system is therefore a device or group of devices that commands the behaviour of other devices so that a task is carried out. Process control is the act of changing the state of a system in order to reach a specific goal, for example holding a motor at a chosen speed or a lamp at a chosen brightness.\n\nThe TPS-3011 trainer box carries the parts needed for many process-control experiments: a motor with a dynamo for speed control, a lamp with a thermistor for temperature control, a lamp with a light sensor for light control, a level control unit, a power amplifier, a feedback amplifier, a feedback attenuator, an adder, a dual-stage amplifier, PI and PD amplifiers, a multi-tester (voltmeter) and two variable reference voltages, Vref1 and Vref2.\n\nThe two reference voltages are produced by the SESLAB unit. When the trainer is in manual mode, the two potentiometers on the box set Vref1 and Vref2. When it is in auto mode, the potentiometers have no effect and the voltages are set by the amplitude and frequency bars on the computer screen. The SESLAB also has two analogue inputs (IN1/V1 and IN2/V2), which turn the PC into a two-channel oscilloscope, called S-SCOPE.\n\nAn oscilloscope draws voltage against time. The time base (for example 50 ms/cm) fixes how much time each horizontal division represents. The trigger tells the scope when to start a sweep: in Free mode it does not wait for any level, while Rise and Fall start the sweep when the signal crosses the chosen level going up or going down. Sampling can be One Cycle (one sample cycle is requested, shown and frozen) or Free Run (the PC keeps asking for new cycles). For constant voltages the Free mode is enough, but a One Cycle sample is better when the data on the screen has to be analysed.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/tps-3011-process-control-trainer-seslab-s-scope_diagram_1.png",
+          "caption": "Figure 1.1: Connection between the PC, the TPS-3011 trainer and the multi-meter."
+        }
+      ]
+    },
+    "procedure": [
+      "Setting up the trainer and the software",
+      "Connect the trainer to its power supply and plug the power supply into the mains.",
+      "Turn on the main switch of the trainer.",
+      "Join the trainer to the computer with the serial communication cable (the D9 socket goes to the trainer and the USB plug goes to the computer).",
+      "Set the manual/auto switch on the SESLAB module to auto and run the S-SCOPE software.",
+      "In the S-SCOPE window, set the number in the OPEN COM box to the communication number of your computer.",
+      "Finding the correct COM port",
+      "Open the file manager, right-click This PC (or My Computer) and choose Manage or Properties.",
+      "From Manage, open Computer Management and select Device Manager. From Properties, scroll to Device Manager under the system menu.",
+      "Expand Ports (COM & LPT) and read the number in the line \"Silicon Labs CP210x USB to UART Bridge (COM n)\". The n is the port number to use.",
+      "Click the OPEN COM button. If the link is good, the name of the trainer and the SESLAB version appear in the title bar.",
+      "If communication fails, check that the trainer is on, that the manual/auto switch is on auto, that the cord is in the right socket, that the cable is firmly connected and that the right COM number was chosen.",
+      "Using the S-SCOPE",
+      "Connect Vref1 and Vref2 to the IN1 and IN2 inputs so that the reference voltages can be viewed.",
+      "Set the time base to 50 ms/cm and select the trigger type and level (Free, Rise or Fall).",
+      "Select channel 1, channel 2 or both by clicking on the channel button (one click to select, another to cancel). Select Chopper mode when both channels are used.",
+      "Set the scope to Free Run and watch the signal; then change Vref1 and Vref2 with the voltage bars.",
+      "Change the time base to 20 ms/cm and observe the action on Vref2. Change the trigger to Fall and then to Rise and note the difference.",
+      "Set the scope to One Cycle to freeze the last sample.",
+      "Activate the two marker lines (green and yellow) with the Active button and move each one with the arrow buttons to read voltage and time differences."
+    ],
+    "precautions": [
+      "Make sure the banana wires are plugged into the correct sockets before the trainer box is switched on.",
+      "Set the SESLAB to manual before operating the components on the board by hand, and to auto before using the software.",
+      "The program remembers the last COM port used, so click OPEN COM before running if you do not want to change it.",
+      "A wrong COM number was the most common reason for failed communication."
+    ],
+    "tables": [
+      {
+        "title": "Table 1: S-SCOPE settings and the observations made at each setting",
+        "headers": [
+          "Setting changed",
+          "Observation"
+        ],
+        "rows": [
+          [
+            "Manual/auto switch on auto",
+            "Potentiometers on the box stop controlling Vref1/Vref2; the bars on the screen control them."
+          ],
+          [
+            "Time base 50 ms/cm",
+            "About one half-second of signal is shown across the 10 divisions; slow signals look smooth."
+          ],
+          [
+            "Time base 20 ms/cm",
+            "The signal is stretched out horizontally, so fewer cycles are visible."
+          ],
+          [
+            "Trigger: Free",
+            "The square wave is not steady on the screen because the scope does not wait for the trigger level."
+          ],
+          [
+            "Trigger: Rise / Fall",
+            "The picture locks to the rising or falling edge and the waveform becomes steady."
+          ],
+          [
+            "Sampling: Free Run",
+            "The picture is refreshed all the time."
+          ],
+          [
+            "Sampling: One Cycle",
+            "A frozen picture of the last sample, suitable for measuring with the markers."
+          ],
+          [
+            "Marker lines",
+            "Voltage and time differences between the two lines can be read directly."
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "src": "assets/lab_images/tps-3011-process-control-trainer-seslab-s-scope_graph_1.png",
+        "caption": "Figure 1.2: Typical S-SCOPE display, with the sine reference on channel 1 and the square reference on channel 2."
+      }
+    ],
+    "discussion": "The experiment showed that the S-SCOPE can replace a bench oscilloscope for slow signals, as long as the port number is right and the SESLAB is on auto. The square wave looked unstable in Free mode simply because no trigger level was being used; once the Rise or Fall trigger was chosen, it became steady. The main sources of error were reading the trace against the grid by eye, placing the markers slightly off the edge of a cycle, and the limited sampling rate of the SESLAB, which makes fast signals look rough.",
+    "conclusion": "We connected the TPS-3011 trainer to the computer, found and set the correct COM port, and used S-SCOPE to view reference voltages with different time bases, triggers and sampling modes. These skills are needed in every later process-control experiment, where voltages from the amplifier, dynamo and light sensor are measured.",
+    "questions": [
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I learned how the trainer talks to the computer, how to find the COM port in Device Manager, and how to read a voltage and a time interval from the S-SCOPE screen."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "Yes, it is possible, because it is mostly connecting and setting up. It is quicker with a partner, one person handling the trainer and the other watching the screen."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "The steps are in a sensible order, from power and cabling to software settings, so it saves time. The only risk is a wrong COM number, which the Device Manager step removes."
+      },
+      {
+        "question": "What was the most difficult part and how can it be reduced?",
+        "answer": "Getting communication to open the first time. A short checklist (trainer on, switch on auto, cable in, right COM) beside the trainer would help."
+      },
+      {
+        "question": "Name another method or apparatus for the same job.",
+        "answer": "A bench digital oscilloscope or a digital multi-meter with logging."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "COM port number, time base, trigger mode and level, sampling mode, channel selection and the Vref amplitude."
+      },
+      {
+        "question": "Discuss one measuring instrument used.",
+        "answer": "The multi-tester set to DCV (20 V range) measures a steady voltage by connecting its probes across the point and ground; its accuracy is better than reading the scope trace."
+      },
+      {
+        "question": "Practical relevance of the experiment.",
+        "answer": "Every automatic system, from a factory motor drive to a heating controller, is set up and checked with a reference voltage and a scope or meter in just this way."
+      },
+      {
+        "question": "Section of the course this experiment relates to.",
+        "answer": "Process control and instrumentation."
+      },
+      {
+        "question": "Suggestions made while carrying out the experiment.",
+        "answer": "Label the cables and write the COM number on the trainer after the first successful connection."
+      }
+    ],
+    "learnings": [
+      "Gained a working definition of a system, control and process control, and identified every functional block on the TPS-3011 trainer.",
+      "Learned to read a COM port number from Device Manager and to open communication with the SESLAB unit in S-SCOPE.",
+      "Can now select time base, trigger mode, sampling mode and channel on a software oscilloscope, and measure voltage and time with the marker lines."
+    ]
+  }
+}

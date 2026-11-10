@@ -1,0 +1,219 @@
+{
+  "id": "hyd-3860-electro-hydraulics-and-or-conditions",
+  "code": "HYD 3860",
+  "title": "Electro-hydraulics: Electric Conditioning Circuits (AND, OR)",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "ElectroHydraulics",
+    "SolenoidValves",
+    "LogicGates",
+    "FluidPower"
+  ],
+  "verified": true,
+  "file": "mechatronics/hyd-3860-electro-hydraulics-and-or-conditions.json",
+  "content": {
+    "aim": "To connect switches in series (AND) and in parallel (OR) on the PNL-3810 electronic board and use the resulting conditions to operate a 4/2 solenoid valve and a single-acting hydraulic cylinder.",
+    "objectives": [
+      "To connect switches in series (\"AND\" condition) on an electronic board to operate a hydraulic cylinder.",
+      "To connect switches in parallel (\"OR\" condition) on an electronic board to operate a hydraulic cylinder."
+    ],
+    "apparatus": [
+      "Power unit",
+      "TPS-3860B hydraulic metal base and TPS-3860/E hydraulic accessories",
+      "HYD-386B single acting cylinder 50 mm module",
+      "HYD-386O single acting cylinder 50 mm module (as listed in the manual)",
+      "4/2 way single solenoid valve module",
+      "PNL-3810 electronic board with 3 push buttons, 3 switches and 4 relays for the hydraulic system",
+      "12 V power supply",
+      "Banana wires"
+    ],
+    "theory": {
+      "text": "An electro-hydraulic system is a hydraulic system in which the valves are operated by electrical signals, so the oil circuit is controlled by solenoid valves, push buttons and relays. In this experiment a 4/2 single solenoid valve with spring return directs the oil to a 50 mm single acting cylinder. When the coil SV1 is energised, the valve shifts and oil flows to the cylinder; when the coil is de-energised, the spring returns the valve.\n\nControl machines such as an electric paper cutter or an electric press perform dangerous actions, so safety control is needed. To operate a paper cutter the worker must press two separate push buttons so that both hands are away from the cutting place. This condition (both push buttons pressed) is called the AND operation: SV1 is activated only if PB1 and PB2 are pressed together. The condition for operating the machine in which at least one push button is pressed is called the OR operation: SV1 is activated when PB1 is pressed, or PB2 is pressed, or both.\n\nSeries contacts on one rung of the ladder diagram give AND (Y = A · B), and parallel contacts give OR (Y = A + B). The contacts are wired on the electronic board (PNL-3810) with banana wires. As in the electro-pneumatic experiment, a red diode lights with a click when the 4/2 solenoid coil is energised.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/hyd-3860-electro-hydraulics-and-or-conditions_diagram_1.png",
+          "caption": "Figure 9.1: Ladder diagrams for the AND and OR conditions, and the hydraulic part."
+        }
+      ]
+    },
+    "procedure": [
+      "Install the electric component module PNL-3810 on the system's panel.",
+      "Install the single acting cylinder module on the system's panel.",
+      "Install the 4/2 single solenoid valve module.",
+      "Implement the hydraulic system described in the diagram.",
+      "Implement the electric system. First connect a simple short circuit on the electronic board with a banana wire; this lets us understand the interaction between the solenoid valve and the PNL-3810 from the ladder diagram idea.",
+      "AND circuit: connect the banana wires on the electronic board in the AND arrangement.",
+      "Connect the 12 V power supply to the power inlet socket of the PNL-3810.",
+      "Press PB1 and check that the diode produces red light with sound in the 4/2 solenoid control valve. If it responds, press the green button on the flow valve and check the piston's behaviour.",
+      "Press PB2 and check that it responds in the same way.",
+      "Press both push buttons and check the diode and the piston.",
+      "Fill in the AND table.",
+      "OR circuit: implement the electric system in the OR arrangement, and press PB1, then PB2, then both, checking the diode and the piston each time.",
+      "Fill in the OR table."
+    ],
+    "precautions": [
+      "Make sure the power unit is OFF and the pressure gauge reads zero before connecting or disconnecting components.",
+      "Ask the instructor for permission before switching on the power unit.",
+      "The red diode and a click in the solenoid valve showed that the electric part was working before the oil circuit was used.",
+      "In the AND circuit nothing happened when only one button was pressed.",
+      "Keep clear of the cylinder rod when the pump is running."
+    ],
+    "tables": [
+      {
+        "title": "Table 9.1: AND circuit",
+        "headers": [
+          "Switch 1",
+          "Switch 2",
+          "Operate (Yes/No)"
+        ],
+        "rows": [
+          [
+            "Not pressed",
+            "Not pressed",
+            "No"
+          ],
+          [
+            "Not pressed",
+            "Pressed",
+            "No"
+          ],
+          [
+            "Pressed",
+            "Not pressed",
+            "No"
+          ],
+          [
+            "Pressed",
+            "Pressed",
+            "Yes"
+          ]
+        ]
+      },
+      {
+        "title": "Table 9.2: OR circuit",
+        "headers": [
+          "Switch 1",
+          "Switch 2",
+          "Operate (Yes/No)"
+        ],
+        "rows": [
+          [
+            "Not pressed",
+            "Not pressed",
+            "No"
+          ],
+          [
+            "Not pressed",
+            "Pressed",
+            "Yes"
+          ],
+          [
+            "Pressed",
+            "Not pressed",
+            "Yes"
+          ],
+          [
+            "Pressed",
+            "Pressed",
+            "Yes"
+          ]
+        ]
+      },
+      {
+        "title": "Table 9.3: Combined truth table (1 = operated)",
+        "headers": [
+          "A",
+          "B",
+          "Y (AND)",
+          "Y (OR)"
+        ],
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "discussion": "The experiment is the hydraulic counterpart of the electro-pneumatic AND/OR experiment, and the logic result is exactly the same; only the working medium differs. Oil allows a much greater force than air from the same size of cylinder, but it needs a power unit and more care with leaks and cleanliness. The AND condition is used on presses and cutters so that both hands are kept clear, and the OR condition is used where an operation can be started from more than one place. Possible errors are a loose banana wire, low oil level or low supply voltage, and misreading the diode light.",
+    "conclusion": "AND and OR conditions were wired on the electronic board and used to operate a 4/2 solenoid valve and single acting hydraulic cylinder. The cylinder moved only with both buttons pressed in the AND circuit, and with either or both pressed in the OR circuit.",
+    "questions": [
+      {
+        "question": "If operated = 1 and not operated = 0, fill in the AND truth table.",
+        "answer": "A=0,B=0: Y=0; A=0,B=1: Y=0; A=1,B=0: Y=0; A=1,B=1: Y=1."
+      },
+      {
+        "question": "Fill in the OR truth table.",
+        "answer": "A=0,B=0: Y=0; A=0,B=1: Y=1; A=1,B=0: Y=1; A=1,B=1: Y=1."
+      },
+      {
+        "question": "Give two additional examples of using each circuit.",
+        "answer": "AND: (1) a hydraulic press or shear needing two-hand operation; (2) a hydraulic lift that works only when the door is closed and the start button is pressed. OR: (1) a hydraulic gate controlled from the gatehouse or from a remote button; (2) a dump truck bed raised from the cab or from the side of the truck."
+      },
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I learned how electric logic controls a hydraulic valve and how the AND and OR circuits are wired."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "No. One person wires and presses the buttons while another watches the valve and the piston, and the instructor must approve starting the power unit."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "It is safe and easy to follow, since the electric part is checked first and the oil is used afterwards."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Pressing both buttons at the same time while watching the piston. Using the switches instead of the buttons removes that problem."
+      },
+      {
+        "question": "Name another method or apparatus.",
+        "answer": "A PLC, or relay circuits."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "State of PB1 and PB2, supply voltage (12 V), oil pressure, and the response of the valve and piston."
+      },
+      {
+        "question": "Discuss one measuring instrument.",
+        "answer": "The pressure gauge on the power unit; it shows the system pressure and tells us when the line is pressurised."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Hydraulic presses, shears, lifts, tipping trucks and gates all use electric control of hydraulic valves."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "Electro-hydraulics and fluid power control."
+      }
+    ],
+    "learnings": [
+      "Repeated the AND/OR logic of the electro-pneumatic experiment on a hydraulic circuit, confirming that the logic is independent of the working medium.",
+      "Tied electric relay logic to hydraulic valve action, so that a two-hand AND condition governs when pressurised oil may reach the cylinder.",
+      "Appreciated the extra care hydraulics demands: power unit off and gauge at zero before any connection is changed, and no leaks left on the floor."
+    ]
+  }
+}

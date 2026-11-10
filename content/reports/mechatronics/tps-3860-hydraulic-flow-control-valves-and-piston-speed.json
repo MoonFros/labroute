@@ -1,0 +1,336 @@
+{
+  "id": "tps-3860-hydraulic-flow-control-valves-and-piston-speed",
+  "code": "TPS 3860",
+  "title": "Hydraulic Systems: Flow Control Valves and Piston Speed",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "Hydraulics",
+    "FlowControlValve",
+    "PressureMeasurement",
+    "FluidPower"
+  ],
+  "verified": true,
+  "file": "mechatronics/tps-3860-hydraulic-flow-control-valves-and-piston-speed.json",
+  "content": {
+    "aim": "To investigate how an adjustable needle valve and a one-way flow control valve set the speed of a double-acting hydraulic cylinder, and how the restriction changes the line pressures PT and PE.",
+    "objectives": [
+      "To learn how to control the speed of the piston with an adjustable flow control valve.",
+      "To learn how to control the speed of the piston with a one-way adjustable flow control valve.",
+      "To build and operate a hydraulic circuit from a given diagram.",
+      "To check whether the position of the valve (on one side or the other of the piston) matters."
+    ],
+    "apparatus": [
+      "Power unit",
+      "TPS-3860/B hydraulics metal base and TPS-3860/E hydraulics accessories",
+      "HYD-386A double acting cylinder 100 mm module",
+      "HYD-386C 4/3-way tandem mid-position valve module",
+      "HYD-386E flow control needle (variable) valve module",
+      "HYD-386F one-way non-return flow control valve module",
+      "HYD-386J pressure gauge module, HYD-386R connectors and T-connector set",
+      "HYD-386S / HYD-386T tubes (1 m and 2 m)"
+    ],
+    "theory": {
+      "text": "In a hydraulic system, power is transferred by oil. The pump pressurises the oil and pushes it into the cylinders, where it moves the pistons. Because the oil is nearly incompressible and works at high pressure, a hydraulic system can give a large force, so it is used in cranes, lifting equipment, automatic gates, hydraulic lifts and dump trucks. Hydraulic systems are of three types: pure hydraulic (cylinders, valves, motors), electro-hydraulic (with solenoid valves, limit switches, push buttons and relays) and computerised hydraulic (with a PLC or computer interface).\n\nEvery hydraulic system has a power unit: an oil tank, an electric pump, an electric switch, a pressure gauge and a one-way pressure (relief) regulator valve. The pump draws oil from the tank and pushes it into the circuit, and the oil returns to the tank, so the system works in a closed loop. Ports are marked P (pressure) and T (tank). In the relief valve, a conical valve is held on its seat by a spring, closing the path between P and T. When the pressure at P rises enough to overcome the spring, the valve opens and oil escapes to the tank, stopping any further pressure rise; when the pressure falls, the valve closes again and the pressure rises. This protects the line.\n\nThe adjustable flow control needle valve (HYD-386E) has no polarity; it is not a one-way valve. Its opening is changed with an adjusting button and a needle, and it reduces the oil flow in its line, which also affects the pressure on the line. The one-way variable flow control needle valve (HYD-386F) is the same valve with a non-return valve in parallel. Oil flowing from left to right is pushed by the non-return valve's marble closed and must pass through the needle valve, so its speed is regulated. Oil flowing from right to left lifts the marble and passes freely, without going through the regulator. The pressure gauge module (HYD-386J) measures pressure at points in the circuit, and the T-connector (HYD-386R) joins up to three components at one junction.\n\nThe speed of the piston is v = Q / A, where Q is the oil flow reaching the cylinder and A the piston area.\n\nRestricting Q with the needle valve therefore reduces the speed. The pressure drop across the restriction is ΔP = PT − PE.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/tps-3860-hydraulic-flow-control-valves-and-piston-speed_diagram_1.png",
+          "caption": "Figure 8.1: Hydraulic circuit used (4/3 valve, flow control valve and pressure gauge on the T-connector)."
+        }
+      ]
+    },
+    "procedure": [
+      "Precautions: before connecting or disconnecting components, make sure the power unit is OFF and the pressure gauge reads zero; always ask the instructor for permission before switching the power unit ON.",
+      "Needle valve alone",
+      "Study the hydraulic circuit diagram, then install modules A2, A3, A5 and A6 on the base panel following the component arrangement.",
+      "Connect the circuit as shown and open the flow control valve button all the way.",
+      "Turn ON the power unit and let the oil flow into the system. Write down the pressures PT and PE.",
+      "Raise the valve handle (handle to A). The piston pops out. While the handle is raised, write down PT and PE and the piston speed (fast or slow).",
+      "Release the handle so it returns to normal; the piston pops back in. Record PT, PE and speed for this direction (handle to B).",
+      "Close the flow control valve completely and then open it one turn. Repeat the movement in both directions, recording PT, PE and speed each time.",
+      "Write down when the piston moves slowly and when it moves fast, with the valve open or closed, and with the piston going in or out.",
+      "Turn OFF the power unit. Move the T-connector and the pressure gauge to the cylinder's second connector, turn the power unit on again and repeat all the readings.",
+      "One-way flow control valve",
+      "Install the one-way flow control valve module in place of the needle valve, connect the circuit and open the control button all the way.",
+      "Turn ON the power unit, note PT and PE, and raise the handle so that the piston pops out; record the values and speed.",
+      "Release the handle so that the piston pops in and record again.",
+      "Close the control valve and open it one turn, then repeat the movement in both directions and record PT, PE and speed.",
+      "Turn OFF the power unit, move the T-connector and gauge to the cylinder's second connector, and repeat all the readings.",
+      "Turn OFF the power unit."
+    ],
+    "precautions": [
+      "Make sure the power unit is OFF and the pressure gauge shows zero before connecting or disconnecting any component.",
+      "Always ask the instructor's permission before switching the power unit ON.",
+      "Open the flow control valve all the way before the first start-up.",
+      "The piston was fast with the valve open and slow with the valve open one turn.",
+      "With the one-way valve, speed was reduced only in one direction; in the other direction the piston moved fast.",
+      "Moving the gauge to the second connector gave the pressure on the other side of the piston.",
+      "Oil spills were wiped up at once because they make the floor slippery."
+    ],
+    "tables": [
+      {
+        "title": "Table 8.1: Needle valve alone, gauge at the first cylinder connector",
+        "headers": [
+          "Handle position",
+          "Control valve",
+          "PT (bar)",
+          "PE (bar)",
+          "Piston speed"
+        ],
+        "rows": [
+          [
+            "Handle to A",
+            "Open",
+            "12",
+            "10",
+            "Fast"
+          ],
+          [
+            "Handle to B",
+            "Open",
+            "10",
+            "8",
+            "Fast"
+          ],
+          [
+            "Handle to A",
+            "One turn open",
+            "28",
+            "11",
+            "Slow"
+          ],
+          [
+            "Handle to B",
+            "One turn open",
+            "24",
+            "9",
+            "Slow"
+          ]
+        ]
+      },
+      {
+        "title": "Table 8.2: Needle valve alone, gauge at the second cylinder connector",
+        "headers": [
+          "Handle position",
+          "Control valve",
+          "PT (bar)",
+          "PE (bar)",
+          "Piston speed"
+        ],
+        "rows": [
+          [
+            "Handle to A",
+            "Open",
+            "11",
+            "9",
+            "Fast"
+          ],
+          [
+            "Handle to B",
+            "Open",
+            "11",
+            "9",
+            "Fast"
+          ],
+          [
+            "Handle to A",
+            "One turn open",
+            "20",
+            "8",
+            "Slow"
+          ],
+          [
+            "Handle to B",
+            "One turn open",
+            "27",
+            "12",
+            "Slow"
+          ]
+        ]
+      },
+      {
+        "title": "Table 8.3: One-way flow control valve, gauge at the first cylinder connector",
+        "headers": [
+          "Handle position",
+          "Control valve",
+          "PT (bar)",
+          "PE (bar)",
+          "Piston speed"
+        ],
+        "rows": [
+          [
+            "Handle to A",
+            "Open",
+            "12",
+            "10",
+            "Fast"
+          ],
+          [
+            "Handle to B",
+            "Open",
+            "10",
+            "8",
+            "Fast"
+          ],
+          [
+            "Handle to A",
+            "One turn open",
+            "29",
+            "11",
+            "Slow (restricted)"
+          ],
+          [
+            "Handle to B",
+            "One turn open",
+            "11",
+            "9",
+            "Fast (free flow)"
+          ]
+        ]
+      },
+      {
+        "title": "Table 8.4: One-way flow control valve, gauge at the second cylinder connector",
+        "headers": [
+          "Handle position",
+          "Control valve",
+          "PT (bar)",
+          "PE (bar)",
+          "Piston speed"
+        ],
+        "rows": [
+          [
+            "Handle to A",
+            "Open",
+            "11",
+            "9",
+            "Fast"
+          ],
+          [
+            "Handle to B",
+            "Open",
+            "11",
+            "9",
+            "Fast"
+          ],
+          [
+            "Handle to A",
+            "One turn open",
+            "12",
+            "10",
+            "Fast (free flow)"
+          ],
+          [
+            "Handle to B",
+            "One turn open",
+            "26",
+            "12",
+            "Slow (restricted)"
+          ]
+        ]
+      },
+      {
+        "title": "Table 8.5: Pressure drop across the needle valve, from Table 8.1",
+        "headers": [
+          "Condition",
+          "PT (bar)",
+          "PE (bar)",
+          "ΔP = PT − PE (bar)"
+        ],
+        "rows": [
+          [
+            "Handle to A, valve open",
+            "12",
+            "10",
+            "2"
+          ],
+          [
+            "Handle to B, valve open",
+            "10",
+            "8",
+            "2"
+          ],
+          [
+            "Handle to A, one turn open",
+            "28",
+            "11",
+            "17"
+          ],
+          [
+            "Handle to B, one turn open",
+            "24",
+            "9",
+            "15"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "src": "assets/lab_images/tps-3860-hydraulic-flow-control-valves-and-piston-speed_graph_1.png",
+        "caption": "Figure 8.2: PT and PE with the needle valve fully open and one turn open (Table 8.1)."
+      }
+    ],
+    "discussion": "The experiment shows that piston speed in a hydraulic circuit is set by the oil flow, and the needle valve controls it by restricting that flow. Restricting the flow raises the pressure upstream of the valve (PT) and lowers it downstream (PE), which is why the readings change as the valve is closed. The relief valve in the power unit limits how high PT can rise. The location of the valve matters for the one-way type: it must be placed so that the restricted direction is the one in which speed needs to be controlled. In this way the cylinder can be slowed when it moves out and still return quickly.\n\nErrors can come from reading the pressure gauge by eye, turning the needle valve by different amounts, air in the oil lines, and oil temperature changing viscosity during the test.",
+    "conclusion": "The speed of a double acting hydraulic cylinder was controlled with an adjustable flow control valve and with a one-way flow control valve. Opening the valve fully gave fast motion with a small pressure drop; opening it one turn gave slow motion with a large pressure drop. The one-way valve limits the speed in one direction only.",
+    "questions": [
+      {
+        "question": "What is the function of the one-way flow control valve?",
+        "answer": "It regulates the oil flow, and so the piston speed, in one direction only; in the opposite direction the oil passes freely through the non-return valve."
+      },
+      {
+        "question": "In which direction will the piston's speed be the highest? Explain.",
+        "answer": "In the free-flow direction, where the oil bypasses the needle valve through the non-return valve, so there is no restriction."
+      },
+      {
+        "question": "Does the adjustable flow control needle valve (in its closed state) influence the piston's",
+        "answer": "Yes. A closed or nearly closed needle valve restricts the oil, so the piston moves slowly or not at all."
+      },
+      {
+        "question": "In which direction?",
+        "answer": "In both directions, since the plain needle valve has no polarity; with the one-way type, only in the restricted direction."
+      },
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I learned how a needle valve and a one-way valve control speed, and how pressure readings change when the oil is restricted."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "No. The handle, the gauge reading and the speed observation happen together, so at least two people are needed, and the instructor must approve starting the power unit."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "It is detailed, which makes it safe, but it has many repeated steps. A table to fill in with each step saves time."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Reading the pressure and judging the piston speed at the same moment. A flow meter or a stopwatch would reduce this."
+      },
+      {
+        "question": "Name another method or apparatus.",
+        "answer": "A proportional flow control valve or a variable displacement pump, or a flow meter to measure Q."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "Oil pressure at the gauge positions (PT, PE), valve opening, handle position, piston speed and piston area."
+      },
+      {
+        "question": "Discuss one measuring instrument.",
+        "answer": "The pressure gauge module (HYD-386J): a Bourdon-type gauge, 0-100 bar, moved with the T-connector to different points."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Speed control of excavator arms, lifts, press rams, automatic gates and dump truck beds."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "Hydraulic systems and fluid power."
+      }
+    ],
+    "learnings": [
+      "Established that piston speed is set by oil flow (v = Q / A), not by supply pressure: a one-turn opening raised the pressure drop to 15-17 bar and made the piston slow.",
+      "Showed that a plain needle valve restricts flow in both directions while a one-way valve restricts only one, leaving the return stroke fast.",
+      "Practised reading a Bourdon-tube pressure gauge at two circuit points and calculating ΔP = PT − PE across the restrictor."
+    ]
+  }
+}

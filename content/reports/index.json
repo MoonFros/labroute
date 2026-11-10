@@ -114,6 +114,150 @@
     "verified": true
   },
   {
+    "id": "tps-3011-process-control-trainer-seslab-s-scope",
+    "code": "TPS 3011",
+    "title": "Introduction to the Process Control Trainer, SESLAB and S-SCOPE",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "ProcessControl",
+      "SESLAB",
+      "Instrumentation",
+      "Oscilloscope"
+    ],
+    "file": "mechatronics/tps-3011-process-control-trainer-seslab-s-scope.json",
+    "verified": true
+  },
+  {
+    "id": "tps-3011-m-open-loop-dc-motor-p-control",
+    "code": "TPS 3011-M",
+    "title": "Open Loop DC Motor P Control",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "ProcessControl",
+      "DCMotor",
+      "Tachometer",
+      "OpenLoopControl"
+    ],
+    "file": "mechatronics/tps-3011-m-open-loop-dc-motor-p-control.json",
+    "verified": true
+  },
+  {
+    "id": "tps-3011-l-open-loop-light-p-control",
+    "code": "TPS 3011-L",
+    "title": "Open Loop Light P Control",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "ProcessControl",
+      "LightSensor",
+      "LDR",
+      "OpenLoopControl"
+    ],
+    "file": "mechatronics/tps-3011-l-open-loop-light-p-control.json",
+    "verified": true
+  },
+  {
+    "id": "tps-3071-plc-lights-switches-conditions-and-decisions",
+    "code": "TPS 3071",
+    "title": "Programmable Logic Controller: Lights, Switches, Conditions and Decisions",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "PLC",
+      "LadderLogic",
+      "IndustrialAutomation",
+      "LogicGates"
+    ],
+    "file": "mechatronics/tps-3071-plc-lights-switches-conditions-and-decisions.json",
+    "verified": true
+  },
+  {
+    "id": "tps-3810-single-acting-cylinder-3-2-way-valve",
+    "code": "TPS 3810",
+    "title": "Pneumatic Systems: Single Acting Cylinder Controlled by a 3/2-Way Valve",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "Pneumatics",
+      "Cylinders",
+      "DirectionalControlValves",
+      "FluidPower"
+    ],
+    "file": "mechatronics/tps-3810-single-acting-cylinder-3-2-way-valve.json",
+    "verified": true
+  },
+  {
+    "id": "tps-3810-double-acting-cylinder-5-2-lever-valve",
+    "code": "TPS 3810",
+    "title": "Controlling a Double Acting Cylinder Directly with a 5/2 Lever Valve",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "Pneumatics",
+      "DoubleActingCylinder",
+      "DirectionalControlValves",
+      "FluidPower"
+    ],
+    "file": "mechatronics/tps-3810-double-acting-cylinder-5-2-lever-valve.json",
+    "verified": true
+  },
+  {
+    "id": "pne-3810-electro-pneumatics-and-or-conditions",
+    "code": "PNE 3810",
+    "title": "Electro-pneumatics: Electric Conditioning Circuits (AND, OR)",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "ElectroPneumatics",
+      "SolenoidValves",
+      "LogicGates",
+      "SafetyControl"
+    ],
+    "file": "mechatronics/pne-3810-electro-pneumatics-and-or-conditions.json",
+    "verified": true
+  },
+  {
+    "id": "tps-3860-hydraulic-flow-control-valves-and-piston-speed",
+    "code": "TPS 3860",
+    "title": "Hydraulic Systems: Flow Control Valves and Piston Speed",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "Hydraulics",
+      "FlowControlValve",
+      "PressureMeasurement",
+      "FluidPower"
+    ],
+    "file": "mechatronics/tps-3860-hydraulic-flow-control-valves-and-piston-speed.json",
+    "verified": true
+  },
+  {
+    "id": "hyd-3860-electro-hydraulics-and-or-conditions",
+    "code": "HYD 3860",
+    "title": "Electro-hydraulics: Electric Conditioning Circuits (AND, OR)",
+    "department": "mechatronics",
+    "level": "300",
+    "session": "2025/2026",
+    "tags": [
+      "ElectroHydraulics",
+      "SolenoidValves",
+      "LogicGates",
+      "FluidPower"
+    ],
+    "file": "mechatronics/hyd-3860-electro-hydraulics-and-or-conditions.json",
+    "verified": true
+  },
+  {
     "id": "eee-301-bipolar-transistor-characteristics-dc-operating-point-analysis",
     "code": "EEE 301",
     "title": "Bipolar Transistor Characteristics & DC Operating Point Analysis",

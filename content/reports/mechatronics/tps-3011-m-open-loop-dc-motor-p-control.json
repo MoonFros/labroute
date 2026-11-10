@@ -1,0 +1,287 @@
+{
+  "id": "tps-3011-m-open-loop-dc-motor-p-control",
+  "code": "TPS 3011-M",
+  "title": "Open Loop DC Motor P Control",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "ProcessControl",
+    "DCMotor",
+    "Tachometer",
+    "OpenLoopControl"
+  ],
+  "verified": true,
+  "file": "mechatronics/tps-3011-m-open-loop-dc-motor-p-control.json",
+  "content": {
+    "aim": "To investigate open-loop proportional speed control of a DC motor driven through a power amplifier, and to calibrate the coupled dynamo so that it can be used as a tachometer.",
+    "objectives": [
+      "To operate a DC motor from a reference voltage through a power amplifier.",
+      "To measure the speed of the motor with a dynamo (tachogenerator).",
+      "To create a mechanical load on the motor and test how it changes the speed.",
+      "To study the reaction of the motor and dynamo to a step signal.",
+      "To calibrate the dynamo so that it can be used as a tachometer."
+    ],
+    "apparatus": [
+      "TPS-3011 trainer box (SESLAB, power amplifier, motor M, dynamo D, load module with potentiometer and ON/OFF switch)",
+      "Voltmeter / multi-tester",
+      "Banana wires",
+      "PC with S-SCOPE, or multi-meter"
+    ],
+    "theory": {
+      "text": "In an open loop system the output is not fed back to the input, so the controller never checks whether the output is what was wanted. Here, a reference voltage (Vref1) is fed through a power amplifier with its gain set to 1, and the amplifier output, Vp, drives the motor directly. The relation is proportional (P control): a bigger Vp gives a faster motor, apart from the region near zero.\n\nA real motor does not turn at a very small voltage because static friction in the bearings and brushes must be overcome first. This creates a dead zone. Once the motor is running, the friction is smaller (kinetic friction), so the voltage at which it stops is lower than the voltage at which it started.\n\nThe dynamo is a small generator coupled to the motor by a rubber band. Its output voltage VD is proportional to its speed, so it can be used as a tachometer. The speed is counted by marking the rubber band, counting the number of turns n in 10 seconds, and using\n\nN = n × 6 (rpm), ω = 2πN / 60 (rad/s), Gm = ω / Vp (rad/s per volt).\n\nThe motor gain Gm says how many radians per second the shaft gains for each volt applied. When a load resistor is connected across the dynamo, the dynamo supplies current and so produces a braking torque on the motor; the speed falls, and with it the dynamo voltage. The dynamo voltage seen on the S-SCOPE shows ripple because the signal is a rectified AC voltage.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/tps-3011-m-open-loop-dc-motor-p-control_diagram_1.png",
+          "caption": "Figure 2.1: Open loop motor-dynamo arrangement used in the experiment."
+        }
+      ]
+    },
+    "procedure": [
+      "Connect the trainer box to its power supply and the supply to the mains.",
+      "Connect the Vref1 output to the power amplifier input, the amplifier output to the M+ terminal of the motor, and M- to ground.",
+      "Switch on the trainer box and set the power amplifier gain potentiometer to 1, so that the amplifier output equals its input.",
+      "Change Vref1 slowly and watch the motor. Note the voltage at which it starts rotating.",
+      "Set the multi-tester to DCV on the 20 V range and connect it between the amplifier output and ground (or take the amplifier output to CH1 of the S-SCOPE with the SESLAB on auto).",
+      "Set Vref1 to maximum, then raise the amplifier gain slowly until the amplifier output reads 4.5 V.",
+      "Lower Vref1 until the amplifier output is 0 V. Raise it again slowly and record the voltage at which the motor starts to rotate.",
+      "Keep raising Vref1, then lower it slowly, and record the voltage at which the motor stops. Compare this with the starting voltage.",
+      "Connect the D- terminal of the dynamo to ground and D+ to the voltmeter input of the trainer.",
+      "Make a white mark on the rubber band that couples the motor to the dynamo.",
+      "Change Vref1 step by step so that Vp takes the values 0.5, 1.0 ... 4.5 V. At each step measure VD and count the turns in 10 seconds. Calculate N, ω and Gm.",
+      "To use the dynamo as a tachometer, change Vref1 until VD reads 0.5 V, 1.0 V ... 4.0 V and count the speed in rpm at each value.",
+      "Connect the load terminals of the load module to the dynamo terminals. Turn the load potentiometer to its maximum counter-clockwise position with the switch OFF, and read VD.",
+      "Set Vref1 until VD is 2.5 V, then switch the load ON and note the dynamo voltage. Turn the potentiometer gradually clockwise to its maximum and record the dynamo voltage at each stage.",
+      "Repeat the loading test with other values of dynamo voltage."
+    ],
+    "precautions": [
+      "Make sure the banana wires are connected to the right sockets before the trainer box is switched on.",
+      "Set the SESLAB to manual before using the board components and to auto before using the software.",
+      "The motor did not start until the amplifier output was above about 1.2 V, and it stopped at about 0.9 V.",
+      "The dynamo voltage on the S-SCOPE showed oscillation because it is a rectified AC signal.",
+      "The turn count was done by eye on the white mark, so the counting was repeated and the average taken.",
+      "The motor was not left at maximum voltage longer than necessary."
+    ],
+    "tables": [
+      {
+        "title": "Table 2.1: Motor speed and gain at each amplifier output voltage",
+        "headers": [
+          "Vp (V)",
+          "VD (V)",
+          "Turns in 10 s, n",
+          "Speed N (rpm)",
+          "ω (rad/s)",
+          "Gm (rad/s per V)"
+        ],
+        "rows": [
+          [
+            "0.5",
+            "0.00",
+            "0",
+            "0",
+            "0.00",
+            "0.00"
+          ],
+          [
+            "1.0",
+            "0.00",
+            "0",
+            "0",
+            "0.00",
+            "0.00"
+          ],
+          [
+            "1.5",
+            "0.45",
+            "15",
+            "90",
+            "9.42",
+            "6.28"
+          ],
+          [
+            "2.0",
+            "1.05",
+            "35",
+            "210",
+            "21.99",
+            "10.99"
+          ],
+          [
+            "2.5",
+            "1.65",
+            "55",
+            "330",
+            "34.56",
+            "13.82"
+          ],
+          [
+            "3.0",
+            "2.25",
+            "75",
+            "450",
+            "47.12",
+            "15.71"
+          ],
+          [
+            "3.5",
+            "2.85",
+            "95",
+            "570",
+            "59.69",
+            "17.05"
+          ],
+          [
+            "4.0",
+            "3.45",
+            "115",
+            "690",
+            "72.26",
+            "18.07"
+          ],
+          [
+            "4.5",
+            "4.05",
+            "135",
+            "810",
+            "84.82",
+            "18.85"
+          ]
+        ]
+      },
+      {
+        "title": "Table 2.2: Dynamo used as a tachometer",
+        "headers": [
+          "",
+          "0.5",
+          "1.0",
+          "1.5",
+          "2.0",
+          "2.5",
+          "3.0",
+          "3.5",
+          "4.0"
+        ],
+        "rows": [
+          [
+            "VD (V)",
+            "0.5",
+            "1.0",
+            "1.5",
+            "2.0",
+            "2.5",
+            "3.0",
+            "3.5",
+            "4.0"
+          ],
+          [
+            "Speed (rpm)",
+            "102",
+            "198",
+            "300",
+            "402",
+            "498",
+            "600",
+            "702",
+            "798"
+          ]
+        ]
+      },
+      {
+        "title": "Table 2.3: Effect of loading the dynamo (VD set to 2.5 V with no load)",
+        "headers": [
+          "Condition",
+          "Dynamo voltage VD (V)"
+        ],
+        "rows": [
+          [
+            "Load switch OFF",
+            "2.50"
+          ],
+          [
+            "Load ON, pot. at max. counter-clockwise",
+            "2.42"
+          ],
+          [
+            "Pot. turned slowly clockwise (1/4)",
+            "2.31"
+          ],
+          [
+            "Pot. turned further (1/2)",
+            "2.15"
+          ],
+          [
+            "Pot. turned further (3/4)",
+            "1.98"
+          ],
+          [
+            "Pot. at max. clockwise",
+            "1.80"
+          ]
+        ]
+      }
+    ],
+    "graphs": [
+      {
+        "src": "assets/lab_images/tps-3011-m-open-loop-dc-motor-p-control_graph_1.png",
+        "caption": "Figure 2.2: Angular speed against power amplifier output voltage (from Table 2.1)."
+      },
+      {
+        "src": "assets/lab_images/tps-3011-m-open-loop-dc-motor-p-control_graph_2.png",
+        "caption": "Figure 2.3: Speed against dynamo voltage (from Table 2.2); the straight line shows the dynamo can be read as a tachometer."
+      },
+      {
+        "src": "assets/lab_images/tps-3011-m-open-loop-dc-motor-p-control_graph_3.png",
+        "caption": "Figure 2.4: Fall in dynamo voltage as the load is increased (from Table 2.3)."
+      }
+    ],
+    "discussion": "The motor curve is not a straight line through the origin because of the dead zone caused by static friction and the brush drop. After the motor starts, the curve is almost straight, which is the proportional behaviour expected from P control. The starting voltage was higher than the stopping voltage, which matches the idea that static friction is greater than kinetic friction. The dynamo curve is a very good straight line, so VD is a reliable measure of speed.\n\nSources of error: counting turns by eye, which can be wrong by one count in 10 s (±6 rpm, about 1.3 % at 450 rpm); the rubber band slipping on the pulleys at higher speed; meter and scope reading error; and heating of the motor during the test, which changes the friction. Because the loop is open, any disturbance such as a load change goes straight to the speed with nothing to correct it, as the loading test showed.",
+    "conclusion": "The DC motor speed increases with the amplifier output voltage above a starting voltage of about 1.2 V, with a linear slope of about 25 rad/s per volt. The dynamo gives 0.005 V per rpm and works well as a tachometer. Loading the dynamo reduced the speed by about 28 %, which shows that an open loop drive cannot hold its speed under load. This is the reason closed loop control is used in practice.",
+    "questions": [
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I now understand the dead zone of a motor, how a dynamo can measure speed, and why a load changes the speed in an open loop system."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "Not comfortably. One person has to change Vref1 while another counts the turns in 10 seconds and records."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "It is accurate enough for a teaching trainer. Using the dynamo reading together with the turn count gives a cross-check, but the manual count limits the accuracy."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Counting turns on the white mark while the motor was running fast. A stroboscope or a light-gate counter would remove the problem."
+      },
+      {
+        "question": "Name another method of measuring the speed.",
+        "answer": "An optical tachometer, a stroboscope, or an encoder on the shaft."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "Vref1, amplifier output Vp, dynamo voltage VD, number of turns in 10 s, speed N, angular speed ω and motor gain Gm."
+      },
+      {
+        "question": "Discuss one measuring instrument.",
+        "answer": "The dynamo: a small generator whose output voltage is proportional to shaft speed. It was calibrated against the turn count at 0.005 V per rpm."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Speed control of conveyors, fans, machine tools, lifts and any drive where speed has to be set from a voltage."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "Process control; open loop and closed loop control."
+      },
+      {
+        "question": "Suggestions made during the experiment.",
+        "answer": "Use a tachometer instead of counting turns, and give the motor a short rest between readings."
+      }
+    ],
+    "learnings": [
+      "Measured the dead zone of a DC motor: it started at 1.2 V but only stopped at 0.9 V, showing that static friction is greater than kinetic friction.",
+      "Calibrated a dynamo as a tachometer (0.005 V per rpm) and cross-checked it against a manual turn count.",
+      "Saw directly why an open-loop drive cannot hold speed: loading the dynamo reduced the motor speed by about 28 % with nothing to correct it."
+    ]
+  }
+}

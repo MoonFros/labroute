@@ -1,0 +1,199 @@
+{
+  "id": "tps-3071-plc-lights-switches-conditions-and-decisions",
+  "code": "TPS 3071",
+  "title": "Programmable Logic Controller: Lights, Switches, Conditions and Decisions",
+  "department": "mechatronics",
+  "level": "300",
+  "session": "2025/2026",
+  "tags": [
+    "PLC",
+    "LadderLogic",
+    "IndustrialAutomation",
+    "LogicGates"
+  ],
+  "verified": true,
+  "file": "mechatronics/tps-3071-plc-lights-switches-conditions-and-decisions.json",
+  "content": {
+    "aim": "To program the TPS-3071 PLC trainer in ladder logic so that switches, lamps and momentary push buttons implement direct output control, AND and OR conditions, and a self-holding (latching) motor circuit.",
+    "objectives": [
+      "To learn how to create a ladder diagram that operates lights and switches.",
+      "To learn how to run a ladder diagram program.",
+      "To learn how to connect the TPS-3071 trainer components to a PLC.",
+      "To build a series (\"AND\") condition using switches, using an electric press control on the motor of the trainer.",
+      "To build a parallel (\"OR\") condition in the same way.",
+      "To carry out the printing machine exercise.",
+      "To build a self-holding circuit."
+    ],
+    "apparatus": [
+      "TPS-3071 trainer with traffic light simulator, push buttons P1-P3, switches and the elevator motor",
+      "PLC with PLSES software on a PC or laptop",
+      "D-connector cord from the PC to the trainer",
+      "Power supply (12 V) and mains cord",
+      "Banana wires"
+    ],
+    "theory": {
+      "text": "A computer used for data processing has three basic units: an input unit (keyboard or disk drive), the CPU, which is the brain that receives and carries out the program instructions, and an output unit (printer, display or disk drive) through which the computer reports back. A computer built to control machines, and fitted with units that let it connect to external electrical devices, is a Programmable Logic Controller (PLC). It is in fact a microcomputer with inputs and outputs. It operates motors and other parts of a system according to the data that come from sensors and switches and according to its program. Changing the program changes what the system does.\n\nAn interface is a device or software that connects a computer to other equipment. The input interface reads the electrical state of devices such as switches and sensors, and the output interface receives instructions from the computer and operates the devices on each output channel. Often the PLC receives its program from a PC, and after running it the PLC can be disconnected and control the system by itself.\n\nThe common way to program a PLC is the ladder diagram. It looks like an electrical circuit between two vertical rails, with contacts (inputs) on the left of each rung and a coil (output) on the right. A make contact passes current when the switch is raised or the button is pressed. A break contact passes current when the switch is lowered or the button is released. The symbols follow those of Siemens PLCs.\n\nVoltage levels. Most PLC outputs are normally open relay outputs with a common line, and most PLCs work on 24 V, while the TPS-3071 trainer works on 12 V. To protect the trainer, its GND is connected to the PLC output common line, so that operating an output connects GND to the lamp or motor and powers it from 12 V. The PLC inputs need 24 V but the switches give only +12 V, so the PLC input common line is connected to the −12 V point of the trainer, which gives the 24 V difference.\n\nLogic conditions. Switches connected to a consumer in series make an AND function: the output is on only when both buttons are pressed, and releasing either one switches it off. Switches in parallel make an OR function: at least one button must be pressed. Written as Boolean expressions, Q = A · B (AND) and Q = A + B (OR). The switches used are momentary, so they act only while pressed; a self-holding (latching) circuit uses the output's own contact to keep the output on after the start button is released, until a stop button breaks the circuit.",
+      "diagrams": [
+        {
+          "src": "assets/lab_images/tps-3071-plc-lights-switches-conditions-and-decisions_diagram_1.png",
+          "caption": "Figure 4.1: Inputs, PLC and outputs in the TPS-3071 setup."
+        },
+        {
+          "src": "assets/lab_images/tps-3071-plc-lights-switches-conditions-and-decisions_diagram_2.png",
+          "caption": "Figure 4.2: Part 1, one switch operating one lamp: Q1 = J1."
+        },
+        {
+          "src": "assets/lab_images/tps-3071-plc-lights-switches-conditions-and-decisions_diagram_3.png",
+          "caption": "Figure 4.3: Part 1, a make contact operating Q1 and a break contact operating Q2: Q2 = NOT J1."
+        },
+        {
+          "src": "assets/lab_images/tps-3071-plc-lights-switches-conditions-and-decisions_diagram_4.png",
+          "caption": "Figure 4.4: AND condition: Q1 = J1 · J2."
+        },
+        {
+          "src": "assets/lab_images/tps-3071-plc-lights-switches-conditions-and-decisions_diagram_5.png",
+          "caption": "Figure 4.5: OR condition: Q1 = J1 + J2."
+        },
+        {
+          "src": "assets/lab_images/tps-3071-plc-lights-switches-conditions-and-decisions_diagram_6.png",
+          "caption": "Figure 4.6: Self-holding circuit: Q1 = (J1 + Q1) · NOT J2."
+        }
+      ]
+    },
+    "procedure": [
+      "Part 1: Lights and switches",
+      "Connect the power cord to the TPS-3071 trainer and the power supply to the mains, then connect the D-connector cord from the PC to the trainer box.",
+      "Open the PLSES software. It has three menus: File, View and Options. Click Options and then Change interface, and click on the interface; a green tick appears when the connection is correct. Use Change Com to select the right communication number.",
+      "Connect the output of switch S1 (near the traffic light simulator) to the IN1 input with a banana plug.",
+      "Connect the PLC output Q1 to the red light of lane A of the traffic simulator.",
+      "Open the program area. The PLSES window has a diagram area on the left and a component area on the right. The diagram area is made of blank squares, and double-clicking a component copies it into the lowered square.",
+      "Select J1 in the J field and double-click it to place it; then set the Q field to Q1 and double-click Q1 to place the coil. The rung then reads J1 → Q1.",
+      "Raise switch S1. If the system is connected properly, the red light of the traffic simulator comes on. Drop the switch and the lamp goes off. Operate the switch three times to check that it always responds the same way.",
+      "Check that the OK (green tick) sign is on the communication button while the program is running.",
+      "Add a second lamp: connect OUT2 to the green light of lane A and build the second rung with a break (normally closed) J1 contact driving Q2, so that the lamp operates when the switch is released.",
+      "Turn S1 on and check that OUT2 goes off while OUT1 comes on. Connect S2 to IN2, build the next ladder diagram, and turn on S1 and S2 together to check the result.",
+      "Click the File menu, use Save As and save the program under your own name.",
+      "Part 2: Conditions and decisions",
+      "Connect the motor of the elevator on the trainer: M+ to +12 V and M- to the OUT1 output.",
+      "The elevator has three push buttons (P1-P3). Connect P1 to the IN1 input and P2 to the IN2 input.",
+      "AND circuit: build the ladder with J1 and J2 in series driving Q1. Press the buttons in the four combinations and record whether the elevator motor runs.",
+      "OR circuit: build the ladder with J1 and J2 in parallel driving Q1 and repeat the four combinations.",
+      "Printing machine exercise: use the AND/OR logic so that the machine is only started under the stated condition.",
+      "Self-holding: connect P1 to IN1, OUT1 to the M terminal of the motor, M+ to +12 V and P2 to IN2. Build the self-holding ladder, press P1 and check that the motor rotates and keeps rotating until P2 is pressed."
+    ],
+    "precautions": [
+      "Make sure the banana wire is connected to the proper components before the trainer box is switched on.",
+      "Check that the LED does not give green light on the IN port coil before operating the system.",
+      "Check that the LED does not give red light on the OUT port coil before operating the system.",
+      "A green tick on the communication button means the PLC and the PC are talking properly; if it is missing, change the COM number.",
+      "The program keeps running all the time; the ON switch must be down before wiring is changed."
+    ],
+    "tables": [
+      {
+        "title": "Table 4.1: Part 1 — lights and switches",
+        "headers": [
+          "Switch S1",
+          "Lamp on OUT1 (make contact)",
+          "Lamp on OUT2 (break contact)"
+        ],
+        "rows": [
+          [
+            "Down (OFF)",
+            "OFF",
+            "ON"
+          ],
+          [
+            "Up (ON)",
+            "ON",
+            "OFF"
+          ]
+        ]
+      },
+      {
+        "title": "Table 4.2: Part 2 — AND and OR conditions (1 = motor runs, 0 = motor does not run)",
+        "headers": [
+          "P1 input",
+          "P2 input",
+          "AND output",
+          "OR output"
+        ],
+        "rows": [
+          [
+            "Release",
+            "Release",
+            "0",
+            "0"
+          ],
+          [
+            "Press",
+            "Release",
+            "0",
+            "1"
+          ],
+          [
+            "Release",
+            "Press",
+            "0",
+            "1"
+          ],
+          [
+            "Press",
+            "Press",
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "graphs": [],
+    "discussion": "The experiment showed that the same hardware can do completely different jobs when only the ladder program is changed, which is the main advantage of a PLC over relay logic wired by hand. The AND connection is used where safety needs two hands on two buttons, for example a printing machine or a press; the OR connection is used where a machine can be started from more than one place. The self-holding circuit is needed because push buttons are momentary.\n\nPossible sources of error are a loose banana plug, a wrong COM port, wiring a make contact where a break contact was intended, and the 12 V/24 V common-line connection being forgotten, in which case the PLC inputs do not respond.",
+    "conclusion": "We built ladder diagrams in PLSES and ran them on the TPS-3071 trainer. A switch operated a lamp; two switches in series gave an AND function (output only when both pressed); two in parallel gave an OR function (output when either is pressed); and a self-holding rung kept the motor running until the stop button was pressed.",
+    "questions": [
+      {
+        "question": "What have you gained from the experiment?",
+        "answer": "I can now write a simple ladder diagram, connect the inputs and outputs of the trainer, and make AND, OR and self-holding circuits."
+      },
+      {
+        "question": "Could you have performed this experiment all by yourself?",
+        "answer": "Yes, because the program and wiring can be done by one person. A partner helps to test the buttons while the program is being watched."
+      },
+      {
+        "question": "Comment on the procedure.",
+        "answer": "The procedure goes from a single lamp to logic conditions, so each step builds on the last. It is safe because the trainer works on 12 V."
+      },
+      {
+        "question": "What was the most difficult aspect?",
+        "answer": "Setting the interface and the COM number in PLSES. Having the number written beside the trainer would help."
+      },
+      {
+        "question": "Name another method or apparatus.",
+        "answer": "Hard-wired relay logic, or another PLC brand such as Siemens or Allen-Bradley, programmed in ladder."
+      },
+      {
+        "question": "List the parameters required.",
+        "answer": "Input addresses (IN1, IN2), output addresses (OUT1, OUT2), contact types (make or break), supply voltage (12 V) and the ladder program."
+      },
+      {
+        "question": "Discuss one measuring/interface instrument.",
+        "answer": "The PLC input/output interface: the input side reads switch states and the output side drives lamps and the motor."
+      },
+      {
+        "question": "Practical relevance.",
+        "answer": "Traffic lights, lifts, printing and press machines, conveyor lines and packaging machines are all controlled in this way. A two-button AND start is a standard safety measure."
+      },
+      {
+        "question": "Section of the course this relates to.",
+        "answer": "PLC and industrial automation."
+      },
+      {
+        "question": "Suggestions made during the experiment.",
+        "answer": "Save the program after every rung is working so that work is not lost."
+      }
+    ],
+    "learnings": [
+      "Built and ran ladder diagrams in the PLSES software, from a single switch-and-lamp rung up to a self-holding motor circuit.",
+      "Confirmed by truth table that switches in series give Q = A · B and switches in parallel give Q = A + B.",
+      "Learned why the trainer's 12 V common line must be tied to the PLC output common and the PLC input common tied to −12 V, so that 24 V inputs and 12 V outputs both work."
+    ]
+  }
+}
