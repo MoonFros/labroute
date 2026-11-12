@@ -78,11 +78,15 @@
                         </h2>
                         <p class="section-subheading">
                             Action required. Approve a photo to place it first in the home page gallery, or
-                            decline it to remove it.
+                            reject it to remove it.
                         </p>
                     </div>
 
                     <div class="moments-head-actions">
+                        <button id="refreshPending" type="button" class="btn btn-outline btn-sm">
+                            <span class="material-symbols-outlined">refresh</span>
+                            <span>Refresh</span>
+                        </button>
                         <a href="index.html#Gallery" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
                             <span class="material-symbols-outlined">photo_library</span>
                             <span>View Gallery</span>
@@ -93,15 +97,10 @@
                 <div class="storage-warning" id="storageWarning" role="alert" hidden></div>
 
                 <p class="pending-help">
-                    <strong>How approval works.</strong>
-                    <b>1.</b> Download the photo and its JSON.
-                    <b>2.</b> Commit both to GitHub — the photo into <code>assets/gallery/moments/</code>,
-                    its record into <code>content/gallery.json</code>.
-                    <b>3.</b> Press <b>Approve</b>: the site checks the repository and puts the photo first in
-                    the gallery, shifting every other photo one place down.
-                    <br />
-                    A photo that is not committed yet cannot be approved, because a deployed site cannot
-                    save files to itself — the commit is what makes it permanent.
+                    <strong>Review, then publish.</strong>
+                    Uploads are saved securely in the database until you review them — they do not expire
+                    when the server restarts. Press <b>Approve</b> to publish a photo immediately as image 1
+                    in the gallery, or <b>Reject</b> to remove it. No downloads, JSON edits, or GitHub commits required.
                 </p>
 
                 <p class="pending-status" id="pendingStatus" role="status" aria-live="polite"></p>

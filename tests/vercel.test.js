@@ -97,6 +97,8 @@ async function makeFixture() {
     rootDir: root,
     contentDir,
     dataDir,
+    // Explicit opt-in to exercise the legacy /tmp recovery workflow only.
+    allowEphemeralUploads: true,
     runtimeDir: path.join(dataDir, 'runtime'),
     uploadDir: path.join(root, 'uploads'),
     pendingDir: path.join(dataDir, 'pending'),

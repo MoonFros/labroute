@@ -10,7 +10,7 @@
  * all /api/<path> requests to this function, and lib/vercel-handler.js
  * restores the original path before the shared request handler runs.
  *
- * Keeping one function also means all API traffic shares warm-instance state
- * (mutexes, login attempts, ephemeral /tmp) consistently.
+ * PostgreSQL, not warm-instance memory or /tmp, is the shared source of truth
+ * for uploads, moderation, signing keys, and throttling.
  */
 module.exports = require('../lib/vercel-handler');

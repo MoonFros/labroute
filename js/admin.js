@@ -2,8 +2,7 @@
  * LabRoute — Admin authentication and the pending upload review queue.
  *
  * The server issues a signed, HttpOnly admin cookie on successful login. The
- * original browser-only check is kept as a fallback for purely static
- * deployments, where the /api endpoints do not exist.
+ * database is server-only. Browser storage is display state, never authentication.
  */
 
 // 1. Password visibility toggle
@@ -17,15 +16,6 @@ if (togglePasswordBtn && passwordInput && toggleIcon) {
     passwordInput.type = isPassword ? 'text' : 'password';
     toggleIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
   });
-}
-
-// 2. Hash encoder (Web Crypto API SHA-256)
-async function hashPassword(password) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
 // 3. Login
@@ -47,18 +37,6 @@ if (loginForm) {
     hideMessage();
 
     const serverResult = await loginWithServer(email, password);
-
-    if (serverResult.unavailable) {
-      const fallback = await loginWithBrowserData(email, password);
-
-      if (fallback.ok) {
-        completeLogin(fallback.email);
-      } else {
-        showMessage(fallback.message, 'error');
-        resetLoginBtn();
-      }
-      return;
-    }
 
     if (serverResult.ok) {
       completeLogin(serverResult.email);
@@ -82,7 +60,7 @@ async function loginWithServer(email, password) {
 
     const contentType = response.headers.get('content-type') || '';
     if (!contentType.includes('application/json')) {
-      return { unavailable: true };
+      return { ok: false, message: 'The authentication service is unavailable. Please try again shortly.' };
     }
 
     const data = await response.json().catch(() => ({}));
@@ -92,7 +70,7 @@ async function loginWithServer(email, password) {
     }
 
     if (response.status === 404 || response.status === 405 || response.status === 501) {
-      return { unavailable: true };
+      return { ok: false, message: 'The authentication service is unavailable. Please try again shortly.' };
     }
 
     return {
@@ -100,40 +78,7 @@ async function loginWithServer(email, password) {
       message: data.message || 'Incorrect institutional email or security key.'
     };
   } catch {
-    return { unavailable: true };
-  }
-}
-
-async function loginWithBrowserData(email, password) {
-  try {
-    const response = await fetch('../data/admins.json');
-
-    if (!response.ok) {
-      throw new Error('Could not load the admin database.');
-    }
-
-    const data = await response.json();
-    const enteredPasswordHash = await hashPassword(password);
-
-    const admin = data.admins.find(
-      (candidate) =>
-        candidate.email === email && candidate.passwordCrypt === enteredPasswordHash
-    );
-
-    if (!admin) {
-      return {
-        ok: false,
-        message: 'Incorrect institutional email or security key.'
-      };
-    }
-
-    return { ok: true, email: admin.email };
-  } catch (error) {
-    console.error(error);
-    return {
-      ok: false,
-      message: 'Unable to authenticate. Check the server data path.'
-    };
+    return { ok: false, message: 'The authentication service is unavailable. Please try again shortly.' };
   }
 }
 
@@ -173,7 +118,6 @@ if (dashboard) {
 }
 
 async function guardDashboard() {
-  const localSession = sessionStorage.getItem('isAdmin') === 'true';
   const server = await getServerSession();
 
   if (server.available && server.authenticated) {
@@ -191,14 +135,8 @@ async function guardDashboard() {
     return;
   }
 
-  // Static deployment: the API is unavailable, so keep the browser check.
-  if (!localSession) {
-    window.location.href = 'login.html';
-    return;
-  }
-
-  updateAdminEmailDisplay();
-  loadPendingUploads();
+  const status = document.getElementById('pendingStatus');
+  if (status) status.textContent = 'The review service is unavailable. Refresh to reconnect; saved uploads remain in the database.';
 }
 
 async function getServerSession() {
@@ -267,7 +205,7 @@ async function loadPendingUploads() {
     container.innerHTML = `
       <div class="moments-inbox-state is-error">
         <span class="material-symbols-outlined">cloud_off</span>
-        <p>Pending uploads need the LabRoute service. Start it with <code>npm start</code>.</p>
+        <p>The review service is temporarily unavailable. Refresh to reconnect. Previously saved uploads have not been removed.</p>
       </div>`;
   }
 }
@@ -295,7 +233,7 @@ function renderStorageWarning(storage) {
   element.innerHTML = `
     <span class="material-symbols-outlined" aria-hidden="true">warning</span>
     <div>
-      <strong>Approvals are temporary</strong>
+      <strong>Durable storage is not configured</strong>
       <p>${escapeHtml(details)}</p>
     </div>`;
   element.hidden = false;
@@ -319,10 +257,7 @@ function renderPendingUploads(container, countElement, pending, liveCount) {
       const caption = escapeHtml(moment.caption || 'Untitled lab moment');
       const contributor = escapeHtml(moment.contributor || 'Anonymous contributor');
       const date = formatDate(moment.uploadedAt);
-      const repoPath = escapeHtml(
-        moment.repoPath ||
-          `assets/gallery/moments/${moment.filename || `${moment.id}.jpg`}`
-      );
+
 
       return `
         <article class="moments-card pending-card" data-id="${id}">
@@ -332,15 +267,7 @@ function renderPendingUploads(container, countElement, pending, liveCount) {
             <h3 class="moments-caption">${caption}</h3>
             <p class="moments-meta">${contributor}${date ? ` · ${date}` : ''}</p>
 
-            <ol class="pending-steps">
-              <li>
-                <a href="/api/admin/pending/${encodeURIComponent(moment.id)}/download" download>Download the photo</a>
-                and
-                <a href="/api/admin/pending/${encodeURIComponent(moment.id)}/metadata" download>the JSON</a>
-              </li>
-              <li>Commit both to GitHub — the photo to <code>${repoPath}</code>, the record into <code>content/gallery.json</code></li>
-              <li>Press <strong>Approve</strong> — the photo takes image 1 and everything else shifts down</li>
-            </ol>
+            <p class="pending-help">Saved for review. Approve to publish this photo first in the gallery, or reject to remove it.</p>
 
             <div class="pending-actions">
               <button type="button" class="btn btn-primary btn-sm" data-action="approve" data-id="${id}">
@@ -349,7 +276,7 @@ function renderPendingUploads(container, countElement, pending, liveCount) {
               </button>
               <button type="button" class="btn btn-outline btn-sm" data-action="reject" data-id="${id}">
                 <span class="material-symbols-outlined">close</span>
-                <span>Decline</span>
+                <span>Reject</span>
               </button>
             </div>
           </div>
@@ -372,7 +299,7 @@ async function reviewPending(id, action, button) {
 
   if (statusElement) {
     statusElement.textContent =
-      action === 'approve' ? 'Checking the repository for this photo…' : 'Declining photo…';
+      action === 'approve' ? 'Publishing photo to the gallery…' : 'Rejecting photo…';
   }
 
   try {
@@ -389,33 +316,13 @@ async function reviewPending(id, action, button) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      // 409 means the commit has not landed yet: show the instruction, not a
-      // generic failure, and leave the buttons usable so it can be retried.
-      if (response.status === 409 && data.record) {
-        statusElement.textContent = data.message;
-        statusElement.classList.add('is-warning');
-        buttons.forEach((item) => {
-          item.disabled = false;
-        });
-        if (card) {
-          card.classList.add('needs-commit');
-          // The queue entry is still there; approving again is the step that
-          // completes once the commit has deployed.
-          const approve = card.querySelector('[data-action="approve"] > span:last-child');
-          if (approve) approve.textContent = 'Approve again';
-        }
-        return;
-      }
-
       throw new Error(data.message || 'That review action could not be completed.');
     }
 
     if (statusElement) statusElement.classList.remove('is-warning');
-    if (card) card.classList.remove('needs-commit');
 
     if (statusElement) {
-      // The server message carries the temporary-storage caveat when it
-      // applies, so prefer it over a hard-coded success line.
+      // Prefer the server's confirmed publication result over a local guess.
       statusElement.textContent =
         data.message ||
         (action === 'approve'
@@ -423,6 +330,9 @@ async function reviewPending(id, action, button) {
           : 'Declined. The photo was removed.');
     }
 
+    if (action === 'approve') {
+      try { localStorage.setItem('labroute-gallery-updated', String(Date.now())); } catch {}
+    }
     await loadPendingUploads();
   } catch (error) {
     if (statusElement) statusElement.textContent = error.message;
@@ -471,6 +381,9 @@ function escapeHtml(value) {
     }
   });
 }
+
+const refreshPendingButton = document.getElementById('refreshPending');
+if (refreshPendingButton) refreshPendingButton.addEventListener('click', loadPendingUploads);
 
 // 7. Logout
 const logoutButton = document.getElementById('logoutButton');

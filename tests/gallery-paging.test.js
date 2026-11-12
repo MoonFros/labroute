@@ -153,3 +153,23 @@ test('long galleries window their page numbers around the current page', () => {
   // Only nine cards exist in the DOM at any time.
   assert.equal(cardCount(elements.galleryMasonryGrid.innerHTML), 9);
 });
+
+test('a database outage never silently replaces approved photos with the old seed', async () => {
+  const { sandbox } = createPage([]);
+  const paths = [];
+  sandbox.fetch = async (url) => {
+    paths.push(url);
+    return { ok: false, status: 503, headers: { get() { return 'application/json'; } } };
+  };
+  await assert.rejects(sandbox.loadGalleryData(), /temporarily unavailable/);
+  assert.deepEqual(paths, ['/api/gallery']);
+});
+
+test('an older submission approved last stays first in the browser gallery', () => {
+  const { sandbox } = createPage([]);
+  const ordered = sandbox.orderGallery([
+    { id: 'recent-upload', image: 'assets/gallery/moments/recent.jpg', uploadedAt: '2026-11-11T12:00:00Z', approvedAt: '2026-11-12T10:00:00Z' },
+    { id: 'older-reviewed-last', image: 'assets/gallery/moments/older.jpg', uploadedAt: '2026-10-01T12:00:00Z', approvedAt: '2026-11-12T11:00:00Z' }
+  ]);
+  assert.equal(ordered[0].id, 'older-reviewed-last');
+});

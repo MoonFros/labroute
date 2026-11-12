@@ -3,10 +3,14 @@
   "functions": {
     "api/index.js": {
       "maxDuration": 30,
-      "includeFiles": "{content/gallery.json,data/admins.json}"
+      "includeFiles": "{content/**/*.json,data/admins.json}"
     }
   },
   "rewrites": [
+    {
+      "source": "/content/(.*)",
+      "destination": "/api?__labroute_path=content/$1"
+    },
     {
       "source": "/assets/gallery/moments/(.*)",
       "destination": "/api/moment-image/$1"
@@ -15,5 +19,7 @@
       "source": "/api/(.*)",
       "destination": "/api?__labroute_path=$1"
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
