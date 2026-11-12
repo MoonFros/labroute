@@ -22,7 +22,7 @@ async function freePort() {
   return port;
 }
 
-async function postgresFixture() {
+async function postgresFixture({ initialize = true } = {}) {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'labroute-postgres-'));
   const { default: EmbeddedPostgres } = await import('embedded-postgres');
   const port = await freePort();
@@ -46,8 +46,8 @@ async function postgresFixture() {
     const config = loadConfig({ rootDir: path.join(__dirname, '..'), databaseUrl,
       storage: 'postgres', serverless: false, dataDir, adminsFile,
       email: { provider: 'none' } });
-    const applied = await migrate(pool);
-    const imported = await importDatabase({ pool, config });
+    const applied = initialize ? await migrate(pool) : [];
+    const imported = initialize ? await importDatabase({ pool, config }) : null;
     return { root, cluster, databaseUrl, pool, config, admin, applied, imported,
       overrides: { rootDir: config.rootDir, databaseUrl, storage: 'postgres',
         serverless: true, email: { provider: 'none' }, trustProxy: true,

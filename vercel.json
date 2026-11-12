@@ -20,6 +20,6 @@
       "destination": "/api?__labroute_path=$1"
     }
   ],
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist"
 }

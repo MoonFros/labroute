@@ -77,7 +77,64 @@ Hosting/process variables win over files. `.env.local` takes precedence over
 connection string in browser JavaScript or an admin screenshot. Rotate any
 password previously shared in chat and update local and hosting env variables.
 
-### Apply the schema and migrate existing data
+### Initialize Neon from Vercel (no local terminal)
+
+If the live site's logs say `PostgreSQL operation failed: 42P01`, the app can
+reach PostgreSQL but a required table is missing. Adding environment variables
+alone does not create the schema. You can initialize it **from a Vercel
+production build**, using the existing connection:
+
+1. Deploy code that includes `tools/vercel-build.js`. `vercel.json` selects
+   **`npm run build:vercel`**, not the ordinary database-free build. Keep any
+   custom Build Command setting on this wrapper and confirm it in Build Logs.
+2. In **Vercel → Project → Settings → Environment Variables**, set **Production**:
+
+   | Variable | Value |
+   | --- | --- |
+   | `DATABASE_URL` | Your current pooled Neon connection string |
+   | `MOMENTS_STORAGE` | `postgres` |
+   | `MOMENTS_MIGRATE_ON_BUILD` | `1` |
+
+   `DATABASE_URL_UNPOOLED` is optional: when omitted the direct Neon hostname is
+   derived from `DATABASE_URL`. If supplied, it must point to the **same endpoint
+   and database**, though it may use a different migration role. Both roles must
+   have the permissions they need. Keep the previous `MOMENTS_SECRET` if set.
+3. Trigger a new **Production build** of that code. Redeploying an older
+   deployment that still uses `npm run build` will not run the new setup.
+   Promoting an already-built Preview deployment may not rebuild it, so do not
+   rely on promotion alone to run production initialization.
+4. Look for **`Database setup: OK`**, **`PostgreSQL runtime connection: ready`**,
+   and then **`Build passed`** in Build Logs. The wrapper applies versioned SQL
+   on the direct connection, imports the repository admin/gallery/content seeds
+   once, and checks the actual pooled runtime connection before building.
+5. Verify `/api/health` is HTTP 200 with `storage=postgres`, `durable=true` and
+   `database.connected=true`, then test upload → approve/reject on the live site.
+6. Remove `MOMENTS_MIGRATE_ON_BUILD` or set it to `0` for later deployments.
+   Future schema changes then need a manual migration or an explicitly opted-in
+   production build with the flag re-enabled.
+
+The flag is off by default. Even if accidentally present in Preview, Development
+or a custom environment, the setup does not run there. Local `npm run build`
+always stays database-free. Vercel's system variables must identify an actual
+production build (`VERCEL=1`, `VERCEL_ENV=production`, and the optional
+`VERCEL_TARGET_ENV` must not name a different environment).
+
+A failed migration, seed, or runtime-readiness check **fails the build** instead
+of deploying an uninitialized app. After a successful first import, later
+opted-in builds still check/apply versioned migrations but **skip all reseeding**:
+DB-edited content, changed admin credentials, uploads, moderation decisions and
+the cookie key are preserved. Concurrent initializers are transaction-locked.
+Build initialization never reads runtime `/tmp`/pending/log state or imports
+legacy Blob storage. It does not introduce an unauthenticated setup API.
+
+This initializes the current repository's 4 admin records, 8 archived gallery
+records and 146 report/product/ad documents; it does not recover images already
+lost from an old `/tmp` instance. Surviving historical uploads still need the
+explicit legacy import below. See
+[`docs/vercel-neon-initialization.md`](docs/vercel-neon-initialization.md) for
+safety details, expected logs and verification.
+
+### Apply the schema and migrate existing data manually
 
 **Pause legacy uploads/reviews during the final import and cutover.** This avoids
 new writes being left behind in the old store. Back up the legacy data first.
@@ -148,20 +205,25 @@ contains a database URL or calls a localhost backend.
 
 The build type-checks `neon.ts`, syntax-checks application/test/tool JavaScript,
 minifies browser scripts, and assembles an explicit static allowlist into `dist/`.
-It does **not** connect to or mutate a production database. Migrate separately
-before deploying. `dist/` excludes credentials, admin hashes, source code,
+The ordinary `npm run build` does **not** connect to or mutate a production
+database. Vercel uses `npm run build:vercel`, whose explicitly opted-in
+production-only setup is described above; otherwise migrate separately.
+`dist/` excludes credentials, admin hashes, source code,
 content JSON and old community image files. This prevents Vercel's static-file
 precedence from bypassing database content or image approval checks.
 
 ### Deploy to Vercel
 
-1. Complete the Neon migration/import above and verify its row counts.
+1. Choose either the opted-in Vercel initialization above (no local terminal)
+   or a manual Neon migration/import, and verify its row counts.
 2. Set **Production** environment variables `DATABASE_URL` and
    `MOMENTS_STORAGE=postgres` in the Vercel project. Keep an existing
    `MOMENTS_SECRET` consistent across deployments, or omit it to use the DB key.
-   `DATABASE_URL_UNPOOLED` is needed where migrations run, not in browser code.
-3. Deploy this branch's code. `vercel.json` builds `dist/` and routes `/api/*`,
-   `/content/*`, and `/assets/gallery/moments/*` through `api/index.js` as needed.
+   For build initialization, also enable `MOMENTS_MIGRATE_ON_BUILD=1` for the
+   first Production deployment. Never put database URLs in browser code.
+3. Deploy this branch's code. `vercel.json` runs `build:vercel`, builds `dist/`,
+   and routes `/api/*`, `/content/*`, and `/assets/gallery/moments/*` through
+   `api/index.js` as needed.
    The same handler powers `npm start` and Vercel.
 4. Confirm `/api/health` returns HTTP 200 with:
 
@@ -189,6 +251,7 @@ remain available for recovery/tests, but are not the Neon production path.
 npm run build
 npm test
 npm run test:postgres
+npm run test:vercel-setup
 npm run test:e2e
 npm audit
 ```
@@ -207,6 +270,13 @@ rejects another photo. It runs against an isolated local PostgreSQL database and
 never modifies live Neon. **A local E2E pass is not a claim that Neon deployment
 or production migration succeeded**; the live commands and health check must
 also pass from an environment that can reach Neon.
+
+`test:vercel-setup` reproduces the live `42P01` failure against a fresh local
+PostgreSQL database, executes the actual `npm run build:vercel` command with
+Vercel production variables, verifies schema/seeds and healthy API responses,
+and tests login/upload/approval/rejection plus a non-destructive rebuild. It also
+proves preview and opted-out builds do not initialize, failures stop the build,
+wrong runtime credentials are detected, and concurrent setup/rollback is safe.
 
 ## Notifications and upload limits
 

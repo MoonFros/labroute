@@ -32,25 +32,45 @@ async function readOptional(file) {
  * Content is refreshed deliberately; existing admin credentials and photo review
  * decisions in PostgreSQL win over stale local/Blob copies, even on a retry.
  */
-async function importDatabase({ pool, config, blobStorage = null, refreshContent = true }) {
+async function importDatabase({ pool, config, blobStorage = null, refreshContent = true, initializeOnly = false }) {
+  if (initializeOnly && blobStorage) {
+    throw new Error('Production build initialization only imports repository seeds, not legacy Blob storage.');
+  }
+  if (initializeOnly) {
+    const { rows } = await pool.query("SELECT 1 FROM labroute_settings WHERE key = 'data_import_complete'");
+    // Do not even read stale seed files after successful initialization.
+    if (rows.length) return null;
+  }
   const galleryStore = new GalleryStore(config, blobStorage);
   const pendingStore = new PendingStore(config, blobStorage);
-  const gallery = orderGallery(await galleryStore.read());
-  const pending = await pendingStore.list();
+  const gallery = orderGallery(await (initializeOnly ? galleryStore.readSeed() : galleryStore.read()));
+  const pending = initializeOnly ? [] : await pendingStore.list();
   const documents = await contentDocuments(config.contentDir);
   const adminData = await readJson(config.adminsFile, { admins: [] });
   const admins = Array.isArray(adminData) ? adminData : adminData.admins || [];
-  const rateData = blobStorage
+  const rateData = initializeOnly ? null : blobStorage
     ? await blobStorage.getJson(STATE_PATHS.rateLimits)
     : await readJson(config.rateLimitFile, {});
-  const notifications = await readJsonLines(config.notificationsFile, 0);
-  const secret = await readOptional(path.join(config.runtimeDir, 'secret.key'));
+  const notifications = initializeOnly ? [] : await readJsonLines(config.notificationsFile, 0);
+  const secret = initializeOnly ? null : await readOptional(path.join(config.runtimeDir, 'secret.key'));
+  if (initializeOnly && (!admins.length || !documents.length)) {
+    throw new Error('Repository admin/content seeds are missing or empty; refusing to mark an unusable database initialized.');
+  }
+
   const counts = { admins: 0, documents: 0, gallery: 0, pending: 0, rateEvents: 0, notifications: 0 };
 
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
     await client.query("SELECT pg_advisory_xact_lock(hashtextextended('labroute:import', 0))");
+    if (initializeOnly) {
+      // Another production build may have initialized while we read the seeds.
+      const { rows } = await client.query("SELECT 1 FROM labroute_settings WHERE key = 'data_import_complete'");
+      if (rows.length) {
+        await client.query('COMMIT');
+        return null;
+      }
+    }
     await client.query(`INSERT INTO labroute_settings (key, value) VALUES ('cookie_secret', $1)
       ON CONFLICT (key) DO NOTHING`,
     [config.secretConfigured ? config.secret : secret?.toString().trim() || crypto.randomBytes(32).toString('hex')]);
@@ -62,7 +82,7 @@ async function importDatabase({ pool, config, blobStorage = null, refreshContent
     }
     for (const [documentPath, body] of documents) {
       const result = await client.query(`INSERT INTO labroute_documents (path, body) VALUES ($1, $2::jsonb)
-        ON CONFLICT (path) ${refreshContent ? 'DO UPDATE SET body = EXCLUDED.body, updated_at = now()' : 'DO NOTHING'}`,
+        ON CONFLICT (path) ${refreshContent && !initializeOnly ? 'DO UPDATE SET body = EXCLUDED.body, updated_at = now()' : 'DO NOTHING'}`,
       [documentPath, JSON.stringify(body)]);
       counts.documents += result.rowCount;
     }
