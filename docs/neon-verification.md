@@ -2,6 +2,10 @@
 
 Date: 2026-11-12. Branch: `arena/4e7ab402-labroute`.
 
+> Historical report for the original migration PR. A subsequent change adds
+> an opt-in Vercel production-build initializer to resolve missing-table `42P01`
+> errors without a local terminal. See [the follow-up setup guide](vercel-neon-initialization.md).
+
 ## Status
 
 **Code/build/local PostgreSQL verification passed. Live Neon deployment and

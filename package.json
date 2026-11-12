@@ -13,7 +13,9 @@
     "db:migrate": "node tools/migrate-db.js",
     "db:import": "node tools/import-db.js",
     "test:postgres": "node --test tests/postgres.test.js",
-    "test:e2e": "node tools/test-e2e.js"
+    "test:e2e": "node tools/test-e2e.js",
+    "build:vercel": "node tools/vercel-build.js",
+    "test:vercel-setup": "node --test tests/vercel-build.test.js tests/vercel-setup.test.js"
   },
   "engines": {
     "node": ">=20.19.0"
