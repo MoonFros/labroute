@@ -16,3 +16,13 @@ npm-debug.log*
 # Editor / OS noise
 .DS_Store
 Thumbs.db
+.neon
+
+# Build output, verification logs and local PostgreSQL test clusters
+dist/
+build/
+.cache/
+.vercel/
+data/postgres/
+.env.*
+!.env.example

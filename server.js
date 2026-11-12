@@ -7,7 +7,8 @@ const path = require('path');
 
 const adminAuth = require('./lib/admin-auth');
 const { loadConfig, storageStatus } = require('./lib/config');
-const { loadEnvFile } = require('./lib/env');
+const { loadProjectEnv } = require('./lib/env');
+const { PostgresDatabase, PostgresGalleryStore, PostgresPendingStore } = require('./lib/postgres');
 const { loadAdminEmails, logNotification, notifyMomentUpload, resolveProvider } = require('./lib/email');
 const { GalleryStore } = require('./lib/gallery-store');
 const { MomentsService } = require('./lib/moments-service');
@@ -59,6 +60,12 @@ const BLOCKED_STATIC_ROOTS = new Set([
   '.git',
   '.env',
   'api',
+  'data',
+  'tools',
+  'migrations',
+  'neon.ts',
+  'tsconfig.neon.json',
+  'skills-lock.json',
   'lib',
   'node_modules',
   'package-lock.json',
@@ -355,7 +362,10 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
     }
 
     const ip = getClientIp(req, config.trustProxy);
-    const attempt = loginAttemptCheck(ctx.loginAttempts, `${ip}|${email}`, Date.now());
+    const attemptKey = hmac(`login|${ip}|${email}`, config.secret);
+    const attempt = ctx.database
+      ? await ctx.database.loginAttempt(attemptKey, Date.now())
+      : loginAttemptCheck(ctx.loginAttempts, attemptKey, Date.now());
 
     if (!attempt.allowed) {
       throw new HttpError(
@@ -371,7 +381,8 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
       throw new HttpError(401, 'invalid_credentials', 'Incorrect institutional email or security key.');
     }
 
-    ctx.loginAttempts.delete(`${ip}|${email}`);
+    if (ctx.database) await ctx.database.clearLoginAttempt(attemptKey);
+    else ctx.loginAttempts.delete(attemptKey);
     const token = adminAuth.createToken(config, admin.email);
 
     res.setHeader(
@@ -449,8 +460,7 @@ async function handleAdminApi(req, res, pathname, url, ctx) {
     return undefined;
   }
 
-  // Manual publish: hand the admin the exact bytes and the exact JSON record,
-  // so the photo can be committed to the repository instead of stored in Blob.
+  // Optional backups / legacy recovery; PostgreSQL approval needs no downloads.
   const pendingDownload = /^\/api\/admin\/pending\/([A-Za-z0-9_-]{4,80})\/(download|metadata)$/.exec(
     pathname
   );
@@ -557,17 +567,18 @@ async function handleApi(req, res, pathname, url, ctx) {
 
     const storage = storageStatus(config);
     const blob = blobDiagnostics();
+    const database = ctx.database ? await ctx.database.health() : null;
 
     return sendJson(res, 200, {
       ok: true,
       service: 'labroute-moments',
+      database,
       cooldownMinutes: config.cooldownMinutes,
       maxUploadBytes: config.maxUploadBytes,
       emailProvider: resolveProvider(config) || 'none',
       storage: config.storageMode,
       serverless: config.isServerless,
-      // false means approved photos are only in an ephemeral /tmp: they will
-      // vanish on the next cold start or deploy.
+      // False means new uploads are disabled: no durable store is configured.
       durable: storage.durable,
       warning: storage.message,
       hint: storage.hint,
@@ -575,9 +586,13 @@ async function handleApi(req, res, pathname, url, ctx) {
       // missing Blob store apart from one connected to the wrong environment.
       blob,
       // Lets an operator verify production is durable without logging in:
-      // storage should be "vercel-blob" and secretConfigured true on Vercel.
+      // storage should be "postgres" and secretConfigured true on Neon.
       secretConfigured: config.secretConfigured
     });
+  }
+
+  if (pathname.startsWith('/api/content/')) {
+    return serveContent(req, res, pathname.slice('/api/content/'.length), ctx);
   }
 
   if (pathname === '/api/gallery') {
@@ -720,6 +735,7 @@ function resolveStaticFile(pathname, config) {
   if (normalized.startsWith('..') || path.posix.isAbsolute(normalized)) return null;
 
   const segments = normalized.split('/');
+  if (segments.some((segment) => segment.startsWith('.'))) return null;
   if (BLOCKED_STATIC_ROOTS.has(segments[0]) || BLOCKED_STATIC_ROOTS.has(normalized)) return null;
   if (normalized === 'data/runtime' || normalized.startsWith('data/runtime/')) return null;
   if (normalized === 'data/private' || normalized.startsWith('data/private/')) return null;
@@ -732,6 +748,22 @@ function resolveStaticFile(pathname, config) {
   return { file, isUpload: false };
 }
 
+async function serveContent(req, res, documentPath, ctx) {
+  if (!['GET', 'HEAD'].includes(req.method)) return sendMethodNotAllowed(res, ['GET', 'HEAD']);
+  if (!/^(?:reports\/[A-Za-z0-9/_-]+|ads|products|gallery)\.json$/.test(documentPath) || documentPath.includes('..')) {
+    return sendNotFound(req, res);
+  }
+  let data;
+  if (documentPath === 'gallery.json') data = await ctx.galleryStore.publicGallery();
+  else if (ctx.database) data = await ctx.database.readDocument(documentPath);
+  else {
+    try { data = JSON.parse(await fsp.readFile(path.join(ctx.config.contentDir, documentPath), 'utf8')); }
+    catch (error) { if (error.code !== 'ENOENT') throw error; data = null; }
+  }
+  if (data === null) return sendNotFound(req, res);
+  return sendJson(res, 200, data);
+}
+
 async function serveStatic(req, res, pathname, ctx) {
   const { config } = ctx;
 
@@ -742,10 +774,9 @@ async function serveStatic(req, res, pathname, ctx) {
   const resolved = resolveStaticFile(pathname, config);
   if (!resolved) return sendNotFound(req, res);
 
-  // Approved photos in Blob storage are not files in the deployment, so the
-  // CDN cannot serve them. Stream them from storage instead. (In local and
-  // ephemeral modes they are real files under config.uploadDir, below.)
-  if (resolved.isUpload && config.storageMode === 'vercel-blob') {
+  // Approved database/Blob images are streamed through the status-checked API.
+  // Metadata queries never fetch the bytea column; only image requests do.
+  if (resolved.isUpload && (config.storageMode === 'postgres' || config.storageMode === 'vercel-blob')) {
     const name = path.basename(resolved.file);
     const uploaded = await ctx.moments.getUploadedFile(name);
 
@@ -759,6 +790,10 @@ async function serveStatic(req, res, pathname, ctx) {
       res.end();
       return undefined;
     }
+
+    // PostgreSQL is authoritative: an orphaned or rejected legacy file on disk
+    // must never bypass its moderation status.
+    if (config.storageMode === 'postgres') return sendNotFound(req, res);
 
     // Not in Blob — but it may be a photo committed to the repository by the
     // manual publish workflow, which is a real file on disk. (On Vercel the
@@ -885,6 +920,15 @@ async function handleRequest(req, res, ctx) {
     return sendJson(res, 400, { ok: false, error: 'bad_request', message: 'Invalid request path.' });
   }
 
+  if (ctx.database && (pathname === '/api' || pathname.startsWith('/api/') ||
+    pathname.startsWith('/content/') || pathname.startsWith(`${ctx.config.publicUploadPrefix}/`))) {
+    await ctx.database.initialize();
+  }
+
+  if (pathname.startsWith('/content/') && ctx.database) {
+    return serveContent(req, res, pathname.slice('/content/'.length), ctx);
+  }
+
   if (pathname === '/api' || pathname.startsWith('/api/')) {
     return handleApi(req, res, pathname, url, ctx);
   }
@@ -910,10 +954,15 @@ function resolveBlobStorage(overrides, config) {
 function createApp(overrides = {}) {
   const config = loadConfig(overrides);
   const blobStorage = resolveBlobStorage(overrides, config);
-  const galleryStore = new GalleryStore(config, blobStorage);
+  const database = config.storageMode === 'postgres'
+    ? (overrides.database || new PostgresDatabase(config)) : null;
+  if (database) config.database = database;
+  const galleryStore = database
+    ? new PostgresGalleryStore(config, database) : new GalleryStore(config, blobStorage);
   const rateLimits = new RateLimitStore(config.rateLimitFile, config.rateLimit, blobStorage);
-  const pendingStore = new PendingStore(config, blobStorage);
-  const moments = new MomentsService({ config, galleryStore, rateLimits, pendingStore });
+  const pendingStore = database
+    ? new PostgresPendingStore(database) : new PendingStore(config, blobStorage);
+  const moments = new MomentsService({ config, galleryStore, rateLimits, pendingStore, database });
   const ctx = {
     config,
     galleryStore,
@@ -921,11 +970,12 @@ function createApp(overrides = {}) {
     pendingStore,
     moments,
     blobStorage,
+    database,
     loginAttempts: new Map()
   };
 
   // The same handler powers the long-running Node server (local / Node
-  // hosts) and the Vercel Function in api/[...path].js.
+  // hosts) and the Vercel Function in api/index.js.
   const handler = (req, res) => {
     handleRequest(req, res, ctx).catch((error) => sendError(res, error));
   };
@@ -933,7 +983,7 @@ function createApp(overrides = {}) {
   const storage = storageStatus(config);
   if (!storage.durable) {
     console.warn(
-      '[labroute] Temporary storage in use: approvals live in /tmp and will be lost when this instance recycles. /api/health reports durable:false.'
+      '[labroute] Temporary storage detected: new uploads are disabled. Configure DATABASE_URL and migrate to Neon. /api/health reports durable:false.'
     );
   }
 
@@ -949,9 +999,9 @@ function createApp(overrides = {}) {
 }
 
 function start() {
-  loadEnvFile(path.join(__dirname, '.env'));
+  loadProjectEnv(__dirname);
 
-  const { server, config } = createApp();
+  const { server, config, ctx } = createApp();
   const provider = resolveProvider(config);
 
   server.on('error', (error) => {
@@ -960,7 +1010,12 @@ function start() {
   });
 
   server.listen(config.port, config.host, async () => {
-    const admins = await loadAdminEmails(config);
+    let connected = !ctx.database;
+    if (ctx.database) {
+      try { await ctx.database.initialize(); connected = true; }
+      catch { console.error('  Database unavailable. /api/health will return 503; uploads will not use temporary storage.'); }
+    }
+    const admins = connected ? await loadAdminEmails(config) : [];
 
     console.log('');
     console.log('  LabRoute · Lab Moments');
@@ -969,7 +1024,7 @@ function start() {
     console.log(`  Bind:      ${config.host}:${config.port}`);
     console.log(`  Uploads:   ${Math.round(config.maxUploadBytes / (1024 * 1024))} MB max · ${config.cooldownMinutes} min cooldown`);
     console.log(
-      `  Storage:   ${config.storageMode}${config.storageMode === 'vercel-blob' ? '' : ` (${config.uploadDir})`}`
+      `  Storage:   ${config.storageMode}${['postgres', 'vercel-blob'].includes(config.storageMode) ? '' : ` (${config.uploadDir})`}`
     );
     console.log(
       `  Email:     ${provider || 'not configured'}${admins.length ? ` → ${admins.length} admin(s)` : ''}`
@@ -988,7 +1043,10 @@ function start() {
 
   const shutdown = (signal) => {
     console.log(`[labroute] ${signal} received; shutting down.`);
-    server.close(() => process.exit(0));
+    server.close(async () => {
+      if (ctx.database) await ctx.database.close().catch(() => {});
+      process.exit(0);
+    });
     setTimeout(() => process.exit(0), 3000).unref();
   };
 

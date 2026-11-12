@@ -24,6 +24,10 @@ async function loadRepositoryData() {
   }
 
   renderGallery(repositoryData.gallery);
+  if (galleryResult.status === 'rejected' && !repositoryData.gallery.length) {
+    const grid = document.getElementById('galleryMasonryGrid');
+    if (grid) grid.innerHTML = '<p class="gallery-empty" role="status">The gallery is temporarily unavailable. Please refresh shortly; saved photos have not been removed.</p>';
+  }
 
   if (reportsResult.status === 'fulfilled') {
     repositoryData.reports = reportsResult.value;
@@ -41,28 +45,44 @@ async function loadRepositoryData() {
 }
 
 async function loadGalleryData() {
-  try {
-    const response = await fetch('/api/gallery', {
-      cache: 'no-store',
-      headers: { Accept: 'application/json' }
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      if (Array.isArray(data.gallery)) return orderGallery(data.gallery);
-    }
-  } catch (error) {
-    // The upload service is optional on a static deployment; use the file.
-  }
-
-  const fallback = await fetch(`content/gallery.json?v=${Date.now()}`, {
-    cache: 'no-store'
+  const response = await fetch('/api/gallery', {
+    cache: 'no-store', headers: { Accept: 'application/json' }
   });
-
+  if (response.ok && (response.headers.get('content-type') || '').includes('application/json')) {
+    const data = await response.json();
+    if (!Array.isArray(data.gallery)) throw new Error('The gallery response is invalid.');
+    return orderGallery(data.gallery);
+  }
+  // A database outage is NOT an empty gallery or a reason to hide approvals
+  // behind the old committed seed. Fall back only on a genuinely static host.
+  if (![404, 405, 501].includes(response.status) && !response.ok) {
+    throw new Error(`The gallery is temporarily unavailable (${response.status}).`);
+  }
+  const fallback = await fetch(`content/gallery.json?v=${Date.now()}`, { cache: 'no-store' });
   if (!fallback.ok) throw new Error(`Gallery request failed with ${fallback.status}`);
-
   const data = await fallback.json();
   return orderGallery(Array.isArray(data) ? data : data.gallery || []);
+}
+
+async function refreshLiveGallery() {
+  if (document.hidden) return;
+  try {
+    const items = await loadGalleryData();
+    if (JSON.stringify(items) !== JSON.stringify(repositoryData.gallery)) {
+      repositoryData.gallery = items;
+      renderGallery(items);
+    }
+  } catch {
+    // Keep already-rendered photos during an outage instead of blanking them.
+  }
+}
+
+if (typeof window.addEventListener === 'function') {
+  window.addEventListener('focus', refreshLiveGallery);
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'labroute-gallery-updated') refreshLiveGallery();
+  });
+  window.setInterval(refreshLiveGallery, 30000);
 }
 
 // Community photos come first, newest first; the archive follows in file order.
@@ -76,7 +96,7 @@ function orderGallery(items) {
   };
   const isMoment = (item) => Boolean(item) && (item.uploaded === true || momentIsImage(item.image));
   const time = (item) => {
-    const parsed = Date.parse(item.uploadedAt || item.approvedAt || '');
+    const parsed = Date.parse(item.approvedAt || item.uploadedAt || '');
     return Number.isFinite(parsed) ? parsed : 0;
   };
 
